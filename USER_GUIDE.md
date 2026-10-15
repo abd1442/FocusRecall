@@ -56,6 +56,16 @@ Personal checks use active categorical setup/detail choices from the last 90 day
 
 The preparation sheet uses interface scale, independently of the small timer's size setting. It should return to the saved timer dimensions/position afterward. Multi-monitor movement/focus/scale behavior still needs native release verification.
 
+## Floating controls
+
+Keep Learnalyt within reach while you work in another app.
+
+| Before starting | During study |
+| --- | --- |
+| ![Floating ready panel](screenshots/floating-ready.png) | ![Running floating timer](screenshots/floating-timer.png) |
+
+Press **Start** to prepare, then **Ready to start** to begin timing. Use **Distracted**, **Switch** and **Finish** from the running panel.
+
 ## During study
 
 ![Running Flow timer with Distracted, Switch, Park a thought and Finish session](screenshots/focus.png)
