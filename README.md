@@ -92,6 +92,8 @@ Have an idea that would make studying easier? [Suggest it here](https://github.c
 
 ---
 
-**[Support Learnalyt on Ko-fi](https://ko-fi.com/abd442)**
-
-Donations are optional. Learnalyt remains free to use.
+<p align="center">
+  <a href="https://ko-fi.com/abd442">
+    <img src="assets/support-learnalyt.svg" width="560" alt="Enjoying Learnalyt? Buy me a coffee on Ko-fi. Optional support; Learnalyt stays free.">
+  </a>
+</p>
