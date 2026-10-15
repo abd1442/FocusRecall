@@ -1,6 +1,6 @@
 # Learnalyt 0.1.0-beta.1
 
-Simpler screens, compact ✦ For you preparation suggestions with optional evidence, and a fully visible study tip. The main timer keeps three controls; thought capture remains in the floating timer.
+Simpler screens, Quiet signals preparation with blue personal markers and optional evidence, and a fully visible study tip. The main timer keeps three controls; thought capture remains in the floating timer.
 
 Private beta candidate prepared for an unpublished draft prerelease. Public distribution is not approved.
 

@@ -27,10 +27,23 @@ Clear distractions, set an aim, then start when you are ready.
 
 ![Preparation before the timer starts](screenshots/preparation.png)
 
-| Recall what you learned | Record how it went | Take a break |
-| --- | --- | --- |
-| ![Filled recall page with fictional study notes](screenshots/recall.png) | ![Configurable session logging](screenshots/session-log.png) | ![Rest planning](screenshots/rest.png) |
-| Write or draw from memory. | Choose the questions you want to track. | Rest, then continue or finish your sitting. |
+### Recall what you learned
+
+Write or draw from memory.
+
+![Filled recall page with fictional study notes](screenshots/recall.png)
+
+### Record how it went
+
+Choose the questions you want to track.
+
+![Configurable session logging](screenshots/session-log.png)
+
+### Take a break
+
+Rest, then continue or finish your sitting.
+
+![Rest planning](screenshots/rest.png)
 
 ## Keep your controls close
 
@@ -52,9 +65,13 @@ Mark distractions, switch subjects and park thoughts without leaving your work.
 | Am I building a routine? | Follow weekly time, subject progress and the yearly heatmap. |
 | What should I try next? | Pick one change, save an experiment and compare later sessions. |
 
-| Conditions and outcomes | Time patterns |
-| --- | --- |
-| ![Condition comparisons using fictional ratings](screenshots/stats-conditions.png) | ![Focus ratings by time and day](screenshots/stats-timing.png) |
+### Conditions and outcomes
+
+![Condition comparisons using fictional ratings](screenshots/stats-conditions.png)
+
+### Time patterns
+
+![Focus ratings by time and day](screenshots/stats-timing.png)
 
 *Patterns reflect your recorded ratings, not proof of cause.*
 
