@@ -136,7 +136,13 @@ An unsaved check-in spanning rollover keeps an explicit choice between the old a
 
 *These associations belong to the generated fixture. They are not recommendations derived from your data.*
 
-Stats opens with **Your insights**. Adjust date, subject/category and activity filters, then inspect each card's evidence using hover, focus or click; Escape closes evidence. Read coverage and sample/day context before acting. Rating differences are **focus/recall points**, not percentage gains in learning. Longer time does not mean better learning.
+Stats opens with **Your insights**. Each card has a highlighted **Takeaway**. Select its info button for **Records → Match → Average → Meaning**, with the actual comparison and optional calculation details. The record-count button expands the supporting sessions/events and study days. Escape closes the walkthrough and returns focus to its info button. Rating differences are **focus/recall points**, not percentage gains in learning. Longer time does not mean better learning.
+
+Evidence levels are **Not enough evidence**, **Early pattern**, **Repeated pattern** and **Well-supported pattern**. More comparable records, coverage across days and repetition over time support a higher level; a large session count alone does not. The highest level needs at least 20 observations and eight days on each side plus the existing matching, difference, outlier and repetition checks. These levels are not confidence percentages or guarantees. Distraction cards use the same four evidence labels, grading the leading recorded reason by event/day coverage, repetition across earlier and later days, and whether leaving out any one day changes the leader. Frequency and time lost are graded separately. Time-based grading counts only events receiving attributed time after overlap handling. The grade describes the recorded ranking, not unrecorded activity or confidence in a causal effect.
+
+![Guided explanation of the actual comparison](screenshots/stats-walkthrough.png)
+
+![Supporting records and evidence grade](screenshots/stats-records.png)
 
 Answered outcomes are eligible by default; **include untouched** is an explicit analysis choice. Personal outcome comparisons exclude mixed-subject sessions. Pattern gates generally require five eligible observations on three days per side; stronger repeated patterns require twenty on eight days with consistent temporal direction. These are exploratory heuristics, not calibrated confidence or causal proof. Sleep comparisons operate at day/cohort level; duration comparisons account for mode/target; recorded actual rest is distinguished from planned rest.
 

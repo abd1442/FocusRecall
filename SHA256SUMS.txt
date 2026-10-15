@@ -1,1 +1,1 @@
-a4e6c93eb7fbe1cdff535a4d383550a985e7ef737ed5e30f547c0513390f8f9a  Learnalyt-0.1.0-beta.1-setup.exe
+cde57422e3e1d4afcbb1b641c2f0d9c9da4d2ca7b5aa922f64b9c1a3a61334ff  Learnalyt-0.1.0-beta.1-setup.exe

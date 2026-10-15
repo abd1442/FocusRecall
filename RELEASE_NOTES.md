@@ -1,6 +1,6 @@
 # Learnalyt 0.1.0-beta.1
 
-Simpler screens, Quiet signals preparation with blue personal markers and optional evidence, and a fully visible study tip. The main timer keeps three controls; thought capture remains in the floating timer.
+Clearer Stats takeaways, guided explanations and graded evidence for study comparisons and distractions. Evidence badges stay at the bottom of each card. Preparation uses Quiet signals with a neutral book tip. Thought capture remains in the floating timer.
 
 Private beta candidate prepared for an unpublished draft prerelease. Public distribution is not approved.
 
