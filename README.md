@@ -10,27 +10,75 @@
 
 Choose a subject. Set your aim. Build a study habit you can see.
 
-## Keep your focus close
+## Choose your pace
 
-| Ready when you are | Your timer, always within reach |
+| Flow | Fixed | Adaptive |
+| --- | --- | --- |
+| ![Flow planning](screenshots/mode-flow.png) | ![Fixed planning](screenshots/mode-fixed.png) | ![Adaptive planning from demo history](screenshots/mode-adaptive.png) |
+| Count up. Keep going while you are focused. | Choose a duration and count down. | Get a subject-specific target from recent good sessions. |
+| ![Flow session running](screenshots/session-flow.png) | ![Fixed session running](screenshots/session-fixed.png) | ![Adaptive session running](screenshots/session-adaptive.png) |
+
+Adaptive uses your default until enough qualifying sessions exist. Every mode lets you decide when to finish.
+
+## A complete study session
+
+**Prepare → Focus → Recall → Log → Rest**
+
+Clear distractions, set an aim, then start when you are ready.
+
+![Preparation before the timer starts](screenshots/preparation.png)
+
+| Recall what you learned | Record how it went | Take a break |
+| --- | --- | --- |
+| ![Filled recall page with fictional study notes](screenshots/recall.png) | ![Configurable session logging](screenshots/session-log.png) | ![Rest planning](screenshots/rest.png) |
+| Write or draw from memory. | Choose the questions you want to track. | Rest, then continue or finish your sitting. |
+
+## Keep your controls close
+
+| Before you start | While you work |
 | --- | --- |
-| ![Floating panel before starting a session](screenshots/floating-ready.png) | ![Floating timer during a real demo session](screenshots/floating-timer.png) |
+| ![Floating ready panel](screenshots/floating-ready.png) | ![Running floating timer](screenshots/floating-timer.png) |
 
-Start, mark distractions, switch subjects and finish from the floating panel.
+Mark distractions, switch subjects and park thoughts without leaving your work.
 
-![Preparation window before the study timer starts](screenshots/preparation.png)
+## Turn records into useful patterns
 
-Clear distractions before you begin. Personal checks appear as Learnalyt learns from your records.
+![Personal study insights](screenshots/insights.png)
 
-## See what helps you study
+| Your question | What to explore |
+| --- | --- |
+| When do I report better focus? | Compare start times before planning your harder work. |
+| Which study conditions suit me? | Compare locations, sound, sleep and other logged conditions. |
+| What interrupts my sessions? | Review distraction reasons, lost time and uninterrupted stretches. |
+| Am I building a routine? | Follow weekly time, subject progress and the yearly heatmap. |
+| What should I try next? | Pick one change, save an experiment and compare later sessions. |
 
-![Personal study insights in Learnalyt](screenshots/insights.png)
+| Conditions and outcomes | Time patterns |
+| --- | --- |
+| ![Condition comparisons using fictional ratings](screenshots/stats-conditions.png) | ![Focus ratings by time and day](screenshots/stats-timing.png) |
 
-- **Focus your way:** Flow, Fixed or Adaptive sessions.
-- **Remember more deliberately:** recall with writing and drawing.
-- **Find your patterns:** focus, recall, study conditions and weekly progress.
-- **Keep it personal:** local records, optional reminders, light and dark themes.
+*Patterns reflect your recorded ratings, not proof of cause.*
 
-*Real app screenshots with fictional data. Insights reflect your recorded ratings.*
+## Return to what you learned
+
+Reopen a session's timeline, recall and saved notes in History. Find unfinished work or something worth reviewing.
+
+<img src="screenshots/history-notes.png" alt="History session with its recall and saved note" width="820">
+
+## Save notes to Obsidian
+
+Send text and drawings to a chosen Markdown note and heading. A local copy stays in Learnalyt.
+
+<img src="screenshots/obsidian.png" alt="A note successfully saved to the fictional Demo Vault" width="640">
+
+## Make it yours
+
+- Organize subjects, resources and progress in **Library**.
+- Set optional daily or personal study reminders.
+- Choose light/dark themes, colours, fonts and interface sizes.
+- Back up and restore your local study records.
+- Export reports as PNG, Markdown or PDF.
+
+*All screenshots are real app captures with fictional demo data. The Obsidian example uses an isolated Demo Vault.*
 
 [Install and get started](USER_GUIDE.md#start-studying) · [Beta details](RELEASE_NOTES.md) · [Privacy](PRIVACY.md)

@@ -42,6 +42,10 @@ Select a subject on Home, choose a mode and target, and optionally enter a small
 | Fixed | Countdown planning around a chosen target |
 | Adaptive | Uses qualifying previous study to suggest a target; the UI distinguishes actual samples from example dots/defaults |
 
+| Flow planning | Fixed planning | Adaptive planning |
+| --- | --- | --- |
+| ![Flow](screenshots/mode-flow.png) | ![Fixed](screenshots/mode-fixed.png) | ![Adaptive](screenshots/mode-adaptive.png) |
+
 Adaptive is a planning aid, not a prediction of learning quality. The target is not a forced end to study. You control when to finish.
 
 Press **Start**. With preparation enabled, a separate preparation sheet opens before time is recorded.
@@ -104,6 +108,8 @@ Next comes planned rest. Record what actually happened or skip it. Planned rest 
 
 ## History and recovery
 
+![Fictional session history with recall and saved notes](screenshots/history-notes.png)
+
 ![History showing fictional sessions and their subject/time details](screenshots/history.png)
 
 *Search and filters narrow records; review markers help find unfinished follow-up.*
@@ -155,6 +161,8 @@ In **Report**, export PNG, Markdown or PDF. Preview the scope and inspect for pr
 ## Notes and Obsidian
 
 In **Library → subject → Notes**, choose **Write a note**, or open **Save / send notes** from recall. Type/draw, choose a destination and save. **Save locally** keeps content in Learnalyt. External sending saves locally first; failure leaves a local note for retry. Notes are not automatically sent to a cloud service. Notion synchronization has been removed; old local notes remain.
+
+![Successful save to an isolated Demo Vault](screenshots/obsidian.png)
 
 For Obsidian:
 
