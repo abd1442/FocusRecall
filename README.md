@@ -16,7 +16,6 @@ Choose a subject. Set your aim. Build a study habit you can see.
 | --- | --- | --- |
 | ![Flow planning](screenshots/mode-flow.png) | ![Fixed planning](screenshots/mode-fixed.png) | ![Adaptive planning from demo history](screenshots/mode-adaptive.png) |
 | Count up. Keep going while you are focused. | Choose a duration and count down. | Get a subject-specific target from recent good sessions. |
-| ![Flow session running](screenshots/session-flow.png) | ![Fixed session running](screenshots/session-fixed.png) | ![Adaptive session running](screenshots/session-adaptive.png) |
 
 Adaptive uses your default until enough qualifying sessions exist. Every mode lets you decide when to finish.
 
