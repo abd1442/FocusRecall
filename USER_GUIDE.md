@@ -50,7 +50,7 @@ Press **Start**. With preparation enabled, a separate preparation sheet opens be
 
 *Checks are optional and transient. They are not stored as completed habits.*
 
-Tick anything useful and press **Ready to start**. **Cancel** abandons the unstarted preparation while preserving the plan/goal. The timer starts only after Ready. The two defaults are phone away/silenced and distracting apps/tabs closed. Up to five extra checks appear only when your recent records show repeated positive focus or recall patterns for the selected subject and activity, such as a particular drink or study place. Each explains its evidence. New or sparse histories show only the defaults. Water is not a fixed reminder.
+Tick anything useful and press **Ready to start**. **Cancel** abandons the unstarted preparation while preserving the plan/goal. The timer starts only after Ready. The two defaults are phone away/silenced and distracting apps/tabs closed. Up to five extra checks appear only when your recent records show repeated positive focus or recall patterns for the selected subject and activity, such as a particular drink or study place. A blue ✦ For you marker identifies personal suggestions; select it to see the evidence. New or sparse histories show only the defaults. Water is not a fixed reminder.
 
 Personal checks use active categorical setup/detail choices from the last 90 days, exclude untouched answers and mixed-subject sessions, and need comparable records on both sides across multiple days with the direction repeated over time. They describe associations, not proof of cause or health advice. Checks do not record answers, change your planned setup or log a drink automatically. Settings can disable preparation; older custom checklist text is retained in saved settings. General learning tips rotate separately from these personal checks.
 
@@ -64,7 +64,7 @@ Keep Learnalyt within reach while you work in another app.
 | --- | --- |
 | ![Floating ready panel](screenshots/floating-ready.png) | ![Running floating timer](screenshots/floating-timer.png) |
 
-Press **Start** to prepare, then **Ready to start** to begin timing. Use **Distracted**, **Switch** and **Finish** from the running panel.
+Press **Start** to prepare, then **Ready to start** to begin timing. Use **Distracted**, **Switch** and **Finish** from the running panel. Its thought icon parks a thought; the main study screen keeps only the three session controls.
 
 ## During study
 

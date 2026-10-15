@@ -1,5 +1,7 @@
 # Learnalyt 0.1.0-beta.1
 
+Simpler screens, compact ✦ For you preparation suggestions with optional evidence, and a fully visible study tip. The main timer keeps three controls; thought capture remains in the floating timer.
+
 Private beta candidate prepared for an unpublished draft prerelease. Public distribution is not approved.
 
 Home keeps a compact year heatmap at the bottom of the visible left column. Flexible space above it gives way as the subject list grows, pushing the heatmap down naturally. Preparation has two fixed reminders and up to five optional checks supported by repeated recent records for the selected subject and activity. Sparse histories show only the defaults.
