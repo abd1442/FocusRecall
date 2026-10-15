@@ -1,0 +1,333 @@
+{
+  "date": "2026-10-15",
+  "version": "Mixed beta captures; see captureVersion per image",
+  "source": "Packaged Learnalyt with Electron 44.7.2",
+  "data": "New isolated fictional demo, not copied user data",
+  "method": "Direct packaged Electron captures with isolated fictional profiles. No generated UI or personal study data.",
+  "screenshots": [
+    {
+      "file": "home-light.png",
+      "description": "Home in the light theme",
+      "bytes": 202092,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "c29a50b5225dea7d93a0ccdc0a18f15fd513df0bd1386e7c2314e684e15ac115",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "home.png",
+      "description": "Home in the dark theme",
+      "bytes": 190476,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "889e32f54069bf948e4eaf635723221e3ba0b7f39f0439f3c9903a2f50b29baf",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "heatmap.png",
+      "description": "Yearly study-time heatmap",
+      "bytes": 181835,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "5969c3531c8d3fd10e72472c20fc48af12fd75c170f051dd5f86ccad0cdc1c2e",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "library.png",
+      "description": "Library categories and subject organization",
+      "bytes": 76602,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "dae4631e8d87afdbbfce3ac82d0615ef68d6bb27b7252b5f76a00a31d371b9c1",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "insights.png",
+      "description": "Study insights with takeaway bands and bottom-aligned evidence grades, packaged fictional demo at 85% UI scale",
+      "bytes": 174878,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "b838a83c21005996c50cb98f06b717b90e46aa421969d53e27e7b52af42358a4",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "week.png",
+      "description": "Your week as a regular Stats section",
+      "bytes": 145183,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "f51b036f4e969a1d65564b4e21530b8e5b7745694e5847e817c1fd29e5f5389c",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "experiments.png",
+      "description": "Experiments companion alongside Stats",
+      "bytes": 141399,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "5b15e94c9b071551dad00367be52acb4c53a21a0ed7e99459763dd7ba3b15b9b",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "history.png",
+      "description": "Study history with search and filters",
+      "bytes": 153324,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "b8665d346fb563192cd86f6615830c2cc54f414de44532c3752c22f636d4733f",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "settings.png",
+      "description": "Settings search and defaults",
+      "bytes": 160353,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "b4e48a04cf0651d1168791a03d2acf9170de8388b37beb6e464a35dd89ba0dec",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "reminders.png",
+      "description": "Optional Windows reminder controls with isolated fictional demo records",
+      "bytes": 159089,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "9f34ccf502575ae3e119103b813496e12e9e3c2ae8b20172a3ebac0faf05eb71",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "backup.png",
+      "description": "Database backup and restore controls",
+      "bytes": 118928,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "42d922ddae63a489ec73c108e54bd82cfeacf4802dfc9882c7805250918943b7",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "floating-ready.png",
+      "description": "Actual floating panel before starting a fictional session",
+      "bytes": 10362,
+      "width": 370,
+      "height": 149,
+      "sha256": "39dc9e610232173ef0407b0c3dd890890fbb7f4cc06ca002b0e7c54b49996888",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "preparation.png",
+      "description": "Quiet signals preparation with genuine personal suggestions and a neutral book tip",
+      "bytes": 54035,
+      "width": 1129,
+      "height": 815,
+      "sha256": "acf3f64b3ba97e36acfb3363cda9247e918cddd1de458ab407d771b64463a90e",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "floating-timer.png",
+      "description": "Actual running floating timer during a fictional Flow session",
+      "bytes": 11531,
+      "width": 370,
+      "height": 148,
+      "sha256": "383f252159369760dc2176a7a55b6fd082356070e15073fb999ccabc1280dc3f",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "focus.png",
+      "description": "Actual short fictional Flow session",
+      "bytes": 41383,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "69140fe9381e52a03e5704c8fe38ceff3bda05778681930bb455f2909a6d61f6",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "recall.png",
+      "description": "Actual recall stage with typed fictional study reflection",
+      "bytes": 69493,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "f353edbb2d949b344253b10cb87a1361b66fe16a8ba323f938c11fb020818099",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "log.png",
+      "description": "Configurable session logging",
+      "bytes": 129585,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "413644895d3357428252f60798da35c59d88b02d9b17bb1b689d5e5feff8921c",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "mode-fixed.png",
+      "description": "Fixed planning controls with actual fictional demo subject history",
+      "bytes": 31850,
+      "width": 480,
+      "height": 589,
+      "sha256": "4daaeeea8c938ed02a086b37db3c375839a1825163c7a1df94289203fc5344a1",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "session-fixed.png",
+      "description": "Actual Fixed session with naturally elapsed time",
+      "bytes": 31691,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "4efd9b22d25b2674c185305427fb94a84392adc67a37a00a2739f7a0bd92b216",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "mode-adaptive.png",
+      "description": "Adaptive planning controls with actual fictional demo subject history",
+      "bytes": 29069,
+      "width": 480,
+      "height": 585,
+      "sha256": "408b4dca1cb3d9ef27df0e813ea1a2aec10979c0b4ef9a40dea25e6bd23a2c57",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "session-adaptive.png",
+      "description": "Actual Adaptive session with naturally elapsed time",
+      "bytes": 33654,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "41f25dbd83487db9ff35f948a12b9d51f31b683676bc481afd1d5228e7526118",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "mode-flow.png",
+      "description": "Flow planning controls with actual fictional demo subject history",
+      "bytes": 32437,
+      "width": 480,
+      "height": 589,
+      "sha256": "41030747548be1821e31f7254b5ffd0cb80f03263c357244023bb7bdecc9cbd1",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "session-flow.png",
+      "description": "Actual Flow session with naturally elapsed time",
+      "bytes": 32682,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "ed5914863feafdfaae3703d4dc349a8ab687fd2d679cb1e20fe45859ef9d2dfe",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "obsidian.png",
+      "description": "Real note saved to an isolated fictional Demo Vault; no real vault accessed",
+      "bytes": 73879,
+      "width": 896,
+      "height": 1052,
+      "sha256": "d65060b43a922e8b820ecac14b61c59bb65793a5ef207631c481882bcd017cf6",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "session-log.png",
+      "description": "Actual configurable log after the fictional study session",
+      "bytes": 109560,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "8068e60133367eeeeb9403c87faa77b7fecebb62313f7ef2e418e39f37ed0191",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "rest.png",
+      "description": "Actual rest planning after recall and logging",
+      "bytes": 38901,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "c71211ba11f3a5159beb03a2b12d410d7883bd4e8a9c0a121b10a2ad33805b21",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "history-notes.png",
+      "description": "Real History view of a generated fictional historical session with a newly seeded example recall and note saved to isolated Demo Vault; not a timed real learner session",
+      "bytes": 156304,
+      "width": 1402,
+      "height": 1564,
+      "sha256": "4fd9b9c9656e469d5e41dd03721ee0cdcc83d9e2114fcda3fff6f37c2c2862f6",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "stats-conditions.png",
+      "description": "Actual condition comparisons from fictional demo ratings",
+      "bytes": 179671,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "8d1f3dec726b92e9cbe47a6c9030ae039f51855e179f9813d400074b5494cdfd",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "stats-timing.png",
+      "description": "Actual timing comparisons from fictional demo ratings",
+      "bytes": 170231,
+      "width": 1750,
+      "height": 1100,
+      "sha256": "84ec9e3654a78eb6fa5f4353fab5370deb53c1b5811401fd0c5ec57434af6fea",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "stats-walkthrough.png",
+      "description": "Guided walkthrough using the actual fictional comparison records",
+      "bytes": 187494,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "ec80d4ab2a40ff553423402169248e5c447c4ba9de34fe87f4764a6d948440e3",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "stats-records.png",
+      "description": "Expanded supporting records and evidence grade in the actual packaged app",
+      "bytes": 172365,
+      "width": 1985,
+      "height": 1185,
+      "sha256": "5abd75c0454737a7f221580007e5f082da3bd8c4268514698d77b38d14f9960e",
+      "captureVersion": "0.1.0-beta.1"
+    },
+    {
+      "file": "playbook.png",
+      "description": "Saved study discovery and current evidence",
+      "captureVersion": "0.1.0-beta.6",
+      "bytes": 148522,
+      "width": 1600,
+      "height": 1125,
+      "sha256": "072945d2c5322a096f4d79490313a974518560a715f11d9f938754742ce70c49"
+    },
+    {
+      "file": "weekly-decisions.png",
+      "description": "Weekly decisions using fictional records",
+      "captureVersion": "0.1.0-beta.6",
+      "bytes": 166377,
+      "width": 1600,
+      "height": 1125,
+      "sha256": "1b8e1fef1a7217fd14305dc83887116f109fa86f722ca924477dded299216ef0"
+    },
+    {
+      "file": "about.png",
+      "description": "About Learnalyt and optional support",
+      "captureVersion": "0.1.0-beta.6",
+      "bytes": 171352,
+      "width": 1600,
+      "height": 1125,
+      "sha256": "33d1058c3e19e82d781d4189116e9c60aeb651b91146b5beb2d0e5dd8e1fcd09"
+    },
+    {
+      "file": "review-optional.png",
+      "description": "Optional timed review before the session log",
+      "captureVersion": "0.1.0-beta.5",
+      "bytes": 70164,
+      "width": 1375,
+      "height": 1000,
+      "sha256": "1bf1b051b861212acb527ef8dddeb39be8d5241706a2896c1373c323414c206b"
+    },
+    {
+      "file": "compact-log.png",
+      "description": "Compact log with detailed questions available",
+      "captureVersion": "0.1.0-beta.5",
+      "bytes": 96325,
+      "width": 1375,
+      "height": 1000,
+      "sha256": "02f9d98137a67acf1385b672293f8f6afa843e941e6b826f66cee2c2e9045fda"
+    }
+  ]
+}

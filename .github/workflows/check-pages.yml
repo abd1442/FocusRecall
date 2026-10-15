@@ -1,0 +1,32 @@
+name: Check product pages
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links and distribution boundaries
+        shell: node {0}
+        run: |
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const cp = require('node:child_process');
+          const assert = require('node:assert/strict');
+          const files = cp.execFileSync('git', ['ls-files'], {encoding:'utf8'}).trim().split('\n');
+          for (const file of files) {
+            assert.ok(!/^(?:src|node_modules|publication-local|out)\//.test(file), file);
+            assert.ok(!/\.(?:exe|db|sqlite3?|pem|pfx|key|zip)$/i.test(file), file);
+          }
+          for (const file of files.filter(f => f.endsWith('.md'))) {
+            const text = fs.readFileSync(file, 'utf8');
+            const links = [...text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)].map(m => m[1]);
+            links.push(...[...text.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m => m[1]));
+            for (const link of links) {
+              if (/^(?:https?:|#)/.test(link)) continue;
+              const target = path.resolve(path.dirname(file), decodeURIComponent(link.split('#')[0]));
+              assert.ok(target.startsWith(process.cwd() + path.sep) && fs.existsSync(target), file + ': ' + link);
+            }
+          }
+          console.log('Product links and distribution boundaries passed.');

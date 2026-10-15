@@ -1,100 +1,97 @@
 # Learnalyt
 
-**Study with focus. Discover what works for you.**
+**Study with focus. Understand your habits. Keep your data.**
 
-[Windows beta](https://github.com/abd1442/Learnalyt/releases) · [User guide](USER_GUIDE.md) · [Help](SUPPORT.md)
+A free Windows app for study timers, recall notes and personal insights.
 
-*Windows x64 · Private draft · Unsigned beta*
+[Windows downloads](https://github.com/abd1442/Learnalyt/releases) · [User guide](USER_GUIDE.md) · [Suggest an improvement](https://github.com/abd1442/Learnalyt/issues)
 
-![Learnalyt Home: subjects, session planning and study progress](screenshots/home-light.png)
+![Choose subjects and plan a study session in Learnalyt](screenshots/home-light.png)
 
-Choose a subject. Set your aim. Build a study habit you can see.
+## Why I built it
 
-## Choose your pace
+I made Learnalyt for myself. I couldn't find an app that combined the study timer, detailed session records and personal insights I wanted, while keeping that information on my own computer.
+
+I wanted to understand my studying without handing my study history and private notes to a service. Learnalyt grew from that need.
+
+## Study at your own pace
 
 | Flow | Fixed | Adaptive |
 | --- | --- | --- |
-| ![Flow planning](screenshots/mode-flow.png) | ![Fixed planning](screenshots/mode-fixed.png) | ![Adaptive planning from demo history](screenshots/mode-adaptive.png) |
-| Count up. Keep going while you are focused. | Choose a duration and count down. | Get a subject-specific target from recent good sessions. |
+| ![Flow timer setup](screenshots/mode-flow.png) | ![Fixed countdown setup](screenshots/mode-fixed.png) | ![Adaptive target setup](screenshots/mode-adaptive.png) |
+| Count up and keep going. | Count down from your chosen duration. | Use a target informed by your confirmed study records. |
 
-Adaptive uses your default until enough qualifying sessions exist. Every mode lets you decide when to finish.
+## Keep the timer beside your work
 
-## A complete study session
-
-**Prepare → Focus → Recall → Log → Rest**
-
-Clear distractions, set an aim, then start when you are ready.
-
-![Preparation before the timer starts](screenshots/preparation.png)
-
-### Recall what you learned
-
-Write or draw from memory.
-
-![Filled recall page with fictional study notes](screenshots/recall.png)
-
-### Record how it went
-
-Choose the questions you want to track.
-
-![Configurable session logging](screenshots/session-log.png)
-
-### Take a break
-
-Rest, then continue or finish your sitting.
-
-![Rest planning](screenshots/rest.png)
-
-## Keep your controls close
-
-| Before you start | While you work |
+| Get ready | Keep studying |
 | --- | --- |
-| ![Floating ready panel](screenshots/floating-ready.png) | ![Running floating timer](screenshots/floating-timer.png) |
+| ![Floating preparation panel](screenshots/floating-ready.png) | ![Floating study timer](screenshots/floating-timer.png) |
 
-Mark distractions, switch subjects and park thoughts without leaving your work.
+Mark a distraction, switch subjects or park a thought without leaving your work.
 
-## Turn records into useful patterns
+## Remember more than the time spent
 
-![Personal study insights](screenshots/insights.png)
+**Study → Review → Log → Rest → Next session**
 
-| Your question | What to explore |
-| --- | --- |
-| When do I report better focus? | Compare start times before planning your harder work. |
-| Which study conditions suit me? | Compare locations, sound, sleep and other logged conditions. |
-| What interrupts my sessions? | Review distraction reasons, lost time and uninterrupted stretches. |
-| Am I building a routine? | Follow weekly time, subject progress and the yearly heatmap. |
-| What should I try next? | Pick one change, save an experiment and compare later sessions. |
+Review with an optional timer. Write, draw or connect ideas in your own way.
 
-### Conditions and outcomes
+![Optional review with typed recall notes](screenshots/review-optional.png)
 
-![Condition comparisons using fictional ratings](screenshots/stats-conditions.png)
+Record a few answers, or open the details you care about. Previous suggestions stay unconfirmed until you accept them.
 
-### Time patterns
+![Compact session log with optional detailed questions](screenshots/compact-log.png)
 
-![Focus ratings by time and day](screenshots/stats-timing.png)
+Choose your rest duration and optional playlist, then start the break. Continue with the same subject or choose another.
 
-*Patterns reflect your recorded ratings, not proof of cause.*
+## Find patterns worth testing
 
-## Return to what you learned
+Compare your **reported focus and recall** across study conditions, times and activities. See the supporting records and how much evidence a finding has.
 
-Reopen a session's timeline, recall and saved notes in History. Find unfinished work or something worth reviewing.
+![Visual study-condition comparisons](screenshots/stats-conditions.png)
 
-<img src="screenshots/history-notes.png" alt="History session with its recall and saved note" width="820">
+**For example:** compare your library and home sessions before trying a different study place. Patterns describe your records, not proof of cause.
 
-## Save notes to Obsidian
+![Study patterns by time and weekday](screenshots/stats-timing.png)
 
-Send text and drawings to a chosen Markdown note and heading. A local copy stays in Learnalyt.
+## Build your own study playbook
 
-<img src="screenshots/obsidian.png" alt="A note successfully saved to the fictional Demo Vault" width="640">
+Save useful findings. Recheck their evidence as your records grow. See when support weakens or a finding changes direction.
 
-## Make it yours
+![Saved personal study findings and current evidence](screenshots/playbook.png)
 
-- Organize subjects, resources and progress in **Library**.
-- Set optional daily or personal study reminders.
-- Choose light/dark themes, colours, fonts and interface sizes.
-- Back up and restore your local study records.
-- Export reports as PNG, Markdown or PDF.
+## Make the next week useful
 
-*All screenshots are real app captures with fictional demo data. The Obsidian example uses an isolated Demo Vault.*
+See **what changed**, **what seems to be working**, and **what is worth trying next**. Optional experiments help you try one practical change using records you already collect.
 
-[Install and get started](USER_GUIDE.md#start-studying) · [Beta details](RELEASE_NOTES.md) · [Privacy](PRIVACY.md)
+![Weekly decision summary](screenshots/weekly-decisions.png)
+
+## Return to earlier learning
+
+Search past sessions, revisit recall and notes, or return to an idea you marked for review.
+
+![Session history with recall notes](screenshots/history-notes.png)
+
+## Keep a copy in Obsidian
+
+Send writing and drawings to a note you choose. Nothing is sent automatically.
+
+![An explicit note export to an isolated demonstration vault](screenshots/obsidian.png)
+
+## Your records stay yours
+
+- Local study records, notes and backups. No account or required subscription.
+- Optional tracking, reminders and exports stay under your control.
+- Light and dark themes, adjustable text and interface sizes.
+- Local backup and restore, plus PNG, Markdown and PDF reports.
+
+[Privacy details](PRIVACY.md) · [Installation and backups](USER_GUIDE.md#install-on-windows) · [Build availability](RELEASE_NOTES.md)
+
+*Real app screenshots with fictional records. Obsidian uses an isolated demonstration vault.*
+
+Have an idea that would make studying easier? [Suggest it here](https://github.com/abd1442/Learnalyt/issues). Please leave private notes and study records out of reports.
+
+---
+
+**[Support Learnalyt on Ko-fi](https://ko-fi.com/abd442)**
+
+Donations are optional. Learnalyt remains free to use.

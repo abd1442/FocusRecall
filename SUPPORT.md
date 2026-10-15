@@ -1,11 +1,13 @@
-# Help with Learnalyt
+# Help and ideas
 
-Start with the [user guide](USER_GUIDE.md), especially Troubleshooting and Backups. Check the [beta status](RELEASE_NOTES.md) before upgrading.
+[Read the user guide](USER_GUIDE.md) or [open an issue](https://github.com/abd1442/Learnalyt/issues).
 
-For an ordinary bug, open an issue in this repository when it is available. Include Learnalyt version, Windows version, what you expected, what happened and minimal steps using fictional subjects. Redact screenshots. There is no guaranteed response time.
+For a bug, include your Learnalyt version, Windows version, what you expected and steps to reproduce it. Fictional subjects and redacted screenshots are best.
 
-Never attach your database, backup, vault, credentials, private notes or window-title history. For a security issue, request a private contact channel without posting exploit details. Use GitHub private vulnerability reporting only if the owner has enabled it.
+For an improvement, tell me what you were trying to do, what got in the way and what would help. Useful examples matter more than a long feature list.
 
-If data will not open, keep the entire data folder and existing backups. Do not reset it, delete WAL/SHM files or manually replace an open database. Request help without uploading the records. New profiles use %APPDATA%\Learnalyt; upgraded profiles may retain their earlier compatible location.
+Never upload a database, backup, vault, credentials, private notes or window-title history. For a security concern, request a private contact route without posting exploit details.
 
-This repository is for installers and user help. Application development remains in a separate private repository.
+If your records will not open, keep the data folder and backups. Do not reset the app or replace a database while it is running.
+
+[Optional support on Ko-fi](https://ko-fi.com/abd442)

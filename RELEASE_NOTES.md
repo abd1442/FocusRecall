@@ -1,31 +1,15 @@
-# Learnalyt 0.1.0-beta.1
+# Windows builds
 
-Clearer Stats takeaways, guided explanations and graded evidence for study comparisons and distractions. Evidence badges stay at the bottom of each card. Preparation uses Quiet signals with a neutral book tip. Thought capture remains in the floating timer.
+The next review build includes saved discoveries, clearer weekly decisions, optional returns to earlier recall, a concise About page and guided Windows setup.
 
-Private beta candidate prepared for an unpublished draft prerelease. Public distribution is not approved.
+## Download availability
 
-Home keeps a compact year heatmap at the bottom of the visible left column. Flexible space above it gives way as the subject list grows, pushing the heatmap down naturally. Preparation has two fixed reminders and up to five optional checks supported by repeated recent records for the selected subject and activity. Sparse histories show only the defaults.
+This repository is private. Its existing Windows beta is still an unpublished draft. New source and screenshots do not replace that installer. Use the version and checksum attached to the same release when a build is made available.
 
-Optional Windows study reminders include a chosen daily time and an occasional personal nudge when your records support higher focus around the current time. Both start off. Enabling either keeps Learnalyt in its tray when its window closes. Quit stops reminders; no Windows startup task is installed. Quiet hours, pauses, test delivery and anti-spam limits are included. Windows controls banner visibility.
+## Updating
 
-This Windows x64 beta brings together focused study, optional preparation, Flow/Fixed/Adaptive planning, a floating timer, recall with writing and drawing, configurable logging, rest, organized subjects, notes and editable History. Explore personal comparisons, Your week, experiments, saved views and exported reports.
+Quit Learnalyt, including its tray icon, before running a newer installer. For an existing personal installation, keep **Only for me** and the existing destination. **All users** is intended for a shared installation and may require administrator approval; it does not share study records between Windows accounts. Do not switch installation scope to move an existing profile.
 
-Security and reliability work includes restricted Electron IPC and navigation, isolated report rendering, transactional session and note changes, safer backup validation and restore, accurate time across subject switches, and modal keyboard handling. Electron is 44.7.2. Automated checks pass, but do not prove every native behavior.
+The current guided installer has not been installed automatically. Clean-machine installation, all-users elevation and upgrade checks remain separate verification steps. The installer is unsigned. A checksum verifies the downloaded bytes; it is not a publisher signature.
 
-## Before broader distribution
-
-Clean Windows installation, installed upgrades, uninstall/reinstall data retention, native file dialogs, physical sleep/wake, mixed-DPI/multi-monitor behavior, Obsidian URI handling and screen-reader checks are still pending. The installer is unsigned. Public distribution awaits these checks and the owner's approval.
-
-Back up before updating. Keep existing profile data and external vault backups. Existing profiles retain compatible paths; fresh profiles use the Learnalyt folder. A severely corrupt original database may require assistance using saved backups. Do not delete it or replace a database while the app is running.
-
-Insights describe associations, not causal advice or objective learning performance. Large histories can take time to analyze. No account, cloud sync, phone app, wearable integration or AI service is included.
-
-## Verify a download
-
-Compare the downloaded EXE's SHA-256 with SHA256SUMS.txt from the same release. In PowerShell, run:
-
-```powershell
-Get-FileHash .\Learnalyt-0.1.0-beta.1-setup.exe -Algorithm SHA256
-```
-
-Checksum verification detects a changed download; it is not a digital publisher signature. This beta has no signed publisher identity.
+All insights remain observational. Local records and backups are not encrypted by Learnalyt. Keep backups and protect your Windows account.
