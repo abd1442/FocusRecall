@@ -292,7 +292,7 @@ Restore validates integrity/schema/relations, rejects incompatible/corrupt backu
 | --- | --- |
 | Saved sessions, subjects, recall/logs, local notes/drawings, settings/presets and tools | Obsidian Markdown/PNGs, exported reports, `config.json` demo choice, Chromium/Windows state, unsaved forms |
 
-Normal profile: `%APPDATA%\Learnalyt` (or the retained legacy `%APPDATA%\trifocus` profile). Backup folders are `backups/<database-name>/automatic`, `manual` and `safety`. Personal/demo backups are separate. Never delete live WAL/SHM files or manually replace an open database. A startup failure does not reset data; keep the folder/backups and use the offered backup-folder access. A full corrupt-original cold-start restore wizard is not provided.
+Normal profile: `%APPDATA%\Learnalyt` (or the retained legacy `%APPDATA%\trifocus` profile). Backup folders are `backups/<database-name>/automatic`, `manual` and `safety`. Personal/demo backups are separate. Never delete live WAL/SHM files or manually replace an open database. A startup failure does not reset data; keep the folder/backups and use the offered backup-folder access. If a database cannot be opened, keep the original data folder and backups and contact support before replacing files.
 
 </details>
 
@@ -349,7 +349,7 @@ For a bug, include version, Windows version, timer mode and minimal fictional st
 </details>
 
 <details>
-<summary>Your study playbook</summary>
+<summary>Save and revisit useful findings</summary>
 
 In Stats, use **Save finding** to keep a useful discovery, **Hide** to set it aside, or **Mark checked** to remember that you have reviewed it. Hidden findings can be restored. Your choices only affect the display, not your study records or the analysis.
 
