@@ -1,5 +1,5 @@
 name: Suggest an improvement
-description: Help make Learnalyt more useful for studying.
+description: Help make FocusRecall more useful for studying.
 body:
   - type: textarea
     id: need

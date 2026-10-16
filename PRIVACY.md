@@ -1,11 +1,14 @@
-# Privacy in Learnalyt
+FOCUSRECALL PRIVACY AND LOCAL DATA
+15 October 2026
 
-Learnalyt stores study records, notes, drawings, settings and saved tools locally. No account or application backend is required. The app does not include cloud synchronization or a hosted AI service.
+FocusRecall stores study history, responses, settings, recall notes and drawings in a local SQLite database under your Windows user profile. It requires no account and includes no application telemetry, advertising SDK, cloud sync, update polling or automatic update downloads.
 
-Study reminders use only Windows active/idle status and local focus ratings; they do not read app names or window titles. Both reminder types are optional and start off.
+Foreground app/window-title tracking is optional. It starts enabled on fresh profiles, with a clear switch and disclosure in the skippable first-use guide. Existing profiles retain their saved choice; older profiles without a choice stay off. You can turn tracking off in Settings at any time. If enabled, sensitive window titles can become part of local study records. Disabling collection does not delete previously recorded history. Manual distractions and timers do not require foreground tracking. Optional study reminders are local, require the app to be running and do not inspect window titles to determine PC activity.
 
-Foreground process and window-title tracking is off by default. If you enable it, titles can contain private document names or other sensitive information. Turning it off stops collection and retains earlier records. Manual distraction marking still works.
+Sending a note to Obsidian writes to the selected local vault only when you request it. Reports, note copies and backup exports are also user actions. A vault, backup or export folder may be synced by OneDrive, Dropbox or another service you use. FocusRecall does not control that service. Clicking a link opens your browser or an external application, which may connect to its own servers. Ko-fi is optional and opens only when clicked; no payment information is handled by FocusRecall. Windows networking, spelling services, notifications and crash handling follow Windows settings. These statements describe FocusRecall's implementation, not a promise that your operating system or other apps never communicate.
 
-Opening a supported external resource uses its Windows application or browser. Explicit note sends write to your selected Obsidian destination. External apps, browsers and GitHub have their own privacy practices. Keep separate backups of vaults and exports.
+Databases and backups are not encrypted by FocusRecall. Anyone with sufficient access to your Windows account, storage or backup files may read them. Use appropriate Windows account permissions, device security and secure backup storage. No extra permissions or cloud service are required for normal studying. An all-users installation shares application files, not a common study database; profiles remain separate by Windows account. Administrators can access local files where Windows permits.
 
-Database snapshots can contain all saved local records. Treat them as private. Local storage is not application-level encryption; Windows account and disk protection matter. Never post a database or backup in an issue. Demo screenshots in this repository contain generated fictional data.
+Local backups include saved database content, including settings and local notes/drawings. They do not include your external Obsidian vault, separate drawing/export files, configuration outside the database or unsaved forms. Restore validates a compatible backup, asks for confirmation and creates a safety backup before replacement. Keep additional independent backups. Uninstall normally preserves your local profile. Do not delete profile folders to perform an update.
+
+Please remove private notes, titles, paths and identifying screenshots before reporting a problem. Never upload your database or backup to a public issue. GitHub and Ko-fi apply their own terms and privacy policies when you choose to visit them.

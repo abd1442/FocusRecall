@@ -1,5 +1,5 @@
 name: Report a problem
-description: Describe a reproducible Learnalyt problem without private data.
+description: Describe a reproducible FocusRecall problem without private data.
 body:
   - type: markdown
     attributes:
@@ -7,7 +7,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Learnalyt and Windows versions
+      label: FocusRecall and Windows versions
     validations:
       required: true
   - type: textarea

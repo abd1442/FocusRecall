@@ -1,0 +1,147 @@
+{
+  "product": "FocusRecall",
+  "version": "0.1.0-beta.24",
+  "fictionalOnly": true,
+  "screenshots": [
+    {
+      "file": "home-light.png",
+      "description": "Current packaged FocusRecall Home, fictional demo data",
+      "sha256": "77ff4d7dbf416d73b5256d4e734c2ed252deffc2e4574bb905798248dfb1ba25"
+    },
+    {
+      "file": "home.png",
+      "description": "Dark Home",
+      "sha256": "853add5d62a9861e6bb892123bdff3104757f1ee6f220742d4e68987a98a32e7"
+    },
+    {
+      "file": "home-dark.png",
+      "description": "Dark Home",
+      "sha256": "1d8bf44648b162d6242e97cf3e406b671f715d546e18009c5c1baa5d0b7fd6b7"
+    },
+    {
+      "file": "library.png",
+      "description": "Library with fictional records",
+      "sha256": "3e82d5c29938b22cb36c8330efbfe955a27419e52e0bce835fbdc5536bf0beb7"
+    },
+    {
+      "file": "history.png",
+      "description": "History with fictional records",
+      "sha256": "4ecd4c15ebf11ec539543324089bdcc227f3e173e1f18470a807f3689c128ef2"
+    },
+    {
+      "file": "insights.png",
+      "description": "Stats with fictional records",
+      "sha256": "eff06d708c670145774c7a7332ec1f0078a725b540b1fe7251bb4a50226bd176"
+    },
+    {
+      "file": "stats.png",
+      "description": "Personal insights",
+      "sha256": "eff06d708c670145774c7a7332ec1f0078a725b540b1fe7251bb4a50226bd176"
+    },
+    {
+      "file": "stats-conditions.png",
+      "description": "stats-factors",
+      "sha256": "13998c3e607045824776abf26d9e1696945c42db2423c83ac7d4e69d96c6f130"
+    },
+    {
+      "file": "stats-time.png",
+      "description": "stats-time",
+      "sha256": "379483b2f42273c0ba0871d09025eae15cd3cadd121f05a386937f7486afac2a"
+    },
+    {
+      "file": "weekly-review.png",
+      "description": "stats-weekly",
+      "sha256": "7439b4567e7c9156b85cb833861e01aaeb2019def888bf8904030ed96d7b7930"
+    },
+    {
+      "file": "settings.png",
+      "description": "Current settings",
+      "sha256": "c552ab1f917ad1051d4c44a98300adf86a065bf9e2ed08807296380c967cc2e2"
+    },
+    {
+      "file": "about.png",
+      "description": "FocusRecall About and optional support",
+      "sha256": "4f63e7ac7e3d3d7a339310af969820d26c36fa0b57b6647aa91a939b1751a518"
+    },
+    {
+      "file": "license.png",
+      "description": "Offline FocusRecall EULA",
+      "sha256": "e02ac36e15b37dfd39f2679bc628153def15974515867842974254c3c8e0554b"
+    },
+    {
+      "file": "floating-ready.png",
+      "description": "Actual floating panel before study",
+      "sha256": "49fde8a52f22b40496b21f6bd04782fd46d32a4c4161a60b79a0c55338586edd"
+    },
+    {
+      "file": "floating-timer.png",
+      "description": "Actual naturally running floating timer",
+      "sha256": "5177adc77f16338a092e69422ba58770ace8b920e78684eb0cad3dcaca573111"
+    },
+    {
+      "file": "review-optional.png",
+      "description": "Approved optional timed review with rotating suggestions",
+      "sha256": "de6df65aed2bdfc4bdd8397267f47014b3202f14d4672bc242bf810dce85b201"
+    },
+    {
+      "file": "recall.png",
+      "description": "Typed fictional recall",
+      "sha256": "e9ec2876d3590dde8ed1607b5b06aef3555901381ce49500922123fd77d2de41"
+    },
+    {
+      "file": "compact-log.png",
+      "description": "Compact optional log",
+      "sha256": "bee215ce78ad02edb245540f1494ca36331855ca00bb9baca8e2eeca2255db52"
+    },
+    {
+      "file": "session-log.png",
+      "description": "Current session log",
+      "sha256": "bee215ce78ad02edb245540f1494ca36331855ca00bb9baca8e2eeca2255db52"
+    },
+    {
+      "file": "rest.png",
+      "description": "Rest length, suggestion and music setup",
+      "sha256": "2742dbb0d25321c3c33aa1a44983f4516b6a3424be253ca203399d577a3ad6e3"
+    },
+    {
+      "file": "rest-running.png",
+      "description": "Naturally running rest",
+      "sha256": "4772c77b0c933963a0c35b0a5b6bfb415e64d79107aad0914e10e522c12ac4ab"
+    },
+    {
+      "file": "next-session.png",
+      "description": "Fast next-session confirmation",
+      "sha256": "c96abebba851c69b1412a8dcb49220571e6974956b160d127f124e61e4ed010a"
+    },
+    {
+      "file": "history-notes.png",
+      "description": "History with fictional recall",
+      "sha256": "01a6100c3e2200b86a0a49bd6b3553cfbb4f438cf5d73b3d1426f5c091e12e50"
+    },
+    {
+      "file": "mode-flow.png",
+      "description": "Flow planning",
+      "sha256": "60566dcf96b265b216386cfd75978f815bd0bd32b27579599b9684d8fa13ff78"
+    },
+    {
+      "file": "mode-fixed.png",
+      "description": "Fixed planning",
+      "sha256": "4edbeff4e1492d565090076d4551fab207da060b83a962de744bc8b1a2f3e126"
+    },
+    {
+      "file": "mode-adaptive.png",
+      "description": "Adaptive planning",
+      "sha256": "49eba62c5ae8df4d807e2906d9d51fac2e6d6da67e313403c2c22749b591a19e"
+    },
+    {
+      "file": "preparation.png",
+      "description": "Actual preparation panel",
+      "sha256": "6a654fc1abe8e98f6bd2400cb667117e4a6186940650da85320a6a4c6f780750"
+    },
+    {
+      "file": "focus.png",
+      "description": "Naturally running study session",
+      "sha256": "f3b6f22df8a7df6ed625ed0f69b35dab8e656aca5ac10c79ad4040602b9dcb26"
+    }
+  ]
+}

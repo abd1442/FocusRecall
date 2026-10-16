@@ -1,1 +1,1 @@
-cde57422e3e1d4afcbb1b641c2f0d9c9da4d2ca7b5aa922f64b9c1a3a61334ff  Learnalyt-0.1.0-beta.1-setup.exe
+b681a978c77c6858b2a510ee84c4fb9f13d9b06398abf1579bbded90b93fd113  FocusRecall-0.1.0-beta.24-setup.exe
