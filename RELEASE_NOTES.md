@@ -1,10 +1,24 @@
-# FocusRecall beta.24
+# FocusRecall 0.1.0-beta.24 — Windows beta
 
-- Current FocusRecall branding and faithful thin F/R icon.
-- Removed the two large saved-findings and revisit panels from Stats; saved findings remain available from a compact button.
-- Added spacing between Stats sections.
-- Refreshed screenshots and consolidated the user instructions into the README.
+A free, closed-source Windows workspace for focused study, active recall and understanding your own study habits.
 
-Existing study history, notes, settings, backups and Obsidian links are preserved by the stable storage identity. Back up before updating, close the app and tray process, then install using the same scope and destination.
+## Included in this beta
 
-Windows x64 beta. Unsigned. Native install/uninstall and multi-account checks remain pending in a disposable Windows environment; packaged compatibility checks do not certify that native matrix.
+- Flow, Fixed and Adaptive timers with floating controls.
+- Optional timed review, typed or drawn recall, detailed logging, rest setup and fast next sessions.
+- Searchable History, local notes and explicit Obsidian exports.
+- Personal study patterns with supporting records, detailed comparisons, Weekly Review and optional experiments.
+- Light, dark and mixed palettes, straight or rounded corners and a compact sidebar.
+- Local backups and manual updates; no account or subscription.
+
+## Install or update
+
+Download `FocusRecall-0.1.0-beta.24-setup.exe` and `SHA256SUMS.txt` from this release. Back up in Settings, close the app and its tray process, then run the installer. Keep the same installation scope and destination when updating. Existing Learnalyt study history, notes, settings, backups and Obsidian links use the preserved data identity.
+
+## Known limitations
+
+- Windows x64 only. This beta is unsigned; Windows may show a publisher or reputation warning. Verify the official repository and checksum. Do not disable security protections.
+- Study patterns are observational and depend on the records you choose to collect. They are not proof of cause, medical advice or guarantees of learning.
+- Updates are manual. Local databases and backups are not encrypted by FocusRecall; keep backups secure.
+
+Read the [illustrated guide](README.md#using-focusrecall), [privacy statement](PRIVACY.md) and [license](EULA.txt). [Report a problem](https://github.com/abd1442/FocusRecall/issues) without sharing private study data.

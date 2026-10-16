@@ -6,7 +6,7 @@
 
 FocusRecall brings focused study, active recall and personal analytics into one Windows workspace. Build a useful record of how you study while keeping control of your data.
 
-**Windows x64 · Free to use · Local-first**
+**Windows x64 · Free to use · Closed-source · Local-first**
 
 [**Download the Windows beta →**](https://github.com/abd1442/FocusRecall/releases) · [Report a problem or suggest an improvement](https://github.com/abd1442/FocusRecall/issues) · [How to use it](#using-focusrecall)
 
@@ -64,12 +64,13 @@ The beta is currently unsigned, so Windows may show a reputation warning. Verify
 
 ## Using FocusRecall
 
-Open a topic for the instructions you need.
+Open a topic for illustrated instructions. For colours and corner styles, open **Make FocusRecall yours**.
 
+<a id="install-on-windows"></a>
 <details>
 <summary>Install on Windows</summary>
 
-Download the EXE from [Windows releases](https://github.com/abd1442/FocusRecall/releases) when a build is available. Quit FocusRecall and its tray process before updating. Keep a verified backup of your records.
+Download the EXE from [Windows releases](https://github.com/abd1442/FocusRecall/releases). Quit FocusRecall and its tray process before updating. Keep a verified backup of your records.
 
 For a new installation, the guided installer offers **Only for me** by default, or **Anyone who uses this computer** with administrator approval when required. Choose the destination and desktop shortcut. For an update, keep the same installation scope and destination. Installing for all users does not combine their study records; each Windows account keeps its own profile. Do not change scope to move an existing profile.
 
@@ -77,6 +78,7 @@ The installer is unsigned. Use the checksum supplied with the exact release you 
 
 </details>
 
+<a id="first-use-guide"></a>
 <details>
 <summary>First-use guide</summary>
 
@@ -84,6 +86,7 @@ New profiles open a skippable first-session walkthrough. Choose Show me and foll
 
 </details>
 
+<a id="find-your-way"></a>
 <details>
 <summary>Find your way</summary>
 
@@ -102,6 +105,7 @@ New profiles open a skippable first-session walkthrough. Choose Show me and foll
 
 </details>
 
+<a id="organize-your-library"></a>
 <details>
 <summary>Organize your Library</summary>
 
@@ -116,8 +120,11 @@ Archive hides an item from ordinary active selection while keeping records. **De
 
 Add a resource as a URL or file path. Opening it delegates to Windows or your browser. Local file paths work only where those files exist; avoid sharing private paths in issue reports.
 
+![Subjects and categories in the Library](screenshots/library.png)
+
 </details>
 
+<a id="start-studying"></a>
 <details>
 <summary>Start studying</summary>
 
@@ -129,8 +136,7 @@ Select a subject on Home and press **Start**. On smaller windows, a compact Star
 | Fixed | Countdown planning around a chosen target |
 | Adaptive | Uses qualifying previous study to suggest a target; the UI distinguishes actual samples from example dots/defaults |
 
-| Flow planning | Fixed planning | Adaptive planning |
-| --- | --- | --- |
+
 
 Adaptive is a planning aid, not a prediction of learning quality. The target is not a forced end to study. You control when to finish.
 
@@ -145,20 +151,29 @@ Personal checks use active categorical setup/detail choices from the last 90 day
 
 The preparation sheet uses interface scale, independently of the small timer's size setting. It should return to the saved timer dimensions/position afterward. Multi-monitor movement/focus/scale behavior still needs native release verification.
 
+![Flow timer planning](screenshots/mode-flow.png)
+
+![Fixed timer planning](screenshots/mode-fixed.png)
+
+![Adaptive timer planning](screenshots/mode-adaptive.png)
+
 </details>
 
+<a id="floating-controls"></a>
 <details>
 <summary>Floating controls</summary>
 
 Keep FocusRecall within reach while you work in another app.
 
-| Before starting | During study |
-| --- | --- |
+
 
 Press **Start** to prepare, then **Ready to start** to begin timing. Use **Distracted**, **Switch** and **Finish** from the running panel. Its thought icon parks a thought; the main study screen keeps only the three session controls.
 
+![Optional preparation before starting](screenshots/preparation.png)
+
 </details>
 
+<a id="during-study"></a>
 <details>
 <summary>During study</summary>
 
@@ -174,8 +189,11 @@ Optional **stuck** and **resisted distraction** markers record moments for later
 
 Default shortcuts are **F8** Distracted/Back, **F10** Switch and **F7** Park a thought. Stuck/resisted are unassigned by default. F9 is not assigned. Settings can change/disable shortcuts; another app may already own a key. While the main Focus screen has focus and no text input/dialog is active, Space also toggles Distracted/Back.
 
+![Study session controls](screenshots/focus.png)
+
 </details>
 
+<a id="recall-log-and-rest"></a>
 <details>
 <summary>Recall, log and rest</summary>
 
@@ -201,8 +219,15 @@ Continue to the log and save activity, progress, goal result and selected questi
 
 **Continue to rest** opens rest setup before the countdown starts. Choose a duration and optional playlist, then **Start rest**. After rest, **Continue to next session** opens the subject confirmation screen. **Start next session** begins immediately; **Review preparation** is optional. **Finish studying** ends an active break and records its elapsed time. Record what actually happened or skip it. Planned rest is not measured recovery; rest comparisons use recorded actual rest. Continue to another session or end the sitting. Optional music/chime controls are in Settings and can depend on your Windows/media setup.
 
+![Optional review timer and recall guidance](screenshots/review-optional.png)
+
+![Rest timer and a suggestion away from screens](screenshots/rest-running.png)
+
+![Confirm the subject and begin the next session](screenshots/next-session.png)
+
 </details>
 
+<a id="history-and-recovery"></a>
 <details>
 <summary>History and recovery</summary>
 
@@ -214,8 +239,11 @@ Subject corrections move block-owned notes atomically. Invalid dates are rejecte
 
 After interruption, the app offers recovery for running work and unfinished recall/log/rest. Choose **Resume** to continue, or **Leave for later** to keep it pending in History. Persisted drafts survive restarts; unsaved forms elsewhere may not. Unstarted preparation is abandoned on restart without a study session. Recovery excludes application downtime. Related records and saved workflow state commit together, so a failed transition can be retried.
 
+![Search and revisit previous sessions](screenshots/history.png)
+
 </details>
 
+<a id="check-in-and-follow-your-study-day"></a>
 <details>
 <summary>Check in and follow your study day</summary>
 
@@ -228,6 +256,7 @@ An unsaved check-in spanning rollover keeps an explicit choice between the old a
 
 </details>
 
+<a id="read-your-stats"></a>
 <details>
 <summary>Read your Stats</summary>
 
@@ -245,8 +274,11 @@ Detailed sections remain visible: Overview, Subjects, What affects my study, My 
 
 Sparse or missing answers may yield no insight. Try recording consistent answers across several days rather than filling old defaults to make a chart appear. Large histories may take time to analyze; no universal instant-performance claim is made.
 
+![Time patterns from fictional study records](screenshots/stats-time.png)
+
 </details>
 
+<a id="your-week-experiments-and-saved-views"></a>
 <details>
 <summary>Your week, experiments and saved views</summary>
 
@@ -260,8 +292,11 @@ Use **Saved views** to save filters/analysis choices and the comparison outcome.
 
 In **Report**, export PNG, Markdown or PDF. Preview the scope and inspect for private titles/notes before sharing. Reports are separate files and are not included in database backups.
 
+![Review a study week and its supporting records](screenshots/weekly-review.png)
+
 </details>
 
+<a id="notes-and-obsidian"></a>
 <details>
 <summary>Notes and Obsidian</summary>
 
@@ -281,6 +316,7 @@ Changing a destination clears its old external link. A new link becomes availabl
 
 </details>
 
+<a id="backups-and-restore"></a>
 <details>
 <summary>Backups and restore</summary>
 
@@ -296,6 +332,7 @@ Normal profile: `%APPDATA%\Learnalyt` (or the retained legacy `%APPDATA%\trifocu
 
 </details>
 
+<a id="appearance-and-settings"></a>
 <details>
 <summary>Appearance and settings</summary>
 
@@ -307,8 +344,11 @@ Choose interface size to enlarge the app; writing size and timer panel size are 
 
 Automatic tracking starts on for new profiles, with a visible switch in the skippable first-use guide. Existing choices are preserved. Foreground process/window titles can be recorded locally; they may contain sensitive names. Disabling stops collection and keeps previous records. Do not attach window-title history or a personal database to a public issue. Local-first does not mean encrypted.
 
+![Settings with search and clear categories](screenshots/settings.png)
+
 </details>
 
+<a id="study-reminders"></a>
 <details>
 <summary>Study reminders</summary>
 
@@ -327,6 +367,7 @@ Use **Test notification** to check delivery without consuming your daily reminde
 
 </details>
 
+<a id="troubleshooting"></a>
 <details>
 <summary>Troubleshooting</summary>
 
@@ -344,10 +385,11 @@ Use **Test notification** to check delivery without consuming your daily reminde
 | Windows warns about publisher | Current installer is unsigned; obtain approved distribution/build provenance and do not disable protection |
 | No reminder appears | Enable a reminder, leave FocusRecall running in its tray, return to an active/unlocked PC and check pauses, Windows notifications and Do not disturb. Personal nudges also need sufficient focus records; use Test notification to check delivery |
 
-For a bug, include version, Windows version, timer mode and minimal fictional steps. Redact screenshots; never upload your database, vault or secrets. Read [Security](SUPPORT.md) for sensitive reports and [release checklist](RELEASE_NOTES.md) for what remains unverified.
+For a bug, include version, Windows version, timer mode and minimal fictional steps. Redact screenshots; never upload your database, vault or secrets. Read [Help and feedback](SUPPORT.md) before reporting a problem, and [release notes](RELEASE_NOTES.md) for current limitations.
 
 </details>
 
+<a id="save-and-revisit-useful-findings"></a>
 <details>
 <summary>Save and revisit useful findings</summary>
 
@@ -359,6 +401,7 @@ After saving a finding, use the compact **Saved findings** button beside Your st
 
 </details>
 
+<a id="a-weekly-decision"></a>
 <details>
 <summary>A weekly decision</summary>
 
@@ -366,6 +409,7 @@ After saving a finding, use the compact **Saved findings** button beside Your st
 
 </details>
 
+<a id="small-experiments-and-earlier-learning"></a>
 <details>
 <summary>Small experiments and earlier learning</summary>
 
@@ -375,6 +419,7 @@ For early histories, Stats shows recorded sessions, answered ratings and availab
 
 </details>
 
+<a id="about-and-optional-support"></a>
 <details>
 <summary>About and optional support</summary>
 
@@ -386,6 +431,7 @@ Use the top subject picker and **Start** button. **Timer options** opens a compa
 
 </details>
 
+<a id="make-focusrecall-yours"></a>
 <details>
 <summary>Make FocusRecall yours</summary>
 
@@ -394,6 +440,30 @@ Open **Settings → Appearance**. Use **All light**, **All dark**, **Light sideb
 **Follow Windows**, at the top right of Colours, switches with your Windows theme. Turn it off to keep the current appearance. Palette cards select a fixed appearance. Existing saved themes and settings remain compatible.
 
 Use the sidebar chevron to switch between the expanded sidebar and the compact icon rail. Fonts, writing size, shapes, spacing, individual colours and named presets remain available. Theme changes apply throughout the app without changing study records.
+
+All examples below are captured from the same Windows beta with fictional records. Change colours and corners independently; your study data stays the same.
+
+### Straight or rounded
+
+![Paper & Ink with straight corners](screenshots/appearance-paper-straight.png)
+
+![The same Paper & Ink workspace with rounded corners](screenshots/appearance-paper-rounded.png)
+
+### Light, dark and mixed workspaces
+
+![Graphite night: dark sidebar and workspace](screenshots/appearance-graphite.png)
+
+![Sage notebook in dark mode](screenshots/appearance-sage.png)
+
+![Light sidebar with a dark workspace](screenshots/appearance-light-sidebar.png)
+
+![Dark sidebar with a light workspace](screenshots/appearance-dark-sidebar.png)
+
+### More colour choices
+
+![Crimson accents on a light workspace](screenshots/appearance-crimson.png)
+
+![Violet sidebar with a light workspace](screenshots/appearance-violet.png)
 
 </details>
 

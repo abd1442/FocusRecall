@@ -24,9 +24,16 @@ jobs:
             const links = [...text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)].map(m => m[1]);
             links.push(...[...text.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m => m[1]));
             for (const link of links) {
-              if (/^(?:https?:|#)/.test(link)) continue;
-              const target = path.resolve(path.dirname(file), decodeURIComponent(link.split('#')[0]));
+              if (/^https?:/.test(link)) continue;
+              const [relative, anchor] = link.split('#');
+              const target = path.resolve(path.dirname(file), decodeURIComponent(relative || path.basename(file)));
               assert.ok(target.startsWith(process.cwd() + path.sep) && fs.existsSync(target), file + ': ' + link);
+              if (anchor) {
+                const body = fs.readFileSync(target, 'utf8');
+                const ids = new Set([...body.matchAll(/^#{1,6} (.+)$/gm)].map(m => m[1].toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ +/g, '-')));
+                for (const m of body.matchAll(/<a id="([^"]+)"/g)) ids.add(m[1]);
+                assert.ok(ids.has(anchor), file + ': missing anchor ' + link);
+              }
             }
           }
           console.log('Product links and distribution boundaries passed.');
