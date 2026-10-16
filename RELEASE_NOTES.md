@@ -1,4 +1,6 @@
-# FocusRecall — First Public Beta (0.1.0-beta.24)
+# FocusRecall 0.01 Beta
+
+Internal build: 0.1.0-beta.24.
 
 A free, closed-source Windows workspace for focused study, active recall and understanding your own study habits.
 
@@ -13,7 +15,7 @@ A free, closed-source Windows workspace for focused study, active recall and und
 
 ## Install or update
 
-Download `FocusRecall-0.1.0-beta.24-First-Public-Beta-Setup.exe` and `SHA256SUMS.txt` from this release. Back up in Settings, close the app and its tray process, then run the installer. Keep the same installation scope and destination when updating. Existing Learnalyt study history, notes, settings, backups and Obsidian links use the preserved data identity.
+Download `FocusRecall-0.01-Beta-Setup.exe` and `SHA256SUMS.txt` from this release. Back up in Settings, close the app and its tray process, then run the installer. Keep the same installation scope and destination when updating. Existing Learnalyt study history, notes, settings, backups and Obsidian links use the preserved data identity.
 
 ## Known limitations
 
