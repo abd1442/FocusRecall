@@ -149,7 +149,7 @@ Tick anything useful and press **Ready to start**. To avoid repeating this panel
 
 Personal checks use active categorical setup/detail choices from the last 90 days, exclude untouched answers and mixed-subject sessions, and need comparable records on both sides across multiple days with the direction repeated over time. They describe associations, not proof of cause or health advice. Checks do not record answers, change your planned setup or log a drink automatically. Settings can disable preparation; older custom checklist text is retained in saved settings. General learning tips rotate separately from these personal checks.
 
-The preparation sheet uses interface scale, independently of the small timer's size setting. It should return to the saved timer dimensions/position afterward. Multi-monitor movement/focus/scale behavior still needs native release verification.
+The preparation sheet uses interface scale, independently of the small timer's size setting. It should return to the saved timer dimensions/position afterward. After changing display scaling, check the floating panel position on your chosen monitor.
 
 ![Flow timer planning](screenshots/mode-flow.png)
 
@@ -177,7 +177,7 @@ Press **Start** to prepare, then **Ready to start** to begin timing. Use **Distr
 <details>
 <summary>During study</summary>
 
-*The short elapsed time is an actual fictional QA session, not a manufactured study result.*
+*The short elapsed time is an actual fictional demonstration session, not a manufactured study result.*
 
 **Distracted** pauses focused time; **Back** resumes it and can ask for a reason. A long absence may prompt you to continue or end where you left. Manual distraction recording works even when automatic tracking is off.
 
@@ -249,7 +249,7 @@ After interruption, the app offers recovery for running work and unfinished reca
 
 Use **Check in** on Home for daily answers, or **Skip today**. Daily fields and session fields can have different scopes. Change the study-day boundary and week start in Settings to fit your schedule. A study day can differ from the calendar date.
 
-An unsaved check-in spanning rollover keeps an explicit choice between the old and new study day. Physical sleep/wake and timezone changes still require release checks. History groups a sitting by its start day; daily statistics use part-start day, so cross-boundary views may differ.
+An unsaved check-in spanning rollover keeps an explicit choice between the old and new study day. History groups a sitting by its start day; daily statistics use part-start day, so cross-boundary views may differ.
 
 
 *Use the year arrows and day details to explore recorded focused time. The heatmap is not a learning score.*
@@ -340,7 +340,7 @@ Normal profile: `%APPDATA%\Learnalyt` (or the retained legacy `%APPDATA%\trifocu
 
 Use **Appearance** for light/dark/system, independent accents, high contrast, timeline colours, interface/writing/panel sizes, fonts, shape and density. Expand custom options for exact colours/fonts and saved presets/import/export. Custom low-contrast combinations can warn. Installed fonts depend on your computer. Timeline colours apply consistently across subject history/live bars. Reduced-motion behavior follows Windows preferences.
 
-Choose interface size to enlarge the app; writing size and timer panel size are independent. The default timer-mode setting includes real/examples distinctions for Adaptive. Question previews and rest calculators teach behavior without modifying your records. Form dialogs contain keyboard focus, support Escape and restore focus on closing. Screen-reader and device-specific behavior still need manual verification.
+Choose interface size to enlarge the app; writing size and timer panel size are independent. The default timer-mode setting includes real/examples distinctions for Adaptive. Question previews and rest calculators teach behavior without modifying your records. Form dialogs contain keyboard focus, support Escape and restore focus on closing.
 
 Automatic tracking starts on for new profiles, with a visible switch in the skippable first-use guide. Existing choices are preserved. Foreground process/window titles can be recorded locally; they may contain sensitive names. Disabling stops collection and keeps previous records. Do not attach window-title history or a personal database to a public issue. Local-first does not mean encrypted.
 
