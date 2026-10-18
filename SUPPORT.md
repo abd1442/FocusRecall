@@ -1,5 +1,5 @@
 # Help and feedback
 
-Read the [instructions in the README](README.md#using-focusrecall), or [report a problem or suggest an improvement](https://github.com/abd1442/FocusRecall/issues). Include the app version, Windows version and steps to reproduce. Never attach your database, backups, vault or private window titles.
+Start with the [user guide](docs/USER_GUIDE.md) and [release status](docs/RELEASE_STATUS.md). For an ordinary issue, use fictional steps and include the app version, Windows edition/build and expected/actual behavior. Crop screenshots; never attach a personal database, backup, vault, credentials or window-title history.
 
-[Optional support on Ko-fi](https://ko-fi.com/abd442). FocusRecall remains free.
+Use the owner's established private channel for sensitive reports; see [SECURITY.md](SECURITY.md). Controlled testing is not a request to disable Windows security, force crashes, repeatedly reinstall or repair real data.

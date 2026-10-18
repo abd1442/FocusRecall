@@ -1,0 +1,12 @@
+node_modules/
+out/
+dist/
+*.log
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+*.pem
+*.pfx
+*.key
+.env*

@@ -1,22 +1,23 @@
-name: Report a problem
-description: Describe a reproducible FocusRecall problem without private data.
+name: Bug report
+description: Report a reproducible problem using fictional examples.
 body:
   - type: markdown
     attributes:
-      value: Never attach a database, vault, backup, credentials or private screenshots. Request a private channel for security concerns.
+      value: Do not attach your database, vault, window-title history or private notes. Use fictional examples and redact screenshots.
   - type: input
     id: version
     attributes:
-      label: FocusRecall and Windows versions
+      label: FocusRecall version and Windows version
     validations:
       required: true
   - type: textarea
-    id: steps
+    id: reproduce
     attributes:
-      label: Steps using fictional data
+      label: Steps, expected result and actual result
     validations:
       required: true
   - type: textarea
-    id: behavior
+    id: details
     attributes:
-      label: Expected and actual behavior
+      label: Relevant details
+      description: Timer mode, study-day boundary, theme/scale, or whether this followed an update. Include only nonprivate details.

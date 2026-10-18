@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0-beta.28-rc.2",
+  "sourceCommit": "f45ada0c46be3ed163603c82594f7f34c6f9f285",
+  "buildProfile": "QA; separate Windows app identity; same renderer code as current source",
+  "captured": "2026-10-18",
+  "fictionalOnly": true,
+  "language": "en",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "method": "Actual packaged Electron renderer screenshots through localhost QA inspector. No mockups, compositing or edited numbers.",
+  "installationVerified": false,
+  "artworkRightsCleared": false,
+  "images": [
+    {
+      "file": "home.png",
+      "description": "Home with fictional subjects; Ivory & Ink",
+      "bytes": 200868,
+      "sha256": "44b94347e67699e638fb8049079564e6b48c54dadcb9d0bbebed909ffbcc5a79"
+    },
+    {
+      "file": "stats.png",
+      "description": "Stats records/ratings; fictional observations are not learning outcomes",
+      "bytes": 133859,
+      "sha256": "caa3f5a7219035b9af3648b99e9287a76a31045979fda691bbe85f03354233a5"
+    },
+    {
+      "file": "learn.png",
+      "description": "Learn Today; research guidance distinct from personal ratings",
+      "bytes": 111715,
+      "sha256": "89dc19177fedd8a481732c8ed0d6b2c1dad6c1cdbe6a91bc08fd707b794028d2"
+    },
+    {
+      "file": "appearance.png",
+      "description": "Approved Appearance controls; Ivory & Ink",
+      "bytes": 196783,
+      "sha256": "a3dbb5bf8643f52cd3ca8d319419a77a63bb8ab04f437c6da13666e0afae318e"
+    }
+  ],
+  "qaArchiveSHA256": "a625a3e44814bb34ad3cad5ee7746fd0cb77546c27d8c62bd0f25ea8843ee365",
+  "rendererPreloadMatchesVerifiedRC2": true,
+  "comparedFiles": 13,
+  "workingTreeContext": "Repository documentation/test tooling changed; renderer and preload bytes match immutable RC2 exactly."
+}

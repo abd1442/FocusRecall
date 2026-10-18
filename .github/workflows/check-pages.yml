@@ -1,39 +1,20 @@
-name: Check product pages
+name: Check private project pages
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   pages:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - name: Check links and distribution boundaries
-        shell: node {0}
-        run: |
-          const fs = require('node:fs');
-          const path = require('node:path');
-          const cp = require('node:child_process');
-          const assert = require('node:assert/strict');
-          const files = cp.execFileSync('git', ['ls-files'], {encoding:'utf8'}).trim().split('\n');
-          for (const file of files) {
-            assert.ok(!/^(?:src|node_modules|publication-local|out)\//.test(file), file);
-            assert.ok(!/\.(?:exe|db|sqlite3?|pem|pfx|key|zip)$/i.test(file), file);
-          }
-          for (const file of files.filter(f => f.endsWith('.md'))) {
-            const text = fs.readFileSync(file, 'utf8');
-            const links = [...text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)].map(m => m[1]);
-            links.push(...[...text.matchAll(/<img[^>]+src="([^"]+)"/g)].map(m => m[1]));
-            for (const link of links) {
-              if (/^https?:/.test(link)) continue;
-              const [relative, anchor] = link.split('#');
-              const target = path.resolve(path.dirname(file), decodeURIComponent(relative || path.basename(file)));
-              assert.ok(target.startsWith(process.cwd() + path.sep) && fs.existsSync(target), file + ': ' + link);
-              if (anchor) {
-                const body = fs.readFileSync(target, 'utf8');
-                const ids = new Set([...body.matchAll(/^#{1,6} (.+)$/gm)].map(m => m[1].toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ +/g, '-')));
-                for (const m of body.matchAll(/<a id="([^"]+)"/g)) ids.add(m[1]);
-                assert.ok(ids.has(anchor), file + ': missing anchor ' + link);
-              }
-            }
-          }
-          console.log('Product links and distribution boundaries passed.');
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - run: node .github/check-pages.cjs
+      # No release upload, deploy, signing or visibility changes.
