@@ -1,49 +1,175 @@
-# Using FocusRecall
+# Your first sessions with FocusRecall
 
-This guide describes beta.28-rc.2. It is not download authorization; read [release status](RELEASE_STATUS.md). Captures use fictional records and an identified QA build.
+**Choose a subject → Focus → Review & connect → Log → Rest**
 
-## Install or update
+FocusRecall keeps a record of study activity and gives recall a place in your routine. You can start simply: one subject, one session and a few words about what you remember. Notes, ratings and extra tracking are optional.
 
-Use only an explicitly supplied controlled-test installer and its exact checksum. The candidate is unsigned: record unexpected Windows/antivirus warnings and stop rather than disabling protections. Do not treat an old GitHub asset as current.
+This guide follows **beta.28-rc.2 on Windows**. Screenshots use example subjects and notes. Distribution remains [on hold](RELEASE_STATUS.md).
 
-Before updating, create a verified backup in Settings and finish/close FocusRecall, including its tray process. Keep the existing scope/destination. Installing for all users does not combine their records. Never delete AppData, databases or WAL/SHM files to resolve an update. Stop on a data-opening error and preserve original files/backups.
+**On this page:** [First session](#your-first-study-session) · [Home tools](#make-home-work-for-you) · [Find your work](#find-your-sessions-and-notes) · [Stats](#make-sense-of-stats) · [Learn](#use-learn-at-your-own-pace) · [Personalize](#make-the-workspace-comfortable) · [Privacy](#choose-what-you-record) · [Backups & updates](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
-## A study cycle
+## Your first study session
 
-1. Create/select a subject on Home. Sort beside Search offers manual order, alphabetical, recently studied and most studied when history supports them. Manual movement has keyboard controls.
-2. Choose Flow (count up), Fixed (your target), or Adaptive (a target informed by recorded history). Complete optional preparation and begin Focus.
-3. Use the floating panel while working. Mark distractions or pause. Locked/asleep/unobserved time is not automatically credited; resume on return.
-4. Finish Focus and recall what you can. Use notes/drawings, review or an optional recall timer. A timer total is not a learning score.
-5. Complete optional logs/ratings, choose Rest and continue when ready. History keeps the details.
+### 1. Choose a subject and one small goal
 
-Today Check is optional. **Skip for today** hides it until the next local calendar day. The permanent Settings Show/Hide preference takes precedence; neither erases history.
+Open **Home**, select **New subject** and enter a name you will recognize later, such as “Structural mechanics.” Select its card to see the timer controls. You can organize subjects into categories; you do not need to plan your entire course before starting.
 
-![Home, fictional records](../screenshots/current/home.png)
+Write an optional session goal: “Explain beam reactions” is more specific than “Study.” The goal stays with the session so you can return to it later.
 
-## Read Stats carefully
+![Home with a selected subject, timer controls, a concrete optional goal and the Start button](../screenshots/current/home.png)
 
-Stats distinguishes recorded activity/time, immediate self-ratings and observational comparisons. Open supporting records and the evidence/uncertainty explanation. An exploratory association may reflect time trends, missing data or other conditions; it is not causal evidence. Unavailable evidence, no association and no records are different states.
+*The selected subject's controls sit beside the subject list. Search and sorting share one row.*
 
-Method comparisons describe how sessions were rated. They do not establish lasting recall, mastery or method superiority. Self-ratings cannot prove durable learning. General research guidance is separate; users can still compare their recorded experiences.
+Choose a timer:
 
-![Stats, fictional records](../screenshots/current/stats.png)
+- **Flow:** counts up, with a target marker. Useful when you want room to continue while the work is going well.
+- **Fixed:** counts down from your chosen target. Useful when you have a set amount of time available.
+- **Adaptive:** suggests a target from eligible past sessions on the subject, using your default until enough are available. You can override it.
 
-## Learn and appearance
+The target helps plan time. Choose a comfortable duration, then select **Start**. If preparation is enabled, confirm the **Get ready** panel before beginning.
 
-Learn offers illustrated explanations and 24 canonical strategies, with context and research limits. Browse/save ideas freely; it is not a mastery assessment.
+**Today Check:** answer it if useful, or choose **Skip for today**. That hides it for the rest of the local calendar day, including after a restart. The permanent Show/Hide preference in Settings takes precedence and does not erase previous check-ins.
 
-![Learn, fictional profile](../screenshots/current/learn.png)
+### 2. Work with the floating timer
 
-Appearance offers 26 approved themes, independent light/dark choices and system switching. Existing custom Focus colours and legacy preferences migrate. Darkroom's documented colour-vision exceptions are not a blanket accessibility guarantee. Arabic supports RTL. Automated keyboard/ARIA checks are not screen-reader certification.
+Study in your usual book, browser, editor or on paper. Open **Panel** if you want the compact timer beside your work. Drag it to a comfortable position.
 
-![Appearance](../screenshots/current/appearance.png)
+<p align="center"><img src="../screenshots/current/focus-panel.png" alt="Floating Focus panel with a live timer, subject name and Distracted, Switch and Finish buttons" width="296"></p>
 
-## Privacy and backups
+- **Distracted** marks time away from studying; **Back** resumes the focus clock. Use it when you are pulled away, even if monitoring is off.
+- **Switch** changes subjects within the current session while preserving the parts already recorded.
+- **Finish** on the panel, or **Finish session** in the main window, takes you to review.
 
-Automatic foreground monitoring starts **off**. Read its disclosure before enabling it. Title collection is a separate opt-in because titles can be sensitive. Blocked monitoring is not evidence of distraction-free study.
+You do not need automatic window tracking to use the timer. Locking Windows or suspending the computer interrupts observed timing; the application does not automatically count that gap as focused work. Follow the return/recovery prompt before continuing.
 
-Historical title deletion preserves study history and recorded classification provenance, turns title collection off, and cannot erase existing backups/exports/synced copies or disk remnants. An older restored backup can restore titles/settings. No forensic erasure is promised.
+### 3. Recall, then decide what to revisit
 
-Data is local, without application-level encryption. External links/integrations involve other software/services. Notes are written to an Obsidian destination only when explicitly requested; back up vault files separately.
+**Review & connect** appears after Focus. Try explaining what you remember before checking your materials. You can use paper or another app; writing here is optional.
 
-Use Settings → **Back Up Data** and confirm verification succeeds. Preserve originals/backups on a recovery error. Routine bug reports need fictional steps, exact version/Windows build and cropped nonprivate screenshots, not a profile folder. See [SECURITY.md](../SECURITY.md).
+1. Optionally choose **Start review** for a short review timer. It has its own pause/resume control.
+2. Select **Type notes** or **Draw notes** if you want to keep something in FocusRecall.
+3. Record the main idea and a point you are still unsure about.
+4. Use **Review later** for a specific reminder, such as checking a sign convention with one worked example.
+5. Select **Continue to session log**. **Skip review** is available when you do not want this step.
+
+![Recall notes from the Structural mechanics session, with a specific follow-up marked for review](../screenshots/current/recall.png)
+
+
+The “How much could you recall?” rating is optional. Record your immediate impression or leave it unanswered.
+
+### 4. Log only what is useful
+
+On **How did it go?**, record the optional ratings or context you want to remember. Settings → **Log questions** controls which questions you see. You do not need to answer everything to keep a useful session record.
+
+Complete the log to reach the rest plan. When available, **Ctrl+Enter** continues from review or the log; check the visible action before using it.
+
+### 5. Rest and return
+
+Choose a comfortable duration on the rest plan and select **Start rest**. The countdown shows the time remaining. You can adjust the suggested length before starting, and **End rest early** is available if you return sooner.
+
+<p align="center"><img src="../screenshots/current/rest.png" alt="Rest countdown during the break after Focus and Recall" width="520"></p>
+
+When **Rest is over** appears, optionally record what you did, or select **Continue to next session** without an answer. Then start another session or choose **Finish studying**. Rest is recorded separately from Focus; its length does not increase focused study time.
+
+If you finish a session very quickly, the app may ask whether to keep it. Choose **Keep it** if it belongs in your history.
+
+## Make Home work for you
+
+### Park a thought without changing tasks
+
+Use **+ Park** to jot down a question or a task that can wait, such as “Ask about the shear-force sign convention.” It stays in **Parked thoughts** so you can return to studying. If configured, the shortcut shown on the card opens the capture box from your work.
+
+Check off a thought after handling it. Repeated captures of the same thought are grouped with a count; **Manage thoughts** lets you search and complete individual captures or all repeats. These are your notes for later, not automatically detected distractions.
+
+### Finish work saved for later
+
+**Saved for later** appears only when you have deferred an unfinished review, log or rest step. Expand it and select **Resume** for the session you want to finish. It is separate from Parked thoughts and from Learn's saved ideas. Time while the app was closed is excluded from rest.
+
+### Read the study calendar
+
+Each square represents a local calendar day; its shade reflects recorded Focus time. Select a day to open its History records. The year controls move between years. With the keyboard, Tab enters the calendar once, arrows move between days/weeks, and Enter opens the selected day.
+
+### Understand the stage line
+
+The line below a subject summarizes its study-time milestone, such as **First 20 hours**. It uses recorded Focus time plus any earlier hours you entered for the subject. The progress shows time invested, not a learning level or mastery assessment. Settings lets you customize the time-stage labels and boundaries.
+
+## Find your sessions and notes
+
+Open **History** to revisit work. Choose a date range, narrow it to a subject or activity, and use **View session** to inspect the details. The search field finds recall and session notes.
+
+![Completed History session with recorded Focus time and a recall-note excerpt](../screenshots/current/history.png)
+
+Use **Saved notes** to find retained writing and **To review** for marked follow-ups. For example, after checking the sign convention, return to the relevant session and review what you wrote. **Library** organizes material by subject.
+
+To send a note to Obsidian, choose **Obsidian / save note**, select the destination and save explicitly. Keep your vault backed up separately. Choosing an external destination does not make a FocusRecall backup cover that destination.
+
+On Home, use the sort control beside Search for manual, alphabetical, recently studied or most studied ordering. Manual order is saved; the subject controls also support moving subjects with the keyboard. Automatic sorts depend on the history available and do not delete or rename subjects.
+
+## Make sense of Stats
+
+Start with recorded time and recent activity, then inspect any comparison that interests you. Use **Adjust filters** to see which dates and subjects are included. **Saved views** keeps a useful filter setup; it does not add new evidence.
+
+
+Read three things separately:
+
+| Recorded | Not proof of |
+| --- | --- |
+| Time: activity | Learning |
+| Ratings: experience | Retention |
+| Comparisons: association | Cause |
+
+Check the supporting records and evidence explanation. Subject mix, time trends, missing answers and other conditions can affect a comparison. “Not enough evidence” is not the same as “no difference.” A method view describes recorded experience; it is not a ranking of how someone learns best.
+
+If you create an experiment or report, keep its observational limits in mind. Consider delayed checks of the material itself when judging learning; a timer and a self-rating cannot replace them.
+
+## Use Learn at your own pace
+
+Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Saved**. Each idea connects an explanation with a practical suggestion. Expand **Research and limitations** for context.
+
+![Learn Today with an illustrated distinction between familiarity and remembering, a practical suggestion and expandable research notes](../screenshots/current/learn.png)
+
+Learn's general research guidance is separate from Stats. Try ideas that suit your task, and revisit the explanation when you want more context.
+
+## Make the workspace comfortable
+
+Open **Settings → Appearance**. Choose a light theme and a dark theme independently, then use **Light**, **Dark** or **Follow Windows** to decide which appears. There are 26 themes; text/interface and floating-panel sizes have separate controls.
+
+![Appearance in Ink Dim with independent light and dark theme selections and a Follow Windows option](../screenshots/current/appearance.png)
+
+Use **Text & size** for readability and **Floating panel** for the compact controls. High contrast is available. If chart colors are difficult to distinguish, use their labels or data tables, or try another theme. Change language in Settings; Arabic uses right-to-left layout.
+
+Keyboard basics: **Tab / Shift+Tab** moves between controls; **Enter / Space** activates them as appropriate; arrows navigate the calendar and grouped theme choices; **Escape** closes a supported dialog. Settings has a **Keyboard shortcuts** quick link for configurable shortcuts.
+
+## Choose what you record
+
+Normal studying needs no account or window monitoring. Foreground monitoring begins **off**. If you choose to enable it, read the disclosure; window-title collection is a separate opt-in because titles can contain sensitive text. Unavailable monitoring does not prove that a session had no distractions.
+
+**Delete window titles** removes stored titles in the current profile while preserving study history and saved classifications. Finish the current study workflow before using it. It also turns future title collection off. It does not delete copies in backups, exports or synced folders; restoring an older backup can bring titles/settings back.
+
+FocusRecall does not encrypt local databases or backups. Protect your Windows account and backup storage. External links and optional services have their own privacy policies. [Full privacy information](../PRIVACY.md)
+
+## Install, update and protect your records
+
+If invited to testing, use the supplied **beta.28-rc.2** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
+
+Before an update:
+
+1. Finish the active study workflow.
+2. In Settings, use **Back Up Data** and confirm verification succeeds.
+3. Keep a separate copy somewhere safe. Back up any external Obsidian vault separately.
+4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
+5. Reopen and check your subjects, a recent session, preferences and notes.
+
+Uninstall normally preserves the local profile. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
+
+## If something goes wrong
+
+- **Study data cannot safely open:** stop, preserve originals/backups, record the exact message and ask for help. Do not reset or replace files.
+- **Windows or antivirus warning:** capture the warning and installer version. Keep protection enabled.
+- **App still running after closing its window:** look for the tray icon and quit there before updating.
+- **No supported Stats comparison:** check filters and available records. Early records may not support a comparison yet.
+- **Text or panel too small:** adjust Appearance’s text/size or floating-panel controls.
+
+For a bug report, include the app version, Windows edition/build, steps, expected result and exact error. Use fictional examples and check screenshots for private text before sending. Do not attach your database, backup or vault to an issue. [Help & support](../SUPPORT.md) · [Private security reports](../SECURITY.md)
+
+If you would like to support development, [Ko-fi](https://ko-fi.com/abd442) is optional. It changes neither the app's features nor access to help.

@@ -1,28 +1,19 @@
-# Current release status
+# Release status
 
-**0.1.0-beta.28-rc.2 is a controlled Windows test candidate. Public release is not approved.** Repositories remain private. Repository maintenance uploads no installer or source archive.
+**Current build:** beta.28-rc.2 is a Windows test candidate, not a public release.
 
-RC1 exposed a genuine historical-schema compatibility failure. RC2 corrects constraint-token compatibility while retaining schema validation and preservation. RC1 is not a current download. Later source/documentation/QA-identity maintenance does not replace the verified RC2 installer.
+**Access:** testing is by invitation. There is no public installer download, and the friend-testing package remains on hold.
 
-| Exact RC2 artifact | SHA-256 |
-| --- | --- |
-| `FocusRecall-0.1.0-beta.28-rc.2-setup.exe` | `de0087915cd5105e555e0b2f278951686ebeeebf9ba951258a0ab387e6ac37fd` |
-| `FocusRecall-0.1.0-beta.28-rc.2-source-and-dependencies.zip` | `40b098ed64a2b35dc24750fefe074b8ffe6acaa63527d10e4d644380245d712f` |
+**Still being checked:** installation and upgrades on additional Windows machines, accessibility and final distribution materials. Artwork rights must be resolved before sharing.
 
-These identify local artifacts; they are not download links or source-completeness certification. HEAD may be newer than a binary; provide that binary's matching source separately when distributing it.
+## If you are invited to test
 
-## Existing safeguards
+Use the exact installer and checksum supplied with your invitation. The candidate is **unsigned**. Keep Windows security enabled, report unexpected warnings and back up your study data before updating. The [user guide](USER_GUIDE.md#install-update-and-protect-your-records) explains the safe update steps; [support](../SUPPORT.md) explains how to report a problem.
 
-Accepted work covers observed-time integrity, conservative lock interruption, statistical uncertainty/false-discovery safeguards, scientifically qualified advice, opt-in monitoring, historical title deletion, Electron hardening, performance, keyboard access, 26 themes and seven-language copy. Passing tests is not certification of science, security or accessibility.
+Older draft downloads are not the current candidate. These pages do not offer an installer or change the distribution hold.
 
-Initial public installer: **unsigned**. Original code: **GPL-3.0-only**, without a proprietary EULA. Retained database/profile/installer identifiers must not be renamed for branding.
+## For maintainers
 
-## Public-release gates
+The repositories remain private. **Do not publish or distribute the installer, friend package or artwork until the existing holds are cleared.**
 
-- Resolve F/R reference and other uncertain artwork provenance. The friend-package distribution hold remains. Generation/tracing alone does not establish rights.
-- Complete matching Corresponding Source and required transitive dependency-source availability review. A private URL or npm-input cache alone is insufficient.
-- Complete real clean install, representative genuine historical-installer upgrades, uninstall/reinstall, interruption/cancellation and preservation checks in a disposable environment.
-- Complete physical Windows sleep/wake/hibernate/lock, supported configurations/DPI, antivirus/SmartScreen, endurance and assistive-technology checks. Fluent language review is separate from localization tests.
-- Review historical screenshots/archives and old release assets before public exposure. Private Git history is not automatically safe to make public.
-
-No Release, package publication, visibility change or candidate replacement is authorized by documentation synchronization. [Windows test plan](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/RC_WINDOWS_TEST_PLAN.md), [security](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/RELEASE_SECURITY.md), [artwork](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/ASSETS.md).
+See [maintainer release gates](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/MAINTENANCE.md#release-gates) for source provision, historical compatibility, Windows/hardware testing and artifact review. Exact retained artifact hashes are in [SHA256SUMS.txt](../SHA256SUMS.txt). [Screenshot provenance](../screenshots/current/manifest.json) records how the fictional examples were captured.
