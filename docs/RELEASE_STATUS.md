@@ -1,15 +1,13 @@
-# Release status
+# Availability
 
-**Current candidate:** beta.29 RC3 for Windows x64. It includes Quick and Full Mode and both approved floating timer displays. It is not a public release and has no public download.
+**0.1.0-beta.29 for Windows x64 is prepared locally. No public installer or GitHub Release has been published.**
 
-**Testing:** packaged application and isolated fictional-profile checks have passed. Actual beta.29 RC3 installation, historical upgrades and uninstall/reinstall on a separate PC are still pending. The fresh Windows VM scenarios have not run yet; an earlier friend-PC test does not verify this candidate.
+The final build changes only the version from accepted RC3. The owner reports successful testing on a second Windows 11 PC; exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Those checks are not claimed as passed.
 
-## If invited to test
+If invited to test, use only the installer and checksum supplied to you. The installer is unsigned. Keep Windows protection enabled; stop on a threat detection. [Installation and backups](../README.md#install-update-and-protect-your-records) · [Support](../SUPPORT.md)
 
-Use only the exact installer and checksum approved for your test. The candidate is unsigned. Keep Windows security enabled and use fictional records on an agreed separate PC. Do not install over someone else's personal study data. [Guide](USER_GUIDE.md#install-update-and-protect-your-records) · [Support](../SUPPORT.md)
+## Maintainer information
 
-## For maintainers
+Repositories remain private. This documentation update does not publish or authorize distribution. The owner now identifies themselves as the F/R logo creator. Required-source/access review remains open; unreported release-required physical timing and upgrade checks remain unverified.
 
-Both repositories remain private. Existing artwork-rights, complete GPL source-provision and public-distribution holds remain; these pages do not authorize sharing an installer or artwork. No installer or release is uploaded by this update.
-
-[Maintainer release gates](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/MAINTENANCE.md#release-gates) cover rights, source provision and Windows/accessibility testing. [Candidate checksums](../SHA256SUMS.txt) identify the locally retained installer/source pair; [screenshot provenance](../screenshots/current/manifest.json) identifies the packaged captures.
+[Source information](../SOURCE_NOTICE.md) · [Local-build checksums](../SHA256SUMS.txt) · [Screenshot provenance](../screenshots/current/manifest.json). Captures are from RC3, whose renderer and preload are byte-identical to the final version-only build; the images have not been relabelled or altered.

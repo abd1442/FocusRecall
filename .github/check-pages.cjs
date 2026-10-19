@@ -32,6 +32,8 @@ for (const image of manifest.images) {
   const bytes = fs.readFileSync('screenshots/current/' + image.file)
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), image.sha256, image.file)
 }
-const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-3.0-only'));assert.ok(readme.includes('Quick Mode')&&readme.includes('Full Mode'));assert.ok(/<a href="https:\/\/ko-fi\.com\/abd442"><img src="assets\/support-kofi\.png" alt="Support me on Ko-fi" width="275"><\/a>/.test(readme.slice(readme.lastIndexOf('---'))));assert.ok(manifest.images.every(image=>image.version===manifest.version));assert.ok(manifest.workflow.records.every(r=>r.focus_seconds>=120));
+const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-3.0-only'));assert.ok(readme.includes('Quick Mode')&&readme.includes('Full Mode'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('assets/support-kofi-banner.png'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('https://ko-fi.com/abd442'));assert.ok(manifest.images.every(image=>image.version===manifest.version));assert.ok(manifest.workflow.records.every(r=>r.focus_seconds>=120));
 assert.ok(fs.readFileSync('LICENSE', 'utf8').includes('GNU GENERAL PUBLIC LICENSE'))
 console.log('PASS links, tracked-file boundaries, bounded secret/path patterns, GPL materials and screenshot hashes. Not history/rights clearance.')
+
+for(const heading of ["## Your first study session","## Home tools","## Read Stats","## Learn","## Appearance and language","## Install, update and protect your records","## If something goes wrong"]) assert.ok(readme.includes(heading), heading);

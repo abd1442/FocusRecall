@@ -2,7 +2,7 @@
 
 ## Find an answer
 
-Start with the [user guide](docs/USER_GUIDE.md). For installer availability and controlled testing, see [release status](docs/RELEASE_STATUS.md). No public installer is currently offered, and older draft assets should not be used as the latest download.
+Start with the [complete user guide](README.md#your-first-study-session). For installer availability and controlled testing, see [release status](docs/RELEASE_STATUS.md). No public installer is currently offered, and older draft assets should not be used as the latest download.
 
 ## Report a problem
 
@@ -22,3 +22,5 @@ Use the repository issue form for non-sensitive reports if you have access, or t
 [Buy the developer a coffee on Ko-fi](https://ko-fi.com/abd442) if you would like to help fund development. Donations are entirely optional: no paid features, advertisements or priority support. Ko-fi is an external service and applies its own terms and privacy policy.
 
 You can also help with a clear bug report, careful fictional-profile testing or language feedback. If you test a workflow or translation, tell us which Windows version and language you used.
+
+<p align="center"><a href="https://ko-fi.com/abd442"><img src="assets/support-kofi-banner.png" alt="Support FocusRecall on Ko-fi — optional donations" width="660"></a></p>
