@@ -7,7 +7,7 @@ html,body{margin:0;width:720px;height:200px;overflow:hidden;background:transpare
 :root{--card:#FFFFFF;--card2:#FFE0E8;--edge:#F1BACB;--ink:#183D56;--muted:#5E6A70;--track:#F7C8D7;--amber:#A33E60;--dot:#D7648A;--logo-bg:#F9CBD9;--logo-edge:#EDABC0}
 body.dark{--card:#1D4055;--card2:#142D40;--edge:#35586C;--ink:#FFFDF7;--muted:#B8C7D1;--track:rgba(255,253,247,.14);--amber:#EAAF94;--logo-bg:#633F50;--logo-edge:#A86A82}
 .card{position:absolute;inset:0;border-radius:24px;border:1.5px solid var(--edge);
-  background:radial-gradient(ellipse at top left,var(--card2) 0%,transparent 55%),linear-gradient(135deg,var(--card) 0%,var(--card) 55%,var(--card2) 100%);
+  background:linear-gradient(135deg,var(--card) 0%,var(--card) 55%,var(--card2) 100%);
   display:flex;align-items:center;gap:26px;padding:0 30px 0 30px;font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;overflow:hidden}
 .ring{position:relative;flex:none;width:118px;height:118px}
 .ring svg{position:absolute;inset:0}
@@ -23,7 +23,7 @@ p{margin:8px 0 0;font-size:15.5px;line-height:1.4;color:var(--muted)}
 </style></head><body><div class="card">
 <div class="arc"></div>
 <div class="ring">
-<img src="focusrecall-icon.png" alt=""></div>
+<img src="support-cup.svg" alt=""></div>
 <div class="text"><div class="eyebrow"><i></i>Optional support</div><h1>Enjoying FocusRecall?</h1><p>A little appreciation, if you’d like. Thank you!</p></div>
 <div class="btn"><img src="support-kofi.png" alt="Support me on Ko-fi"></div>
 </div><script>if(location.search.includes('dark'))document.body.classList.add('dark')</script></body></html>
