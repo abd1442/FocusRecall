@@ -1,7 +1,12 @@
-# Candidate status — beta.28-rc.2
+# beta.29 RC1 candidate notes
 
-Controlled Windows testing only; public release is not approved. RC2 corrects historical-schema token compatibility after RC1 failed a real upgrade, retaining schema validation and history preservation. RC1 is superseded. No installer or draft asset has been replaced by this repository update.
+Prepared for controlled Windows x64 testing, not publicly released.
 
-Accepted corrections cover timing, statistical/recommendation safeguards, opt-in tracking/title deletion, production hardening, responsiveness, 26 themes, seven-language copy and keyboard usability. Later QA shell-identity maintenance prevents test shortcuts claiming the normal application's taskbar identity; installed RC2 itself remains unchanged.
+- **Quick Mode:** a subject launcher and floating timer, with Pause/Resume, Next, optional Break and Finish. Switch subjects without ending the session. Quick records do not invent skipped recall or ratings.
+- **Full Mode:** the existing preparation, Focus, Recall, logging and Rest workflow. Both experiences share subjects, preferences and history; existing users start in Full Mode.
+- **Floating display:** choose the approved Digital or Circular layout. The preference persists across restarts.
+- **Usability:** immediate Learn visuals, shorter advice, responsive panel layouts, localized dates and singular/plural wording.
 
-[Exact candidate identifiers and remaining gates](docs/RELEASE_STATUS.md). Old beta.24/0.01 Beta draft assets and EULA require separate review before any release; they are not links to the current candidate.
+The earlier timing, statistical, recommendation, privacy, security, theme and keyboard corrections remain. Schema stays at 14. RC2 and RC3 artifacts are retained unchanged.
+
+Packaged checks passed; actual beta.29 installation, real historical-installer upgrades and uninstall/reinstall remain pending. [Status](docs/RELEASE_STATUS.md).

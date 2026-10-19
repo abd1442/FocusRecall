@@ -27,11 +27,11 @@ for (const file of files) {
 }
 
 const manifest = JSON.parse(fs.readFileSync('screenshots/current/manifest.json', 'utf8'))
-assert.ok(manifest.fictionalOnly && manifest.rendererPreloadMatchesVerifiedRC2 && !manifest.artworkRightsCleared)
+assert.ok(manifest.fictionalOnly && manifest.rendererPreloadMatchesVerifiedCandidate && !manifest.artworkRightsCleared)
 for (const image of manifest.images) {
   const bytes = fs.readFileSync('screenshots/current/' + image.file)
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), image.sha256, image.file)
 }
-assert.ok(fs.readFileSync('README.md', 'utf8').includes('GPL-3.0-only'))
+const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-3.0-only'));assert.ok(readme.includes('Quick Mode')&&readme.includes('Full Mode'));assert.ok(readme.trim().endsWith('<a href="https://ko-fi.com/abd442"><img src="assets/kofi-support.png" alt="Support me on Ko-fi" width="245"></a>'));assert.ok(manifest.images.every(image=>image.version===manifest.version));assert.ok(manifest.workflow.records.every(r=>r.focus_seconds>=120));
 assert.ok(fs.readFileSync('LICENSE', 'utf8').includes('GNU GENERAL PUBLIC LICENSE'))
 console.log('PASS links, tracked-file boundaries, bounded secret/path patterns, GPL materials and screenshot hashes. Not history/rights clearance.')

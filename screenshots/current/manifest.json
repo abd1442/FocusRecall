@@ -1,116 +1,123 @@
 {
-  "version": "0.1.0-beta.28-rc.2",
-  "captured": "2026-10-18T20:36:45.696Z",
+  "version": "0.1.0-beta.29-rc.1",
+  "captured": "2026-10-19T16:18:58.358Z",
   "fictionalOnly": true,
   "demoMode": false,
   "artworkRightsCleared": false,
-  "qaAppAsarSha256": "a625a3e44814bb34ad3cad5ee7746fd0cb77546c27d8c62bd0f25ea8843ee365",
-  "rendererPreloadMatchesVerifiedRC2": true,
+  "qaAppAsarSha256": "31f650f15870fdd47d174b7ed95f3325989cf77ac5341a902e2712b23e8a7dcf",
+  "rendererPreloadMatchesVerifiedCandidate": true,
+  "outputPixelsPerCssPixel": 2,
   "uiScale": 1,
   "language": "en",
+  "method": "Direct packaged Chromium compositor screenshots at two output pixels per CSS pixel. No image retouching, DOM editing, clock mocking or invented timer values. All study time elapsed in the actual app.",
   "workflow": {
-    "focusSeconds": 1201.838439453125,
-    "recallSeconds": 180,
-    "restSeconds": 300,
-    "blocks": 1,
-    "activityRecords": 0,
-    "record": {
-      "id": 1,
-      "sitting_id": 1,
-      "item_id": 1,
-      "origin": "normal",
-      "split_from_block_id": null,
-      "ended_by": "finish",
-      "log_status": "done",
-      "timer_mode": "flow",
-      "target_seconds": 1500,
-      "focus_started_at": "2026-10-18T20:06:34.604Z",
-      "focus_ended_at": "2026-10-18T20:26:36.442Z",
-      "focus_seconds": 1201.838439453125,
-      "recall_text": "For a simply supported beam, draw the free-body diagram first.\n\nUse the sum of moments about one support to find the other reaction, then use vertical force balance. The reactions must add up to the applied load.\n\nI can explain the balance of forces. I want another example to check my shear-force sign convention.",
-      "recall_seconds": 180,
-      "recall_rating": null,
-      "to_review_text": "Work through one shear-force diagram without looking at the solution.",
-      "notes_opened": 0,
-      "notes_link": null,
-      "rest_planned_seconds": 300,
-      "rest_actual_seconds": 300,
-      "rest_activity": null,
-      "rest_skipped": 0,
-      "rest_screen_flags": 0,
-      "last_heartbeat_at": "2026-10-18T20:26:36.442Z",
-      "target_alerted_at": null,
-      "to_review_done": 0,
-      "review_marked": 1,
-      "session_id": 1,
-      "recall_rating_touched": 0
-    }
+    "blocks": 2,
+    "records": [
+      {
+        "focus_seconds": 130.83134619140625,
+        "recall_seconds": null,
+        "rest_actual_seconds": null
+      },
+      {
+        "focus_seconds": 125.47437548828125,
+        "recall_seconds": 31,
+        "rest_actual_seconds": 63
+      }
+    ],
+    "activityRecords": 0
   },
-  "captureHarnessCorrection": "The rest form retained its five-minute duration. The harness had a shorter wait; stopping its launcher also closed the QA child. Focus and Recall were preserved, and the unfinished Rest was resumed through normal UI recovery with closed time excluded. No clock or stored duration was edited.",
   "images": [
     {
+      "file": "quick-launcher.png",
+      "description": "Quick Mode subject launcher",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 149639,
+      "sha256": "1a04fd6c349df86adb807a4eefde97d5779634c2a025b17aed3a7c6a912e2d6e",
+      "pixelWidth": 2560,
+      "pixelHeight": 1640
+    },
+    {
+      "file": "quick-digital.png",
+      "description": "Digital Quick timer during the actual saved Biology session",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 20476,
+      "sha256": "d48a136a679ec299d5e10d5c9f0b56033a73b791dce56303213aba8b8d0b0d11",
+      "pixelWidth": 566,
+      "pixelHeight": 296
+    },
+    {
+      "file": "quick-circular.png",
+      "description": "Circular Quick timer from the same actual session",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 31133,
+      "sha256": "a6205f521137bdef7e7299b83961923abb46a26d5547a1aa692ff9c0cd9ffc44",
+      "pixelWidth": 470,
+      "pixelHeight": 572
+    },
+    {
       "file": "home.png",
-      "description": "Home: subjects, a session goal, the study calendar and a parked study question.",
-      "bytes": 309481,
-      "sha256": "4bb18c3fd23a6c0e688ddd8ad6d99c120013cff80497c208ea85e739c30b64c3",
+      "description": "Full Mode Home with subjects, timer controls and an optional goal.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 295369,
+      "sha256": "b341b58f9a400041443416fc075444766a038af2ea73dfa38fb9b369a048cf37",
       "pixelWidth": 2880,
-      "pixelHeight": 2080
+      "pixelHeight": 2000
     },
     {
       "file": "focus-panel.png",
-      "description": "Focus: the compact panel at 19:24 of the same session.",
-      "bytes": 22319,
-      "sha256": "28d087509dcbf45b0057f8586ab016dc1beccedd737a2468c45db6674a1190de",
-      "pixelWidth": 592,
-      "pixelHeight": 238
+      "description": "Approved Full Mode Focus timer during a real Biology study session.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 31666,
+      "sha256": "133c205565baab1ffb47dc5b52d5bfbbd29559570a24f2d1e243071c44a1b9ce",
+      "pixelWidth": 472,
+      "pixelHeight": 574
     },
     {
       "file": "recall.png",
-      "description": "Recall: an explanation after twenty minutes of Focus, with one question to revisit.",
-      "bytes": 117496,
-      "sha256": "929bb4aa469122edf098db48cfb51809f51ba6a6ced8fde56dd89940a1decf5f",
-      "pixelWidth": 1912,
-      "pixelHeight": 1050
+      "description": "Full Mode Review & connect: typed recall and a specific follow-up after a real Focus session.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 201615,
+      "sha256": "d58b95f613244c93a305d3882b21a870a4f32e2db72fa0380fa04cf795ef20d5",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
     },
     {
       "file": "rest.png",
-      "description": "Rest: the actual countdown in a five-minute break.",
-      "bytes": 33458,
-      "sha256": "cfb61b280ec57b00728e5c7e1b68df9cf303c90482f4b235471d21b131da31dc",
-      "pixelWidth": 1712,
-      "pixelHeight": 608
+      "description": "Full Mode rest during an actual break; the five-minute plan was ended early after 63 seconds.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 53746,
+      "sha256": "7db73c424afb6850fda1bcb8ea05be123202a3cba027382c6b70fe2a4e6892bf",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
     },
     {
       "file": "history.png",
-      "description": "History: the completed session card and recall excerpt, preserved after restart.",
-      "bytes": 50990,
-      "sha256": "b2117b8419b438fd714043c341bdd26214c9ce8d80df77e59072b514bff086cf",
-      "pixelWidth": 2272,
-      "pixelHeight": 338
+      "description": "History containing actual Quick and Full sessions created during this capture.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 240538,
+      "sha256": "9b252d7e31b320cfe2270906faf8695b4f2bb96a524f6c2c2044a3076ef6ba31",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
     },
     {
       "file": "learn.png",
-      "description": "Learn: an illustrated idea and a practical next step.",
-      "bytes": 186693,
-      "sha256": "3913d2657c2603aa6f4a1bb07f507ebf5f0af255089becf50582454f65da52d4",
+      "description": "Learn with the current approved illustrations and general guidance.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 183876,
+      "sha256": "cd339fe2fa34eda51d7807fc82fe32ce9a975e74ead84f4ff4136757dc43988b",
       "pixelWidth": 2880,
-      "pixelHeight": 2080
+      "pixelHeight": 2000
     },
     {
       "file": "appearance.png",
-      "description": "Appearance: independent light and dark choices in Ink Dim.",
-      "bytes": 205820,
-      "sha256": "baa150b7ee9db9fd0e44daa4433682cd2f5e1390d5e10b8c5d7118416d0169dd",
-      "pixelWidth": 2144,
-      "pixelHeight": 1354
+      "description": "Appearance controls including the persisted Digital/Circular timer choice.",
+      "version": "0.1.0-beta.29-rc.1",
+      "bytes": 284336,
+      "sha256": "b8ae8fee627dc0cfb5fd25232ed2d2e0954da041472206741f55a658a1da402a",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
     }
   ],
-  "outputPixelsPerCssPixel": 2,
-  "hostDevicePixelRatio": 1.25,
-  "compositorRasterScale": 1.6,
-  "method": "Direct Chromium compositor captures at exactly 2 output pixels per CSS pixel, normal UI scale. Recall, Rest, History and Appearance are unretouched detail crops. No image resampling, DOM edits, clock mocking or fabricated records.",
-  "restartPreservedRecord": true,
-  "trackingOff": true,
-  "windowTitlesOff": true,
-  "homeGoal": "Explain beam reactions."
+  "rendererErrors": [],
+  "observedPageNetworkRequests": []
 }

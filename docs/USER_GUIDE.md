@@ -1,20 +1,38 @@
 # Your first sessions with FocusRecall
 
-**Choose a subject → Focus → Review & connect → Log → Rest**
+Choose **Quick Mode** for a timer with minimal steps, or **Full Mode** for Focus, recall, logging and rest. Both share subjects and history.
 
-FocusRecall keeps a record of study activity and gives recall a place in your routine. You can start simply: one subject, one session and a few words about what you remember. Notes, ratings and extra tracking are optional.
+FocusRecall records time spent studying each subject and stores session notes and history. Notes, ratings and window tracking are optional.
 
-This guide follows **beta.28-rc.2 on Windows**. Screenshots use example subjects and notes. Distribution remains [on hold](RELEASE_STATUS.md).
+This guide describes **beta.29 RC1 on Windows**. Screenshots use fictional subjects and notes. See [availability](RELEASE_STATUS.md).
 
-**On this page:** [First session](#your-first-study-session) · [Home tools](#make-home-work-for-you) · [Find your work](#find-your-sessions-and-notes) · [Stats](#make-sense-of-stats) · [Learn](#use-learn-at-your-own-pace) · [Personalize](#make-the-workspace-comfortable) · [Privacy](#choose-what-you-record) · [Backups & updates](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
+**On this page:** [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Backups & updates](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
 ## Your first study session
 
-### 1. Choose a subject and one small goal
+Choose the study experience during first-time setup. You can switch in Settings between sessions. Existing profiles remain in Full Mode initially; switching does not erase or rewrite history.
 
-Open **Home**, select **New subject** and enter a name you will recognize later, such as “Structural mechanics.” Select its card to see the timer controls. You can organize subjects into categories; you do not need to plan your entire course before starting.
+### Quick Mode: start and continue
 
-Write an optional session goal: “Explain beam reactions” is more specific than “Study.” The goal stays with the session so you can return to it later.
+1. On Home, create or select a subject. The plan card shows its target and timer mode. Open **Timer options** to change them, then select **Start**. The floating timer opens automatically.
+2. **Pause** stops the clock; **Resume** continues it. **Next** saves and immediately starts another session on the same subject. It does not start another session automatically when the target is reached.
+3. To change subjects without ending the session, select the subject name and chevron on the floating panel, choose the next subject and confirm **Switch now**. Each subject retains its own time.
+4. While paused, **Break** saves the session and offers a break timer. **Break over** does not automatically resume studying: choose **Resume** when ready.
+5. **Finish** saves and stops. No preparation, recall, log answers or rest are required; skipped activities are not filled in for you.
+
+![Quick launcher with the subject plan beside the subject list](../screenshots/current/quick-launcher.png)
+
+The main window is also a keyboard-accessible alternative for Pause, Resume, Next, Break, Finish and Switch. **Show timer** brings back the floating panel.
+
+### Full Mode: a complete study cycle
+
+The following steps describe Full Mode. Writing notes, answering ratings and taking a timed rest are optional.
+
+#### 1. Choose a subject and one small goal
+
+Open **Home**, select **New subject** and enter a name you will recognize later, such as “Biology.” Select its card to see the timer controls. You can organize subjects into categories; you do not need to plan your entire course before starting.
+
+Write an optional session goal: “Explain how water moves through a plant” is more specific than “Study.” The goal stays with the session so you can return to it later.
 
 ![Home with a selected subject, timer controls, a concrete optional goal and the Start button](../screenshots/current/home.png)
 
@@ -30,11 +48,13 @@ The target helps plan time. Choose a comfortable duration, then select **Start**
 
 **Today Check:** answer it if useful, or choose **Skip for today**. That hides it for the rest of the local calendar day, including after a restart. The permanent Show/Hide preference in Settings takes precedence and does not erase previous check-ins.
 
-### 2. Work with the floating timer
+#### 2. Work with the floating timer
 
 Study in your usual book, browser, editor or on paper. Open **Panel** if you want the compact timer beside your work. Drag it to a comfortable position.
 
-<p align="center"><img src="../screenshots/current/focus-panel.png" alt="Floating Focus panel with a live timer, subject name and Distracted, Switch and Finish buttons" width="296"></p>
+<p align="center"><img src="../screenshots/current/focus-panel.png" alt="Approved floating Focus timer during a Full Mode session" width="310"></p>
+
+In **Full Mode**, use these controls:
 
 - **Distracted** marks time away from studying; **Back** resumes the focus clock. Use it when you are pulled away, even if monitoring is off.
 - **Switch** changes subjects within the current session while preserving the parts already recorded.
@@ -42,28 +62,28 @@ Study in your usual book, browser, editor or on paper. Open **Panel** if you wan
 
 You do not need automatic window tracking to use the timer. Locking Windows or suspending the computer interrupts observed timing; the application does not automatically count that gap as focused work. Follow the return/recovery prompt before continuing.
 
-### 3. Recall, then decide what to revisit
+#### 3. Recall, then decide what to revisit
 
 **Review & connect** appears after Focus. Try explaining what you remember before checking your materials. You can use paper or another app; writing here is optional.
 
 1. Optionally choose **Start review** for a short review timer. It has its own pause/resume control.
 2. Select **Type notes** or **Draw notes** if you want to keep something in FocusRecall.
 3. Record the main idea and a point you are still unsure about.
-4. Use **Review later** for a specific reminder, such as checking a sign convention with one worked example.
+4. Use **Review later** for a specific reminder, such as comparing water loss on a dry day and a humid day.
 5. Select **Continue to session log**. **Skip review** is available when you do not want this step.
 
-![Recall notes from the Structural mechanics session, with a specific follow-up marked for review](../screenshots/current/recall.png)
+![Recall notes from the Biology session, with a specific follow-up marked for review](../screenshots/current/recall.png)
 
 
 The “How much could you recall?” rating is optional. Record your immediate impression or leave it unanswered.
 
-### 4. Log only what is useful
+#### 4. Log only what is useful
 
 On **How did it go?**, record the optional ratings or context you want to remember. Settings → **Log questions** controls which questions you see. You do not need to answer everything to keep a useful session record.
 
 Complete the log to reach the rest plan. When available, **Ctrl+Enter** continues from review or the log; check the visible action before using it.
 
-### 5. Rest and return
+#### 5. Rest and return
 
 Choose a comfortable duration on the rest plan and select **Start rest**. The countdown shows the time remaining. You can adjust the suggested length before starting, and **End rest early** is available if you return sooner.
 
@@ -73,11 +93,13 @@ When **Rest is over** appears, optionally record what you did, or select **Conti
 
 If you finish a session very quickly, the app may ask whether to keep it. Choose **Keep it** if it belongs in your history.
 
-## Make Home work for you
+## Home tools
+
+These extra Home tools belong to **Full Mode**. Quick Mode keeps its launcher simple; shared History, Stats, Learn, Library and Settings remain available from the sidebar.
 
 ### Park a thought without changing tasks
 
-Use **+ Park** to jot down a question or a task that can wait, such as “Ask about the shear-force sign convention.” It stays in **Parked thoughts** so you can return to studying. If configured, the shortcut shown on the card opens the capture box from your work.
+Use **+ Park** to jot down a question or a task that can wait, such as “Check how humidity changes water loss.” It stays in **Parked thoughts** so you can return to studying. If configured, the shortcut shown on the card opens the capture box from your work.
 
 Check off a thought after handling it. Repeated captures of the same thought are grouped with a count; **Manage thoughts** lets you search and complete individual captures or all repeats. These are your notes for later, not automatically detected distractions.
 
@@ -99,13 +121,13 @@ Open **History** to revisit work. Choose a date range, narrow it to a subject or
 
 ![Completed History session with recorded Focus time and a recall-note excerpt](../screenshots/current/history.png)
 
-Use **Saved notes** to find retained writing and **To review** for marked follow-ups. For example, after checking the sign convention, return to the relevant session and review what you wrote. **Library** organizes material by subject.
+Use **Saved notes** to find retained writing and **To review** for marked follow-ups. For example, after checking the effect of humidity, return to the relevant session and review what you wrote. **Library** organizes material by subject.
 
 To send a note to Obsidian, choose **Obsidian / save note**, select the destination and save explicitly. Keep your vault backed up separately. Choosing an external destination does not make a FocusRecall backup cover that destination.
 
 On Home, use the sort control beside Search for manual, alphabetical, recently studied or most studied ordering. Manual order is saved; the subject controls also support moving subjects with the keyboard. Automatic sorts depend on the history available and do not delete or rename subjects.
 
-## Make sense of Stats
+## Read Stats
 
 Start with recorded time and recent activity, then inspect any comparison that interests you. Use **Adjust filters** to see which dates and subjects are included. **Saved views** keeps a useful filter setup; it does not add new evidence.
 
@@ -122,7 +144,7 @@ Check the supporting records and evidence explanation. Subject mix, time trends,
 
 If you create an experiment or report, keep its observational limits in mind. Consider delayed checks of the material itself when judging learning; a timer and a self-rating cannot replace them.
 
-## Use Learn at your own pace
+## Learn
 
 Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Saved**. Each idea connects an explanation with a practical suggestion. Expand **Research and limitations** for context.
 
@@ -130,15 +152,17 @@ Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Sav
 
 Learn's general research guidance is separate from Stats. Try ideas that suit your task, and revisit the explanation when you want more context.
 
-## Make the workspace comfortable
+## Appearance and language
 
 Open **Settings → Appearance**. Choose a light theme and a dark theme independently, then use **Light**, **Dark** or **Follow Windows** to decide which appears. There are 26 themes; text/interface and floating-panel sizes have separate controls.
 
-![Appearance in Ink Dim with independent light and dark theme selections and a Follow Windows option](../screenshots/current/appearance.png)
+![Floating-panel appearance settings in a dark theme, with Digital and Circular timer choices](../screenshots/current/appearance.png)
 
 Use **Text & size** for readability and **Floating panel** for the compact controls. High contrast is available. If chart colors are difficult to distinguish, use their labels or data tables, or try another theme. Change language in Settings; Arabic uses right-to-left layout.
 
-Keyboard basics: **Tab / Shift+Tab** moves between controls; **Enter / Space** activates them as appropriate; arrows navigate the calendar and grouped theme choices; **Escape** closes a supported dialog. Settings has a **Keyboard shortcuts** quick link for configurable shortcuts.
+**Timer display:** choose **Digital** or **Circular** under Appearance → Floating panel. Digital follows the chosen Flow/Fixed/Adaptive timer mode. Circular shows remaining time to the target, followed by overtime, with a progress ring. The preference persists across restarts and does not change recorded time. Digital remains the default unless you choose otherwise.
+
+<p align="center"><img src="../screenshots/current/quick-circular.png" alt="Circular floating timer in Quick Mode" width="250"></p>
 
 ## Choose what you record
 
@@ -150,7 +174,7 @@ FocusRecall does not encrypt local databases or backups. Protect your Windows ac
 
 ## Install, update and protect your records
 
-If invited to testing, use the supplied **beta.28-rc.2** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
+If invited to testing, use the supplied **beta.29 RC1** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
 
 Before an update:
 
@@ -160,7 +184,7 @@ Before an update:
 4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
 5. Reopen and check your subjects, a recent session, preferences and notes.
 
-Uninstall normally preserves the local profile. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
+Uninstall is configured to preserve the local profile; the beta.29 installer still needs separate-PC verification. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
 
 ## If something goes wrong
 

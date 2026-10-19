@@ -5,9 +5,9 @@
   </picture>
 </p>
 
-<h1 align="center">Make room for focused study.</h1>
+<h1 align="center">FocusRecall</h1>
 
-<p align="center">Choose a subject. Give it your attention. Recall what you remember.<br>Keep your study records on your own computer.</p>
+<p align="center">Study timers, recall notes and session history.<br>Choose Quick Mode for the floating timer or Full Mode for the complete workflow.</p>
 
 <p align="center"><strong>Windows · Local-first · GPL-3.0-only</strong></p>
 
@@ -19,83 +19,94 @@
   <a href="https://github.com/abd1442/FocusRecall-Dev">Source code</a>
 </p>
 
-> **Pre-release:** beta.28-rc.2 is a controlled Windows test candidate. Distribution is on hold; no public installer is available. [Current status →](docs/RELEASE_STATUS.md)
+> **Pre-release:** beta.29 RC1 is prepared for controlled Windows testing. It has no public download. [Availability](docs/RELEASE_STATUS.md)
 
-![FocusRecall Home: fictional subjects, a session goal, timer choices and a study calendar in Ivory & Ink](screenshots/current/home.png)
+![Quick Mode launcher with Biology selected, a 25-minute target, subject search and Start](screenshots/current/quick-launcher.png)
 
-*A place for the next study session, with the record of previous ones close by. All screenshots use fictional data.*
+*Quick Mode starts with a subject and a timer. Screenshots use fictional study data.*
 
 ## A study session, from start to finish
 
-1. **Set an intention.** Pick a subject, choose a timer and optionally write one goal.
-2. **Focus, then recall.** Work with a compact floating timer, then explain or sketch what you remember.
-3. **Leave a useful record.** Save notes, mark what needs another look, log an optional rating and take a break.
+Choose **Quick Mode** or **Full Mode** during first-time setup, or change it later in Settings between sessions. Both use the same subjects, history and preferences. Existing users start in Full Mode.
 
-### Keep the timer close, your work in front
+### Quick Mode
 
-The floating panel gives you the clock and essential controls without filling your screen. Mark a distraction, switch subjects within a session, or finish when you are ready.
+Choose a subject, adjust **Timer options** if needed, and select **Start**. The floating panel opens automatically.
 
-<p align="center"><img src="screenshots/current/focus-panel.png" alt="Floating Focus panel, with live timer and Distracted, Switch and Finish controls" width="296"></p>
+- **Pause / Resume** stops and continues the same study clock.
+- **Next** saves the session and starts another on the same subject.
+- **Break**, available while paused, saves the session and opens an optional break. Resume when ready.
+- **Finish** saves and stops. Select the subject name and chevron to switch subjects within the session.
 
-Choose **Flow** to count up, **Fixed** for a countdown, or **Adaptive** for a suggested target based on eligible recorded sessions. You can adjust the target to suit the time you have.
+Quick Mode has no required preparation, recall, questions, advice or rest. Skipped activities stay unanswered in the record.
 
-### Give recall a place in the routine
+### Digital and Circular floating timers
 
-After Focus, **Review & connect** offers a short optional review timer, typed notes and drawing. Write what you can explain, keep a question for later, or do the review on paper. A session can be useful without filling in every field.
+Choose the display in **Settings → Appearance → Floating panel → Timer display**. Digital shows elapsed time or a countdown according to the timer mode. Circular shows time remaining to the target, then overtime. Both use the same session clock and pause/recovery rules.
 
-![Recall notes after a twenty-minute session, with a question marked for review](screenshots/current/recall.png)
+<p align="center">
+  <img src="screenshots/current/quick-digital.png" alt="Digital Quick timer during an actual Biology session, with Pause, Next and Finish" width="310">
+  &nbsp;
+  <img src="screenshots/current/quick-circular.png" alt="Circular Quick timer showing the same session's remaining target time in a dark theme" width="250">
+</p>
 
-[Follow a complete first session →](docs/USER_GUIDE.md#your-first-study-session)
+Use **Flow** to count up toward a target, **Fixed** to count down, or **Adaptive** for a planning target informed by eligible past focus ratings. These modes plan study time; they do not measure learning.
 
-### Take a break, then pick up the thread
+### Full Mode
 
-Choose a rest length, step away and return when you are ready. FocusRecall keeps Focus, Recall and Rest as separate parts of the session.
+Choose a subject and optional session goal, then move through **Focus → Review & connect → Log → Rest**. Preparation, written recall, ratings and a timed rest are optional. The floating Focus panel has distraction, subject-switch and finish controls.
 
-<p align="center"><img src="screenshots/current/rest.png" alt="Rest countdown during a five-minute break" width="520"></p>
+After Focus, you can write or draw what you remember, mark a question for later, review your materials, then save the details you want to keep.
 
-### See your activity. Keep the interpretation honest.
+![Full Mode Review and connect with fictional Biology notes and a question to revisit](screenshots/current/recall.png)
 
-History brings sessions, saved notes and review reminders together. Stats shows recorded study time and lets you explore self-ratings and conditions with uncertainty explained. Immediate ratings describe your experience, rather than measuring how much you learned.
+[Use Quick Mode or follow a complete Full session →](docs/USER_GUIDE.md#your-first-study-session)
 
-![A completed Structural mechanics session with its recorded time and saved recall](screenshots/current/history.png)
+### History and Stats
 
-### Learn something about studying
+History keeps sessions, subject time, notes and follow-ups. Stats shows recorded time and lets you inspect conditions and immediate self-ratings with uncertainty explained. Those ratings do not establish retention, mastery or which method works best.
 
-Learn brings illustrated explanations and **24 research-informed strategies** into the app. Browse an idea, look at the research and its limits, and save something you want to revisit. General research guidance stays separate from your personal comparisons.
+![History after actual Quick and Full sessions using fictional Biology data](screenshots/current/history.png)
 
-![A complete Learn idea about the difference between familiarity and remembering, with a practical next step and research disclosure](screenshots/current/learn.png)
+### Learn
 
-## Your workspace, your preferences
+Learn contains illustrated explanations and **24 research-informed strategies**, with sources and limitations. Browse Explore or save an idea for later. This general guidance is separate from your personal comparisons.
 
-**26 themes**, independent light and dark choices, and an option to follow Windows appearance. Adjust text and floating-panel size, organize subjects in your own order, and choose how much to record.
+![Learn with the approved illustrations and practical guidance](screenshots/current/learn.png)
 
-Available in **English, العربية, Español, Français, 简体中文, Português (Brasil) and Deutsch**, with Arabic right-to-left layout and keyboard navigation.
+## Appearance and languages
 
-![Appearance in Ink Dim: separate light/dark palettes and the Follow Windows control](screenshots/current/appearance.png)
+Choose from **26 themes**, independent light/dark preferences, or follow Windows appearance. Adjust interface text, floating-panel size and timer display. Subject sorting offers manual order, alphabetical, recently studied and most studied.
 
-## Privacy starts with the defaults
+Available in **English, العربية, Español, Français, 简体中文, Português (Brasil) and Deutsch**, including Arabic right-to-left layout and keyboard navigation.
 
-- **No required account.** Study records and notes are stored locally.
-- **Window monitoring starts off.** Enabling it is your choice; collecting window titles is a separate opt-in.
-- **You control exports.** Backups, reports and sending notes to Obsidian are explicit actions. A destination folder may be synced by software you use.
-- **Unobserved time is not assumed to be study.** Locking Windows, sleeping or an uncertain interruption stops automatic credit.
+![Appearance settings with the Digital and Circular floating timer choice](screenshots/current/appearance.png)
 
-Local records and backups are not encrypted by FocusRecall. Historical window titles can be deleted separately; existing backups and exports are not erased. [Read the privacy details →](PRIVACY.md)
+## Privacy and data
+
+- No required account. Records and notes are stored on your computer.
+- Window monitoring starts off; window titles have a separate opt-in.
+- Backups, reports and sending notes to Obsidian are explicit actions. Other software may sync destination folders.
+- Locking Windows, sleep and uncertain interruptions stop automatic study-time credit. Follow the recovery prompt when returning.
+
+Local databases and backups are not encrypted by FocusRecall. Stored window titles can be deleted separately; existing backups and exports are not erased. [Privacy details](PRIVACY.md)
 
 ## Getting started
 
-If you have been invited to controlled testing, use the exact installer and checksum supplied for that test. The Windows candidate is **unsigned**. Public release is still on hold; older draft assets are not the current download.
+There is no public installer download. If invited to testing, use only the exact approved installer and checksum. The candidate is unsigned; keep Windows security enabled and report unexpected warnings.
 
-- **First session:** [Follow the user guide](docs/USER_GUIDE.md#your-first-study-session).
-- **Updating:** [Protect your records and install safely](docs/USER_GUIDE.md#install-update-and-protect-your-records).
-- **Availability:** [Read the release status](docs/RELEASE_STATUS.md).
-- **Questions:** [Get help or report a problem](SUPPORT.md).
-- **Contributing:** [Build FocusRecall from source](https://github.com/abd1442/FocusRecall-Dev).
-
-## Support the project
-
-If FocusRecall is useful to you, you can [buy the developer a coffee on Ko-fi](https://ko-fi.com/abd442). Donations are entirely optional and do not unlock features or priority support. Thoughtful bug reports and clear feedback help too.
+- [User guide](docs/USER_GUIDE.md)
+- [Updating and protecting records](docs/USER_GUIDE.md#install-update-and-protect-your-records)
+- [Availability](docs/RELEASE_STATUS.md)
+- [Help and bug reports](SUPPORT.md)
+- [Source and contributing](https://github.com/abd1442/FocusRecall-Dev)
 
 ## License
 
 Original FocusRecall code is **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Matching-source information](SOURCE_NOTICE.md)
+
+## Optional support
+
+Donations are optional and do not unlock features or priority support.
+
+<a href="https://ko-fi.com/abd442"><img src="assets/kofi-support.png" alt="Support me on Ko-fi" width="245"></a>

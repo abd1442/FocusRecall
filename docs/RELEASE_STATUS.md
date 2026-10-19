@@ -1,19 +1,15 @@
 # Release status
 
-**Current build:** beta.28-rc.2 is a Windows test candidate, not a public release.
+**Current candidate:** beta.29 RC1 for Windows x64. It includes Quick and Full Mode and both approved floating timer displays. It is not a public release and has no public download.
 
-**Access:** testing is by invitation. There is no public installer download, and the friend-testing package remains on hold.
+**Testing:** packaged application and isolated fictional-profile checks have passed. Actual beta.29 installation, historical upgrades and uninstall/reinstall on a separate PC are still pending. A friend's earlier RC2 test does not verify beta.29.
 
-**Still being checked:** installation and upgrades on additional Windows machines, accessibility and final distribution materials. Artwork rights must be resolved before sharing.
+## If invited to test
 
-## If you are invited to test
-
-Use the exact installer and checksum supplied with your invitation. The candidate is **unsigned**. Keep Windows security enabled, report unexpected warnings and back up your study data before updating. The [user guide](USER_GUIDE.md#install-update-and-protect-your-records) explains the safe update steps; [support](../SUPPORT.md) explains how to report a problem.
-
-Older draft downloads are not the current candidate. These pages do not offer an installer or change the distribution hold.
+Use only the exact installer and checksum approved for your test. The candidate is unsigned. Keep Windows security enabled and use fictional records on an agreed separate PC. Do not install over someone else's personal study data. [Guide](USER_GUIDE.md#install-update-and-protect-your-records) · [Support](../SUPPORT.md)
 
 ## For maintainers
 
-The repositories remain private. **Do not publish or distribute the installer, friend package or artwork until the existing holds are cleared.**
+Both repositories remain private. Existing artwork-rights and public-distribution holds remain; these pages do not authorize sharing an installer or artwork. No installer or release is uploaded by this update.
 
-See [maintainer release gates](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/MAINTENANCE.md#release-gates) for source provision, historical compatibility, Windows/hardware testing and artifact review. Exact retained artifact hashes are in [SHA256SUMS.txt](../SHA256SUMS.txt). [Screenshot provenance](../screenshots/current/manifest.json) records how the fictional examples were captured.
+[Maintainer release gates](https://github.com/abd1442/FocusRecall-Dev/blob/main/docs/MAINTENANCE.md#release-gates) cover rights, source provision and Windows/accessibility testing. [Candidate checksums](../SHA256SUMS.txt) identify the locally retained installer/source pair; [screenshot provenance](../screenshots/current/manifest.json) identifies the packaged captures.
