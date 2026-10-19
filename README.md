@@ -283,7 +283,7 @@ Use the source package that matches your installer; the development repository m
   <a href="https://ko-fi.com/abd442">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/support-kofi-banner-dark.png">
-      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Show a little appreciation on Ko-fi, if you’d like. Thank you!" width="820">
+      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Show a little appreciation on Ko-fi, if you’d like. Thank you!" width="620">
     </picture>
   </a>
 </p>
