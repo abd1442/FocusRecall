@@ -283,9 +283,9 @@ Use the source package that matches your installer; the development repository m
   <a href="https://ko-fi.com/abd442">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/support-kofi-banner-dark.png">
-      <img src="assets/support-kofi-banner.png" alt="Help fund FocusRecall: support on Ko-fi. Optional; FocusRecall is free, with no ads, accounts or paid features." width="620">
+      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Show a little appreciation on Ko-fi, if you’d like. Thank you!" width="620">
     </picture>
   </a>
 </p>
 
-<p align="center"><sub>Donations are optional and don't unlock anything or change access to help.</sub></p>
+<p align="center">If FocusRecall has been useful to you, you can show your appreciation on <a href="https://ko-fi.com/abd442">Ko-fi</a>.<br>Entirely optional—and thank you for using it.</p>
