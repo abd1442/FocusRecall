@@ -23,4 +23,4 @@ If FocusRecall has been useful to you, you can [show your appreciation on Ko-fi]
 
 You can also help with a clear bug report, careful fictional-profile testing or language feedback. If you test a workflow or translation, tell us which Windows version and language you used.
 
-<p align="center"><a href="https://ko-fi.com/abd442"><img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Optional support on Ko-fi. Thank you!" width="620"></a></p>
+<p align="center"><a href="https://ko-fi.com/abd442"><img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Optional support on Ko-fi. Thank you!" width="820"></a></p>
