@@ -1,1 +1,31 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><style>*{box-sizing:border-box}html,body{margin:0;width:660px;height:220px;overflow:hidden;background:transparent}.banner{width:660px;height:220px;border-radius:20px;background:#183d56;border:1px solid #2d5269;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;font-family:Segoe UI,Arial,sans-serif;position:relative}.banner:before{content:"";position:absolute;left:0;top:30px;bottom:30px;width:5px;background:#cc8c30;border-radius:0 4px 4px 0}h1{font-size:32px;line-height:1.2;color:#fffdf7;font-weight:600;margin:0}img{width:420px;height:auto;display:block}</style></head><body><div class="banner"><h1>Support FocusRecall</h1><img src="kofi-support.png" alt="Support me on Ko-fi"></div></body></html>
+<!doctype html>
+<!-- Source for support-kofi-banner.png (light) and support-kofi-banner-dark.png (?theme=dark).
+     Render at 720x200 CSS px, device scale 2. The Ko-fi button is Ko-fi's own button artwork (support-kofi.png). -->
+<html lang="en"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;width:720px;height:200px;overflow:hidden;background:transparent}
+:root{--card:#FFFDF7;--card2:#F6F0E4;--edge:#E2D9C7;--ink:#183D56;--muted:#5E6A70;--track:#EAE1D0;--amber:#CC8C30;--dot:#4A9A97}
+body.dark{--card:#183D56;--card2:#0F2638;--edge:#2E5470;--ink:#FFFDF7;--muted:#B8C7D1;--track:rgba(255,253,247,.14);--amber:#E0A04A}
+.card{position:absolute;inset:0;border-radius:24px;border:1.5px solid var(--edge);
+  background:linear-gradient(135deg,var(--card) 0%,var(--card) 55%,var(--card2) 100%);
+  display:flex;align-items:center;gap:26px;padding:0 30px 0 30px;font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;overflow:hidden}
+.ring{position:relative;flex:none;width:118px;height:118px}
+.ring svg{position:absolute;inset:0}
+.ring img{position:absolute;left:29px;top:29px;width:60px;height:60px;border-radius:14px}
+.text{flex:1;min-width:0}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--dot);display:inline-block}
+h1{margin:0;white-space:nowrap;font-size:30px;line-height:1.15;color:var(--ink);font-weight:600;letter-spacing:-.01em}
+p{margin:8px 0 0;font-size:15.5px;line-height:1.4;color:var(--muted)}
+.btn{flex:none;width:186px;filter:drop-shadow(0 6px 14px rgba(15,38,56,.18))}
+.btn img{width:100%;display:block}
+.arc{position:absolute;right:-120px;bottom:-190px;width:330px;height:330px;border-radius:50%;border:16px solid var(--track)}
+</style></head><body><div class="card">
+<div class="arc"></div>
+<div class="ring"><svg viewBox="0 0 118 118"><circle cx="59" cy="59" r="52" fill="none" stroke="var(--track)" stroke-width="7"/>
+<circle cx="59" cy="59" r="52" fill="none" stroke="var(--amber)" stroke-width="7" stroke-linecap="round" stroke-dasharray="245 400" transform="rotate(-90 59 59)"/>
+<circle cx="59" cy="59" r="52" fill="none" stroke="var(--amber)" stroke-width="0" /></svg>
+<img src="focusrecall-icon.png" alt=""></div>
+<div class="text"><div class="eyebrow"><i></i>Optional support</div><h1>Help fund FocusRecall</h1><p>Free, with no ads, accounts or paid features.</p></div>
+<div class="btn"><img src="support-kofi.png" alt="Support me on Ko-fi"></div>
+</div><script>if(location.search.includes('dark'))document.body.classList.add('dark')</script></body></html>

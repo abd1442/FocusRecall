@@ -4,7 +4,7 @@
 
 The final build changes only the version from accepted RC3. The owner reports successful testing on a second Windows 11 PC; exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Those checks are not claimed as passed.
 
-If invited to test, use only the installer and checksum supplied to you. The installer is unsigned. Keep Windows protection enabled; stop on a threat detection. [Installation and backups](../README.md#install-update-and-protect-your-records) · [Support](../SUPPORT.md)
+If invited to test, use only the installer and checksum supplied to you. The installer is unsigned. Keep Windows protection enabled; stop on a threat detection. [Installation and backups](../README.md#backups-and-updates) · [Support](../SUPPORT.md)
 
 ## Maintainer information
 

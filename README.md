@@ -1,263 +1,291 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/focusrecall-lockup-dark.svg">
-    <img src="assets/focusrecall-lockup.svg" alt="FocusRecall" width="340">
+    <img src="assets/focusrecall-lockup.svg" alt="FocusRecall" width="320">
   </picture>
 </p>
 
-<p align="center">A Windows study timer with recall notes, session history and study records that stay on your computer.</p>
-
-<p align="center"><strong>Windows x64</strong> · beta.29 · GPL-3.0-only · Seven languages</p>
+<h3 align="center">A study timer for Windows, with recall notes and a private record of your study.</h3>
 
 <p align="center">
-  <a href="#your-first-study-session">Start studying</a> ·
-  <a href="#home-tools">Home</a> ·
-  <a href="#find-your-sessions-and-notes">History</a> ·
-  <a href="#read-stats">Stats</a> ·
-  <a href="#learn">Learn</a> ·
-  <a href="#appearance-and-language">Appearance</a> ·
-  <a href="#choose-what-you-record">Privacy</a> ·
-  <a href="#install-update-and-protect-your-records">Install &amp; backups</a> ·
-  <a href="#if-something-goes-wrong">Help</a>
+  Time a subject in a small floating panel, write down what you remember, and come back to it later.<br>
+  Your records stay on your computer.
 </p>
 
-![Home with fictional subjects, the Biology plan card, a timer target and an optional session goal](screenshots/current/home.png)
+<p align="center">
+  <sub><b>Windows x64</b> &nbsp;·&nbsp; <b>0.1.0-beta.29</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
+</p>
 
-> [!NOTE]
-> **beta.29 is prepared locally. There is no public download yet.** [Availability](docs/RELEASE_STATUS.md)
+<p align="center">
+  <a href="#two-ways-to-study">Modes</a> &nbsp;·&nbsp;
+  <a href="#a-full-mode-session">Study cycle</a> &nbsp;·&nbsp;
+  <a href="#the-floating-timer">Timer</a> &nbsp;·&nbsp;
+  <a href="#history-and-notes">History</a> &nbsp;·&nbsp;
+  <a href="#stats">Stats</a> &nbsp;·&nbsp;
+  <a href="#learn">Learn</a> &nbsp;·&nbsp;
+  <a href="#themes-text-and-language">Themes</a> &nbsp;·&nbsp;
+  <a href="#privacy">Privacy</a> &nbsp;·&nbsp;
+  <a href="#backups-and-updates">Backups</a> &nbsp;·&nbsp;
+  <a href="#install">Install</a>
+</p>
 
-FocusRecall is a Windows x64 study timer. Choose a subject, keep time in a floating panel, and save the notes and session details you find useful. Records stay on your computer; no account or automatic monitoring is required.
+<br>
 
-This page is the complete user guide. Screenshots show real application screens with fictional study data.
+<p align="center">
+  <img src="assets/readme/hero.png" alt="FocusRecall Home with the Biology subject selected, a 25-minute Flow target and a session goal, next to the floating circular timer showing 23:14 of 25:00">
+</p>
 
-## Quick Mode or Full Mode?
+<br>
 
-| | Quick Mode | Full Mode |
-| --- | --- | --- |
-| Start | Select a subject and Start | Select a subject, optionally set a goal, then Start |
-| While studying | Distracted, Switch, Finish | Distracted, Switch, Finish |
-| After Focus | Save and stop, or take an optional break | Optional recall, session log and rest |
-| Shared | Subjects, history, settings, Learn and Stats | The same subjects and records |
+You choose a subject and start a timer. A small floating panel keeps time while you work in your book, browser or editor. When you finish, FocusRecall can ask you to write down what you remember before you look back at your material, then keeps the session, your notes and anything you marked to revisit.
 
-Choose during setup, or switch between sessions in Settings. Existing profiles start in Full Mode. Switching does not erase or rewrite history.
+Use as much or as little of it as you like. Notes, ratings, rest timers and automatic tracking are all optional, and you never need an account.
 
-## Your first study session
+<table>
+  <tr><td><b>Two modes</b></td><td>Quick Mode is a timer and nothing else. Full Mode adds recall, a short log and timed rest.</td></tr>
+  <tr><td><b>Floating timer</b></td><td>Digital or circular. Mark distractions, switch subjects, finish.</td></tr>
+  <tr><td><b>Recall notes</b></td><td>Typed or drawn, searchable in History, with follow-ups marked for review.</td></tr>
+  <tr><td><b>Study records</b></td><td>A calendar of study days, History, and Stats that separate time from learning.</td></tr>
+  <tr><td><b>Learn</b></td><td>One short idea about studying each day, with the research behind it and its limits.</td></tr>
+  <tr><td><b>Local and private</b></td><td>No telemetry, ads, cloud sync or account. Verified backups in one click.</td></tr>
+</table>
 
+<br>
 
-### Quick Mode: start studying
+## Two ways to study
 
-1. On Home, create or select a subject. The plan card shows its target and timer mode. Open **Timer options** to change them, then select **Start**. The floating timer opens automatically.
-2. **Distracted** stops the focus clock; **Resume** continues the same session. The running controls are **Distracted**, **Switch** and **Finish**. Reaching the target does not start another session.
-3. To change subjects without ending the session, select the subject name and chevron on the floating panel, choose the next subject and confirm **Switch now**. Each subject retains its own time.
-4. After selecting Distracted, while paused, **Break** saves the session and offers a break timer. **Break over** does not automatically resume studying: choose **Resume** when ready.
-5. **Finish** saves and stops. No preparation, recall, log answers or rest are required; skipped activities are not filled in for you.
+<p align="center">
+  <img src="assets/readme/modes.png" alt="Quick Mode launcher with a 25-minute Biology plan and the subject list, beside Full Mode Home with timer options and a session goal">
+</p>
 
-![Quick launcher with the subject plan beside the subject list](screenshots/current/quick-launcher.png)
+|  | Quick Mode | Full Mode |
+| :-- | :-- | :-- |
+| **Start** | Pick a subject, press Start | Pick a subject, set an optional goal, press Start |
+| **While studying** | Distracted · Switch · Finish | Distracted · Switch · Finish |
+| **After Focus** | Saved. Take a break if you want one | Optional recall notes, session log and timed rest |
+| **Extras on Home** | None, just the launcher | Parked thoughts, study calendar, stage line |
 
-<p align="center"><img src="screenshots/current/quick-digital.png" alt="Digital Quick timer showing Distracted, Switch and Finish" width="340"></p>
+You choose a mode during setup and can change it later in **Settings** between sessions. Both modes share the same subjects, History, Stats, Learn and Library, and switching never rewrites your records.
 
-The main window is also a keyboard-accessible alternative for Distracted, Resume, Break, Finish and Switch. **Show timer** brings back the floating panel.
+### Quick Mode in five steps
 
-### Full Mode: a complete study cycle
+1. On Home, select or create a subject. **Timer options** changes the target and timer type.
+2. Press **Start**. The floating timer opens.
+3. Pulled away? Press **Distracted** to stop the focus clock and **Resume** to continue.
+4. To change subjects, open the subject name on the panel, pick another and confirm **Switch now**. Each subject keeps its own time.
+5. Press **Finish** to save and stop. Nothing else is required.
 
-The following steps describe Full Mode. Writing notes, answering ratings and taking a timed rest are optional.
+While paused, **Break** saves the session and offers a break timer. When the break ends, studying does not restart until you press **Resume**.
 
-#### 1. Choose a subject and one small goal
+<br>
 
-Open **Home**, select **New subject** and enter a name you will recognize later, such as “Biology.” Select its card to see the timer controls. You can organize subjects into categories; you do not need to plan your entire course before starting.
+## A Full Mode session
 
-Write an optional session goal: “Explain how water moves through a plant” is more specific than “Study.” The goal stays with the session so you can return to it later.
+Full Mode walks through one study cycle. Every step after Start can be skipped.
 
+<p align="center">
+  <img src="assets/readme/workflow.png" alt="The four stages of a Full Mode session: plan with a subject, timer and goal; focus with the floating timer; recall notes about water moving through a plant with a follow-up marked for review; and a five-minute rest countdown">
+</p>
 
-Choose a timer:
+**1 · Plan.** Select a subject on Home and choose a timer:
 
-- **Flow:** counts up, with a target marker. Useful when you want room to continue while the work is going well.
-- **Fixed:** counts down from your chosen target. Useful when you have a set amount of time available.
-- **Adaptive:** suggests a target from eligible past sessions on the subject, using your default until enough are available. You can override it.
+- **Flow** counts up past a target marker, for when you want to keep going while it's working.
+- **Fixed** counts down from the time you have.
+- **Adaptive** suggests a target from your recent sessions on that subject. You can override it.
 
-The target helps plan time. Choose a comfortable duration, then select **Start**. If preparation is enabled, confirm the **Get ready** panel before beginning.
+A short, specific goal helps: *"Explain how water moves through a plant"* is easier to check afterwards than *"Study biology"*. It stays attached to the session.
 
-**Today Check:** answer it if useful, or choose **Skip for today**. That hides it for the rest of the local calendar day, including after a restart. The permanent Show/Hide preference in Settings takes precedence and does not erase previous check-ins.
+**2 · Focus.** Work wherever you normally do. The floating timer stays on top so you can see time and mark interruptions without switching windows. Details are in [The floating timer](#the-floating-timer).
 
-#### 2. Work with the floating timer
+**3 · Recall.** After Focus, try to explain what you remember *before* checking your notes. Optionally start a short review timer, then **Type notes** or **Draw notes**, or use paper. Write the main idea and one thing you're unsure of. **Review later** turns that uncertainty into a reminder you can find in History. Rating how much you could recall is optional.
 
-Study in your usual book, browser, editor or on paper. Open **Panel** if you want the compact timer beside your work. Drag it to a comfortable position.
+**4 · Log and rest.** *How did it go?* asks a few optional questions; choose which ones in **Settings → Log questions**. Then pick a rest length and press **Start rest**. Rest is recorded separately and never counts as focus time. When it ends, start another session or choose **Finish studying**.
 
-<p align="center"><img src="screenshots/current/focus-panel.png" alt="Approved floating Focus timer during a Full Mode session" width="310"></p>
+<details>
+<summary><b>More about the cycle</b>: preparation, Today Check, keyboard shortcuts and short sessions</summary>
+<br>
 
-In **Full Mode**, use these controls:
+- **Get ready.** If preparation is turned on, a short panel appears before the timer starts.
+- **Today Check.** The optional check-in at the top of Home can be answered or skipped. **Skip for today** hides it until local midnight, even after a restart. Settings can hide it permanently without erasing earlier check-ins.
+- **Ctrl+Enter** continues from review or the log when the next action is available. Check the visible button first.
+- **Very short sessions.** If you finish very quickly, FocusRecall asks whether to keep the session. Choose **Keep it** if it belongs in your history.
+- **Locking or sleeping Windows** interrupts timing. The gap is not counted as focus; follow the prompt when you return.
 
-- **Distracted** marks time away from studying; **Back** resumes the focus clock. Use it when you are pulled away, even if monitoring is off.
-- **Switch** changes subjects within the current session while preserving the parts already recorded.
-- **Finish** on the panel, or **Finish session** in the main window, takes you to review.
+</details>
 
-You do not need automatic window tracking to use the timer. Locking Windows or suspending the computer interrupts observed timing; the application does not automatically count that gap as focused work. Follow the return/recovery prompt before continuing.
+<br>
 
-#### 3. Recall, then decide what to revisit
+## The floating timer
 
-**Review & connect** appears after Focus. Try explaining what you remember before checking your materials. You can use paper or another app; writing here is optional.
+<p align="center">
+  <img src="assets/readme/timers.png" alt="Three floating timers: a digital timer at 02:05 of 25:00, a light circular timer at 23:14 of 25:00 and a dark circular timer at 22:54 of 25:00, each with Distracted, Switch and Finish">
+</p>
 
-1. Optionally choose **Start review** for a short review timer. It has its own pause/resume control.
-2. Select **Type notes** or **Draw notes** if you want to keep something in FocusRecall.
-3. Record the main idea and a point you are still unsure about.
-4. Use **Review later** for a specific reminder, such as comparing water loss on a dry day and a humid day.
-5. Select **Continue to session log**. **Skip review** is available when you do not want this step.
+| Control | What it does |
+| :-- | :-- |
+| **Distracted** | Stops the focus clock while you're away. **Resume** (Quick) or **Back** (Full) continues the same session. |
+| **Switch** | Moves to another subject without ending the session. Time is kept per subject. |
+| **Finish** | Ends Focus. Quick Mode saves; Full Mode moves on to recall. |
 
-![Recall notes from the Biology session, with a specific follow-up marked for review](screenshots/current/recall.png)
+- Choose **Digital** or **Circular** in **Settings → Appearance → Floating panel**. Circular shows time left to the target, then overtime. Size and opacity are adjustable.
+- Drag the panel anywhere. If you close it, **Panel** in the sidebar or **Show timer** brings it back.
+- Every panel action is also available from the main window, by keyboard.
 
-
-The “How much could you recall?” rating is optional. Record your immediate impression or leave it unanswered.
-
-#### 4. Log only what is useful
-
-On **How did it go?**, record the optional ratings or context you want to remember. Settings → **Log questions** controls which questions you see. You do not need to answer everything to keep a useful session record.
-
-Complete the log to reach the rest plan. When available, **Ctrl+Enter** continues from review or the log; check the visible action before using it.
-
-#### 5. Rest and return
-
-Choose a comfortable duration on the rest plan and select **Start rest**. The countdown shows the time remaining. You can adjust the suggested length before starting, and **End rest early** is available if you return sooner.
-
-<p align="center"><img src="screenshots/current/rest.png" alt="Rest countdown during the break after Focus and Recall" width="520"></p>
-
-When **Rest is over** appears, optionally record what you did, or select **Continue to next session** without an answer. Then start another session or choose **Finish studying**. Rest is recorded separately from Focus; its length does not increase focused study time.
-
-If you finish a session very quickly, the app may ask whether to keep it. Choose **Keep it** if it belongs in your history.
+<br>
 
 ## Home tools
 
-### Subjects, sorting and study time
+These live on the Full Mode Home screen.
 
-Create subjects with **New subject**, and group them into categories if useful. Search and sort share one row: **Manual**, **Alphabetical**, **Recently studied** and **Most studied**. Manual order is saved and can be changed with the keyboard. Automatic sorts depend on the history available; they do not rename or remove subjects.
+**Parked thoughts.** Press **+ Park** (or the shortcut shown on the card, such as F7) to note a question that can wait, like *"Check how humidity changes water loss."* Repeated captures are grouped with a count. Tick them off later or use **Manage thoughts**.
 
+**Saved for later.** If you put off an unfinished review, log or rest, it appears here with a **Resume** button. Time while the app was closed is not counted as rest.
 
-These extra Home tools belong to **Full Mode**. Quick Mode keeps its launcher simple; shared History, Stats, Learn, Library and Settings remain available from the sidebar.
+**Study calendar.** Each square is a day, shaded by recorded focus time. Select a day to open it in History. With the keyboard, arrow keys move between days and Enter opens one.
 
-### Park a thought without changing tasks
+**Stage line.** The line under a subject, such as *First 20 hours*, shows time invested in it, including earlier hours you entered yourself. It measures time, not skill. Labels and boundaries can be changed in Settings.
 
-Use **+ Park** to jot down a question or a task that can wait, such as “Check how humidity changes water loss.” It stays in **Parked thoughts** so you can return to studying. If configured, the shortcut shown on the card opens the capture box from your work.
+Subjects can be grouped into categories and sorted by **Manual**, **Alphabetical**, **Recently studied** or **Most studied**.
 
-Check off a thought after handling it. Repeated captures of the same thought are grouped with a count; **Manage thoughts** lets you search and complete individual captures or all repeats. These are your notes for later, not automatically detected distractions.
+<br>
 
-### Finish work saved for later
+## History and notes
 
-**Saved for later** appears only when you have deferred an unfinished review, log or rest step. Expand it and select **Resume** for the session you want to finish. It is separate from Parked thoughts and from Learn's saved ideas. Time while the app was closed is excluded from rest.
+<p align="center">
+  <img src="assets/readme/history.png" alt="History filtered to the last 30 days, showing two Biology sessions with focus time and a recall-note excerpt" width="820">
+</p>
 
-### Read the study calendar
+Filter by dates, subject, category or activity, and open any session with **View session**. Search covers recall and session notes. **Saved notes** collects everything you wrote; **To review** lists the follow-ups you marked. **Library** groups material by subject.
 
-Each square represents a local calendar day; its shade reflects recorded Focus time. Select a day to open its History records. The year controls move between years. With the keyboard, Tab enters the calendar once, arrows move between days/weeks, and Enter opens the selected day.
+To keep a note in Obsidian, choose **Obsidian / save note** and pick a destination. Your vault needs its own backup, since FocusRecall backups don't include it.
 
-### Understand the stage line
+<br>
 
-The line below a subject summarizes its study-time milestone, such as **First 20 hours**. It uses recorded Focus time plus any earlier hours you entered for the subject. The progress shows time invested, not a learning level or mastery assessment. Settings lets you customize the time-stage labels and boundaries.
+## Stats
 
-## Find your sessions and notes
+<p align="center">
+  <img src="assets/readme/stats.png" alt="Stats overview with recorded study time, recent activity, subjects studied and a study-patterns panel that reports no clear comparison yet" width="820">
+</p>
 
-Open **History** to revisit work. Choose a date range, narrow it to a subject or activity, and use **View session** to inspect the details. The search field finds recall and session notes.
+Stats starts with what was recorded: time, sessions, subjects and recent activity. **Adjust filters** shows exactly which days and subjects are included, and **Saved views** keeps a filter setup for later.
 
-![Completed History session with recorded Focus time and a recall-note excerpt](screenshots/current/history.png)
+When you have enough comparable sessions, Stats can compare conditions, and it says plainly when the evidence isn't there yet. Keep three things apart when reading it:
 
-Use **Saved notes** to find retained writing and **To review** for marked follow-ups. For example, after checking the effect of humidity, return to the relevant session and review what you wrote. **Library** organizes material by subject.
+| What Stats shows | What it can't prove on its own |
+| :-- | :-- |
+| Time spent | That you learned |
+| How a session felt | That you'll remember it |
+| Patterns between sessions | What caused them |
 
-To send a note to Obsidian, choose **Obsidian / save note**, select the destination and save explicitly. Keep your vault backed up separately. Choosing an external destination does not make a FocusRecall backup cover that destination.
+To judge learning, test yourself on the material later. A timer and a self-rating can't replace that.
 
-
-## Read Stats
-
-![Stats with actual recorded time and sessions from the fictional workflow](screenshots/current/stats.png)
-
-
-Start with recorded time and recent activity, then inspect any comparison that interests you. Use **Adjust filters** to see which dates and subjects are included. **Saved views** keeps a useful filter setup; it does not add new evidence.
-
-
-Read three things separately:
-
-| Recorded | Not proof of |
-| --- | --- |
-| Time: activity | Learning |
-| Ratings: experience | Retention |
-| Comparisons: association | Cause |
-
-Check the supporting records and evidence explanation. Subject mix, time trends, missing answers and other conditions can affect a comparison. “Not enough evidence” is not the same as “no difference.” A method view describes recorded experience; it is not a ranking of how someone learns best.
-
-If you create an experiment or report, keep its observational limits in mind. Consider delayed checks of the material itself when judging learning; a timer and a self-rating cannot replace them.
+<br>
 
 ## Learn
 
-Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Saved**. Each idea connects an explanation with a practical suggestion. Expand **Research and limitations** for context.
+<p align="center">
+  <img src="assets/readme/learn.png" alt="Learn Today showing the idea 'Familiar is not remembered', an illustration comparing studying with and without notes, and a practical suggestion" width="700">
+</p>
 
-![Learn Today with an illustrated distinction between familiarity and remembering, a practical suggestion and expandable research notes](screenshots/current/learn.png)
+**Today** shows one idea about studying, with a short explanation, a suggestion to try in your next session and a **Research and limitations** section. **Explore** lets you browse all 27 ideas and **Saved** keeps the ones you bookmark. **Another idea** offers something new, then cycles back through ideas you've already seen.
 
-Today follows your configured study-day start. **Another idea** always offers an idea to learn or revisit; after the 27 ideas have been shown, it cycles through them again. **New idea** and **Previously shown** describe presentation history, not completion or mastery. Existing completion records and bookmarks are retained.
+<br>
 
-![A previously shown idea offered again by the RC3 Learn cycle](screenshots/current/learn-revisit.png)
+## Themes, text and language
 
-Learn's general research guidance is separate from Stats. Try ideas that suit your task, and revisit the explanation when you want more context.
+<p align="center">
+  <img src="assets/readme/themes.png" alt="Home shown half in the light Ivory and Ink theme and half in the dark Ink Dim theme">
+</p>
 
-## Appearance and language
+Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. FocusRecall remembers one light and one dark theme, so following Windows switches between your two choices. There are **26 themes**: 11 light and 15 dark. A theme applies immediately, with a brief **Undo**.
 
-![Appearance with the light-theme gallery and an independently saved dark theme](screenshots/current/appearance-theme.png)
+- **Text & size** adjusts interface and writing text separately. **High contrast** works with any theme.
+- **Floating panel** sets the timer style, size and opacity.
+- **Languages:** English, العربية, Español, Français, 简体中文, Português (Brasil) and Deutsch. Arabic uses a right-to-left layout.
 
+<details>
+<summary><b>See the theme gallery</b></summary>
+<br>
+<p align="center">
+  <img src="assets/readme/theme-gallery.png" alt="Theme settings with Follow Windows selected and the fifteen dark themes, Ink Dim in use" width="760">
+</p>
+</details>
 
-Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. The gallery below shows the themes for the appearance on screen; selecting one applies it immediately, and **Undo** appears briefly if you change your mind. FocusRecall keeps one light and one dark theme. In Light or Dark, a note under the gallery names the other saved theme. With Follow Windows, the **Light theme** and **Dark theme** tabs choose which of the two you are changing. There are 26 themes (11 light, 15 dark); text/interface and floating-panel sizes have separate controls.
+<br>
 
-![Floating-panel appearance settings in a dark theme, with Digital and Circular timer choices](screenshots/current/appearance.png)
+## Privacy
 
-Use **Text & size** for readability and **Floating panel** for the compact controls. High contrast is available. If chart colors are difficult to distinguish, use their labels or data tables, or try another theme. Languages: **English, العربية, Español, Français, 简体中文, Português (Brasil) and Deutsch**. Change language in Settings; Arabic uses right-to-left layout.
+<p align="center">
+  <img src="assets/readme/privacy.png" alt="Automatic tracking settings, switched off, with window-title recording as a separate unchecked option and a Delete window titles button" width="760">
+</p>
 
-**Timer display:** choose **Digital** or **Circular** under Appearance → Floating panel. Digital follows the chosen Flow/Fixed/Adaptive timer mode. Circular shows remaining time to the target, followed by overtime, with a progress ring. The preference persists across restarts and does not change recorded time. Digital remains the default unless you choose otherwise.
+- Study records stay on your computer. There is **no telemetry, advertising, cloud sync or automatic update check**, and no account.
+- **Automatic tracking is off** by default. If you turn it on, it samples app names during Focus and Rest only. It never captures keystrokes, screenshots or page content.
+- **Window titles** are a separate opt-in, because titles can contain private text. **Delete window titles** removes them from your profile and keeps your study history; copies in older backups or exports are not touched.
+- Databases and backups are **not encrypted**. Protect your Windows account and wherever you keep backups.
 
-<p align="center"><img src="screenshots/current/quick-circular.png" alt="Circular floating timer in Quick Mode" width="250"></p>
+[Full privacy information](PRIVACY.md)
 
-## Choose what you record
+<br>
 
-![Tracking settings with monitoring off and window-title collection as a separate choice](screenshots/current/privacy.png)
+## Backups and updates
 
+<p align="center">
+  <img src="assets/readme/backup.png" alt="Backup and restore settings with Back Up Data, Restore Backup and Open backup folder, and an Open demo data option" width="760">
+</p>
 
-Study data stays local: no telemetry, advertising, cloud sync or automatic update checks. Normal studying needs no account or window monitoring. Foreground monitoring begins **off**. If you choose to enable it, read the disclosure; window-title collection is a separate opt-in because titles can contain sensitive text. Unavailable monitoring does not prove that a session had no distractions.
+**Settings → General → Data → Back Up Data** saves your study records, notes and settings, and checks the backup before reporting success.
 
-**Delete window titles** removes stored titles in the current profile while preserving study history and saved classifications. Finish the current study workflow before using it. It also turns future title collection off. It does not delete copies in backups, exports or synced folders; restoring an older backup can bring titles/settings back.
+Before installing an update:
 
-FocusRecall does not encrypt local databases or backups. Protect your Windows account and backup storage. External links and optional services have their own privacy policies. [Full privacy information](PRIVACY.md)
+1. Finish any session in progress.
+2. Use **Back Up Data** and keep a copy somewhere else. Back up an Obsidian vault separately.
+3. Quit FocusRecall from its tray icon, then run the new installer.
+4. Reopen it and check your subjects, a recent session and your notes.
 
-## Install, update and protect your records
+Uninstalling keeps your profile. **Restore Backup** replaces the current database after checking the backup and asking you to confirm, and keeps a safety copy of what it replaced. Never delete profile folders or database files to fix a problem; see [troubleshooting](docs/USER_GUIDE.md#if-something-goes-wrong).
 
-Use only the exact installer and checksum supplied for your test. The locally prepared version is **0.1.0-beta.29** for Windows x64; it is unsigned and is not publicly available yet. Keep Windows protection enabled. Record unexpected warnings, and stop on an antivirus threat detection. [Availability](docs/RELEASE_STATUS.md).
+<br>
 
-For a first installation, run the verified installer, follow its prompts and open FocusRecall. Choose Quick or Full Mode during setup; language and mode can be changed later in Settings. If you want to look around first, **Settings → General → Data → Open demo data** opens a separate fictional database.
+## Install
 
-![Data settings for creating a verified backup, restoring one and opening the backup folder](screenshots/current/backup.png)
+FocusRecall runs on 64-bit Windows. Version 0.1.0-beta.29 is not publicly available yet ([availability](docs/RELEASE_STATUS.md)). If you've been invited to test, use only the installer and checksum you were given. The test build is unsigned, so keep Windows security turned on and report any warning you see.
 
-Before an update:
+On first launch, pick Quick or Full Mode and your language. To look around before adding your own subjects, choose **Open demo data** in **Settings → General → Data**. It opens a separate database of made-up study and leaves your own records untouched.
 
-1. Finish the active study workflow.
-2. In Settings, use **Back Up Data** and confirm verification succeeds.
-3. Keep a separate copy somewhere safe. Back up any external Obsidian vault separately.
-4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
-5. Reopen and check your subjects, a recent session, preferences and notes.
+<br>
 
-Uninstall is configured to preserve the local profile. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
+## Help
 
-## If something goes wrong
+| If… | Then… |
+| :-- | :-- |
+| Your study data won't open | Stop. Keep the original files and backups, note the exact message and [ask for help](SUPPORT.md). Don't reset anything. |
+| Windows or antivirus shows a warning | Keep protection on and note the warning and installer version. |
+| The app keeps running after closing | Quit from the tray icon, especially before updating. |
+| Stats shows no comparison | Check the filters. Early records may not be enough yet. |
+| Text or the timer is too small | **Settings → Appearance → Text & size** or **Floating panel**. |
 
-- **Study data cannot safely open:** stop, preserve originals/backups, record the exact message and ask for help. Do not reset or replace files.
-- **Windows or antivirus warning:** capture the warning and installer version. Keep protection enabled.
-- **App still running after closing its window:** look for the tray icon and quit there before updating.
-- **No supported Stats comparison:** check filters and available records. Early records may not support a comparison yet.
-- **Text or panel too small:** adjust Appearance’s text/size or floating-panel controls.
+The [user guide](docs/USER_GUIDE.md) has every screen in detail and more troubleshooting. For a bug report, include the app version, Windows build, the steps and the exact error, and never attach your database, backups or vault. [Help and bug reports](SUPPORT.md) · [Security reports](SECURITY.md)
 
-For a bug report, include the app version, Windows edition/build, steps, expected result and exact error. Use fictional examples and check screenshots for private text before sending. Do not attach your database, backup or vault to an issue. [Help & support](SUPPORT.md) · [Private security reports](SECURITY.md)
+<br>
 
 ## Source and license
 
-[Development repository](https://github.com/abd1442/FocusRecall-Dev) · [Source package information](SOURCE_NOTICE.md) · [GPL-3.0-only license](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt)
+FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Development repository](https://github.com/abd1442/FocusRecall-Dev)
 
-Use the source package that matches your installer. A development checkout may be newer than an installed build.
+Use the source package that matches your installer; the development repository may be ahead of an installed build. Screenshots show real application screens with made-up subjects and notes.
 
 ---
 
-<p align="center">Donations are optional. They do not unlock features or change access to help.</p>
+<br>
 
 <p align="center">
-  <a href="https://ko-fi.com/abd442"><img src="assets/support-kofi-banner.png" alt="Support FocusRecall on Ko-fi — optional donations" width="660"></a>
+  <a href="https://ko-fi.com/abd442">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/support-kofi-banner-dark.png">
+      <img src="assets/support-kofi-banner.png" alt="Help fund FocusRecall: support on Ko-fi. Optional; FocusRecall is free, with no ads, accounts or paid features." width="620">
+    </picture>
+  </a>
 </p>
+
+<p align="center"><sub>Donations are optional and don't unlock anything or change access to help.</sub></p>

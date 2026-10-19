@@ -36,4 +36,6 @@ const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-
 assert.ok(fs.readFileSync('LICENSE', 'utf8').includes('GNU GENERAL PUBLIC LICENSE'))
 console.log('PASS links, tracked-file boundaries, bounded secret/path patterns, GPL materials and screenshot hashes. Not history/rights clearance.')
 
-for(const heading of ["## Your first study session","## Home tools","## Read Stats","## Learn","## Appearance and language","## Install, update and protect your records","## If something goes wrong"]) assert.ok(readme.includes(heading), heading);
+for(const heading of ["## Two ways to study","## A Full Mode session","## The floating timer","## Home tools","## History and notes","## Stats","## Learn","## Themes, text and language","## Privacy","## Backups and updates","## Install","## Help"]) assert.ok(readme.includes(heading), heading);
+const guide=fs.readFileSync('docs/USER_GUIDE.md','utf8');for(const heading of ["## Your first study session","## Home tools","## Read Stats","## Appearance and language","## Install, update and protect your records","## If something goes wrong"]) assert.ok(guide.includes(heading), heading);
+for(const m of readme.matchAll(/(?:src|srcset)="([^"]+)"/g)) if(!/^[a-z]+:/i.test(m[1])) assert.ok(fs.existsSync(m[1]), 'README image '+m[1]);
