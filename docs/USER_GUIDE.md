@@ -4,7 +4,7 @@ Choose **Quick Mode** for a timer with minimal steps, or **Full Mode** for Focus
 
 FocusRecall records time spent studying each subject and stores session notes and history. Notes, ratings and window tracking are optional.
 
-This guide describes **beta.29 RC2 on Windows**. Screenshots use fictional subjects and notes. See [availability](RELEASE_STATUS.md).
+This guide describes **beta.29 RC3 on Windows**. Screenshots use fictional subjects and notes. See [availability](RELEASE_STATUS.md).
 
 **On this page:** [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Backups & updates](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
@@ -152,7 +152,7 @@ Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Sav
 
 Today follows your configured study-day start. **Another idea** always offers an idea to learn or revisit; after the 27 ideas have been shown, it cycles through them again. **New idea** and **Previously shown** describe presentation history, not completion or mastery. Existing completion records and bookmarks are retained.
 
-![A previously shown idea offered again by the RC2 Learn cycle](../screenshots/current/learn-revisit.png)
+![A previously shown idea offered again by the RC3 Learn cycle](../screenshots/current/learn-revisit.png)
 
 Learn's general research guidance is separate from Stats. Try ideas that suit your task, and revisit the explanation when you want more context.
 
@@ -178,7 +178,7 @@ FocusRecall does not encrypt local databases or backups. Protect your Windows ac
 
 ## Install, update and protect your records
 
-If invited to testing, use the supplied **beta.29 RC2** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
+If invited to testing, use the supplied **beta.29 RC3** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
 
 Before an update:
 
@@ -188,7 +188,7 @@ Before an update:
 4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
 5. Reopen and check your subjects, a recent session, preferences and notes.
 
-Uninstall is configured to preserve the local profile; the RC2 installer still needs separate-PC verification. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
+Uninstall is configured to preserve the local profile; the RC3 installer still needs separate-PC verification. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
 
 ## If something goes wrong
 

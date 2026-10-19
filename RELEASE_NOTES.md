@@ -1,4 +1,4 @@
-# beta.29 RC2 — controlled testing candidate
+# beta.29 RC3 — controlled testing candidate
 
 Prepared locally; no public installer is available. Actual separate-PC installation and upgrade tests remain pending.
 
@@ -7,5 +7,6 @@ Prepared locally; no public installer is available. Actual separate-PC installat
 - Learn refreshes across configured study days and cycles exhausted content, while preserving completion/bookmark records and labelling previously shown ideas.
 - Appearance uses one gallery for the selected mode, retaining all 26 themes, independent saved palettes, Undo and Follow Windows.
 - Settings navigation improves rail spacing, RTL alignment, focus indication and accessible names.
+- Retained custom action colors now coordinate with normal sidebar selection. Buttons and segmented selections use the theme’s existing state colors. Approved palettes and layouts are unchanged.
 
 Schema remains 14. Existing timing, statistical, scientific, privacy and security safeguards remain. Earlier candidates and their matching source archives are retained unchanged.

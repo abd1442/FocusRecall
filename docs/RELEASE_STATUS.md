@@ -1,8 +1,8 @@
 # Release status
 
-**Current candidate:** beta.29 RC2 for Windows x64. It includes Quick and Full Mode and both approved floating timer displays. It is not a public release and has no public download.
+**Current candidate:** beta.29 RC3 for Windows x64. It includes Quick and Full Mode and both approved floating timer displays. It is not a public release and has no public download.
 
-**Testing:** packaged application and isolated fictional-profile checks have passed. Actual beta.29 RC2 installation, historical upgrades and uninstall/reinstall on a separate PC are still pending. A friend's earlier beta.28 RC2 test does not verify beta.29 RC2.
+**Testing:** packaged application and isolated fictional-profile checks have passed. Actual beta.29 RC3 installation, historical upgrades and uninstall/reinstall on a separate PC are still pending. The fresh Windows VM scenarios have not run yet; an earlier friend-PC test does not verify this candidate.
 
 ## If invited to test
 

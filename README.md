@@ -9,7 +9,7 @@
 
 <p align="center">
   <img alt="Windows x64" src="https://img.shields.io/badge/Windows-x64-1B2F40?style=flat-square">
-  <img alt="Pre-release: beta.29 RC2" src="https://img.shields.io/badge/status-beta.29%20RC2%20pre--release-CC8C30?style=flat-square">
+  <img alt="Pre-release: beta.29 RC3" src="https://img.shields.io/badge/status-beta.29%20RC3%20pre--release-CC8C30?style=flat-square">
   <img alt="License: GPL-3.0-only" src="https://img.shields.io/badge/license-GPL--3.0--only-245679?style=flat-square">
   <img alt="Seven languages" src="https://img.shields.io/badge/languages-7-2C6E6E?style=flat-square">
 </p>
