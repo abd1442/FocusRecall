@@ -1,2 +1,2 @@
-ff550687c811290a25bc5097ba99a26554e2de25f25a154a13bf7dec564585fa  FocusRecall-0.1.0-beta.29-rc.1-setup.exe
-94fbc3af3c89318b9ddc71fd585283d4ee4bc37a88cadb54b1fbaf5b6f3e8b22  FocusRecall-0.1.0-beta.29-rc.1-source-and-dependencies.zip
+e7ad84c9708a042f347e6864c64e8b3444740fc72a8e943bbe93e7008d4a4f9b  FocusRecall-0.1.0-beta.29-rc.2-setup.exe
+04612a7f6e3e8d3a219b2316d78c07c817b0c52a4e8c1e43a1f46662ea0edc40  FocusRecall-0.1.0-beta.29-rc.2-source-and-dependencies.zip

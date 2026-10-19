@@ -1,12 +1,11 @@
-# beta.29 RC1 candidate notes
+# beta.29 RC2 — controlled testing candidate
 
-Prepared for controlled Windows x64 testing, not publicly released.
+Prepared locally; no public installer is available. Actual separate-PC installation and upgrade tests remain pending.
 
-- **Quick Mode:** a subject launcher and floating timer, with Pause/Resume, Next, optional Break and Finish. Switch subjects without ending the session. Quick records do not invent skipped recall or ratings.
-- **Full Mode:** the existing preparation, Focus, Recall, logging and Rest workflow. Both experiences share subjects, preferences and history; existing users start in Full Mode.
-- **Floating display:** choose the approved Digital or Circular layout. The preference persists across restarts.
-- **Usability:** immediate Learn visuals, shorter advice, responsive panel layouts, localized dates and singular/plural wording.
+- Quick Mode restores running Distracted, Switch and Finish controls, with Resume and optional Break while paused. There is no running Next action or automatic next session.
+- Both floating timer displays have narrower Quick frames and better title spacing.
+- Learn refreshes across configured study days and cycles exhausted content, while preserving completion/bookmark records and labelling previously shown ideas.
+- Appearance uses one gallery for the selected mode, retaining all 26 themes, independent saved palettes, Undo and Follow Windows.
+- Settings navigation improves rail spacing, RTL alignment, focus indication and accessible names.
 
-The earlier timing, statistical, recommendation, privacy, security, theme and keyboard corrections remain. Schema stays at 14. RC2 and RC3 artifacts are retained unchanged.
-
-Packaged checks passed; actual beta.29 installation, real historical-installer upgrades and uninstall/reinstall remain pending. [Status](docs/RELEASE_STATUS.md).
+Schema remains 14. Existing timing, statistical, scientific, privacy and security safeguards remain. Earlier candidates and their matching source archives are retained unchanged.

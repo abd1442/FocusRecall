@@ -1,26 +1,25 @@
 {
-  "version": "0.1.0-beta.29-rc.1",
-  "captured": "2026-10-19T16:18:58.358Z",
+  "version": "0.1.0-beta.29-rc.2",
+  "captured": "2026-10-19T20:18:19.422Z",
   "fictionalOnly": true,
   "demoMode": false,
   "artworkRightsCleared": false,
-  "qaAppAsarSha256": "31f650f15870fdd47d174b7ed95f3325989cf77ac5341a902e2712b23e8a7dcf",
+  "qaAppAsarSha256": "c9765b8c1a285185b83994d440fdcf3d234585d1f1b31fc795baa2f2155cb94d",
   "rendererPreloadMatchesVerifiedCandidate": true,
   "outputPixelsPerCssPixel": 2,
   "uiScale": 1,
   "language": "en",
-  "method": "Direct packaged Chromium compositor screenshots at two output pixels per CSS pixel. No image retouching, DOM editing, clock mocking or invented timer values. All study time elapsed in the actual app.",
+  "method": "Direct packaged compositor captures, normal UI scaling. No image retouching, DOM edits, clock mocking, seeded study hours or invented timer values. Rest-countdown is a direct viewport crop.",
   "workflow": {
-    "blocks": 2,
     "records": [
       {
-        "focus_seconds": 130.83134619140625,
+        "focus_seconds": 158.665833984375,
         "recall_seconds": null,
         "rest_actual_seconds": null
       },
       {
-        "focus_seconds": 125.47437548828125,
-        "recall_seconds": 31,
+        "focus_seconds": 125.50098876953125,
+        "recall_seconds": 32,
         "rest_actual_seconds": 63
       }
     ],
@@ -29,91 +28,163 @@
   "images": [
     {
       "file": "quick-launcher.png",
-      "description": "Quick Mode subject launcher",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 149639,
-      "sha256": "1a04fd6c349df86adb807a4eefde97d5779634c2a025b17aed3a7c6a912e2d6e",
-      "pixelWidth": 2560,
-      "pixelHeight": 1640
+      "description": "RC2 Quick launcher with fictional subjects and current instructions.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 186147,
+      "sha256": "2a7b577f6154651690fd0b2104e4b667248497373b37ca9fcdb8e31ed585b8e4",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
     },
     {
       "file": "quick-digital.png",
-      "description": "Digital Quick timer during the actual saved Biology session",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 20476,
-      "sha256": "d48a136a679ec299d5e10d5c9f0b56033a73b791dce56303213aba8b8d0b0d11",
-      "pixelWidth": 566,
+      "description": "RC2 expanded Digital Quick timer, actual observed Biology study; recovery gap excluded.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 22845,
+      "sha256": "b27efcb6e9994df1084940c0aa6ab5cd71761bd42bf98ea8c084be89db038eab",
+      "pixelWidth": 502,
       "pixelHeight": 296
     },
     {
       "file": "quick-circular.png",
-      "description": "Circular Quick timer from the same actual session",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 31133,
-      "sha256": "a6205f521137bdef7e7299b83961923abb46a26d5547a1aa692ff9c0cd9ffc44",
+      "description": "RC2 expanded Circular timer from the same real session.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 31667,
+      "sha256": "3e77dfadd01ff2a18afae5a6505edb51541a2e2110b4d9eb764787d175d75da1",
+      "pixelWidth": 444,
+      "pixelHeight": 588
+    },
+    {
+      "file": "home.png",
+      "description": "RC2 Full Home with an optional goal and fictional subjects.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 350948,
+      "sha256": "63a75efe09d769dd246196eced4226b0b01102b949da717a2384ef880980cf6d",
+      "pixelWidth": 2880,
+      "pixelHeight": 2200
+    },
+    {
+      "file": "home-dark.png",
+      "description": "The same Full Home in Deep Sea; seven fictional subjects, without invented prior study hours.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 309460,
+      "sha256": "2a1eec0b6733cce27ccd311c81d6e4bc5104f2ab78be0b734104ddcaedeacf85",
+      "pixelWidth": 2880,
+      "pixelHeight": 2200
+    },
+    {
+      "file": "focus-panel.png",
+      "description": "RC2 Full Focus panel during the actual Biology session.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 31858,
+      "sha256": "f89d2b1724861527102ce5590c9ea3017eaed77f8b4a77ea7f668c02127cae69",
       "pixelWidth": 470,
       "pixelHeight": 572
     },
     {
-      "file": "home.png",
-      "description": "Full Mode Home with subjects, timer controls and an optional goal.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 295369,
-      "sha256": "b341b58f9a400041443416fc075444766a038af2ea73dfa38fb9b369a048cf37",
-      "pixelWidth": 2880,
-      "pixelHeight": 2000
-    },
-    {
-      "file": "focus-panel.png",
-      "description": "Approved Full Mode Focus timer during a real Biology study session.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 31666,
-      "sha256": "133c205565baab1ffb47dc5b52d5bfbbd29559570a24f2d1e243071c44a1b9ce",
-      "pixelWidth": 472,
-      "pixelHeight": 574
-    },
-    {
       "file": "recall.png",
-      "description": "Full Mode Review & connect: typed recall and a specific follow-up after a real Focus session.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 201615,
-      "sha256": "d58b95f613244c93a305d3882b21a870a4f32e2db72fa0380fa04cf795ef20d5",
+      "description": "RC2 Review & connect with meaningful fictional recall and a follow-up question.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 243186,
+      "sha256": "64f94bfa4fcd557a2be0426701cbb4eb163435e35f5957b63765a33213549c81",
       "pixelWidth": 2880,
-      "pixelHeight": 2000
+      "pixelHeight": 2600
     },
     {
       "file": "rest.png",
-      "description": "Full Mode rest during an actual break; the five-minute plan was ended early after 63 seconds.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 53746,
-      "sha256": "7db73c424afb6850fda1bcb8ea05be123202a3cba027382c6b70fe2a4e6892bf",
+      "description": "RC2 Full rest; a five-minute plan, later ended early after an actual break.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 53981,
+      "sha256": "d850d5199526dd05e4fe61b60a367a32eb8f987a84c83994ee66a3596d5809ca",
       "pixelWidth": 2880,
       "pixelHeight": 2000
     },
     {
+      "file": "rest-countdown.png",
+      "description": "Direct compositor crop of the actual RC2 rest countdown and End rest early control.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 30916,
+      "sha256": "0867a50d03240d5dfa9fa03fb239fb5879ecaa805757a132be16d8d7ac386cf3",
+      "pixelWidth": 1696,
+      "pixelHeight": 740
+    },
+    {
       "file": "history.png",
-      "description": "History containing actual Quick and Full sessions created during this capture.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 240538,
-      "sha256": "9b252d7e31b320cfe2270906faf8695b4f2bb96a524f6c2c2044a3076ef6ba31",
+      "description": "Actual RC2 Quick and Full records from this fictional workflow.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 241203,
+      "sha256": "9c94333a7d7929c78b034180fca1724ee0fd0ed6cc1ad9ae3e678110c3a8c5e0",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "stats.png",
+      "description": "RC2 Stats from the two actual fictional sessions, not a fabricated multi-month history.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 221680,
+      "sha256": "fe3449021894d62194103056bdd1f261d4e9954d4dfb0a8d3938b6e73d4e1ab3",
       "pixelWidth": 2880,
       "pixelHeight": 2000
     },
     {
       "file": "learn.png",
-      "description": "Learn with the current approved illustrations and general guidance.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 183876,
-      "sha256": "cd339fe2fa34eda51d7807fc82fe32ce9a975e74ead84f4ff4136757dc43988b",
+      "description": "RC2 Today with a foundational idea and its New idea label.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 187220,
+      "sha256": "ec6db7f51a1393126a800ebc771283e82f5e4eddbb27aee6ec58aa02ba2d937f",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "learn-revisit.png",
+      "description": "RC2 cycles through all 27 ideas and labels previously shown content.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 188940,
+      "sha256": "ec14548d0cce185bb6caebc98470b18285bff82ed7f11a2dcf1ba59688ae0b34",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "appearance-theme.png",
+      "description": "RC2 Light mode: one light gallery and the separately saved dark palette.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 346748,
+      "sha256": "73aa74b74e9257ebcde3e6619cafb0da904d0f56bc6dc2631bc5ced5c059c8b6",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "appearance-theme-dark.png",
+      "description": "RC2 Follow Windows: saved light/dark tabs, one dark gallery.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 337655,
+      "sha256": "3a2c0ddf75c42c8793d9cbc07b6be4ec7e67f3eb1a537c5fe7cb322dabdc1c70",
       "pixelWidth": 2880,
       "pixelHeight": 2000
     },
     {
       "file": "appearance.png",
-      "description": "Appearance controls including the persisted Digital/Circular timer choice.",
-      "version": "0.1.0-beta.29-rc.1",
-      "bytes": 284336,
-      "sha256": "b8ae8fee627dc0cfb5fd25232ed2d2e0954da041472206741f55a658a1da402a",
+      "description": "RC2 floating-panel preferences, including Digital/Circular display.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 292753,
+      "sha256": "f7cedeac4299e495917ed14a113cfd8e4882673648e36d39ab2a3414203be23f",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "privacy.png",
+      "description": "RC2 tracking settings, off with separate title opt-in.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 319211,
+      "sha256": "0bc1724f491a0636e02a8c1a54a6148adba573821e3ce2b0e700a590a6ae675b",
+      "pixelWidth": 2880,
+      "pixelHeight": 2000
+    },
+    {
+      "file": "backup.png",
+      "description": "RC2 backup and restore controls; no real file paths or records.",
+      "version": "0.1.0-beta.29-rc.2",
+      "bytes": 251931,
+      "sha256": "dc4acda318dc8e397a8c8b60c64ad51f74370cd3f955c17e146a08541966af7f",
       "pixelWidth": 2880,
       "pixelHeight": 2000
     }

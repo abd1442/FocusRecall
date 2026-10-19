@@ -4,7 +4,7 @@ Choose **Quick Mode** for a timer with minimal steps, or **Full Mode** for Focus
 
 FocusRecall records time spent studying each subject and stores session notes and history. Notes, ratings and window tracking are optional.
 
-This guide describes **beta.29 RC1 on Windows**. Screenshots use fictional subjects and notes. See [availability](RELEASE_STATUS.md).
+This guide describes **beta.29 RC2 on Windows**. Screenshots use fictional subjects and notes. See [availability](RELEASE_STATUS.md).
 
 **On this page:** [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Backups & updates](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
@@ -15,14 +15,14 @@ Choose the study experience during first-time setup. You can switch in Settings 
 ### Quick Mode: start and continue
 
 1. On Home, create or select a subject. The plan card shows its target and timer mode. Open **Timer options** to change them, then select **Start**. The floating timer opens automatically.
-2. **Pause** stops the clock; **Resume** continues it. **Next** saves and immediately starts another session on the same subject. It does not start another session automatically when the target is reached.
+2. **Distracted** stops the focus clock; **Resume** continues the same session. The running controls are **Distracted**, **Switch** and **Finish**. Reaching the target does not start another session.
 3. To change subjects without ending the session, select the subject name and chevron on the floating panel, choose the next subject and confirm **Switch now**. Each subject retains its own time.
-4. While paused, **Break** saves the session and offers a break timer. **Break over** does not automatically resume studying: choose **Resume** when ready.
+4. After selecting Distracted, while paused, **Break** saves the session and offers a break timer. **Break over** does not automatically resume studying: choose **Resume** when ready.
 5. **Finish** saves and stops. No preparation, recall, log answers or rest are required; skipped activities are not filled in for you.
 
 ![Quick launcher with the subject plan beside the subject list](../screenshots/current/quick-launcher.png)
 
-The main window is also a keyboard-accessible alternative for Pause, Resume, Next, Break, Finish and Switch. **Show timer** brings back the floating panel.
+The main window is also a keyboard-accessible alternative for Distracted, Resume, Break, Finish and Switch. **Show timer** brings back the floating panel.
 
 ### Full Mode: a complete study cycle
 
@@ -150,11 +150,15 @@ Open **Learn** for one idea on **Today**, browse **Explore**, or return to **Sav
 
 ![Learn Today with an illustrated distinction between familiarity and remembering, a practical suggestion and expandable research notes](../screenshots/current/learn.png)
 
+Today follows your configured study-day start. **Another idea** always offers an idea to learn or revisit; after the 27 ideas have been shown, it cycles through them again. **New idea** and **Previously shown** describe presentation history, not completion or mastery. Existing completion records and bookmarks are retained.
+
+![A previously shown idea offered again by the RC2 Learn cycle](../screenshots/current/learn-revisit.png)
+
 Learn's general research guidance is separate from Stats. Try ideas that suit your task, and revisit the explanation when you want more context.
 
 ## Appearance and language
 
-Open **Settings → Appearance**. Choose a light theme and a dark theme independently, then use **Light**, **Dark** or **Follow Windows** to decide which appears. There are 26 themes; text/interface and floating-panel sizes have separate controls.
+Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. The gallery below shows the themes for the appearance on screen; selecting one applies it immediately, and **Undo** appears briefly if you change your mind. FocusRecall keeps one light and one dark theme. In Light or Dark, a note under the gallery names the other saved theme. With Follow Windows, the **Light theme** and **Dark theme** tabs choose which of the two you are changing. There are 26 themes (11 light, 15 dark); text/interface and floating-panel sizes have separate controls.
 
 ![Floating-panel appearance settings in a dark theme, with Digital and Circular timer choices](../screenshots/current/appearance.png)
 
@@ -174,7 +178,7 @@ FocusRecall does not encrypt local databases or backups. Protect your Windows ac
 
 ## Install, update and protect your records
 
-If invited to testing, use the supplied **beta.29 RC1** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
+If invited to testing, use the supplied **beta.29 RC2** installer and checksum. It is unsigned; capture unexpected Windows warnings and ask for help. [Availability and testing status](RELEASE_STATUS.md).
 
 Before an update:
 
@@ -184,7 +188,7 @@ Before an update:
 4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
 5. Reopen and check your subjects, a recent session, preferences and notes.
 
-Uninstall is configured to preserve the local profile; the beta.29 installer still needs separate-PC verification. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
+Uninstall is configured to preserve the local profile; the RC2 installer still needs separate-PC verification. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.
 
 ## If something goes wrong
 
