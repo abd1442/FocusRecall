@@ -58,7 +58,7 @@ function handle<C extends Channel>(
  */
 async function openTarget(target: string): Promise<void> {
   const t = target.trim()
-  if (targetKind(t)==='url') {
+  if (targetKind(t,process.platform)==='url') {
     await shell.openExternal(t)
     return
   }
@@ -201,7 +201,7 @@ export function registerIpc(deps: {
   handle('resources:reorder', (ids) => library.reorderResources(ids))
   handle('blocks:summaries', () => blocks.summaries())
   handle('shell:open', async(target) => {
-    target=target.trim();targetKind(target)
+    target=target.trim();targetKind(target,process.platform)
     if (/^https:\/\/([a-z0-9-]+\.)?(notion\.so|notion\.site)\//i.test(target) && settings.getAll().notionOpenIn === 'desktop') {
       try { await shell.openExternal(target.replace(/^https:\/\//,'notion://')); return } catch { /* Fall back to the browser when no desktop handler is installed. */ }
     }

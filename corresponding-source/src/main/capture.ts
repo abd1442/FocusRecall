@@ -1,3 +1,4 @@
+import { windowIcon } from './platform'
 import { protectRenderer, rendererDevToolsAllowed } from './security'
 import { join } from 'node:path'
 import { BrowserWindow, screen } from 'electron'
@@ -72,7 +73,7 @@ export class CaptureBox {
   private ensure(width: number, height: number): BrowserWindow {
     if (this.win && !this.win.isDestroyed()) return this.win
     const win = new BrowserWindow({
-      icon: join(__dirname, '../../resources/focusrecall.ico'),
+      icon: windowIcon(),
       width,
       height,
       type: 'toolbar',

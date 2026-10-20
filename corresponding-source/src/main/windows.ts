@@ -1,3 +1,4 @@
+import { windowIcon, managedPanel } from './platform'
 import { join } from 'node:path'
 import { BrowserWindow, Menu, screen, type Rectangle, type WebContents } from 'electron'
 import { is } from '@electron-toolkit/utils'
@@ -58,10 +59,11 @@ export function createMainWindow(opts: {
     ...bounds,
     minWidth: 900,
     minHeight: 620,
-    show: false,
+    // Wayland needs a mapped surface before it can supply the first paint.
+    show: managedPanel(),
     autoHideMenuBar: true,
     title: 'FocusRecall',
-    icon: join(__dirname, '../../resources/focusrecall.ico'),
+    icon: windowIcon(),
     backgroundColor: opts.background,
     webPreferences: {
         devTools: rendererDevToolsAllowed(),

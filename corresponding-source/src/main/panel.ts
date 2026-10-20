@@ -1,3 +1,4 @@
+import { windowIcon, managedPanel, panelCanFocus } from './platform'
 import { protectRenderer, rendererDevToolsAllowed } from './security'
 import { preparationBounds } from '@core/preparation'
 import { join } from 'node:path'
@@ -36,6 +37,7 @@ export class PanelController {
   private ready = false
   private wanted = false
   private opacity: number | null = null
+  private requestedSize:{width:number;height:number}|null=null
 
   constructor(private onMoved: (pos: { x: number; y: number }) => void) {}
 
@@ -53,7 +55,7 @@ export class PanelController {
     if(value)this.preparationWork=work??screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).workArea
     // The caller immediately syncs the new settings/appearance. Resize once
     // there, rather than moving the native window twice during one transition.
-    this.preparing=value;this.win?.setFocusable(value)
+    this.preparing=value;this.win?.setFocusable(panelCanFocus(value))
   }
 
   /** Where the panel is on screen, when it is showing. */
@@ -78,7 +80,7 @@ export class PanelController {
     if (!this.win || this.win.isDestroyed()) this.create(settings.panelPosition)
     else this.applySize()
     this.applyOpacity()
-    if (this.ready && !this.win!.isVisible()) {if(this.preparing)this.win!.show();else this.win!.showInactive()}
+    if ((this.ready || managedPanel()) && !this.win!.isVisible()) {if(this.preparing || managedPanel())this.win!.show();else this.win!.showInactive()}
     this.startReassert()
   }
 
@@ -115,25 +117,27 @@ export class PanelController {
   private create(position: { x: number; y: number } | null): void {
     this.ready = false
     const size = this.size()
+    this.requestedSize=size
     const work = screen.getPrimaryDisplay().workArea
     const pos =
       position && onScreen(position) ? position : { x: work.x + work.width - size.width - 24, y: work.y + 24 }
     if(this.preparing&&!this.timerPosition)this.timerPosition={x:pos.x,y:pos.y}
     const win = new BrowserWindow({
-      icon: join(__dirname, '../../resources/focusrecall.ico'),
+      icon: windowIcon(),
       ...size,
       ...pos,
-      type: 'toolbar',
+      ...(process.platform==='win32' ? { type: 'toolbar' as const } : {}),
       show: false,
-      frame: false,
-      transparent: true,
+      frame: managedPanel(),
+      useContentSize: managedPanel(),
+      transparent: !managedPanel(),
       resizable: false,
       maximizable: false,
       minimizable: false,
       fullscreenable: false,
-      skipTaskbar: true,
+      skipTaskbar: process.platform!=='linux',
       alwaysOnTop: true,
-      focusable: this.preparing,
+      focusable: panelCanFocus(this.preparing),
       hasShadow: false,
       webPreferences: {
         devTools: rendererDevToolsAllowed(),
@@ -159,7 +163,7 @@ export class PanelController {
     win.once('ready-to-show', () => {
       if (this.win !== win || win.isDestroyed()) return
       this.ready = true
-      if (this.wanted) {if(this.preparing)win.show();else win.showInactive()}
+      if (this.wanted) {if(this.preparing || managedPanel())win.show();else win.showInactive()}
     })
     if (is.dev && process.env['ELECTRON_RENDERER_URL']) void win.loadURL(process.env['ELECTRON_RENDERER_URL'] + '#panel')
     else void win.loadFile(join(__dirname, '../renderer/index.html'), { hash: 'panel' })
@@ -171,7 +175,18 @@ export class PanelController {
   private applySize(): void {
     if (!this.win || this.win.isDestroyed()) return
     const { width, height } = this.size()
-    const [w,h]=this.win.getSize()
+    // Native Wayland decorations are outside the approved timer's content.
+    const [w,h]=managedPanel()?this.win.getContentSize():this.win.getSize()
+    if(managedPanel() && (this.requestedSize?.width!==width||this.requestedSize?.height!==height)){
+      // Native Wayland cannot promise programmatic resizing. Recreate hidden
+      // at the requested stage's size; never scale/crop a preparation form.
+      this.win.destroy();this.win=null;this.ready=false
+      this.create(null)
+      return
+    }
+    // A compositor can choose its own actual bounds. Do not repeatedly fight
+    // that decision or recreate recursively while a new window is mapping.
+    if(managedPanel())return
     this.relocating=true
     try {
       let position:{x:number;y:number}|null=null
@@ -200,7 +215,7 @@ export class PanelController {
   }
 
   private startReassert(): void {
-    if (this.reassert) return
+    if (this.reassert || process.platform !== 'win32') return
     this.reassert = setInterval(() => {
       if (!this.win || this.win.isDestroyed() || !this.win.isVisible()) return
       this.win.setAlwaysOnTop(true, 'screen-saver')

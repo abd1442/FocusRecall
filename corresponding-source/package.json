@@ -6,7 +6,7 @@
   "author": {
     "name": "abd1442"
   },
-  "description": "A local-first Windows workspace for focused study, recall notes and personal study records.",
+  "description": "A local-first desktop workspace for focused study, recall notes and personal study records.",
   "main": "./out/main/index.js",
   "private": true,
   "scripts": {
@@ -24,7 +24,8 @@
     "build:qa": "node scripts/build-qa.cjs",
     "build:win": "npm run build && electron-builder --win",
     "postinstall": "node node_modules/electron/install.js && electron-builder install-app-deps",
-    "build:foreground": "node scripts/build-foreground.cjs"
+    "build:foreground": "node scripts/build-foreground.cjs",
+    "build:linux": "node scripts/build-platform.cjs linux x64"
   },
   "dependencies": {
     "@electron-toolkit/preload": "3.0.2",
