@@ -1,0 +1,202 @@
+/*
+ * Quick Mode launcher. The scroller is a size container, so the frame, the
+ * type and the plan card scale with the window: one column in a narrow
+ * window, the plan card beside the subject list when there is room, and a
+ * frame that grows (but never stretches edge to edge) when maximized.
+ */
+.quick-launcher {
+  container-type: size;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  padding: clamp(20px, 4.5cqh, 64px) clamp(16px, 5cqi, 88px);
+  --ql-tint: var(--tf-focus);
+  --ql-radius: calc(1.5rem * var(--tf-roundness));
+}
+
+.ql-frame {
+  width: min(100%, clamp(36rem, 80cqi, 74rem));
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3.2cqh, 36px);
+}
+.ql-frame-single { width: min(100%, clamp(30rem, 54cqi, 46rem)); }
+
+.ql-head h1 {
+  font-size: clamp(1.5rem, 1.05rem + 1.1cqi, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.ql-head p {
+  margin-top: 0.5rem;
+  max-width: 62ch;
+  color: var(--tf-muted);
+  font-size: clamp(0.9rem, 0.82rem + 0.25cqi, 1.05rem);
+  line-height: 1.5;
+}
+
+/* Cards ------------------------------------------------------------------ */
+.ql-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--tf-border);
+  border-radius: var(--ql-radius);
+  background: var(--tf-surface);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 12px 32px -18px rgb(0 0 0 / 0.25);
+  padding: clamp(18px, 2.4cqi, 36px);
+}
+
+.ql-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--tf-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.ql-dot { width: 8px; height: 8px; flex: none; border-radius: 999px; background: var(--ql-tint); }
+.ql-dot[data-paused] { background: var(--fr-stage-overtime, var(--tf-overtime)); }
+.ql-dot[data-rest] { background: var(--fr-stage-rest, var(--tf-rest)); }
+[data-state='running'] .ql-dot:not([data-paused]) { animation: ql-breathe 2.4s ease-in-out infinite; }
+@keyframes ql-breathe { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .ql-dot { animation: none !important; } }
+
+.ql-subject {
+  margin-top: 0.4rem;
+  font-size: clamp(1.3rem, 0.95rem + 1.1cqi, 2.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.ql-subject[data-empty] { color: var(--tf-muted); font-weight: 500; }
+
+/* Plan card: compact (one column) ---------------------------------------- */
+.ql-body { display: flex; flex-direction: column; gap: 20px; }
+.ql-plan {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: 'summary start' 'options options';
+  align-items: center;
+  column-gap: 20px;
+}
+.ql-plan-main { display: contents; }
+.ql-plan-summary { grid-area: summary; min-width: 0; }
+.ql-start { grid-area: start; min-height: 3rem; padding-inline: 2.25rem; font-size: 1.05rem; }
+.ql-options { grid-area: options; margin-top: 10px; border-top: 1px solid var(--tf-border); }
+
+.ql-readout {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.4rem;
+  row-gap: 0.4rem;
+}
+.ql-number {
+  font-family: var(--tf-font-timer);
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.ql-unit { color: var(--tf-muted); font-size: 1rem; }
+.ql-mode {
+  margin-inline-start: 0.5rem;
+  align-self: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ql-tint) 16%, var(--tf-surface));
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.ql-mode:empty { display: none; }
+
+.ql-options summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  margin-top: 4px;
+  color: var(--tf-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 0.5rem;
+}
+.ql-options summary::-webkit-details-marker { display: none; }
+.ql-options summary:hover { color: var(--tf-text); }
+.ql-options summary::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-inline-end: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.15s;
+}
+[dir='rtl'] .ql-options summary::before { transform: rotate(45deg); }
+.ql-options[open] summary::before { transform: rotate(45deg); }
+.ql-options-body { display: flex; flex-direction: column; gap: 16px; padding: 6px 0 4px; }
+/* The shared diagram tooltip must fit the launcher's narrower options column. */
+.ql-options-body [role='tooltip'] { max-width: 100%; }
+/* Diagram end labels need room on both sides, including RTL scroll origins. */
+.ql-options-body [role='img'] { margin-inline: 1rem; }
+/* Keep translated mode names whole when text scaling narrows the card. */
+.ql-options-body [role='radiogroup'] { display: flex; flex-wrap: wrap; row-gap: 4px; }
+.ql-options-body [role='radio'] { flex: 1 0 33.333%; min-width: max-content; padding-inline: 0.25rem; }
+
+.ql-hint { display: none; }
+
+.ql-picker { min-width: 0; }
+
+/* Plan card beside the list ---------------------------------------------- */
+@container (min-width: 860px) {
+  .ql-body {
+    display: grid;
+    grid-template-columns: minmax(19rem, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(24px, 3.2cqi, 56px);
+    height: clamp(25rem, calc(100cqh - 16rem), 38rem);
+  }
+  .ql-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding-top: clamp(24px, 3cqh, 40px);
+  }
+  /* Summary and options scroll together; Start always stays in view. */
+  .ql-plan-main { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; overflow-y: auto; margin-inline: -6px; padding-inline: 6px; }
+  .ql-plan-summary { flex: 1 0 auto; padding-bottom: 20px; }
+  .ql-readout { margin-top: clamp(0.8rem, 2cqh, 1.6rem); }
+  .ql-number { font-size: clamp(3.5rem, 1.6rem + 4.2cqi, 7rem); }
+  .ql-unit { font-size: clamp(1rem, 0.8rem + 0.5cqi, 1.35rem); }
+  .ql-mode { font-size: clamp(0.85rem, 0.75rem + 0.2cqi, 1rem); }
+  .ql-hint { display: block; margin-top: 1rem; max-width: 32ch; color: var(--tf-muted); font-size: clamp(0.9rem, 0.8rem + 0.2cqi, 1rem); line-height: 1.5; }
+  .ql-options { flex: none; margin-top: 0; }
+  .ql-start { flex: none; width: 100%; min-height: clamp(3.25rem, 6cqh, 3.75rem); margin-top: 14px; font-size: 1.1rem; }
+  .ql-plan:has(.ql-options[open]) .ql-hint { display: none; }
+  .ql-plan:has(.ql-options[open]) .ql-plan-summary { flex-grow: 0; }
+
+  /* The list takes the column's height and scrolls inside it. */
+  .ql-picker { display: flex; flex-direction: column; min-height: 0; }
+  .ql-picker > div { flex: 1 1 auto; min-height: 0; }
+  .ql-picker [role='listbox'] { flex: 0 1 auto; min-height: 0; max-height: none; }
+}
+
+/* Live session and rest -------------------------------------------------- */
+.ql-live { display: flex; flex-direction: column; gap: clamp(16px, 2.4cqh, 28px); padding-block: clamp(24px, 4cqh, 48px); }
+.ql-live .ql-subject { font-size: clamp(1.6rem, 1.1rem + 2cqi, 3.25rem); -webkit-line-clamp: 3; line-clamp: 3; }
+.ql-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@container (min-width: 620px) { .ql-actions:not(.ql-actions-pair) { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.ql-actions > button { min-height: 3rem; }
+.ql-show-timer { align-self: flex-start; margin-inline-start: -0.75rem; }

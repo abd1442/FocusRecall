@@ -1,0 +1,218 @@
+{
+  "recall-attempt": {
+    "en": "Recall first. Then check.",
+    "ar": "تذكّر أولًا، ثم تحقّق.",
+    "es": "Recuerda primero. Después comprueba.",
+    "fr": "Rappelez-vous, puis vérifiez.",
+    "zh-Hans": "先回忆，再核对。",
+    "pt-BR": "Lembre primeiro. Depois confira.",
+    "de": "Erst erinnern, dann prüfen."
+  },
+  "cue-ladder": {
+    "en": "Stuck? Use a small cue.",
+    "ar": "تعثّرت؟ استخدم تلميحًا صغيرًا.",
+    "es": "¿Te atascas? Usa una pista.",
+    "fr": "Bloqué ? Utilisez un indice.",
+    "zh-Hans": "卡住了？用一点提示。",
+    "pt-BR": "Travou? Use uma pista.",
+    "de": "Festgefahren? Nutze einen Hinweis."
+  },
+  "question-design": {
+    "en": "Ask what you need to explain.",
+    "ar": "اسأل عمّا تحتاج إلى شرحه.",
+    "es": "Pregunta lo que necesitas explicar.",
+    "fr": "Questionnez ce qu’il faut expliquer.",
+    "zh-Hans": "问问自己需要解释什么。",
+    "pt-BR": "Pergunte o que precisa explicar.",
+    "de": "Frage nach dem, was du erklären musst."
+  },
+  "spacing-return": {
+    "en": "Plan another visit to the material.",
+    "ar": "خطّط للعودة إلى المادة.",
+    "es": "Planifica volver al material.",
+    "fr": "Prévoyez de revoir le contenu.",
+    "zh-Hans": "安排以后再学一次。",
+    "pt-BR": "Planeje voltar ao conteúdo.",
+    "de": "Plane eine weitere Wiederholung."
+  },
+  "spacing-adjust": {
+    "en": "Try first. Adjust the next review.",
+    "ar": "جرّب أولًا، ثم عدّل المراجعة التالية.",
+    "es": "Intenta primero. Ajusta el próximo repaso.",
+    "fr": "Essayez, puis adaptez la révision.",
+    "zh-Hans": "先尝试，再调整下次复习。",
+    "pt-BR": "Tente primeiro. Ajuste a revisão.",
+    "de": "Erst versuchen, dann Wiederholung anpassen."
+  },
+  "explain-step": {
+    "en": "Explain why the next step follows.",
+    "ar": "اشرح لماذا تتبع الخطوة التالية.",
+    "es": "Explica por qué sigue ese paso.",
+    "fr": "Expliquez pourquoi cette étape suit.",
+    "zh-Hans": "解释下一步为什么成立。",
+    "pt-BR": "Explique por que vem o próximo passo.",
+    "de": "Erkläre, warum der nächste Schritt folgt."
+  },
+  "evidence-claim": {
+    "en": "Connect a claim to its evidence.",
+    "ar": "اربط الادعاء بدليله.",
+    "es": "Relaciona una afirmación con su evidencia.",
+    "fr": "Reliez une affirmation à ses preuves.",
+    "zh-Hans": "把观点与依据联系起来。",
+    "pt-BR": "Relacione uma afirmação à evidência.",
+    "de": "Verbinde eine Aussage mit ihren Belegen."
+  },
+  "compare-concepts": {
+    "en": "Compare the difference that matters.",
+    "ar": "قارن الفرق المهم.",
+    "es": "Compara la diferencia relevante.",
+    "fr": "Comparez la différence pertinente.",
+    "zh-Hans": "比较真正重要的区别。",
+    "pt-BR": "Compare a diferença relevante.",
+    "de": "Vergleiche den entscheidenden Unterschied."
+  },
+  "worked-example": {
+    "en": "New method? Follow a worked example.",
+    "ar": "طريقة جديدة؟ اتبع مثالًا محلولًا.",
+    "es": "¿Método nuevo? Sigue un ejemplo resuelto.",
+    "fr": "Nouvelle méthode ? Suivez un exemple.",
+    "zh-Hans": "新方法？先看完整示例。",
+    "pt-BR": "Método novo? Siga um exemplo resolvido.",
+    "de": "Neue Methode? Folge einem Lösungsbeispiel."
+  },
+  "fade-support": {
+    "en": "Try one step with less help.",
+    "ar": "جرّب خطوة بمساعدة أقل.",
+    "es": "Intenta un paso con menos ayuda.",
+    "fr": "Essayez une étape avec moins d’aide.",
+    "zh-Hans": "少一点帮助，试着完成一步。",
+    "pt-BR": "Tente um passo com menos ajuda.",
+    "de": "Versuche einen Schritt mit weniger Hilfe."
+  },
+  "interleave": {
+    "en": "Know the basics? Mix related tasks.",
+    "ar": "تعرف الأساسيات؟ نوّع المهام المترابطة.",
+    "es": "¿Conoces lo básico? Mezcla tareas relacionadas.",
+    "fr": "Bases acquises ? Variez les tâches proches.",
+    "zh-Hans": "掌握基础后，混合相关练习。",
+    "pt-BR": "Já sabe o básico? Misture tarefas relacionadas.",
+    "de": "Grundlagen bekannt? Mische verwandte Aufgaben."
+  },
+  "error-retry": {
+    "en": "Find one error. Try again.",
+    "ar": "حدّد خطأ واحدًا، ثم أعد المحاولة.",
+    "es": "Localiza un error. Inténtalo otra vez.",
+    "fr": "Repérez une erreur, puis réessayez.",
+    "zh-Hans": "找出一个错误，再试一次。",
+    "pt-BR": "Encontre um erro. Tente de novo.",
+    "de": "Finde einen Fehler. Versuche es erneut."
+  },
+  "feedback-specific": {
+    "en": "Look for one specific correction.",
+    "ar": "ابحث عن تصحيح محدّد.",
+    "es": "Busca una corrección concreta.",
+    "fr": "Cherchez une correction précise.",
+    "zh-Hans": "找一条具体的改进意见。",
+    "pt-BR": "Busque uma correção específica.",
+    "de": "Suche eine konkrete Korrektur."
+  },
+  "predict-check": {
+    "en": "Compare your expectation with an attempt.",
+    "ar": "قارن توقّعك بمحاولة فعلية.",
+    "es": "Compara tu expectativa con un intento.",
+    "fr": "Comparez votre attente à un essai.",
+    "zh-Hans": "把预期与实际尝试比较。",
+    "pt-BR": "Compare a expectativa com uma tentativa.",
+    "de": "Vergleiche deine Erwartung mit einem Versuch."
+  },
+  "delayed-check": {
+    "en": "Check again after a gap.",
+    "ar": "تحقّق مجددًا بعد فترة.",
+    "es": "Comprueba otra vez tras un intervalo.",
+    "fr": "Vérifiez de nouveau après un délai.",
+    "zh-Hans": "隔一段时间再检验。",
+    "pt-BR": "Confira de novo após um intervalo.",
+    "de": "Prüfe nach einer Pause erneut."
+  },
+  "choose-target": {
+    "en": "Choose one manageable task.",
+    "ar": "اختر مهمة واحدة قابلة للتنفيذ.",
+    "es": "Elige una tarea manejable.",
+    "fr": "Choisissez une tâche réalisable.",
+    "zh-Hans": "选择一项能完成的任务。",
+    "pt-BR": "Escolha uma tarefa viável.",
+    "de": "Wähle eine überschaubare Aufgabe."
+  },
+  "restart-note": {
+    "en": "Leave a note for your return.",
+    "ar": "اترك ملاحظة لوقت العودة.",
+    "es": "Deja una nota para volver.",
+    "fr": "Laissez une note pour votre retour.",
+    "zh-Hans": "留下一条回来时的提示。",
+    "pt-BR": "Deixe uma nota para a volta.",
+    "de": "Hinterlasse eine Notiz für die Rückkehr."
+  },
+  "plan-feasible": {
+    "en": "Keep a smaller plan available.",
+    "ar": "احتفظ بخطة أصغر بديلة.",
+    "es": "Ten disponible un plan más pequeño.",
+    "fr": "Gardez un plan plus modeste.",
+    "zh-Hans": "准备一个更小的备选计划。",
+    "pt-BR": "Tenha um plano menor disponível.",
+    "de": "Halte einen kleineren Plan bereit."
+  },
+  "one-interruption": {
+    "en": "Reduce one avoidable interruption.",
+    "ar": "قلّل مقاطعة واحدة يمكن تجنّبها.",
+    "es": "Reduce una interrupción evitable.",
+    "fr": "Réduisez une interruption évitable.",
+    "zh-Hans": "减少一项可避免的打扰。",
+    "pt-BR": "Reduza uma interrupção evitável.",
+    "de": "Verringere eine vermeidbare Unterbrechung."
+  },
+  "thought-parking": {
+    "en": "Park a thought. Return to the task.",
+    "ar": "دوّن الفكرة وعد إلى المهمة.",
+    "es": "Anota la idea. Vuelve a la tarea.",
+    "fr": "Notez l’idée, puis revenez à la tâche.",
+    "zh-Hans": "记下杂念，回到任务。",
+    "pt-BR": "Anote a ideia. Volte à tarefa.",
+    "de": "Notiere den Gedanken. Zurück zur Aufgabe."
+  },
+  "rest-recovery": {
+    "en": "Take a break that suits you.",
+    "ar": "خذ استراحة تناسبك.",
+    "es": "Haz una pausa que te convenga.",
+    "fr": "Prenez une pause adaptée.",
+    "zh-Hans": "选择适合自己的休息。",
+    "pt-BR": "Faça uma pausa adequada para você.",
+    "de": "Mach eine passende Pause."
+  },
+  "rest-accessible": {
+    "en": "Choose a comfortable pause.",
+    "ar": "اختر استراحة مريحة.",
+    "es": "Elige una pausa cómoda.",
+    "fr": "Choisissez une pause confortable.",
+    "zh-Hans": "选择舒适的休息方式。",
+    "pt-BR": "Escolha uma pausa confortável.",
+    "de": "Wähle eine angenehme Pause."
+  },
+  "stuck-break": {
+    "en": "Stuck? Pause, then reconsider.",
+    "ar": "تعثّرت؟ استرح ثم أعد النظر.",
+    "es": "¿Te atascas? Pausa y reconsidera.",
+    "fr": "Bloqué ? Faites une pause, puis réévaluez.",
+    "zh-Hans": "卡住了？休息后重新考虑。",
+    "pt-BR": "Travou? Pause e reconsidere.",
+    "de": "Festgefahren? Pausiere und überdenke es."
+  },
+  "return-small": {
+    "en": "Return with one small step.",
+    "ar": "عد بخطوة صغيرة واحدة.",
+    "es": "Vuelve con un paso pequeño.",
+    "fr": "Reprenez par une petite étape.",
+    "zh-Hans": "从一小步重新开始。",
+    "pt-BR": "Volte com um passo pequeno.",
+    "de": "Kehre mit einem kleinen Schritt zurück."
+  }
+}

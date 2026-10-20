@@ -1,0 +1,47 @@
+name: Beta tester feedback
+description: Tell us what happened in a Windows, Linux or Mac beta.
+title: "[Beta] "
+body:
+  - type: markdown
+    attributes:
+      value: "This issue is public. Use fictional examples. Do not attach personal study records, private backups, window titles or sensitive logs. Screenshots are optional; crop them to the app and hide personal information."
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and version
+      placeholder: "For example: Windows 11, Ubuntu 24.04 GNOME/Wayland, or macOS 15 Apple Silicon"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: FocusRecall version
+      placeholder: "0.1.0-beta.29 and the download you used"
+    validations:
+      required: true
+  - type: textarea
+    id: doing
+    attributes:
+      label: What were you doing?
+      description: "Quick or Full Mode, subject switching, opening the app, backup/restore, lock/sleep, or another action."
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What went wrong?
+      description: "What happened, and what did you expect? Copy an error message only if it contains no private information."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: "List the steps. If it happened only once or you are unsure, say so."
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Optional screenshots or other details
+      description: "Use fictional data; do not upload databases, backups or sensitive logs. Display scale and desktop/session type are helpful if known."

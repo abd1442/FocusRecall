@@ -1,0 +1,20 @@
+import { t as uiText } from '../i18n'
+import { useState } from 'react'
+import { scaleLabel, type LogField } from '@core/logfields'
+import { inputClass } from './ui'
+
+/** Local demonstration state only; it never submits an answer or edits the schema. */
+export function QuestionPreview({ field }: { field:LogField }):React.JSX.Element {
+  const [chosen,setChosen]=useState<string[]>([]),[more,setMore]=useState(false),[value,setValue]=useState<number|null>(null),[text,setText]=useState('')
+  const options=field.options.filter(o=>!o.archived),scale=field.scale??((field.type==='slider'||field.type==='scale')?{min:1,max:5,labels:['Very low','Low','Medium','High','Very high']}:null)
+  const choices=field.type==='single'||field.type==='multi'||field.type==='activity'
+  const slider=field.type==='slider'||field.type==='scale'||(field.type==='number'&&!!field.scale&&field.scale.max>field.scale.min)
+  return <div className="tf-fade-in mt-4 rounded-xl border border-recall/25 bg-recall/5 p-5">
+    <div className="mb-4 flex flex-wrap items-center justify-between gap-2"><h4 dir="auto" className="font-semibold">{field.label}</h4><span className="text-xs text-muted">{uiText("Interactive preview · answers are not saved")}</span></div>
+    {choices?<div className="flex flex-wrap gap-2">{(more?options:options.slice(0,4)).map(o=><button type="button" key={o.id} aria-pressed={chosen.includes(o.id)} className={`rounded-full border px-4 py-2 text-sm transition ${chosen.includes(o.id)?'border-recall bg-recall text-on-accent':'border-line bg-surface hover:border-recall'}`} onClick={()=>setChosen(field.type==='multi'?(chosen.includes(o.id)?chosen.filter(id=>id!==o.id):[...chosen,o.id]):[o.id])}>{o.label}</button>)}{options.length>4&&<button type="button" className="px-3 text-sm text-recall" onClick={()=>setMore(!more)}>{more?uiText("Fewer options"):uiText("Show all {value0} options", {value0: (options.length)})}</button>}{!options.length&&<p className="text-sm text-muted">{uiText("Add options to see them here.")}</p>}</div>:slider&&scale?<div><div className="mb-3 text-right font-medium text-recall">{value===null?uiText("Try moving the slider"):scaleLabel(scale,value)??value}</div><input aria-label={uiText("Preview {value0}", {value0: (field.label)})} type="range" min={scale.min} max={scale.max} step={scale.step??1} value={value??(scale.min+scale.max)/2} onChange={e=>setValue(Number(e.target.value))} className="w-full accent-[var(--tf-recall)]"/><div className="mt-3 flex flex-wrap justify-between gap-2 text-xs text-muted">{scale.labels.map((label,i)=><span key={i}>{label}</span>)}</div></div>:field.type==='text'?<textarea aria-label={uiText("Preview {value0}", {value0: (field.label)})} dir="auto" className={`${inputClass} min-h-24`} placeholder={uiText("Try writing an answer…")} value={text} onChange={e=>setText(e.target.value)}/>:<div className="flex flex-wrap items-center gap-3"><input aria-label={uiText("Preview {value0}", {value0: (field.label)})} type="number" min={0} className={`${inputClass} w-28`} value={value??''} onChange={e=>setValue(e.target.value===''?null:Number(e.target.value))}/>{field.type==='progress'&&<span className="text-sm text-muted">{uiText("Progress amount · the study log supplies your subject’s unit and optional range")}</span>}</div>}
+  </div>
+}
+
+export function QuestionTypeIcon({ type }: { type:LogField['type'] }):React.JSX.Element {
+  return <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center rounded-lg bg-recall/10 text-recall"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">{type==='slider'||type==='scale'?<><path d="M3 12h18"/><circle cx="14" cy="12" r="3" fill="var(--tf-surface)"/></>:type==='number'||type==='progress'?<><path d="M9 4 7 20 M17 4l-2 16 M4 9h17 M3 15h17"/></>:type==='text'?<><path d="M4 6h16 M4 12h16 M4 18h10"/></>:<><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="15" width="7" height="5" rx="2"/><path d="m15 17 2 2 4-4"/></>}</svg></span>
+}

@@ -1,0 +1,67 @@
+import { METHOD_OBSERVATION_NOTE } from '@core/recommendations'
+import { OptionalAdvice } from '../../components/AdviceSettings'
+import { freezeQuestion, checkLaterRecords } from '@core/followupEvidence'
+import { evidenceCopy } from '@core/evidenceCopy'
+import { t as uiText , useLanguage , formatDate , countEvidence } from '../../i18n'
+import { memo, useEffect, useState } from 'react'
+import { discoveryChange, discoveryKey, discoverySnapshot, type DiscoveryRecord } from '@core/discoveries'
+import { EMPTY_TOOLS, type StudyToolsData } from '@core/studyTools'
+import type { PersonalInsight, generatePersonalInsights } from '@core/personalInsights'
+import { Button, Dialog } from '../../components/ui'
+import { insightDifference,orderedInsightProfile } from '@core/insightPresentation'
+import { displayInsight } from '../../statsCopy'
+import { useLogSchema } from '../../store/logSchema'
+import { InsightExplanationTrigger as Evidence, InsightRecordButton, InsightTakeaway } from './InsightExplanation'
+import { DistractionMetricIcon,DistractionVisual } from './DistractionVisual'
+import './personalOverview.css'
+
+type Result=ReturnType<typeof generatePersonalInsights>
+const names={time:'Study time',sleep:'Sleep',conditions:'Study conditions',length:'Session length',rest:'Breaks',trend:'Your progress',distractions:'Distractions'}
+const symbols={time:'◷',sleep:'☾',conditions:'◇',length:'▤',rest:'◴',trend:'↗',distractions:'◎'}
+/** Display the engine's actual means on a common scale; no inferred curve. */
+function FindingVisual({c}:{c:PersonalInsight;conditionLabel?:string}):React.JSX.Element {
+ const language=useLanguage(),number=new Intl.NumberFormat(language,{maximumFractionDigits:1})
+ const delta=insightDifference(c),profile=orderedInsightProfile(c)
+ if(c.family==='distractions')return <DistractionVisual c={c}/>
+ if(!delta||c.rows.length<2)return <p>{c.title}</p>
+ const metric=c.outcome==='length'?uiText('Focused session length'):uiText('Reported {value0}',{value0:uiText(c.outcome??'')})
+ const rows=['sleep','length','rest'].includes(c.family)&&profile.length>=2?profile:c.rows
+ const ceiling=c.outcome==='length'?Math.max(1,...rows.map(r=>r.value)):5
+ const value=(v:number)=>c.outcome==='length'?uiText('{value} min',{value:number.format(v)}):uiText('{value} of {maximum}',{value:number.format(v),maximum:number.format(ceiling)})
+ return <div className="finding-comparison"><div className="finding-metric"><span>{metric}</span><span>{c.outcome==='length'?uiText('Longer does not mean better'):uiText('Self-reports')}</span></div><div className="finding-scale" aria-hidden="true"><span>{number.format(0)}</span><span>{number.format(ceiling)}</span></div>{rows.map(row=><div className="finding-comparison-row" key={row.label}><div><span dir="auto">{row.label}</span><strong>{value(row.value)}</strong></div><div className="finding-comparison-track" aria-hidden="true"><i className={row.label===c.rows[0].label?'finding-primary':''} style={{width:`${Math.max(0,Math.min(100,row.value/ceiling*100))}%`}}/></div></div>)}<p className="finding-difference"><strong>{delta.value}</strong> {c.outcome==='length'?uiText('focused minutes'):uiText('{value0} points',{value0:uiText(c.outcome??'')})}</p></div>
+}
+export const InsightCards=memo(function InsightCards({cards,onJump,onExperiment,actions,status}:{status?:(c:PersonalInsight)=>string;actions?:(c:PersonalInsight)=>React.ReactNode;cards:PersonalInsight[];onJump?:(id:string,c?:PersonalInsight)=>void;onExperiment?:(c:PersonalInsight)=>void}):React.JSX.Element {
+  const language=useLanguage(),schema=useLogSchema(s=>s.schema)
+  const displayed=cards.map(card=>displayInsight(card,schema,language))
+  const original=(card:PersonalInsight):PersonalInsight=>cards.find(source=>source.id===card.id)!
+  return <div className="grid gap-4 lg:grid-cols-2 2xl:grid-cols-3">{displayed.map(c=><article key={c.id} data-insight-id={c.id} data-shared-evidence={c.sharedEvidence?true:undefined} className="flex flex-col gap-5 rounded-2xl border border-line bg-surface p-5"><header className="flex items-center justify-between gap-3"><h3 className={`flex items-center gap-2 font-medium ${c.family==='distractions'?(c.unit==='minutes'?'text-overtime':'text-focus'):'text-muted'}`}>{c.family==='distractions'?<><DistractionMetricIcon duration={c.unit==='minutes'}/>{c.unit==='minutes'?uiText("Time lost"):uiText("Interruptions")}</>:<>{symbols[c.family]} {c.family==='conditions'?c.context:uiText(names[c.family])}</>}</h3><Evidence c={c}/></header>{status&&<span className="self-start rounded-full bg-focus/10 px-3 py-1 text-xs text-focus">{uiText(status(original(c)))}</span>}<InsightTakeaway c={c}/>{c.presentation?.methodComparison&&<p className="text-sm text-muted">{uiText(METHOD_OBSERVATION_NOTE)}</p>}<FindingVisual c={c} conditionLabel={original(c).context}/><div className="mt-auto flex flex-col gap-5" data-insight-card-bottom><InsightRecordButton c={c}/><footer className="flex flex-wrap items-center gap-2 border-t border-line pt-3">{c.action&&onExperiment&&<Button size="sm" variant="quiet" title={c.action} onClick={()=>onExperiment(original(c))}>{uiText("Plan a focus comparison")}</Button>}{onJump&&<Button size="sm" variant="ghost" onClick={()=>onJump(c.section,original(c))}>{uiText("Explore →")}</Button>}{actions?.(original(c))}</footer></div></article>)}</div>
+})
+export const PersonalOverview=memo(function PersonalOverview({result,onJump,onExperiment,scope,scopeLabel,today,onRestoreScope}:{onRestoreScope:(scope:string)=>void;result:Result;scope:string;scopeLabel:string;today:string;onJump:(id:string,c?:PersonalInsight)=>void;onExperiment:(c:PersonalInsight)=>void}):React.JSX.Element {
+  const language=useLanguage(),schema=useLogSchema(s=>s.schema)
+  const {coverage:c}=result
+  const [data,setData]=useState<StudyToolsData>(EMPTY_TOOLS),[error,setError]=useState(''),[busy,setBusy]=useState(false)
+  const [notice,setNotice]=useState(''),[savedOpen,setSavedOpen]=useState(false)
+  useEffect(()=>{let alive=true;const load=()=>void window.api.invoke('tools:get').then(d=>{if(alive)setData(d)}).catch(e=>{if(alive)setError(String(e))});load();const off=window.api.on('tools:changed',load);return()=>{alive=false;off()}},[])
+  const records=data.discoveries??[],own=records.filter(d=>d.scope===scope)
+  const record=(card:PersonalInsight)=>own.find(d=>d.snapshot.id===card.id)
+  const remember=async(card:PersonalInsight,status:DiscoveryRecord['status']):Promise<void>=>{
+    setBusy(true);setError('');try{setData(await window.api.invoke('tools:saveDiscovery',{key:discoveryKey(scope,card.id),scope,scopeLabel,status,checkedOn:today,snapshot:{...discoverySnapshot(card),...(card.sharedEvidence&&card.family!=='trend'&&!card.presentation?.includeUntouched?{question:freezeQuestion(card.sharedEvidence,card.factorKey,card.rows[0].label,result.analysisRows,today)}:{})}}));setNotice(status==='saved'?'Finding saved.':status==='dismissed'?'Hidden. You can restore it below.':'Finding checked.')}catch(e){setError(String(e))}finally{setBusy(false)}
+  }
+  const restore=async(entry:DiscoveryRecord):Promise<void>=>{setBusy(true);try{setData(await window.api.invoke('tools:saveDiscovery',{...entry,status:'seen'}))}catch(e){setError(String(e))}finally{setBusy(false)}}
+  const visible=result.cards.filter(card=>record(card)?.status!=='dismissed')
+  const saved=records.filter(d=>d.status==='saved'),hidden=own.filter(d=>d.status==='dismissed')
+  const current=(entry:DiscoveryRecord)=>entry.scope===scope?result.candidates.find(card=>card.id===entry.snapshot.id):undefined
+  // A first-time dashboard needs one next step, not an empty evidence report.
+  // Saved snapshots remain accessible after the underlying history is removed.
+  if(!c.sessions&&!saved.length&&!hidden.length)return <></>
+  return <section id="stats-insights" className="scroll-mt-[var(--stats-bar-height,8rem)] flex flex-col gap-5">
+    <header className="flex flex-wrap items-start justify-between gap-3"><div><h2 className="text-2xl font-semibold">{uiText("Your study patterns")}</h2></div>{saved.length>0&&<Button size="sm" variant="ghost" onClick={()=>setSavedOpen(true)}>{uiText("Saved findings (")}{saved.length})</Button>}</header>
+    <details className="stats-methodology"><summary>{uiText("Evidence details")}</summary><p className="text-sm text-muted">{uiText("Records: {sessions}; answered focus ratings: {focus}; answered recall ratings: {recall}. Excluded records — mixed subjects: {mixed}; unconfirmed activity: {unknown}.",{sessions:c.sessions,focus:c.focus,recall:c.recall,mixed:c.mixed,unknown:c.unknownActivity})}</p><p>{uiText("Updates compare with findings you have checked in this view. Counts alone do not create updates.")}</p><OptionalAdvice/></details>
+    {!!visible.length&&visible.every(card=>{const before=record(card);return before&&['Exploratory association','Recorded comparison','Established pattern','Early pattern','Recorded summary'].includes(discoveryChange(before.snapshot,card))})&&<p role="status" className="rounded-xl bg-rest/10 px-4 py-3 text-sm text-rest">{uiText("No material change in your checked findings in this view.")}</p>}
+
+    {visible.length?<InsightCards cards={visible} onJump={onJump} onExperiment={onExperiment} status={card=>discoveryChange(record(card)?.snapshot,card)} actions={card=>{const entry=record(card);return <><Button size="sm" variant="ghost" disabled={busy} onClick={()=>void remember(card,entry?.status==='saved'?'seen':'saved')}>{entry?.status==='saved'?uiText("Unsave"):uiText("Save finding")}</Button><Button size="sm" variant="ghost" disabled={busy} onClick={()=>void remember(card,'dismissed')}>{uiText("Hide")}</Button>{entry?.status!=='saved'&&<Button size="sm" variant="ghost" disabled={busy} onClick={()=>void remember(card,'seen')}>{uiText("Mark checked")}</Button>}</>}}/>:<div className="stats-no-finding"><span aria-hidden="true">◌</span><div><p>{result.cards.length?uiText("Findings hidden in this view"):uiText("No clear comparison yet")}</p><p className="text-xs mt-1">{uiText("Comparable records may reveal patterns over time. Nothing here measures learning.")}</p></div></div>}
+    {savedOpen&&<Dialog title={uiText("Saved findings")} onClose={()=>setSavedOpen(false)}><p className="mt-3 text-xs text-muted">{uiText("Each finding keeps its original view. A saved association is not a permanent rule or proof of cause.")}</p>{!saved.length&&<p className="mt-3 text-sm">{uiText("Save useful findings from the cards above.")}</p>}{saved.map(entry=>{const card=current(entry),same=entry.scope===scope,later=same&&entry.snapshot.question?checkLaterRecords(entry.snapshot.question,result.analysisRows):null;return <article key={entry.key} className="mt-4 rounded-xl border border-line p-4"><span className="rounded-full bg-focus/10 px-3 py-1 text-xs text-focus">{same?uiText(discoveryChange(entry.snapshot,card)):uiText("Saved in another view")}</span><h3 className="mt-3 font-medium">{card?displayInsight(card,schema,language).title:entry.snapshot.title}</h3><p className="mt-2 text-xs text-muted">{entry.scopeLabel}{uiText(" · checked ")}{formatDate(entry.checkedOn)}</p>{later&&<details className="mt-3 text-sm"><summary className="cursor-pointer text-focus">{uiText(later.state)}</summary><p className="mt-2">{uiText("Only records after the saved cutoff are checked, at fixed day checkpoints. This remains an observational comparison.")}</p>{later.evidence&&<p className="mt-2 text-muted">{evidenceCopy(later.evidence,language).coverage} {evidenceCopy(later.evidence,language).uncertainty}</p>}</details>}{card?<p className="mt-2 text-sm">{uiText("Now: ")}{uiText('Usable support: {first} vs {second}',{first:countEvidence(card.n,card.unit),second:countEvidence(card.nOther,card.unit)})} · {formatDate(card.range.from)}{uiText(" to ")}{formatDate(card.range.to)}</p>:<p className="mt-2 text-sm text-muted">{uiText("Saved evidence: ")}{entry.snapshot.n}{uiText(" vs ")}{entry.snapshot.nOther} {uiText(entry.snapshot.unit)} · {formatDate(entry.snapshot.from)}{uiText(" to ")}{formatDate(entry.snapshot.to)}. {same?uiText("The current window, eligibility rules or candidate limit no longer provide this comparison. No recommendation is carried forward."):uiText("Return to the original filters and date-range preset to recheck it.")}</p>}<div className="mt-3 flex flex-wrap gap-2">{!same&&<Button size="sm" onClick={()=>{setSavedOpen(false);onRestoreScope(entry.scope)}}>{uiText("Open original view")}</Button>}{card&&<><Button size="sm" disabled={busy} onClick={()=>void remember(card,'saved')}>{uiText("Update saved evidence")}</Button><Button size="sm" variant="ghost" onClick={()=>{setSavedOpen(false);onJump(card.section,card)}}>{uiText("Explore current evidence")}</Button></>}<Button size="sm" variant="ghost" disabled={busy} onClick={()=>void restore(entry)}>{uiText("Unsave")}</Button></div></article>})}</Dialog>}
+    {!!hidden.length&&<details className="rounded-xl border border-line p-4"><summary className="cursor-pointer text-sm">{uiText("Hidden findings (")}{hidden.length})</summary>{hidden.map(entry=><div key={entry.key} className="mt-3 flex flex-wrap items-center gap-3"><p className="min-w-0 flex-1 text-sm">{entry.snapshot.title}</p><Button size="sm" disabled={busy} onClick={()=>void restore(entry)}>{uiText("Restore finding")}</Button></div>)}</details>}
+    {error&&<p role="alert" className="text-status-error">{error}</p>}{notice&&<p role="status" className="text-sm text-rest">{uiText(notice)}</p>}
+  </section>
+})

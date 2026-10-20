@@ -17,6 +17,9 @@ for (const file of files) {
   const text = bytes.toString('utf8')
   assert.ok(!secret.test(text), 'Credential pattern in ' + file)
   assert.ok(!privatePath.test(text), 'Workstation path in ' + file)
+  // Exact source snapshots retain upstream documentation, which is not this site's navigation.
+  // File boundaries, credentials and workstation-path checks above still cover every source file.
+  if (file.startsWith('corresponding-source/')) continue
   if (!file.endsWith('.md')) continue
   for (const match of text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)) {
     const link = match[1].split('#')[0]
@@ -39,3 +42,19 @@ console.log('PASS links, tracked-file boundaries, bounded secret/path patterns, 
 for(const heading of ["## Two ways to study","## A Full Mode session","## The floating timer","## Home tools","## History and notes","## Stats","## Learn","## Themes, text and language","## Privacy","## Backups and updates","## Install","## Help"]) assert.ok(readme.includes(heading), heading);
 const guide=fs.readFileSync('docs/USER_GUIDE.md','utf8');for(const heading of ["## Your first study session","## Home tools","## Read Stats","## Appearance and language","## Install, update and protect your records","## If something goes wrong"]) assert.ok(guide.includes(heading), heading);
 for(const m of readme.matchAll(/(?:src|srcset)="([^"]+)"/g)) if(!/^[a-z]+:/i.test(m[1])) assert.ok(fs.existsSync(m[1]), 'README image '+m[1]);
+
+// A release tag must carry the exact curated source mapped to its binary.
+if(fs.existsSync('RELEASE_SOURCE.json')){
+ const release=JSON.parse(fs.readFileSync('RELEASE_SOURCE.json','utf8'))
+ const folder=path.resolve('corresponding-source')
+ const source=JSON.parse(fs.readFileSync(path.join(folder,'SOURCE_MANIFEST.json'),'utf8'))
+ assert.equal(source.sourceCommit,release.originalBuildSource)
+ for(const row of source.files){
+  const file=path.resolve(folder,row.file)
+  assert.ok(file.startsWith(folder+path.sep)&&!fs.lstatSync(file).isSymbolicLink(),'Unsafe source path')
+  assert.equal(crypto.createHash('sha256').update(cp.execFileSync('git',['show','HEAD:corresponding-source/'+row.file],{maxBuffer:16*1024*1024})).digest('hex'),row.sha256,row.file)
+ }
+ assert.match(release.binary.sha256,/^[a-f0-9]{64}$/)
+ assert.match(release.correspondingSource.sha256,/^[a-f0-9]{64}$/)
+ console.log('PASS release source revision, curated file hashes and source/binary mapping.')
+}

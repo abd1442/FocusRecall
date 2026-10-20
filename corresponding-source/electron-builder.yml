@@ -1,0 +1,78 @@
+# Legacy installer identity preserves upgrade/uninstall detection.
+appId: app.trifocus.desktop
+productName: FocusRecall
+copyright: Copyright (c) 2026 abd1442
+publish: null
+electronDist: node_modules/electron/dist
+directories:
+  buildResources: build
+  output: dist/development
+files:
+  - out/main/**
+  - out/preload/**
+  - out/renderer/**
+  - resources/**
+  - '!resources/learnalyt*'
+  - '!resources/support-learnalyt.svg'
+  - '!resources/legal/**'
+  - package.json
+  - '!node_modules/better-sqlite3/build/**'
+  - '!node_modules/better-sqlite3/deps/**'
+  - '!node_modules/better-sqlite3/src/**'
+  - '!**/*.map'
+  - '!**/*.log'
+  - '!docs/**'
+  - '!out/qa-temp/**'
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!vitest.config.*'
+  - '!{.gitignore,README.md}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+asarUnpack:
+  - resources/**
+  - node_modules/better-sqlite3/**
+win:
+  icon: resources/focusrecall.ico
+  executableName: FocusRecall
+  target: nsis
+nsis:
+  installerLanguages: [en_US, ar_SA, es_ES, fr_FR, zh_CN, pt_BR, de_DE]
+  displayLanguageSelector: true
+  license: resources/legal/EULA.rtf
+  include: build/installer.nsh
+  oneClick: false
+  perMachine: false
+  selectPerMachineByDefault: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerIcon: resources/focusrecall.ico
+  uninstallerIcon: resources/focusrecall.ico
+  installerHeaderIcon: resources/focusrecall.ico
+  artifactName: FocusRecall-${version}-setup.${ext}
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: true
+  deleteAppDataOnUninstall: false
+npmRebuild: false
+extraResources:
+  - from: resources/legal
+    to: legal
+    filter:
+      - LICENSE.txt
+      - EULA.txt
+      - PRIVACY.txt
+      - THIRD-PARTY-NOTICES.txt
+
+# Production security switches are applied to the executable before signing.
+electronFuses:
+  runAsNode: false
+  enableNodeOptionsEnvironmentVariable: false
+  enableNodeCliInspectArguments: false
+  enableEmbeddedAsarIntegrityValidation: true
+  onlyLoadAppFromAsar: true
+
+beforePack: scripts/check-production-build.cjs
+
+afterExtract: scripts/sanitize-electron-runtime.cjs
+afterPack: scripts/check-packaged-runtime.cjs

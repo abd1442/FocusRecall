@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h3 align="center">A study timer for Windows, with recall notes and a private record of your study.</h3>
+<h3 align="center">A study timer with recall notes and a private record of your study.</h3>
 
 <p align="center">
   Time a subject in a small floating panel, write down what you remember, and come back to it later.<br>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <sub><b>Windows x64</b> &nbsp;·&nbsp; <b>0.1.0-beta.29</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
+  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>0.1.0-beta.29</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
 </p>
 
 <p align="center">
@@ -51,6 +51,12 @@ Use as much or as little of it as you like. Notes, ratings, rest timers and auto
 </table>
 
 <br>
+
+## Beta downloads
+
+[**Windows x64**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-windows-x64) · [**Linux x64 DEB**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-linux-x64) · [**Mac Apple Silicon**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-macos-arm64) · [**Mac Intel**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-macos-x64)
+
+Windows is the established beta baseline. **Linux and macOS are experimental and awaiting real-world testing.** Windows is unsigned; Mac builds are not Developer ID signed or notarized. Each platform release has installation instructions, known limitations, matching source, notices and checksums. [Report a beta problem](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)—issues are public; use fictional examples and never attach personal records, private backups or sensitive logs.
 
 ## Two ways to study
 
@@ -271,7 +277,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 ## Source and license
 
-FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Development repository](https://github.com/abd1442/FocusRecall-Dev)
+FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
 Use the source package that matches your installer; the development repository may be ahead of an installed build. Screenshots show real application screens with made-up subjects and notes.
 

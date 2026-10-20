@@ -1,0 +1,28 @@
+.exam-map{width:100%;max-width:38rem;margin:auto}.exam-demands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.exam-demands .field-ink{max-height:7rem}.exam-demands p{margin-top:0}.exam-sample{max-width:19rem;margin:1rem auto 0}.exam-sample .field-ink{max-height:10rem}.scene-footnote{color:var(--tf-recall)!important;margin-top:1rem!important}.sample-gap{stroke-dasharray:4 5;stroke:var(--tf-recall)}
+.difficulty-bridges,.peer-sequence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;width:100%}.difficulty-bridges .field-ink,.peer-sequence .field-ink{max-height:12rem}.bridge-water{stroke:var(--tf-border);stroke-width:1}.restored-support{stroke:var(--tf-rest);stroke-width:4}.peer-exchange{stroke:var(--tf-recall);stroke-dasharray:5 4}.peer-replay .peer-exchange{animation:context-return 1.3s ease-out both}
+.switch-sequence{width:100%;max-width:39rem;margin:auto}.switch-lane{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);align-items:center;gap:1rem;text-align:start}.switch-lane+.switch-lane{border-block-start:1px solid var(--tf-border);margin-top:.75rem;padding-top:.75rem}.switch-lane .field-ink{max-height:7rem}.switch-return{stroke:var(--tf-recall);stroke-dasharray:5 5}.switch-replay .switch-return{animation:context-return 1.3s ease-out both}.switch-replay .switch-lane+.switch-lane .switch-return{animation-delay:.3s}
+.source-network{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:2rem}.source-investigate{border-inline-start:1px solid var(--tf-border);padding-inline-start:2rem}.source-link{stroke:var(--tf-recall);stroke-width:2.5}.source-labels{display:grid;gap:.25rem}.source-prompt{color:var(--tf-recall)!important}
+.field-compact .exam-demands .field-ink{max-height:3rem}.field-compact .exam-sample{margin:0 auto;max-width:9rem}.field-compact .exam-sample .field-ink{max-height:3rem}.field-compact .switch-lane{display:block}.field-compact .switch-lane .field-ink{max-height:3rem}.field-compact .switch-lane+.switch-lane{margin:0;padding:0}.field-compact .source-investigate{padding-inline-start:.5rem}.field-compact .source-network{gap:.5rem}
+@keyframes context-return{from{stroke-dashoffset:70;opacity:.3}to{stroke-dashoffset:0;opacity:1}}
+@container learn (max-width:30rem){.difficulty-bridges,.peer-sequence{gap:.4rem}.source-network{gap:.75rem}.source-investigate{padding-inline-start:.75rem}.switch-lane{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:.4rem}}
+@container learn (max-width:22rem){.field-visual:not(.field-compact) .difficulty-bridges,.field-visual:not(.field-compact) .peer-sequence{grid-template-columns:1fr;gap:1rem}.difficulty-bridges .field-ink,.peer-sequence .field-ink{max-height:8rem}.field-visual:not(.field-compact) .source-network{grid-template-columns:1fr}.source-investigate{border:0;border-block-start:1px solid var(--tf-border);padding:1rem 0 0}.source-network .field-ink{max-height:10rem}.switch-lane{grid-template-columns:1fr}.switch-lane .field-ink{max-height:9rem}}
+@media(prefers-reduced-motion:reduce){.peer-replay>div,.switch-replay .switch-return{animation:none!important}}
+@media(forced-colors:active){.restored-support{stroke:CanvasText;stroke-width:4}.sample-gap,.switch-return,.peer-exchange{stroke:CanvasText}.source-investigate,.switch-lane+.switch-lane{border-color:CanvasText}}
+
+/* Bridge scene (2026-10-19): filled shapes that stay legible on Explore cards. */
+.bridge-scene{color:var(--fr-stage-focus-text)}
+.bridge-scene .bridge-water{stroke:var(--tf-border);stroke-width:1.5}
+.bridge-ground{fill:color-mix(in srgb,currentColor 14%,var(--tf-surface));stroke:currentColor}
+.bridge-plank{fill:currentColor;stroke:none;opacity:.85}
+.bridge-slot{fill:color-mix(in srgb,var(--tf-recall) 12%,transparent);stroke:var(--tf-recall);stroke-dasharray:5 4}
+.bridge-void{fill:none;stroke:var(--tf-muted);stroke-dasharray:2 5;opacity:.7}
+.bridge-restored{fill:var(--tf-rest);stroke:none}
+.bridge-restored-arrow{stroke:var(--tf-rest);stroke-width:2.6}
+.bridge-flag{fill:var(--tf-recall);stroke:var(--tf-recall)}
+@media(forced-colors:active){.bridge-plank,.bridge-restored,.bridge-flag{fill:CanvasText}.bridge-ground{fill:Canvas}.bridge-slot,.bridge-void,.bridge-restored-arrow{stroke:CanvasText}}
+.difficulty-bridges>.bridge-preview{display:none}
+.field-compact .difficulty-bridges{grid-template-columns:1fr}
+.field-compact .difficulty-bridges>div{display:none}
+.field-compact .difficulty-bridges>.bridge-preview{display:flex;justify-content:center}
+.field-compact .bridge-preview .field-ink{max-height:6.75rem;width:auto}
+[dir=rtl] .bridge-scene{transform:scaleX(-1)}

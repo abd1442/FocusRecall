@@ -1,13 +1,9 @@
-# Availability
+# Beta availability
 
-**0.1.0-beta.29 for Windows x64 is prepared locally. No public installer or GitHub Release has been published.**
+Windows x64 is the established beta baseline. Linux x64 DEB and macOS Apple Silicon/Intel are **experimental** and awaiting real-world desktop testing. [Choose your download](../README.md#beta-downloads). Each platform release includes installation instructions, limitations, matching source, notices and SHA-256 checksums.
 
-The final build changes only the version from accepted RC3. The owner reports successful testing on a second Windows 11 PC; exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Those checks are not claimed as passed.
+Windows is unsigned. Mac builds are ad-hoc signed, not Developer ID signed or notarized. Do not disable operating-system protections or override malware/damaged-app warnings. AppImage is not offered in this round.
 
-If invited to test, use only the installer and checksum supplied to you. The installer is unsigned. Keep Windows protection enabled; stop on a threat detection. [Installation and backups](../README.md#backups-and-updates) · [Support](../SUPPORT.md)
+The owner reports successful Windows 11 testing, but exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Linux/Mac automated native checks do not certify physical sleep/wake, screen readers or every desktop/scaling configuration. The repackaged Mac ZIP containers still need opening on real Macs.
 
-## Maintainer information
-
-Repositories remain private. This documentation update does not publish or authorize distribution. The owner now identifies themselves as the F/R logo creator. Required-source/access review remains open; unreported release-required physical timing and upgrade checks remain unverified.
-
-[Source information](../SOURCE_NOTICE.md) · [Local-build checksums](../SHA256SUMS.txt) · [Screenshot provenance](../screenshots/current/manifest.json). Captures are from RC3, whose renderer and preload are byte-identical to the final version-only build; the images have not been relabelled or altered.
+This page accompanies a local migration proposal; the linked platform releases will be available only after explicit publication approval. [Source and licenses](../SOURCE_NOTICE.md) · [Feedback](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)
