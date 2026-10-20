@@ -6,4 +6,4 @@ Windows is unsigned. Mac builds are ad-hoc signed, not Developer ID signed or no
 
 The owner reports successful Windows 11 testing, but exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Linux/Mac automated native checks do not certify physical sleep/wake, screen readers or every desktop/scaling configuration. The repackaged Mac ZIP containers still need opening on real Macs.
 
-This page accompanies a local migration proposal; the linked platform releases will be available only after explicit publication approval. [Source and licenses](../SOURCE_NOTICE.md) · [Feedback](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)
+[Source and licenses](../SOURCE_NOTICE.md) · [Feedback](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)

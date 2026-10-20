@@ -255,7 +255,7 @@ Uninstalling keeps your profile. **Restore Backup** replaces the current databas
 
 ## Install
 
-FocusRecall runs on 64-bit Windows. Version 0.1.0-beta.29 is not publicly available yet ([availability](docs/RELEASE_STATUS.md)). If you've been invited to test, use only the installer and checksum you were given. The test build is unsigned, so keep Windows security turned on and report any warning you see.
+Choose your operating system in [Beta downloads](#beta-downloads), then follow that platform’s release instructions. Windows uses an unsigned x64 installer; Ubuntu 24.04 x64 uses a DEB; Macs use the Apple Silicon or Intel app ZIP. Linux/macOS remain experimental. Keep security protections enabled and report warnings instead of overriding malware or damaged-app alerts.
 
 On first launch, pick Quick or Full Mode and your language. To look around before adding your own subjects, choose **Open demo data** in **Settings → General → Data**. It opens a separate database of made-up study and leaves your own records untouched.
 
@@ -271,7 +271,7 @@ On first launch, pick Quick or Full Mode and your language. To look around befor
 | Stats shows no comparison | Check the filters. Early records may not be enough yet. |
 | Text or the timer is too small | **Settings → Appearance → Text & size** or **Floating panel**. |
 
-The [user guide](docs/USER_GUIDE.md) has every screen in detail and more troubleshooting. For a bug report, include the app version, Windows build, the steps and the exact error, and never attach your database, backups or vault. [Help and bug reports](SUPPORT.md) · [Security reports](SECURITY.md)
+The [user guide](docs/USER_GUIDE.md) has every screen in detail and more troubleshooting. For a bug report, include the app version, operating system/version, the steps and the exact error, and never attach your database, backups or vault. [Help and bug reports](SUPPORT.md) · [Security reports](SECURITY.md)
 
 <br>
 
@@ -279,7 +279,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
-Use the source package that matches your installer; the development repository may be ahead of an installed build. Screenshots show real application screens with made-up subjects and notes.
+Use the source package and platform tag that match your download; different platforms were built from different source revisions. Screenshots show real application screens with made-up subjects and notes.
 
 ---
 
