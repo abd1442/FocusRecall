@@ -1,3 +1,6 @@
+import { keepDockAlive } from './platform'
+import { LinuxSessionObserver } from './linuxSession'
+import { timingUnavailable } from '@core/platformMessages'
 import { unsafeRuntimeSwitches } from '@core/runtimeSecurity'
 declare const __FOCUSRECALL_QA__: boolean
 import { mkdirSync } from 'node:fs'
@@ -51,6 +54,7 @@ let captureBox: CaptureBox | null = null
 let mainWin: BrowserWindow | null = null
 let settingsRepo: SettingsRepo | null = null
 let quitting = false
+let desktopObserver:LinuxSessionObserver|null=null
 let reminders:StudyReminderService|null=null
 
 // A test run with its own data folder also gets its own Chromium profile, so it
@@ -121,7 +125,7 @@ function openMainWindow(): void {
   // Active study and explicitly enabled reminders continue in the tray.
   mainWin.on('close', (e) => {
     const all=s.getAll()
-    if (!quitting && (engine&&engine.get().stage!=='idle'||all.studyReminderDailyEnabled)) {
+    if (process.platform==='win32' && !quitting && (engine&&engine.get().stage!=='idle'||all.studyReminderDailyEnabled)) {
       e.preventDefault()
       mainWin?.hide()
     }
@@ -129,14 +133,16 @@ function openMainWindow(): void {
   mainWin.on('closed', () => {
     mainWin = null
     // The panel may still exist, so quit explicitly instead of waiting for window-all-closed.
-    if (!quitting) app.quit()
+    if (!quitting && !keepDockAlive()) app.quit()
   })
 }
 
-function start(): void {
+async function start(): Promise<void> {
   electronApp.setAppUserModelId(runtimeAppId(__FOCUSRECALL_QA__))
   // No application menu: it only carried zoom and reload shortcuts.
-  Menu.setApplicationMenu(null)
+  Menu.setApplicationMenu(process.platform==='darwin'?Menu.buildFromTemplate([
+    {role:'appMenu'}, {role:'fileMenu'}, {role:'editMenu'}, {role:'windowMenu'}
+  ]):null)
   app.on('browser-window-created', (_, window) => {
     optimizer.watchWindowShortcuts(window)
     attachTextContextMenu(window.webContents)
@@ -147,7 +153,7 @@ function start(): void {
 
   // The override isolates both the database and Chromium profile.
   const dataDir = startupDataDirectory || app.getPath('userData')
-  mkdirSync(dataDir, { recursive: true })
+  mkdirSync(dataDir, { recursive: true, mode: 0o700 })
   const config = readConfig(dataDir)
   const file=databaseFile(dataDir,config.demo)
   db = installPendingRestore(file,openDatabase) ?? openDatabase(file)
@@ -161,7 +167,12 @@ function start(): void {
   const captures = new CaptureRepo(db)
   const sessionRepo = new SessionRepo(db)
   const statsRepo = new StatsRepo(db, logs)
-  engine = new SessionEngine(sessionRepo, logs, distractions, captures, settings, () => blocks.summaries())
+  if(process.platform==='linux'){
+    desktopObserver=new LinuxSessionObserver(()=>{engine?.interruptTiming(true);broadcast('clock:changed',null)})
+    await desktopObserver.start()
+  }
+  engine = new SessionEngine(sessionRepo, logs, distractions, captures, settings, () => blocks.summaries(),undefined,undefined,
+    ()=>desktopObserver?.canObserve()??true,()=>timingUnavailable(settings.getAll().language))
   const suspendTiming = (): void => { engine?.interruptTiming(); broadcast('clock:changed', null) }
   const resumeTiming = (): void => { engine?.interruptTiming(true); broadcast('clock:changed', null) }
   powerMonitor.on('suspend', suspendTiming)
@@ -266,11 +277,15 @@ function start(): void {
   }
 
   panel = new PanelController((pos) => settings.set('panelPosition', pos))
-  tray = new TrayController(
+  try { tray = new TrayController(
     () => settings.getAppearance(),
     { onShow: showMain, onTogglePanel: togglePanel, onQuit: () => ((quitting = true), app.quit()) },
     () => settings.getAll().language
-  )
+  ) } catch {
+    // A tray is optional (notably GNOME without an indicator extension).
+    // Non-Windows close quits normally, so a missing tray cannot strand UI.
+    console.error('FocusRecall tray is unavailable; use the main window.')
+  }
 
   let lastStage: Stage = engine.get().stage
   engine.on('changed', (state) => {
@@ -383,20 +398,20 @@ function start(): void {
   })
 
   openMainWindow()
-  Notification.handleActivation(openFromReminder)
+  if(process.platform==='win32')Notification.handleActivation(openFromReminder)
   // The small popups load hidden now, so the first Back or capture is instant.
   reasons.prepare()
   captureBox.prepare()
   const all = settings.getAll()
-  tray.update(engine.get())
+  tray?.update(engine.get())
   tracker.sync(engine.get())
-  tray.setPanelOpen(all.panelOpen)
+  tray?.setPanelOpen(all.panelOpen)
   if (all.preparationEnabled || all.panelAutoShow || all.panelOpen) panel.prepare(all, settings.getAppearance())
   panel.sync(all, settings.getAppearance())
   reminders.start()
 
   app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) openMainWindow()
+    showMain()
   })
 }
 
@@ -426,10 +441,11 @@ app.on('before-quit', () => {
 })
 
 app.on('window-all-closed', () => {
-  app.quit()
+  if(!keepDockAlive())app.quit()
 })
 
 app.on('will-quit', () => {
+  desktopObserver?.dispose()
   reminders?.dispose()
   engine?.dispose()
   tracker?.dispose()

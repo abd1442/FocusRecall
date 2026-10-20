@@ -1,10 +1,10 @@
 {
-  "platform": "windows-x64",
-  "originalBuildSource": "aab39d4719aa0da6da9dfc0bf08a3d7f89d3b173",
-  "tag": "v0.1.0-beta.29-windows-x64",
+  "platform": "macos-arm64",
+  "originalBuildSource": "5a79f3b9b8d9c99e85a4e43d2e19eadf2e129d7f",
+  "tag": "v0.1.0-beta.29-macos-arm64",
   "binary": {
-    "file": "FocusRecall-0.1.0-beta.29-windows-x64-setup.exe",
-    "sha256": "74c53c3947317555c1df7ec6106bb8ae01726790280789dd180a8d1970745bab"
+    "file": "FocusRecall-0.1.0-beta.29-macos-arm64.zip",
+    "sha256": "a41d98d4ee223aa6023f5b11a33ea02518084d7ad2b32ac598b9e3d350cc098e"
   },
   "correspondingSource": {
     "file": "FocusRecall-0.1.0-beta.29-corresponding-source.zip",

@@ -34,6 +34,7 @@ elseif ($env:FOCUSRECALL_MEDIA_ACTION -eq 'pause' -and $wasPlaying) { $accepted 
 export const windowsMusic: MusicPort = {
   open: target => shell.openExternal(target),
   control(action, signal, id, wait = false) {
+    if (process.platform !== 'win32') return Promise.resolve(null)
     if (signal.aborted) return Promise.reject(Error('Cancelled'))
     const executable = join(process.env.SystemRoot || 'C:\\Windows', 'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe')
     return new Promise((resolve, reject) => {

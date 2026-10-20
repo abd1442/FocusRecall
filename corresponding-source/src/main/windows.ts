@@ -1,3 +1,4 @@
+import { windowIcon } from './platform'
 import { join } from 'node:path'
 import { BrowserWindow, Menu, screen, type Rectangle, type WebContents } from 'electron'
 import { is } from '@electron-toolkit/utils'
@@ -61,7 +62,7 @@ export function createMainWindow(opts: {
     show: false,
     autoHideMenuBar: true,
     title: 'FocusRecall',
-    icon: join(__dirname, '../../resources/focusrecall.ico'),
+    icon: windowIcon(),
     backgroundColor: opts.background,
     webPreferences: {
         devTools: rendererDevToolsAllowed(),

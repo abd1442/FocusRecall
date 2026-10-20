@@ -106,7 +106,9 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     private settings: SettingsRepo,
     private adaptiveSamples: () => AdaptiveSample[] = () => [],
     wallNow: () => number = Date.now,
-    monotonicNow: () => number = () => performance.now()
+    monotonicNow: () => number = () => performance.now(),
+    private canObserve: () => boolean = () => true,
+    private observationMessage: () => string = () => 'Study timing is unavailable.'
   ) {
     super()
     this.recovery = repo.getRunning()
@@ -162,6 +164,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     const w = this.unfinished.find((x) => x.sessionId === sessionId)
     if (!w) throw new Error('This study work is already completed or no longer available.')
     if (w.step === 'rest' && w.rest) {
+      this.assertObservable()
       const elapsed = w.elapsed, at = this.now()
       this.rest = {...w.rest}
       if(this.rest.phase==='over')this.rest={...this.rest,actualSeconds:elapsed}
@@ -201,6 +204,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
   }
 
   start(input: StartBlockInput): SessionState {
+    this.assertObservable()
     this.checkTiming()
     if (this.running || this.recovery) throw new Error('A session is already running.')
     if (this.finishedSessionId !== null) throw new Error('Finish the current recall first.')
@@ -254,6 +258,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
    * or end the session where it was left; `force` skips that question.
    */
   back(force = false): SessionState {
+    this.assertObservable()
     const b = this.requireRunning()
     const s = this.settings.getAll()
     if (!force && s.captures.longAbsence && isLongAbsence(distractedSince(b), this.now(), s.longAbsenceMinutes)) {
@@ -313,6 +318,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
    * part on the chosen subject starts.
    */
   switchTo(itemId: Id): SessionState {
+    this.assertObservable()
     const b = this.requireRunning()
     if (itemId === b.itemId) return this.state
     if (!this.repo.itemIsActive(itemId)) throw new Error('That subject is archived.')
@@ -480,6 +486,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
 
   /** Begin the rest with the chosen length. */
   startRest(seconds: number): SessionState {
+    this.assertObservable()
     if(!Number.isFinite(seconds) || seconds<0)throw new Error('Choose a valid rest length.')
     const r = this.requireRest()
     return this.transition(() => {
@@ -582,6 +589,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
    * focus). "end" ends the session at the last moment the app saw it alive.
    */
   resolveRecovery(choice: 'continue' | 'end'): SessionState {
+    if(choice==='continue')this.assertObservable()
     this.checkTiming()
     const b = this.recovery
     if (!b) return this.state
@@ -621,12 +629,14 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     return this.state
   }
 
+  private assertObservable(): void { if(!this.canObserve())throw new Error(this.observationMessage()) }
+
   private checkTiming(): void {
     if (this.checkingTime || this.transitionEvents) return
     this.checkingTime = true
     try {
       const sample = this.clock.sample()
-      if (sample.interrupted) this.pendingCutoff ??= sample.previous
+      if (sample.interrupted || !this.canObserve()) this.pendingCutoff ??= sample.previous
       if (this.pendingCutoff !== null) {
         this.interruptAt(this.pendingCutoff)
         this.pendingCutoff = null
