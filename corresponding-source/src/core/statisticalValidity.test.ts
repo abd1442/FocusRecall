@@ -142,5 +142,7 @@ describe('seeded calibration regression',()=>{
       // Temporal concentration can legitimately reduce automatic-search power.
       expect(selected/80).toBeGreaterThanOrEqual(minSelected);expect(automatic/80).toBeGreaterThanOrEqual(minAutomatic)
     }
-  },20000)
+  // Native Intel hosted runners can be substantially slower. Keep every seed
+  // and assertion; this is a completion timeout, not a performance threshold.
+  },120000)
 })

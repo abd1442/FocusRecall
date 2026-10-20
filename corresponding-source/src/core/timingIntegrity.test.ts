@@ -12,7 +12,8 @@ import { ObservedClock } from './timingIntegrity'
 import { ReviewTimer } from './review'
 
 let db: Db, engine: SessionEngine, wall: number, monotonic: number
-const make = (): SessionEngine => new SessionEngine(new SessionRepo(db), new LogRepo(db), new DistractionRepo(db), new CaptureRepo(db), new SettingsRepo(db), () => [], () => wall, () => monotonic)
+let observable = true
+const make = (): SessionEngine => new SessionEngine(new SessionRepo(db), new LogRepo(db), new DistractionRepo(db), new CaptureRepo(db), new SettingsRepo(db), () => [], () => wall, () => monotonic, () => observable, () => 'Desktop observation unavailable')
 const start = (timerMode: 'flow' | 'fixed' | 'adaptive' = 'flow'): void => { engine.start({ itemId: 100, timerMode, targetSeconds: 1500 }) }
 // Both clocks advance while the event loop actually observes each second.
 const study = (ms: number): void => {
@@ -22,7 +23,7 @@ const sleep = (monoAdvances = true): void => { wall += 8 * 3600000; if (monoAdva
 const restart = (): void => { engine.dispose(); engine = make() }
 const rest = (): void => { start(); study(600000); engine.finish(); engine.finishWrapUp(engine.get().finished.map(b => ({ blockId: b.id, values: {}, notes: {} })), 'break') }
 beforeEach(() => {
-  vi.useFakeTimers(); wall = Date.parse('2026-10-17T10:00:00Z'); monotonic = 0
+  vi.useFakeTimers(); observable = true; wall = Date.parse('2026-10-17T10:00:00Z'); monotonic = 0
   db = openDatabase(':memory:')
   db.prepare("INSERT INTO categories(id,name,color,sort_order,created_at) VALUES(100,'Fictional QA','#123456',0,'2026-10-17')").run()
   db.prepare("INSERT INTO items(id,category_id,name,color,default_unit,created_at) VALUES(100,100,'Fictional algebra','#123456','pages','2026-10-17'),(101,100,'Fictional biology','#654321','pages','2026-10-17')").run()
@@ -191,4 +192,26 @@ it('restoring the wall clock after rollback realigns the timeline without credit
   engine.resolveRecovery('continue'); study(60000); engine.finish()
   expect(engine.get().finished[0].focusSeconds).toBe(720)
   expect(engine.get().clockOffsetMs).toBe(0)
+})
+it('refuses unsupported study starts and never credits a lost desktop observation gap', () => {
+  observable=false
+  expect(()=>start()).toThrow('Desktop observation unavailable')
+  expect(engine.get().running).toBeNull()
+  observable=true;start();study(60000)
+  observable=false;study(60000)
+  const cutoff=engine.get().recovery!.focusSecondsAtLastKnown
+  expect(cutoff).toBeLessThanOrEqual(60)
+  expect(()=>engine.resolveRecovery('continue')).toThrow('Desktop observation unavailable')
+  expect(engine.get().recovery).not.toBeNull()
+  observable=true;engine.resolveRecovery('continue');study(30000);engine.finish()
+  expect(engine.get().finished[0].focusSeconds).toBe(cutoff+30)
+})
+
+it('keeps data usable and prevents rest from resuming without desktop observation',()=>{
+  rest();restart();const saved=engine.get().unfinished.find(w=>w.step==='rest')!
+  observable=false
+  expect(()=>engine.resumeWorkflow(saved.sessionId)).toThrow('Desktop observation unavailable')
+  expect(engine.get().unfinished.some(w=>w.sessionId===saved.sessionId)).toBe(true)
+  observable=true;engine.resumeWorkflow(saved.sessionId)
+  expect(engine.get().rest).not.toBeNull()
 })

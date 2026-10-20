@@ -6,6 +6,8 @@ import { IDLE_STATE } from './session'
 const native=vi.hoisted(()=>({windows:[] as any[],trays:[] as any[],theme:null as any}))
 vi.mock('../main/security',()=>({protectRenderer:vi.fn(),rendererDevToolsAllowed:()=>true}))
 vi.mock('../main/windows',()=>({lockPageZoom:vi.fn()}))
+// These regressions describe Windows native calls, even on a Mac/Linux runner.
+vi.mock('../main/platform',async importOriginal=>({...await importOriginal<typeof import('../main/platform')>(),managedPanel:vi.fn(()=>false),panelCanFocus:(preparing:boolean)=>preparing}))
 vi.mock('@electron-toolkit/utils',()=>({is:{dev:false}}))
 vi.mock('electron',async()=>{
   const {EventEmitter}=await import('node:events')
@@ -14,7 +16,7 @@ vi.mock('electron',async()=>{
   class Window extends EventEmitter {
     position:number[];size:number[];visible=false;destroyed=false
     constructor(options:any){super();this.position=[options.x,options.y];this.size=[options.width,options.height];native.windows.push(this)}
-    getSize=()=>this.size;getPosition=()=>this.position
+    getSize=()=>this.size;getContentSize=()=>this.size;getPosition=()=>this.position
     getBounds=()=>({x:this.position[0],y:this.position[1],width:this.size[0],height:this.size[1]})
     setSize=vi.fn((w:number,h:number)=>{this.size=[w,h]})
     setBounds=vi.fn((b:{x:number;y:number;width:number;height:number})=>{this.position=[b.x,b.y];this.size=[b.width,b.height];this.emit('moved')})
@@ -30,10 +32,11 @@ vi.mock('electron',async()=>{
   }
   return {BrowserWindow:Window,Tray,nativeTheme:native.theme,nativeImage:{createEmpty:()=>({addRepresentation:vi.fn()})},Menu:{buildFromTemplate:(v:unknown)=>v},screen:{getPrimaryDisplay:()=>({workArea:work}),getAllDisplays:()=>[{workArea:work}],getDisplayNearestPoint:()=>({workArea:work}),getDisplayMatching:()=>({workArea:work}),getCursorScreenPoint:()=>({x:0,y:0})}}
 })
+import { managedPanel } from '../main/platform'
 import { PanelController } from '../main/panel'
 import { TrayController } from '../main/tray'
 
-beforeEach(()=>{vi.useFakeTimers();native.windows.length=0;native.trays.length=0})
+beforeEach(()=>{vi.useFakeTimers();native.windows.length=0;native.trays.length=0;vi.mocked(managedPanel).mockReturnValue(false)})
 afterEach(()=>{vi.useRealTimers();native.theme.removeAllListeners()})
 
 describe('Windows transition work',()=>{

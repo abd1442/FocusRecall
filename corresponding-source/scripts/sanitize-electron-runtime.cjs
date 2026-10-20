@@ -4,7 +4,10 @@ module.exports=context=>{
  const root=path.resolve(context.appOutDir),dist=path.resolve('dist');
  if(!root.startsWith(dist+path.sep))throw Error('Runtime cleanup requires a package under dist.');
  const walk=folder=>{for(const item of fs.readdirSync(folder,{withFileTypes:true})){
-  const file=path.join(folder,item.name);if(item.isSymbolicLink())throw Error('Unexpected link in packaged runtime.');
+  const file=path.join(folder,item.name);if(item.isSymbolicLink()){
+   const resolved=fs.realpathSync(file);if(!resolved.startsWith(root+path.sep))throw Error('Runtime link escapes package.');
+   continue;
+  }
   if(item.isDirectory())walk(file);else if(/\.log$/i.test(item.name))fs.unlinkSync(file);
  }};walk(root);
 }
