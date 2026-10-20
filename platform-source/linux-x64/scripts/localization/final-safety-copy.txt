@@ -1,0 +1,65 @@
+Waiting for Spotify playback controls…|بانتظار أزرار التحكم في تشغيل Spotify…|Esperando los controles de reproducción de Spotify…|En attente des commandes de lecture de Spotify…|正在等待 Spotify 播放控件…|Aguardando os controles de reprodução do Spotify…|Warten auf die Wiedergabesteuerung von Spotify…
+Go to|الانتقال إلى|Ir a|Aller à|跳转到|Ir para|Gehe zu
+Go to Stats section|الانتقال إلى قسم الإحصاءات|Ir a una sección de estadísticas|Aller à une section des statistiques|跳转到统计分区|Ir para uma seção das estatísticas|Zum Statistikbereich wechseln
+30 days|30 يومًا|30 días|30 jours|30 天|30 dias|30 Tage
+Any quality|كل مستويات الجودة|Cualquier calidad|Toutes les qualités|所有质量|Qualquer qualidade|Jede Qualität
+focused|تركيز|de concentración|de concentration|专注|de foco|Fokuszeit
+longest uninterrupted stretch|أطول فترة دون مقاطعة|tramo más largo sin interrupciones|plus longue période sans interruption|最长连续专注|maior período sem interrupções|längste ununterbrochene Phase
+to label or confirm|للتصنيف أو التأكيد|por clasificar o confirmar|à classer ou confirmer|项待分类或确认|para classificar ou confirmar|zu beschriften oder bestätigen
+subject|مادة|materia|matière|科目|matéria|Fach
+subjects|مواد|materias|matières|科目|matérias|Fächer
+day|يوم|día|jour|天|dia|Tag
+days|أيام|días|jours|天|dias|Tage
+average focus|متوسط التركيز|concentración media|concentration moyenne|平均专注评分|foco médio|durchschnittlicher Fokus
+average session|متوسط الجلسة|sesión media|séance moyenne|平均学习时长|sessão média|durchschnittliche Sitzung
+Category|الفئة|Categoría|Catégorie|分类|Categoria|Kategorie
+Use this length instead|استخدام هذه المدة بدلًا منها|Usar esta duración|Utiliser cette durée|改用此时长|Usar esta duração|Stattdessen diese Dauer verwenden
+Chosen palette|لوحة الألوان المختارة|Paleta elegida|Palette choisie|所选配色|Paleta escolhida|Gewählte Farbpalette
+Parchment|ورق رقّي|Pergamino|Parchemin|羊皮纸色|Pergaminho|Pergament
+Match workspace|مطابقة مساحة العمل|Igualar el espacio de trabajo|Assortir à l’espace de travail|匹配工作区|Combinar com o espaço de trabalho|An Arbeitsbereich anpassen
+60 min and more|60 دقيقة فأكثر|60 min o más|60 min ou plus|60 分钟及以上|60 min ou mais|60 Min. und mehr
+Quit without saving note changes?|هل تريد الخروج دون حفظ تغييرات الملاحظة؟|¿Salir sin guardar los cambios de la nota?|Quitter sans enregistrer les modifications de la note ?|不保存笔记更改就退出吗？|Sair sem salvar as alterações da nota?|Ohne Speichern der Notizänderungen beenden?
+Keep editing|متابعة التحرير|Seguir editando|Continuer la modification|继续编辑|Continuar editando|Weiter bearbeiten
+Quit and discard|الخروج وتجاهل التغييرات|Salir y descartar|Quitter et abandonner|退出并放弃更改|Sair e descartar|Beenden und verwerfen
+{value} of {maximum}|{value} من {maximum}|{value} de {maximum}|{value} sur {maximum}|{value}／{maximum}|{value} de {maximum}|{value} von {maximum}
+{value} per hour|{value} في الساعة|{value} por hora|{value} par heure|每小时 {value}|{value} por hora|{value} pro Stunde
+{value} min|{value} دقيقة|{value} min|{value} min|{value} 分钟|{value} min|{value} Min.
+{value} % of usual|{value} ٪ من المعتاد|{value} % de lo habitual|{value} % du rythme habituel|平常水平的 {value}%|{value} % do habitual|{value} % des üblichen Werts
+Remove filter: {filter}|إزالة المرشح: {filter}|Quitar filtro: {filter}|Retirer le filtre : {filter}|移除筛选：{filter}|Remover filtro: {filter}|Filter entfernen: {filter}
+Other start times|أوقات بدء أخرى|Otras horas de inicio|Autres heures de début|其他开始时间|Outros horários de início|Andere Startzeiten
+Other sleep ranges|مدد نوم أخرى|Otras duraciones de sueño|Autres durées de sommeil|其他睡眠时长|Outras durações de sono|Andere Schlafdauern
+Other session lengths|مدد جلسات أخرى|Otras duraciones de sesión|Autres durées de séance|其他学习时长|Outras durações de sessão|Andere Sitzungsdauern
+Other recorded breaks|استراحات أخرى مسجّلة|Otros descansos registrados|Autres pauses enregistrées|其他已记录休息|Outros descansos registrados|Andere erfasste Pausen
+Other recorded setups|إعدادات دراسة أخرى مسجّلة|Otras configuraciones registradas|Autres configurations enregistrées|其他已记录学习环境|Outras configurações registradas|Andere erfasste Lernumgebungen
+Latest four weeks|الأسابيع الأربعة الأخيرة|Últimas cuatro semanas|Quatre dernières semaines|最近四周|Últimas quatro semanas|Letzte vier Wochen
+Previous four weeks|الأسابيع الأربعة السابقة|Cuatro semanas anteriores|Quatre semaines précédentes|此前四周|Quatro semanas anteriores|Vorherige vier Wochen
+Start time|وقت البدء|Hora de inicio|Heure de début|开始时间|Horário de início|Startzeit
+Hours of sleep|ساعات النوم|Horas de sueño|Heures de sommeil|睡眠小时数|Horas de sono|Schlafstunden
+Actual recorded rest|مدة الاستراحة الفعلية المسجّلة|Descanso real registrado|Pause réelle enregistrée|已记录实际休息|Descanso real registrado|Tatsächlich erfasste Pause
+Reported outcome trend|اتجاه النتائج بحسب التقييم الذاتي|Tendencia de resultados declarados|Tendance des résultats autoévalués|自评结果趋势|Tendência dos resultados autoavaliados|Trend der selbst eingeschätzten Ergebnisse
+Focused length|مدة التركيز|Duración de concentración|Durée de concentration|专注时长|Duração de foco|Fokusdauer
+Focused session length|مدة جلسة التركيز|Duración de la sesión de concentración|Durée d’une séance de concentration|专注学习时长|Duração da sessão de foco|Dauer der Fokussitzung
+{from} to {to} min|من {from} إلى {to} دقيقة|De {from} a {to} min|De {from} à {to} min|{from} 至 {to} 分钟|De {from} a {to} min|{from} bis {to} Min.
+under 15 min|أقل من 15 دقيقة|menos de 15 min|moins de 15 min|少于 15 分钟|menos de 15 min|unter 15 Min.
+15 to 30 min|من 15 إلى 30 دقيقة|de 15 a 30 min|de 15 à 30 min|15 至 30 分钟|de 15 a 30 min|15 bis 30 Min.
+30 to 45 min|من 30 إلى 45 دقيقة|de 30 a 45 min|de 30 à 45 min|30 至 45 分钟|de 30 a 45 min|30 bis 45 Min.
+45 to 60 min|من 45 إلى 60 دقيقة|de 45 a 60 min|de 45 à 60 min|45 至 60 分钟|de 45 a 60 min|45 bis 60 Min.
+60 min and over|60 دقيقة فأكثر|60 min o más|60 min ou plus|60 分钟及以上|60 min ou mais|60 Min. und mehr
+under 6 h|أقل من 6 ساعات|menos de 6 h|moins de 6 h|少于 6 小时|menos de 6 h|unter 6 Std.
+6–7 h|6–7 ساعات|6–7 h|6–7 h|6–7 小时|6–7 h|6–7 Std.
+7–8 h|7–8 ساعات|7–8 h|7–8 h|7–8 小时|7–8 h|7–8 Std.
+8–9 h|8–9 ساعات|8–9 h|8–9 h|8–9 小时|8–9 h|8–9 Std.
+9 h or more|9 ساعات فأكثر|9 h o más|9 h ou plus|9 小时及以上|9 h ou mais|9 Std. und mehr
+under 5 min|أقل من 5 دقائق|menos de 5 min|moins de 5 min|少于 5 分钟|menos de 5 min|unter 5 Min.
+5–10 min|5–10 دقائق|5–10 min|5–10 min|5–10 分钟|5–10 min|5–10 Min.
+10–20 min|10–20 دقيقة|10–20 min|10–20 min|10–20 分钟|10–20 min|10–20 Min.
+20 min or more|20 دقيقة فأكثر|20 min o más|20 min ou plus|20 分钟及以上|20 min ou mais|20 Min. und mehr
+Study conditions|ظروف الدراسة|Condiciones de estudio|Conditions d’étude|学习条件|Condições de estudo|Lernbedingungen
+Your progress|تقدمك|Tu progreso|Votre progression|你的进度|Seu progresso|Dein Fortschritt
+New to you|جديد لك|Nuevo para ti|Nouveau pour vous|首次看到|Novo para você|Neu für dich
+Established pattern|نمط سبق التحقق منه|Patrón ya revisado|Tendance déjà examinée|已回顾的规律|Padrão já revisado|Bereits geprüftes Muster
+Ranking changed|تغيّر الترتيب|El orden cambió|Le classement a changé|排名已变化|A classificação mudou|Rangfolge geändert
+Direction changed|تغيّر الاتجاه|La dirección cambió|La direction a changé|方向已变化|A direção mudou|Richtung geändert
+Less support now|الدعم أقل الآن|Menos respaldo ahora|Moins étayé actuellement|当前支持程度降低|Menos sustentação agora|Jetzt schwächer gestützt
+More support now|الدعم أكبر الآن|Más respaldo ahora|Mieux étayé actuellement|当前支持程度提高|Mais sustentação agora|Jetzt stärker gestützt
+Updates compare with findings you have checked in this view. Counts alone do not create updates.|تُقارن التحديثات بالنتائج التي راجعتها في هذا العرض. زيادة العدد وحدها لا تُنشئ تحديثًا.|Las actualizaciones se comparan con los hallazgos que revisaste en esta vista. Aumentar los recuentos no basta para generar una actualización.|Les mises à jour comparent les constats déjà examinés dans cette vue. Une hausse des effectifs ne suffit pas à créer une mise à jour.|更新会与此视图中你已查看的发现比较。仅增加记录数量不会产生更新。|As atualizações comparam os achados que você revisou nesta visualização. O aumento das contagens, por si só, não gera atualizações.|Aktualisierungen vergleichen mit Erkenntnissen, die du in dieser Ansicht geprüft hast. Höhere Anzahlen allein lösen keine Aktualisierung aus.

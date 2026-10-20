@@ -1,0 +1,70 @@
+# Theme system 2026 and the redesigned Settings → Appearance page.
+# English | Arabic | Spanish | French | Simplified Chinese | pt-BR | German
+{count} saved|{count} محفوظ|{count} guardados|{count} enregistrés|已保存 {count} 个|{count} salvos|{count} gespeichert
+{name} dark theme|السمة الداكنة {name}|Tema oscuro {name}|Thème sombre {name}|{name} 深色主题|Tema escuro {name}|Dunkles Design {name}
+{name} light theme|السمة الفاتحة {name}|Tema claro {name}|Thème clair {name}|{name} 浅色主题|Tema claro {name}|Helles Design {name}
+A custom Focus colour also colours buttons|لون التركيز المخصّص يلوّن الأزرار أيضًا|Un color de Enfoque personalizado también colorea los botones|Une couleur Concentration personnalisée colore aussi les boutons|自定义专注颜色也用于按钮|Uma cor de Foco personalizada também colore os botões|Eine eigene Fokusfarbe färbt auch die Schaltflächen
+Always the dark theme|السمة الداكنة دائمًا|Siempre el tema oscuro|Toujours le thème sombre|始终使用深色主题|Sempre o tema escuro|Immer das dunkle Design
+Always the light theme|السمة الفاتحة دائمًا|Siempre el tema claro|Toujours le thème clair|始终使用浅色主题|Sempre o tema claro|Immer das helle Design
+Appearance sections|أقسام المظهر|Secciones de apariencia|Sections de l’apparence|外观分区|Seções da aparência|Bereiche der Darstellung
+Aubergine|باذنجاني|Berenjena|Aubergine|茄紫|Berinjela|Aubergine
+Background and card colours from an earlier version.|ألوان الخلفية والبطاقات من إصدار سابق.|Colores de fondo y tarjetas de una versión anterior.|Couleurs de fond et de cartes d’une version précédente.|来自早期版本的背景和卡片颜色。|Cores de fundo e de cartões de uma versão anterior.|Hintergrund- und Kartenfarben aus einer früheren Version.
+Brand ink|حبر العلامة|Tinta de la marca|Encre de la marque|品牌墨色|Tinta da marca|Marken-Tinte
+Buttons, rings and selection follow your Focus colour.|تتبع الأزرار والحلقات والتحديد لون التركيز.|Los botones, los anillos y la selección siguen tu color de Enfoque.|Les boutons, les contours et la sélection suivent votre couleur Concentration.|按钮、焦点环和选中状态都使用你的专注颜色。|Botões, contornos e seleção seguem sua cor de Foco.|Schaltflächen, Fokusringe und Auswahl folgen deiner Fokusfarbe.
+Celadon|سيلادون|Celadón|Céladon|青瓷|Celadon|Seladon
+Chalkboard|سبّورة|Pizarra|Tableau noir|黑板|Quadro-negro|Schultafel
+Choose a light theme and a dark theme. FocusRecall switches between them.|اختر سمة فاتحة وسمة داكنة، وسيبدّل FocusRecall بينهما.|Elige un tema claro y uno oscuro. FocusRecall alterna entre ellos.|Choisissez un thème clair et un thème sombre. FocusRecall passe de l’un à l’autre.|选择一个浅色主题和一个深色主题，FocusRecall 会在两者之间切换。|Escolha um tema claro e um tema escuro. O FocusRecall alterna entre eles.|Wähle ein helles und ein dunkles Design. FocusRecall wechselt zwischen ihnen.
+Corners and spacing|الزوايا والتباعد|Esquinas y espaciado|Coins et espacement|圆角和间距|Cantos e espaçamento|Ecken und Abstände
+Custom surfaces|أسطح مخصّصة|Superficies personalizadas|Surfaces personnalisées|自定义表面|Superfícies personalizadas|Eigene Flächen
+Customised|مخصّصة|Personalizados|Personnalisées|已自定义|Personalizadas|Angepasst
+Dark|داكن|Oscuro|Sombre|深色|Escuro|Dunkel
+Dark theme|السمة الداكنة|Tema oscuro|Thème sombre|深色主题|Tema escuro|Dunkles Design
+Darkroom|غرفة التحميض|Cuarto oscuro|Chambre noire|暗房|Câmara escura|Dunkelkammer
+Deep Sea|أعماق البحر|Mar profundo|Grand large|深海|Mar profundo|Tiefsee
+Espresso|إسبريسو|Espresso|Espresso|浓缩咖啡|Espresso|Espresso
+Evergreen|دائم الخضرة|Perenne|Sempervirent|常青|Perene|Immergrün
+From the theme|من السمة|Del tema|Du thème|来自主题|Do tema|Aus dem Design
+Graphite Night|ليل الغرافيت|Grafito nocturno|Graphite nuit|石墨夜|Grafite noturno|Graphit Nacht
+How the navigation looks beside your work.|شكل التنقّل بجانب عملك.|Cómo se ve la navegación junto a tu trabajo.|L’apparence de la navigation à côté de votre travail.|导航栏在工作区旁的样式。|Como a navegação aparece ao lado do seu trabalho.|Wie die Navigation neben deiner Arbeit aussieht.
+Icon rail|شريط أيقونات|Barra de iconos|Barre d’icônes|图标栏|Barra de ícones|Symbolleiste
+In use now|مستخدمة الآن|En uso ahora|Utilisé maintenant|正在使用|Em uso agora|Gerade aktiv
+Indigo Hour|ساعة النيلي|Hora índigo|Heure indigo|靛蓝时分|Hora índigo|Indigo-Stunde
+Ink & Brass|حبر ونحاس|Tinta y latón|Encre et laiton|墨与黄铜|Tinta e latão|Tinte & Messing
+Ink Dim|حبر خافت|Tinta tenue|Encre tamisée|柔和墨色|Tinta suave|Gedämpfte Tinte
+Ink Night|ليل الحبر|Tinta nocturna|Encre de nuit|墨夜|Tinta noturna|Tintennacht
+Ink Rail|شريط الحبر|Barra de tinta|Rail d’encre|墨色侧栏|Trilho de tinta|Tintenleiste
+Ink Slate|حبر الأردواز|Tinta pizarra|Encre ardoise|墨板岩|Tinta ardósia|Tintenschiefer
+Ivory & Ink|عاجي وحبر|Marfil y tinta|Ivoire et encre|象牙与墨|Marfim e tinta|Elfenbein & Tinte
+Lagoon|بحيرة|Laguna|Lagon|泻湖|Lagoa|Lagune
+Lichen|أشنة|Liquen|Lichen|地衣|Líquen|Flechte
+Light|فاتح|Claro|Clair|浅色|Claro|Hell
+Light or dark|فاتح أو داكن|Claro u oscuro|Clair ou sombre|浅色或深色|Claro ou escuro|Hell oder dunkel
+Light theme|السمة الفاتحة|Tema claro|Thème clair|浅色主题|Tema claro|Helles Design
+Matcha|ماتشا|Matcha|Matcha|抹茶|Matcha|Matcha
+Matches theme|مثل السمة|Igual que el tema|Comme le thème|与主题一致|Igual ao tema|Wie das Design
+Mode|الوضع|Modo|Mode|模式|Modo|Modus
+Not used in Dark mode|غير مستخدمة في الوضع الداكن|No se usa en modo oscuro|Inutilisé en mode sombre|深色模式下不使用|Não usado no modo escuro|Im dunklen Modus nicht verwendet
+Not used in Light mode|غير مستخدمة في الوضع الفاتح|No se usa en modo claro|Inutilisé en mode clair|浅色模式下不使用|Não usado no modo claro|Im hellen Modus nicht verwendet
+Opposite|معاكس|Opuesto|Opposé|相反|Oposto|Gegenteil
+Optional. Every change is checked for readable contrast.|اختياري. يُفحص كل تغيير لضمان تباين مقروء.|Opcional. Cada cambio se comprueba para que el contraste sea legible.|Facultatif. Chaque changement est vérifié pour un contraste lisible.|可选。每项更改都会检查对比度是否清晰可读。|Opcional. Cada mudança é verificada para manter o contraste legível.|Optional. Jede Änderung wird auf lesbaren Kontrast geprüft.
+Pewter Dim|قصدير خافت|Peltre tenue|Étain tamisé|柔和锡灰|Estanho suave|Gedämpftes Zinn
+Reset to theme|إعادة إلى السمة|Restablecer al tema|Revenir au thème|恢复为主题颜色|Voltar ao tema|Auf Design zurücksetzen
+Rosewater|ماء الورد|Agua de rosas|Eau de rose|玫瑰水|Água de rosas|Rosenwasser
+Saffron|زعفران|Azafrán|Safran|藏红花|Açafrão|Safran
+Saved setups|الإعدادات المحفوظة|Configuraciones guardadas|Réglages enregistrés|已保存的设置|Configurações salvas|Gespeicherte Einstellungen
+Show all ({count})|عرض الكل ({count})|Mostrar todos ({count})|Tout afficher ({count})|显示全部（{count}）|Mostrar todos ({count})|Alle anzeigen ({count})
+Show fewer|عرض أقل|Mostrar menos|Afficher moins|收起|Mostrar menos|Weniger anzeigen
+Shown as {hex} so it stays readable.|يُعرض بلون {hex} ليبقى مقروءًا.|Se muestra como {hex} para que siga siendo legible.|Affiché en {hex} pour rester lisible.|显示为 {hex}，以保持清晰可读。|Exibido como {hex} para continuar legível.|Wird als {hex} angezeigt, damit es lesbar bleibt.
+Sidebar colour|لون الشريط|Color de la barra lateral|Couleur de la barre latérale|侧栏颜色|Cor da barra lateral|Farbe der Seitenleiste
+Stage colours|ألوان المراحل|Colores de las etapas|Couleurs des étapes|阶段颜色|Cores das etapas|Phasenfarben
+Stronger text and edges, on top of either theme.|نص وحواف أقوى مع أي سمة.|Texto y bordes más marcados, sobre cualquiera de los temas.|Texte et contours plus marqués, avec l’un ou l’autre thème.|在任一主题上加强文字和边框。|Texto e bordas mais fortes, com qualquer um dos temas.|Kräftigere Schrift und Kanten, in beiden Designs.
+Switches with Windows light and dark mode|يتبدّل مع وضع Windows الفاتح والداكن|Cambia con el modo claro y oscuro de Windows|Suit le mode clair ou sombre de Windows|随 Windows 浅色和深色模式切换|Alterna com o modo claro e escuro do Windows|Wechselt mit dem hellen und dunklen Modus von Windows
+Terracotta|تيراكوتا|Terracota|Terre cuite|赤陶|Terracota|Terrakotta
+Text & size|النص والحجم|Texto y tamaño|Texte et taille|文字和大小|Texto e tamanho|Text & Größe
+Theme|السمة|Tema|Thème|主题|Tema|Design
+Theme changed.|تغيّرت السمة.|Tema cambiado.|Thème modifié.|主题已更改。|Tema alterado.|Design geändert.
+Theme, sidebar, size|السمة والشريط والحجم|Tema, barra lateral, tamaño|Thème, barre latérale, taille|主题、侧栏、大小|Tema, barra lateral, tamanho|Design, Seitenleiste, Größe
+Use the theme colour|استخدم لون السمة|Usar el color del tema|Utiliser la couleur du thème|使用主题颜色|Usar a cor do tema|Farbe des Designs verwenden
+Used when Windows is dark|عندما يكون Windows داكنًا|Se usa cuando Windows está en oscuro|Utilisé quand Windows est en sombre|Windows 为深色时使用|Usado quando o Windows está escuro|Aktiv, wenn Windows dunkel ist
+Used when Windows is light|عندما يكون Windows فاتحًا|Se usa cuando Windows está en claro|Utilisé quand Windows est en clair|Windows 为浅色时使用|Usado quando o Windows está claro|Aktiv, wenn Windows hell ist
+Wisteria|وستارية|Glicina|Glycine|紫藤|Glicínia|Glyzinie

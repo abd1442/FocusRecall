@@ -1,0 +1,58 @@
+[
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 122,
+    "property": "calculation",
+    "hash": "984066a952b19ae799a0c9e300d9cd71fb48d3f3c32524cad7f56a12cc5b4a68",
+    "handledBy": "Trial calculation is replaced by canonical card calculation; displayOrigin summarizes historical structured evidence"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 123,
+    "property": "explanation",
+    "hash": "3e13aadd07952646cdbc0643e2deb828318f63050d25e5dd831aa4275bd05bf4",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 123,
+    "property": "calculation",
+    "hash": "9e5763f0ca16f082bd3787d6cf76ae6d164cddfa376e5439cfd4c2926ddb05c3",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 123,
+    "property": "limitations",
+    "hash": "9209c96582e92a71ce32c473c15cb86e309f0f63c84f4274ad55e2b5ce1634e1",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 157,
+    "property": "title",
+    "hash": "ec7dd6a8557539d821bf96d66cae1a8213ea0587de2c22a70a4b838e26583725",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 157,
+    "property": "limitations",
+    "hash": "4c0da4f816082855219c54589eb00da81632b22f2384d69d53aa2261efee1133",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 216,
+    "property": "title",
+    "hash": "6954c890696d801aba01b7649921778c3f7cfbcf28adcb29a394d1cdb315f98f",
+    "handledBy": "displayInsight (completionLocalization.test.ts); original stored wording is archival content"
+  },
+  {
+    "file": "src/core/personalInsights.ts",
+    "line": 258,
+    "property": "explanation",
+    "hash": "500285e506d01cb16ec8d46094e6a844fcc1a7c1faf7cee7a7fa4c3478333918",
+    "handledBy": "displayPreparationSuggestion (completionLocalization.test.ts)"
+  }
+]

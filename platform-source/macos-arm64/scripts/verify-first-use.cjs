@@ -1,0 +1,19 @@
+// Empty-profile check of the final package; never uses the ordinary Windows profile.
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {chromium}=require(process.env.LEARNALYT_PLAYWRIGHT_PATH||'playwright');
+(async()=>{
+ const root=path.resolve(process.argv[2]);assert.ok(root.startsWith(path.resolve('out/qa-temp')+path.sep));assert.equal(fs.readFileSync(path.join(root,'QA-FICTIONAL.txt'),'utf8').trim(),'Final beta.17 first-use fictional profile only');
+ const target=(await fetch('http://127.0.0.1:9341/json/list').then(r=>r.json()))[0],ws=new WebSocket(target.webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);let id=0;const pending=new Map();ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(Error(m.error.message)):p.resolve(m.result)}};
+ const main=async expression=>{const r=await new Promise((resolve,reject)=>{pending.set(++id,{resolve,reject});ws.send(JSON.stringify({id,method:'Runtime.evaluate',params:{expression,returnByValue:true,awaitPromise:true}}))});if(r.exceptionDetails)throw Error(r.exceptionDetails.exception?.description??r.exceptionDetails.text);return r.result.value};
+ assert.equal(path.resolve(await main('process.env.LEARNALYT_DATA_DIR')),root);assert.equal(await main("process.getBuiltinModule('module').createRequire(process.execPath)('electron').app.getVersion()"),'0.1.0-beta.17');
+ const browser=await chromium.connectOverCDP('http://127.0.0.1:9340'),page=browser.contexts()[0].pages().find(p=>p.url().endsWith('/out/renderer/index.html')),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const invoke=(c,...a)=>page.evaluate(([c,a])=>window.api.invoke(c,...a),[c,a]);assert.equal(await invoke('app:demo'),false);assert.equal((await invoke('stats:raw')).blocks.length,0);
+ await page.screenshot({path:path.join(root,'first-home.png')});await page.getByRole('button',{name:'Stats',exact:true}).click();await page.waitForTimeout(300);assert.equal((await invoke('stats:raw')).blocks.length,0);await page.screenshot({path:path.join(root,'empty-stats.png')});
+ const category=await invoke('library:createCategory',{name:'Fictional course',color:'#3b6658',icon:null,parentId:null});const item=await invoke('library:createItem',{categoryId:category.id,name:'First fictional subject',color:'#3b6658',defaultUnit:'sessions',totalUnits:null,notesTargetType:'none',notesTarget:null,notesVault:null});assert.ok(item.id);
+ await page.getByRole('button',{name:'Home',exact:true}).click();await page.waitForTimeout(300);assert.ok((await page.locator('body').innerText()).includes('First fictional subject'));assert.equal((await invoke('stats:raw')).blocks.length,0);
+ const settings=await invoke('settings:getAll');assert.equal(settings.foregroundTrackingEnabled,false);assert.equal(settings.studyReminderDailyEnabled,false);assert.equal(settings.studyReminderSmartEnabled,false);
+ await page.getByRole('button',{name:'Settings',exact:true}).click();await page.getByRole('button',{name:'About',exact:true}).click();await page.getByRole('button',{name:'License',exact:true}).click();assert.ok((await page.getByRole('dialog').innerText()).includes('abd1442'));await page.keyboard.press('Escape');
+ assert.deepEqual(errors,[]);fs.writeFileSync(path.join(root,'first-use-results.json'),JSON.stringify({version:'0.1.0-beta.17',emptyProfile:true,noPhantomStudyRecords:true,categoryAndSubjectCreation:true,trackingAndRemindersOff:true,offlineLicense:true,rendererErrors:errors},null,2));
+ // Leave the final package in its normal, non-debugging state after diagnostics.
+ await main("setTimeout(()=>process.getBuiltinModule('module').createRequire(process.execPath)('electron').app.quit(),250);true");ws.close();await browser.close();console.log('PASS final-package first-use checks; no personal profile accessed.');
+})().catch(e=>{console.error(e.stack);process.exit(1)});

@@ -1,0 +1,48 @@
+node_modules
+out
+dist
+*.log
+.DS_Store
+*.db
+*.db-wal
+*.db-shm
+*.tsbuildinfo
+
+# Local credentials, profiles and exported personal study data
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.db-journal
+*.pem
+*.pfx
+*.p12
+*.key
+coverage/
+publication-local/
+
+# Large local-only historical archives (preserved on disk; see docs/archive/README.md)
+docs/archive/*.zip
+
+# Rebuilt from native/foreground by npm run build (no checked-in binaries)
+resources/native/
+
+# Historical/generated QA evidence is retained locally, never implicitly staged.
+# Existing tracked evidence remains tracked; add reviewed receipts explicitly.
+/docs/verification/
+
+# Independent audit attachments and older generated captures: retained locally.
+# Reviewed tracked documents/screenshots remain tracked.
+/docs/audit-final-20261018/
+/docs/screenshots/
+
+# Disposable tooling output; keep release candidates explicitly named under dist/.
+/.cache/
+/.vite/
+/playwright-report/
+/test-results/
+*.cpuprofile
+*.heapprofile
+*.heapsnapshot

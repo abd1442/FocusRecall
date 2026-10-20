@@ -1,0 +1,17 @@
+// Production assets from the owner's native-size, directly traced logo contours.
+// PNG exports require sharp via FOCUSRECALL_SHARP_PATH or a local installation.
+const fs=require('node:fs'),path=require('node:path');
+const sharp=require(process.env.FOCUSRECALL_SHARP_PATH||'sharp');
+const root=path.resolve(__dirname,'..'),out=path.join(root,'resources');
+const ink='#183D56',amber='#CC8C30',ivory='#FFFDF7';
+const {spine,recall,page,width:markWidth,height:markHeight}=JSON.parse(fs.readFileSync(path.join(out,'focusrecall-traced-paths.json'),'utf8'));
+const symbol=(dark=false)=>`<g transform="translate(.5 .5)"><path fill="${dark?'#1B6A89':ink}" d="${spine}"/><path fill="${dark?ivory:ink}" d="${recall}"/><path fill="${amber}" d="${page}"/></g>`;
+const svg=(body,w,h,view=`0 0 ${w} ${h}`)=>`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="${view}" role="img" aria-label="FocusRecall">${body}</svg>`;
+// A uniform transform centres the native contour bounds; never stretch x/y.
+const icon=svg(`<rect x="8" y="8" width="304" height="304" rx="72" fill="${ivory}"/><g transform="translate(45.5 31.2) scale(.9)">${symbol()}</g>`,320,320);
+const mark=svg(symbol(),markWidth,markHeight),darkMark=svg(symbol(true),markWidth,markHeight);
+const word=(dark=false)=>`<text x="0" y="0" font-family="Segoe UI,Arial,sans-serif" font-size="92" font-weight="700" letter-spacing="-3" fill="${dark?ivory:ink}">Focus<tspan fill="${amber}">Recall</tspan></text>`;
+const lockup=dark=>svg(`<g transform="translate(8 2) scale(.52)">${symbol(dark)}</g><g transform="translate(166 106)">${word(dark)}</g>`,770,160);
+const banner=svg(`<rect width="1280" height="400" rx="32" fill="${ivory}"/><g transform="translate(88 70) scale(.92)">${symbol()}</g><g transform="translate(400 207)">${word()}</g><text x="405" y="263" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#68757A">Focus. Recall. Connect.</text><text x="405" y="316" font-family="Segoe UI,Arial,sans-serif" font-size="19" fill="#68757A">Your study records. Your computer.</text>`,1280,400);
+const support=svg(`<rect x="1" y="1" width="718" height="228" rx="28" fill="${ivory}" stroke="#DDD8CE"/><g transform="translate(30 26) scale(.64)">${symbol()}</g><g font-family="Segoe UI,Arial,sans-serif"><text x="227" y="66" font-size="28" font-weight="700" fill="${ink}">Help FocusRecall grow</text><text x="227" y="100" font-size="18" fill="#68757A">Free to use. Made with care.</text><rect x="227" y="124" width="286" height="58" rx="18" fill="${ink}"/><text x="259" y="162" font-size="22" font-weight="600" fill="${ivory}">Buy me a coffee ↗</text><text x="540" y="160" font-size="14" fill="#68757A">Optional support</text></g>`,720,230);
+(async()=>{const files={'focusrecall-mark.svg':mark,'focusrecall-mark-dark.svg':darkMark,'focusrecall-icon.svg':icon,'focusrecall-lockup.svg':lockup(false),'focusrecall-lockup-dark.svg':lockup(true),'focusrecall-banner.svg':banner,'support-focusrecall.svg':support};for(const[name,body]of Object.entries(files))fs.writeFileSync(path.join(out,name),body+'\n');for(const[name,body,size]of [['focusrecall-icon.png',icon,1024],['focusrecall-banner.png',banner],['support-focusrecall.png',support]]){let image=sharp(Buffer.from(body));if(size)image=image.resize(size,size);await image.png().toFile(path.join(out,name))}console.log('Approved FocusRecall board reproduced as light/dark vectors, app icon and banners.');})().catch(e=>{console.error(e);process.exit(1)});

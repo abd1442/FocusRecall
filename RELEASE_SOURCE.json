@@ -1,15 +1,15 @@
 {
   "platform": "windows-x64",
-  "originalBuildSource": "aab39d4719aa0da6da9dfc0bf08a3d7f89d3b173",
-  "tag": "v0.1.0-beta.29-windows-x64",
+  "originalBuildSource": "822068b128b47e3cff3627082ee0e336dfa17d71",
+  "tag": "v0.1.1-beta.1",
   "binary": {
-    "file": "FocusRecall-0.1.0-beta.29-windows-x64-setup.exe",
-    "sha256": "74c53c3947317555c1df7ec6106bb8ae01726790280789dd180a8d1970745bab"
+    "file": "FocusRecall-Beta-1-Windows-x64-Setup.exe",
+    "sha256": "7f68abad2e33ead8ec036c48b107e15500e6cbc4b178eeb89e7610596b592f07"
   },
   "correspondingSource": {
-    "file": "FocusRecall-0.1.0-beta.29-corresponding-source.zip",
-    "sha256": "005441990e46bb415f2a92016759fb113912c1e9c7747f9fb9c8e22ddb6f9521",
-    "bytes": 175526528
+    "file": "FocusRecall-Beta-1-Source.zip",
+    "sha256": "778702c12ae743edd611fcf3c5e29a4ac71119f4f37b44b620a57ecd71badf1f",
+    "bytes": 175547524
   },
   "sourceTree": "corresponding-source",
   "noDeveloperHistory": true,

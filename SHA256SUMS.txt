@@ -1,2 +1,7 @@
-74c53c3947317555c1df7ec6106bb8ae01726790280789dd180a8d1970745bab  FocusRecall-0.1.0-beta.29-setup.exe
-c0243be091ccc2310ca98019f7b08d4256efe8b79029b85230415bc80916e3a1  FocusRecall-0.1.0-beta.29-source-and-dependencies.zip
+2d357101a4677a6d2c0bd965ee5127c1b455d198bcd213a69ac0271f3ae0e015  FocusRecall-Beta-1-Linux-x64.deb
+111e1f0f3693c988197cec2de540be97055c44c94d6a1bb4984ffa0e3a952389  FocusRecall-Beta-1-macOS-arm64.zip
+51aa2fcb04225aba03252ea2f888e65cd7e7ce850a27e7465b411678f1fcd4df  FocusRecall-Beta-1-macOS-x64.zip
+8a3d45db45e1daeb256558f55f9e192497b171735a382d04d33e66b93360d7bb  FocusRecall-Beta-1-Notices.zip
+778702c12ae743edd611fcf3c5e29a4ac71119f4f37b44b620a57ecd71badf1f  FocusRecall-Beta-1-Source.zip
+7f68abad2e33ead8ec036c48b107e15500e6cbc4b178eeb89e7610596b592f07  FocusRecall-Beta-1-Windows-x64-Setup.exe
+8d26eb916c5b120e2044670540b41d6d7a1bf1cd2c3c5c0f713f054f16fd5ae8  RELEASE-MANIFEST.json

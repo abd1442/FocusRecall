@@ -1,0 +1,102 @@
+/*
+ * Floating panel. Layout units are the panel's base size; the window and its
+ * content are scaled together by the panel size (Small/Medium/Large), and
+ * --pt enlarges text a little at the smaller sizes.
+ */
+.floating-panel {
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  --fp-tone: var(--fr-stage-focus);
+}
+.floating-panel[data-tone='overtime'] { --fp-tone: var(--fr-stage-overtime); }
+.floating-panel[data-tone='rest'] { --fp-tone: var(--fr-stage-rest); }
+.floating-panel[data-tone='recall'] { --fp-tone: var(--fr-stage-recall); }
+.floating-panel[data-tone='idle'] { --fp-tone: var(--tf-muted); }
+
+.fp-stage { position: relative; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+
+/* Window controls: present, but quiet until the pointer is over the panel. */
+.fp-controls { display: flex; align-items: center; gap: 2px; flex: none; opacity: .62; transition: opacity .15s; }
+.floating-panel:hover .fp-controls, .fp-controls:focus-within { opacity: 1; }
+.fp-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; color: var(--tf-muted); }
+.fp-icon:hover { background: var(--tf-surface-2); color: var(--tf-text); }
+
+/* Subject: a colour dot and one line of text. */
+.fp-subject { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.fp-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.fp-subject-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--tf-muted); font-size: calc(14px * var(--pt, 1)); line-height: 1.3; }
+/* Quick Mode: the subject doubles as the switcher, with a chevron so it reads as one. */
+.fp-switch { display: inline-flex; align-items: center; gap: 4px; min-width: 0; margin: -2px -6px; padding: 2px 6px; border-radius: 7px; color: var(--tf-muted); transition: background .15s, color .15s; }
+.fp-switch svg { flex: none; opacity: .7; }
+.fp-switch:hover, .fp-switch:focus-visible { background: color-mix(in oklab, var(--tf-surface-2) 80%, transparent); }
+.fp-switch:hover .fp-subject-text, .fp-switch:hover svg { color: var(--tf-text); opacity: 1; }
+.fp-circular .fp-switch { color: var(--tf-text); }
+
+/* Action bar: one quiet surface, buttons of equal height. */
+.fp-actions { display: flex; flex: none; gap: 6px; padding: 10px; background: color-mix(in oklab, var(--tf-surface-2) 55%, var(--tf-surface)); border-top: 1px solid color-mix(in oklab, var(--tf-border) 70%, transparent); }
+.fp-btn { min-width: min-content; min-height: 42px; padding: 3px 6px; border-radius: 11px; overflow: hidden; line-height: 1.12; overflow-wrap: normal; word-break: normal; hyphens: manual; text-wrap: balance;
+  font-size: calc(15px * var(--pt, 1)); font-weight: 500; color: var(--tf-text); background: var(--tf-surface); border: 1px solid color-mix(in oklab, var(--tf-border) 85%, transparent); transition: filter .15s, background .15s; }
+.fp-btn:hover { background: color-mix(in oklab, var(--tf-surface-2) 70%, var(--tf-surface)); }
+.fp-btn-primary { font-weight: 600; border-color: transparent; color: var(--tf-on-accent); }
+.fp-btn-primary:hover { filter: brightness(1.08); }
+.fp-btn[data-active] { color: var(--fr-stage-overtime-text); border-color: var(--fr-stage-overtime); background: color-mix(in oklab, var(--fr-stage-overtime) 10%, var(--tf-surface)); }
+.fp-btn:disabled { opacity: .35; }
+.floating-panel button:focus-visible { outline: 2px solid var(--tf-focus); outline-offset: -2px; }
+
+.fp-toast { pointer-events: none; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); z-index: 10; padding: 2px 10px; border-radius: 8px; background: var(--tf-surface-2); color: var(--tf-muted); font-size: 13px; white-space: nowrap; }
+
+/* ---------- Circular ---------- */
+.fp-circular .fp-stage { align-items: center; justify-content: center; padding: 12px 18px 10px; }
+.fp-circular .fp-controls { position: absolute; top: 8px; inset-inline-end: 8px; }
+.fp-circular .fp-subject { max-width: 100%; margin-top: 10px; justify-content: center; }
+.fp-circular .fp-subject-text { font-size: calc(15px * var(--pt, 1)); color: var(--tf-text); font-weight: 500; }
+.fp-circular[data-expanded='false'] .fp-stage { padding: 12px 14px 12px; }
+.fp-circular[data-expanded='false'] .fp-subject { margin-top: 8px; }
+.fp-circular[data-expanded='false'] .fp-subject-text { font-size: calc(14px * var(--pt, 1)); }
+.fp-circular .fp-actions { padding: 10px 12px 12px; }
+
+/* ---------- Digital ---------- */
+.fp-digital .fp-stage { padding: 10px 12px 14px 18px; justify-content: center; }
+.fp-digital .fp-head { display: flex; align-items: center; gap: 8px; min-height: 30px; }
+.fp-digital .fp-head .fp-subject { flex: 1; }
+.fp-digital .fp-head .fp-controls { margin-inline-end: -4px; }
+.fp-readout { display: flex; align-items: baseline; gap: 10px; margin-top: 2px; min-width: 0; }
+.fp-digits { font-size: calc(46px * var(--pt, 1)); font-weight: 360; line-height: 1.05; letter-spacing: -.02em; color: var(--tf-text); white-space: nowrap; font-feature-settings: 'tnum' 1, 'lnum' 1; }
+.fp-digits.fp-word { font-size: calc(30px * var(--pt, 1)); font-weight: 400; letter-spacing: 0; }
+.floating-panel[data-tone='overtime'] .fp-digits { color: var(--fr-stage-overtime-text); }
+.floating-panel[data-dim] .fp-digits { opacity: .5; }
+.fp-aside { color: var(--tf-muted); font-size: calc(15px * var(--pt, 1)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.floating-panel[data-tone='overtime'] .fp-aside, .floating-panel[data-dim] .fp-aside { color: var(--fr-stage-overtime-text); }
+.fp-line { height: 5px !important; margin-top: 10px; border-radius: 99px; }
+.fp-line-track { height: 5px; background: color-mix(in oklab, var(--fp-tone) 14%, var(--tf-surface-2)); overflow: hidden; }
+.fp-line-fill { height: 100%; border-radius: 99px; transition: width .9s linear; }
+.fp-digital[data-expanded='false'] .fp-stage { padding: 6px 10px 10px 14px; }
+.fp-digital[data-expanded='false'] .fp-head { min-height: 26px; }
+.fp-digital[data-expanded='false'] .fp-digits { font-size: calc(36px * var(--pt, 1)); }
+.fp-digital[data-expanded='false'] .fp-aside { font-size: calc(14px * var(--pt, 1)); }
+.fp-digital[data-expanded='false'] .fp-line { margin-top: 7px; height: 4px !important; }
+.fp-digital[data-expanded='false'] .fp-icon { width: 26px; height: 26px; }
+
+@media (forced-colors: active) {
+  .fp-digits { color: CanvasText !important; }
+  .fp-btn { border: 1px solid ButtonText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fp-line-fill { transition: none; }
+}
+.fp-subject bdi, .fp-aside bdi { unicode-bidi: isolate; }
+.floating-panel[data-tone='overtime'] .fp-line > div { background: var(--fr-stage-overtime) !important; }
+.floating-panel[data-tone='recall'] .fr-ring-value { color: var(--fr-stage-recall-text) !important; }
+.fp-circular .fp-btn { font-size: calc(14px * var(--pt, 1)); padding: 3px 5px; }
+
+/* Quick's narrower frame retains the same clock/ring and leaves a real title margin. */
+.floating-panel[data-quick].fp-digital .fp-stage { padding-top: 12px; padding-inline: 14px; }
+.floating-panel[data-quick].fp-digital .fp-head { min-height: 32px; }
+.floating-panel[data-quick].fp-digital[data-expanded='false'] .fp-stage { padding-top: 10px; padding-bottom: 12px; }
+.floating-panel[data-quick].fp-digital .fp-head .fp-controls { margin-inline-end: 0; }
+.floating-panel[data-quick].fp-circular .fp-stage { padding-top: 30px; }
+.floating-panel[data-quick].fp-circular .fp-controls { top: 10px; inset-inline-end: 10px; }
+.floating-panel[data-quick].fp-circular[data-expanded='false'] .fp-stage { padding-top: 30px; }

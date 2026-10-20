@@ -1,0 +1,14 @@
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process'),assert=require('node:assert/strict');
+(async()=>{
+ const asar=await import('@electron/asar'),base=path.resolve('dist/theme-integration-20261018'),archive=path.join(base,'win-unpacked/resources/app.asar'),installer=path.join(base,'FocusRecall-0.1.0-beta.27-setup.exe');
+ const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
+ const files=['out/main','out/preload','out/renderer'].flatMap(walk).map(f=>{const name=f.replaceAll('\\','/'),hash=sha(fs.readFileSync(f));assert.equal(sha(asar.extractFile(archive,path.normalize(name))),hash,name);return {file:name,sha256:hash}});
+ const privacy=JSON.parse(fs.readFileSync('docs/verification/privacy-tracking-20261017/artifacts.json','utf8'));
+ const protectedFiles=[...privacy.protectedFiles,{file:privacy.archive,sha256:privacy.archiveSHA256},{file:privacy.installer,sha256:privacy.installerSHA256}].map(p=>{assert.equal(sha(fs.readFileSync(p.file)),p.sha256,p.file);return {...p,unchanged:true}});
+ const design=JSON.parse(fs.readFileSync('docs/verification/theme-integration-20261018/design-preservation.json','utf8'));
+ for(const f of design.comparison){const name=path.posix.join('docs/design/theme-system-2026',f.file),current=fs.readFileSync(name),expected=cp.execFileSync('git',['show','be60d18:'+name]);const normalize=b=>name.endsWith('.png')?b:Buffer.from(b.toString('utf8').replace(/\r\n/g,'\n'));assert.equal(sha(normalize(current)),sha(normalize(expected)),name);}
+ const native='resources/native/win32-x64/foreground.node',packagedNative=path.join(base,'win-unpacked/resources/app.asar.unpacked',native);assert.equal(sha(fs.readFileSync(native)),sha(fs.readFileSync(packagedNative)));assert.equal(sha(fs.readFileSync(packagedNative)),privacy.nativeSHA256);
+ assert.equal(sha(fs.readFileSync('resources/legal/PRIVACY.txt')),sha(fs.readFileSync(path.join(base,'win-unpacked/resources/legal/PRIVACY.txt'))));
+ const receipt={archive,archiveSHA256:sha(fs.readFileSync(archive)),installer,installerSHA256:sha(fs.readFileSync(installer)),installerExecuted:false,allBuiltRuntimeFilesMatch:true,nativeSHA256:sha(fs.readFileSync(packagedNative)),nativeUnchanged:true,privacyDisclosureMatches:true,approvedDesignFilesUnchanged:design.comparison.length,designComparison:"PNG bytes; text LF-normalized against be60d18",files,protectedFiles};
+ fs.writeFileSync('docs/verification/theme-integration-20261018/artifacts.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify({...receipt,files:files.length,protectedFiles:protectedFiles.length}));
+})().catch(e=>{console.error(e.stack);process.exitCode=1});

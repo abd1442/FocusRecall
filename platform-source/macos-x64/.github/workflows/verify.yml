@@ -1,0 +1,91 @@
+name: Native darwin engineering verification
+on:
+  workflow_dispatch:
+    inputs:
+      desktop:
+        description: Focused desktop readiness checks instead of repeating full regressions
+        type: boolean
+        default: false
+      internal:
+        description: Retain a production-only private internal package for one day
+        type: boolean
+        default: false
+      arch:
+        description: Native architecture to verify (no automatic reruns)
+        type: choice
+        default: both
+        options: [both, arm64, x64]
+permissions:
+  contents: read
+concurrency:
+  group: native-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: ${{ fromJSON(inputs.arch == 'arm64' && '["arm64"]' || inputs.arch == 'x64' && '["x64"]' || '["arm64","x64"]') }}
+    runs-on: ${{ matrix.arch == 'arm64' && 'macos-15' || 'macos-15-intel' }}
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24'
+      - run: node --test scripts/native-binding-proof.test.cjs
+      - run: npm ci
+      - name: Compile native SQLite for host Node regression tests
+        run: node scripts/compile-native-sqlite.cjs node ${{ matrix.arch }}
+      - if: ${{ !inputs.desktop }}
+        run: npm test -- --maxWorkers=2 --testTimeout=60000
+      - if: ${{ inputs.desktop }}
+        name: Targeted timing, platform, recovery and backup regressions
+        run: npm test -- --run src/core/linuxLock.test.ts src/core/platformPort.test.ts src/core/timingIntegrity.test.ts src/core/backups.test.ts src/core/legacyBackupCompatibility.test.ts src/core/qaIsolation.test.ts --maxWorkers=2 --testTimeout=60000
+      - run: npm run typecheck
+      - run: npm run localization:check
+      - run: node scripts/prepare-legal.cjs
+      - name: Compile native Electron SQLite and production packages
+        run: node scripts/build-platform.cjs darwin ${{ matrix.arch }} ${{ inputs.desktop && '--dir' || '' }}
+      - name: Production executable security checks
+        run: node scripts/verify-native-security.cjs "dist/darwin-engineering/mac${{ matrix.arch == 'arm64' && '-arm64' || '' }}/FocusRecall.app/Contents/MacOS/FocusRecall"
+      - if: ${{ inputs.internal }}
+        name: Prepare production-only isolated internal test package (size capped)
+        run: node scripts/prepare-native-internal.cjs
+      - name: Install pinned UI test client (no browser download)
+        run: npm install --no-save --package-lock=false --ignore-scripts playwright@1.62.1
+      - name: Separate inspector-enabled fictional-profile QA package
+        env:
+          FOCUSRECALL_QA_BUILD: '1'
+        run: |
+          npm run build
+          node node_modules/electron-builder/out/cli/cli.js --mac --${{ matrix.arch }} --dir --config electron-builder.native-qa.cjs --publish never
+      - name: Native packaged UI and data workflows
+        env:
+          FOCUSRECALL_QA_EXECUTABLE: "dist/darwin-qa/mac${{ matrix.arch == 'arm64' && '-arm64' || '' }}/FocusRecall QA.app/Contents/MacOS/FocusRecall QA"
+        run: node scripts/verify-native-workflows.cjs
+      - name: Small private screenshots and receipt (no databases or packages)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-darwin-${{ matrix.arch }}-qa
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            docs/verification/native-ci/**/*.png
+            docs/verification/native-ci/**/*.json
+      - if: ${{ success() && inputs.internal }}
+        name: Private production internal build only (never QA profiles)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: internal-macos-${{ matrix.arch }}
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 0
+          path: |
+            dist/FocusRecall-internal-macos-${{ matrix.arch }}.zip
+            dist/FocusRecall-internal-macos-${{ matrix.arch }}.zip.sha256

@@ -1,0 +1,17 @@
+Could not complete this action. Details: {details}|تعذّر إكمال هذا الإجراء. التفاصيل: {details}|No se pudo completar esta acción. Detalles: {details}|Impossible de terminer cette action. Détails : {details}|无法完成此操作。详情：{details}|Não foi possível concluir esta ação. Detalhes: {details}|Diese Aktion konnte nicht abgeschlossen werden. Details: {details}
+Higher reported {outcome} in {first} comparable sessions versus {other} others for this subject and activity, with the pattern repeated over time. An association, not proof of cause.|تقييم {outcome} أعلى في {first} جلسات قابلة للمقارنة مقابل {other} جلسات أخرى لهذه المادة والنشاط، مع تكرار النمط عبر الزمن. ارتباط، وليس دليلًا على السببية.|{outcome} declarado más alto en {first} sesiones comparables frente a {other} de esta materia y actividad, con el patrón repetido en el tiempo. Asociación, no prueba de causalidad.|Niveau déclaré de {outcome} plus élevé dans {first} séances comparables contre {other} pour cette matière et activité, avec une tendance répétée dans le temps. Association, pas une preuve de cause.|此科目与活动的 {first} 次可比较学习中，自述{outcome}高于另外 {other} 次，且模式随时间重复出现。这是关联，并非因果证据。|{outcome} informado mais alto em {first} sessões comparáveis contra {other} desta matéria e atividade, com o padrão repetido ao longo do tempo. Associação, não prova de causa.|Höherer angegebener Wert für {outcome} in {first} vergleichbaren Sitzungen gegenüber {other} weiteren für dieses Fach und diese Aktivität, mit über die Zeit wiederholtem Muster. Zusammenhang, kein Beleg für eine Ursache.
+Higher reported {outcome} in {first} comparable sessions versus {other} others for this subject, with the pattern repeated over time. An association, not proof of cause.|تقييم {outcome} أعلى في {first} جلسات قابلة للمقارنة مقابل {other} جلسات أخرى لهذه المادة، مع تكرار النمط عبر الزمن. ارتباط، وليس دليلًا على السببية.|{outcome} declarado más alto en {first} sesiones comparables frente a {other} de esta materia, con el patrón repetido en el tiempo. Asociación, no prueba de causalidad.|Niveau déclaré de {outcome} plus élevé dans {first} séances comparables contre {other} pour cette matière, avec une tendance répétée dans le temps. Association, pas une preuve de cause.|此科目的 {first} 次可比较学习中，自述{outcome}高于另外 {other} 次，且模式随时间重复出现。这是关联，并非因果证据。|{outcome} informado mais alto em {first} sessões comparáveis contra {other} desta matéria, com o padrão repetido ao longo do tempo. Associação, não prova de causa.|Höherer angegebener Wert für {outcome} in {first} vergleichbaren Sitzungen gegenüber {other} weiteren für dieses Fach, mit über die Zeit wiederholtem Muster. Zusammenhang, kein Beleg für eine Ursache.
+Week of {date}|أسبوع {date}|Semana del {date}|Semaine du {date}|{date} 所在周|Semana de {date}|Woche ab {date}
+h|س|h|h|小时|h|Std.
+s|ث|s|s|秒|s|Sek.
+PNG image|صورة PNG|Imagen PNG|Image PNG|PNG 图像|Imagem PNG|PNG-Bild
+PDF|PDF|PDF|PDF|PDF|PDF|PDF
+Straight|مستقيم|Recto|Droit|直角|Reto|Gerade
+Subtle|خفيف|Sutil|Discret|微圆|Sutil|Dezent
+Rounded|مستدير|Redondeado|Arrondi|圆角|Arredondado|Abgerundet
+Soft|ناعم|Suave|Doux|柔和|Suave|Weich
+Interface font|خط الواجهة|Fuente de la interfaz|Police de l’interface|界面字体|Fonte da interface|Oberflächenschrift
+Timer font|خط المؤقّت|Fuente del temporizador|Police du minuteur|计时器字体|Fonte do cronômetro|Timerschrift
+Writing font|خط الكتابة|Fuente de escritura|Police d’écriture|书写字体|Fonte de escrita|Schreibschrift
+Subject unavailable|المادة غير متاحة|Materia no disponible|Matière indisponible|科目不可用|Matéria indisponível|Fach nicht verfügbar
+panel|اللوحة|panel|panneau|悬浮面板|painel|Panel

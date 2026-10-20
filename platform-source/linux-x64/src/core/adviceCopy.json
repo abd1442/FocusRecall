@@ -1,0 +1,722 @@
+{
+  "recall-attempt": {
+    "en": {
+      "action": "Hide a small section. Explain, sketch or perform what you remember, then check it.",
+      "detail": "Retrieval practice can support later learning. Start with material you have encountered; check and correct gaps rather than repeatedly guessing."
+    },
+    "ar": {
+      "action": "أخفِ جزءًا صغيرًا. اشرح أو ارسم أو طبّق ما تتذكره، ثم تحقّق منه.",
+      "detail": "قد يدعم الاسترجاع التعلّم اللاحق. ابدأ بمادة سبق أن درستها، وتحقّق من الثغرات وصحّحها بدل تكرار التخمين."
+    },
+    "es": {
+      "action": "Oculta una parte breve. Explica, dibuja o ejecuta lo que recuerdas y compruébalo.",
+      "detail": "La práctica de recuperación puede favorecer el aprendizaje posterior. Usa material ya estudiado; comprueba y corrige lagunas en vez de adivinar repetidamente."
+    },
+    "fr": {
+      "action": "Masquez une courte partie. Expliquez, dessinez ou réalisez ce dont vous vous souvenez, puis vérifiez.",
+      "detail": "La récupération en mémoire peut soutenir l’apprentissage ultérieur. Partez d’un contenu déjà étudié ; vérifiez et corrigez les lacunes plutôt que de deviner sans cesse."
+    },
+    "zh-Hans": {
+      "action": "遮住一小部分内容，凭记忆解释、画图或操作，再核对。",
+      "detail": "提取练习有助于后续学习。先用接触过的材料，发现遗漏后核对并纠正，不要反复猜测。"
+    },
+    "pt-BR": {
+      "action": "Oculte um trecho curto. Explique, desenhe ou execute o que lembra e depois confira.",
+      "detail": "A prática de recuperação pode favorecer a aprendizagem posterior. Use conteúdo já estudado; confira e corrija lacunas em vez de continuar adivinhando."
+    },
+    "de": {
+      "action": "Decke einen kleinen Abschnitt ab. Erkläre, skizziere oder führe aus, was du erinnerst, und prüfe es danach.",
+      "detail": "Abrufübungen können späteres Lernen unterstützen. Nutze bereits behandelten Stoff; prüfe und korrigiere Lücken, statt immer wieder zu raten."
+    }
+  },
+  "cue-ladder": {
+    "en": {
+      "action": "Cannot begin? Use one cue, make an attempt, then compare with a reliable explanation.",
+      "detail": "For unfamiliar or difficult material, instruction and examples may be needed first. Needing support is information about the task, not a failure."
+    },
+    "ar": {
+      "action": "لا تعرف كيف تبدأ؟ استخدم تلميحًا واحدًا، وحاول، ثم قارن بشرح موثوق.",
+      "detail": "قد تحتاج إلى شرح وأمثلة أولًا إذا كانت المادة جديدة أو صعبة. الحاجة إلى مساعدة توضّح متطلبات المهمة، ولا تعني الفشل."
+    },
+    "es": {
+      "action": "¿No sabes cómo empezar? Usa una pista, inténtalo y compara con una explicación fiable.",
+      "detail": "Si el material es nuevo o difícil, quizá necesites primero explicaciones y ejemplos. Necesitar ayuda informa sobre la tarea; no es un fracaso."
+    },
+    "fr": {
+      "action": "Vous ne savez pas par où commencer ? Prenez un indice, essayez, puis comparez avec une explication fiable.",
+      "detail": "Pour un contenu nouveau ou difficile, des explications et des exemples peuvent être nécessaires d’abord. Avoir besoin d’aide renseigne sur la tâche, ce n’est pas un échec."
+    },
+    "zh-Hans": {
+      "action": "无从下手？先用一个提示，尝试作答，再与可靠的讲解对照。",
+      "detail": "材料陌生或困难时，可能需要先看讲解和示例。需要帮助反映了任务的要求，并不代表失败。"
+    },
+    "pt-BR": {
+      "action": "Não sabe por onde começar? Use uma pista, tente e compare com uma explicação confiável.",
+      "detail": "Conteúdos novos ou difíceis podem exigir explicações e exemplos primeiro. Precisar de apoio informa sobre a tarefa; não é um fracasso."
+    },
+    "de": {
+      "action": "Du findest keinen Einstieg? Nutze einen Hinweis, versuche es und vergleiche mit einer verlässlichen Erklärung.",
+      "detail": "Bei neuem oder schwierigem Stoff brauchst du vielleicht zuerst Anleitung und Beispiele. Unterstützungsbedarf sagt etwas über die Aufgabe aus, nicht über ein Versagen."
+    }
+  },
+  "question-design": {
+    "en": {
+      "action": "Choose one question that asks you to produce something: a reason, a solution, a sentence or a sequence of steps.",
+      "detail": "Match the question to what you need to do later. This is a practical way to apply retrieval, not a guarantee of transfer to every task."
+    },
+    "ar": {
+      "action": "اختر سؤالًا يتطلب منك إنتاج شيء: تعليل أو حل أو جملة أو تسلسل خطوات.",
+      "detail": "اجعل السؤال مناسبًا لما ستحتاج إلى أدائه لاحقًا. هذه طريقة عملية لتطبيق الاسترجاع، وليست ضمانًا لانتقال التعلّم إلى كل مهمة."
+    },
+    "es": {
+      "action": "Elige una pregunta que te pida producir algo: una razón, una solución, una frase o una secuencia de pasos.",
+      "detail": "Adapta la pregunta a lo que necesitarás hacer después. Es una aplicación práctica de la recuperación, no una garantía de transferencia a cualquier tarea."
+    },
+    "fr": {
+      "action": "Choisissez une question qui demande de produire quelque chose : une raison, une solution, une phrase ou une suite d’étapes.",
+      "detail": "Adaptez la question à ce que vous devrez faire ensuite. C’est une application pratique de la récupération, sans garantie de transfert à toute tâche."
+    },
+    "zh-Hans": {
+      "action": "选一个需要你主动给出内容的问题，例如理由、解法、句子或步骤顺序。",
+      "detail": "让问题贴近以后需要完成的任务。这是提取练习的一种实用方法，但不保证能迁移到所有任务。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma pergunta que exija produzir algo: uma justificativa, uma solução, uma frase ou uma sequência de etapas.",
+      "detail": "Adapte a pergunta ao que precisará fazer depois. É uma aplicação prática da recuperação, não uma garantia de transferência para qualquer tarefa."
+    },
+    "de": {
+      "action": "Wähle eine Frage, bei der du etwas selbst erzeugst: eine Begründung, eine Lösung, einen Satz oder eine Schrittfolge.",
+      "detail": "Passe die Frage an die spätere Anforderung an. Das ist eine praktische Anwendung des Abrufens, keine Garantie für den Transfer auf jede Aufgabe."
+    }
+  },
+  "spacing-return": {
+    "en": {
+      "action": "Choose one specific idea or skill to revisit on another day, and decide how you will practice it.",
+      "detail": "Distributed practice can support retention. Returning to the same subject is not necessarily revisiting the same content; there is no universal ideal interval."
+    },
+    "ar": {
+      "action": "اختر فكرة أو مهارة محددة للعودة إليها في يوم آخر، وحدّد كيف ستتدرّب عليها.",
+      "detail": "قد يدعم توزيع التدريب الاحتفاظ بالمعلومات. العودة إلى المادة الدراسية لا تعني بالضرورة مراجعة المحتوى نفسه، ولا توجد فترة فاصلة مثالية للجميع."
+    },
+    "es": {
+      "action": "Elige una idea o habilidad concreta para retomar otro día y decide cómo practicarla.",
+      "detail": "La práctica distribuida puede favorecer la retención. Volver a una asignatura no siempre es repasar el mismo contenido; no hay un intervalo ideal universal."
+    },
+    "fr": {
+      "action": "Choisissez une idée ou une compétence précise à reprendre un autre jour et décidez comment la travailler.",
+      "detail": "La pratique distribuée peut favoriser la rétention. Reprendre une matière ne signifie pas forcément revoir le même contenu ; aucun intervalle idéal n’est universel."
+    },
+    "zh-Hans": {
+      "action": "选一个具体的概念或技能，安排另一天再练习，并想好练习方式。",
+      "detail": "分散练习有助于保持所学内容。再次学习同一学科，不一定是在复习同一内容；不存在普遍适用的最佳间隔。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma ideia ou habilidade específica para retomar em outro dia e decida como praticá-la.",
+      "detail": "A prática distribuída pode favorecer a retenção. Voltar à mesma matéria não significa revisar o mesmo conteúdo; não existe intervalo ideal universal."
+    },
+    "de": {
+      "action": "Wähle eine konkrete Idee oder Fertigkeit für einen anderen Tag und lege fest, wie du sie üben willst.",
+      "detail": "Verteiltes Üben kann das Behalten unterstützen. Dasselbe Fach erneut zu lernen heißt nicht unbedingt, denselben Inhalt zu wiederholen; einen allgemein idealen Abstand gibt es nicht."
+    }
+  },
+  "spacing-adjust": {
+    "en": {
+      "action": "At your next revisit, attempt a small task before checking. Use what was difficult to adjust the following practice.",
+      "detail": "Useful spacing depends on the material, your starting knowledge and when you need it. A missed answer calls for correction, not an invented forgetting percentage."
+    },
+    "ar": {
+      "action": "عند المراجعة التالية، حاول أداء مهمة صغيرة قبل التحقّق. عدّل التدريب اللاحق بناءً على مواضع الصعوبة.",
+      "detail": "يعتمد التباعد المناسب على المحتوى ومعرفتك السابقة وموعد حاجتك إليه. الإجابة الخاطئة تحتاج إلى تصحيح، لا إلى نسبة نسيان مُختلَقة."
+    },
+    "es": {
+      "action": "En el próximo repaso, intenta una tarea breve antes de comprobar. Ajusta la práctica posterior según las dificultades.",
+      "detail": "El espaciado útil depende del contenido, de tus conocimientos y de cuándo lo necesitarás. Un error pide corrección, no un porcentaje de olvido inventado."
+    },
+    "fr": {
+      "action": "À la prochaine révision, essayez une petite tâche avant de vérifier. Adaptez la suite selon les difficultés rencontrées.",
+      "detail": "Un espacement utile dépend du contenu, des acquis et de l’échéance. Une erreur appelle une correction, pas un pourcentage d’oubli inventé."
+    },
+    "zh-Hans": {
+      "action": "下次复习时，先尝试一个小任务再核对。根据困难之处调整后续练习。",
+      "detail": "合适的间隔取决于材料、已有知识和使用时间。答错后应纠正，而不是计算虚构的遗忘百分比。"
+    },
+    "pt-BR": {
+      "action": "Na próxima revisão, tente uma tarefa curta antes de conferir. Ajuste a prática seguinte conforme as dificuldades.",
+      "detail": "O espaçamento útil depende do conteúdo, do conhecimento inicial e de quando será necessário. Um erro pede correção, não uma porcentagem de esquecimento inventada."
+    },
+    "de": {
+      "action": "Versuche beim nächsten Wiederholen zuerst eine kleine Aufgabe. Passe die weitere Übung daran an, was schwierig war.",
+      "detail": "Sinnvolle Abstände hängen vom Stoff, Vorwissen und späteren Bedarf ab. Eine falsche Antwort verlangt Korrektur, keine erfundene Vergessensquote."
+    }
+  },
+  "explain-step": {
+    "en": {
+      "action": "Choose one step or connection and explain why it follows. Check your explanation against the material or a trusted example.",
+      "detail": "Self-explanation can help understanding, but a fluent explanation can still be wrong. Focus on reasoning rather than merely naming the steps."
+    },
+    "ar": {
+      "action": "اختر خطوة أو علاقة، واشرح لماذا تصحّ. تحقّق من شرحك بالرجوع إلى المادة أو مثال موثوق.",
+      "detail": "قد يساعد الشرح الذاتي على الفهم، لكن الشرح السلس قد يظل خاطئًا. ركّز على التعليل بدل الاكتفاء بتسمية الخطوات."
+    },
+    "es": {
+      "action": "Elige un paso o una relación y explica por qué se sostiene. Contrasta tu explicación con el material o un ejemplo fiable.",
+      "detail": "La autoexplicación puede ayudar a comprender, pero una explicación fluida puede ser incorrecta. Céntrate en el razonamiento, no solo en nombrar pasos."
+    },
+    "fr": {
+      "action": "Choisissez une étape ou un lien et expliquez pourquoi il tient. Vérifiez avec le contenu ou un exemple fiable.",
+      "detail": "L’auto-explication peut aider à comprendre, mais une explication fluide peut être fausse. Privilégiez le raisonnement plutôt que le simple nom des étapes."
+    },
+    "zh-Hans": {
+      "action": "选一个步骤或联系，解释它为什么成立，再对照材料或可靠示例检查。",
+      "detail": "自我解释有助于理解，但说得流畅不代表正确。重点是说明理由，而不只是列出步骤名称。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma etapa ou relação e explique por que faz sentido. Confira com o material ou um exemplo confiável.",
+      "detail": "A autoexplicação pode ajudar na compreensão, mas uma explicação fluente ainda pode estar errada. Foque no raciocínio, não apenas nos nomes das etapas."
+    },
+    "de": {
+      "action": "Wähle einen Schritt oder Zusammenhang und erkläre, warum er sinnvoll ist. Prüfe deine Erklärung am Material oder an einem verlässlichen Beispiel.",
+      "detail": "Selbsterklärungen können das Verständnis fördern, aber auch flüssige Erklärungen können falsch sein. Begründe Zusammenhänge, statt nur Schritte zu benennen."
+    }
+  },
+  "evidence-claim": {
+    "en": {
+      "action": "Take one claim from your reading or writing. Name the evidence supporting it and one limit of that evidence.",
+      "detail": "This adapts explanation practice to arguments, cases and interpretations. Some questions have several defensible answers; compare with the relevant standards, not just an answer key."
+    },
+    "ar": {
+      "action": "اختر ادّعاءً من قراءتك أو كتابتك. حدّد الدليل الذي يدعمه وأحد حدود هذا الدليل.",
+      "detail": "هذا تكييف للتدريب على الشرح يناسب الحجج والحالات والتفسيرات. لبعض الأسئلة إجابات متعددة يمكن الدفاع عنها؛ قارن بالمعايير المناسبة، لا بنموذج الإجابة وحده."
+    },
+    "es": {
+      "action": "Elige una afirmación de tu lectura o escrito. Identifica la evidencia que la respalda y una de sus limitaciones.",
+      "detail": "Es una adaptación de la explicación a argumentos, casos e interpretaciones. Puede haber varias respuestas defendibles; usa los criterios pertinentes, no solo una clave."
+    },
+    "fr": {
+      "action": "Prenez une affirmation dans votre lecture ou votre texte. Identifiez les éléments qui l’appuient et une limite de ces éléments.",
+      "detail": "Cette adaptation convient aux arguments, cas et interprétations. Plusieurs réponses peuvent être défendables ; utilisez les critères pertinents, pas seulement un corrigé."
+    },
+    "zh-Hans": {
+      "action": "从阅读或写作中选一个主张，指出支持它的证据，以及证据的一项局限。",
+      "detail": "这是将解释练习用于论证、案例和解读的方法。有些问题有多种合理答案，应参考相应标准，而不只看标准答案。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma afirmação da leitura ou da escrita. Identifique a evidência que a sustenta e uma limitação dessa evidência.",
+      "detail": "Esta adaptação serve para argumentos, casos e interpretações. Pode haver várias respostas defensáveis; use os critérios relevantes, não apenas um gabarito."
+    },
+    "de": {
+      "action": "Wähle eine Aussage aus deinem Text. Benenne die Belege dafür und eine Grenze dieser Belege.",
+      "detail": "Das überträgt Erklärübungen auf Argumente, Fälle und Deutungen. Mehrere Antworten können begründbar sein; nutze passende Kriterien, nicht nur einen Lösungsschlüssel."
+    }
+  },
+  "compare-concepts": {
+    "en": {
+      "action": "Choose two ideas you tend to confuse. Explain one similarity, one difference and when each applies.",
+      "detail": "Comparing related cases can help distinguish them. Check the differences carefully; forced analogies or unrelated examples may add confusion."
+    },
+    "ar": {
+      "action": "اختر فكرتين تخلط بينهما عادةً. اشرح وجه شبه وفرقًا واحدًا ومتى تنطبق كل منهما.",
+      "detail": "قد تساعد مقارنة الحالات المترابطة على التمييز بينها. تحقّق من الفروق بعناية؛ فالتشبيهات المتكلّفة والأمثلة غير المترابطة قد تزيد الالتباس."
+    },
+    "es": {
+      "action": "Elige dos ideas que suelas confundir. Explica una semejanza, una diferencia y cuándo se aplica cada una.",
+      "detail": "Comparar casos relacionados puede ayudar a distinguirlos. Verifica las diferencias; las analogías forzadas o los ejemplos inconexos pueden confundir."
+    },
+    "fr": {
+      "action": "Choisissez deux idées que vous confondez. Expliquez un point commun, une différence et quand chacune s’applique.",
+      "detail": "Comparer des cas proches peut aider à les distinguer. Vérifiez les différences ; des analogies forcées ou des exemples sans lien peuvent brouiller la compréhension."
+    },
+    "zh-Hans": {
+      "action": "选两个容易混淆的概念，说明一个相同点、一个不同点，以及各自的适用情境。",
+      "detail": "比较相关案例有助于区分它们。请核实差异；牵强类比或无关示例可能造成混淆。"
+    },
+    "pt-BR": {
+      "action": "Escolha duas ideias que costuma confundir. Explique uma semelhança, uma diferença e quando cada uma se aplica.",
+      "detail": "Comparar casos relacionados pode ajudar a distingui-los. Confira as diferenças; analogias forçadas ou exemplos sem relação podem confundir."
+    },
+    "de": {
+      "action": "Wähle zwei Ideen, die du leicht verwechselst. Erkläre eine Gemeinsamkeit, einen Unterschied und wann welche passt.",
+      "detail": "Der Vergleich verwandter Fälle kann die Unterscheidung erleichtern. Prüfe die Unterschiede; erzwungene Analogien oder unpassende Beispiele können verwirren."
+    }
+  },
+  "worked-example": {
+    "en": {
+      "action": "Learning a new method? Study a worked example, explain its decisions, then try a similar task.",
+      "detail": "Worked-example evidence is especially relevant to mathematics. In coding or practical skills, adapt the idea with a trustworthy demonstration and appropriate safety support."
+    },
+    "ar": {
+      "action": "تتعلّم طريقة جديدة؟ ادرس مثالًا محلولًا، واشرح أسباب قراراته، ثم جرّب مهمة مشابهة.",
+      "detail": "أدلة الأمثلة المحلولة وثيقة الصلة بالرياضيات خصوصًا. في البرمجة أو المهارات العملية، كيّف الفكرة باستخدام عرض موثوق ودعم مناسب للسلامة."
+    },
+    "es": {
+      "action": "¿Aprendes un método nuevo? Estudia un ejemplo resuelto, explica sus decisiones y prueba una tarea similar.",
+      "detail": "La evidencia sobre ejemplos resueltos es especialmente pertinente en matemáticas. En programación o habilidades prácticas, adapta la idea con una demostración fiable y apoyo de seguridad adecuado."
+    },
+    "fr": {
+      "action": "Vous découvrez une méthode ? Étudiez un exemple résolu, expliquez ses choix, puis essayez une tâche semblable.",
+      "detail": "Les données sur les exemples résolus concernent particulièrement les mathématiques. En programmation ou en pratique, adaptez l’idée avec une démonstration fiable et les précautions nécessaires."
+    },
+    "zh-Hans": {
+      "action": "在学新方法？先研究一个完整示例，解释其中的决策，再尝试类似任务。",
+      "detail": "完整示例的研究尤其适用于数学。用于编程或实践技能时，请结合可靠演示，并提供必要的安全指导。"
+    },
+    "pt-BR": {
+      "action": "Está aprendendo um método novo? Estude um exemplo resolvido, explique as decisões e tente uma tarefa semelhante.",
+      "detail": "A evidência sobre exemplos resolvidos é especialmente relevante para matemática. Em programação ou habilidades práticas, adapte com uma demonstração confiável e apoio adequado à segurança."
+    },
+    "de": {
+      "action": "Du lernst eine neue Methode? Untersuche ein Lösungsbeispiel, erkläre die Entscheidungen und versuche dann eine ähnliche Aufgabe.",
+      "detail": "Die Forschung zu Lösungsbeispielen betrifft besonders Mathematik. Passe die Idee beim Programmieren oder bei praktischen Fertigkeiten mit verlässlichen Demonstrationen und nötiger Sicherheitsanleitung an."
+    }
+  },
+  "fade-support": {
+    "en": {
+      "action": "Try completing one missing step in an example before attempting the whole task independently.",
+      "detail": "Support should fit your starting knowledge and the task. Restore a hint or explanation when needed; removing help as quickly as possible is not the goal."
+    },
+    "ar": {
+      "action": "حاول إكمال خطوة ناقصة في مثال قبل محاولة أداء المهمة كاملةً بمفردك.",
+      "detail": "ينبغي أن يناسب الدعم معرفتك السابقة والمهمة. عُد إلى تلميح أو شرح عند الحاجة؛ فالهدف ليس الاستغناء عن المساعدة بأقصى سرعة."
+    },
+    "es": {
+      "action": "Intenta completar un paso que falte en un ejemplo antes de hacer toda la tarea sin ayuda.",
+      "detail": "La ayuda debe ajustarse a tus conocimientos y a la tarea. Recupera una pista o explicación cuando haga falta; quitar la ayuda cuanto antes no es el objetivo."
+    },
+    "fr": {
+      "action": "Complétez une étape manquante d’un exemple avant d’essayer la tâche entière sans aide.",
+      "detail": "L’aide doit correspondre aux acquis et à la tâche. Reprenez un indice ou une explication si nécessaire ; supprimer l’aide au plus vite n’est pas le but."
+    },
+    "zh-Hans": {
+      "action": "先补全示例中缺失的一步，再尝试独立完成整个任务。",
+      "detail": "帮助应符合已有知识和任务要求。需要时重新查看提示或讲解；目标不是尽快撤去所有帮助。"
+    },
+    "pt-BR": {
+      "action": "Tente completar uma etapa que falta em um exemplo antes de fazer toda a tarefa sem ajuda.",
+      "detail": "O apoio deve se adequar ao conhecimento inicial e à tarefa. Retome uma pista ou explicação quando necessário; retirar ajuda o mais rápido possível não é o objetivo."
+    },
+    "de": {
+      "action": "Ergänze zunächst einen fehlenden Schritt in einem Beispiel, bevor du die ganze Aufgabe selbstständig versuchst.",
+      "detail": "Die Unterstützung sollte zu Vorwissen und Aufgabe passen. Nutze bei Bedarf wieder Hinweise oder Erklärungen; Hilfe möglichst schnell abzubauen ist kein Selbstzweck."
+    }
+  },
+  "interleave": {
+    "en": {
+      "action": "Know the basics of two related problem types? Mix a few and identify the method before solving each.",
+      "detail": "Mixed practice is useful in some tasks, not all. First support unfamiliar methods; switching randomly between unrelated subjects is a different activity."
+    },
+    "ar": {
+      "action": "تعرف أساسيات نوعين مترابطين من المسائل؟ امزج بعض الأمثلة وحدّد الطريقة قبل حل كل منها.",
+      "detail": "يفيد التدريب المختلط في بعض المهام، لا جميعها. تعلّم الطرق غير المألوفة بمساعدة أولًا؛ والتنقّل العشوائي بين مواد غير مترابطة نشاط مختلف."
+    },
+    "es": {
+      "action": "¿Conoces lo básico de dos tipos de problemas relacionados? Mezcla algunos e identifica el método antes de resolver cada uno.",
+      "detail": "La práctica mixta es útil en algunas tareas, no en todas. Aprende primero los métodos nuevos con apoyo; alternar al azar entre asignaturas inconexas es otra actividad."
+    },
+    "fr": {
+      "action": "Vous connaissez les bases de deux types de problèmes proches ? Mélangez-en quelques-uns et choisissez la méthode avant de résoudre chacun.",
+      "detail": "La pratique mélangée convient à certaines tâches, pas à toutes. Accompagnez d’abord les méthodes nouvelles ; changer au hasard de matière est une autre activité."
+    },
+    "zh-Hans": {
+      "action": "已掌握两类相关问题的基础？混合练习几道题，每次先判断方法再解题。",
+      "detail": "混合练习适用于部分任务，而非全部。陌生方法应先有指导；随机切换无关学科是另一回事。"
+    },
+    "pt-BR": {
+      "action": "Conhece o básico de dois tipos de problemas relacionados? Misture alguns e identifique o método antes de resolver cada um.",
+      "detail": "A prática intercalada é útil em algumas tarefas, não em todas. Aprenda métodos novos com apoio primeiro; alternar aleatoriamente entre matérias sem relação é outra atividade."
+    },
+    "de": {
+      "action": "Du kennst die Grundlagen zweier verwandter Aufgabentypen? Mische einige Aufgaben und bestimme vor jeder Lösung die Methode.",
+      "detail": "Gemischtes Üben hilft bei manchen Aufgaben, nicht bei allen. Lerne neue Methoden zuerst mit Unterstützung; zufällige Wechsel zwischen fremden Fächern sind etwas anderes."
+    }
+  },
+  "error-retry": {
+    "en": {
+      "action": "Find one incorrect decision or step. Check the correction, then try a fresh task that needs that same decision.",
+      "detail": "Feedback is more useful when it tells you what to change. A successful immediate retry is encouraging, but does not establish lasting mastery."
+    },
+    "ar": {
+      "action": "حدّد قرارًا أو خطوة خاطئة. راجع التصحيح، ثم جرّب مهمة جديدة تتطلب القرار نفسه.",
+      "detail": "تكون التغذية الراجعة أنفع حين توضّح ما ينبغي تغييره. نجاح المحاولة الفورية التالية مشجّع، لكنه لا يثبت إتقانًا دائمًا."
+    },
+    "es": {
+      "action": "Localiza una decisión o un paso incorrecto. Revisa la corrección y prueba una tarea nueva que requiera esa misma decisión.",
+      "detail": "La retroalimentación es más útil si indica qué cambiar. Acertar en un reintento inmediato anima, pero no demuestra un dominio duradero."
+    },
+    "fr": {
+      "action": "Repérez un choix ou une étape erronés. Vérifiez la correction, puis essayez une nouvelle tâche qui demande ce même choix.",
+      "detail": "Un retour est plus utile s’il indique quoi changer. Réussir immédiatement une nouvelle tentative est encourageant, sans prouver une maîtrise durable."
+    },
+    "zh-Hans": {
+      "action": "找出一个错误的决策或步骤，核对改法，再尝试需要同类决策的新任务。",
+      "detail": "反馈指出如何改进时更有用。立即重试成功值得鼓励，但不能证明已长期掌握。"
+    },
+    "pt-BR": {
+      "action": "Identifique uma decisão ou etapa incorreta. Confira a correção e tente uma tarefa nova que exija a mesma decisão.",
+      "detail": "O feedback é mais útil quando indica o que mudar. Acertar em uma nova tentativa imediata é animador, mas não comprova domínio duradouro."
+    },
+    "de": {
+      "action": "Finde eine falsche Entscheidung oder einen fehlerhaften Schritt. Prüfe die Korrektur und versuche eine neue Aufgabe mit derselben Anforderung.",
+      "detail": "Rückmeldung ist hilfreicher, wenn sie zeigt, was du ändern kannst. Ein sofort gelungener neuer Versuch ist ermutigend, belegt aber keine dauerhafte Beherrschung."
+    }
+  },
+  "feedback-specific": {
+    "en": {
+      "action": "If feedback only says “wrong” or “good”, ask which feature needs attention and what a better attempt would contain.",
+      "detail": "Feedback effects vary widely. Use reliable criteria, examples or qualified guidance; a score alone may not show how to improve."
+    },
+    "ar": {
+      "action": "إذا اقتصرت الملاحظات على «خطأ» أو «جيد»، اسأل عمّا يحتاج إلى تحسين وما الذي ينبغي أن تتضمنه محاولة أفضل.",
+      "detail": "تختلف آثار التغذية الراجعة كثيرًا. استخدم معايير موثوقة أو أمثلة أو إرشادًا مؤهلًا؛ فالدرجة وحدها قد لا توضّح سبيل التحسّن."
+    },
+    "es": {
+      "action": "Si los comentarios solo dicen «mal» o «bien», pregunta qué aspecto requiere atención y qué debería incluir un intento mejor.",
+      "detail": "Los efectos de la retroalimentación varían mucho. Usa criterios fiables, ejemplos u orientación cualificada; una nota sola quizá no indique cómo mejorar."
+    },
+    "fr": {
+      "action": "Si le retour dit seulement « faux » ou « bien », demandez quel aspect travailler et ce qu’une meilleure tentative devrait contenir.",
+      "detail": "Les effets du retour varient beaucoup. Appuyez-vous sur des critères fiables, des exemples ou un accompagnement qualifié ; une note seule ne montre pas toujours comment progresser."
+    },
+    "zh-Hans": {
+      "action": "如果反馈只有“错了”或“很好”，请追问哪个方面需要改进，以及更好的尝试应包含什么。",
+      "detail": "反馈的作用差异很大。请使用可靠标准、示例或专业指导；分数本身未必能指出改进方法。"
+    },
+    "pt-BR": {
+      "action": "Se o feedback só diz “errado” ou “bom”, pergunte qual aspecto precisa de atenção e o que uma tentativa melhor deveria incluir.",
+      "detail": "Os efeitos do feedback variam bastante. Use critérios confiáveis, exemplos ou orientação qualificada; uma nota sozinha pode não mostrar como melhorar."
+    },
+    "de": {
+      "action": "Wenn Rückmeldung nur „falsch“ oder „gut“ lautet, frage nach dem konkreten Ansatzpunkt und danach, was ein besserer Versuch enthalten sollte.",
+      "detail": "Die Wirkung von Rückmeldung variiert stark. Nutze verlässliche Kriterien, Beispiele oder fachkundige Anleitung; eine Punktzahl allein zeigt oft keinen Verbesserungsweg."
+    }
+  },
+  "predict-check": {
+    "en": {
+      "action": "Before checking your work, predict one thing you did well and one possible gap. Compare your prediction with actual feedback.",
+      "detail": "This is a reflection prompt, not a validated assessment. Confidence, recorded study time and self-rated recall do not measure retained learning."
+    },
+    "ar": {
+      "action": "قبل مراجعة عملك، توقّع جانبًا أتقنته وثغرة محتملة. قارن توقّعك بالملاحظات الفعلية.",
+      "detail": "هذا سؤال للتأمل، وليس تقييمًا مُتحقَّقًا من صلاحيته. الثقة ووقت الدراسة المسجّل والتقدير الذاتي للاسترجاع لا تقيس التعلّم المحتفَظ به."
+    },
+    "es": {
+      "action": "Antes de revisar tu trabajo, predice un acierto y una posible laguna. Compara tu predicción con los comentarios reales.",
+      "detail": "Es una invitación a reflexionar, no una evaluación validada. La confianza, el tiempo registrado y el recuerdo autoevaluado no miden el aprendizaje retenido."
+    },
+    "fr": {
+      "action": "Avant de vérifier, prévoyez un point réussi et une lacune possible. Comparez avec le retour réel.",
+      "detail": "C’est une invitation à réfléchir, pas une évaluation validée. Confiance, temps enregistré et rappel autoévalué ne mesurent pas les acquis retenus."
+    },
+    "zh-Hans": {
+      "action": "核对作业前，预判一个做得好的地方和一个可能的不足，再与实际反馈比较。",
+      "detail": "这是反思提示，不是经过验证的测评。自信、记录的学习时长和自评回忆程度，都不能衡量保留了多少学习成果。"
+    },
+    "pt-BR": {
+      "action": "Antes de conferir o trabalho, preveja um acerto e uma possível lacuna. Compare com o feedback real.",
+      "detail": "É um convite à reflexão, não uma avaliação validada. Confiança, tempo registrado e recordação autoavaliada não medem a aprendizagem retida."
+    },
+    "de": {
+      "action": "Schätze vor dem Prüfen eine Stärke und eine mögliche Lücke ein. Vergleiche deine Einschätzung mit der tatsächlichen Rückmeldung.",
+      "detail": "Das ist ein Reflexionsimpuls, keine validierte Prüfung. Zuversicht, erfasste Lernzeit und selbst eingeschätzter Abruf messen nicht, was dauerhaft gelernt wurde."
+    }
+  },
+  "delayed-check": {
+    "en": {
+      "action": "To check learning later, try a relevant question or task after a gap, without the answer visible. Then check accuracy.",
+      "detail": "One task only samples part of your knowledge. FocusRecall’s current ratings and activity records do not automatically perform this assessment."
+    },
+    "ar": {
+      "action": "للتحقّق من التعلّم لاحقًا، جرّب سؤالًا أو مهمة مناسبة بعد فترة دون رؤية الإجابة، ثم تحقّق من الدقة.",
+      "detail": "لا تختبر المهمة الواحدة إلا جزءًا من معرفتك. تقييمات FocusRecall وسجلات النشاط الحالية لا تُجري هذا التقييم تلقائيًا."
+    },
+    "es": {
+      "action": "Para comprobar lo aprendido después, intenta una pregunta o tarea pertinente tras un intervalo, sin ver la respuesta. Luego comprueba la precisión.",
+      "detail": "Una tarea solo muestra parte de tus conocimientos. Las valoraciones y los registros actuales de FocusRecall no realizan automáticamente esta evaluación."
+    },
+    "fr": {
+      "action": "Pour vérifier plus tard, essayez après un délai une question ou une tâche pertinente sans voir la réponse. Vérifiez ensuite l’exactitude.",
+      "detail": "Une tâche n’échantillonne qu’une partie des connaissances. Les évaluations et traces actuelles de FocusRecall ne réalisent pas automatiquement cette vérification."
+    },
+    "zh-Hans": {
+      "action": "想了解之后是否还会？隔一段时间，在看不到答案的情况下完成相关问题或任务，再核对准确性。",
+      "detail": "单个任务只能抽查部分知识。FocusRecall 现有的自评和活动记录不会自动完成这种测评。"
+    },
+    "pt-BR": {
+      "action": "Para verificar depois, tente uma pergunta ou tarefa relevante após um intervalo, sem ver a resposta. Confira a precisão em seguida.",
+      "detail": "Uma tarefa mostra apenas parte do conhecimento. As avaliações e os registros atuais do FocusRecall não realizam essa verificação automaticamente."
+    },
+    "de": {
+      "action": "Prüfe späteres Können mit einer passenden Frage oder Aufgabe nach einer Pause, ohne sichtbare Lösung. Kontrolliere anschließend die Richtigkeit.",
+      "detail": "Eine Aufgabe erfasst nur einen Teil deines Wissens. Die bisherigen Bewertungen und Aktivitätsdaten von FocusRecall führen diese Prüfung nicht automatisch durch."
+    }
+  },
+  "choose-target": {
+    "en": {
+      "action": "Name one thing to produce or resolve in this session: a worked solution, an explanation, a draft or a practiced movement.",
+      "detail": "This is a planning aid. Keep it small enough to begin; finishing a target does not by itself prove learning."
+    },
+    "ar": {
+      "action": "حدّد شيئًا واحدًا لإنتاجه أو حلّه في هذه الجلسة: حلًا موضّحًا أو شرحًا أو مسودة أو حركة تتدرّب عليها.",
+      "detail": "هذه وسيلة للتخطيط. اجعل الهدف صغيرًا بما يكفي للبدء؛ فإتمامه لا يثبت التعلّم بمفرده."
+    },
+    "es": {
+      "action": "Define algo que producir o resolver en esta sesión: una solución razonada, una explicación, un borrador o un movimiento practicado.",
+      "detail": "Es una ayuda para planificar. Hazlo lo bastante pequeño para empezar; completar una meta no demuestra por sí solo aprendizaje."
+    },
+    "fr": {
+      "action": "Choisissez un résultat concret pour cette séance : une solution expliquée, une explication, un brouillon ou un geste travaillé.",
+      "detail": "C’est une aide à la planification. Gardez un objectif assez petit pour commencer ; l’atteindre ne prouve pas à lui seul un apprentissage."
+    },
+    "zh-Hans": {
+      "action": "为本次学习选一个具体目标：有步骤的解答、解释、草稿，或一个需要练习的动作。",
+      "detail": "这是规划辅助。目标应小到可以立即开始；完成目标本身并不能证明已经学会。"
+    },
+    "pt-BR": {
+      "action": "Defina algo para produzir ou resolver nesta sessão: uma solução explicada, uma explicação, um rascunho ou um movimento praticado.",
+      "detail": "É um apoio ao planejamento. Mantenha a meta pequena o suficiente para começar; concluí-la não comprova aprendizagem por si só."
+    },
+    "de": {
+      "action": "Lege ein konkretes Ergebnis fest: einen Lösungsweg, eine Erklärung, einen Entwurf oder eine geübte Bewegung.",
+      "detail": "Das ist eine Planungshilfe. Wähle ein Ziel, mit dem du beginnen kannst; seine Erledigung allein belegt noch kein Lernen."
+    }
+  },
+  "restart-note": {
+    "en": {
+      "action": "Leave one concrete starting point for next time: the next question, unfinished step or source to check.",
+      "detail": "This is an organizational suggestion, not a memory treatment. A private note, paper reminder or mental plan is enough; writing in the app is optional."
+    },
+    "ar": {
+      "action": "اترك نقطة بداية محددة للمرة القادمة: السؤال التالي أو خطوة لم تُكملها أو مصدرًا للتحقّق منه.",
+      "detail": "هذا اقتراح تنظيمي، وليس علاجًا للذاكرة. تكفي ملاحظة خاصة أو تذكير ورقي أو خطة ذهنية؛ والكتابة داخل التطبيق اختيارية."
+    },
+    "es": {
+      "action": "Deja un punto de partida concreto para la próxima vez: una pregunta, un paso pendiente o una fuente que revisar.",
+      "detail": "Es una sugerencia organizativa, no un tratamiento de memoria. Basta una nota privada, un recordatorio en papel o un plan mental; escribir en la aplicación es opcional."
+    },
+    "fr": {
+      "action": "Laissez un point de départ concret pour la prochaine fois : question suivante, étape inachevée ou source à vérifier.",
+      "detail": "C’est une suggestion d’organisation, pas un traitement de la mémoire. Une note privée, un rappel papier ou un plan mental suffit ; écrire ici est facultatif."
+    },
+    "zh-Hans": {
+      "action": "为下次留下一个具体起点：下一个问题、未完成的步骤，或需要核查的来源。",
+      "detail": "这是组织学习的建议，不是记忆治疗。私人笔记、纸条或心中计划都可以；不必写进应用。"
+    },
+    "pt-BR": {
+      "action": "Deixe um ponto de partida concreto para a próxima vez: a próxima pergunta, uma etapa incompleta ou uma fonte para conferir.",
+      "detail": "É uma sugestão de organização, não um tratamento para a memória. Uma nota privada, um lembrete em papel ou um plano mental basta; escrever no aplicativo é opcional."
+    },
+    "de": {
+      "action": "Notiere einen konkreten Einstieg fürs nächste Mal: die nächste Frage, einen offenen Schritt oder eine zu prüfende Quelle.",
+      "detail": "Das ist ein Organisationstipp, keine Gedächtnisbehandlung. Eine private Notiz, Papier oder ein gedanklicher Plan genügen; Einträge in der App sind freiwillig."
+    }
+  },
+  "plan-feasible": {
+    "en": {
+      "action": "Choose a realistic next study opportunity and a smaller fallback if that plan becomes impractical.",
+      "detail": "Planning is a practical part of self-regulation. Adapt to work, care, disability and available resources; a missed day is not evidence of poor motivation."
+    },
+    "ar": {
+      "action": "اختر فرصة واقعية للدراسة القادمة وبديلًا أصغر إن تعذّر تنفيذ الخطة.",
+      "detail": "التخطيط جزء عملي من تنظيم التعلّم ذاتيًا. راعِ العمل والرعاية والإعاقة والموارد المتاحة؛ وفوات يوم لا يدل على ضعف الدافعية."
+    },
+    "es": {
+      "action": "Elige una próxima ocasión de estudio realista y una alternativa más pequeña por si el plan deja de ser viable.",
+      "detail": "Planificar es una parte práctica de la autorregulación. Adapta el plan al trabajo, los cuidados, la discapacidad y los recursos; perder un día no demuestra falta de motivación."
+    },
+    "fr": {
+      "action": "Choisissez une prochaine occasion d’étude réaliste et une solution plus modeste si le plan devient impraticable.",
+      "detail": "Planifier fait partie de l’autorégulation. Adaptez au travail, aux responsabilités, au handicap et aux ressources ; manquer un jour ne prouve pas un manque de motivation."
+    },
+    "zh-Hans": {
+      "action": "选一个现实可行的下次学习时间，并准备一个计划难以实行时的小备选方案。",
+      "detail": "规划是自我调节的实用环节。请兼顾工作、照护、残障和可用资源；漏学一天并不代表缺乏动力。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma próxima oportunidade de estudo realista e uma alternativa menor caso o plano se torne inviável.",
+      "detail": "Planejar é uma parte prática da autorregulação. Adapte ao trabalho, aos cuidados, à deficiência e aos recursos; perder um dia não prova falta de motivação."
+    },
+    "de": {
+      "action": "Wähle eine realistische nächste Lerngelegenheit und eine kleinere Alternative, falls der Plan nicht klappt.",
+      "detail": "Planung gehört zur Selbstregulation. Berücksichtige Arbeit, Betreuung, Behinderung und verfügbare Mittel; ein ausgelassener Tag belegt keine mangelnde Motivation."
+    }
+  },
+  "one-interruption": {
+    "en": {
+      "action": "Choose one avoidable interruption to reduce before starting, while keeping necessary contact and accessibility tools available.",
+      "detail": "This is an environment choice, not a personal diagnosis. Recorded interruptions do not reveal intent, and uninterrupted time does not prove learning."
+    },
+    "ar": {
+      "action": "اختر مقاطعة يمكن تجنّبها لتقليلها قبل البدء، مع إبقاء وسائل التواصل الضرورية وأدوات الإتاحة متاحة.",
+      "detail": "هذا اختيار لتنظيم البيئة، وليس تشخيصًا شخصيًا. المقاطعات المسجّلة لا تكشف النوايا، والوقت بلا مقاطعات لا يثبت التعلّم."
+    },
+    "es": {
+      "action": "Elige una interrupción evitable que reducir antes de empezar, manteniendo disponibles el contacto necesario y las herramientas de accesibilidad.",
+      "detail": "Es una elección del entorno, no un diagnóstico personal. Las interrupciones registradas no revelan intención, y el tiempo sin interrupciones no demuestra aprendizaje."
+    },
+    "fr": {
+      "action": "Réduisez une interruption évitable avant de commencer, tout en gardant les contacts nécessaires et les outils d’accessibilité disponibles.",
+      "detail": "C’est un choix d’environnement, pas un diagnostic personnel. Les interruptions enregistrées ne révèlent pas l’intention et le temps sans interruption ne prouve pas l’apprentissage."
+    },
+    "zh-Hans": {
+      "action": "开始前减少一项可以避免的干扰，同时保留必要的联系渠道和无障碍工具。",
+      "detail": "这是环境安排，不是对个人的诊断。记录的干扰不能说明意图，连续学习时间也不能证明学习效果。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma interrupção evitável para reduzir antes de começar, mantendo os contatos necessários e os recursos de acessibilidade disponíveis.",
+      "detail": "É uma escolha de ambiente, não um diagnóstico pessoal. Interrupções registradas não revelam intenção, e tempo sem interrupções não comprova aprendizagem."
+    },
+    "de": {
+      "action": "Verringere vor dem Start eine vermeidbare Unterbrechung. Nötige Kontakte und Hilfsmittel zur Barrierefreiheit bleiben verfügbar.",
+      "detail": "Das ist eine Entscheidung zur Umgebung, keine persönliche Diagnose. Erfasste Unterbrechungen verraten keine Absicht, und ungestörte Zeit beweist kein Lernen."
+    }
+  },
+  "thought-parking": {
+    "en": {
+      "action": "If an unrelated thought needs attention later, park a short reminder and choose when to return to it.",
+      "detail": "This is an optional organizational tool. Urgent needs deserve attention now; do not use a reminder to postpone safety, care or necessary support."
+    },
+    "ar": {
+      "action": "إذا احتاجت فكرة غير مرتبطة بالدراسة إلى اهتمام لاحق، دوّن تذكيرًا قصيرًا وحدّد وقتًا للعودة إليها.",
+      "detail": "هذه أداة تنظيمية اختيارية. الاحتياجات العاجلة تستحق الاهتمام الآن؛ لا تستخدم التذكير لتأجيل السلامة أو الرعاية أو الدعم الضروري."
+    },
+    "es": {
+      "action": "Si un pensamiento ajeno al estudio necesita atención después, deja un recordatorio breve y elige cuándo retomarlo.",
+      "detail": "Es una herramienta organizativa opcional. Lo urgente merece atención ahora; no pospongas seguridad, cuidados ni apoyo necesario con un recordatorio."
+    },
+    "fr": {
+      "action": "Si une pensée sans lien demande une attention ultérieure, notez un bref rappel et choisissez quand y revenir.",
+      "detail": "C’est un outil d’organisation facultatif. Les besoins urgents méritent une attention immédiate ; ne reportez pas la sécurité, les soins ou l’aide nécessaire."
+    },
+    "zh-Hans": {
+      "action": "若无关想法需要稍后处理，记下简短提醒，并决定何时再看。",
+      "detail": "这是可选的组织工具。紧急需要应立即处理，不要用提醒来推迟安全、照护或必要支持。"
+    },
+    "pt-BR": {
+      "action": "Se um pensamento não relacionado precisar de atenção depois, registre um lembrete curto e escolha quando retomá-lo.",
+      "detail": "É uma ferramenta opcional de organização. Necessidades urgentes merecem atenção agora; não adie segurança, cuidados ou apoio necessário com um lembrete."
+    },
+    "de": {
+      "action": "Wenn ein anderer Gedanke später Aufmerksamkeit braucht, halte eine kurze Erinnerung fest und entscheide, wann du darauf zurückkommst.",
+      "detail": "Das ist eine freiwillige Organisationshilfe. Dringendes braucht sofort Aufmerksamkeit; verschiebe Sicherheit, Versorgung oder notwendige Unterstützung nicht auf später."
+    }
+  },
+  "rest-recovery": {
+    "en": {
+      "action": "Use this break to recover rather than meet another target. Choose something restful for you and adjust the duration if needed.",
+      "detail": "Micro-break research supports reduced fatigue and greater vigor, but not a reliable overall performance gain. The app’s timer ratios are adjustable defaults, not scientific optima."
+    },
+    "ar": {
+      "action": "استعمل هذه الاستراحة للتعافي بدل تحقيق هدف آخر. اختر ما يريحك وعدّل المدة عند الحاجة.",
+      "detail": "تدعم أبحاث الاستراحات القصيرة انخفاض التعب وزيادة النشاط، لكنها لا تثبت تحسّنًا موثوقًا في الأداء عمومًا. نسب المؤقّت إعدادات قابلة للتعديل، وليست قيمًا علمية مثلى."
+    },
+    "es": {
+      "action": "Usa este descanso para recuperarte, no para cumplir otra meta. Elige algo reparador para ti y ajusta la duración si hace falta.",
+      "detail": "La investigación sobre micropausas respalda menor fatiga y mayor energía, pero no una mejora global fiable del rendimiento. Las proporciones del temporizador son valores ajustables, no óptimos científicos."
+    },
+    "fr": {
+      "action": "Utilisez cette pause pour récupérer plutôt que pour atteindre un autre objectif. Choisissez ce qui vous repose et adaptez la durée si nécessaire.",
+      "detail": "Les recherches sur les micropauses soutiennent une baisse de fatigue et un regain d’énergie, sans gain global fiable de performance. Les ratios du minuteur sont réglables, pas scientifiquement optimaux."
+    },
+    "zh-Hans": {
+      "action": "这次休息用于恢复，不必完成另一个目标。选择适合自己的放松方式，必要时调整时长。",
+      "detail": "短暂休息的研究支持减轻疲劳、提升活力，但并未证明总体表现会稳定改善。计时器比例是可调整的默认值，并非科学最优值。"
+    },
+    "pt-BR": {
+      "action": "Use a pausa para se recuperar, em vez de cumprir outra meta. Escolha algo que descanse você e ajuste a duração se necessário.",
+      "detail": "Pesquisas sobre micropausas apoiam menor fadiga e maior disposição, mas não um ganho geral confiável de desempenho. As proporções do timer são padrões ajustáveis, não valores cientificamente ideais."
+    },
+    "de": {
+      "action": "Nutze die Pause zur Erholung statt für ein weiteres Ziel. Wähle etwas Erholsames und passe die Dauer bei Bedarf an.",
+      "detail": "Forschung zu Mikropausen stützt weniger Müdigkeit und mehr Energie, aber keinen verlässlichen allgemeinen Leistungsgewinn. Die Zeitverhältnisse der App sind anpassbare Vorgaben, keine wissenschaftlichen Optima."
+    }
+  },
+  "rest-accessible": {
+    "en": {
+      "action": "Choose a comfortable pause: sit quietly, change position if suitable, or look away from the task. Movement is optional.",
+      "detail": "This is a comfort suggestion, not medical advice. Walking, closing your eyes or leaving a screen is not possible or helpful for everyone."
+    },
+    "ar": {
+      "action": "اختر استراحة مريحة: اجلس بهدوء، أو غيّر وضعيتك إن ناسبك، أو أبعد نظرك عن المهمة. الحركة اختيارية.",
+      "detail": "هذا اقتراح للراحة، وليس نصيحة طبية. المشي أو إغماض العينين أو الابتعاد عن الشاشة ليس ممكنًا أو مفيدًا للجميع."
+    },
+    "es": {
+      "action": "Elige una pausa cómoda: siéntate en calma, cambia de postura si te conviene o aparta la mirada de la tarea. Moverte es opcional.",
+      "detail": "Es una sugerencia de comodidad, no un consejo médico. Caminar, cerrar los ojos o alejarse de una pantalla no es posible ni útil para todo el mundo."
+    },
+    "fr": {
+      "action": "Choisissez une pause confortable : restez au calme, changez de position si cela vous convient ou détournez le regard. Bouger est facultatif.",
+      "detail": "C’est une suggestion de confort, pas un conseil médical. Marcher, fermer les yeux ou quitter un écran n’est pas possible ou utile pour tout le monde."
+    },
+    "zh-Hans": {
+      "action": "选择舒适的休息方式：安静坐一会儿、在适合时换个姿势，或暂时不看任务。活动身体并非必需。",
+      "detail": "这是舒适性建议，不是医疗建议。散步、闭眼或离开屏幕，并非对每个人都可行或有益。"
+    },
+    "pt-BR": {
+      "action": "Escolha uma pausa confortável: sente-se em silêncio, mude de posição se for adequado ou desvie o olhar da tarefa. Movimentar-se é opcional.",
+      "detail": "É uma sugestão de conforto, não uma orientação médica. Caminhar, fechar os olhos ou sair da tela não é possível ou útil para todos."
+    },
+    "de": {
+      "action": "Wähle eine angenehme Pause: ruhig sitzen, bei Bedarf die Haltung ändern oder den Blick von der Aufgabe lösen. Bewegung ist freiwillig.",
+      "detail": "Das ist ein Vorschlag zum Wohlbefinden, kein medizinischer Rat. Gehen, Augen schließen oder einen Bildschirm verlassen ist nicht für alle möglich oder hilfreich."
+    }
+  },
+  "stuck-break": {
+    "en": {
+      "action": "Stuck after a genuine attempt? Take a break, then return to one specific question or try a different representation.",
+      "detail": "A break can sometimes help problem solving, depending on the task. It does not guarantee an insight or replace missing instruction, feedback or supervision."
+    },
+    "ar": {
+      "action": "تعثّرت بعد محاولة جادّة؟ خذ استراحة، ثم عُد إلى سؤال محدد أو جرّب تمثيلًا مختلفًا للمشكلة.",
+      "detail": "قد تساعد الاستراحة أحيانًا على حل المشكلات بحسب المهمة. لكنها لا تضمن ظهور فكرة ولا تعوّض الشرح أو الملاحظات أو الإشراف المفقود."
+    },
+    "es": {
+      "action": "¿Sigues sin avanzar tras un intento real? Descansa y vuelve a una pregunta concreta o prueba otra representación.",
+      "detail": "Una pausa a veces ayuda a resolver problemas, según la tarea. No garantiza una idea ni sustituye explicaciones, comentarios o supervisión que falten."
+    },
+    "fr": {
+      "action": "Vous bloquez après un vrai essai ? Faites une pause, puis revenez à une question précise ou changez de représentation.",
+      "detail": "Une pause peut parfois aider à résoudre un problème, selon la tâche. Elle ne garantit pas un déclic et ne remplace pas explications, retour ou supervision."
+    },
+    "zh-Hans": {
+      "action": "认真尝试后仍卡住？先休息，再回到一个具体问题，或换一种呈现方式。",
+      "detail": "休息有时有助于解决问题，但取决于任务。它不能保证灵感出现，也不能代替缺少的讲解、反馈或监督。"
+    },
+    "pt-BR": {
+      "action": "Travou depois de uma tentativa real? Faça uma pausa e volte a uma pergunta específica ou tente outra representação.",
+      "detail": "Uma pausa pode ajudar a resolver problemas em alguns casos, dependendo da tarefa. Não garante uma ideia nem substitui explicações, feedback ou supervisão que faltem."
+    },
+    "de": {
+      "action": "Du kommst nach einem ernsthaften Versuch nicht weiter? Mach eine Pause und kehre zu einer konkreten Frage zurück oder wähle eine andere Darstellung.",
+      "detail": "Eine Pause kann je nach Aufgabe beim Problemlösen helfen. Sie garantiert keinen Einfall und ersetzt keine fehlende Anleitung, Rückmeldung oder Aufsicht."
+    }
+  },
+  "return-small": {
+    "en": {
+      "action": "Before restarting, choose the smallest useful next step. Keep or revise your earlier plan rather than starting over automatically.",
+      "detail": "This is a practical restart prompt. A timer or a streak is an organizational aid; neither measures your ability or worth."
+    },
+    "ar": {
+      "action": "قبل العودة، اختر أصغر خطوة تالية مفيدة. احتفظ بخطتك السابقة أو عدّلها بدل البدء من الصفر تلقائيًا.",
+      "detail": "هذا اقتراح عملي للعودة. المؤقّت أو سلسلة أيام الدراسة وسيلتان للتنظيم، ولا يقيس أيّ منهما قدرتك أو قيمتك."
+    },
+    "es": {
+      "action": "Antes de retomar, elige el siguiente paso útil más pequeño. Conserva o ajusta el plan anterior en vez de empezar de cero automáticamente.",
+      "detail": "Es una sugerencia práctica para retomar. Un temporizador o una racha ayudan a organizarte; no miden tu capacidad ni tu valor."
+    },
+    "fr": {
+      "action": "Avant de reprendre, choisissez la plus petite étape utile. Gardez ou adaptez le plan précédent au lieu de tout recommencer automatiquement.",
+      "detail": "C’est un conseil pratique pour reprendre. Un minuteur ou une série de jours aide à s’organiser ; ni l’un ni l’autre ne mesure votre capacité ou votre valeur."
+    },
+    "zh-Hans": {
+      "action": "重新开始前，选一个最小但有用的下一步。保留或调整原计划，不必自动从头来过。",
+      "detail": "这是实用的重启提示。计时器或连续记录只是组织工具，不能衡量你的能力或价值。"
+    },
+    "pt-BR": {
+      "action": "Antes de retomar, escolha o menor próximo passo útil. Mantenha ou revise o plano anterior, em vez de recomeçar automaticamente.",
+      "detail": "É uma sugestão prática para retomar. Um timer ou uma sequência de dias ajuda na organização; nenhum deles mede sua capacidade ou seu valor."
+    },
+    "de": {
+      "action": "Wähle vor dem Wiedereinstieg den kleinsten sinnvollen nächsten Schritt. Behalte oder überarbeite deinen bisherigen Plan, statt automatisch neu anzufangen.",
+      "detail": "Das ist ein praktischer Impuls zum Wiedereinstieg. Timer und Lernserien sind Organisationshilfen; sie messen weder deine Fähigkeit noch deinen Wert."
+    }
+  }
+}

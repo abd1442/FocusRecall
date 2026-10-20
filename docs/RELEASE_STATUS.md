@@ -1,9 +1,9 @@
 # Beta availability
 
-Windows x64 is the established beta baseline. Linux x64 DEB and macOS Apple Silicon/Intel are **experimental** and awaiting real-world desktop testing. [Choose your download](../README.md#beta-downloads). Each platform release includes installation instructions, limitations, matching source, notices and SHA-256 checksums.
+[FocusRecall — Beta 1](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1) is the single release page for Windows x64, Linux x64 DEB and both Mac architectures. The application version is 0.1.1-beta.1. Matching source, notices, checksums and the platform/source manifest accompany the downloads.
 
-Windows is unsigned. Mac builds are ad-hoc signed, not Developer ID signed or notarized. Do not disable operating-system protections or override malware/damaged-app warnings. AppImage is not offered in this round.
+Windows is the established baseline and is unsigned. Linux/macOS passed native compilation, production-security and automated workflow checks, but remain experimental and need real-world desktop testing. Mac builds are ad-hoc signed, not Developer ID signed or notarized. AppImage is not offered in this round.
 
-The owner reports successful Windows 11 testing, but exact upgrade, restore, reinstall and power-state coverage was not recorded separately. Linux/Mac automated native checks do not certify physical sleep/wake, screen readers or every desktop/scaling configuration. The repackaged Mac ZIP containers still need opening on real Macs.
+Physical lock/sleep/hibernate, fluent language review, screen readers and all display configurations remain unverified. Linux CI tested actual X11/Wayland compositors with intentionally unavailable login observation; it did not prove live studying in logged-in GNOME/KDE. Mac tests included real elapsed sessions and simulated interruption/recovery events, not physical sleep/wake. Normal ZIP opening on physical Macs still needs testing.
 
-[Source and licenses](../SOURCE_NOTICE.md) · [Feedback](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)
+[Complete guide](USER_GUIDE.md) · [Source and licenses](../SOURCE_NOTICE.md) · [Feedback](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)

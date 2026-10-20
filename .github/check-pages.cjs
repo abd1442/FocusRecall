@@ -19,7 +19,7 @@ for (const file of files) {
   assert.ok(!privatePath.test(text), 'Workstation path in ' + file)
   // Exact source snapshots retain upstream documentation, which is not this site's navigation.
   // File boundaries, credentials and workstation-path checks above still cover every source file.
-  if (file.startsWith('corresponding-source/')) continue
+  if (file.startsWith('corresponding-source/') || file.startsWith('platform-source/')) continue
   if (!file.endsWith('.md')) continue
   for (const match of text.matchAll(/!?\[[^\]]*\]\(([^)]+)\)/g)) {
     const link = match[1].split('#')[0]
@@ -44,7 +44,7 @@ const guide=fs.readFileSync('docs/USER_GUIDE.md','utf8');for(const heading of ["
 for(const m of readme.matchAll(/(?:src|srcset)="([^"]+)"/g)) if(!/^[a-z]+:/i.test(m[1])) assert.ok(fs.existsSync(m[1]), 'README image '+m[1]);
 
 // A release tag must carry the exact curated source mapped to its binary.
-if(fs.existsSync('RELEASE_SOURCE.json')){
+if(fs.existsSync('RELEASE_SOURCE.json') && !fs.existsSync('RELEASE-MANIFEST.json')){
  const release=JSON.parse(fs.readFileSync('RELEASE_SOURCE.json','utf8'))
  const folder=path.resolve('corresponding-source')
  const source=JSON.parse(fs.readFileSync(path.join(folder,'SOURCE_MANIFEST.json'),'utf8'))
@@ -57,4 +57,34 @@ if(fs.existsSync('RELEASE_SOURCE.json')){
  assert.match(release.binary.sha256,/^[a-f0-9]{64}$/)
  assert.match(release.correspondingSource.sha256,/^[a-f0-9]{64}$/)
  console.log('PASS release source revision, curated file hashes and source/binary mapping.')
+}
+// One public release may contain independently built platform snapshots.
+if(fs.existsSync('RELEASE-MANIFEST.json')){
+ const release=JSON.parse(fs.readFileSync('RELEASE-MANIFEST.json','utf8'))
+ assert.equal(release.version,'0.1.1-beta.1');assert.equal(release.tag,'v0.1.1-beta.1')
+ assert.deepEqual(release.artifacts.map(a=>a.platform).sort(),['linux-x64','macos-arm64','macos-x64','windows-x64'])
+ const requests=[]
+ for(const artifact of release.artifacts){
+  assert.match(artifact.sha256,/^[a-f0-9]{64}$/);assert.match(artifact.sourceCommit,/^[a-f0-9]{40}$/)
+  const folder=path.resolve(artifact.sourceFolder);assert.ok(folder.startsWith(root+path.sep))
+  const source=JSON.parse(fs.readFileSync(path.join(folder,'SOURCE_MANIFEST.json'),'utf8'))
+  assert.equal(source.sourceCommit,artifact.sourceCommit);assert.equal(source.version,release.version)
+  for(const row of source.files){
+   assert.ok(!/[\r\n\0]/.test(row.file));const file=path.resolve(folder,row.file)
+   assert.ok(file.startsWith(folder+path.sep)&&!fs.lstatSync(file).isSymbolicLink(),'Unsafe source path')
+   requests.push({rel:path.relative(root,file).split(path.sep).join('/'),sha256:row.sha256})
+  }
+ }
+ const batch=cp.execFileSync('git',['cat-file','--batch'],{input:requests.map(r=>'HEAD:'+r.rel+'\n').join(''),maxBuffer:128*1024*1024})
+ let offset=0
+ for(const row of requests){
+  const end=batch.indexOf(10,offset);assert.ok(end>offset);const header=batch.subarray(offset,end).toString('utf8').split(' ')
+  assert.equal(header[1],'blob',row.rel);const size=Number(header[2]);assert.ok(Number.isSafeInteger(size)&&size>=0)
+  offset=end+1;const bytes=batch.subarray(offset,offset+size);assert.equal(bytes.length,size)
+  assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),row.sha256,row.rel)
+  offset+=size;assert.equal(batch[offset++],10)
+ }
+ assert.equal(offset,batch.length)
+ assert.match(release.sourceDelivery.sha256,/^[a-f0-9]{64}$/);assert.match(release.notices.sha256,/^[a-f0-9]{64}$/)
+ console.log('PASS single-release mapping and '+requests.length+' exact per-platform source hashes; no common application commit assumed.')
 }

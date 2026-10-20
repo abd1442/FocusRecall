@@ -1,4 +1,4 @@
-name: Check private project pages
+name: Check project pages and release sources
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read

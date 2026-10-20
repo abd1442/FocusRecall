@@ -1,0 +1,501 @@
+@import 'tailwindcss';
+
+/* Honor Windows/browser reduced-motion preferences across shared controls. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--fr-state-focusRing, var(--tf-focus));
+  outline-offset: 3px;
+}
+
+/* One continuous focus stroke on Home search, rather than border plus detached outline. */
+.subject-search:focus{border-color:var(--fr-state-focusRing,var(--tf-focus));outline:2px solid var(--fr-state-focusRing,var(--tf-focus));outline-offset:-1px;box-shadow:none}
+
+/* Language direction is independent of the chosen palette. Data axes and clocks
+   keep their numeric order; prose and navigation follow the interface language. */
+html[lang='ar'] { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; }
+html[lang='zh-Hans'] { font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif; }
+.text-left:dir(rtl) { text-align: right; }
+.text-right:dir(rtl) { text-align: left; }
+[dir='rtl'] .sidebar-brand, [dir='rtl'] .sidebar-link { text-align: right; }
+[dir='rtl'] .focusrecall-sidebar { border-right: 0; border-left: 3px solid var(--tf-nav-border); }
+[dir='rtl'] .focusrecall-sidebar .sidebar-link[aria-current]::after { right: auto; left: 14px; }
+[dir='rtl'] .focusrecall-sidebar[data-collapsed=true] .sidebar-link[aria-current]::after { left: 5px; }
+[dir='rtl'] .sidebar-collapse svg { transform: scaleX(-1); }
+.font-timer, .recharts-wrapper, input[type='range'], input[type='number'], input[type='time'] { direction: ltr; unicode-bidi: isolate; }
+textarea, input[type='text'], input[type='search'] { unicode-bidi: plaintext; }
+
+/*
+ * Design tokens. JS (store/appearance) writes every --fr-* semantic token of
+ * the active theme (core/themes.ts) onto :root, plus the --tf-* compatibility
+ * names the components grew up with. The values below are only the first-paint
+ * fallback (Ink Dim). Tailwind utilities read them through @theme inline, so
+ * classes like bg-surface or text-muted follow every change live.
+ *
+ * --tf-focus (and the focus utilities) is the accent: buttons, rings, selection.
+ * The Focus stage itself (timer, panel stripe, focus bars) uses stage-focus.
+ *
+ * Size rules: body text 16px (text-base), nothing below 14px (text-sm).
+ * The interface scale is a window zoom set by the main process.
+ */
+:root {
+  --tf-bg: #242b31;
+  --tf-surface: #2d343a;
+  --tf-surface-2: #1c2228;
+  --tf-border: #454d54;
+  --tf-text: #ebe7df;
+  --tf-muted: #c2bdb4;
+  --tf-writing-bg: #293036;
+  --tf-writing-text: #dedbd4;
+  --tf-focus: #debb86;
+  --tf-recall: #bbb0da;
+  --tf-rest: #96c7b8;
+  --tf-overtime: #dca789;
+  --tf-on-accent: #2c1f09;
+  --tf-font-ui: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  --tf-font-timer: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+  --tf-font-writing: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  --tf-writing-size: 19px;
+  --tf-roundness: 1;
+}
+
+@theme inline {
+  --color-bg: var(--tf-bg);
+  --color-surface: var(--tf-surface);
+  --color-surface-2: var(--tf-surface-2);
+  --color-line: var(--tf-border);
+  --color-ink: var(--tf-text);
+  --color-muted: var(--tf-muted);
+  --color-writing: var(--tf-writing-bg);
+  --color-writing-ink: var(--tf-writing-text);
+  --color-focus: var(--tf-focus);
+  --color-recall: var(--tf-recall);
+  --color-rest: var(--tf-rest);
+  --color-overtime: var(--tf-overtime);
+  --color-on-accent: var(--tf-on-accent);
+
+  /* Theme system 2026 (TOKEN_SPEC §2): role names, never hues. */
+  --color-accent: var(--fr-accent-default, var(--tf-focus));
+  --color-accent-hover: var(--fr-accent-hover);
+  --color-accent-pressed: var(--fr-accent-pressed);
+  --color-accent-text: var(--fr-accent-text, var(--tf-focus));
+  --color-accent-subtle: var(--fr-accent-subtle);
+  --color-accent-subtle-ink: var(--fr-accent-subtleText);
+  --color-raised: var(--fr-surface-raised, var(--tf-surface));
+  --color-control: var(--fr-control-bg, var(--tf-surface-2));
+  --color-control-hover: var(--fr-control-bgHover, var(--tf-surface-2));
+  --color-line-strong: var(--fr-border-strong, var(--tf-border));
+  --color-faint: var(--fr-text-tertiary, var(--tf-muted));
+  --color-selected: var(--fr-state-selected-bg);
+  --color-selected-line: var(--fr-state-selected-border);
+  --color-selected-ink: var(--fr-state-selected-text);
+  --color-ring: var(--fr-state-focusRing, var(--tf-focus));
+  --color-stage-focus: var(--fr-stage-focus, var(--tf-focus));
+  --color-stage-focus-text: var(--fr-stage-focus-text, var(--tf-focus));
+  --color-stage-focus-subtle: var(--fr-stage-focus-subtle);
+  --color-stage-focus-on: var(--fr-stage-focus-on, var(--tf-on-accent));
+  --color-stage-recall-text: var(--fr-stage-recall-text, var(--tf-recall));
+  --color-stage-rest-text: var(--fr-stage-rest-text, var(--tf-rest));
+  --color-stage-overtime-text: var(--fr-stage-overtime-text, var(--tf-overtime));
+  --color-status-error: var(--fr-status-error-fg, #b42318);
+  --color-status-error-bg: var(--fr-status-error-bg, #fdecea);
+  --color-status-error-line: var(--fr-status-error-border, #b42318);
+  --color-status-error-solid: var(--fr-status-error-solid, #b42318);
+  --color-status-success: var(--fr-status-success-fg);
+  --color-status-success-bg: var(--fr-status-success-bg);
+  --color-status-warning: var(--fr-status-warning-fg);
+  --color-status-warning-bg: var(--fr-status-warning-bg);
+  --color-status-info: var(--fr-status-info-fg);
+  --color-status-info-bg: var(--fr-status-info-bg);
+
+  --font-ui: var(--tf-font-ui);
+  --font-timer: var(--tf-font-timer);
+  --font-writing: var(--tf-font-writing);
+
+  --radius-sm: calc(0.375rem * var(--tf-roundness));
+  --radius-md: calc(0.625rem * var(--tf-roundness));
+  --radius-lg: calc(0.875rem * var(--tf-roundness));
+  --radius-xl: calc(1.125rem * var(--tf-roundness));
+  --radius-2xl: calc(1.5rem * var(--tf-roundness));
+}
+
+/* Component tokens (theme independent aliases, tokens/component-map.json). */
+:root {
+  --fr-button-primary-bg: var(--fr-accent-default);
+  --fr-button-primary-text: var(--fr-text-onAccent);
+  --fr-button-secondary-bg: var(--fr-control-bg);
+  --fr-button-secondary-bgHover: var(--fr-control-bgHover);
+  --fr-input-border: var(--fr-border-strong);
+  --fr-card-shadow: var(--fr-shadow-card);
+  --fr-dialog-bg: var(--fr-surface-raised);
+  --fr-dialog-scrim: var(--fr-surface-overlay);
+  --fr-dialog-shadow: var(--fr-shadow-raised);
+  --fr-panel-bg: var(--fr-surface-raised);
+  --fr-slider-track: var(--fr-bg-sunken);
+  --fr-slider-fill: var(--fr-accent-default);
+  --fr-toggle-on: var(--fr-accent-default);
+  --fr-toggle-off: var(--fr-border-strong);
+  --fr-timer-focus: var(--fr-stage-focus-text);
+  --fr-timer-overtime: var(--fr-stage-overtime-text);
+  --fr-learn-line: var(--fr-illu-line);
+  --fr-learn-paper: var(--fr-illu-paper);
+  --fr-learn-wash: var(--fr-illu-wash);
+  --fr-learn-highlight: var(--fr-illu-highlight);
+}
+
+::selection {
+  background: var(--fr-state-textSelection, color-mix(in srgb, var(--tf-focus) 30%, transparent));
+}
+
+html {
+  font-size: 100%;
+}
+
+/*
+ * Full window height under CSS zoom. Each window scales its content with
+ * zoom on <html>, and vh units are zoomed too, so divide by the zoom.
+ */
+.h-viewport {
+  height: calc(100vh / var(--tf-zoom, 1));
+}
+
+body {
+  margin: 0;
+  background: var(--tf-bg);
+  color: var(--tf-text);
+  font-family: var(--tf-font-ui);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+/* Study Journal navigation. Its independent ink and paper tokens keep a light
+   sidebar legible beside either workspace; high contrast uses the main palette. */
+.focusrecall-sidebar{width:var(--tf-sidebar-width,224px);flex-shrink:0;display:flex;flex-direction:column;gap:0;padding:28px 16px 16px;background:var(--tf-nav-bg,var(--tf-surface));color:var(--tf-nav-text,var(--tf-text));border-inline-end:3px solid var(--tf-nav-border,var(--tf-border));overflow-y:auto;overflow-x:hidden}
+.sidebar-brand{display:flex;align-items:center;gap:12px;padding:0 8px;flex-shrink:0;text-align:start;white-space:nowrap}
+.sidebar-brand img{width:36px;height:36px}.sidebar-brand{gap:10px}.sidebar-brand>span{font-size:20px;letter-spacing:-.5px;font-weight:600}
+.sidebar-edition{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tf-nav-muted);margin:12px 8px 30px;white-space:nowrap}
+.sidebar-nav{display:flex;flex-direction:column;gap:8px}
+.sidebar-link{position:relative;display:flex;gap:13px;align-items:center;text-align:start;min-height:48px;padding:11px 14px;border-radius:calc(9px * var(--tf-roundness));color:var(--tf-nav-muted);font-size:16px;white-space:nowrap}
+.sidebar-link svg{flex-shrink:0}.sidebar-link:hover,.sidebar-panel:hover{background:color-mix(in srgb,var(--tf-nav-active) 9%,transparent)}
+.sidebar-link[aria-current]{background:var(--tf-nav-active);color:var(--tf-nav-onActive);font-weight:600}
+.focusrecall-sidebar[data-style=journal] .sidebar-link[aria-current]:after{content:'';position:absolute;inset-inline-end:14px;top:0;width:9px;height:18px;background:var(--tf-nav-bookmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 70%,0 100%)}
+.sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;gap:13px;padding-top:32px}.sidebar-panel{color:var(--tf-nav-muted);font-size:15px;min-height:48px}
+.sidebar-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 2px}.sidebar-version{min-width:0}.sidebar-version>span{color:var(--tf-nav-muted);font-size:10px}
+.sidebar-collapse{display:flex;align-items:center;gap:5px;min-height:38px;border:1px solid var(--tf-nav-border);border-radius:8px;padding:7px;color:var(--tf-nav-muted);font-size:12px;flex-shrink:0}
+.sidebar-collapse .sidebar-label{display:none}.sidebar-version>span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sidebar-demo{border-color:var(--tf-nav-border);font-size:13px;background:transparent}.sidebar-demo>span:first-child{color:var(--tf-nav-text);font-size:14px}.sidebar-demo>span:last-child{color:var(--tf-nav-muted);font-size:12px}
+.sidebar-sitting{background:transparent;border-color:var(--tf-nav-border);color:var(--tf-nav-text)}.sidebar-sitting>span:first-child{color:var(--tf-nav-muted)}
+.sidebar-sitting>span:last-child{color:var(--tf-nav-text)!important}.sidebar-demo{min-height:44px}
+.focusrecall-sidebar :focus-visible{outline-color:var(--tf-nav-active)}
+.focusrecall-sidebar[data-style=simple]{border-inline-end-width:1px}.focusrecall-sidebar[data-style=simple] .sidebar-brand{margin-bottom:34px}
+.focusrecall-sidebar[data-collapsed=true]{width:88px;padding:24px 12px 16px}.focusrecall-sidebar[data-collapsed=true] .sidebar-brand{padding:0;justify-content:center;margin-bottom:35px}.focusrecall-sidebar[data-collapsed=true] .sidebar-brand img{width:38px;height:38px}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-brand>span,.focusrecall-sidebar[data-collapsed=true] .sidebar-edition,.focusrecall-sidebar[data-collapsed=true] .sidebar-label,.focusrecall-sidebar[data-collapsed=true] .sidebar-version{display:none}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-link,.focusrecall-sidebar[data-collapsed=true] .sidebar-panel{justify-content:center;gap:0;padding:12px 8px;min-height:48px}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-link[aria-current]:after{inset-inline-start:0;inset-inline-end:auto;top:14px;width:3px;height:20px;clip-path:none;border-radius:3px}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-footer{justify-content:center}.focusrecall-sidebar[data-collapsed=true] .sidebar-collapse{padding:10px}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-demo{padding:7px 2px;border-style:dashed;border-color:var(--tf-nav-muted)}.focusrecall-sidebar[data-collapsed=true] .sidebar-demo>span:first-child{font-size:10px;text-align:center}.focusrecall-sidebar[data-collapsed=true] .sidebar-demo>span:last-child{display:none}
+.focusrecall-sidebar[data-collapsed=true] .sidebar-sitting{padding:10px 5px;align-items:center}.focusrecall-sidebar[data-collapsed=true] .sidebar-sitting>span{display:none}.focusrecall-sidebar[data-collapsed=true] .sidebar-sitting:before{content:'●';color:var(--tf-nav-active);font-size:20px}
+/* Keep the narrower rail usable at Windows display scaling and small heights. */
+@media(max-height:650px){.focusrecall-sidebar{padding-top:16px}.sidebar-edition{margin-bottom:18px}.sidebar-bottom{padding-top:18px;gap:8px}.sidebar-nav{gap:4px}}
+
+input,
+textarea,
+select {
+  user-select: text;
+  font: inherit;
+}
+
+/* Keyboard focus ring for buttons and controls. Text fields show focus with their own line colour instead (one outline, not two). */
+:focus-visible:not(input:not([type='checkbox']):not([type='radio']):not([type='range'])):not(textarea):not(select) {
+  outline: 2px solid var(--fr-state-focusRing, color-mix(in srgb, var(--tf-focus) 75%, transparent));
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tf-border);
+  border-radius: 999px;
+  border: 3px solid var(--tf-bg);
+}
+
+/* Named sliders: a calm track filled up to the thumb in the accent colour. */
+.named-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2rem;
+  background: transparent;
+  cursor: pointer;
+}
+.named-slider::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--accent) var(--fill), var(--tf-surface-2) var(--fill));
+}
+.named-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--tf-surface);
+  border: 3px solid var(--accent);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+}
+/* Large (question cards): a thicker track and a bigger handle. */
+.named-slider-lg {
+  height: 2.5rem;
+}
+.named-slider-lg::-webkit-slider-runnable-track {
+  height: 0.75rem;
+}
+.named-slider-lg::-webkit-slider-thumb {
+  margin-top: -0.6rem;
+  width: 1.95rem;
+  height: 1.95rem;
+}
+/* A cleared slider: an empty track and no handle, until it is touched again. */
+.named-slider-empty::-webkit-slider-runnable-track {
+  background: var(--tf-surface-2);
+}
+.named-slider-empty::-webkit-slider-thumb {
+  opacity: 0;
+}
+.named-slider:focus-visible {
+  /* The ring goes on the handle; the general focus rule is more specific, hence !important. */
+  outline: none !important;
+}
+.named-slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid color-mix(in srgb, var(--accent) 75%, transparent);
+  outline-offset: 2px;
+}
+
+/* Mode diagrams: one calm play when a mode is chosen. */
+@keyframes tf-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes tf-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes tf-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tf-grow {
+  transform-origin: left center;
+  animation: tf-grow var(--tf-dur, 1.6s) ease-out var(--tf-delay, 0s) both;
+}
+.tf-shrink {
+  transform-origin: left center;
+  animation: tf-shrink var(--tf-dur, 1.8s) ease-in-out var(--tf-delay, 0s) both;
+}
+.tf-fade-in {
+  animation: tf-fade-in 0.5s ease-out var(--tf-delay, 0s) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tf-grow,
+  .tf-shrink,
+  .tf-fade-in {
+    animation: none;
+  }
+  .tf-shrink {
+    transform: scaleX(0);
+  }
+}
+
+/* A setting reached from the search: a brief, soft highlight. */
+@keyframes tf-highlight {
+  from {
+    background: color-mix(in srgb, var(--tf-focus) 22%, transparent);
+  }
+  to {
+    background: transparent;
+  }
+}
+.setting-highlight {
+  animation: tf-highlight 1.8s ease-out;
+}
+
+/* The Stats report preview: a calm, readable document. */
+.stats-report h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.stats-report h1 + p {
+  margin-top: 0.25rem;
+  color: var(--tf-muted);
+}
+.stats-report h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--tf-border);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.stats-report p,
+.stats-report li {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.stats-report ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.stats-report li {
+  margin: 0.35rem 0;
+}
+.stats-report strong {
+  font-weight: 600;
+}
+
+/*
+ * Light mode, designed on its own: cards lift off the paper with a soft warm
+ * shadow (dark mode keeps flat surfaces with borders), secondary side panels
+ * have a deeper tint, and the floating panel gets a firmer edge.
+ * Main navigation owns its independent palette, including mixed light/dark.
+ */
+:root[data-theme='light'] .rounded-2xl.bg-surface,
+:root[data-theme='light'] .rounded-2xl.bg-surface\/60 {
+  box-shadow: var(--fr-shadow-card);
+}
+:root[data-theme='light'] aside:not(.focusrecall-sidebar) {
+  background: color-mix(in srgb, var(--tf-surface-2) 55%, var(--tf-bg));
+}
+
+:root[data-theme='light'] .h-viewport.rounded-2xl {
+  border-color: color-mix(in srgb, var(--tf-border) 60%, var(--tf-muted));
+  box-shadow: none;
+}
+
+/* Content supplies the hierarchy; section colour carries no statistical meaning. */
+.stats-section {
+  padding: 1rem 0;
+  scroll-margin-top: var(--stats-bar-height, 12rem);
+}
+.stats-section > header h2 { color: var(--tf-text); }
+/* Optional compact spacing; the comfortable layout remains the default. */
+html[data-density='compact'] main .gap-7, html[data-density='compact'] main .gap-8 { gap: 1.25rem; }
+html[data-density='compact'] main .py-9, html[data-density='compact'] main .py-8 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+
+/* Settings controls grow within their column; descriptions align at the top. */
+.setting-controls > * { max-width: 100%; }
+.setting-controls input:not([type='range']):not([type='color']),
+.setting-controls select { min-width: 0; }
+.settings-surface label { min-width: 0; }
+.colour-swatch::-webkit-color-swatch-wrapper { padding: 0; }
+.colour-swatch::-webkit-color-swatch { border: 0; border-radius: calc(.5rem * var(--tf-roundness)); }
+.settings-guide svg { transition: transform .25s ease; }
+.settings-guide:hover svg { transform: rotate(-3deg) scale(1.04); }
+.example-fill { transform-origin: left; animation: example-fill 2s ease-out both; }
+@keyframes example-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .example-fill { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .question-frequency-card { transition: none; } .question-frequency-card:hover { transform: none; } }
+.app-confirm-dialog::backdrop { background: rgb(0 0 0 / .5); backdrop-filter: blur(3px); }
+.subject-colour-frame { border-color: color-mix(in srgb, var(--panel-colour, var(--tf-border)) 78%, var(--tf-border)); }
+.subject-colour-frame[aria-selected="true"] { outline: 2px solid var(--tf-focus); outline-offset: 2px; }
+.subject-colour-card[aria-selected="true"] { outline: 2px solid var(--panel-colour); outline-offset: 2px; }
+.subject-perforations { background: repeating-linear-gradient(0deg, var(--panel-colour) 0 6px, transparent 6px 15px); opacity: .8; }
+.home-layout > aside { min-width: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .settings-guide, .settings-guide svg { transition: none; }
+  .settings-guide:hover, .settings-guide:hover svg { transform: none; }
+}
+
+.app-form-dialog::backdrop { background: rgb(0 0 0 / .4); }
+
+/* Home responds to usable space, including sidebar and interface scaling. */
+.home-workspace { grid-template-columns:minmax(0,1fr); }
+.focusrecall-support { border-color:color-mix(in srgb,#c45a76 35%,var(--tf-border));background:linear-gradient(120deg,color-mix(in srgb,#dd8c95 12%,var(--tf-surface)),var(--tf-surface)); }
+.home-launcher [data-session-launch-panel] { display:none; }
+@container home (min-width:70rem) {
+  .home-workspace { grid-template-columns:minmax(0,1fr) 27rem; }
+  .home-quick-start { display:none; }
+  .home-launcher { position:sticky;top:2rem;align-self:start; }
+  .home-launcher [data-session-launch-panel] { display:flex;max-height:min(var(--home-column-height, 100vh), calc(100vh / var(--tf-zoom, 1) - 4.5rem))!important; }
+}
+@container home (max-width:69.99rem) {
+  .home-subjects { min-height:0!important; }
+}
+
+.stats-section-strip { display:none; }
+@container stats (min-width:65rem) {
+  .stats-section-picker { display:none; }
+  .stats-section-strip { display:flex; }
+}
+
+/* Legacy text utilities must use readable ink, not the action/stage fill.
+   Saffron deliberately has a light button fill with a dark label. */
+.text-focus, .hover\:text-focus:hover { color: var(--fr-accent-text); }
+.text-recall { color: var(--fr-stage-recall-text); }
+.text-rest { color: var(--fr-stage-rest-text); }
+.text-overtime { color: var(--fr-stage-overtime-text); }
+
+/* These are interface labels outside the illustration remap below. */
+.learn-eyebrow, .learn-collection-links, .learn-shelf-picker button[aria-pressed=true] {
+  color: var(--fr-accent-text);
+}
+
+/* Learn illustrations draw with the theme's illustration tokens (illu.*), not the
+   accent and stage colours: ink line, paper, the recall-coloured second voice and
+   a muted guide colour. Everything inside a Learn figure inherits the remap. */
+.principle-visual, .field-visual, .strategy-visual {
+  --tf-focus: var(--fr-illu-line);
+  --tf-recall: var(--fr-illu-secondary);
+  --tf-surface: var(--fr-illu-paper);
+  --tf-muted: var(--fr-illu-muted);
+  --tf-surface-2: var(--fr-illu-wash);
+}
+
+/* Respect the Windows contrast palette. Keep focus/selection perceptible when
+   author backgrounds and box shadows are suppressed; never freeze a palette. */
+@media (forced-colors: active) {
+  :focus-visible { outline: 2px solid Highlight !important; outline-offset: 3px !important; }
+  button[aria-checked="true"], button[aria-pressed="true"] { border: 2px solid Highlight; }
+  [role="gridcell"][aria-selected="true"] { outline: 2px solid Highlight; }
+  .activity-day { border: 1px solid ButtonText; }
+  .activity-day[aria-current="date"] { outline: 1px dashed CanvasText; }
+  [role="gridcell"]:focus-visible .activity-day, .activity-day:focus-visible { outline: 2px solid Highlight !important; }
+  input.named-slider { appearance: auto; forced-color-adjust: auto; }
+  input.named-slider::-webkit-slider-thumb { appearance: auto; }
+}
+
+/* Headings that receive focus programmatically on a screen change are not
+   controls; announce them without drawing a control focus ring. */
+@media not (forced-colors: active){:is(h1,h2,h3)[tabindex="-1"]:is(:focus,:focus-visible){outline:none !important}}
+
+/* Icon rail: keep hit targets separate from the active marker and mirror direction. */
+.focusrecall-sidebar[data-collapsed=true] .sidebar-nav{gap:8px}
+.sidebar-nav .sidebar-link:last-child{margin-block-start:4px}
+[dir=rtl] .sidebar-collapse svg{transform:scaleX(-1)}
+.focusrecall-sidebar :focus-visible{outline:2px solid var(--tf-nav-active);outline-offset:-3px}
+.sidebar-link[aria-current]:focus-visible{outline-color:var(--tf-nav-onActive)}
+@media(forced-colors:active){.focusrecall-sidebar :focus-visible{outline-color:Highlight}}

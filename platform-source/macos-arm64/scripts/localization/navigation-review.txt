@@ -1,0 +1,372 @@
+Add subject|إضافة مادة|Añadir materia|Ajouter une matière|添加科目|Adicionar matéria|Fach hinzufügen
+Add sub-category|إضافة فئة فرعية|Añadir subcategoría|Ajouter une sous-catégorie|添加子分类|Adicionar subcategoria|Unterkategorie hinzufügen
+Add group|إضافة مجموعة|Añadir grupo|Ajouter un groupe|添加分组|Adicionar grupo|Gruppe hinzufügen
+Add option|إضافة خيار|Añadir opción|Ajouter une option|添加选项|Adicionar opção|Option hinzufügen
+Add question|إضافة سؤال|Añadir pregunta|Ajouter une question|添加问题|Adicionar pergunta|Frage hinzufügen
+Add and select|إضافة وتحديد|Añadir y seleccionar|Ajouter et sélectionner|添加并选择|Adicionar e selecionar|Hinzufügen und auswählen
+Add the first subject here|أضف مادتك الأولى هنا|Añade tu primera materia aquí|Ajoutez votre première matière ici|在这里添加第一个科目|Adicione sua primeira matéria aqui|Füge hier dein erstes Fach hinzu
+All subjects|كل المواد|Todas las materias|Toutes les matières|所有科目|Todas as matérias|Alle Fächer
+All categories|كل الفئات|Todas las categorías|Toutes les catégories|所有分类|Todas as categorias|Alle Kategorien
+All activities|كل الأنشطة|Todas las actividades|Toutes les activités|所有活动|Todas as atividades|Alle Tätigkeiten
+All dates · all subjects · all activities|كل التواريخ · كل المواد · كل الأنشطة|Todas las fechas · todas las materias · todas las actividades|Toutes les dates · toutes les matières · toutes les activités|所有日期 · 所有科目 · 所有活动|Todas as datas · todas as matérias · todas as atividades|Alle Daten · alle Fächer · alle Tätigkeiten
+Active|نشط|Activo|Actif|活跃|Ativo|Aktiv
+After|بعد|Después|Après|之后|Depois|Nachher
+Before|قبل|Antes|Avant|之前|Antes|Vorher
+Baseline:|خط الأساس:|Referencia:|Référence :|基准：|Referência:|Ausgangswert:
+Aim:|الهدف:|Objetivo:|Objectif :|目标：|Objetivo:|Ziel:
+Before starting:|قبل البدء:|Antes de empezar:|Avant de commencer :|开始前：|Antes de começar:|Vor dem Start:
+Best focus|أفضل تركيز|Mejor concentración|Meilleure concentration|最佳专注|Melhor foco|Bester Fokus
+Average focus|متوسط التركيز|Concentración media|Concentration moyenne|平均专注评分|Foco médio|Durchschnittlicher Fokus
+Average recall|متوسط الاسترجاع|Recuerdo medio|Rappel de mémoire moyen|平均回忆评分|Recordação média|Durchschnittliche Erinnerung
+Average session|متوسط الجلسة|Sesión media|Séance moyenne|平均学习时长|Sessão média|Durchschnittliche Sitzung
+By app or site|حسب التطبيق أو الموقع|Por aplicación o sitio|Par application ou site|按应用或网站|Por aplicativo ou site|Nach App oder Website
+By mode|حسب الوضع|Por modo|Par mode|按模式|Por modo|Nach Modus
+By reason|حسب السبب|Por motivo|Par motif|按原因|Por motivo|Nach Grund
+By source|حسب المصدر|Por origen|Par source|按来源|Por origem|Nach Quelle
+Change|تغيير|Cambiar|Modifier|更改|Alterar|Ändern
+Change not verified|لم يتم التحقق من التغيير|Cambio no verificado|Changement non vérifié|尚未确认改变|Mudança não verificada|Änderung nicht bestätigt
+Choose a destination|اختيار وجهة|Elegir destino|Choisir une destination|选择保存位置|Escolher destino|Ziel auswählen
+Choose a group|اختيار مجموعة|Elegir grupo|Choisir un groupe|选择分组|Escolher grupo|Gruppe auswählen
+Chosen for this session|محدد لهذه الجلسة|Elegido para esta sesión|Choisi pour cette séance|本次学习已选|Escolhido para esta sessão|Für diese Sitzung gewählt
+Chosen for {value0}|محدد لـ {value0}|Elegido para {value0}|Choisi pour {value0}|为 {value0} 选择|Escolhido para {value0}|Für {value0} gewählt
+Chosen target|المدة المستهدفة المختارة|Duración objetivo elegida|Durée cible choisie|所选目标时长|Duração escolhida|Gewählte Zieldauer
+Clear {value0}|مسح {value0}|Borrar {value0}|Effacer {value0}|清除 {value0}|Limpar {value0}|{value0} löschen
+Clear subject filters|مسح مرشحات المواد|Quitar filtros de materias|Effacer les filtres de matière|清除科目筛选|Limpar filtros de matérias|Fachfilter entfernen
+Close {value0}|إغلاق {value0}|Cerrar {value0}|Fermer {value0}|关闭 {value0}|Fechar {value0}|{value0} schließen
+Close details|إغلاق التفاصيل|Cerrar detalles|Fermer les détails|关闭详情|Fechar detalhes|Details schließen
+Close editor|إغلاق المحرر|Cerrar editor|Fermer l’éditeur|关闭编辑器|Fechar editor|Editor schließen
+Close filters|إغلاق المرشحات|Cerrar filtros|Fermer les filtres|关闭筛选|Fechar filtros|Filter schließen
+Close Stats companion|إغلاق مساعد الإحصاءات|Cerrar asistente de estadísticas|Fermer l’assistant de statistiques|关闭统计助手|Fechar assistente de estatísticas|Statistikassistenten schließen
+Close visual guide|إغلاق الدليل المرئي|Cerrar guía visual|Fermer le guide visuel|关闭图示指南|Fechar guia visual|Visuelle Anleitung schließen
+Complete|إتمام|Completar|Terminer|完成|Concluir|Abschließen
+Completed|مكتمل|Completado|Terminé|已完成|Concluído|Abgeschlossen
+Continue the block|متابعة الجلسة|Continuar la sesión|Continuer la séance|继续学习|Continuar a sessão|Sitzung fortsetzen
+Copy drawing|نسخ الرسم|Copiar dibujo|Copier le dessin|复制绘图|Copiar desenho|Zeichnung kopieren
+Copy text|نسخ النص|Copiar texto|Copier le texte|复制文本|Copiar texto|Text kopieren
+Could not load saved recall: {value0}|تعذّر تحميل الاسترجاع المحفوظ: {value0}|No se pudo cargar el recuerdo guardado: {value0}|Impossible de charger le rappel enregistré : {value0}|无法加载已保存的回忆：{value0}|Não foi possível carregar a recordação salva: {value0}|Gespeicherte Erinnerungsübung konnte nicht geladen werden: {value0}
+Could not preserve the log draft:|تعذّر الاحتفاظ بمسودة السجل:|No se pudo conservar el borrador del registro:|Impossible de conserver le brouillon du journal :|无法保留记录草稿：|Não foi possível preservar o rascunho do registro:|Protokollentwurf konnte nicht bewahrt werden:
+Could not save:|تعذّر الحفظ:|No se pudo guardar:|Impossible d’enregistrer :|无法保存：|Não foi possível salvar:|Speichern fehlgeschlagen:
+Current Stats filters|مرشحات الإحصاءات الحالية|Filtros actuales de estadísticas|Filtres actuels des statistiques|当前统计筛选|Filtros atuais das estatísticas|Aktuelle Statistikfilter
+Current streak|سلسلة الأيام المتتالية الحالية|Racha actual|Série actuelle|当前连续学习天数|Sequência atual|Aktuelle Serie
+Custom dates|تواريخ مخصصة|Fechas personalizadas|Dates personnalisées|自定义日期|Datas personalizadas|Eigener Zeitraum
+Custom unit|وحدة مخصصة|Unidad personalizada|Unité personnalisée|自定义单位|Unidade personalizada|Eigene Einheit
+Dates|التواريخ|Fechas|Dates|日期|Datas|Daten
+Day|اليوم|Día|Jour|日|Dia|Tag
+Day of the week|يوم الأسبوع|Día de la semana|Jour de la semaine|星期|Dia da semana|Wochentag
+Days studied|أيام الدراسة|Días de estudio|Jours d’étude|学习天数|Dias de estudo|Lerntage
+Days studied in view|أيام الدراسة في العرض|Días de estudio en esta vista|Jours d’étude dans cette vue|当前视图的学习天数|Dias de estudo nesta visualização|Lerntage in dieser Ansicht
+Days studied recently|أيام الدراسة مؤخرًا|Días de estudio recientes|Jours d’étude récents|近期学习天数|Dias de estudo recentes|Kürzlich erfasste Lerntage
+Delete category|حذف الفئة|Eliminar categoría|Supprimer la catégorie|删除分类|Excluir categoria|Kategorie löschen
+Delete experiment|حذف التجربة|Eliminar experimento|Supprimer l’expérience|删除实验|Excluir experimento|Experiment löschen
+Delete session|حذف الجلسة|Eliminar sesión|Supprimer la séance|删除学习记录|Excluir sessão|Sitzung löschen
+Delete view|حذف العرض|Eliminar vista|Supprimer la vue|删除视图|Excluir visualização|Ansicht löschen
+Demo data. Switch back in Settings.|بيانات تجريبية. عد إلى بياناتك من الإعدادات.|Datos de ejemplo. Vuelve a los tuyos en Ajustes.|Données de démonstration. Revenez à vos données dans les paramètres.|示例数据。请在设置中切回个人数据。|Dados de demonstração. Volte aos seus dados nas Configurações.|Beispieldaten. Wechsle in den Einstellungen zurück.
+Detected app or site|تطبيق أو موقع تم اكتشافه|Aplicación o sitio detectado|Application ou site détecté|检测到的应用或网站|Aplicativo ou site detectado|Erkannte App oder Website
+Detected during focus.|تم اكتشافه أثناء التركيز.|Detectado durante la concentración.|Détecté pendant la concentration.|在专注期间检测到。|Detectado durante o foco.|Während der Fokuszeit erkannt.
+Did you get it done?|هل أنجزت هدفك؟|¿Lo completaste?|Avez-vous atteint votre objectif ?|完成目标了吗？|Você concluiu?|Hast du es geschafft?
+Difference:|الفرق:|Diferencia:|Différence :|差异：|Diferença:|Unterschied:
+Dismiss|تجاهل|Descartar|Ignorer|忽略|Dispensar|Verwerfen
+Distraction|تشتت|Distracción|Distraction|分心|Distração|Ablenkung
+Distraction found by tracking|تشتت اكتشفه التتبّع|Distracción detectada por el seguimiento|Distraction détectée par le suivi|跟踪检测到的分心|Distração detectada pelo rastreamento|Durch Erfassung erkannte Ablenkung
+Distraction records|سجلات التشتت|Registros de distracciones|Distractions enregistrées|分心记录|Registros de distrações|Ablenkungsaufzeichnungen
+Distractions per focused hour|مرات التشتت لكل ساعة تركيز|Distracciones por hora de concentración|Distractions par heure de concentration|每专注小时的分心次数|Distrações por hora de foco|Ablenkungen je Fokusstunde
+Distractions per hour|مرات التشتت في الساعة|Distracciones por hora|Distractions par heure|每小时分心次数|Distrações por hora|Ablenkungen pro Stunde
+Drawing tools|أدوات الرسم|Herramientas de dibujo|Outils de dessin|绘图工具|Ferramentas de desenho|Zeichenwerkzeuge
+Edit check-in|تعديل تسجيل اليوم|Editar registro diario|Modifier le bilan quotidien|编辑每日记录|Editar registro diário|Tagesabfrage bearbeiten
+Edit experiment|تعديل التجربة|Editar experimento|Modifier l’expérience|编辑实验|Editar experimento|Experiment bearbeiten
+Edit names|تعديل الأسماء|Editar nombres|Modifier les noms|编辑名称|Editar nomes|Namen bearbeiten
+Edit note|تعديل الملاحظة|Editar nota|Modifier la note|编辑笔记|Editar nota|Notiz bearbeiten
+Edit options|تعديل الخيارات|Editar opciones|Modifier les options|编辑选项|Editar opções|Optionen bearbeiten
+Edit subject|تعديل المادة|Editar materia|Modifier la matière|编辑科目|Editar matéria|Fach bearbeiten
+Edit this part|تعديل هذا الجزء|Editar esta parte|Modifier cette partie|编辑此部分|Editar esta parte|Diesen Teil bearbeiten
+Edit: {value0}|تعديل: {value0}|Editar: {value0}|Modifier : {value0}|编辑：{value0}|Editar: {value0}|Bearbeiten: {value0}
+Edit…|تعديل…|Editar…|Modifier…|编辑…|Editar…|Bearbeiten…
+End|إنهاء|Finalizar|Terminer|结束|Encerrar|Beenden
+Ended at|انتهت في|Finalizó a las|Fin à|结束于|Terminou às|Beendet um
+Exit to Home|الخروج إلى الرئيسية|Volver a Inicio|Revenir à l’accueil|返回主页|Voltar ao Início|Zur Startseite
+Experiment activity|نشاط التجربة|Actividad del experimento|Activité de l’expérience|实验活动|Atividade do experimento|Tätigkeit im Experiment
+Experiment change|التغيير في التجربة|Cambio del experimento|Changement testé|实验改变项|Mudança do experimento|Änderung im Experiment
+Experiment name|اسم التجربة|Nombre del experimento|Nom de l’expérience|实验名称|Nome do experimento|Experimentname
+Experiment notes|ملاحظات التجربة|Notas del experimento|Notes de l’expérience|实验笔记|Notas do experimento|Experimentnotizen
+Experiment outcome|النتيجة المقاسة للتجربة|Resultado medido del experimento|Résultat mesuré de l’expérience|实验结果指标|Resultado medido do experimento|Ergebnisgröße des Experiments
+Experiment status|حالة التجربة|Estado del experimento|État de l’expérience|实验状态|Status do experimento|Experimentstatus
+Experiment steps|خطوات التجربة|Pasos del experimento|Étapes de l’expérience|实验步骤|Etapas do experimento|Experimentschritte
+Experiment subject|مادة التجربة|Materia del experimento|Matière de l’expérience|实验科目|Matéria do experimento|Fach des Experiments
+Experiments this week|تجارب هذا الأسبوع|Experimentos de esta semana|Expériences de la semaine|本周实验|Experimentos desta semana|Experimente dieser Woche
+Explore current evidence|استكشاف الأدلة الحالية|Explorar la evidencia actual|Explorer les données actuelles|探索当前证据|Explorar as evidências atuais|Aktuelle Datenlage erkunden
+Export JSON|تصدير JSON|Exportar JSON|Exporter en JSON|导出 JSON|Exportar JSON|JSON exportieren
+Export PDF|تصدير PDF|Exportar PDF|Exporter en PDF|导出 PDF|Exportar PDF|PDF exportieren
+Export image (PNG)|تصدير صورة (PNG)|Exportar imagen (PNG)|Exporter une image (PNG)|导出图片（PNG）|Exportar imagem (PNG)|Bild exportieren (PNG)
+Exporting…|جارٍ التصدير…|Exportando…|Exportation…|正在导出…|Exportando…|Export läuft…
+Field name|اسم الحقل|Nombre del campo|Nom du champ|字段名称|Nome do campo|Feldname
+File in vault|الملف داخل الخزينة|Archivo en la bóveda|Fichier dans le coffre|仓库中的文件|Arquivo no cofre|Datei im Tresor
+Focus ended|انتهى التركيز|Concentración finalizada|Fin de la concentration|专注结束|Foco encerrado|Fokus beendet
+Focus started|بدأ التركيز|Concentración iniciada|Début de la concentration|专注开始|Foco iniciado|Fokus gestartet
+Focused time per day|وقت التركيز يوميًا|Tiempo de concentración por día|Temps de concentration par jour|每日专注时长|Tempo de foco por dia|Fokuszeit pro Tag
+Focused time per day this week|وقت التركيز يوميًا هذا الأسبوع|Concentración por día esta semana|Concentration par jour cette semaine|本周每日专注时长|Foco por dia nesta semana|Tägliche Fokuszeit dieser Woche
+Focused time per week|وقت التركيز أسبوعيًا|Tiempo de concentración por semana|Temps de concentration par semaine|每周专注时长|Tempo de foco por semana|Fokuszeit pro Woche
+Follow the open study screen|متابعة شاشة الدراسة المفتوحة|Seguir la pantalla de estudio abierta|Suivre l’écran d’étude ouvert|跟随当前学习界面|Acompanhar a tela de estudo aberta|Geöffneter Lernansicht folgen
+For this subject|لهذه المادة|Para esta materia|Pour cette matière|此科目|Para esta matéria|Für dieses Fach
+For {value0}|لـ {value0}|Para {value0}|Pour {value0}|适用于 {value0}|Para {value0}|Für {value0}
+From date|من تاريخ|Desde|Date de début|开始日期|Data inicial|Ab Datum
+To date|إلى تاريخ|Hasta|Date de fin|结束日期|Data final|Bis Datum
+From your recall notes|من ملاحظات الاسترجاع|De tus notas de recuerdo|Dans vos notes de rappel de mémoire|来自你的回忆笔记|Das suas notas de recordação|Aus deinen Erinnerungsnotizen
+Goal|الهدف|Objetivo|Objectif|目标|Objetivo|Ziel
+Goal results|نتائج الأهداف|Resultados de objetivos|Résultats des objectifs|目标完成情况|Resultados dos objetivos|Zielergebnisse
+Goals and captures|الأهداف والتدوينات السريعة|Objetivos y capturas|Objectifs et notes rapides|目标与快速记录|Objetivos e anotações|Ziele und Schnellnotizen
+Group|المجموعة|Grupo|Groupe|分组|Grupo|Gruppe
+Group by|تجميع حسب|Agrupar por|Regrouper par|分组依据|Agrupar por|Gruppieren nach
+Hardest material|أصعب محتوى|Material más difícil|Contenu le plus difficile|最难的内容|Conteúdo mais difícil|Schwierigster Lernstoff
+Hardest to focus on|الأصعب من حيث التركيز|Mayor dificultad para concentrarse|Concentration la plus difficile|最难集中注意的科目|Maior dificuldade de foco|Am schwierigsten zu konzentrieren
+Hide preview|إخفاء المعاينة|Ocultar vista previa|Masquer l’aperçu|隐藏预览|Ocultar prévia|Vorschau ausblenden
+How this section works|كيف يعمل هذا القسم|Cómo funciona esta sección|Fonctionnement de cette section|本节说明|Como esta seção funciona|So funktioniert dieser Bereich
+How to read these charts|كيفية قراءة هذه الرسوم|Cómo leer estos gráficos|Comment lire ces graphiques|如何阅读这些图表|Como ler estes gráficos|So liest du diese Diagramme
+I was away|كنت غائبًا|Estaba ausente|J’étais absent|我离开了|Eu estava ausente|Ich war weg
+I was there|كنت حاضرًا|Estaba presente|J’étais présent|我没有离开|Eu estava presente|Ich war da
+Ignore|تجاهل|Ignorar|Ignorer|忽略|Ignorar|Ignorieren
+Import JSON|استيراد JSON|Importar JSON|Importer un JSON|导入 JSON|Importar JSON|JSON importieren
+Inconclusive|غير حاسم|No concluyente|Non concluant|尚无定论|Inconclusivo|Nicht eindeutig
+Inconclusive: {value0}.|غير حاسم: {value0}.|No concluyente: {value0}.|Non concluant : {value0}.|尚无定论：{value0}。|Inconclusivo: {value0}.|Nicht eindeutig: {value0}.
+Interruptions|المقاطعات|Interrupciones|Interruptions|干扰|Interrupções|Unterbrechungen
+Interruption counts by reason|عدد المقاطعات حسب السبب|Interrupciones por motivo|Nombre d’interruptions par motif|按原因统计干扰次数|Interrupções por motivo|Unterbrechungen nach Grund
+Just this session|هذه الجلسة فقط|Solo esta sesión|Cette séance uniquement|仅本次学习|Só esta sessão|Nur diese Sitzung
+Keep activity|الاحتفاظ بالنشاط|Mantener actividad|Conserver l’activité|保留活动|Manter atividade|Tätigkeit beibehalten
+Keep this window open|أبقِ هذه النافذة مفتوحة|Mantén esta ventana abierta|Gardez cette fenêtre ouverte|请保持此窗口打开|Mantenha esta janela aberta|Lass dieses Fenster geöffnet
+Kind of answer|نوع الإجابة|Tipo de respuesta|Type de réponse|回答类型|Tipo de resposta|Antworttyp
+Last recall|آخر استرجاع|Último recuerdo|Dernier rappel de mémoire|最近回忆|Última recordação|Letzte Erinnerungsübung
+Last used|آخر استخدام|Último uso|Dernière utilisation|最近使用|Último uso|Zuletzt verwendet
+Last week|الأسبوع الماضي|Semana pasada|Semaine dernière|上周|Semana passada|Letzte Woche
+Last month|الشهر الماضي|Mes pasado|Mois dernier|上月|Mês passado|Letzter Monat
+Last 3 months|آخر 3 أشهر|Últimos 3 meses|3 derniers mois|最近 3 个月|Últimos 3 meses|Letzte 3 Monate
+Latest 4 weeks|آخر 4 أسابيع|Últimas 4 semanas|4 dernières semaines|最近 4 周|Últimas 4 semanas|Letzte 4 Wochen
+Previous 4 weeks|الأسابيع الأربعة السابقة|4 semanas anteriores|4 semaines précédentes|此前 4 周|4 semanas anteriores|Vorherige 4 Wochen
+Less detail|تفاصيل أقل|Menos detalles|Moins de détails|收起详情|Menos detalhes|Weniger Details
+Loading notes…|جارٍ تحميل الملاحظات…|Cargando notas…|Chargement des notes…|正在加载笔记…|Carregando notas…|Notizen werden geladen…
+Loading saved recall…|جارٍ تحميل الاسترجاع المحفوظ…|Cargando el recuerdo guardado…|Chargement du rappel enregistré…|正在加载已保存的回忆…|Carregando a recordação salva…|Gespeicherte Erinnerungsübung wird geladen…
+Loading your wrap-up…|جارٍ تحميل ختام الدراسة…|Cargando el cierre del estudio…|Chargement du bilan de fin…|正在加载学习总结…|Carregando o encerramento do estudo…|Lernabschluss wird geladen…
+Local note|ملاحظة محلية|Nota local|Note locale|本地笔记|Nota local|Lokale Notiz
+Longer does not mean better|الأطول لا يعني الأفضل|Más tiempo no significa mejor|Plus long ne signifie pas meilleur|时间更长不代表效果更好|Mais tempo não significa melhor|Länger bedeutet nicht besser
+Longest streak|أطول سلسلة أيام متتالية|Racha más larga|Plus longue série|最长连续学习天数|Maior sequência|Längste Serie
+Manage|إدارة|Administrar|Gérer|管理|Gerenciar|Verwalten
+Manage {value0} thoughts|إدارة الأفكار: {value0}|Administrar {value0} ideas|Gérer {value0} idées|管理 {value0} 条想法|Gerenciar {value0} ideias|{value0} Gedanken verwalten
+Minimise FocusRecall|تصغير FocusRecall|Minimizar FocusRecall|Réduire FocusRecall|最小化 FocusRecall|Minimizar o FocusRecall|FocusRecall minimieren
+Minute|دقيقة|Minuto|Minute|分钟|Minuto|Minute
+Minutes|دقائق|Minutos|Minutes|分钟|Minutos|Minuten
+Mixed|مختلط|Mixto|Mixte|混合|Misto|Gemischt
+Mixed-subject sessions|جلسات متعددة المواد|Sesiones con varias materias|Séances à plusieurs matières|多科目学习|Sessões com várias matérias|Sitzungen mit mehreren Fächern
+More|المزيد|Más|Plus|更多|Mais|Mehr
+More detail|مزيد من التفاصيل|Más detalles|Plus de détails|更多详情|Mais detalhes|Mehr Details
+Most used|الأكثر استخدامًا|Más usado|Le plus utilisé|最常使用|Mais usado|Am häufigsten verwendet
+Move|نقل|Mover|Déplacer|移动|Mover|Verschieben
+Move {value0}|نقل {value0}|Mover {value0}|Déplacer {value0}|移动 {value0}|Mover {value0}|{value0} verschieben
+Move earlier|نقل إلى وقت أسبق|Mover antes|Déplacer plus tôt|向前移动|Mover para antes|Nach vorn verschieben
+Move later|نقل إلى وقت لاحق|Mover después|Déplacer plus tard|向后移动|Mover para depois|Nach hinten verschieben
+Move to|نقل إلى|Mover a|Déplacer vers|移动到|Mover para|Verschieben nach
+Move to…|نقل إلى…|Mover a…|Déplacer vers…|移动到…|Mover para…|Verschieben nach…
+Name this setup|تسمية هذا الإعداد|Nombra esta configuración|Nommer cette configuration|命名此配置|Nomeie esta configuração|Diese Umgebung benennen
+Name this view|تسمية هذا العرض|Nombra esta vista|Nommer cette vue|命名此视图|Nomeie esta visualização|Diese Ansicht benennen
+New group|مجموعة جديدة|Nuevo grupo|Nouveau groupe|新分组|Novo grupo|Neue Gruppe
+New option|خيار جديد|Nueva opción|Nouvelle option|新选项|Nova opção|Neue Option
+New question|سؤال جديد|Nueva pregunta|Nouvelle question|新问题|Nova pergunta|Neue Frage
+New view|عرض جديد|Nueva vista|Nouvelle vue|新视图|Nova visualização|Neue Ansicht
+No|لا|No|Non|否|Não|Nein
+No answers|لا توجد إجابات|Sin respuestas|Aucune réponse|暂无回答|Sem respostas|Keine Antworten
+No answered ratings|لا توجد تقييمات مؤكدة|Sin valoraciones respondidas|Aucune évaluation renseignée|暂无已填写评分|Sem avaliações respondidas|Keine beantworteten Bewertungen
+No clear comparison yet|لا توجد مقارنة واضحة بعد|Aún no hay una comparación clara|Pas encore de comparaison claire|暂无明确比较|Ainda não há uma comparação clara|Noch kein klarer Vergleich
+No groups yet.|لا توجد مجموعات بعد.|Aún no hay grupos.|Aucun groupe pour le moment.|暂无分组。|Ainda não há grupos.|Noch keine Gruppen.
+No match.|لا توجد نتائج مطابقة.|Sin coincidencias.|Aucun résultat.|无匹配项。|Nenhuma correspondência.|Kein Treffer.
+No recall notes yet.|لا توجد ملاحظات استرجاع بعد.|Aún no hay notas de recuerdo.|Aucune note de rappel pour le moment.|暂无回忆笔记。|Ainda não há notas de recordação.|Noch keine Erinnerungsnotizen.
+No saved notes match.|لا توجد ملاحظات محفوظة مطابقة.|No hay notas guardadas que coincidan.|Aucune note enregistrée ne correspond.|没有匹配的已保存笔记。|Nenhuma nota salva corresponde.|Keine gespeicherten Notizen gefunden.
+No sessions here yet.|لا توجد جلسات هنا بعد.|Aún no hay sesiones aquí.|Aucune séance ici pour le moment.|这里暂无学习记录。|Ainda não há sessões aqui.|Hier gibt es noch keine Sitzungen.
+No sessions in this range.|لا توجد جلسات في هذه الفترة.|No hay sesiones en este período.|Aucune séance sur cette période.|此时间段暂无学习记录。|Não há sessões neste período.|Keine Sitzungen in diesem Zeitraum.
+No sessions match.|لا توجد جلسات مطابقة.|No hay sesiones que coincidan.|Aucune séance ne correspond.|没有匹配的学习记录。|Nenhuma sessão corresponde.|Keine passenden Sitzungen.
+No sessions yet.|لا توجد جلسات بعد.|Aún no hay sesiones.|Aucune séance pour le moment.|暂无学习记录。|Ainda não há sessões.|Noch keine Sitzungen.
+No subjects yet. Add your first one.|لا توجد مواد بعد. أضف مادتك الأولى.|Aún no hay materias. Añade la primera.|Aucune matière pour le moment. Ajoutez la première.|暂无科目。添加第一个科目吧。|Ainda não há matérias. Adicione a primeira.|Noch keine Fächer. Füge dein erstes hinzu.
+No, dismiss|لا، تجاهل|No, descartar|Non, ignorer|否，忽略|Não, dispensar|Nein, verwerfen
+Not done|لم يُنجز|No completado|Non réalisé|未完成|Não concluído|Nicht erledigt
+Not planned|غير مخطط|No planificado|Non planifié|未计划|Não planejado|Nicht geplant
+Not said|لم يُذكر|Sin especificar|Non précisé|未说明|Não informado|Nicht angegeben
+Not started|لم يبدأ|Sin iniciar|Non commencé|未开始|Não iniciado|Nicht begonnen
+Note for {value0}|ملاحظة لـ {value0}|Nota para {value0}|Note pour {value0}|{value0} 的笔记|Nota para {value0}|Notiz für {value0}
+Note title|عنوان الملاحظة|Título de la nota|Titre de la note|笔记标题|Título da nota|Notiztitel
+Notes destination|وجهة الملاحظات|Destino de las notas|Destination des notes|笔记保存位置|Destino das notas|Notizziel
+Notes page|صفحة الملاحظات|Página de notas|Page de notes|笔记页面|Página de notas|Notizseite
+Nothing recalled yet.|لم يُكتب استرجاع بعد.|Aún no hay contenido recordado.|Aucun rappel de mémoire pour le moment.|暂无回忆内容。|Ainda não há conteúdo recordado.|Noch keine Erinnerungsinhalte.
+Nothing studied on this day.|لا توجد دراسة مسجّلة في هذا اليوم.|No hay estudio registrado este día.|Aucune étude enregistrée ce jour-là.|当天无学习记录。|Nenhum estudo registrado neste dia.|An diesem Tag wurde kein Lernen erfasst.
+Nothing studied yet.|لا توجد دراسة مسجّلة بعد.|Aún no hay estudio registrado.|Aucune étude enregistrée pour le moment.|暂无学习记录。|Ainda não há estudo registrado.|Noch kein Lernen erfasst.
+Now:|الآن:|Ahora:|Maintenant :|现在：|Agora:|Jetzt:
+Number|رقم|Número|Nombre|数值|Número|Zahl
+Obsidian note file|ملف ملاحظات Obsidian|Archivo de notas de Obsidian|Fichier de notes Obsidian|Obsidian 笔记文件|Arquivo de notas do Obsidian|Obsidian-Notizdatei
+Obsidian section heading|عنوان القسم في Obsidian|Encabezado de sección en Obsidian|Titre de section Obsidian|Obsidian 章节标题|Título da seção do Obsidian|Obsidian-Abschnittsüberschrift
+One choice|اختيار واحد|Una opción|Un choix|单选|Uma opção|Eine Auswahl
+Once a day|مرة يوميًا|Una vez al día|Une fois par jour|每天一次|Uma vez por dia|Einmal täglich
+Only in FocusRecall|في FocusRecall فقط|Solo en FocusRecall|Dans FocusRecall uniquement|仅保存在 FocusRecall|Só no FocusRecall|Nur in FocusRecall
+Open experiments|فتح التجارب|Abrir experimentos|Ouvrir les expériences|打开实验|Abrir experimentos|Experimente öffnen
+Open note|فتح الملاحظة|Abrir nota|Ouvrir la note|打开笔记|Abrir nota|Notiz öffnen
+Open session|فتح الجلسة|Abrir sesión|Ouvrir la séance|打开学习记录|Abrir sessão|Sitzung öffnen
+Open session →|فتح الجلسة →|Abrir sesión →|Ouvrir la séance →|打开学习记录 →|Abrir sessão →|Sitzung öffnen →
+Open view|فتح العرض|Abrir vista|Ouvrir la vue|打开视图|Abrir visualização|Ansicht öffnen
+Other answers|الإجابات الأخرى|Otras respuestas|Autres réponses|其他回答|Outras respostas|Andere Antworten
+Other answers: {value0}|الإجابات الأخرى: {value0}|Otras respuestas: {value0}|Autres réponses : {value0}|其他回答：{value0}|Outras respostas: {value0}|Andere Antworten: {value0}
+Other sessions|الجلسات الأخرى|Otras sesiones|Autres séances|其他学习|Outras sessões|Andere Sitzungen
+Other…|أخرى…|Otra…|Autre…|其他…|Outra…|Andere…
+Past the target|بعد المدة المستهدفة|Más allá del objetivo|Au-delà de la durée cible|超过目标时长|Além da meta|Über der Zieldauer
+Pen width|سمك القلم|Grosor del lápiz|Épaisseur du trait|笔触粗细|Espessura da caneta|Stiftbreite
+Per activity|لكل نشاط|Por actividad|Par activité|按活动|Por atividade|Je Tätigkeit
+Per subject|لكل مادة|Por materia|Par matière|按科目|Por matéria|Je Fach
+Pin to Home|تثبيت في الرئيسية|Fijar en Inicio|Épingler à l’accueil|固定到主页|Fixar no Início|An Startseite anheften
+Pinned|مثبّت|Fijado|Épinglé|已固定|Fixado|Angeheftet
+Pinned to Home|مثبّت في الرئيسية|Fijado en Inicio|Épinglé à l’accueil|已固定到主页|Fixado no Início|An Startseite angeheftet
+Plan an experiment|تخطيط تجربة|Planificar experimento|Planifier une expérience|计划实验|Planejar experimento|Experiment planen
+Plan one change|تخطيط تغيير واحد|Planificar un cambio|Planifier un changement|计划一项改变|Planejar uma mudança|Eine Änderung planen
+Planned|مخطط|Planificado|Planifié|已计划|Planejado|Geplant
+Preview|معاينة|Vista previa|Aperçu|预览|Prévia|Vorschau
+Preview {value0}|معاينة {value0}|Vista previa de {value0}|Aperçu de {value0}|预览 {value0}|Prévia de {value0}|Vorschau: {value0}
+Prior knowledge|المعرفة السابقة|Conocimientos previos|Connaissances préalables|已有知识|Conhecimento prévio|Vorwissen
+Privacy & local data|الخصوصية والبيانات المحلية|Privacidad y datos locales|Confidentialité et données locales|隐私与本地数据|Privacidade e dados locais|Datenschutz und lokale Daten
+Progress unit|وحدة التقدم|Unidad de progreso|Unité de progression|进度单位|Unidade de progresso|Fortschrittseinheit
+Question|السؤال|Pregunta|Question|问题|Pergunta|Frage
+Question frequency|تكرار السؤال|Frecuencia de la pregunta|Fréquence de la question|提问频率|Frequência da pergunta|Fragehäufigkeit
+Quick session note|ملاحظة سريعة للجلسة|Nota rápida de la sesión|Note rapide de séance|本次学习速记|Nota rápida da sessão|Kurze Sitzungsnotiz
+Ready to review|جاهز للمراجعة|Listo para revisar|Prêt à revoir|可以回顾|Pronto para revisar|Bereit zum Überprüfen
+Recalled:|ما استرجعته:|Recordado:|Rappelé de mémoire :|回忆内容：|Recordado:|Erinnert:
+Redo|إعادة|Rehacer|Rétablir|重做|Refazer|Wiederholen
+Refine|تضييق البحث|Afinar|Affiner|细化|Refinar|Eingrenzen
+Remove it|إزالته|Eliminarlo|Retirer|移除|Remover|Entfernen
+Remove preset|إزالة الإعداد المسبق|Eliminar preajuste|Retirer le préréglage|移除预设|Remover predefinição|Voreinstellung entfernen
+Remove range|إزالة النطاق|Eliminar intervalo|Retirer la plage|移除区间|Remover intervalo|Bereich entfernen
+Rename…|إعادة تسمية…|Renombrar…|Renommer…|重命名…|Renomear…|Umbenennen…
+Rename and colour…|إعادة تسمية وتغيير اللون…|Renombrar y cambiar color…|Renommer et changer la couleur…|重命名与改色…|Renomear e mudar a cor…|Umbenennen und färben…
+Report month|شهر التقرير|Mes del informe|Mois du rapport|报告月份|Mês do relatório|Berichtsmonat
+Resisted|قاومت التشتت|Distracción resistida|Distraction évitée|已抵制分心|Distração resistida|Ablenkung widerstanden
+Rest ended early|انتهت الاستراحة مبكرًا|Descanso terminado antes|Pause terminée plus tôt|休息提前结束|Descanso encerrado antes|Pause vorzeitig beendet
+Rest length|مدة الاستراحة|Duración del descanso|Durée de la pause|休息时长|Duração do descanso|Pausendauer
+Restore finding|استعادة النتيجة|Restaurar hallazgo|Rétablir le constat|恢复发现|Restaurar descoberta|Erkenntnis wiederherstellen
+Restore group|استعادة المجموعة|Restaurar grupo|Restaurer le groupe|恢复分组|Restaurar grupo|Gruppe wiederherstellen
+Restore question|استعادة السؤال|Restaurar pregunta|Restaurer la question|恢复问题|Restaurar pergunta|Frage wiederherstellen
+Review experiments|مراجعة التجارب|Revisar experimentos|Revoir les expériences|回顾实验|Revisar experimentos|Experimente überprüfen
+Review saved.|حُفظت المراجعة.|Revisión guardada.|Bilan enregistré.|回顾已保存。|Revisão salva.|Rückblick gespeichert.
+Review week|أسبوع المراجعة|Semana de revisión|Semaine du bilan|回顾周|Semana da revisão|Rückblickwoche
+Review:|مراجعة:|Revisión:|Bilan :|回顾：|Revisão:|Rückblick:
+Revisit your learning|عُد إلى ما تعلّمته|Repasa lo aprendido|Revenez sur vos apprentissages|重温所学|Revisite o que aprendeu|Gelerntes wiederholen
+Save and finish studying|حفظ وإنهاء الدراسة|Guardar y terminar el estudio|Enregistrer et terminer l’étude|保存并结束学习|Salvar e encerrar o estudo|Speichern und Lernen beenden
+Save and send|حفظ وإرسال|Guardar y enviar|Enregistrer et envoyer|保存并发送|Salvar e enviar|Speichern und senden
+Save current view|حفظ العرض الحالي|Guardar vista actual|Enregistrer la vue actuelle|保存当前视图|Salvar visualização atual|Aktuelle Ansicht speichern
+Save experiment|حفظ التجربة|Guardar experimento|Enregistrer l’expérience|保存实验|Salvar experimento|Experiment speichern
+Save for today|حفظ لليوم|Guardar para hoy|Enregistrer pour aujourd’hui|保存到今天|Salvar para hoje|Für heute speichern
+Save for {value0}|حفظ لـ {value0}|Guardar para {value0}|Enregistrer pour {value0}|保存到 {value0}|Salvar para {value0}|Für {value0} speichern
+Save preset|حفظ الإعداد المسبق|Guardar preajuste|Enregistrer le préréglage|保存预设|Salvar predefinição|Voreinstellung speichern
+Save rule|حفظ القاعدة|Guardar regla|Enregistrer la règle|保存规则|Salvar regra|Regel speichern
+Save weekly review|حفظ مراجعة الأسبوع|Guardar revisión semanal|Enregistrer le bilan hebdomadaire|保存每周回顾|Salvar revisão semanal|Wochenrückblick speichern
+Saved notes|الملاحظات المحفوظة|Notas guardadas|Notes enregistrées|已保存笔记|Notas salvas|Gespeicherte Notizen
+Saved recall copy|نسخة الاسترجاع المحفوظة|Copia del recuerdo guardada|Copie du rappel enregistrée|已保存的回忆副本|Cópia da recordação salva|Gespeicherte Kopie der Erinnerungsübung
+Saved study whiteboard|لوحة الدراسة المحفوظة|Pizarra de estudio guardada|Tableau d’étude enregistré|已保存的学习白板|Quadro de estudo salvo|Gespeicherte Lerntafel
+Saved to|حُفظ في|Guardado en|Enregistré dans|已保存到|Salvo em|Gespeichert unter
+Search history|البحث في السجل|Buscar en el historial|Rechercher dans l’historique|搜索历史记录|Buscar no histórico|Verlauf durchsuchen
+Search notes…|البحث في الملاحظات…|Buscar notas…|Rechercher des notes…|搜索笔记…|Buscar notas…|Notizen suchen…
+Search saved notes…|البحث في الملاحظات المحفوظة…|Buscar notas guardadas…|Rechercher des notes enregistrées…|搜索已保存笔记…|Buscar notas salvas…|Gespeicherte Notizen suchen…
+Search recall and session notes…|البحث في الاسترجاع وملاحظات الجلسات…|Buscar en recuerdos y notas de sesión…|Rechercher dans les rappels et notes de séance…|搜索回忆与学习笔记…|Buscar em recordações e notas de sessão…|Erinnerungs- und Sitzungsnotizen suchen…
+Select|تحديد|Seleccionar|Sélectionner|选择|Selecionar|Auswählen
+Select none|إلغاء التحديد|No seleccionar nada|Tout désélectionner|取消全选|Desmarcar tudo|Keine auswählen
+Select all detected|تحديد كل المكتشف|Seleccionar todo lo detectado|Sélectionner tous les éléments détectés|选择所有检测项|Selecionar todos os detectados|Alle erkannten auswählen
+Selected range|النطاق المحدد|Intervalo seleccionado|Plage sélectionnée|所选区间|Intervalo selecionado|Gewählter Bereich
+Send failed · saved locally|تعذّر الإرسال · محفوظة محليًا|Error al enviar · guardado localmente|Échec de l’envoi · enregistré localement|发送失败 · 已保存在本地|Falha no envio · salvo localmente|Senden fehlgeschlagen · lokal gespeichert
+Sent|تم الإرسال|Enviado|Envoyé|已发送|Enviado|Gesendet
+Session goal|هدف الجلسة|Objetivo de la sesión|Objectif de séance|本次学习目标|Objetivo da sessão|Sitzungsziel
+Sessions|الجلسات|Sesiones|Séances|学习记录|Sessões|Sitzungen
+Settings pages|صفحات الإعدادات|Páginas de ajustes|Pages des paramètres|设置页面|Páginas de configurações|Einstellungsseiten
+Several choices|اختيارات متعددة|Varias opciones|Plusieurs choix|多选|Várias opções|Mehrere Auswahlmöglichkeiten
+Show|إظهار|Mostrar|Afficher|显示|Mostrar|Anzeigen
+Show 50 more|عرض 50 إضافية|Mostrar 50 más|Afficher 50 de plus|再显示 50 条|Mostrar mais 50|50 weitere anzeigen
+Show all {value0}|عرض الكل ({value0})|Mostrar todo ({value0})|Tout afficher ({value0})|显示全部 {value0} 项|Mostrar tudo ({value0})|Alle {value0} anzeigen
+Show all {value0} options|عرض كل الخيارات ({value0})|Mostrar las {value0} opciones|Afficher les {value0} options|显示全部 {value0} 个选项|Mostrar todas as {value0} opções|Alle {value0} Optionen anzeigen
+Show archived|عرض المؤرشف|Mostrar archivados|Afficher les archives|显示已归档|Mostrar arquivados|Archivierte anzeigen
+Show done|عرض المكتمل|Mostrar completados|Afficher les éléments terminés|显示已完成|Mostrar concluídos|Erledigte anzeigen
+Show the floating panel|إظهار اللوحة العائمة|Mostrar panel flotante|Afficher le panneau flottant|显示悬浮面板|Mostrar painel flutuante|Schwebende Leiste anzeigen
+Show the top 10|عرض أعلى 10|Mostrar los 10 primeros|Afficher les 10 premiers|显示前 10 项|Mostrar os 10 primeiros|Die ersten 10 anzeigen
+Showing|المعروض|Mostrando|Affichage|正在显示|Mostrando|Angezeigt
+Simple|بسيط|Simple|Simple|简洁|Simples|Einfach
+Skipped for today|تم التخطي لليوم|Omitido por hoy|Ignoré pour aujourd’hui|今天已跳过|Ignorado por hoje|Für heute übersprungen
+Slider|شريط تمرير|Control deslizante|Curseur|滑块|Controle deslizante|Schieberegler
+Spacing|التباعد|Espaciado|Espacement|间距|Espaçamento|Abstände
+Start session|بدء جلسة|Iniciar sesión de estudio|Commencer une séance|开始学习|Iniciar sessão de estudo|Sitzung starten
+Started at|بدأت في|Comenzó a las|Début à|开始于|Começou às|Gestartet um
+Stats companion|مساعد الإحصاءات|Asistente de estadísticas|Assistant de statistiques|统计助手|Assistente de estatísticas|Statistikassistent
+Stats companion workspace|مساحة مساعد الإحصاءات|Espacio del asistente de estadísticas|Espace de l’assistant de statistiques|统计助手工作区|Espaço do assistente de estatísticas|Arbeitsbereich des Statistikassistenten
+Stats sections|أقسام الإحصاءات|Secciones de estadísticas|Sections des statistiques|统计分区|Seções das estatísticas|Statistikbereiche
+Status|الحالة|Estado|État|状态|Status|Status
+Stuck marker|علامة تعثّر|Marca de bloqueo|Repère de blocage|卡住标记|Marcador de dificuldade|Markierung einer schwierigen Stelle
+Stuck markers|علامات التعثّر|Marcas de bloqueo|Repères de blocage|卡住标记|Marcadores de dificuldade|Markierungen schwieriger Stellen
+Study|دراسة|Estudio|Étude|学习|Estudo|Lernen
+Study Journal|دفتر الدراسة|Diario de estudio|Journal d’étude|学习日志|Diário de estudo|Lerntagebuch
+Study methods|أساليب الدراسة|Métodos de estudio|Méthodes d’étude|学习方法|Métodos de estudo|Lernmethoden
+Study note text|نص ملاحظة الدراسة|Texto de la nota de estudio|Texte de la note d’étude|学习笔记正文|Texto da nota de estudo|Text der Lernnotiz
+Study notes|ملاحظات الدراسة|Notas de estudio|Notes d’étude|学习笔记|Notas de estudo|Lernnotizen
+Sub-categories|الفئات الفرعية|Subcategorías|Sous-catégories|子分类|Subcategorias|Unterkategorien
+Subject|المادة|Materia|Matière|科目|Matéria|Fach
+Summary, calendar & charts|الملخص والتقويم والرسوم|Resumen, calendario y gráficos|Résumé, calendrier et graphiques|摘要、日历与图表|Resumo, calendário e gráficos|Übersicht, Kalender und Diagramme
+Switch from {value0} to {value1}|التبديل من {value0} إلى {value1}|Cambiar de {value0} a {value1}|Passer de {value0} à {value1}|从 {value0} 切换到 {value1}|Trocar de {value0} para {value1}|Von {value0} zu {value1} wechseln
+Switch now|التبديل الآن|Cambiar ahora|Changer maintenant|立即切换|Trocar agora|Jetzt wechseln
+Switch to|التبديل إلى|Cambiar a|Passer à|切换到|Trocar para|Wechseln zu
+Target:|المدة المستهدفة:|Duración objetivo:|Durée cible :|目标时长：|Duração-alvo:|Zieldauer:
+The end must come after the start.|يجب أن يكون وقت الانتهاء بعد وقت البدء.|El final debe ser posterior al inicio.|La fin doit être postérieure au début.|结束时间必须晚于开始时间。|O fim deve ser posterior ao início.|Das Ende muss nach dem Beginn liegen.
+This month|هذا الشهر|Este mes|Ce mois-ci|本月|Este mês|Diesen Monat
+This week|هذا الأسبوع|Esta semana|Cette semaine|本周|Esta semana|Diese Woche
+This year|هذا العام|Este año|Cette année|今年|Este ano|Dieses Jahr
+Thoughts you parked|الأفكار التي دوّنتها لوقت لاحق|Ideas que aparcaste|Idées mises de côté|暂存的想法|Ideias que você guardou|Gemerkte Gedanken
+Time|الوقت|Tiempo|Temps|时间|Tempo|Zeit
+Time lost|الوقت المفقود|Tiempo perdido|Temps perdu|损失时间|Tempo perdido|Verlorene Zeit
+Time lost by reason|الوقت المفقود حسب السبب|Tiempo perdido por motivo|Temps perdu par motif|按原因统计损失时间|Tempo perdido por motivo|Verlorene Zeit nach Grund
+Time of day|وقت اليوم|Hora del día|Moment de la journée|一天中的时段|Horário do dia|Tageszeit
+Time per subject|الوقت لكل مادة|Tiempo por materia|Temps par matière|各科目用时|Tempo por matéria|Zeit je Fach
+Time per week|الوقت أسبوعيًا|Tiempo por semana|Temps par semaine|每周用时|Tempo por semana|Zeit pro Woche
+Timer mode|وضع المؤقت|Modo de temporizador|Mode du minuteur|计时模式|Modo do cronômetro|Timermodus
+Title|العنوان|Título|Titre|标题|Título|Titel
+To review|للمراجعة|Para revisar|À revoir|待回顾|Para revisar|Zu überprüfen
+Top level|المستوى الأعلى|Nivel superior|Niveau principal|顶层|Nível superior|Oberste Ebene
+Total (optional)|الإجمالي (اختياري)|Total (opcional)|Total (facultatif)|总量（可选）|Total (opcional)|Gesamtmenge (optional)
+Total reached|تم بلوغ الإجمالي|Total alcanzado|Total atteint|已达到总量|Total atingido|Gesamtmenge erreicht
+Try again|إعادة المحاولة|Volver a intentar|Réessayer|重试|Tentar novamente|Erneut versuchen
+Try writing an answer…|جرّب كتابة إجابة…|Prueba a escribir una respuesta…|Essayez de rédiger une réponse…|试着写下答案…|Tente escrever uma resposta…|Versuche, eine Antwort zu schreiben…
+Try your rest rules|تجربة قواعد الاستراحة|Probar reglas de descanso|Tester les règles de pause|试用休息规则|Testar regras de descanso|Pausenregeln ausprobieren
+Undo theme|التراجع عن النسق|Deshacer tema|Annuler le thème|撤销主题|Desfazer tema|Design rückgängig machen
+Unfinished study work|عمل دراسي غير مكتمل|Trabajo de estudio pendiente|Travail d’étude inachevé|未完成的学习任务|Trabalho de estudo pendente|Unfertige Lernarbeit
+Unpin {value0}|إلغاء تثبيت {value0}|Desfijar {value0}|Désépingler {value0}|取消固定 {value0}|Desafixar {value0}|{value0} lösen
+Untouched ratings excluded|التقييمات غير المعدّلة مستبعدة|Valoraciones sin modificar excluidas|Évaluations non modifiées exclues|已排除未调整评分|Avaliações não alteradas excluídas|Unveränderte Bewertungen ausgeschlossen
+Untouched ratings included|التقييمات غير المعدّلة مشمولة|Valoraciones sin modificar incluidas|Évaluations non modifiées incluses|已包含未调整评分|Avaliações não alteradas incluídas|Unveränderte Bewertungen eingeschlossen
+Update saved evidence|تحديث الأدلة المحفوظة|Actualizar evidencia guardada|Actualiser les données enregistrées|更新已保存证据|Atualizar evidências salvas|Gespeicherte Datenlage aktualisieren
+Update saved view|تحديث العرض المحفوظ|Actualizar vista guardada|Actualiser la vue enregistrée|更新已保存视图|Atualizar visualização salva|Gespeicherte Ansicht aktualisieren
+Use instead|استخدام بدلًا منه|Usar en su lugar|Utiliser à la place|改用|Usar no lugar|Stattdessen verwenden
+Use this setup|استخدام هذا الإعداد|Usar esta configuración|Utiliser cette configuration|使用此配置|Usar esta configuração|Diese Umgebung verwenden
+Vault folder|مجلد الخزينة|Carpeta de la bóveda|Dossier du coffre|仓库文件夹|Pasta do cofre|Tresorordner
+Vault name|اسم الخزينة|Nombre de la bóveda|Nom du coffre|仓库名称|Nome do cofre|Tresorname
+Vault name in Obsidian|اسم الخزينة في Obsidian|Nombre de la bóveda en Obsidian|Nom du coffre dans Obsidian|Obsidian 中的仓库名称|Nome do cofre no Obsidian|Tresorname in Obsidian
+Version {value0}|الإصدار {value0}|Versión {value0}|Version {value0}|版本 {value0}|Versão {value0}|Version {value0}
+View session|عرض الجلسة|Ver sesión|Voir la séance|查看学习记录|Ver sessão|Sitzung ansehen
+Weakest recall|أضعف استرجاع|Recuerdo más débil|Rappel le plus faible|最薄弱的回忆|Recordação mais fraca|Schwächste Erinnerung
+Weekly decisions|قرارات الأسبوع|Decisiones semanales|Décisions de la semaine|每周决定|Decisões semanais|Wöchentliche Entscheidungen
+Weekly next step|الخطوة التالية للأسبوع|Próximo paso semanal|Prochaine étape de la semaine|下周行动|Próximo passo semanal|Nächster Schritt für die Woche
+Weekly reflection|تأملات الأسبوع|Reflexión semanal|Réflexion hebdomadaire|每周反思|Reflexão semanal|Wöchentliche Reflexion
+What did you learn this week?|ماذا تعلّمت هذا الأسبوع؟|¿Qué aprendiste esta semana?|Qu’avez-vous appris cette semaine ?|本周学到了什么？|O que você aprendeu nesta semana?|Was hast du diese Woche gelernt?
+What this review includes|ما تشمله هذه المراجعة|Qué incluye esta revisión|Contenu de ce bilan|本次回顾包含什么|O que esta revisão inclui|Inhalt dieses Rückblicks
+Where|أين|Dónde|Lieu|地点|Onde|Wo
+Within the same subject|ضمن المادة نفسها|Dentro de la misma materia|Au sein de la même matière|在同一科目内|Dentro da mesma matéria|Innerhalb desselben Fachs
+Within-subject comparisons|مقارنات ضمن المادة نفسها|Comparaciones dentro de cada materia|Comparaisons au sein d’une matière|科目内比较|Comparações dentro da mesma matéria|Vergleiche innerhalb eines Fachs
+Word in the title|كلمة في العنوان|Palabra en el título|Mot dans le titre|标题中的词|Palavra no título|Wort im Titel
+Write in FocusRecall|الكتابة في FocusRecall|Escribir en FocusRecall|Écrire dans FocusRecall|在 FocusRecall 中书写|Escrever no FocusRecall|In FocusRecall schreiben
+Writing background|خلفية الكتابة|Fondo de escritura|Fond de la zone de saisie|书写区背景|Fundo da escrita|Schreibhintergrund
+Writing text|نص الكتابة|Texto de escritura|Texte saisi|书写区文字|Texto da escrita|Schreibtext
+Year after|العام التالي|Año siguiente|Année suivante|后一年|Ano seguinte|Nächstes Jahr
+Year before|العام السابق|Año anterior|Année précédente|前一年|Ano anterior|Vorheriges Jahr
+Yes|نعم|Sí|Oui|是|Sim|Ja
+Yes, a distraction|نعم، تشتت|Sí, una distracción|Oui, une distraction|是，属于分心|Sim, uma distração|Ja, eine Ablenkung
+Yes, distractions|نعم، تشتت|Sí, distracciones|Oui, des distractions|是，属于分心|Sim, distrações|Ja, Ablenkungen
+You marked this for review|وضعت علامة على هذا للمراجعة|Marcaste esto para revisar|Vous avez marqué ceci comme étant à revoir|你已将此项标记为待回顾|Você marcou isto para revisar|Du hast dies zum Überprüfen markiert
+You picked Other. What was it?|اخترت «أخرى». ما السبب؟|Elegiste Otra. ¿Cuál fue?|Vous avez choisi Autre. De quoi s’agissait-il ?|你选择了“其他”。具体是什么？|Você escolheu Outra. O que foi?|Du hast Andere gewählt. Was war es?
+You stopped at|توقفت في|Te detuviste a las|Vous vous êtes arrêté à|你停止于|Você parou às|Du hast aufgehört um
+You were away|كنت غائبًا|Estuviste ausente|Vous étiez absent|你离开了|Você esteve ausente|Du warst weg
+Your current view:|عرضك الحالي:|Tu vista actual:|Votre vue actuelle :|当前视图：|Sua visualização atual:|Deine aktuelle Ansicht:
+Your session timeline|الخط الزمني لجلستك|Cronología de tu sesión|Chronologie de votre séance|本次学习时间线|Linha do tempo da sua sessão|Dein Sitzungsverlauf
+Your strongest time windows|أوقات تركيزك الأكثر دعمًا بالسجلات|Tus franjas de concentración más respaldadas|Vos créneaux de concentration les mieux étayés|记录支持最充分的专注时段|Seus horários de foco mais sustentados|Deine am stärksten gestützten Fokuszeiten
+Your study story starts here|تبدأ قصة دراستك هنا|Tu historia de estudio empieza aquí|Votre parcours d’étude commence ici|你的学习历程从这里开始|Sua história de estudo começa aqui|Deine Lerngeschichte beginnt hier
+Your week in focus|أسبوعك في التركيز|Tu semana de concentración|Votre semaine de concentration|本周专注概览|Sua semana de foco|Deine Woche im Fokus

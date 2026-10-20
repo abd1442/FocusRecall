@@ -1,0 +1,5 @@
+.stats-workspace { position: relative; min-width: 0; }
+.stats-companion { position: absolute; inset: 0 0 0 auto; z-index: 20; width: min(34rem, 95%); display: flex; flex-direction: column; background: var(--tf-surface); border-left: 1px solid var(--tf-border); box-shadow: -12px 0 36px #0002; }
+.stats-companion[hidden] { display: none; }
+.stats-companion input, .stats-companion select { max-width: 100%; }
+@media (min-width: 1700px) { .stats-workspace-open { padding-right: 34rem; } }

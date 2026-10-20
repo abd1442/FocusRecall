@@ -1,2 +1,3 @@
 # Preserve exact corresponding-source bytes and release-manifest hashes.
 corresponding-source/** -text
+platform-source/** -text

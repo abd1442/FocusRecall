@@ -1,0 +1,727 @@
+{
+ "paper-auto": [
+  "ivory-ink",
+  "ink-dim",
+  "theme"
+ ],
+ "paper-light": [
+  "ivory-ink",
+  "ink-dim",
+  "theme"
+ ],
+ "paper-dark": [
+  "ivory-ink",
+  "ink-dim",
+  "theme"
+ ],
+ "paper-light-dark": [
+  "ivory-ink",
+  "ink-dim",
+  "inverse"
+ ],
+ "paper-dark-light": [
+  "ivory-ink",
+  "ink-dim",
+  "inverse"
+ ],
+ "sage-auto": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "sage-light": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "sage-dark": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "sage-paper-dark": [
+  "ivory-ink",
+  "evergreen",
+  "inverse"
+ ],
+ "sage-dark-paper": [
+  "ivory-ink",
+  "evergreen",
+  "inverse"
+ ],
+ "sage-reverse-auto": [
+  "celadon",
+  "evergreen",
+  "inverse"
+ ],
+ "approved-01": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "approved-02": [
+  "wisteria",
+  "indigo-hour",
+  "theme"
+ ],
+ "approved-03": [
+  "lagoon",
+  "deep-sea",
+  "theme"
+ ],
+ "approved-04": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "approved-05": [
+  "saffron",
+  "ink-brass",
+  "theme"
+ ],
+ "approved-06": [
+  "rosewater",
+  "aubergine",
+  "theme"
+ ],
+ "approved-07": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "approved-08": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "approved-09": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ],
+ "approved-10": [
+  "ivory-ink",
+  "graphite-night",
+  "theme"
+ ],
+ "approved-11": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "approved-12": [
+  "wisteria",
+  "indigo-hour",
+  "theme"
+ ],
+ "approved-13": [
+  "lagoon",
+  "deep-sea",
+  "theme"
+ ],
+ "approved-14": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "approved-15": [
+  "saffron",
+  "ink-brass",
+  "theme"
+ ],
+ "approved-16": [
+  "rosewater",
+  "aubergine",
+  "theme"
+ ],
+ "approved-17": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "approved-18": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "approved-19": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ],
+ "approved-20": [
+  "graphite",
+  "graphite-night",
+  "theme"
+ ],
+ "approved-21": [
+  "library",
+  "espresso",
+  "inverse"
+ ],
+ "approved-22": [
+  "wisteria",
+  "indigo-hour",
+  "inverse"
+ ],
+ "approved-23": [
+  "lagoon",
+  "deep-sea",
+  "inverse"
+ ],
+ "approved-24": [
+  "cobalt",
+  "graphite-night",
+  "inverse"
+ ],
+ "approved-25": [
+  "saffron",
+  "ink-brass",
+  "inverse"
+ ],
+ "approved-26": [
+  "rosewater",
+  "aubergine",
+  "inverse"
+ ],
+ "approved-27": [
+  "terracotta",
+  "espresso",
+  "inverse"
+ ],
+ "approved-28": [
+  "celadon",
+  "evergreen",
+  "inverse"
+ ],
+ "approved-29": [
+  "wisteria",
+  "aubergine",
+  "inverse"
+ ],
+ "approved-30": [
+  "graphite",
+  "graphite-night",
+  "inverse"
+ ],
+ "approved-31": [
+  "library",
+  "espresso",
+  "accent"
+ ],
+ "approved-32": [
+  "wisteria",
+  "indigo-hour",
+  "accent"
+ ],
+ "approved-33": [
+  "lagoon",
+  "deep-sea",
+  "accent"
+ ],
+ "approved-34": [
+  "cobalt",
+  "graphite-night",
+  "accent"
+ ],
+ "approved-35": [
+  "saffron",
+  "ink-brass",
+  "accent"
+ ],
+ "approved-36": [
+  "rosewater",
+  "aubergine",
+  "accent"
+ ],
+ "approved-37": [
+  "terracotta",
+  "espresso",
+  "accent"
+ ],
+ "approved-38": [
+  "celadon",
+  "evergreen",
+  "accent"
+ ],
+ "approved-39": [
+  "wisteria",
+  "aubergine",
+  "accent"
+ ],
+ "approved-40": [
+  "graphite",
+  "graphite-night",
+  "accent"
+ ],
+ "approved-41": [
+  "library",
+  "espresso",
+  "accent"
+ ],
+ "approved-42": [
+  "wisteria",
+  "indigo-hour",
+  "accent"
+ ],
+ "approved-43": [
+  "lagoon",
+  "deep-sea",
+  "accent"
+ ],
+ "approved-44": [
+  "cobalt",
+  "graphite-night",
+  "accent"
+ ],
+ "approved-45": [
+  "saffron",
+  "ink-brass",
+  "accent"
+ ],
+ "approved-46": [
+  "rosewater",
+  "aubergine",
+  "accent"
+ ],
+ "approved-47": [
+  "terracotta",
+  "espresso",
+  "accent"
+ ],
+ "approved-48": [
+  "celadon",
+  "evergreen",
+  "accent"
+ ],
+ "approved-49": [
+  "wisteria",
+  "aubergine",
+  "accent"
+ ],
+ "approved-50": [
+  "graphite",
+  "graphite-night",
+  "accent"
+ ],
+ "journal": [
+  "ivory-ink",
+  "evergreen",
+  "theme"
+ ],
+ "clay": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "olive": [
+  "matcha",
+  "lichen",
+  "theme"
+ ],
+ "cocoa": [
+  "saffron",
+  "espresso",
+  "theme"
+ ],
+ "original": [
+  "ivory-ink",
+  "graphite-night",
+  "theme"
+ ],
+ "refined": [
+  "ivory-ink",
+  "ink-rail",
+  "theme"
+ ],
+ "porcelain": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "linen": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "slate": [
+  "graphite",
+  "graphite-night",
+  "theme"
+ ],
+ "midnight": [
+  "lagoon",
+  "indigo-hour",
+  "theme"
+ ],
+ "sage": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "iris": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ],
+ "windows-paper-light": [
+  "ivory-ink",
+  "ink-dim",
+  "theme"
+ ],
+ "windows-paper-dark": [
+  "ivory-ink",
+  "ink-dim",
+  "theme"
+ ],
+ "windows-paper-light-dark": [
+  "ivory-ink",
+  "ink-dim",
+  "inverse"
+ ],
+ "windows-paper-dark-light": [
+  "ivory-ink",
+  "ink-dim",
+  "inverse"
+ ],
+ "windows-sage-auto": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-sage-light": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-sage-dark": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-sage-paper-dark": [
+  "ivory-ink",
+  "evergreen",
+  "inverse"
+ ],
+ "windows-sage-dark-paper": [
+  "ivory-ink",
+  "evergreen",
+  "inverse"
+ ],
+ "windows-sage-reverse-auto": [
+  "celadon",
+  "evergreen",
+  "inverse"
+ ],
+ "windows-approved-01": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "windows-approved-02": [
+  "wisteria",
+  "indigo-hour",
+  "theme"
+ ],
+ "windows-approved-03": [
+  "lagoon",
+  "deep-sea",
+  "theme"
+ ],
+ "windows-approved-04": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-approved-05": [
+  "saffron",
+  "ink-brass",
+  "theme"
+ ],
+ "windows-approved-06": [
+  "rosewater",
+  "aubergine",
+  "theme"
+ ],
+ "windows-approved-07": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "windows-approved-08": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-approved-09": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ],
+ "windows-approved-10": [
+  "ivory-ink",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-approved-11": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "windows-approved-12": [
+  "wisteria",
+  "indigo-hour",
+  "theme"
+ ],
+ "windows-approved-13": [
+  "lagoon",
+  "deep-sea",
+  "theme"
+ ],
+ "windows-approved-14": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-approved-15": [
+  "saffron",
+  "ink-brass",
+  "theme"
+ ],
+ "windows-approved-16": [
+  "rosewater",
+  "aubergine",
+  "theme"
+ ],
+ "windows-approved-17": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "windows-approved-18": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-approved-19": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ],
+ "windows-approved-20": [
+  "graphite",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-approved-21": [
+  "library",
+  "espresso",
+  "inverse"
+ ],
+ "windows-approved-22": [
+  "wisteria",
+  "indigo-hour",
+  "inverse"
+ ],
+ "windows-approved-23": [
+  "lagoon",
+  "deep-sea",
+  "inverse"
+ ],
+ "windows-approved-24": [
+  "cobalt",
+  "graphite-night",
+  "inverse"
+ ],
+ "windows-approved-25": [
+  "saffron",
+  "ink-brass",
+  "inverse"
+ ],
+ "windows-approved-26": [
+  "rosewater",
+  "aubergine",
+  "inverse"
+ ],
+ "windows-approved-27": [
+  "terracotta",
+  "espresso",
+  "inverse"
+ ],
+ "windows-approved-28": [
+  "celadon",
+  "evergreen",
+  "inverse"
+ ],
+ "windows-approved-29": [
+  "wisteria",
+  "aubergine",
+  "inverse"
+ ],
+ "windows-approved-30": [
+  "graphite",
+  "graphite-night",
+  "inverse"
+ ],
+ "windows-approved-31": [
+  "library",
+  "espresso",
+  "accent"
+ ],
+ "windows-approved-32": [
+  "wisteria",
+  "indigo-hour",
+  "accent"
+ ],
+ "windows-approved-33": [
+  "lagoon",
+  "deep-sea",
+  "accent"
+ ],
+ "windows-approved-34": [
+  "cobalt",
+  "graphite-night",
+  "accent"
+ ],
+ "windows-approved-35": [
+  "saffron",
+  "ink-brass",
+  "accent"
+ ],
+ "windows-approved-36": [
+  "rosewater",
+  "aubergine",
+  "accent"
+ ],
+ "windows-approved-37": [
+  "terracotta",
+  "espresso",
+  "accent"
+ ],
+ "windows-approved-38": [
+  "celadon",
+  "evergreen",
+  "accent"
+ ],
+ "windows-approved-39": [
+  "wisteria",
+  "aubergine",
+  "accent"
+ ],
+ "windows-approved-40": [
+  "graphite",
+  "graphite-night",
+  "accent"
+ ],
+ "windows-approved-41": [
+  "library",
+  "espresso",
+  "accent"
+ ],
+ "windows-approved-42": [
+  "wisteria",
+  "indigo-hour",
+  "accent"
+ ],
+ "windows-approved-43": [
+  "lagoon",
+  "deep-sea",
+  "accent"
+ ],
+ "windows-approved-44": [
+  "cobalt",
+  "graphite-night",
+  "accent"
+ ],
+ "windows-approved-45": [
+  "saffron",
+  "ink-brass",
+  "accent"
+ ],
+ "windows-approved-46": [
+  "rosewater",
+  "aubergine",
+  "accent"
+ ],
+ "windows-approved-47": [
+  "terracotta",
+  "espresso",
+  "accent"
+ ],
+ "windows-approved-48": [
+  "celadon",
+  "evergreen",
+  "accent"
+ ],
+ "windows-approved-49": [
+  "wisteria",
+  "aubergine",
+  "accent"
+ ],
+ "windows-approved-50": [
+  "graphite",
+  "graphite-night",
+  "accent"
+ ],
+ "windows-journal": [
+  "ivory-ink",
+  "evergreen",
+  "theme"
+ ],
+ "windows-clay": [
+  "terracotta",
+  "espresso",
+  "theme"
+ ],
+ "windows-olive": [
+  "matcha",
+  "lichen",
+  "theme"
+ ],
+ "windows-cocoa": [
+  "saffron",
+  "espresso",
+  "theme"
+ ],
+ "windows-original": [
+  "ivory-ink",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-refined": [
+  "ivory-ink",
+  "ink-rail",
+  "theme"
+ ],
+ "windows-porcelain": [
+  "cobalt",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-linen": [
+  "library",
+  "espresso",
+  "theme"
+ ],
+ "windows-slate": [
+  "graphite",
+  "graphite-night",
+  "theme"
+ ],
+ "windows-midnight": [
+  "lagoon",
+  "indigo-hour",
+  "theme"
+ ],
+ "windows-sage": [
+  "celadon",
+  "evergreen",
+  "theme"
+ ],
+ "windows-iris": [
+  "wisteria",
+  "aubergine",
+  "theme"
+ ]
+}

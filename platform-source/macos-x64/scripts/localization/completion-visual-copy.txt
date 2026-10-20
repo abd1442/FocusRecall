@@ -1,0 +1,67 @@
+, average {value} of five|، المتوسط {value} من خمسة|, promedio {value} de cinco|, moyenne {value} sur cinq|，平均 {value}/5|, média {value} de cinco|, Durchschnitt {value} von fünf
+, needs five|، يلزم خمسة تقييمات|, requiere cinco valoraciones|, cinq évaluations nécessaires|，需五条评分|, precisa de cinco avaliações|, benötigt fünf Bewertungen
+{base} / {accent}|{base} / {accent}|{base} / {accent}|{base} / {accent}|{base} / {accent}|{base} / {accent}|{base} / {accent}
+{colour} · deep colour / light|{colour} · لون داكن / فاتح|{colour} · color intenso / claro|{colour} · couleur intense / clair|{colour} · 浓色 / 浅色|{colour} · cor intensa / claro|{colour} · kräftige Farbe / hell
+{colour} · pale colour / dark|{colour} · لون باهت / داكن|{colour} · color suave / oscuro|{colour} · couleur pâle / sombre|{colour} · 淡色 / 深色|{colour} · cor suave / escuro|{colour} · blasse Farbe / dunkel
+{colour} ink + white|حبر {colour} + أبيض|Tinta {colour} + blanco|Encre {colour} + blanc|{colour}墨色 + 白色|Tinta {colour} + branco|Tinte {colour} + Weiß
+{count} consecutive pairs · understanding of 4|أزواج متتالية: {count} · الفهم من 4|Pares consecutivos: {count} · comprensión sobre 4|Paires consécutives : {count} · compréhension sur 4|连续配对数：{count} · 理解评分满分 4|Pares consecutivos: {count} · compreensão de 4|Aufeinanderfolgende Paare: {count} · Verständnis von 4
+{date}: {duration} · sessions: {sessions} · subjects: {subjects}|{date}: {duration} · الجلسات: {sessions} · المواد: {subjects}|{date}: {duration} · sesiones: {sessions} · materias: {subjects}|{date} : {duration} · séances : {sessions} · matières : {subjects}|{date}：{duration} · 学习次数：{sessions} · 科目数：{subjects}|{date}: {duration} · sessões: {sessions} · matérias: {subjects}|{date}: {duration} · Sitzungen: {sessions} · Fächer: {subjects}
+{date}: nothing studied|{date}: لا دراسة مسجّلة|{date}: sin estudio registrado|{date} : aucune étude enregistrée|{date}：无学习记录|{date}: nenhum estudo registrado|{date}: nichts gelernt
+{label} colour picker|منتقي لون {label}|Selector de color de {label}|Sélecteur de couleur de {label}|{label}取色器|Seletor de cor de {label}|Farbwähler für {label}
+{label} hex colour|رمز لون {label} السداسي|Color hexadecimal de {label}|Couleur hexadécimale de {label}|{label}十六进制颜色|Cor hexadecimal de {label}|Hex-Farbe für {label}
+{name} colour theme|سمة ألوان {name}|Tema de color {name}|Thème de couleurs {name}|{name}配色主题|Tema de cores {name}|Farbthema {name}
+{sessions} sessions on {days} days|الجلسات: {sessions} · أيام الدراسة: {days}|Sesiones: {sessions} · días: {days}|Séances : {sessions} · jours : {days}|学习次数：{sessions} · 天数：{days}|Sessões: {sessions} · dias: {days}|Sitzungen: {sessions} · Tage: {days}
+After · {count} rated|بعد · التقييمات: {count}|Después · valoraciones: {count}|Après · évaluations : {count}|之后 · 评分数：{count}|Depois · avaliações: {count}|Nachher · Bewertungen: {count}
+against each subject’s usual|مقارنةً بالمعتاد في كل مادة|frente a lo habitual en cada materia|par rapport à la valeur habituelle de chaque matière|与各科目通常值比较|em comparação com o habitual de cada matéria|gegenüber dem üblichen Wert jedes Fachs
+Amber|كهرماني|Ámbar|Ambre|琥珀色|Âmbar|Bernstein
+Before · {count} rated|قبل · التقييمات: {count}|Antes · valoraciones: {count}|Avant · évaluations : {count}|之前 · 评分数：{count}|Antes · avaliações: {count}|Vorher · Bewertungen: {count}
+Calm|هادئ|Calma|Calme|宁静|Calmo|Ruhig
+change|تغيّر|cambio|variation|变化|mudança|Änderung
+Classic|كلاسيكي|Clásico|Classique|经典|Clássico|Klassisch
+Clay|طيني|Arcilla|Argile|陶土色|Argila|Ton
+Cobalt|كوبالتي|Cobalto|Cobalt|钴蓝色|Cobalto|Kobaltblau
+Colour-blind safe|ملائم لعمى الألوان|Apto para daltonismo|Adapté au daltonisme|色觉友好|Adequado para daltonismo|Bei Farbsehschwäche geeignet
+Crimson|قرمزي|Carmesí|Cramoisi|绯红色|Carmesim|Karminrot
+Distractions per session|حالات التشتّت لكل جلسة|Distracciones por sesión|Distractions par séance|每次学习的分心次数|Distrações por sessão|Ablenkungen pro Sitzung
+Dusk|غسق|Crepúsculo|Crépuscule|暮色|Crepúsculo|Dämmerung
+Emerald|زمردي|Esmeralda|Émeraude|翡翠绿|Esmeralda|Smaragd
+Forest|غابة|Bosque|Forêt|森林|Floresta|Wald
+Gold|ذهبي|Dorado|Or|金色|Dourado|Gold
+Graphite|غرافيتي|Grafito|Graphite|石墨色|Grafite|Graphit
+Iris|سوسن|Iris|Iris|鸢尾|Íris|Iris
+Journal|دفتر|Diario|Carnet|手账|Diário|Notizbuch
+Linen|كتّاني|Lino|Lin|亚麻色|Linho|Leinen
+Midnight|منتصف الليل|Medianoche|Minuit|午夜|Meia-noite|Mitternacht
+Navy|كحلي|Azul marino|Bleu marine|藏青色|Azul-marinho|Marineblau
+Needs 5|يلزم 5 تقييمات|Requiere 5 valoraciones|5 évaluations nécessaires|需 5 条评分|Precisa de 5 avaliações|Benötigt 5 Bewertungen
+Oat & Clay|شوفان وطين|Avena y arcilla|Avoine et argile|燕麦与陶土|Aveia e argila|Hafer und Ton
+Ocean|محيط|Océano|Océan|海洋|Oceano|Ozean
+Olive|زيتوني|Oliva|Olive|橄榄色|Oliva|Oliv
+Olive & Parchment|زيتوني ورقّي|Oliva y pergamino|Olive et parchemin|橄榄与羊皮纸|Oliva e pergaminho|Oliv und Pergament
+Original|الأصلي|Original|Original|原始|Original|Original
+Original Paper & Ink + Sage dark|ورق وحبر الأصلي + مريمي داكن|Papel y tinta original + salvia oscuro|Papier et encre d’origine + sauge sombre|原始纸与墨 + 深色鼠尾草|Papel e tinta original + sálvia escuro|Ursprüngliches Papier und Tinte + Salbei dunkel
+Paper & Ink · dark|ورق وحبر · داكن|Papel y tinta · oscuro|Papier et encre · sombre|纸与墨 · 深色|Papel e tinta · escuro|Papier und Tinte · dunkel
+Paper & Ink · dark sidebar / light|ورق وحبر · شريط جانبي داكن / فاتح|Papel y tinta · barra oscura / claro|Papier et encre · barre sombre / clair|纸与墨 · 深色侧栏 / 浅色|Papel e tinta · barra escura / claro|Papier und Tinte · dunkle Seitenleiste / hell
+Paper & Ink · light|ورق وحبر · فاتح|Papel y tinta · claro|Papier et encre · clair|纸与墨 · 浅色|Papel e tinta · claro|Papier und Tinte · hell
+Paper & Ink · light sidebar / dark|ورق وحبر · شريط جانبي فاتح / داكن|Papel y tinta · barra clara / oscuro|Papier et encre · barre claire / sombre|纸与墨 · 浅色侧栏 / 深色|Papel e tinta · barra clara / escuro|Papier und Tinte · helle Seitenleiste / dunkel
+Paper & Ink / Sage|ورق وحبر / مريمي|Papel y tinta / salvia|Papier et encre / sauge|纸与墨 / 鼠尾草|Papel e tinta / sálvia|Papier und Tinte / Salbei
+Pastel|باستيل|Pastel|Pastel|粉彩|Pastel|Pastell
+Plum|برقوقي|Ciruela|Prune|李紫色|Ameixa|Pflaume
+Porcelain|خزفي|Porcelana|Porcelaine|瓷白色|Porcelana|Porzellan
+Recall {value} / 5|الاسترجاع {value} / 5|Recuerdo {value} / 5|Rappel {value} / 5|回忆 {value}/5|Recordação {value} / 5|Abruf {value} / 5
+Refined|راقي|Refinado|Raffiné|雅致|Refinado|Fein abgestimmt
+Reverse · Sage dark + Paper & Ink|معكوس · مريمي داكن + ورق وحبر|Inverso · salvia oscuro + papel y tinta|Inversé · sauge sombre + papier et encre|反转 · 深色鼠尾草 + 纸与墨|Inverso · sálvia escuro + papel e tinta|Umgekehrt · Salbei dunkel + Papier und Tinte
+Rose|وردي|Rosa|Rose|玫瑰色|Rosa|Rosa
+Sage|مريمي|Salvia|Sauge|鼠尾草色|Sálvia|Salbei
+Sage · all dark|مريمي · داكن بالكامل|Salvia · todo oscuro|Sauge · tout sombre|鼠尾草 · 全深色|Sálvia · todo escuro|Salbei · ganz dunkel
+Sage notebook · all light|دفتر مريمي · فاتح بالكامل|Cuaderno salvia · todo claro|Carnet sauge · tout clair|鼠尾草笔记本 · 全浅色|Caderno sálvia · todo claro|Salbei-Notizbuch · ganz hell
+Sand & Cocoa|رمل وكاكاو|Arena y cacao|Sable et cacao|沙色与可可|Areia e cacau|Sand und Kakao
+Slate|أردوازي|Pizarra|Ardoise|石板色|Ardósia|Schiefer
+Tangerine|يوسفي|Mandarina|Mandarine|橘色|Tangerina|Mandarine
+Teal|أزرق مخضر|Verde azulado|Bleu sarcelle|蓝绿色|Verde-azulado|Petrol
+Theme colours|ألوان السمة|Colores del tema|Couleurs du thème|主题颜色|Cores do tema|Themenfarben
+Violet|بنفسجي|Violeta|Violet|紫罗兰色|Violeta|Violett
+White + {colour} night|أبيض + {colour} ليلي|Blanco + noche {colour}|Blanc + nuit {colour}|白色 + {colour}夜色|Branco + noite {colour}|Weiß + Nacht in {colour}
+White|أبيض|Blanco|Blanc|白色|Branco|Weiß
+Night|ليلي|Noche|Nuit|夜色|Noite|Nacht
+Paper & Ink · reference|ورق وحبر · مرجعي|Papel y tinta · referencia|Papier et encre · référence|纸与墨 · 参考|Papel e tinta · referência|Papier und Tinte · Referenz

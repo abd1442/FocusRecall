@@ -1,0 +1,3 @@
+Sessions: {sessions}; study days: {days}; focus: {duration}; subjects: {subjects}.|الجلسات: {sessions}؛ أيام الدراسة: {days}؛ التركيز: {duration}؛ المواد: {subjects}.|Sesiones: {sessions}; días de estudio: {days}; concentración: {duration}; materias: {subjects}.|Séances : {sessions} ; jours d’étude : {days} ; concentration : {duration} ; matières : {subjects}.|学习次数：{sessions}；学习日：{days}；专注：{duration}；科目数：{subjects}。|Sessões: {sessions}; dias de estudo: {days}; foco: {duration}; matérias: {subjects}.|Sitzungen: {sessions}; Lerntage: {days}; Fokus: {duration}; Fächer: {subjects}.
+longer (duration)|أطول|más larga|plus longue|更长|mais longa|länger
+shorter (duration)|أقصر|más corta|plus courte|更短|mais curta|kürzer

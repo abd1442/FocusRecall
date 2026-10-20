@@ -1,0 +1,129 @@
+{
+  "method": "Exact SVG path-command/number token comparison; whitespace/comma/numeric formatting normalized. No relative/absolute conversion, rotation, scaling, whole-scene or visual-similarity search. No asset uploaded.",
+  "upstreamSVGFiles": {
+    "lucide-icons/lucide": 2430,
+    "feathericons/feather": 287,
+    "tailwindlabs/heroicons": 2580
+  },
+  "matches": [
+    {
+      "file": "src/renderer/src/components/QuestionPreview.tsx",
+      "line": 19,
+      "owner": "QuestionTypeIcon",
+      "tokenCount": 5,
+      "pathSHA256": "1c7039d22ed47298781c58bf2af53b02c56d4b76f03c2d6bada1b4f9ec9ffd23",
+      "candidateCount": 10,
+      "candidates": [
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/film.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/grid-2x2.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/grid-3x2.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/rows-2.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/separator-horizontal.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/text-align-justify-center.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/text-align-justify-end.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/text-align-justify-start.svg"
+        }
+      ],
+      "interpretation": "Shared exact token path. Simple generic geometry is not proof of copying; provenance still needs context."
+    },
+    {
+      "file": "src/renderer/src/tabs/stats/DistractionVisual.tsx",
+      "line": 6,
+      "owner": "DistractionMetricIcon",
+      "tokenCount": 8,
+      "pathSHA256": "9c6ca98891a3842b587a3cca9ee3e33a392f38f51db95eed8a35c26118e833c4",
+      "candidateCount": 5,
+      "candidates": [
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/clock-4.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/clock-alert.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/clock-check.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/clock-fading.svg"
+        },
+        {
+          "repo": "lucide-icons/lucide",
+          "file": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/icons/clock.svg"
+        }
+      ],
+      "interpretation": "Shared exact token path. Simple generic geometry is not proof of copying; provenance still needs context."
+    }
+  ],
+  "licenseSummaries": [
+    {
+      "repository": "lucide-icons/lucide",
+      "revision": "1ef60af944de207e0d5176905a0759ba12e6ee8d",
+      "archiveFile": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/LICENSE",
+      "savedAs": "lucide-icons-lucide-0.txt",
+      "text": "ISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n---\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, naviga"
+    },
+    {
+      "repository": "lucide-icons/lucide",
+      "revision": "1ef60af944de207e0d5176905a0759ba12e6ee8d",
+      "archiveFile": "lucide-1ef60af944de207e0d5176905a0759ba12e6ee8d/docs/license.md",
+      "savedAs": "lucide-icons-lucide-1.txt",
+      "text": "---\ntitle: License\ndescription: Review the licensing terms for using Lucide icons and resources.\naside: false\neditLink: false\n---\n\n# Lucide License\n\n<!--@include: ../LICENSE -->\n"
+    },
+    {
+      "repository": "feathericons/feather",
+      "revision": "3dc050d97405062eba78aa57115c0a15c63abdaa",
+      "archiveFile": "feather-3dc050d97405062eba78aa57115c0a15c63abdaa/LICENSE",
+      "savedAs": "feathericons-feather-2.txt",
+      "text": "The MIT License (MIT)\n\nCopyright (c) 2013-2023 Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "repository": "tailwindlabs/heroicons",
+      "revision": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+      "archiveFile": "heroicons-616b7a4dbbf3d011760af8066262cd5c6b3868f3/LICENSE",
+      "savedAs": "tailwindlabs-heroicons-3.txt",
+      "text": "MIT License\n\nCopyright (c) Tailwind Labs, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "repository": "tailwindlabs/heroicons",
+      "revision": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+      "archiveFile": "heroicons-616b7a4dbbf3d011760af8066262cd5c6b3868f3/react/LICENSE",
+      "savedAs": "tailwindlabs-heroicons-4.txt",
+      "text": "MIT License\n\nCopyright (c) Tailwind Labs, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    {
+      "repository": "tailwindlabs/heroicons",
+      "revision": "616b7a4dbbf3d011760af8066262cd5c6b3868f3",
+      "archiveFile": "heroicons-616b7a4dbbf3d011760af8066262cd5c6b3868f3/vue/LICENSE",
+      "savedAs": "tailwindlabs-heroicons-5.txt",
+      "text": "MIT License\n\nCopyright (c) Tailwind Labs, Inc.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ],
+  "limitations": "Negative results do not establish originality. Shared simple geometry does not establish derivation. Only three snapshots were compared; CSS/dynamic shapes and older/different libraries may not match."
+}

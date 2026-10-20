@@ -1,0 +1,15 @@
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
+const folder=path.resolve(process.argv[2]||'docs/design/focusrecall-vector-50-20261016'),html=fs.readFileSync(path.join(folder,'index.html'),'utf8');const script=html.match(/<script>([\s\S]*?)<\/script>/)[1];
+const elements=new Map(),props={'--a':'#643456','--b':'#7a896c','--c':'#c39749','--tile':'#fffdf7'};const el=id=>{if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',style:{},value:'',hidden:false,open:false,addEventListener(){},setAttribute(){},classList:{toggle(){}},showModal(){this.open=true},close(){this.open=false}});return elements.get(id)};
+for(const key of Object.keys(props)){const match=html.match(new RegExp(key+':(#[a-fA-F0-9]{6})'));if(match)props[key]=match[1]}
+const ctx=vm.createContext({console,Set,Blob,URL,setTimeout,modal:el('modal'),localStorage:{getItem:()=>null,setItem(){}},getComputedStyle:()=>({getPropertyValue:k=>props[k]}),document:{documentElement:{style:{setProperty(k,v){props[k]=v}}},getElementById:el,querySelector:s=>el(s),querySelectorAll:()=>[],addEventListener(){},createElement:()=>({click(){}})}});
+vm.runInContext(script,ctx);const output=vm.runInContext(`(()=>{
+ if(designs.length!==50)throw Error('Expected 50');
+ const art=designs.map(d=>({id:d.id,name:d.name,group:d.group,svg:svg(d,1024,true)}));
+ if(new Set(art.map(x=>x.svg)).size!==50)throw Error('Duplicate geometry');
+ if(document.getElementById('grid').innerHTML.split('<article ').length-1!==50)throw Error('Not all cards rendered');
+ for(const group of groups){category=group;render();if(group!=='All'&&document.getElementById('grid').innerHTML.split('<article ').length-1!==10)throw Error('Group count');}category='All';
+ query='50';render();if(!document.getElementById('grid').innerHTML.includes(esc(designs[49].name)))throw Error('Search');query='';render();
+ [1,12,28,42].forEach(toggleCompare);toggleCompare(50);if(selected.size!==4)throw Error('Comparison cap');compare();if(!modal.open)throw Error('Comparison modal');modal.close();openDetail(50);if(!document.getElementById('modalBody').innerHTML.includes('Download SVG'))throw Error('Detail');modal.close();selected.clear();render();
+ return art;
+})()`,ctx);assert.ok(!/<(?:img|image)\b|https?:\/\//.test(script.replaceAll('http://www.w3.org/2000/svg','')),'No raster or external requests');fs.mkdirSync(path.join(folder,'svg'),{recursive:true});for(const row of output){assert.ok(!row.svg.includes('var('));fs.writeFileSync(path.join(folder,'svg',String(row.id).padStart(2,'0')+'-'+row.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.svg'),row.svg)}fs.writeFileSync(path.join(folder,'verification.json'),JSON.stringify({concepts:50,distinctSvgArtwork:50,categories:5,itemsPerCategory:10,cardRendering:true,filters:true,search:true,comparisonLimit:true,detailPreview:true,svgExport:true,rasterImages:false,externalRequests:false,browserVisualCheck:'Unavailable: local file navigation blocked by browser tool policy'},null,2)+'\n');console.log('PASS: 50 distinct inline vector designs; rendering, filters, search, comparison limit, detail preview and SVG exports.');

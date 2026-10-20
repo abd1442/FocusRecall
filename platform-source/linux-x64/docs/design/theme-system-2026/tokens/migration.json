@@ -1,0 +1,872 @@
+{
+  "paper-auto": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "theme",
+    "note": "Current default (follows Windows) → approved default pair."
+  },
+  "paper-light": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "theme",
+    "note": ""
+  },
+  "paper-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "theme",
+    "note": ""
+  },
+  "paper-light-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "inverse",
+    "note": "Light sidebar beside dark workspace kept as navTone \"inverse\"."
+  },
+  "paper-dark-light": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "inverse",
+    "note": "Dark sidebar beside light workspace kept as navTone \"inverse\"."
+  },
+  "sage-auto": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "sage-light": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "sage-dark": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "sage-paper-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "sage-dark-paper": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "sage-reverse-auto": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "approved-01": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "White / Crimson"
+  },
+  "approved-02": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": "White / Violet"
+  },
+  "approved-03": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "theme",
+    "note": "White / Teal"
+  },
+  "approved-04": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "White / Cobalt"
+  },
+  "approved-05": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "theme",
+    "note": "White / Amber"
+  },
+  "approved-06": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "White / Rose"
+  },
+  "approved-07": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "White / Tangerine"
+  },
+  "approved-08": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": "White / Emerald"
+  },
+  "approved-09": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "White / Plum"
+  },
+  "approved-10": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "White / Graphite"
+  },
+  "approved-11": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "Night / Crimson"
+  },
+  "approved-12": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": "Night / Violet"
+  },
+  "approved-13": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "theme",
+    "note": "Night / Teal"
+  },
+  "approved-14": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Night / Cobalt"
+  },
+  "approved-15": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "theme",
+    "note": "Night / Amber"
+  },
+  "approved-16": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "Night / Rose"
+  },
+  "approved-17": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "Night / Tangerine"
+  },
+  "approved-18": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": "Night / Emerald"
+  },
+  "approved-19": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "Night / Plum"
+  },
+  "approved-20": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Night / Graphite"
+  },
+  "approved-21": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "inverse",
+    "note": "White sidebar + nightCrimson"
+  },
+  "approved-22": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "inverse",
+    "note": "White sidebar + nightViolet"
+  },
+  "approved-23": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "inverse",
+    "note": "White sidebar + nightTeal"
+  },
+  "approved-24": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "inverse",
+    "note": "White sidebar + nightCobalt"
+  },
+  "approved-25": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "inverse",
+    "note": "White sidebar + nightAmber"
+  },
+  "approved-26": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "inverse",
+    "note": "White sidebar + nightRose"
+  },
+  "approved-27": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "inverse",
+    "note": "White sidebar + nightTangerine"
+  },
+  "approved-28": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": "White sidebar + nightEmerald"
+  },
+  "approved-29": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "inverse",
+    "note": "White sidebar + nightPlum"
+  },
+  "approved-30": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "inverse",
+    "note": "White sidebar + nightGraphite"
+  },
+  "approved-31": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteCrimson"
+  },
+  "approved-32": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteViolet"
+  },
+  "approved-33": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteTeal"
+  },
+  "approved-34": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteCobalt"
+  },
+  "approved-35": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteAmber"
+  },
+  "approved-36": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteRose"
+  },
+  "approved-37": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteTangerine"
+  },
+  "approved-38": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteEmerald"
+  },
+  "approved-39": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whitePlum"
+  },
+  "approved-40": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteGraphite"
+  },
+  "approved-41": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarCrimson"
+  },
+  "approved-42": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarViolet"
+  },
+  "approved-43": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarTeal"
+  },
+  "approved-44": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarCobalt"
+  },
+  "approved-45": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarAmber"
+  },
+  "approved-46": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarRose"
+  },
+  "approved-47": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarTangerine"
+  },
+  "approved-48": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarEmerald"
+  },
+  "approved-49": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarPlum"
+  },
+  "approved-50": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarGraphite"
+  },
+  "journal": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "clay": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "olive": {
+    "lightTheme": "matcha",
+    "darkTheme": "lichen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "cocoa": {
+    "lightTheme": "saffron",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "original": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Old warm-light / charcoal pair."
+  },
+  "refined": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-rail",
+    "navTone": "theme",
+    "note": ""
+  },
+  "porcelain": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": ""
+  },
+  "linen": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "slate": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": ""
+  },
+  "midnight": {
+    "lightTheme": "lagoon",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": ""
+  },
+  "sage": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "iris": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-paper-light": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-paper-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-paper-light-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "inverse",
+    "note": "Light sidebar beside dark workspace kept as navTone \"inverse\"."
+  },
+  "windows-paper-dark-light": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-dim",
+    "navTone": "inverse",
+    "note": "Dark sidebar beside light workspace kept as navTone \"inverse\"."
+  },
+  "windows-sage-auto": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-sage-light": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-sage-dark": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-sage-paper-dark": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "windows-sage-dark-paper": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "windows-sage-reverse-auto": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": ""
+  },
+  "windows-approved-01": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "White / Crimson"
+  },
+  "windows-approved-02": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": "White / Violet"
+  },
+  "windows-approved-03": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "theme",
+    "note": "White / Teal"
+  },
+  "windows-approved-04": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "White / Cobalt"
+  },
+  "windows-approved-05": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "theme",
+    "note": "White / Amber"
+  },
+  "windows-approved-06": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "White / Rose"
+  },
+  "windows-approved-07": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "White / Tangerine"
+  },
+  "windows-approved-08": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": "White / Emerald"
+  },
+  "windows-approved-09": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "White / Plum"
+  },
+  "windows-approved-10": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "White / Graphite"
+  },
+  "windows-approved-11": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "Night / Crimson"
+  },
+  "windows-approved-12": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": "Night / Violet"
+  },
+  "windows-approved-13": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "theme",
+    "note": "Night / Teal"
+  },
+  "windows-approved-14": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Night / Cobalt"
+  },
+  "windows-approved-15": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "theme",
+    "note": "Night / Amber"
+  },
+  "windows-approved-16": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "Night / Rose"
+  },
+  "windows-approved-17": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": "Night / Tangerine"
+  },
+  "windows-approved-18": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": "Night / Emerald"
+  },
+  "windows-approved-19": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": "Night / Plum"
+  },
+  "windows-approved-20": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Night / Graphite"
+  },
+  "windows-approved-21": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "inverse",
+    "note": "White sidebar + nightCrimson"
+  },
+  "windows-approved-22": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "inverse",
+    "note": "White sidebar + nightViolet"
+  },
+  "windows-approved-23": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "inverse",
+    "note": "White sidebar + nightTeal"
+  },
+  "windows-approved-24": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "inverse",
+    "note": "White sidebar + nightCobalt"
+  },
+  "windows-approved-25": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "inverse",
+    "note": "White sidebar + nightAmber"
+  },
+  "windows-approved-26": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "inverse",
+    "note": "White sidebar + nightRose"
+  },
+  "windows-approved-27": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "inverse",
+    "note": "White sidebar + nightTangerine"
+  },
+  "windows-approved-28": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "inverse",
+    "note": "White sidebar + nightEmerald"
+  },
+  "windows-approved-29": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "inverse",
+    "note": "White sidebar + nightPlum"
+  },
+  "windows-approved-30": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "inverse",
+    "note": "White sidebar + nightGraphite"
+  },
+  "windows-approved-31": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteCrimson"
+  },
+  "windows-approved-32": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteViolet"
+  },
+  "windows-approved-33": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteTeal"
+  },
+  "windows-approved-34": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteCobalt"
+  },
+  "windows-approved-35": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteAmber"
+  },
+  "windows-approved-36": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteRose"
+  },
+  "windows-approved-37": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteTangerine"
+  },
+  "windows-approved-38": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteEmerald"
+  },
+  "windows-approved-39": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whitePlum"
+  },
+  "windows-approved-40": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Coloured ink sidebar + whiteGraphite"
+  },
+  "windows-approved-41": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarCrimson"
+  },
+  "windows-approved-42": {
+    "lightTheme": "wisteria",
+    "darkTheme": "indigo-hour",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarViolet"
+  },
+  "windows-approved-43": {
+    "lightTheme": "lagoon",
+    "darkTheme": "deep-sea",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarTeal"
+  },
+  "windows-approved-44": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarCobalt"
+  },
+  "windows-approved-45": {
+    "lightTheme": "saffron",
+    "darkTheme": "ink-brass",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarAmber"
+  },
+  "windows-approved-46": {
+    "lightTheme": "rosewater",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarRose"
+  },
+  "windows-approved-47": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarTangerine"
+  },
+  "windows-approved-48": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarEmerald"
+  },
+  "windows-approved-49": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarPlum"
+  },
+  "windows-approved-50": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "accent",
+    "note": "Pale/deep colour sidebarGraphite"
+  },
+  "windows-journal": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-clay": {
+    "lightTheme": "terracotta",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-olive": {
+    "lightTheme": "matcha",
+    "darkTheme": "lichen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-cocoa": {
+    "lightTheme": "saffron",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-original": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": "Old warm-light / charcoal pair."
+  },
+  "windows-refined": {
+    "lightTheme": "ivory-ink",
+    "darkTheme": "ink-rail",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-porcelain": {
+    "lightTheme": "cobalt",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-linen": {
+    "lightTheme": "library",
+    "darkTheme": "espresso",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-slate": {
+    "lightTheme": "graphite",
+    "darkTheme": "graphite-night",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-midnight": {
+    "lightTheme": "lagoon",
+    "darkTheme": "indigo-hour",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-sage": {
+    "lightTheme": "celadon",
+    "darkTheme": "evergreen",
+    "navTone": "theme",
+    "note": ""
+  },
+  "windows-iris": {
+    "lightTheme": "wisteria",
+    "darkTheme": "aubergine",
+    "navTone": "theme",
+    "note": ""
+  }
+}

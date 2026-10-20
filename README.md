@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>0.1.0-beta.29</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
+  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>Beta 1 · 0.1.1-beta.1</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
 </p>
 
 <p align="center">
@@ -52,11 +52,13 @@ Use as much or as little of it as you like. Notes, ratings, rest timers and auto
 
 <br>
 
-## Beta downloads
+## Beta 1 downloads
 
-[**Windows x64**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-windows-x64) · [**Linux x64 DEB**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-linux-x64) · [**Mac Apple Silicon**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-macos-arm64) · [**Mac Intel**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.0-beta.29-macos-x64)
+[**Download FocusRecall — Beta 1**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1)
 
-Windows is the established beta baseline. **Linux and macOS are experimental and awaiting real-world testing.** Windows is unsigned; Mac builds are not Developer ID signed or notarized. Each platform release has installation instructions, known limitations, matching source, notices and checksums. [Report a beta problem](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml)—issues are public; use fictional examples and never attach personal records, private backups or sensitive logs.
+One page contains Windows x64, Linux x64 DEB, Mac Apple Silicon and Mac Intel downloads, installation instructions, matching source, licenses and checksums. The application version is **0.1.1-beta.1**. Linux/macOS are experimental and awaiting real-world testing; Windows is unsigned and Macs are not notarized.
+
+[Report a beta problem](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml). Issues are public; use fictional examples and never attach personal study records, private backups or sensitive logs.
 
 ## Two ways to study
 
@@ -255,7 +257,7 @@ Uninstalling keeps your profile. **Restore Backup** replaces the current databas
 
 ## Install
 
-Choose your operating system in [Beta downloads](#beta-downloads), then follow that platform’s release instructions. Windows uses an unsigned x64 installer; Ubuntu 24.04 x64 uses a DEB; Macs use the Apple Silicon or Intel app ZIP. Linux/macOS remain experimental. Keep security protections enabled and report warnings instead of overriding malware or damaged-app alerts.
+Choose your operating system in [Beta 1 downloads](#beta-1-downloads), then follow that platform’s release instructions. Windows uses an unsigned x64 installer; Ubuntu 24.04 x64 uses a DEB; Macs use the Apple Silicon or Intel app ZIP. Linux/macOS remain experimental. Keep security protections enabled and report warnings instead of overriding malware or damaged-app alerts.
 
 On first launch, pick Quick or Full Mode and your language. To look around before adding your own subjects, choose **Open demo data** in **Settings → General → Data**. It opens a separate database of made-up study and leaves your own records untouched.
 

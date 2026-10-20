@@ -1,0 +1,102 @@
+name: Native linux engineering verification
+on:
+  workflow_dispatch:
+    inputs:
+      desktop:
+        description: Focused desktop readiness checks instead of repeating full regressions
+        type: boolean
+        default: false
+      internal:
+        description: Retain a production-only private internal package for one day
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: native-${{ github.ref }}
+  cancel-in-progress: false
+env:
+  CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24'
+      - if: ${{ inputs.desktop }}
+        name: Native compositor and installer prerequisites (disposable runner only)
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends weston openbox libnotify4 libglib2.0-bin python3-gi dbus-x11
+      - run: npm ci
+      - name: Compile native SQLite for host Node regression tests
+        run: node scripts/compile-native-sqlite.cjs node x64
+      - if: ${{ !inputs.desktop }}
+        run: npm test
+      - if: ${{ inputs.desktop }}
+        name: Targeted timing, platform, recovery and backup regressions
+        run: npm test -- --run src/core/linuxLock.test.ts src/core/platformPort.test.ts src/core/timingIntegrity.test.ts src/core/backups.test.ts src/core/legacyBackupCompatibility.test.ts src/core/qaIsolation.test.ts --maxWorkers=2 --testTimeout=60000
+      - if: ${{ inputs.desktop }}
+        name: Real D-Bus transport with a clearly fictional lock-service fixture
+        run: dbus-run-session -- node scripts/verify-linux-lock-bus.cjs
+      - run: npm run typecheck
+      - run: npm run localization:check
+      - run: node scripts/prepare-legal.cjs
+      - name: Compile native Electron SQLite and production packages
+        run: node scripts/build-platform.cjs linux x64
+      - id: production_security
+        name: Production executable security checks
+        run: sudo chown root:root dist/linux-engineering/linux-unpacked/chrome-sandbox && sudo chmod 4755 dist/linux-engineering/linux-unpacked/chrome-sandbox && xvfb-run -a node scripts/verify-native-security.cjs "dist/linux-engineering/linux-unpacked/focusrecall"
+      - if: ${{ inputs.internal }}
+        name: Prepare production-only isolated internal test package (size capped)
+        run: node scripts/prepare-native-internal.cjs
+      - name: Install pinned UI test client (no browser download)
+        run: npm install --no-save --package-lock=false --ignore-scripts playwright@1.62.1
+      - id: qa_package
+        name: Separate inspector-enabled fictional-profile QA package
+        env:
+          FOCUSRECALL_QA_BUILD: '1'
+        run: |
+          npm run build
+          node node_modules/electron-builder/out/cli/cli.js --linux --x64 --dir --config electron-builder.native-qa.cjs --publish never
+      - if: ${{ !inputs.desktop }}
+        name: Native packaged UI and data workflows
+        env:
+          FOCUSRECALL_QA_EXECUTABLE: "dist/linux-qa/linux-unpacked/focusrecall"
+        run: sudo chown root:root dist/linux-qa/linux-unpacked/chrome-sandbox && sudo chmod 4755 dist/linux-qa/linux-unpacked/chrome-sandbox && env -u XDG_SESSION_ID xvfb-run -a node scripts/verify-native-workflows.cjs
+      - if: ${{ inputs.desktop }}
+        name: Actual X11 and Wayland compositor workflows (no pretend login session)
+        env:
+          FOCUSRECALL_QA_EXECUTABLE: dist/linux-qa/linux-unpacked/focusrecall
+        run: |
+          sudo chown root:root dist/linux-qa/linux-unpacked/chrome-sandbox
+          sudo chmod 4755 dist/linux-qa/linux-unpacked/chrome-sandbox
+          dbus-run-session -- xvfb-run -a -s "-screen 0 1920x1080x24" bash scripts/test-linux-desktop.sh x11
+          dbus-run-session -- xvfb-run -a -s "-screen 0 1920x1080x24" bash scripts/test-linux-desktop.sh wayland
+      - if: ${{ inputs.desktop && !cancelled() && steps.qa_package.outcome == 'success' }}
+        name: Actual DEB install, data-preserving uninstall/reinstall and AppImage sandbox probe
+        run: dbus-run-session -- xvfb-run -a node scripts/verify-linux-install.cjs
+      - name: Small private screenshots and receipt (no databases or packages)
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-linux-x64-qa
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            docs/verification/native-ci/**/*.png
+            docs/verification/native-ci/**/*.json
+      - if: ${{ !cancelled() && steps.production_security.outcome == 'success' && inputs.internal }}
+        name: Private production internal build only (never QA profiles)
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: internal-linux-x64
+          retention-days: 1
+          if-no-files-found: error
+          compression-level: 0
+          path: |
+            dist/FocusRecall-internal-linux-x64.tar.gz
+            dist/FocusRecall-internal-linux-x64.tar.gz.sha256

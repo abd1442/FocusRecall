@@ -1,0 +1,4 @@
+higher (comparison)|أعلى|más alto|plus élevé|更高|mais alto|höher
+lower (comparison)|أقل|más bajo|plus faible|更低|mais baixo|niedriger
+Detected app|تطبيق مرصود|Aplicación detectada|Application détectée|检测到的应用|Aplicativo detectado|Erkannte App
+Recorded interruption|مقاطعة مسجّلة|Interrupción registrada|Interruption consignée|已记录干扰|Interrupção registrada|Erfasste Unterbrechung

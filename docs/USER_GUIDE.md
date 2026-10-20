@@ -1,6 +1,6 @@
 # FocusRecall user guide
 
-The [main page](../README.md) introduces every part of FocusRecall with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It describes 0.1.0-beta.29 on Windows. Screenshots show real application screens with made-up subjects and notes.
+The [main page](../README.md) introduces every part of FocusRecall with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It describes Beta 1 (0.1.1-beta.1), using Windows screenshots. Linux and macOS share the study workflows but remain experimental; follow their release-specific installation notes. Screenshots show real application screens with made-up subjects and notes.
 
 **Contents:** [Quick or Full Mode](#quick-mode-or-full-mode) · [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Install and backups](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
@@ -187,7 +187,7 @@ FocusRecall does not encrypt local databases or backups. Protect your Windows ac
 
 ## Install, update and protect your records
 
-Use only the exact installer and checksum supplied for your test. The locally prepared version is **0.1.0-beta.29** for Windows x64; it is unsigned and is not publicly available yet. Keep Windows protection enabled. Record unexpected warnings, and stop on an antivirus threat detection. [Availability](RELEASE_STATUS.md).
+Choose your operating system on the [Beta 1 release page](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1), check its SHA-256 and follow its installation instructions. Windows is unsigned; Mac builds are not Developer ID signed or notarized. Keep operating-system protection enabled and stop on malware or damaged-app warnings. Linux/macOS still need real-world testing. [Availability](RELEASE_STATUS.md).
 
 For a first installation, run the verified installer, follow its prompts and open FocusRecall. Choose Quick or Full Mode during setup; language and mode can be changed later in Settings. If you want to look around first, **Settings → General → Data → Open demo data** opens a separate fictional database.
 
