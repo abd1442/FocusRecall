@@ -282,10 +282,10 @@ Use the source package that matches your installer; the development repository m
 <p align="center">
   <a href="https://ko-fi.com/abd442">
     <picture>
+      <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/support-kofi-banner-mobile-dark.png">
+      <source media="(max-width: 600px)" srcset="assets/support-kofi-banner-mobile.png">
       <source media="(prefers-color-scheme: dark)" srcset="assets/support-kofi-banner-dark.png">
-      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? Show a little appreciation on Ko-fi, if you’d like. Thank you!" width="620">
+      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? If you find it useful and would like to show a little appreciation, you can buy me a coffee on Ko-fi. It’s completely optional." width="620">
     </picture>
   </a>
 </p>
-
-<p align="center">If FocusRecall has been useful to you, you can show your appreciation on <a href="https://ko-fi.com/abd442">Ko-fi</a>.<br>Entirely optional—and thank you for using it.</p>
