@@ -13,5 +13,7 @@
   },
   "sourceTree": "corresponding-source",
   "noDeveloperHistory": true,
-  "preparedForBetaReview": true
+  "preparedForBetaReview": true,
+  "sourceTreeRef": "v0.1.1-beta.1",
+  "scope": "Frozen published Beta 1; current development source is identified separately in SOURCE_NOTICE.md."
 }

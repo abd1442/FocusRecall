@@ -37,8 +37,6 @@ export interface SessionEvents {
   targetReached: [{ blockId: Id; itemName: string }]
   /** A part stopped (Finish, a switch, or recovery). Window runs up to `endedAt` belong to it. */
   partEnded: [{ blockId: Id; endedAt: number }]
-  /** A Distracted spell ended (Back, the hotkey, or a switch while distracted): ask for the reason. */
-  distractionEnded: [{ distractionId: Id }]
   /** Back after a long absence: ask whether to continue or end the session where it was left. */
   longAbsence: [{ minutes: number }]
   restStarted: [{ blockId: Id }]
@@ -250,7 +248,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
 
   /**
    * "Back": the clock runs again and the spell is saved as a distraction
-   * (reason asked next). After a long absence it first asks whether to go on
+   * without a reason prompt. After a long absence it first asks whether to go on
    * or end the session where it was left; `force` skips that question.
    */
   back(force = false): SessionState {
@@ -287,13 +285,6 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     const b = this.requireRunning()
     if (kind === 'stuck' && note?.trim()) this.captures.noteLatestStuck(b.id, note)
     else this.captures.addMark(b.id, this.iso(), kind, note)
-  }
-
-  /** Park a thought: it does not stop the clock. Works between sessions too. */
-  park(text: string): void {
-    this.checkTiming()
-    const b = this.running
-    this.captures.park(text, this.iso(), b?.sessionId ?? null, b?.itemId ?? this.settings.getAll().lastItemId)
   }
 
   /** Pick up edits made on the timeline (parts and focus may have changed). */
@@ -591,7 +582,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     if (choice === 'continue') {
       if (!isPaused(pauseIntervals(b.pauses))) {
         this.repo.openPause(b.id, new Date(lastKnown).toISOString())
-        const id = this.closePauseAt(b, this.now(), false)
+        const id = this.closePauseAt(b, this.now())
         if (id !== null) this.distractions.setKind(id, 'away')
       }
     } else {
@@ -675,7 +666,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
    * Close an open Distracted spell at `atMs` and save it as a distraction.
    * Returns its id, or null when nothing was open.
    */
-  private closePauseAt(b: RunningRecord, atMs: number, askReason = true): Id | null {
+  private closePauseAt(b: RunningRecord, atMs: number): Id | null {
     const open = this.repo.pauses(b.id).find((p) => p.endedAt === null)
     if (!open) return null
     const startedMs = Date.parse(open.startedAt)
@@ -683,7 +674,6 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
     this.repo.closePause(b.id, new Date(endMs).toISOString())
     const id = this.distractions.insertManual(b.id, startedMs, (endMs - startedMs) / 1000)
     if(this.settings.getAll().studyExperience==='quick')this.distractions.setKind(id,'timer-pause')
-    if (askReason&&this.settings.getAll().studyExperience!=='quick') this.notify('distractionEnded', { distractionId: id })
     return id
   }
 

@@ -26,9 +26,9 @@ it('defaults existing and fresh profiles to Full; invalid mode never activates Q
 })
 it('saves exact active time, excludes pauses and starts Next atomically without invented answers',()=>{
  settings.set('studyExperience','quick');start();advance(20000);engine.distracted();advance(10000)
- const prompts=vi.fn(),stages:string[]=[];engine.on('distractionEnded',prompts);engine.on('changed',s=>stages.push(s.stage))
+ const stages:string[]=[];engine.on('changed',s=>stages.push(s.stage))
  engine.back(true);advance(10000);const old=engine.get().running!.id;engine.quickAction('next',old)
- expect(engine.get().running!.id).not.toBe(old);expect(engine.get().running!.targetSeconds).toBe(300);expect(engine.get().step).toBeNull();expect(stages).not.toContain('recall');expect(prompts).not.toHaveBeenCalled()
+ expect(engine.get().running!.id).not.toBe(old);expect(engine.get().running!.targetSeconds).toBe(300);expect(engine.get().step).toBeNull();expect(stages).not.toContain('recall')
  expect(rows()[0]).toMatchObject({focus_seconds:30,log_status:'done',recall_text:null,recall_seconds:null,recall_rating:null,rest_actual_seconds:null})
  expect(db.prepare('SELECT kind FROM distractions').get()).toEqual({kind:'timer-pause'})
  expect(distractionSourceLabel({source:'manual',kind:'timer-pause'})).toBe('Timer pause');expect(reasonLabel('timer-pause')).toBe('Timer pause')

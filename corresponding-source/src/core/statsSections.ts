@@ -22,7 +22,6 @@ export interface OverviewNumbers {
   goals: { set: number; done: number; partly: number; notDone: number }
   resisted: number
   stuck: number
-  parked: number
 }
 
 export function overview(sessions: StatSession[], o: AnalysisOptions = DEFAULT_ANALYSIS): OverviewNumbers {
@@ -47,7 +46,7 @@ export function overview(sessions: StatSession[], o: AnalysisOptions = DEFAULT_A
     },
     resisted: sessions.reduce((n, s) => n + s.resisted, 0),
     stuck: sessions.reduce((n, s) => n + s.stuck, 0),
-    parked: sessions.reduce((n, s) => n + s.parked, 0)
+
   }
 }
 

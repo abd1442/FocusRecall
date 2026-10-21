@@ -32,8 +32,8 @@ async function connect(port,pick){const target=(await fetch(`http://127.0.0.1:${
  const shot=await panel.call('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});fs.writeFileSync(path.join(root,'preparation-real.png'),Buffer.from(shot.data,'base64'));
  await page.evaluate("window.api.invoke('settings:set','panelOpen',true)");await page.evaluate("window.api.invoke('settings:set','panelExpanded',true)");await page.evaluate("window.api.invoke('preparation:confirm')");await delay();
  assert.equal(await page.evaluate("[...document.querySelectorAll('button')].some(b=>b.textContent.trim()==='Park a thought')"),false);
- assert.equal(await panel.evaluate("!!document.querySelector('button[aria-label="+JSON.stringify('Park a thought')+"]')"),true);
- fs.writeFileSync(path.join(root,'concise-ui-results.json'),JSON.stringify({realSuggestions:real.suggestions,optionalEvidence:true,layoutFixture:'5 repeated real suggestions, layout stress only, not publication images',bounds,mainParkRemoved:true,floatingParkRetained:true},null,2));
+ assert.equal(await panel.evaluate("!!document.querySelector('button[aria-label="+JSON.stringify('Park a thought')+"]')"),false);
+ fs.writeFileSync(path.join(root,'concise-ui-results.json'),JSON.stringify({realSuggestions:real.suggestions,optionalEvidence:true,layoutFixture:'5 repeated real suggestions, layout stress only, not publication images',bounds,mainParkRemoved:true,floatingParkRemoved:true},null,2));
  await page.evaluate("window.api.invoke('session:finish')");await delay();if(await page.evaluate("[...document.querySelectorAll('button')].some(b=>b.textContent.trim()==='Keep it')"))await page.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='Keep it').click()");
  const state=await page.evaluate("window.api.invoke('session:get')");await page.evaluate(`window.api.invoke('session:leaveWorkflow',${state.finished[0].sessionId})`);await page.evaluate("window.api.invoke('session:endSitting')");
  console.log('PASS: '+bounds.length+' max-card layout/theme/scale cases, real personal evidence disclosure, main/floating controls.');panel.close();page.close();main.close();

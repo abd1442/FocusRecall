@@ -1,6 +1,8 @@
 # FocusRecall user guide
 
-The [main page](../README.md) introduces every part of FocusRecall with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It describes Beta 1 (0.1.1-beta.1), using Windows screenshots. Linux and macOS share the study workflows but remain experimental; follow their release-specific installation notes. Screenshots show real application screens with made-up subjects and notes.
+This guide follows the current source. Parked Thoughts and automatic Resume reason prompts have been removed; the bottom calendar stays visible while scrolling. The published Beta 1 downloads are unchanged: [guide for that version](https://github.com/abd1442/FocusRecall/blob/v0.1.1-beta.1/docs/USER_GUIDE.md).
+
+The [main page](../README.md) introduces every part of FocusRecall with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It builds on Beta 1 (0.1.1-beta.1) with the current-source changes noted above, using Windows screenshots. Linux and macOS share the study workflows but remain experimental; follow their release-specific installation notes. Screenshots show real application screens with made-up subjects and notes.
 
 **Contents:** [Quick or Full Mode](#quick-mode-or-full-mode) · [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Install and backups](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
@@ -59,7 +61,7 @@ Study in your usual book, browser, editor or on paper. Open **Panel** if you wan
 
 In **Full Mode**, use these controls:
 
-- **Distracted** marks time away from studying; **Back** resumes the focus clock. Use it when you are pulled away, even if monitoring is off.
+- **Distracted** marks time away from studying; **Back** resumes the focus clock without asking for a reason. Reasons remain editable in History. Use it when you are pulled away, even if monitoring is off.
 - **Switch** changes subjects within the current session while preserving the parts already recorded.
 - **Finish** on the panel, or **Finish session** in the main window, takes you to review.
 
@@ -103,19 +105,13 @@ Create subjects with **New subject**, and group them into categories if useful. 
 
 These extra Home tools belong to **Full Mode**. Quick Mode keeps its launcher simple; shared History, Stats, Learn, Library and Settings remain available from the sidebar.
 
-### Park a thought without changing tasks
-
-Use **+ Park** to jot down a question or a task that can wait, such as “Check how humidity changes water loss.” It stays in **Parked thoughts** so you can return to studying. If configured, the shortcut shown on the card opens the capture box from your work.
-
-Check off a thought after handling it. Repeated captures of the same thought are grouped with a count; **Manage thoughts** lets you search and complete individual captures or all repeats. These are your notes for later, not automatically detected distractions.
-
 ### Finish work saved for later
 
-**Saved for later** appears only when you have deferred an unfinished review, log or rest step. Expand it and select **Resume** for the session you want to finish. It is separate from Parked thoughts and from Learn's saved ideas. Time while the app was closed is excluded from rest.
+**Saved for later** appears only when you have deferred an unfinished review, log or rest step. Expand it and select **Resume** for the session you want to finish. It is separate from Learn's saved ideas. Time while the app was closed is excluded from rest.
 
 ### Read the study calendar
 
-Each square represents a local calendar day; its shade reflects recorded Focus time. Select a day to open its History records. The year controls move between years. With the keyboard, Tab enters the calendar once, arrows move between days/weeks, and Enter opens the selected day.
+The full-width calendar stays at the bottom of Home while subjects scroll. Each square represents a local calendar day; its shade reflects recorded Focus time. Select a day to open its History records. The year controls move between years. With the keyboard, Tab enters the calendar once, arrows move between days/weeks, and Enter opens the selected day.
 
 ### Understand the stage line
 

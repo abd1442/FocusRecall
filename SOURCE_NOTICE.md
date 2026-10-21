@@ -1,12 +1,18 @@
-# Matching source and license materials
+# Application source and release materials
+
+## Current development source
+
+[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) contains the current unreleased Windows application source at `27efc7154bf786874bd1e78fe74713ef18cf0824`, including the Home calendar and distraction-workflow update. Build directions are in [SOURCE_BUILD.md](corresponding-source/SOURCE_BUILD.md). No new installer is published by this change; Linux/macOS source snapshots below remain the frozen Beta 1 builds.
+
+## Published Beta 1 source
 
 FocusRecall original code/artwork is **GPL-3.0-only**. Third-party terms remain applicable. Use the source and notices attached to the [single Beta 1 release](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1). No private repository access is needed.
 
-The tag `v0.1.1-beta.1` identifies a release assembly, not one common application build revision. Its own automatic source ZIP/tar contains the application snapshots below. The larger `FocusRecall-Beta-1-Source.zip` additionally supplies dependency/preferred upstream source inputs, exact FFmpeg source, native/theme/artwork/build inputs and pinned runtime source access/replacement directions. `FocusRecall-Beta-1-Notices.zip` contains the corresponding project/component notices.
+The tag `v0.1.1-beta.1` identifies a release assembly, not one common application build revision. At that immutable tag, its automatic source ZIP/tar contains the application snapshots below. The larger `FocusRecall-Beta-1-Source.zip` additionally supplies dependency/preferred upstream source inputs, exact FFmpeg source, native/theme/artwork/build inputs and pinned runtime source access/replacement directions. `FocusRecall-Beta-1-Notices.zip` contains the corresponding project/component notices.
 
 | Platform | Build source revision | Source folder in this repository |
 | --- | --- | --- |
-| windows-x64 | `822068b128b47e3cff3627082ee0e336dfa17d71` | [corresponding-source](corresponding-source/SOURCE_MANIFEST.json) |
+| windows-x64 | `822068b128b47e3cff3627082ee0e336dfa17d71` | [Beta 1 Windows source](https://github.com/abd1442/FocusRecall/tree/v0.1.1-beta.1/corresponding-source) |
 | linux-x64 | `f583c7de992dfbf8edfe3f20bc369c0f26567112` | [platform-source/linux-x64](platform-source/linux-x64/SOURCE_MANIFEST.json) |
 | macos-arm64 | `8bdc835e3e7f7f5a7fa1c62c829c9b2d2f2addca` | [platform-source/macos-arm64](platform-source/macos-arm64/SOURCE_MANIFEST.json) |
 | macos-x64 | `f93d7991d4ba52335cfdbc72d536fdd0eb76fcb6` | [platform-source/macos-x64](platform-source/macos-x64/SOURCE_MANIFEST.json) |

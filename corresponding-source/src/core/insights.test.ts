@@ -44,7 +44,7 @@ function session(p: Partial<StatSession> & { focus?: number; place?: string; ite
     hasGoal: false,
     resisted: 0,
     stuck: 0,
-    parked: 0,
+
     windowSwitches: 0,
     appSeconds: {},
     rest: null,

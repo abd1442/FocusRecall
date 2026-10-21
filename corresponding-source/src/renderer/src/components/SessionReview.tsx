@@ -18,8 +18,8 @@ const time = (iso: string): string => formatTime(new Date(iso), { hour: '2-digit
 
 /**
  * Everything about one session after it: the editable timeline, the goal,
- * what needs a look, programs to tag, time per app, window switches and the
- * thoughts parked during it. Used in the log and in History.
+ * what needs a look, programs to tag, time per app and window switches.
+ * Used in the log and in History.
  */
 export function SessionReview({
   sessionId,
@@ -40,10 +40,8 @@ export function SessionReview({
   useEffect(() => {
     void reload()
     const offA = window.api.on('distractions:changed', () => void reload())
-    const offB = window.api.on('parked:changed', () => void reload())
     return () => {
       offA()
-      offB()
     }
   }, [reload])
   const changed = (): void => {
@@ -72,20 +70,6 @@ export function SessionReview({
       )}
 
       {review && review.programs.length>0&&<p className="text-xs text-muted">{uiText(TRACKING_COVERAGE_NOTE)}</p>}
-      {review && review.parked.length > 0 && (
-        <div className="flex flex-col gap-2 border-t border-line pt-4">
-          <h3 className="text-base font-semibold">{uiText("Thoughts you parked")}</h3>
-          {review.parked.map((t) => (
-            <label key={t.id} className="flex items-center gap-3 text-base">
-              <input type="checkbox" className="size-5 accent-[var(--tf-focus)]" checked={t.done} onChange={(e) => void window.api.invoke('parked:setDone', t.id, e.target.checked)} />
-              <span dir="auto" className={t.done ? 'text-muted line-through' : ''}>
-                {t.text}
-              </span>
-              <span className="text-sm text-muted">{time(t.createdAt)}</span>
-            </label>
-          ))}
-        </div>
-      )}
     </div>
   )
 }

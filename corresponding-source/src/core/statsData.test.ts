@@ -88,7 +88,7 @@ const raw = (blocks: RawBlock[], dayValues: StatsRaw['dayValues'] = []): StatsRa
     goal: id === 1 ? 'Chapter 3' : null,
     goalResult: id === 1 ? 'done' : null,
     windowSwitches: 3,
-    parked: 0
+
   })),
   items: [
     { id: 1, categoryId: 5, name: 'Structures', color: '#000', priorKnowledge: 'new', hoursBefore: 19.5, newField: true, buildsOn: [] },

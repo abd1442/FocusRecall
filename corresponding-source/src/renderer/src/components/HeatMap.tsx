@@ -33,7 +33,8 @@ export function HeatMap({
   header,
   selected,
   onPick,
-  minimal = false
+  minimal = false,
+  fillWidth = false
 }: {
   /** Already filtered (a subject, a category, History's filters). */
   blocks: BlockSummary[]
@@ -43,6 +44,8 @@ export function HeatMap({
   onPick?: (day: string) => void
   /** Home shows just the year navigation and a compact calendar. */
   minimal?: boolean
+  /** Home footer fills the available width without making its rows taller. */
+  fillWidth?: boolean
 }): React.JSX.Element {
   const { dayStart, weekStartsOn } = useSettings((s) => s.settings)
   const openHistoryDay = useUi((s) => s.openHistoryDay)
@@ -67,6 +70,7 @@ export function HeatMap({
   const labelW = 34
   const gap = 3
   const cell = Math.max(8, Math.min(minimal ? 16 : 18, Math.floor((width - labelW) / grid.weeks.length) - gap))
+  const cellWidth = fillWidth ? Math.max(8, (width - labelW - gap * (grid.weeks.length - 1)) / grid.weeks.length) : cell
   const monthName = (m: number): string => formatDate(new Date(2026, m, 1), { month: 'short' })
   const weekdayName = (i: number): string => formatDate(new Date(2026, 0, 4 + ((weekStartsOn + i) % 7)), { weekday: 'short' })
 
@@ -78,6 +82,7 @@ export function HeatMap({
       </div>}
 
       <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base">
+        {minimal && <h2 className="text-sm font-medium">{uiText("Activity")}</h2>}
         {!minimal && <div className="flex flex-wrap gap-2" aria-label={uiText('{year} study totals',{year})}><StatChip label={uiText('Focus in {year}',{year})} value={formatDuration(totals.focusSeconds)}/><StatChip label={uiText(totals.sessions===1?'Session':'Sessions')} value={totals.sessions}/><StatChip label={uiText(totals.activeDays===1?'Active day':'Active days')} value={totals.activeDays} tone="rest"/></div>}
         <span className="flex-1" />
         {!minimal && <Segmented<'time' | 'sessions'>
@@ -115,7 +120,7 @@ export function HeatMap({
         {keyboard.help}
         <div aria-hidden="true" className="relative" style={{ paddingInlineStart: labelW, height: 18 }}>
           {grid.months.map((m) => (
-            <span key={m.month} className="absolute text-sm text-muted" style={{ insetInlineStart: labelW + m.column * (cell + gap) }}>
+            <span key={m.month} className="absolute text-sm text-muted" style={{ insetInlineStart: labelW + m.column * (cellWidth + gap) }}>
               {monthName(m.month)}
             </span>
           ))}
@@ -133,13 +138,13 @@ export function HeatMap({
             <div key={i} role="row" className="flex" style={{ gap }}>
               {grid.weeks.map((w, wi) => {
                 const d = w[i]
-                if (!d) return <span key={wi} role="gridcell" aria-disabled="true" style={{ width: cell, height: cell }} />
+                if (!d) return <span key={wi} role="gridcell" aria-disabled="true" style={{ width: cellWidth, height: cell }} />
                 const a = days.get(d)
                 const v = a ? (by === 'time' ? a.focusSeconds : a.sessions) : 0
                 const future = d > today
                 const tip = a ? uiText('{date}: {duration} · sessions: {sessions} · subjects: {subjects}',{date:DAY_LABEL(d),duration:timeOrDash(a.focusSeconds),sessions:a.sessions,subjects:a.subjects}) : uiText('{date}: nothing studied',{date:DAY_LABEL(d)})
                 return (
-                  <span key={d} role="gridcell" aria-selected={d === selected} aria-disabled={future} style={{ width: cell, height: cell }}>
+                  <span key={d} role="gridcell" aria-selected={d === selected} aria-disabled={future} style={{ width: cellWidth, height: cell }}>
                   <button
                     key={d}
                     {...keyboard.cellProps(d)}
@@ -150,7 +155,7 @@ export function HeatMap({
                     disabled={future}
                     onClick={() => pick(d)}
                     className={`activity-day block rounded-[3px] transition ${future ? 'opacity-25' : 'hover:ring-2 hover:ring-muted'} ${d === selected ? 'ring-2 ring-ink' : ''} ${d === today ? 'outline outline-1 outline-muted' : ''}`}
-                    style={{ width: cell, height: cell, background: SHADES[level(v)] }}
+                    style={{ width: cellWidth, height: cell, background: SHADES[level(v)] }}
                   />
                   </span>
                 )

@@ -92,7 +92,6 @@ export function seedDemo(db: Db, now = Date.now()): void {
     const setStats = db.prepare('UPDATE sessions SET distraction_count = ?, distracted_seconds = ?, lost_share = ?, longest_stretch_seconds = ? WHERE id = ?')
     const insValue = db.prepare('INSERT INTO block_log_values (block_id, field_id, value, touched) VALUES (?, ?, ?, ?)')
     const insMark = db.prepare('INSERT INTO session_marks (block_id, at, kind) VALUES (?, ?, ?)')
-    const insParked = db.prepare('INSERT INTO parked_thoughts (created_at, session_id, item_id, text, done) VALUES (?, ?, ?, ?, ?)')
     const insWindow = db.prepare('INSERT INTO window_activity (block_id, stage, started_at, ended_at, process_name, window_title) VALUES (?, ?, ?, ?, ?, ?)')
     const sessionInfo = new Map(data.sessions.map((s) => [s.number, s]))
 
@@ -152,7 +151,6 @@ export function seedDemo(db: Db, now = Date.now()): void {
         }
         for (const m of b.marks) insMark.run(bid, iso(m.at), m.kind)
         for (const w of b.windows) insWindow.run(bid, w.stage, iso(w.start), iso(w.end), w.process, w.title)
-        if (b === parts[0]) for (const p of info.parked) insParked.run(iso(p.at), sessionId, itemIds.get(b.itemKey)!, p.text, 0)
       }
     }
     for (const s of data.sittings) {

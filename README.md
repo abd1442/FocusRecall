@@ -71,7 +71,7 @@ One page contains Windows x64, Linux x64 DEB, Mac Apple Silicon and Mac Intel do
 | **Start** | Pick a subject, press Start | Pick a subject, set an optional goal, press Start |
 | **While studying** | Distracted · Switch · Finish | Distracted · Switch · Finish |
 | **After Focus** | Saved. Take a break if you want one | Optional recall notes, session log and timed rest |
-| **Extras on Home** | None, just the launcher | Parked thoughts, study calendar, stage line |
+| **Extras on Home** | None, just the launcher | Study calendar, stage line |
 
 You choose a mode during setup and can change it later in **Settings** between sessions. Both modes share the same subjects, History, Stats, Learn and Library, and switching never rewrites your records.
 
@@ -79,7 +79,7 @@ You choose a mode during setup and can change it later in **Settings** between s
 
 1. On Home, select or create a subject. **Timer options** changes the target and timer type.
 2. Press **Start**. The floating timer opens.
-3. Pulled away? Press **Distracted** to stop the focus clock and **Resume** to continue.
+3. Pulled away? Press **Distracted** to stop the focus clock and **Resume** to continue, without a reason question. Reasons can be edited later in History.
 4. To change subjects, open the subject name on the panel, pick another and confirm **Switch now**. Each subject keeps its own time.
 5. Press **Finish** to save and stop. Nothing else is required.
 
@@ -145,11 +145,11 @@ A short, specific goal helps: *"Explain how water moves through a plant"* is eas
 
 These live on the Full Mode Home screen.
 
-**Parked thoughts.** Press **+ Park** (or the shortcut shown on the card, such as F7) to note a question that can wait, like *"Check how humidity changes water loss."* Repeated captures are grouped with a count. Tick them off later or use **Manage thoughts**.
+Current source removes Parked Thoughts and the automatic reason question after Resume. The calendar spans the bottom of Home and stays visible while subjects scroll. These changes are not yet included in the Beta 1 downloads; [view the Beta 1 guide](https://github.com/abd1442/FocusRecall/blob/v0.1.1-beta.1/docs/USER_GUIDE.md) for that version.
 
 **Saved for later.** If you put off an unfinished review, log or rest, it appears here with a **Resume** button. Time while the app was closed is not counted as rest.
 
-**Study calendar.** Each square is a day, shaded by recorded focus time. Select a day to open it in History. With the keyboard, arrow keys move between days and Enter opens one.
+**Study calendar.** The full-width calendar stays at the bottom while the subject list scrolls. Each square is a day, shaded by recorded focus time. Select a day to open it in History. With the keyboard, arrow keys move between days and Enter opens one.
 
 **Stage line.** The line under a subject, such as *First 20 hours*, shows time invested in it, including earlier hours you entered yourself. It measures time, not skill. Labels and boundaries can be changed in Settings.
 
@@ -281,7 +281,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
-Use the source package and platform tag that match your download; different platforms were built from different source revisions. Screenshots show real application screens with made-up subjects and notes.
+Use the source package and release tag that match your download; different platforms were built from different source revisions. The source on `main` also includes unreleased changes, identified in [SOURCE_NOTICE.md](SOURCE_NOTICE.md). Screenshots show real application screens with made-up subjects and notes.
 
 ---
 

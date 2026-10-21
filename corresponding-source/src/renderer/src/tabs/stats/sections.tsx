@@ -140,7 +140,7 @@ export function OverviewSection(): React.JSX.Element {
           ) : (
             <p className="text-base text-muted">{uiText("No session goals in this period.")}</p>
           )}
-          <div className="mt-2 grid grid-cols-3 gap-3 border-t border-line pt-4 text-center">
+          <div className="mt-2 grid grid-cols-2 gap-3 border-t border-line pt-4 text-center">
             <div>
               <div className="text-2xl font-semibold tabular-nums">{o.resisted}</div>
               <div className="text-sm text-muted">{uiText("Resisted")}</div>
@@ -148,10 +148,6 @@ export function OverviewSection(): React.JSX.Element {
             <div>
               <div className="text-2xl font-semibold tabular-nums">{o.stuck}</div>
               <div className="text-sm text-muted">{uiText("Stuck markers")}</div>
-            </div>
-            <div>
-              <div className="text-2xl font-semibold tabular-nums">{o.parked}</div>
-              <div className="text-sm text-muted">{uiText("Parked thoughts")}</div>
             </div>
           </div>
         </Panel>

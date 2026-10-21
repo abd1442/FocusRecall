@@ -85,9 +85,6 @@ export function DistractionSettings({
         <Row label="Switch hotkey" hint={uiText("Opens the subject picker while a session runs.")}>
           <HotkeyField value={settings.hotkeySwitch} ok={status?.switch.ok ?? true} onChange={(v) => set('hotkeySwitch', v)} />
         </Row>
-        <Row label="Park a thought hotkey" hint={uiText("Opens a one-line box for a thought or a to-do; the clock keeps running.")}>
-          <HotkeyField value={settings.hotkeyPark} ok={status?.park.ok ?? true} onChange={(v) => set('hotkeyPark', v)} />
-        </Row>
 
       </Section>
 
@@ -128,7 +125,6 @@ export function DistractionSettings({
 }
 
 const CAPTURES: { key: keyof CaptureSettings; label: string; hint: string }[] = [
-  { key: 'park', label: 'Park a thought', hint: 'A hotkey for a thought or to-do you want out of your head (set above).' },
   { key: 'stuck', label: 'Stuck marker', hint: 'A hotkey: shown on the timeline and added to the subject\'s Review later list.' },
   { key: 'goal', label: 'Session goal', hint: '"What do I want to get done?" on the setup card; the log asks Done, Partly or Not done.' },
   { key: 'resisted', label: 'Resisted', hint: 'A hotkey for "I wanted to get distracted and did not". It counts your wins.' },

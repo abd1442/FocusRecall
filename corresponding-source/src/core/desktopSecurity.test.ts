@@ -14,7 +14,7 @@ it('constrains helper actions and panel settings independently of the preload',(
  expect(roleCanInvoke('panel','shell:open',['C:\\document.pdf'])).toBe(false)
 })
 it('validates runtime channels, arity, enums, finite data and key-specific settings',()=>{
- expect(IPC_CHANNELS).toHaveLength(157)
+ expect(IPC_CHANNELS).toHaveLength(154)
  expect(IPC_CHANNELS).toEqual(expect.arrayContaining(['advice:choose','advice:less','advice:reset']))
  expect(() => validateIpcArgs('music:command', ['toggle-every-player'])).toThrow()
  expect(roleCanInvoke('panel', 'music:command', ['play'])).toBe(false)

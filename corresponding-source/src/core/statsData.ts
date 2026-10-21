@@ -64,7 +64,6 @@ export interface RawSession {
   goal: string | null
   goalResult: 'done' | 'partly' | 'not-done' | null
   windowSwitches: number
-  parked: number
 }
 
 export interface RawItem {
@@ -193,7 +192,6 @@ export interface StatSession {
   hasGoal: boolean
   resisted: number
   stuck: number
-  parked: number
   windowSwitches: number
   appSeconds: Record<string, number>
   /** The rest after this session, and the one before it (same sitting). */
@@ -389,7 +387,6 @@ export function buildStatSessions(raw: StatsRaw, settings: StatsSettings): { ses
       hasGoal: !!row?.goal,
       resisted: parts.reduce((n, p) => n + p.resisted, 0),
       stuck: parts.reduce((n, p) => n + p.stuck, 0),
-      parked: row?.parked ?? 0,
       windowSwitches: row?.windowSwitches ?? 0,
       appSeconds,
       rest: restOf(parts[parts.length - 1]),

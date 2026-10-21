@@ -83,8 +83,6 @@ export interface AppSettings {
   hotkeySwitch: string
   /** Thresholds for Clean, Some distraction and Distracted. */
   quality: QualityThresholds
-  /** Global hotkey that opens the "park a thought" box. Empty = off. */
-  hotkeyPark: string
   /** Global hotkey for "I got stuck here". Unassigned by default. */
   hotkeyStuck: string
   /** Global hotkey for "I wanted to get distracted and did not". Unassigned by default. */
@@ -151,7 +149,6 @@ export const DEFAULT_SETTINGS: AppSettings = {
   hotkeyDistracted: 'F8',
   hotkeySwitch: 'F10',
   quality: DEFAULT_QUALITY,
-  hotkeyPark: 'F7',
   hotkeyStuck: '',
   hotkeyResisted: '',
   distractionReasons: DISTRACTION_REASONS,

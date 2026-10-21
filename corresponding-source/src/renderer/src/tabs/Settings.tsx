@@ -56,7 +56,6 @@ const KEYWORDS: Record<string, string> = {
   'Weeks start on': 'saturday sunday monday week calendar',
   'Distracted / Back hotkey': 'keyboard shortcut key f8 f9 pause',
   'Switch hotkey': 'keyboard shortcut key f10 subject',
-  'Park a thought hotkey': 'keyboard shortcut key f7 note todo',
   'Stuck hotkey': 'keyboard shortcut key marker review',
   'Resisted hotkey': 'keyboard shortcut key win',
   'Automatic tracking': 'window app program browser detection detect website',

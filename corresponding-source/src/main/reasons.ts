@@ -3,20 +3,12 @@ import { join } from 'node:path'
 import { BrowserWindow, screen } from 'electron'
 import { is } from '@electron-toolkit/utils'
 import { PANEL_SIZES, type PanelSize } from '@core/appearance'
-import type { Id } from '@core/types'
 import { lockPageZoom } from './windows'
 
 // Design size; the window is this times the panel size factor, like the panel.
 const SIZE = { width: 380, height: 170 }
-/** Safety net: the popup closes itself after its countdown, this only catches a stuck one. */
-const MAX_OPEN_MS = 20_000
 
-/**
- * The small one-tap reason picker after "Back". Like the floating panel it
- * never takes keyboard focus: tapping a reason leaves you typing where you
- * were. It sits under the panel when the panel is open, otherwise in the
- * bottom-right corner, and closes itself after about 4 seconds.
- */
+/** Confirmation after a long absence; ordinary Resume never opens a popup. */
 export class ReasonPopup {
   private win: BrowserWindow | null = null
   private listening = false
@@ -37,9 +29,8 @@ export class ReasonPopup {
   prepare(): void {
     this.ensure(10, 10)
   }
-  private safety: NodeJS.Timeout | null = null
 
-  async show(what: { kind: 'reason'; distractionId: Id } | { kind: 'absence'; minutes: number }, opts: { panelBounds: Electron.Rectangle | null; panelSize: PanelSize }): Promise<void> {
+  async show(what: { kind: 'absence'; minutes: number }, opts: { panelBounds: Electron.Rectangle | null; panelSize: PanelSize }): Promise<void> {
     const k = PANEL_SIZES[opts.panelSize]
     const width = Math.round(SIZE.width * k)
     const height = Math.round(SIZE.height * k)
@@ -60,14 +51,9 @@ export class ReasonPopup {
     win.webContents.send('reasons:show', what)
     win.showInactive()
     win.setAlwaysOnTop(true, 'screen-saver')
-    if (this.safety) clearTimeout(this.safety)
-    // The long-absence question waits for an answer; the reason picker closes by itself.
-    if (what.kind === 'reason') this.safety = setTimeout(() => this.hide(), MAX_OPEN_MS)
   }
 
   hide(): void {
-    if (this.safety) clearTimeout(this.safety)
-    this.safety = null
     if (this.win && !this.win.isDestroyed()) this.win.hide()
   }
 

@@ -1,8 +1,8 @@
 import { globalShortcut } from 'electron'
 import type { HotkeyStatus } from '@core/api'
 
-export type HotkeyName = 'distracted' | 'switch' | 'park' | 'stuck' | 'resisted'
-const NAMES: HotkeyName[] = ['distracted', 'switch', 'park', 'stuck', 'resisted']
+export type HotkeyName = 'distracted' | 'switch' | 'stuck' | 'resisted'
+const NAMES: HotkeyName[] = ['distracted', 'switch', 'stuck', 'resisted']
 
 /**
  * The global hotkeys. They are registered only while a session runs, so the
@@ -12,8 +12,8 @@ const NAMES: HotkeyName[] = ['distracted', 'switch', 'park', 'stuck', 'resisted'
  * tool, can still take a key without Windows saying so.)
  */
 export class Hotkeys {
-  private keys: Record<HotkeyName, string> = { distracted: '', switch: '', park: '', stuck: '', resisted: '' }
-  private ok: Record<HotkeyName, boolean> = { distracted: true, switch: true, park: true, stuck: true, resisted: true }
+  private keys: Record<HotkeyName, string> = { distracted: '', switch: '', stuck: '', resisted: '' }
+  private ok: Record<HotkeyName, boolean> = { distracted: true, switch: true, stuck: true, resisted: true }
   private active = false
 
   constructor(private actions: Record<HotkeyName, () => void>) {}
@@ -48,7 +48,7 @@ export class Hotkeys {
 
   status(): HotkeyStatus {
     const one = (n: HotkeyName): { key: string; ok: boolean } => ({ key: this.keys[n], ok: !this.keys[n] || this.ok[n] })
-    return { distracted: one('distracted'), switch: one('switch'), park: one('park'), stuck: one('stuck'), resisted: one('resisted') }
+    return { distracted: one('distracted'), switch: one('switch'), stuck: one('stuck'), resisted: one('resisted') }
   }
 
   private probe(): void {

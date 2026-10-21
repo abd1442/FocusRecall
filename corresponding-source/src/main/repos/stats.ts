@@ -125,11 +125,6 @@ export class StatsRepo {
       }
     })
 
-    const parked = new Map(
-      (this.db.prepare('SELECT session_id, COUNT(*) AS n FROM parked_thoughts WHERE session_id IS NOT NULL GROUP BY session_id').all() as { session_id: number; n: number }[]).map(
-        (r) => [r.session_id, r.n]
-      )
-    )
     const sessions = (this.db.prepare('SELECT * FROM sessions').all() as Record<string, unknown>[]).map((s) => ({
       id: s.id as number,
       sittingId: s.sitting_id as number,
@@ -139,8 +134,7 @@ export class StatsRepo {
       longestStretchSeconds: s.longest_stretch_seconds as number,
       goal: (s.goal as string | null) ?? null,
       goalResult: (s.goal_result as StatsRaw['sessions'][number]['goalResult']) ?? null,
-      windowSwitches: (s.window_switches as number) ?? 0,
-      parked: parked.get(s.id as number) ?? 0
+      windowSwitches: (s.window_switches as number) ?? 0
     }))
 
     const buildsOn = new Map<number, number[]>()

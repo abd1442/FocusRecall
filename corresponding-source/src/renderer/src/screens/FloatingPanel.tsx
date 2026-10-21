@@ -182,7 +182,6 @@ export function FloatingPanel(): React.JSX.Element {
 
   const controls = (
     <div className="fp-controls">
-      {expanded&&state.running&&settings.captures.park&&<button type="button" aria-label={uiText("Park a thought")} title={hint('Park a thought without stopping the timer',settings.hotkeyPark)} onMouseDown={e=>e.preventDefault()} onClick={()=>void window.api.invoke('capture:open','park')} style={noDrag} className="fp-icon"><svg aria-hidden="true" viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"><path d="M4 3.5H16V13H9.5L5.5 16.5V13H4Z"/><path d="M7 7.5H13M7 10H11"/></svg></button>}
       <button
         type="button"
         title={expanded ? uiText("Compact") : uiText("Expand")}

@@ -8,12 +8,7 @@ import { lockPageZoom } from './windows'
 // Design size; the window is this times the panel size factor, like the panel.
 const SIZE = { width: 420, height: 112 }
 
-/**
- * The one-line capture box: "park a thought" (hotkey and panel button) and
- * the optional note after a stuck marker. Unlike the panel it has to take
- * keyboard focus so you can type; Enter or Escape closes it and Windows gives
- * focus back to the program you were in.
- */
+/** Optional stuck-marker note. Takes keyboard focus temporarily. */
 export class CaptureBox {
   private win: BrowserWindow | null = null
   private listening = false
@@ -35,7 +30,7 @@ export class CaptureBox {
     this.ensure(10, 10)
   }
 
-  async show(mode: 'park' | 'stuck', opts: { panelBounds: Electron.Rectangle | null; panelSize: PanelSize }): Promise<void> {
+  async show(mode: 'stuck', opts: { panelBounds: Electron.Rectangle | null; panelSize: PanelSize }): Promise<void> {
     const k = PANEL_SIZES[opts.panelSize]
     const width = Math.round(SIZE.width * k)
     const height = Math.round(SIZE.height * k)

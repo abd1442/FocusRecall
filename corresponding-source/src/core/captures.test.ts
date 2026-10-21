@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isLongAbsence, stuckReviewNote,thoughtGroups } from './captures'
+import { isLongAbsence, stuckReviewNote } from './captures'
 import { DISTRACTION_REASONS, addReason, orderReasons, reasonLabel } from './distractions'
 
 describe('isLongAbsence', () => {
@@ -11,10 +11,6 @@ describe('isLongAbsence', () => {
     expect(isLongAbsence(since, at(60), 0)).toBe(false)
     expect(isLongAbsence(null, at(60), 10)).toBe(false)
   })
-})
-it('groups repeated parked text without merging or changing stored captures',()=>{
-  const thoughts=[{id:1,text:' Reply to Sara ',createdAt:'2026-10-15',sessionId:1,itemId:2,done:false},{id:2,text:'reply   to Sara',createdAt:'2026-10-16',sessionId:3,itemId:4,done:false},{id:3,text:'Buy paper',createdAt:'2026-10-15',sessionId:null,itemId:null,done:false}]
-  const groups=thoughtGroups(thoughts);expect(groups).toHaveLength(2);expect(groups[0].thoughts.map(t=>t.id)).toEqual([1,2]);expect(groups[0].thoughts[1].sessionId).toBe(3);expect(thoughts[0].text).toBe(' Reply to Sara ')
 })
 
 describe('stuckReviewNote', () => {

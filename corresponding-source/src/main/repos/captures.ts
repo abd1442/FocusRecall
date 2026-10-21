@@ -1,17 +1,8 @@
-import type { GoalResult, MarkKind, ParkedThought, SessionMark } from '@core/captures'
+import type { GoalResult, MarkKind, SessionMark } from '@core/captures'
 import type { Id, IsoUtc } from '@core/types'
 import type { Db } from '../db/database'
 
-const toThought = (r: Record<string, unknown>): ParkedThought => ({
-  id: r.id as number,
-  createdAt: r.created_at as string,
-  sessionId: r.session_id as number | null,
-  itemId: r.item_id as number | null,
-  text: r.text as string,
-  done: r.done === 1
-})
-
-/** Quick captures: parked thoughts, stuck and resisted marks, and session goals. */
+/** Session marks and goals. Legacy parked_thoughts rows remain untouched. */
 export class CaptureRepo {
   constructor(private db: Db) {}
 
@@ -31,25 +22,6 @@ export class CaptureRepo {
     return (
       this.db.prepare(`SELECT * FROM session_marks WHERE block_id IN (${blockIds.map(() => '?').join(',')}) ORDER BY at`).all(...blockIds) as Record<string, unknown>[]
     ).map((r) => ({ id: r.id as number, blockId: r.block_id as number, at: r.at as string, kind: r.kind as MarkKind, note: r.note as string | null }))
-  }
-
-  park(text: string, at: IsoUtc, sessionId: Id | null, itemId: Id | null): void {
-    const t = text.trim()
-    if (!t) return
-    this.db.prepare('INSERT INTO parked_thoughts (created_at, session_id, item_id, text) VALUES (?, ?, ?, ?)').run(at, sessionId, itemId, t)
-  }
-
-  /** Open parked thoughts (not ticked off), oldest first. */
-  openThoughts(): ParkedThought[] {
-    return (this.db.prepare('SELECT * FROM parked_thoughts WHERE done = 0 ORDER BY created_at').all() as Record<string, unknown>[]).map(toThought)
-  }
-
-  sessionThoughts(sessionId: Id): ParkedThought[] {
-    return (this.db.prepare('SELECT * FROM parked_thoughts WHERE session_id = ? ORDER BY created_at').all(sessionId) as Record<string, unknown>[]).map(toThought)
-  }
-
-  setThoughtDone(id: Id, done: boolean): void {
-    this.db.prepare('UPDATE parked_thoughts SET done = ? WHERE id = ?').run(done ? 1 : 0, id)
   }
 
   goal(sessionId: Id): { goal: string | null; result: GoalResult | null } {

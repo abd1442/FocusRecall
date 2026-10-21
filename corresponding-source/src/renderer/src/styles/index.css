@@ -434,16 +434,16 @@ html[data-density='compact'] main .py-9, html[data-density='compact'] main .py-8
 
 /* Home responds to usable space, including sidebar and interface scaling. */
 .home-workspace { grid-template-columns:minmax(0,1fr); }
+.home-quick-start { flex-shrink:0; }
+/* A separate footer reserves space; subject scrolling never covers the map. */
+.home-calendar { max-height:42%;overflow-y:auto; }
 .focusrecall-support { border-color:color-mix(in srgb,#c45a76 35%,var(--tf-border));background:linear-gradient(120deg,color-mix(in srgb,#dd8c95 12%,var(--tf-surface)),var(--tf-surface)); }
 .home-launcher [data-session-launch-panel] { display:none; }
 @container home (min-width:70rem) {
   .home-workspace { grid-template-columns:minmax(0,1fr) 27rem; }
   .home-quick-start { display:none; }
   .home-launcher { position:sticky;top:2rem;align-self:start; }
-  .home-launcher [data-session-launch-panel] { display:flex;max-height:min(var(--home-column-height, 100vh), calc(100vh / var(--tf-zoom, 1) - 4.5rem))!important; }
-}
-@container home (max-width:69.99rem) {
-  .home-subjects { min-height:0!important; }
+  .home-launcher [data-session-launch-panel] { display:flex;max-height:max(18rem, calc(100dvh / var(--tf-zoom, 1) - 18rem))!important; }
 }
 
 .stats-section-strip { display:none; }

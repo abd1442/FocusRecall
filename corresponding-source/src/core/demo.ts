@@ -82,7 +82,6 @@ export interface DemoSession {
   number: number
   goal: string | null
   goalResult: 'done' | 'partly' | 'not-done' | null
-  parked: { at: number; text: string }[]
   windowSwitches: number
 }
 
@@ -170,7 +169,6 @@ const STUDY_WINDOWS: Record<string, { process: string; title: string }> = {
 const REVIEWS = ['Redo the carry-over example', 'Check the sign convention again', 'Summarise this chapter in five lines', 'Look up a worked example', 'Re-watch the last ten minutes']
 const RESTS = ['walk', 'stretch', 'water', 'window', 'eyes closed', 'tidy the desk']
 const GOALS = ['Finish the chapter', 'Two problem sets', 'Notes for lecture 6', 'Read 20 pages', 'One clean practice sheet', 'Summarise the last video']
-const PARKED = ['Email the tutor about the deadline', 'Buy printer paper', 'Look up that documentary', 'Reply to Sara', 'Check the bank transfer', 'Book the dentist']
 
 const DETECTED = [
   { app: 'chrome', title: 'Top 10 bridges that failed - YouTube - Google Chrome', kind: 'website' },
@@ -390,7 +388,6 @@ export function generateDemo(now: number, seed = 20261012, weeks = 18): DemoData
           number: sessionNo,
           goal: hasGoal ? pick(r, GOALS) : null,
           goalResult: hasGoal ? (goalScore >= 3.4 ? 'done' : goalScore >= 2.5 ? 'partly' : 'not-done') : null,
-          parked: r() < 0.2 ? [{ at: t + Math.round(wall * r()), text: pick(r, PARKED) }] : [],
           windowSwitches: Math.max(0, windows.filter((w) => w.stage === 'focus').length - 1 + Math.round(r() * 4))
         })
 

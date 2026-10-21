@@ -3,7 +3,7 @@ const common = ['appearance:get','session:get','settings:getAll','reasons:counts
 const helpers: Record<Exclude<RendererRole,'main'>,readonly string[]> = {
   panel:['advice:choose','advice:less','advice:reset','preparation:get','preparation:begin','preparation:confirm','preparation:cancel','window:showMain','session:toggleDistracted','ui:openSwitch','session:finish','panel:close','panel:hover','rest:endEarly','rest:startNextBlock','capture:open','settings:set','library:listPickerItems','shell:open'],
   reasons:['popup:ready','reasons:counts','reasons:hide','distraction:label','session:longAbsence'],
-  capture:['popup:ready','capture:close','capture:park','capture:mark']
+  capture:['popup:ready','capture:close','capture:mark']
 }
 export function roleCanInvoke(role:RendererRole,channel:string,args:unknown[]):boolean {
   if(role==='main')return true

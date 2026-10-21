@@ -67,15 +67,15 @@ if(fs.existsSync('RELEASE-MANIFEST.json')){
  for(const artifact of release.artifacts){
   assert.match(artifact.sha256,/^[a-f0-9]{64}$/);assert.match(artifact.sourceCommit,/^[a-f0-9]{40}$/)
   const folder=path.resolve(artifact.sourceFolder);assert.ok(folder.startsWith(root+path.sep))
-  const source=JSON.parse(fs.readFileSync(path.join(folder,'SOURCE_MANIFEST.json'),'utf8'))
+  const source=JSON.parse(cp.execFileSync('git',['show',release.tag+':'+artifact.sourceFolder+'/SOURCE_MANIFEST.json'],{encoding:'utf8'}))
   assert.equal(source.sourceCommit,artifact.sourceCommit);assert.equal(source.version,release.version)
   for(const row of source.files){
    assert.ok(!/[\r\n\0]/.test(row.file));const file=path.resolve(folder,row.file)
-   assert.ok(file.startsWith(folder+path.sep)&&!fs.lstatSync(file).isSymbolicLink(),'Unsafe source path')
+   assert.ok(file.startsWith(folder+path.sep),'Unsafe source path')
    requests.push({rel:path.relative(root,file).split(path.sep).join('/'),sha256:row.sha256})
   }
  }
- const batch=cp.execFileSync('git',['cat-file','--batch'],{input:requests.map(r=>'HEAD:'+r.rel+'\n').join(''),maxBuffer:128*1024*1024})
+ const batch=cp.execFileSync('git',['cat-file','--batch'],{input:requests.map(r=>release.tag+':'+r.rel+'\n').join(''),maxBuffer:128*1024*1024})
  let offset=0
  for(const row of requests){
   const end=batch.indexOf(10,offset);assert.ok(end>offset);const header=batch.subarray(offset,end).toString('utf8').split(' ')
@@ -88,3 +88,14 @@ if(fs.existsSync('RELEASE-MANIFEST.json')){
  assert.match(release.sourceDelivery.sha256,/^[a-f0-9]{64}$/);assert.match(release.notices.sha256,/^[a-f0-9]{64}$/)
  console.log('PASS single-release mapping and '+requests.length+' exact per-platform source hashes; no common application commit assumed.')
 }
+
+// Current application source can advance without changing the published tag.
+const current=JSON.parse(fs.readFileSync('corresponding-source/SOURCE_MANIFEST.json','utf8'));
+assert.equal(current.status,'unreleased-development');assert.match(current.sourceCommit,/^[a-f0-9]{40}$/);
+for(const row of current.files){
+ const file=path.resolve('corresponding-source',row.file);
+ assert.ok(file.startsWith(path.resolve('corresponding-source')+path.sep)&&!fs.lstatSync(file).isSymbolicLink());
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),row.sha256,row.file);
+}
+assert.ok(!fs.existsSync('corresponding-source/src/renderer/src/components/ParkedThoughts.tsx'));
+console.log('PASS current development source hashes; immutable Beta 1 snapshots verified at their release tag.');

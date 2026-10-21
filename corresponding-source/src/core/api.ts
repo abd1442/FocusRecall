@@ -17,7 +17,7 @@ import type { NoteInput, StudyNote } from './notes'
 import type { StudyToolsData, ComparisonView, StudyExperiment, WeeklyReflection } from './studyTools'
 import type { DistractionRow, HistorySitting, Rating, RecallInput } from './blocks'
 import type { AppRule, Classification, ProgramRow, RuleScope } from './tracking'
-import type { GoalResult, MarkKind, ParkedThought, SessionMark } from './captures'
+import type { GoalResult, MarkKind, SessionMark } from './captures'
 import type { FieldOption, FieldType, GroupNotes, LogField, LogGroup, LogSchema, LogValues, ScaleConfig, Section } from './logfields'
 
 /** One block's after-block answers. */
@@ -48,7 +48,6 @@ export interface SessionReview {
   /** Every program and browser site in front, with what it counts as. */
   programs: ProgramRow[]
   marks: SessionMark[]
-  parked: ParkedThought[]
   goal: string | null
   goalResult: GoalResult | null
   windowSwitches: number
@@ -81,7 +80,6 @@ export interface RuleInput {
 export interface HotkeyStatus {
   distracted: { key: string; ok: boolean }
   switch: { key: string; ok: boolean }
-  park: { key: string; ok: boolean }
   stuck: { key: string; ok: boolean }
   resisted: { key: string; ok: boolean }
 }
@@ -221,14 +219,11 @@ export interface IpcContract {
   /** Uses of each reason, for ordering the picker. */
   'reasons:counts': { args: []; result: Record<string, number> }
   'capture:mark': { args: [kind: MarkKind, note: string | null]; result: void }
-  'capture:park': { args: [text: string]; result: void }
   /** Open the small capture box (park a thought, or a note for a stuck marker). */
-  'capture:open': { args: [mode: 'park' | 'stuck']; result: void }
+  'capture:open': { args: [mode: 'stuck']; result: void }
   'capture:close': { args: []; result: void }
-  /** The reason picker or the capture box has loaded and listens for 'reasons:show' / 'capture:show'. */
+  /** The absence confirmation or the capture box has loaded and listens for 'reasons:show' / 'capture:show'. */
   'popup:ready': { args: [which: 'reasons' | 'capture']; result: void }
-  'parked:list': { args: []; result: ParkedThought[] }
-  'parked:setDone': { args: [id: Id, done: boolean]; result: void }
   'day:get': { args: [day: string]; result: DayAnswers }
   'day:save': { args: [day: string, values: LogValues, notes: GroupNotes, untouched?: number[]]; result: void }
   'day:skip': { args: [day: string]; result: void }
@@ -294,10 +289,9 @@ export interface EventContract {
   'appearance:changed': Appearance
   'log:schemaChanged': LogSchema
   'ui:openSwitch': null
-  /** For the reason popup window. */
-  'reasons:show': { kind: 'reason'; distractionId: Id } | { kind: 'absence'; minutes: number }
-  'capture:show': { mode: 'park' | 'stuck' }
-  'parked:changed': null
+  /** For the long-absence confirmation window. */
+  'reasons:show': { kind: 'absence'; minutes: number }
+  'capture:show': { mode: 'stuck' }
   /** A stuck or resisted marker was placed (the panel shows it briefly). */
   'capture:marked': { kind: MarkKind }
   /** A distraction app held the front for a while during a rest. */

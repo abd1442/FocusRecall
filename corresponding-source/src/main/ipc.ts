@@ -89,7 +89,7 @@ export function registerIpc(deps: {
   sessions: SessionRepo
   stats: StatsRepo
   showMain: () => void
-  openCapture: (mode: 'park' | 'stuck') => void
+  openCapture: (mode: 'stuck') => void
   closeCapture: () => void
   popupReady: (which: 'reasons' | 'capture') => void
   openSwitch: () => void
@@ -342,7 +342,6 @@ export function registerIpc(deps: {
       programs: distractions.programs(ids),
       windowHistoryFrozen: distractions.windowHistoryFrozen(ids),
       marks: captures.marks(ids),
-      parked: sessionId !== null ? captures.sessionThoughts(sessionId) : [],
       goal: goal.goal,
       goalResult: goal.result,
       windowSwitches: sessionId !== null ? distractions.windowSwitches(sessionId) : 0
@@ -374,18 +373,9 @@ export function registerIpc(deps: {
     broadcast('capture:marked', { kind })
     broadcast('distractions:changed', { blockId: session.get().running?.id ?? null })
   })
-  handle('capture:park', (text) => {
-    session.park(text)
-    broadcast('parked:changed', null)
-  })
   handle('capture:open', (mode) => deps.openCapture(mode))
   handle('capture:close', () => deps.closeCapture())
   handle('popup:ready', (which) => deps.popupReady(which))
-  handle('parked:list', () => captures.openThoughts())
-  handle('parked:setDone', (id, done) => {
-    captures.setThoughtDone(id, done)
-    broadcast('parked:changed', null)
-  })
   handle('day:get', (day) => logs.day(day))
   handle('day:save', (day, values, notes, untouched) => logs.saveDay(day, values, notes, untouched))
   handle('day:skip', (day) => logs.skipDay(day))

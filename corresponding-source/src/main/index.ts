@@ -173,9 +173,9 @@ function start(): void {
     panelBounds: panel?.bounds() ?? null,
     panelSize: settings.getAppearance().panelSize
   })
-  const openCapture = (mode: 'park' | 'stuck'): void => {
+  const openCapture = (mode: 'stuck'): void => {
     const c = settings.getAll().captures
-    if (mode === 'park' ? !c.park : !c.stuck) return
+    if (!c.stuck) return
     void captureBox?.show(mode, popupPlace())
   }
   const watcher = new NativeForegroundWatcher(undefined,undefined,()=>{engine?.get()})
@@ -212,7 +212,6 @@ function start(): void {
       }
     },
     switch: openSwitch,
-    park: () => openCapture('park'),
     stuck: () => {
       if (!engine?.get().running) return
       engine.mark('stuck', null)
@@ -225,10 +224,9 @@ function start(): void {
       broadcast('capture:marked', { kind: 'resisted' })
     }
   })
-  const keysOf = (a: AppSettings): Record<'distracted' | 'switch' | 'park' | 'stuck' | 'resisted', string> => ({
+  const keysOf = (a: AppSettings): Record<'distracted' | 'switch' | 'stuck' | 'resisted', string> => ({
     distracted: a.hotkeyDistracted,
     switch: a.hotkeySwitch,
-    park: a.captures.park ? a.hotkeyPark : '',
     stuck: a.captures.stuck ? a.hotkeyStuck : '',
     resisted: a.captures.resisted ? a.hotkeyResisted : ''
   })
@@ -240,7 +238,7 @@ function start(): void {
     persistTrackingPreference(key,()=>settings.set(key,value),()=>settings.getAll(),(enabled,titles)=>tracker?.setEnabled(enabled,titles))
     if(key.startsWith('studyReminder'))reminders?.invalidate()
     const all = settings.getAll()
-    if (key === 'hotkeyDistracted' || key === 'hotkeySwitch' || key === 'hotkeyPark' || key === 'hotkeyStuck' || key === 'hotkeyResisted' || key === 'captures') {
+    if (key === 'hotkeyDistracted' || key === 'hotkeySwitch' || key === 'hotkeyStuck' || key === 'hotkeyResisted' || key === 'captures') {
       hotkeys.configure(keysOf(all))
       broadcast('hotkeys:changed', hotkeys.status())
     }
@@ -307,9 +305,6 @@ function start(): void {
     tracker?.partEnded(blockId, endedAt)
     const sessionId=distractions.sessionOfBlock(blockId)
     if(sessionId!==null)distractions.refreshSessionStats(sessionId)
-  })
-  engine.on('distractionEnded', ({ distractionId }) => {
-    void reasons?.show({ kind: 'reason', distractionId }, popupPlace())
   })
   engine.on('longAbsence', ({ minutes }) => {
     void reasons?.show({ kind: 'absence', minutes }, popupPlace())
@@ -384,7 +379,7 @@ function start(): void {
 
   openMainWindow()
   Notification.handleActivation(openFromReminder)
-  // The small popups load hidden now, so the first Back or capture is instant.
+  // Load the absence confirmation and stuck-note windows hidden.
   reasons.prepare()
   captureBox.prepare()
   const all = settings.getAll()
