@@ -58,44 +58,53 @@ if(fs.existsSync('RELEASE_SOURCE.json') && !fs.existsSync('RELEASE-MANIFEST.json
  assert.match(release.correspondingSource.sha256,/^[a-f0-9]{64}$/)
  console.log('PASS release source revision, curated file hashes and source/binary mapping.')
 }
-// One public release may contain independently built platform snapshots.
-if(fs.existsSync('RELEASE-MANIFEST.json')){
- const release=JSON.parse(fs.readFileSync('RELEASE-MANIFEST.json','utf8'))
- assert.equal(release.version,'0.1.1-beta.1');assert.equal(release.tag,'v0.1.1-beta.1')
- assert.deepEqual(release.artifacts.map(a=>a.platform).sort(),['linux-x64','macos-arm64','macos-x64','windows-x64'])
+// Verify both the current release and retained immutable earlier releases.
+const current = JSON.parse(fs.readFileSync('corresponding-source/SOURCE_MANIFEST.json', 'utf8'))
+assert.ok(['unreleased-development','published-beta'].includes(current.status))
+assert.match(current.sourceCommit,/^[a-f0-9]{40}$/)
+for(const row of current.files){
+ const file=path.resolve('corresponding-source',row.file)
+ assert.ok(file.startsWith(path.resolve('corresponding-source')+path.sep)&&!fs.lstatSync(file).isSymbolicLink())
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),row.sha256,row.file)
+}
+function verifyRelease(release){
+ assert.match(release.version,/^\d+\.\d+\.\d+-beta\.\d+$/)
+ assert.equal(release.tag,'v'+release.version)
+ assert.ok(release.artifacts.length>0)
  const requests=[]
  for(const artifact of release.artifacts){
-  assert.match(artifact.sha256,/^[a-f0-9]{64}$/);assert.match(artifact.sourceCommit,/^[a-f0-9]{40}$/)
-  const folder=path.resolve(artifact.sourceFolder);assert.ok(folder.startsWith(root+path.sep))
-  const source=JSON.parse(cp.execFileSync('git',['show',release.tag+':'+artifact.sourceFolder+'/SOURCE_MANIFEST.json'],{encoding:'utf8'}))
-  assert.equal(source.sourceCommit,artifact.sourceCommit);assert.equal(source.version,release.version)
+  assert.match(artifact.sha256,/^[a-f0-9]{64}$/)
+  assert.match(artifact.sourceCommit,/^[a-f0-9]{40}$/)
+  const folder=path.resolve(artifact.sourceFolder)
+  assert.ok(folder.startsWith(root+path.sep))
+  const live=artifact.sourceFolder==='corresponding-source'&&artifact.sourceCommit===current.sourceCommit
+  const source=live?current:JSON.parse(cp.execFileSync('git',['show',release.tag+':'+artifact.sourceFolder+'/SOURCE_MANIFEST.json'],{encoding:'utf8'}))
+  assert.equal(source.sourceCommit,artifact.sourceCommit)
+  assert.equal(source.version,release.version)
   for(const row of source.files){
-   assert.ok(!/[\r\n\0]/.test(row.file));const file=path.resolve(folder,row.file)
+   assert.ok(!/[\r\n\0]/.test(row.file))
+   const file=path.resolve(folder,row.file)
    assert.ok(file.startsWith(folder+path.sep),'Unsafe source path')
-   requests.push({rel:path.relative(root,file).split(path.sep).join('/'),sha256:row.sha256})
+   requests.push({ref:live?artifact.sourceCommit:release.tag,rel:path.relative(root,file).split(path.sep).join('/'),sha256:row.sha256})
   }
  }
- const batch=cp.execFileSync('git',['cat-file','--batch'],{input:requests.map(r=>release.tag+':'+r.rel+'\n').join(''),maxBuffer:128*1024*1024})
+ const batch=cp.execFileSync('git',['cat-file','--batch'],{input:requests.map(r=>r.ref+':'+r.rel+'\n').join(''),maxBuffer:128*1024*1024})
  let offset=0
  for(const row of requests){
-  const end=batch.indexOf(10,offset);assert.ok(end>offset);const header=batch.subarray(offset,end).toString('utf8').split(' ')
-  assert.equal(header[1],'blob',row.rel);const size=Number(header[2]);assert.ok(Number.isSafeInteger(size)&&size>=0)
+  const end=batch.indexOf(10,offset);assert.ok(end>offset)
+  const header=batch.subarray(offset,end).toString('utf8').split(' ')
+  assert.equal(header[1],'blob',row.rel)
+  const size=Number(header[2]);assert.ok(Number.isSafeInteger(size)&&size>=0)
   offset=end+1;const bytes=batch.subarray(offset,offset+size);assert.equal(bytes.length,size)
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),row.sha256,row.rel)
   offset+=size;assert.equal(batch[offset++],10)
  }
  assert.equal(offset,batch.length)
- assert.match(release.sourceDelivery.sha256,/^[a-f0-9]{64}$/);assert.match(release.notices.sha256,/^[a-f0-9]{64}$/)
- console.log('PASS single-release mapping and '+requests.length+' exact per-platform source hashes; no common application commit assumed.')
+ assert.match(release.sourceDelivery.sha256,/^[a-f0-9]{64}$/)
+ assert.match(release.notices.sha256,/^[a-f0-9]{64}$/)
+ console.log('PASS '+release.tag+' source/binary mapping and '+requests.length+' exact source hashes.')
 }
-
-// Current application source can advance without changing the published tag.
-const current=JSON.parse(fs.readFileSync('corresponding-source/SOURCE_MANIFEST.json','utf8'));
-assert.equal(current.status,'unreleased-development');assert.match(current.sourceCommit,/^[a-f0-9]{40}$/);
-for(const row of current.files){
- const file=path.resolve('corresponding-source',row.file);
- assert.ok(file.startsWith(path.resolve('corresponding-source')+path.sep)&&!fs.lstatSync(file).isSymbolicLink());
- assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),row.sha256,row.file);
-}
-assert.ok(!fs.existsSync('corresponding-source/src/renderer/src/components/ParkedThoughts.tsx'));
-console.log('PASS current development source hashes; immutable Beta 1 snapshots verified at their release tag.');
+if(fs.existsSync('RELEASE-MANIFEST.json'))verifyRelease(JSON.parse(fs.readFileSync('RELEASE-MANIFEST.json','utf8')))
+if(fs.existsSync('release-history'))for(const file of fs.readdirSync('release-history').filter(f=>f.endsWith('RELEASE-MANIFEST.json')))verifyRelease(JSON.parse(fs.readFileSync(path.join('release-history',file),'utf8')))
+assert.ok(!fs.existsSync('corresponding-source/src/renderer/src/components/ParkedThoughts.tsx'))
+console.log('PASS current source hashes and retained prior release mapping.')

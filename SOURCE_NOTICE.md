@@ -1,8 +1,10 @@
 # Application source and release materials
 
-## Current development source
+## Beta 2 Windows source
 
-[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) contains the current unreleased Windows application source at `27efc7154bf786874bd1e78fe74713ef18cf0824`, including the Home calendar and distraction-workflow update. Build directions are in [SOURCE_BUILD.md](corresponding-source/SOURCE_BUILD.md). No new installer is published by this change; Linux/macOS source snapshots below remain the frozen Beta 1 builds.
+[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) contains Windows **0.1.5-beta.2 — Beta 2**, exact public source snapshot `0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f`. The tag `v0.1.5-beta.2` identifies the release assembly; the installer maps to this application snapshot. [Build directions](corresponding-source/SOURCE_BUILD.md) · [Release manifest](RELEASE-MANIFEST.json) · [Beta 2 source materials](https://github.com/abd1442/FocusRecall/releases/download/v0.1.5-beta.2/FocusRecall-Beta-2-Source.zip).
+
+The attached source archive includes the exact curated editable Windows inputs, unchanged locked dependency/preferred-source inputs and pinned runtime source-access directions. Linux/macOS remain frozen Beta 1 builds. Source delivery does not imply that unperformed installer/hardware/assistive-technology checks passed; see [release notes](RELEASE_NOTES.md).
 
 ## Published Beta 1 source
 
@@ -17,7 +19,7 @@ The tag `v0.1.1-beta.1` identifies a release assembly, not one common applicatio
 | macos-arm64 | `8bdc835e3e7f7f5a7fa1c62c829c9b2d2f2addca` | [platform-source/macos-arm64](platform-source/macos-arm64/SOURCE_MANIFEST.json) |
 | macos-x64 | `f93d7991d4ba52335cfdbc72d536fdd0eb76fcb6` | [platform-source/macos-x64](platform-source/macos-x64/SOURCE_MANIFEST.json) |
 
-The [release manifest](RELEASE-MANIFEST.json) maps every binary to its source, version, SHA-256 and matching source archive. The two Mac snapshots differ only by a verification-script cold-start deadline; application code is unchanged.
+The [Beta 1 release manifest](release-history/Beta-1-RELEASE-MANIFEST.json) maps every Beta 1 binary to its source, version, SHA-256 and matching source archive. The two Mac snapshots differ only by a verification-script cold-start deadline; application code is unchanged.
 
 Runtime source access must remain available while the binaries are offered. Full recursive Chromium/CIPD retrieval and a complete Electron rebuild were not performed; the source package explains the bounded review and pinned upstream access. Modified components can be rebuilt/replaced using the supplied directions, without vendor-only signing keys.
 

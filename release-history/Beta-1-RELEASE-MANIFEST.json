@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "title": "FocusRecall — Beta 1",
+  "version": "0.1.1-beta.1",
+  "tag": "v0.1.1-beta.1",
+  "tagMeaning": "Release assembly of the named per-platform source snapshots, not a common application build revision.",
+  "artifacts": [
+    {
+      "platform": "windows-x64",
+      "file": "FocusRecall-Beta-1-Windows-x64-Setup.exe",
+      "version": "0.1.1-beta.1",
+      "sourceCommit": "822068b128b47e3cff3627082ee0e336dfa17d71",
+      "sourceFolder": "corresponding-source",
+      "bytes": 121481245,
+      "sha256": "7f68abad2e33ead8ec036c48b107e15500e6cbc4b178eeb89e7610596b592f07"
+    },
+    {
+      "platform": "linux-x64",
+      "file": "FocusRecall-Beta-1-Linux-x64.deb",
+      "version": "0.1.1-beta.1",
+      "sourceCommit": "f583c7de992dfbf8edfe3f20bc369c0f26567112",
+      "sourceFolder": "platform-source/linux-x64",
+      "bytes": 103485848,
+      "sha256": "2d357101a4677a6d2c0bd965ee5127c1b455d198bcd213a69ac0271f3ae0e015"
+    },
+    {
+      "platform": "macos-arm64",
+      "file": "FocusRecall-Beta-1-macOS-arm64.zip",
+      "version": "0.1.1-beta.1",
+      "sourceCommit": "8bdc835e3e7f7f5a7fa1c62c829c9b2d2f2addca",
+      "sourceFolder": "platform-source/macos-arm64",
+      "bytes": 136360640,
+      "sha256": "111e1f0f3693c988197cec2de540be97055c44c94d6a1bb4984ffa0e3a952389"
+    },
+    {
+      "platform": "macos-x64",
+      "file": "FocusRecall-Beta-1-macOS-x64.zip",
+      "version": "0.1.1-beta.1",
+      "sourceCommit": "f93d7991d4ba52335cfdbc72d536fdd0eb76fcb6",
+      "sourceFolder": "platform-source/macos-x64",
+      "bytes": 141928121,
+      "sha256": "51aa2fcb04225aba03252ea2f888e65cd7e7ce850a27e7465b411678f1fcd4df"
+    }
+  ],
+  "sourceArchiveFolder": "FocusRecall-source/<platform>",
+  "nativeVerification": "Native compilation, production security and packaged workflows passed; see release notes for physical/hardware limitations.",
+  "intelVerificationDifference": "Intel source differs from the ARM64 snapshot only by a CI cold-start deadline/diagnostic change. Application code is unchanged.",
+  "license": "GPL-3.0-only",
+  "foregroundTracking": "Unavailable on Linux/macOS; Windows optional and OFF by default.",
+  "sourceDelivery": {
+    "file": "FocusRecall-Beta-1-Source.zip",
+    "sha256": "778702c12ae743edd611fcf3c5e29a4ac71119f4f37b44b620a57ecd71badf1f",
+    "bytes": 175547524
+  },
+  "notices": {
+    "file": "FocusRecall-Beta-1-Notices.zip",
+    "sha256": "8a3d45db45e1daeb256558f55f9e192497b171735a382d04d33e66b93360d7bb",
+    "bytes": 8443970
+  }
+}

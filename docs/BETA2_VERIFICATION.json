@@ -1,0 +1,100 @@
+{
+  "version": "0.1.5-beta.2",
+  "sourceCommit": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+  "curatedSourceFiles": 632,
+  "unchangedDependencySourceEntries": 98,
+  "releaseAssetChecksumsVerified": [
+    "FocusRecall-Beta-2-Notices.zip",
+    "FocusRecall-Beta-2-Source.zip",
+    "FocusRecall-Beta-2-Windows-x64-Setup.exe",
+    "RELEASE-MANIFEST.json"
+  ],
+  "sourceRebuild": {
+    "success": true,
+    "files": [
+      {
+        "file": "out/main/index.js",
+        "installerInput": "78d1470ceaa24dff498dd061820263f2516a2d0d5f1403906ed38b29fdd30deb",
+        "sourceRebuild": "78d1470ceaa24dff498dd061820263f2516a2d0d5f1403906ed38b29fdd30deb"
+      },
+      {
+        "file": "out/main/build-profile.json",
+        "installerInput": "9ef0d3e139b7e12c905aa80900cf10f7ad18a034eaa681cfd686407dab10b2b0",
+        "sourceRebuild": "9ef0d3e139b7e12c905aa80900cf10f7ad18a034eaa681cfd686407dab10b2b0"
+      },
+      {
+        "file": "out/preload/index.js",
+        "installerInput": "7030a1989b6fd2a848e2b0a9f2b491b2cc7e0cbb74ef786b6650cc5c4874373b",
+        "sourceRebuild": "7030a1989b6fd2a848e2b0a9f2b491b2cc7e0cbb74ef786b6650cc5c4874373b"
+      },
+      {
+        "file": "out/renderer/assets/App-4IKA4URd.js",
+        "installerInput": "9cf36a1f167d168424512eb84000865e49ead8b50ec4ad7a13d9e28ba94619b7",
+        "sourceRebuild": "9cf36a1f167d168424512eb84000865e49ead8b50ec4ad7a13d9e28ba94619b7"
+      },
+      {
+        "file": "out/renderer/assets/App-C5763nlb.css",
+        "installerInput": "87ecbbf0b99677496f41a9909720cc18ad4aaac65aedc15038b8a753e6a00d18",
+        "sourceRebuild": "87ecbbf0b99677496f41a9909720cc18ad4aaac65aedc15038b8a753e6a00d18"
+      },
+      {
+        "file": "out/renderer/assets/chime-BArLrsUz.wav",
+        "installerInput": "8cfd679584186c01a131bbb95cd13b6041eba823bb74f3e6fc243e52fdfb095e",
+        "sourceRebuild": "8cfd679584186c01a131bbb95cd13b6041eba823bb74f3e6fc243e52fdfb095e"
+      },
+      {
+        "file": "out/renderer/assets/focusrecall-icon-D6hn-1jr.png",
+        "installerInput": "b5d88b5ca754b752e96f240e6427e0669cccaef8abb73dc8235ba6cfdb81b68b",
+        "sourceRebuild": "b5d88b5ca754b752e96f240e6427e0669cccaef8abb73dc8235ba6cfdb81b68b"
+      },
+      {
+        "file": "out/renderer/assets/index-BfUSr0Ct.css",
+        "installerInput": "11e853d7dbd5c7de164d4de20e6a077329314a2dec00ef04e508210d0a37991e",
+        "sourceRebuild": "11e853d7dbd5c7de164d4de20e6a077329314a2dec00ef04e508210d0a37991e"
+      },
+      {
+        "file": "out/renderer/assets/index-DB6G6m0j.js",
+        "installerInput": "d29020e141dc847f8adc3cf7b5b656042d6a5795ef29d8b8052060472d9203f8",
+        "sourceRebuild": "d29020e141dc847f8adc3cf7b5b656042d6a5795ef29d8b8052060472d9203f8"
+      },
+      {
+        "file": "out/renderer/assets/learn-BD6otA4V.js",
+        "installerInput": "a46b4b31ca16153bbdfef842f74c21f02b03360eb7ac5f82420e1a6be739fecb",
+        "sourceRebuild": "a46b4b31ca16153bbdfef842f74c21f02b03360eb7ac5f82420e1a6be739fecb"
+      },
+      {
+        "file": "out/renderer/assets/Learn-CigyrMO8.js",
+        "installerInput": "e0f5f40455a91adbf0c4e9d7a666b2c486538c9e5d658c74ee47fa981338af2c",
+        "sourceRebuild": "e0f5f40455a91adbf0c4e9d7a666b2c486538c9e5d658c74ee47fa981338af2c"
+      },
+      {
+        "file": "out/renderer/assets/learn-Cs4NERPh.css",
+        "installerInput": "163132afefce883a938a793117bb3f8b759d016fc8b8cd7c508389c7e2b77f05",
+        "sourceRebuild": "163132afefce883a938a793117bb3f8b759d016fc8b8cd7c508389c7e2b77f05"
+      },
+      {
+        "file": "out/renderer/assets/statsAnalysis.worker-CbJwZGVX.js",
+        "installerInput": "9daa80c760233fc976d3065367e6ff4f74f8b3d63ea7bf83c712d7cc8da72757",
+        "sourceRebuild": "9daa80c760233fc976d3065367e6ff4f74f8b3d63ea7bf83c712d7cc8da72757"
+      },
+      {
+        "file": "out/renderer/assets/StudyStrategyExample-C09ViI_4.js",
+        "installerInput": "f0bf6d3e664bf4a37323d2ca6e3a682102421a1938d47bac477cd9c0ccc3ceee",
+        "sourceRebuild": "f0bf6d3e664bf4a37323d2ca6e3a682102421a1938d47bac477cd9c0ccc3ceee"
+      },
+      {
+        "file": "out/renderer/index.html",
+        "installerInput": "493aaa4d0fe14e2c488e10ca15c9bd62b94bd441f5296fa90d5b19f99def1124",
+        "sourceRebuild": "493aaa4d0fe14e2c488e10ca15c9bd62b94bd441f5296fa90d5b19f99def1124"
+      },
+      {
+        "file": "resources/native/win32-x64/foreground.node",
+        "installerInput": "fd7d72f30737dcc05279e2d54d37d967013077539ad6eae94acdc716f54183c6",
+        "sourceRebuild": "fd7d72f30737dcc05279e2d54d37d967013077539ad6eae94acdc716f54183c6"
+      }
+    ]
+  },
+  "installerPayloadFilesMatched": 126,
+  "testsPassed": 1199,
+  "scope": "Fictional automated verification and exact source/output checks; physical Windows/installer/assistive technology limits are in release notes."
+}

@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>Beta 1 · 0.1.1-beta.1</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
+  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>Beta 2 Windows · 0.1.5-beta.2</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
 </p>
 
 <p align="center">
@@ -52,11 +52,15 @@ Use as much or as little of it as you like. Notes, ratings, rest timers and auto
 
 <br>
 
-## Beta 1 downloads
+## Beta 2 downloads
 
-[**Download FocusRecall — Beta 1**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1)
+[**Download FocusRecall — Beta 2 for Windows x64**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.5-beta.2)
 
-One page contains Windows x64, Linux x64 DEB, Mac Apple Silicon and Mac Intel downloads, installation instructions, matching source, licenses and checksums. The application version is **0.1.1-beta.1**. Linux/macOS are experimental and awaiting real-world testing; Windows is unsigned and Macs are not notarized.
+Version **0.1.5-beta.2** improves session safety, accessibility, draft recovery, History, notes and Quick Mode. It is an unsigned Windows prerelease. [Changes and verification limits](RELEASE_NOTES.md) · [Matching source](SOURCE_NOTICE.md) · [Checksums](SHA256SUMS.txt).
+
+Experimental **Linux and macOS remain on [Beta 1](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1)**. They have not been rebuilt or relabeled as Beta 2. Screenshots elsewhere on this page illustrate earlier real builds with fictional records; some details predate Beta 2.
+
+Back up your records and quit through the tray before updating. Clean-install/actual Beta 1 upgrade and physical Windows/assistive-technology checks remain uncompleted for this candidate. See the release notes before use.
 
 [Report a beta problem](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml). Issues are public; use fictional examples and never attach personal study records, private backups or sensitive logs.
 
@@ -257,7 +261,7 @@ Uninstalling keeps your profile. **Restore Backup** replaces the current databas
 
 ## Install
 
-Choose your operating system in [Beta 1 downloads](#beta-1-downloads), then follow that platform’s release instructions. Windows uses an unsigned x64 installer; Ubuntu 24.04 x64 uses a DEB; Macs use the Apple Silicon or Intel app ZIP. Linux/macOS remain experimental. Keep security protections enabled and report warnings instead of overriding malware or damaged-app alerts.
+Use [Beta 2 downloads](#beta-2-downloads) for Windows; Linux/macOS remain on the Beta 1 release. Follow the instructions for the version you download. Windows uses an unsigned x64 installer; Ubuntu 24.04 x64 uses a DEB; Macs use the Apple Silicon or Intel app ZIP. Linux/macOS remain experimental. Keep security protections enabled and report warnings instead of overriding malware or damaged-app alerts.
 
 On first launch, pick Quick or Full Mode and your language. To look around before adding your own subjects, choose **Open demo data** in **Settings → General → Data**. It opens a separate database of made-up study and leaves your own records untouched.
 
@@ -281,7 +285,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
-Use the source package and release tag that match your download; different platforms were built from different source revisions. The source on `main` also includes unreleased changes, identified in [SOURCE_NOTICE.md](SOURCE_NOTICE.md). Screenshots show real application screens with made-up subjects and notes.
+Use the source package and release tag that match your download; different platforms were built from different source revisions. The Windows source on `main` matches Beta 2; frozen Beta 1 source remains available at its release tag, as explained in [SOURCE_NOTICE.md](SOURCE_NOTICE.md). Screenshots show real application screens with made-up subjects and notes.
 
 ---
 

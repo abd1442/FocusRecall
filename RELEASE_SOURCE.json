@@ -1,19 +1,23 @@
 {
   "platform": "windows-x64",
-  "originalBuildSource": "822068b128b47e3cff3627082ee0e336dfa17d71",
-  "tag": "v0.1.1-beta.1",
+  "originalBuildSource": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+  "tag": "v0.1.5-beta.2",
   "binary": {
-    "file": "FocusRecall-Beta-1-Windows-x64-Setup.exe",
-    "sha256": "7f68abad2e33ead8ec036c48b107e15500e6cbc4b178eeb89e7610596b592f07"
+    "platform": "windows-x64",
+    "file": "FocusRecall-Beta-2-Windows-x64-Setup.exe",
+    "version": "0.1.5-beta.2",
+    "sourceCommit": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+    "sourceFolder": "corresponding-source",
+    "bytes": 121547713,
+    "sha256": "7fa8fca851b75782b51afef40fc10b57e86b3ea813f4aea034d527041c88d79f"
   },
   "correspondingSource": {
-    "file": "FocusRecall-Beta-1-Source.zip",
-    "sha256": "778702c12ae743edd611fcf3c5e29a4ac71119f4f37b44b620a57ecd71badf1f",
-    "bytes": 175547524
+    "file": "FocusRecall-Beta-2-Source.zip",
+    "sha256": "3ca9c66c2bcf2306ba0f27dd406b7c9c787f572d803559b8f3d5b8172ae04f78",
+    "bytes": 159048565
   },
   "sourceTree": "corresponding-source",
+  "sourceTreeRef": "v0.1.5-beta.2",
   "noDeveloperHistory": true,
-  "preparedForBetaReview": true,
-  "sourceTreeRef": "v0.1.1-beta.1",
-  "scope": "Frozen published Beta 1; current development source is identified separately in SOURCE_NOTICE.md."
+  "scope": "Windows Beta 2; previous native platform releases remain Beta 1."
 }
