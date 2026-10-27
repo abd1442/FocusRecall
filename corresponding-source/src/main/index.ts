@@ -362,6 +362,7 @@ function start(): void {
     togglePanel,
     closePanel,
     preparationPanel: (open) => {panel?.setPreparing(open,open&&mainWin&&!mainWin.isDestroyed()?screen.getDisplayMatching(mainWin.getBounds()).workArea:undefined);panel?.sync(settings.getAll(),settings.getAppearance());if(open&&settings.getAll().minimizeOnStart&&settings.getAll().starterGuideCompleted&&mainWin&&!mainWin.isDestroyed()&&!mainWin.isMinimized())mainWin.minimize()},
+    focusPanel: async () => { setSetting('panelOpen',true); await panel?.focusControls() },
     panelHover: (over) => panel?.hover(over),
     demo: {
       active: config.demo,

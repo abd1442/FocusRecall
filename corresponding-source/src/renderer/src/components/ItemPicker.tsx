@@ -37,6 +37,14 @@ export function ItemPicker({ homeOrdering=false, onOrder, createRequest=0, selec
   const [items, setItems] = useState<PickerItem[]>([])
   const [query, setQuery] = useState('')
   const [creating, setCreating] = useState(false)
+  const picker = useRef<HTMLDivElement>(null), restoreCreateFocus = useRef(false)
+  const cancelCreate = (): void => { restoreCreateFocus.current = true; setCreating(false) }
+  useEffect(() => {
+    if (!creating && restoreCreateFocus.current) {
+      restoreCreateFocus.current = false
+      ;(picker.current?.querySelector<HTMLButtonElement>('[data-create-subject]') ?? search.current)?.focus({preventScroll:true})
+    }
+  }, [creating])
   const language=useLanguage()
   const preference=useSettings(s=>homeOrdering?s.settings.homeSubjectOrdering:DEFAULT_HOME_ORDER)
   const blocks=useBlocks(s=>homeOrdering?s.blocks:NO_BLOCKS)
@@ -87,7 +95,7 @@ export function ItemPicker({ homeOrdering=false, onOrder, createRequest=0, selec
   }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div ref={picker} className="flex flex-col gap-4">
       <div className="relative flex min-w-0 items-center gap-3">
       <input
         ref={search}
@@ -133,6 +141,7 @@ export function ItemPicker({ homeOrdering=false, onOrder, createRequest=0, selec
           {!creating && (
             <button
               type="button"
+              data-create-subject
               onClick={() => setCreating(true)}
               className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line text-base text-muted hover:border-muted hover:text-ink"
             >
@@ -152,11 +161,11 @@ export function ItemPicker({ homeOrdering=false, onOrder, createRequest=0, selec
                   onSelect(item)
                   onConfirm?.()
                 }}
-                className={`relative flex min-h-14 w-full items-center gap-4 overflow-hidden rounded-xl px-4 text-left transition-colors ${
+                className={`relative flex min-h-14 w-full flex-col items-start gap-1 overflow-hidden rounded-xl px-4 py-3 text-left transition-colors ${
                   item.id === selectedId ? 'bg-surface-2 text-ink' : 'hover:bg-surface-2/60'
                 }`}
               >
-                <span dir="auto" className="min-w-0 flex-1 truncate text-lg">
+                <span dir="auto" className="min-w-0 line-clamp-2 whitespace-normal break-words text-lg" title={item.name}>
                   {item.name}
                 </span>
                 <span className="shrink-0 text-sm text-muted">{item.categoryName}</span>
@@ -169,10 +178,10 @@ export function ItemPicker({ homeOrdering=false, onOrder, createRequest=0, selec
       {!filtered.length && <p className="px-1 text-base text-muted">{items.length ? uiText("No match.") : uiText("No subjects yet. Add your first one.")}</p>}
 
       {creating ? (
-        <QuickCreate initialName={query} onCancel={() => setCreating(false)} onCreated={created} />
+        <QuickCreate initialName={query} onCancel={cancelCreate} onCreated={created} />
       ) : (
         layout === 'list' && (
-          <Button variant="ghost" className="self-start" onClick={() => setCreating(true)}>
+          <Button data-create-subject variant="ghost" className="self-start" onClick={() => setCreating(true)}>
             <PlusIcon />{uiText(" New subject")}</Button>
         )
       )}

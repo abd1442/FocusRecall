@@ -13,6 +13,8 @@ export interface AppSettings {
   /** Missing/legacy preferences retain the complete workflow. */
   studyExperience: 'full' | 'quick'
   homeSubjectOrdering: HomeSubjectOrdering
+  /** Optional daily Focus target; zero disables it. */
+  dailyStudyGoalMinutes: number
   showTodayCheck: boolean
   /** Local calendar date; never the configurable study-day key. */
   todayCheckSkippedDate: string | null
@@ -102,6 +104,7 @@ export interface AppSettings {
 export const DEFAULT_SETTINGS: AppSettings = {
   studyExperience: 'full',
   homeSubjectOrdering: { mode: 'recent', ids: [] },
+  dailyStudyGoalMinutes: 0,
   showTodayCheck: true,
   todayCheckSkippedDate: null,
   language: 'en',
@@ -126,7 +129,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   weekStartsOn: 6,
   fixedMinutes: 25,
   plannedActivity: null,
-  preparationEnabled: true,
+  preparationEnabled: false,
   preparationChecks: ['Phone away or silenced','Distracting tabs and apps closed'],
   studyReminderDailyEnabled: false,
   studyReminderDailyTime: '18:00',

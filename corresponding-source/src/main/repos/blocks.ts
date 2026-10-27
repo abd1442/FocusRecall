@@ -158,6 +158,7 @@ export class BlocksRepo {
       .get(id) as { focus_started_at: string; focus_ended_at: string | null } | undefined
     if (!row) throw new Error(`Block ${id} not found.`)
     this.db.transaction(() => {
+      this.assertSessionNotRunning(this.sessionOfBlock(id))
       if (patch.itemId !== undefined) {
         this.db.prepare('UPDATE blocks SET item_id = ? WHERE id = ?').run(patch.itemId, id)
         this.db.prepare('UPDATE study_notes SET item_id = ? WHERE block_id = ?').run(patch.itemId, id)
@@ -176,6 +177,9 @@ export class BlocksRepo {
         const start = patch.focusStartedAt ?? row.focus_started_at
         const end = patch.focusEndedAt ?? row.focus_ended_at
         if (!end || !Number.isFinite(Date.parse(start)) || !Number.isFinite(Date.parse(end)) || Date.parse(end) <= Date.parse(start)) throw new Error('Choose valid times with the end after the start.')
+        const siblings=this.db.prepare('SELECT focus_started_at,focus_ended_at FROM blocks WHERE session_id=(SELECT session_id FROM blocks WHERE id=?) AND id<>?').all(id,id) as {focus_started_at:string;focus_ended_at:string|null}[]
+        if(siblings.some(s=>Date.parse(start)<(s.focus_ended_at===null?Infinity:Date.parse(s.focus_ended_at)) && Date.parse(end)>Date.parse(s.focus_started_at)))
+          throw new Error('Session parts cannot overlap. Choose times outside the other parts or adjust their shared boundary on the timeline.')
         const pauses = sessionPauses(this.db,id)
         this.db
           .prepare('UPDATE blocks SET focus_started_at = ?, focus_ended_at = ?, focus_seconds = ? WHERE id = ?')
@@ -193,6 +197,7 @@ export class BlocksRepo {
     const row = this.db.prepare('SELECT sitting_id, session_id FROM blocks WHERE id = ?').get(id) as { sitting_id: number; session_id: number | null } | undefined
     if (!row) return
     this.db.transaction(() => {
+      this.assertSessionNotRunning(row.session_id)
       preserveCrossingIntervals(this.db,id)
       this.db.prepare('DELETE FROM blocks WHERE id = ?').run(id)
       if(row.session_id!==null){const repo=new DistractionRepo(this.db);repo.recomputeParts(repo.sessionBlockIds(row.session_id));repo.refreshSessionStats(row.session_id)}
@@ -205,9 +210,19 @@ export class BlocksRepo {
     const row = this.db.prepare('SELECT sitting_id FROM sessions WHERE id = ?').get(sessionId) as { sitting_id: number } | undefined
     if (!row) return
     this.db.transaction(() => {
+      this.assertSessionNotRunning(sessionId)
       this.db.prepare('DELETE FROM blocks WHERE session_id = ?').run(sessionId)
       this.removeEmpty(row.sitting_id, sessionId)
     })()
+  }
+
+  private sessionOfBlock(id:Id):Id|null {
+    return (this.db.prepare('SELECT session_id FROM blocks WHERE id=?').get(id) as {session_id:Id|null}|undefined)?.session_id??null
+  }
+
+  private assertSessionNotRunning(sessionId:Id|null):void {
+    if(sessionId!==null && this.db.prepare('SELECT 1 FROM blocks WHERE session_id=? AND focus_ended_at IS NULL').get(sessionId))
+      throw new Error('Finish the running session before editing or deleting it in History.')
   }
 
   private removeEmpty(sittingId: Id, sessionId: Id | null): void {

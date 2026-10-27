@@ -1,6 +1,6 @@
 # Using FocusRecall
 
-This guide describes beta.28-rc.2. It is not download authorization; read [release status](RELEASE_STATUS.md). Captures use fictional records and an identified QA build.
+This guide follows current **0.1.5-beta.2 source behavior**. The last verified controlled-test installer is still beta.28-rc.2 and does not include later changes; see [current source](CURRENT_SOURCE.md). This is not download authorization; read [release status](RELEASE_STATUS.md). Older captures use fictional records and an identified historical QA build.
 
 ## Install or update
 
@@ -15,6 +15,10 @@ Before updating, create a verified backup in Settings and finish/close FocusReca
 3. Use the floating panel while working. Mark distractions or pause. Locked/asleep/unobserved time is not automatically credited; resume on return.
 4. Finish Focus and recall what you can. Use notes/drawings, review or an optional recall timer. A timer total is not a learning score.
 5. Complete optional logs/ratings, choose Rest and continue when ready. History keeps the details.
+
+Quick Mode offers a timer and optional breaks without preparation, recall or questions. In Full Mode, **Save for later** on Recall or the session log preserves unfinished work and returns Home. Resume it from the unfinished-work disclosure when convenient; untouched ratings remain unanswered. Try recalling without the material, then check a dependable source and correct a gap. Paper, speaking, typing and drawing are all optional ways to do that.
+
+History retains its search, view and filters when you visit another tab. Saved notes offers **Show more** beyond the first page. To remove a standalone note, open Edit note and choose **Delete local note**; copies already sent to Obsidian remain there. Session-linked recall stays part of the session and is edited from that session. History keeps a current study session read-only until the active step is finished or saved for later.
 
 Today Check is optional. **Skip for today** hides it until the next local calendar day. The permanent Settings Show/Hide preference takes precedence; neither erases history.
 

@@ -9,7 +9,7 @@ import { useLogSchema } from '../../store/logSchema'
 import { SessionReview } from '../../components/SessionReview'
 import { needsLook } from '../../components/SessionTimeline'
 import { Button } from '../../components/ui'
-import { useSettings } from '../../store/session'
+import { useSession, useSettings } from '../../store/session'
 import { BlockCard } from './BlockCard'
 
 const time = (iso: string): string => formatTime(new Date(iso), { hour: '2-digit', minute: '2-digit' })
@@ -30,6 +30,9 @@ export function SessionCard({ session: s, reload, highlighted = false, query = '
   const match=text.toLowerCase().indexOf(query.trim().toLowerCase()),start=Math.max(0,match-50)
   const excerpt=(start?'…':'')+text.slice(start,start+180)+(text.length>start+180?'…':'')
   const thresholds = useSettings((st) => st.settings.quality)
+  const workflow=useSession(st=>st.state)
+  const readOnly=workflow.running?.sessionId===s.id || Boolean(workflow.recovery&&s.parts.some(p=>p.id===workflow.recovery!.blockId)) ||
+    workflow.finished.some(p=>p.sessionId===s.id) || Boolean(workflow.rest&&s.parts.some(p=>p.id===workflow.rest!.blockId))
   const quality = qualityOf(s.stats, thresholds)
   const distractions = s.parts.flatMap((p) => p.distractions)
   const look = distractions.filter(needsLook).length
@@ -66,7 +69,7 @@ export function SessionCard({ session: s, reload, highlighted = false, query = '
         </span>
         <span className="flex-1" />
         <Button size="sm" aria-expanded={expanded} aria-controls={`history-details-${s.id}`} onClick={() => setExpanded(!expanded)}>{expanded ? uiText("Close details") : uiText("View session")}</Button>
-        {expanded && <Button variant="ghost" size="sm" onClick={remove}>{uiText("Delete session")}</Button>}
+        {expanded && <Button variant="ghost" size="sm" disabled={readOnly} onClick={remove}>{uiText("Delete session")}</Button>}
       </header>
 
       <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-muted">
@@ -75,7 +78,7 @@ export function SessionCard({ session: s, reload, highlighted = false, query = '
       </div>
 
       {!expanded&&excerpt&&<p dir="auto" className="line-clamp-2 text-sm text-muted">{excerpt}</p>}
-      {expanded && <div id={`history-details-${s.id}`} className="flex flex-col gap-4"><SessionReview
+      {expanded && <div id={`history-details-${s.id}`} className="flex flex-col gap-4">{readOnly&&<p className="text-sm text-muted" role="status">{uiText('Finish or save the current study step for later before editing or deleting this session in History.')}</p>}<SessionReview
         sessionId={s.id}
         parts={s.parts.map((p) => ({
           id: p.id,
@@ -91,7 +94,7 @@ export function SessionCard({ session: s, reload, highlighted = false, query = '
       <div className="flex flex-col gap-2">
         {s.parts.map((p) => (
           <div key={p.id} className="rounded-xl border border-line/70">
-            <BlockCard block={p} reload={reload} />
+            <BlockCard block={p} reload={reload} readOnly={readOnly} />
           </div>
         ))}
       </div></div>}

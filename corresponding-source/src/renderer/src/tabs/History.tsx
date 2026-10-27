@@ -59,20 +59,24 @@ export function HistoryTab(): React.JSX.Element {
   const today = useToday()
 
   const [sittings, setSittings] = useState<HistorySitting[] | null>(null)
-  const [view, setView] = useState<View>('sessions')
-  const [showCharts, setShowCharts] = useState(false)
+  const historyView=useUi(s=>s.historyView),setHistoryView=useUi(s=>s.setHistoryView)
+  const {view,showCharts,quality,preset,itemId,categoryId,activityId,query,groupBy,selectedDay}=historyView
+  const custom=historyView.custom??{from:addDays(today,-6),to:today}
+  const setView=(view:View)=>setHistoryView({view})
+  const setShowCharts=(showCharts:boolean)=>setHistoryView({showCharts})
+  const setQuality=(quality:Quality|null)=>setHistoryView({quality})
+  const setPreset=(preset:RangePreset)=>setHistoryView({preset})
+  const setCustom=(custom:DayRange)=>setHistoryView({custom})
+  const setItemId=(itemId:Id|null)=>setHistoryView({itemId})
+  const setCategoryId=(categoryId:Id|null)=>setHistoryView({categoryId})
+  const setActivityId=(activityId:string|null)=>setHistoryView({activityId})
+  const setQuery=(query:string)=>setHistoryView({query})
+  const setGroupBy=(groupBy:GroupBy)=>setHistoryView({groupBy})
+  const setSelectedDay=(selectedDay:string|null)=>setHistoryView({selectedDay})
   const [notes, setNotes] = useState<StudyNote[]>([]), [notesError, setNotesError] = useState(''), [editingNote, setEditingNote] = useState<StudyNote|null>(null)
-
-  const [quality, setQuality] = useState<Quality | null>(null)
-  const [preset, setPreset] = useState<RangePreset>('last-30')
-  const [custom, setCustom] = useState<DayRange>({ from: addDays(today, -6), to: today })
-  const [itemId, setItemId] = useState<Id | null>(null)
-  const [categoryId, setCategoryId] = useState<Id | null>(null)
-  const [activityId, setActivityId] = useState<string | null>(null)
-  const [query, setQuery] = useState('')
+  const [visibleNotes,setVisibleNotes]=useState(100)
+  useEffect(()=>setVisibleNotes(100),[query])
   useEffect(() => { if (view !== 'notes') return; let alive = true; const timer=setTimeout(() => { void window.api.invoke('notes:search', query).then(rows => { if(alive){setNotes(rows);setNotesError('')} }).catch(e => { if(alive)setNotesError(String(e)) }) }, 180);return () => { alive=false;clearTimeout(timer) } }, [view,query,editingNote])
-  const [groupBy, setGroupBy] = useState<GroupBy>('day')
-  const [selectedDay, setSelectedDay] = useState<string | null>(null)
   // A day picked on a heat map elsewhere (Home, a subject page) opens here.
   const historyDay = useUi((s) => s.historyDay)
   const jumpId=useUi((s)=>s.historySessionId)
@@ -233,7 +237,7 @@ export function HistoryTab(): React.JSX.Element {
         </div>
 
         </>}
-        {view === 'notes' ? <section className="flex flex-col gap-4"><p className="text-sm text-muted">{uiText("Saved notes · all dates and subjects")}</p>{notesError&&<p role="alert" className="text-status-error">{notesError}</p>}{!notes.length&&!notesError&&<p>{uiText("No saved notes match.")}</p>}{notes.slice(0,100).map(n=><article key={n.id} className="rounded-2xl border border-line bg-surface p-5"><header className="flex flex-wrap items-center gap-3"><h2 className="flex-1 font-semibold" dir="auto">{n.title}</h2><span className="text-sm text-muted">{items.find(i=>i.id===n.itemId)?.name} · {formatDate(new Date(n.updatedAt))}</span><Button onClick={()=>setEditingNote(n)}>{uiText("Open note")}</Button>{n.blockId!==null&&all.some(b=>b.id===n.blockId)&&<Button onClick={()=>useUi.getState().openHistorySession(all.find(b=>b.id===n.blockId)!.sessionId)}>{uiText("Open session")}</Button>}</header><p dir="auto" className="mt-3 line-clamp-2 whitespace-pre-wrap text-muted">{n.text || 'Drawing'}</p></article>)}{notes.length>100&&<p className="text-sm text-muted">{uiText("Showing the 100 latest matches. Refine your search to find an older note.")}</p>}{editingNote&&<NotesEditor itemId={editingNote.itemId} note={editingNote} onClose={()=>setEditingNote(null)}/>}</section> : sittings === null ? null : view === 'review' ? (
+        {view === 'notes' ? <section className="flex flex-col gap-4"><p className="text-sm text-muted">{uiText("Saved notes · all dates and subjects")}</p>{notesError&&<p role="alert" className="text-status-error">{notesError}</p>}{!notes.length&&!notesError&&<p>{uiText("No saved notes match.")}</p>}{notes.slice(0,visibleNotes).map(n=><article key={n.id} className="rounded-2xl border border-line bg-surface p-5"><header className="flex flex-wrap items-center gap-3"><h2 className="flex-1 font-semibold" dir="auto">{n.title}</h2><span className="text-sm text-muted">{items.find(i=>i.id===n.itemId)?.name} · {formatDate(new Date(n.updatedAt))}</span><Button onClick={()=>setEditingNote(n)}>{uiText("Open note")}</Button>{n.blockId!==null&&all.some(b=>b.id===n.blockId)&&<Button onClick={()=>useUi.getState().openHistorySession(all.find(b=>b.id===n.blockId)!.sessionId)}>{uiText("Open session")}</Button>}</header><p dir="auto" className="mt-3 line-clamp-2 whitespace-pre-wrap text-muted">{n.text || 'Drawing'}</p></article>)}{notes.length>visibleNotes&&<Button className="self-start" onClick={()=>setVisibleNotes(n=>n+100)}>{uiText("Show more")}</Button>}{editingNote&&<NotesEditor itemId={editingNote.itemId} note={editingNote} onClose={()=>setEditingNote(null)}/>}</section> : sittings === null ? null : view === 'review' ? (
           <ReviewList blocks={filtered} />
         ) : (
           <>

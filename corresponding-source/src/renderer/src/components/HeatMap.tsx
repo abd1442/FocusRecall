@@ -3,7 +3,7 @@ import { t as uiText } from '../i18n'
 import { StatChip } from './StatChip'
 
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
-import { dayActivity, levelScale, streaks, yearGrid, yearTotals, yearsWithData } from '@core/heatmap'
+import { dayActivity, levelScale, streaks, yearDailyStats, yearGrid, yearTotals, yearsWithData } from '@core/heatmap'
 import type { BlockSummary } from '@core/stats'
 
 import { useSettings } from '../store/session'
@@ -34,6 +34,7 @@ export function HeatMap({
   selected,
   onPick,
   minimal = false,
+  compact = false,
   fillWidth = false
 }: {
   /** Already filtered (a subject, a category, History's filters). */
@@ -43,8 +44,9 @@ export function HeatMap({
   selected?: string | null
   onPick?: (day: string) => void
   /** Home shows just the year navigation and a compact calendar. */
+  compact?: boolean
   minimal?: boolean
-  /** Home footer fills the available width without making its rows taller. */
+  /** Home uses available width for square cells, with a sensible size cap. */
   fillWidth?: boolean
 }): React.JSX.Element {
   const { dayStart, weekStartsOn } = useSettings((s) => s.settings)
@@ -59,6 +61,7 @@ export function HeatMap({
   const values = [...days.entries()].filter(([d]) => d.startsWith(`${year}-`)).map(([, a]) => (by === 'time' ? a.focusSeconds : a.sessions))
   const level = levelScale(values)
   const totals = yearTotals(days, year)
+  const daily = yearDailyStats(days, year, today)
   const st = streaks(new Set([...days].filter(([, a]) => a.focusSeconds > 0).map(([d]) => d)), today)
   const pick = onPick ?? openHistoryDay
   const rows = Array.from({ length: 7 }, (_, i) => grid.weeks.map(w => w[i] && w[i]! <= today ? w[i] : null))
@@ -66,25 +69,28 @@ export function HeatMap({
   const initialDay = selected && rows.some(r => r.includes(selected)) ? selected : lastDay
   const keyboard = useGridNavigation(rows, initialDay)
 
-  // Squares fill the width: 7 rows, about 53 columns, plus the weekday labels.
-  const labelW = 34
-  const gap = 3
-  const cell = Math.max(8, Math.min(minimal ? 16 : 18, Math.floor((width - labelW) / grid.weeks.length) - gap))
-  const cellWidth = fillWidth ? Math.max(8, (width - labelW - gap * (grid.weeks.length - 1)) / grid.weeks.length) : cell
+  // Keep one dimension for every day. Small windows scroll instead of
+  // squeezing labels or stretching days into rectangles.
+  const labelW = minimal ? 0 : 68
+  const gap = minimal ? 2 : 3
+  const available = Math.floor((width - labelW - gap * (grid.weeks.length - 1)) / grid.weeks.length)
+  const cell = minimal ? Math.max(6, Math.min(18, available)) : compact ? 12 : Math.max(14, Math.min(fillWidth ? 24 : 18, available))
+  const cellWidth = cell
+  const chartWidth = labelW + grid.weeks.length * (cell + gap) - gap
   const monthName = (m: number): string => formatDate(new Date(2026, m, 1), { month: 'short' })
   const weekdayName = (i: number): string => formatDate(new Date(2026, 0, 4 + ((weekStartsOn + i) % 7)), { weekday: 'short' })
 
   return (
-    <section aria-label={uiText("Study activity calendar")} className="flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4">
+    <section aria-label={uiText("Study activity calendar")} className={minimal ? "flex flex-col gap-2 py-1" : "flex flex-col gap-3 rounded-2xl border border-line bg-surface p-4"}>
       {!minimal && <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
         <div className="min-w-0 flex-1 text-base">{header ?? <h2 className="text-lg font-semibold">{uiText("Activity")}</h2>}</div>
         <div className="flex flex-wrap gap-2"><StatChip label={uiText("Current streak")} value={st.current+' '+uiText(st.current===1?'day':'days')} tone="rest"/><StatChip label={uiText("Longest streak")} value={st.longest+' '+uiText(st.longest===1?'day':'days')} tone="rest"/></div>
       </div>}
 
-      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-base">
-        {minimal && <h2 className="text-sm font-medium">{uiText("Activity")}</h2>}
+      <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 text-base ${minimal ? 'justify-center' : ''}`}>
+
         {!minimal && <div className="flex flex-wrap gap-2" aria-label={uiText('{year} study totals',{year})}><StatChip label={uiText('Focus in {year}',{year})} value={formatDuration(totals.focusSeconds)}/><StatChip label={uiText(totals.sessions===1?'Session':'Sessions')} value={totals.sessions}/><StatChip label={uiText(totals.activeDays===1?'Active day':'Active days')} value={totals.activeDays} tone="rest"/></div>}
-        <span className="flex-1" />
+        {!minimal && <span className="flex-1" />}
         {!minimal && <Segmented<'time' | 'sessions'>
           value={by}
           onChange={setBy}
@@ -118,21 +124,21 @@ export function HeatMap({
 
       <div ref={measure} className="w-full overflow-x-auto">
         {keyboard.help}
-        <div aria-hidden="true" className="relative" style={{ paddingInlineStart: labelW, height: 18 }}>
-          {grid.months.map((m) => (
-            <span key={m.month} className="absolute text-sm text-muted" style={{ insetInlineStart: labelW + m.column * (cellWidth + gap) }}>
+        {!minimal && <div aria-hidden="true" className="relative" style={{ width: chartWidth, height: 28 }}>
+          {grid.months.map((m, index) => (
+            <span key={m.month} title={monthName(m.month)} className="absolute overflow-hidden whitespace-nowrap border-b border-line pb-1 text-center text-xs text-muted" style={{ insetInlineStart: labelW + m.column * (cellWidth + gap), width: ((grid.months[index + 1]?.column ?? grid.weeks.length) - m.column) * (cell + gap) - gap }}>
               {monthName(m.month)}
             </span>
           ))}
-        </div>
-        <div className="flex" style={{ gap }}>
-          <div aria-hidden="true" className="flex shrink-0 flex-col text-xs text-muted" style={{ width: labelW - gap, gap }}>
+        </div>}
+        <div className="flex" style={{ gap, width: chartWidth, marginInline: minimal ? 'auto' : undefined }}>
+          {!minimal && <div aria-hidden="true" className="flex shrink-0 flex-col text-muted" style={{ width: labelW - gap, gap, fontSize: compact ? 10 : 12 }}>
             {Array.from({ length: 7 }, (_, i) => (
               <span key={i} className="leading-none" style={{ height: cell, lineHeight: `${cell}px` }}>
-                {i % 2 === 1 ? weekdayName(i) : ''}
+                {weekdayName(i)}
               </span>
             ))}
-          </div>
+          </div>}
           <div ref={keyboard.ref} role="grid" aria-label={uiText('Study activity calendar')} aria-describedby={keyboard.helpId} className="flex flex-col" style={{ gap }}>
           {Array.from({ length: 7 }, (_, i) => (
             <div key={i} role="row" className="flex" style={{ gap }}>
@@ -165,6 +171,13 @@ export function HeatMap({
           </div>
         </div>
       </div>
+
+      {minimal && <div data-home-calendar-stats className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 pt-1 text-sm">
+        <span title={uiText('Daily statistics use calendar days in the selected year, excluding future days.')}><span className="text-muted">{uiText('Daily average')}: </span><strong className="font-semibold text-focus">{formatDuration(daily.averageSeconds)}</strong></span>
+        <span title={uiText('Daily statistics use calendar days in the selected year, excluding future days.')}><span className="text-muted">{uiText('Days studied')}: </span><strong className="font-semibold text-focus">{Math.round(daily.studiedPercent)}%</strong></span>
+        <span title={uiText('Streaks use all recorded study days.')}><span className="text-muted">{uiText('Longest streak')}: </span><strong className="font-semibold text-focus">{st.longest} {uiText(st.longest===1?'day':'days')}</strong></span>
+        <span title={uiText('Streaks use all recorded study days.')}><span className="text-muted">{uiText('Current streak')}: </span><strong className="font-semibold text-focus">{st.current} {uiText(st.current===1?'day':'days')}</strong></span>
+      </div>}
 
       {!minimal && <div className="flex items-center justify-end gap-1.5 text-sm text-muted">{uiText("Less")}{SHADES.map((c) => (
           <span key={c} className="size-3.5 rounded-[3px]" style={{ background: c }} />

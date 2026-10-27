@@ -66,16 +66,18 @@ export function progressSpeeds(raw: StatsRaw, sessionIds: Set<number>): { itemId
   return [...groups.values()].map((g) => ({ itemId: g.itemId, unit: g.unit, amount: g.amount, hours: g.hours, rate: g.amount / g.hours, n: g.ids.size }))
 }
 
-/** Consecutive sessions on the same subject, paired before any outcome exclusion. */
+/** Consecutive single-subject sessions. Mixed visits interrupt every subject's chain. */
 export function recallNext(sessions: StatSession[], options: AnalysisOptions = DEFAULT_ANALYSIS): { recall: number; understanding: number; n: number }[] {
   const previous = new Map<number, StatSession>(), groups = new Map<number, number[]>()
   for (const s of [...sessions].sort((a, b) => a.start - b.start || a.id - b.id)) {
+    const subjects = [...new Set([s.itemId, ...s.itemIds])]
     const before = previous.get(s.itemId)
-    if (before) {
+    if (subjects.length === 1 && before?.itemIds.length === 1 && before.itemIds[0] === s.itemId) {
       const recall = outcomeOf(before, 'recall', options), understanding = outcomeOf(s, 'understanding', options)
       if (recall !== undefined && understanding !== undefined) groups.set(recall, [...(groups.get(recall) ?? []), understanding])
     }
-    previous.set(s.itemId, s)
+    // Filtering first would silently skip a mixed visit and pair across it.
+    for (const itemId of subjects) previous.set(itemId, s)
   }
   return [...groups].sort((a, b) => a[0] - b[0]).map(([recall, values]) => ({ recall, understanding: mean(values)!, n: values.length }))
 }

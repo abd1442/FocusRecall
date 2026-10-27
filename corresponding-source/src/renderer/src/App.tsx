@@ -3,6 +3,7 @@ import { t as uiText, useLanguage } from './i18n'
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { distractedSince, sessionFocusSeconds } from '@core/session'
 import { clockDisplay } from '@core/modes'
+import { formatClock } from '@core/timer'
 import './store/appearance'
 import './store/blocks'
 import { useLibrary } from './store/library'
@@ -78,9 +79,13 @@ export function App(): React.JSX.Element {
 
   // After a session (recall and log done), show the between-sessions step.
   const lastStage = useRef(state.stage)
+  const lastActiveSession = useRef<number|null>(null)
   useEffect(() => {
+    const activeId=state.running?.sessionId??state.finished[0]?.sessionId
+    if(activeId!==undefined)lastActiveSession.current=activeId
     if (lastStage.current !== 'idle' && state.stage === 'idle') {
-      if (state.sitting&&!quick) showBetween()
+      const deferred=state.unfinished.some(work=>work.deferred&&work.sessionId===lastActiveSession.current)
+      if (state.sitting&&!quick&&!deferred) showBetween()
       else setTab('home')
     }
     lastStage.current = state.stage
@@ -171,23 +176,23 @@ function SittingStatus(): React.JSX.Element | null {
 
   const b = state.running
   const item = items.find((i) => i.id === (b?.itemId ?? lastItemId))
-  let line = 'Between sessions'
+  let line = uiText('Between sessions')
   let color = 'var(--fr-stage-rest-text)'
   if (b) {
     const c = clockDisplay(b.timerMode, b.targetSeconds, sessionFocusSeconds(b, now))
-    line = distractedSince(b) ? 'Distracted' : `Focus · ${c.main} ${c.aside}`
+    line = distractedSince(b) ? uiText('Distracted') : `${uiText('Focus')} · ${c.main} · ${uiText('Target: ')}${formatClock(b.targetSeconds)}`
     color = c.overtime ? 'var(--fr-stage-overtime-text)' : 'var(--fr-stage-focus-text)'
   } else if (state.stage === 'recall') {
-    line = state.step === 'log' ? 'Logging' : 'Recall'
+    line = uiText(state.step === 'log' ? 'logging' : 'Recall')
     color = 'var(--fr-stage-recall-text)'
   }
 
   return (
-    <button type="button" onClick={showBetween} aria-label={uiText("{value0} · {value1}. Back to the sitting", {value0: (item?.name ?? 'No subject'), value1: (line)})} title={uiText("{value0} · {value1}. Back to the sitting", {value0: (item?.name ?? 'No subject'), value1: (line)})} className="sidebar-sitting flex flex-col gap-1 rounded-xl border border-line bg-surface px-4 py-3 text-left hover:border-muted">
+    <button type="button" onClick={showBetween} aria-label={uiText("{value0} · {value1}. Back to the sitting", {value0: (item?.name ?? uiText('No subject chosen')), value1: (line)})} title={uiText("{value0} · {value1}. Back to the sitting", {value0: (item?.name ?? uiText('No subject chosen')), value1: (line)})} className="sidebar-sitting flex flex-col gap-1 rounded-xl border border-line bg-surface px-4 py-3 text-left hover:border-muted">
       <span className="flex items-center gap-2 text-sm text-muted">
         <span className="size-2 rounded-full" style={{ background: color }} />{uiText("Sitting open")}</span>
       <span dir="auto" className="truncate text-base font-medium">
-        {item?.name ?? 'No subject'}
+        {item?.name ?? uiText('No subject chosen')}
       </span>
       <span className="text-sm tabular-nums" style={{ color }}>
         {line}
@@ -207,7 +212,7 @@ function Logo(): React.JSX.Element {
 function PanelToggle({ wide = false }: { wide?: boolean }): React.JSX.Element {
   const open = useSettings((s) => s.settings.panelOpen)
   return (
-    <button
+    <div className="flex items-center gap-1"><button
       type="button"
       onClick={() => window.api.invoke('panel:toggle')}
       title={open ? uiText("Close the floating panel") : uiText("Open the floating panel")}
@@ -222,6 +227,6 @@ function PanelToggle({ wide = false }: { wide?: boolean }): React.JSX.Element {
         <rect x="8" y="4.5" width="4.5" height="3.5" rx="0.6" fill={open ? 'currentColor' : 'none'} />
       </svg>
       <span className={wide?'sidebar-label':undefined}>{open ? uiText("Panel open") : uiText("Panel")}</span>
-    </button>
+    </button><button type="button" className="shrink-0 rounded-lg p-2 text-muted hover:bg-surface-2 hover:text-ink" title={uiText('Focus timer controls')} aria-label={uiText('Focus timer controls')} onClick={()=>window.api.invoke('panel:focus')}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h2m2 0h2m2 0h2m2 0h1M6 13h2m2 0h2m2 0h4"/></svg></button></div>
   )
 }

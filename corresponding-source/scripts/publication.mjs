@@ -9,6 +9,7 @@ const fixed=['SOURCE_BUILD.md','docs/RC_WINDOWS_TEST_PLAN.md','scripts/windows-i
 // Public-safe provenance receipts support the asset document's local links.
 // Never broadly include verification/ (it also contains private/local evidence).
 fixed.push('docs/ASSET_RIGHTS_AUDIT_20261018.md','docs/WORKSPACE.md','docs/USER_GUIDE.md','docs/RELEASE_STATUS.md','scripts/inventory-workspace.cjs',
+ 'docs/CURRENT_SOURCE.md',
  'docs/screenshots/current/manifest.json','docs/screenshots/current/home.png','docs/screenshots/current/appearance.png','docs/screenshots/current/stats.png','docs/screenshots/current/learn.png',
  'docs/verification/asset-rights-20261018/packaged-media.json',
  'docs/verification/asset-rights-20261018/inline-graphics.json',

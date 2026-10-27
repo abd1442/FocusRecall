@@ -116,17 +116,21 @@
       "kind": "ref",
       "id": "67"
     },
+    "notes:delete": {
+      "kind": "ref",
+      "id": "77"
+    },
     "notes:connection": {
       "kind": "ref",
       "id": "1"
     },
     "notes:setToken": {
       "kind": "ref",
-      "id": "77"
+      "id": "78"
     },
     "notes:testNotion": {
       "kind": "ref",
-      "id": "78"
+      "id": "79"
     },
     "notes:pickVault": {
       "kind": "ref",
@@ -134,43 +138,43 @@
     },
     "notes:pickFile": {
       "kind": "ref",
-      "id": "79"
+      "id": "80"
     },
     "notes:copy": {
       "kind": "ref",
-      "id": "80"
+      "id": "81"
     },
     "library:listCategories": {
       "kind": "ref",
-      "id": "81"
+      "id": "82"
     },
     "library:createCategory": {
       "kind": "ref",
-      "id": "82"
+      "id": "83"
     },
     "library:updateCategory": {
       "kind": "ref",
-      "id": "84"
+      "id": "85"
     },
     "library:setCategoryArchived": {
       "kind": "ref",
-      "id": "85"
+      "id": "86"
     },
     "library:deleteCategory": {
       "kind": "ref",
-      "id": "86"
+      "id": "87"
     },
     "library:reorderCategories": {
       "kind": "ref",
-      "id": "87"
+      "id": "88"
     },
     "library:moveCategory": {
       "kind": "ref",
-      "id": "88"
+      "id": "89"
     },
     "library:moveItem": {
       "kind": "ref",
-      "id": "89"
+      "id": "90"
     },
     "library:itemStats": {
       "kind": "ref",
@@ -178,7 +182,7 @@
     },
     "library:listItems": {
       "kind": "ref",
-      "id": "90"
+      "id": "91"
     },
     "library:listPickerItems": {
       "kind": "ref",
@@ -186,35 +190,35 @@
     },
     "library:createItem": {
       "kind": "ref",
-      "id": "92"
+      "id": "93"
     },
     "library:updateItem": {
       "kind": "ref",
-      "id": "98"
+      "id": "99"
     },
     "library:setItemArchived": {
       "kind": "ref",
-      "id": "99"
+      "id": "100"
     },
     "library:setItemPinned": {
       "kind": "ref",
-      "id": "100"
+      "id": "101"
     },
     "resources:list": {
       "kind": "ref",
-      "id": "101"
+      "id": "102"
     },
     "resources:save": {
       "kind": "ref",
-      "id": "102"
+      "id": "103"
     },
     "resources:delete": {
       "kind": "ref",
-      "id": "104"
+      "id": "105"
     },
     "resources:reorder": {
       "kind": "ref",
-      "id": "105"
+      "id": "106"
     },
     "blocks:summaries": {
       "kind": "ref",
@@ -222,7 +226,7 @@
     },
     "shell:open": {
       "kind": "ref",
-      "id": "106"
+      "id": "107"
     },
     "shell:pickFile": {
       "kind": "ref",
@@ -234,7 +238,7 @@
     },
     "settings:set": {
       "kind": "ref",
-      "id": "107"
+      "id": "108"
     },
     "appearance:get": {
       "kind": "ref",
@@ -242,7 +246,7 @@
     },
     "appearance:set": {
       "kind": "ref",
-      "id": "125"
+      "id": "126"
     },
     "appearance:presets": {
       "kind": "ref",
@@ -250,15 +254,15 @@
     },
     "appearance:savePreset": {
       "kind": "ref",
-      "id": "142"
+      "id": "143"
     },
     "appearance:deletePreset": {
       "kind": "ref",
-      "id": "143"
+      "id": "144"
     },
     "appearance:export": {
       "kind": "ref",
-      "id": "144"
+      "id": "145"
     },
     "appearance:import": {
       "kind": "ref",
@@ -270,35 +274,35 @@
     },
     "session:resumeWorkflow": {
       "kind": "ref",
-      "id": "145"
+      "id": "146"
     },
     "session:leaveWorkflow": {
       "kind": "ref",
-      "id": "146"
+      "id": "147"
     },
     "session:getLogDraft": {
       "kind": "ref",
-      "id": "147"
+      "id": "148"
     },
     "session:getRecallDraft": {
       "kind": "ref",
-      "id": "148"
+      "id": "149"
     },
     "session:saveRecallDraft": {
       "kind": "ref",
-      "id": "149"
+      "id": "150"
     },
     "session:saveLogDraft": {
       "kind": "ref",
-      "id": "150"
+      "id": "151"
     },
     "recall:get": {
       "kind": "ref",
-      "id": "151"
+      "id": "152"
     },
     "session:start": {
       "kind": "ref",
-      "id": "152"
+      "id": "153"
     },
     "session:startLast": {
       "kind": "ref",
@@ -318,11 +322,11 @@
     },
     "session:switch": {
       "kind": "ref",
-      "id": "153"
+      "id": "154"
     },
     "session:wrapUp": {
       "kind": "ref",
-      "id": "154"
+      "id": "155"
     },
     "session:finish": {
       "kind": "ref",
@@ -330,7 +334,7 @@
     },
     "session:quickAction": {
       "kind": "ref",
-      "id": "155"
+      "id": "156"
     },
     "session:discardFinished": {
       "kind": "ref",
@@ -338,7 +342,7 @@
     },
     "session:splitLast": {
       "kind": "ref",
-      "id": "157"
+      "id": "158"
     },
     "session:completeRecall": {
       "kind": "ref",
@@ -346,11 +350,11 @@
     },
     "session:adjustSplit": {
       "kind": "ref",
-      "id": "158"
+      "id": "159"
     },
     "session:review": {
       "kind": "ref",
-      "id": "159"
+      "id": "160"
     },
     "stats:raw": {
       "kind": "ref",
@@ -358,27 +362,27 @@
     },
     "stats:exportMarkdown": {
       "kind": "ref",
-      "id": "160"
+      "id": "161"
     },
     "stats:exportPdf": {
       "kind": "ref",
-      "id": "161"
+      "id": "162"
     },
     "stats:exportPng": {
       "kind": "ref",
-      "id": "162"
+      "id": "163"
     },
     "distraction:label": {
       "kind": "ref",
-      "id": "163"
+      "id": "164"
     },
     "distraction:confirm": {
       "kind": "ref",
-      "id": "164"
+      "id": "165"
     },
     "distraction:delete": {
       "kind": "ref",
-      "id": "165"
+      "id": "166"
     },
     "rules:list": {
       "kind": "ref",
@@ -386,43 +390,43 @@
     },
     "rules:save": {
       "kind": "ref",
-      "id": "166"
+      "id": "167"
     },
     "rules:delete": {
       "kind": "ref",
-      "id": "171"
+      "id": "172"
     },
     "rules:decide": {
       "kind": "ref",
-      "id": "172"
+      "id": "173"
     },
     "rules:rescope": {
       "kind": "ref",
-      "id": "174"
+      "id": "175"
     },
     "distraction:alwaysIgnore": {
       "kind": "ref",
-      "id": "177"
+      "id": "178"
     },
     "distraction:retime": {
       "kind": "ref",
-      "id": "178"
+      "id": "179"
     },
     "distraction:add": {
       "kind": "ref",
-      "id": "179"
+      "id": "180"
     },
     "session:moveSwitch": {
       "kind": "ref",
-      "id": "180"
+      "id": "181"
     },
     "session:setGoalResult": {
       "kind": "ref",
-      "id": "181"
+      "id": "182"
     },
     "session:longAbsence": {
       "kind": "ref",
-      "id": "183"
+      "id": "184"
     },
     "reasons:counts": {
       "kind": "ref",
@@ -430,11 +434,11 @@
     },
     "capture:mark": {
       "kind": "ref",
-      "id": "185"
+      "id": "186"
     },
     "capture:open": {
       "kind": "ref",
-      "id": "187"
+      "id": "188"
     },
     "capture:close": {
       "kind": "ref",
@@ -442,19 +446,19 @@
     },
     "popup:ready": {
       "kind": "ref",
-      "id": "188"
+      "id": "189"
     },
     "day:get": {
       "kind": "ref",
-      "id": "190"
+      "id": "191"
     },
     "day:save": {
       "kind": "ref",
-      "id": "191"
+      "id": "192"
     },
     "day:skip": {
       "kind": "ref",
-      "id": "193"
+      "id": "194"
     },
     "hotkeys:status": {
       "kind": "ref",
@@ -470,23 +474,23 @@
     },
     "session:finishWrapUp": {
       "kind": "ref",
-      "id": "194"
+      "id": "195"
     },
     "session:submitLog": {
       "kind": "ref",
-      "id": "197"
+      "id": "198"
     },
     "recall:save": {
       "kind": "ref",
-      "id": "198"
+      "id": "199"
     },
     "log:previous": {
       "kind": "ref",
-      "id": "201"
+      "id": "202"
     },
     "log:activityHistory": {
       "kind": "ref",
-      "id": "202"
+      "id": "203"
     },
     "log:schema": {
       "kind": "ref",
@@ -494,27 +498,27 @@
     },
     "log:saveGroup": {
       "kind": "ref",
-      "id": "203"
+      "id": "204"
     },
     "log:saveField": {
       "kind": "ref",
-      "id": "206"
+      "id": "207"
     },
     "log:saveOptions": {
       "kind": "ref",
-      "id": "211"
+      "id": "212"
     },
     "log:addOption": {
       "kind": "ref",
-      "id": "215"
+      "id": "216"
     },
     "log:setArchived": {
       "kind": "ref",
-      "id": "216"
+      "id": "217"
     },
     "log:reorder": {
       "kind": "ref",
-      "id": "218"
+      "id": "219"
     },
     "log:setupHistory": {
       "kind": "ref",
@@ -526,23 +530,23 @@
     },
     "history:updateBlock": {
       "kind": "ref",
-      "id": "219"
+      "id": "220"
     },
     "history:saveLog": {
       "kind": "ref",
-      "id": "222"
+      "id": "223"
     },
     "history:deleteBlock": {
       "kind": "ref",
-      "id": "223"
+      "id": "224"
     },
     "history:deleteSession": {
       "kind": "ref",
-      "id": "224"
+      "id": "225"
     },
     "history:setToReviewDone": {
       "kind": "ref",
-      "id": "225"
+      "id": "226"
     },
     "session:finishStudying": {
       "kind": "ref",
@@ -554,15 +558,15 @@
     },
     "session:resolveRecovery": {
       "kind": "ref",
-      "id": "226"
+      "id": "227"
     },
     "rest:start": {
       "kind": "ref",
-      "id": "227"
+      "id": "228"
     },
     "rest:updatePlan": {
       "kind": "ref",
-      "id": "228"
+      "id": "229"
     },
     "rest:endEarly": {
       "kind": "ref",
@@ -574,13 +578,17 @@
     },
     "rest:finish": {
       "kind": "ref",
-      "id": "229"
+      "id": "230"
     },
     "rest:startNextBlock": {
       "kind": "ref",
       "id": "1"
     },
     "window:showMain": {
+      "kind": "ref",
+      "id": "1"
+    },
+    "panel:focus": {
       "kind": "ref",
       "id": "1"
     },
@@ -594,7 +602,7 @@
     },
     "panel:hover": {
       "kind": "ref",
-      "id": "230"
+      "id": "231"
     },
     "ui:openSwitch": {
       "kind": "ref",
@@ -614,7 +622,7 @@
     },
     "app:setDemo": {
       "kind": "ref",
-      "id": "231"
+      "id": "232"
     }
   },
   "events": [
@@ -642,11 +650,14 @@
   "settings": {
     "studyExperience": {
       "kind": "ref",
-      "id": "232"
+      "id": "233"
     },
     "homeSubjectOrdering": {
       "kind": "ref",
-      "id": "110"
+      "id": "111"
+    },
+    "dailyStudyGoalMinutes": {
+      "kind": "number"
     },
     "showTodayCheck": {
       "kind": "boolean"
@@ -657,14 +668,14 @@
     },
     "language": {
       "kind": "ref",
-      "id": "233"
+      "id": "234"
     },
     "foregroundTrackingEnabled": {
       "kind": "boolean"
     },
     "foregroundTrackingConsentVersion": {
       "kind": "ref",
-      "id": "234"
+      "id": "235"
     },
     "foregroundTrackingTitlesEnabled": {
       "kind": "boolean"
@@ -684,7 +695,7 @@
     },
     "notionOpenIn": {
       "kind": "ref",
-      "id": "235"
+      "id": "236"
     },
     "focusTargetMinutes": {
       "kind": "number"
@@ -704,7 +715,7 @@
     },
     "panelPosition": {
       "kind": "ref",
-      "id": "236"
+      "id": "237"
     },
     "soundsEnabled": {
       "kind": "boolean"
@@ -720,7 +731,7 @@
     },
     "weekStartsOn": {
       "kind": "ref",
-      "id": "237"
+      "id": "238"
     },
     "fixedMinutes": {
       "kind": "number"
@@ -756,19 +767,19 @@
     },
     "setupDefaultMode": {
       "kind": "ref",
-      "id": "238"
+      "id": "239"
     },
     "setupOverride": {
       "kind": "ref",
-      "id": "239"
+      "id": "240"
     },
     "unitMemory": {
       "kind": "ref",
-      "id": "116"
+      "id": "117"
     },
     "progressRangeMemory": {
       "kind": "ref",
-      "id": "117"
+      "id": "118"
     },
     "logOpenGroups": {
       "kind": "ref",
@@ -785,7 +796,7 @@
     },
     "restRules": {
       "kind": "ref",
-      "id": "118"
+      "id": "119"
     },
     "restSuggestions": {
       "kind": "ref",
@@ -797,7 +808,7 @@
     },
     "lastTimerMode": {
       "kind": "ref",
-      "id": "240"
+      "id": "241"
     },
     "hotkeyDistracted": {
       "kind": "string"
@@ -807,7 +818,7 @@
     },
     "quality": {
       "kind": "ref",
-      "id": "119"
+      "id": "120"
     },
     "hotkeyStuck": {
       "kind": "string"
@@ -817,11 +828,11 @@
     },
     "distractionReasons": {
       "kind": "ref",
-      "id": "120"
+      "id": "121"
     },
     "captures": {
       "kind": "ref",
-      "id": "122"
+      "id": "123"
     },
     "longAbsenceMinutes": {
       "kind": "number"
@@ -831,7 +842,7 @@
     },
     "learningStages": {
       "kind": "ref",
-      "id": "123"
+      "id": "124"
     }
   },
   "definitions": {
@@ -2599,6 +2610,15 @@
       "kind": "tuple",
       "items": [
         {
+          "kind": "string"
+        }
+      ],
+      "minimum": 1
+    },
+    "81": {
+      "kind": "tuple",
+      "items": [
+        {
           "kind": "ref",
           "id": "68"
         },
@@ -2608,7 +2628,7 @@
       ],
       "minimum": 2
     },
-    "81": {
+    "82": {
       "kind": "tuple",
       "items": [
         {
@@ -2617,17 +2637,17 @@
       ],
       "minimum": 1
     },
-    "82": {
+    "83": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "83"
+          "id": "84"
         }
       ],
       "minimum": 1
     },
-    "83": {
+    "84": {
       "kind": "object",
       "properties": {
         "name": {
@@ -2658,7 +2678,7 @@
         }
       }
     },
-    "84": {
+    "85": {
       "kind": "tuple",
       "items": [
         {
@@ -2666,12 +2686,12 @@
         },
         {
           "kind": "ref",
-          "id": "83"
+          "id": "84"
         }
       ],
       "minimum": 2
     },
-    "85": {
+    "86": {
       "kind": "tuple",
       "items": [
         {
@@ -2683,7 +2703,7 @@
       ],
       "minimum": 2
     },
-    "86": {
+    "87": {
       "kind": "tuple",
       "items": [
         {
@@ -2692,7 +2712,7 @@
       ],
       "minimum": 1
     },
-    "87": {
+    "88": {
       "kind": "tuple",
       "items": [
         {
@@ -2702,7 +2722,7 @@
       ],
       "minimum": 1
     },
-    "88": {
+    "89": {
       "kind": "tuple",
       "items": [
         {
@@ -2715,7 +2735,7 @@
       ],
       "minimum": 2
     },
-    "89": {
+    "90": {
       "kind": "tuple",
       "items": [
         {
@@ -2727,17 +2747,17 @@
       ],
       "minimum": 2
     },
-    "90": {
+    "91": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "91"
+          "id": "92"
         }
       ],
       "minimum": 1
     },
-    "91": {
+    "92": {
       "kind": "object",
       "properties": {
         "categoryId": {
@@ -2755,17 +2775,17 @@
         }
       }
     },
-    "92": {
+    "93": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "93"
+          "id": "94"
         }
       ],
       "minimum": 1
     },
-    "93": {
+    "94": {
       "kind": "object",
       "properties": {
         "categoryId": {
@@ -2803,7 +2823,7 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "94"
+            "id": "95"
           }
         },
         "notesTarget": {
@@ -2824,14 +2844,14 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "95"
+            "id": "96"
           }
         },
         "buildsOn": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "96"
+            "id": "97"
           }
         },
         "hoursBefore": {
@@ -2845,12 +2865,12 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "97"
+            "id": "98"
           }
         }
       }
     },
-    "94": {
+    "95": {
       "kind": "union",
       "options": [
         {
@@ -2867,7 +2887,7 @@
         }
       ]
     },
-    "95": {
+    "96": {
       "kind": "union",
       "options": [
         {
@@ -2895,7 +2915,7 @@
         }
       ]
     },
-    "96": {
+    "97": {
       "kind": "union",
       "options": [
         {
@@ -2907,7 +2927,7 @@
         }
       ]
     },
-    "97": {
+    "98": {
       "kind": "union",
       "options": [
         {
@@ -2927,19 +2947,6 @@
         }
       ]
     },
-    "98": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "number"
-        },
-        {
-          "kind": "ref",
-          "id": "93"
-        }
-      ],
-      "minimum": 2
-    },
     "99": {
       "kind": "tuple",
       "items": [
@@ -2947,7 +2954,8 @@
           "kind": "number"
         },
         {
-          "kind": "boolean"
+          "kind": "ref",
+          "id": "94"
         }
       ],
       "minimum": 2
@@ -2969,21 +2977,33 @@
       "items": [
         {
           "kind": "number"
+        },
+        {
+          "kind": "boolean"
         }
       ],
-      "minimum": 1
+      "minimum": 2
     },
     "102": {
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "103"
+          "kind": "number"
         }
       ],
       "minimum": 1
     },
     "103": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "ref",
+          "id": "104"
+        }
+      ],
+      "minimum": 1
+    },
+    "104": {
       "kind": "object",
       "properties": {
         "id": {
@@ -3013,7 +3033,7 @@
         }
       }
     },
-    "104": {
+    "105": {
       "kind": "tuple",
       "items": [
         {
@@ -3022,7 +3042,7 @@
       ],
       "minimum": 1
     },
-    "105": {
+    "106": {
       "kind": "tuple",
       "items": [
         {
@@ -3032,7 +3052,7 @@
       ],
       "minimum": 1
     },
-    "106": {
+    "107": {
       "kind": "tuple",
       "items": [
         {
@@ -3041,21 +3061,21 @@
       ],
       "minimum": 1
     },
-    "107": {
+    "108": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "108"
+          "id": "109"
         },
         {
           "kind": "ref",
-          "id": "109"
+          "id": "110"
         }
       ],
       "minimum": 2
     },
-    "108": {
+    "109": {
       "kind": "union",
       "options": [
         {
@@ -3065,6 +3085,10 @@
         {
           "kind": "literal",
           "value": "homeSubjectOrdering"
+        },
+        {
+          "kind": "literal",
+          "value": "dailyStudyGoalMinutes"
         },
         {
           "kind": "literal",
@@ -3284,7 +3308,7 @@
         }
       ]
     },
-    "109": {
+    "110": {
       "kind": "union",
       "options": [
         {
@@ -3315,11 +3339,7 @@
         },
         {
           "kind": "ref",
-          "id": "110"
-        },
-        {
-          "kind": "ref",
-          "id": "112"
+          "id": "111"
         },
         {
           "kind": "ref",
@@ -3327,7 +3347,7 @@
         },
         {
           "kind": "ref",
-          "id": "116"
+          "id": "114"
         },
         {
           "kind": "ref",
@@ -3347,22 +3367,26 @@
         },
         {
           "kind": "ref",
-          "id": "122"
+          "id": "121"
         },
         {
           "kind": "ref",
           "id": "123"
+        },
+        {
+          "kind": "ref",
+          "id": "124"
         }
       ]
     },
-    "110": {
+    "111": {
       "kind": "object",
       "properties": {
         "mode": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "111"
+            "id": "112"
           }
         },
         "ids": {
@@ -3374,7 +3398,7 @@
         }
       }
     },
-    "111": {
+    "112": {
       "kind": "union",
       "options": [
         {
@@ -3395,7 +3419,7 @@
         }
       ]
     },
-    "112": {
+    "113": {
       "kind": "object",
       "properties": {
         "x": {
@@ -3412,15 +3436,15 @@
         }
       }
     },
-    "113": {
+    "114": {
       "kind": "object",
       "properties": {},
       "index": {
         "kind": "ref",
-        "id": "114"
+        "id": "115"
       }
     },
-    "114": {
+    "115": {
       "kind": "union",
       "options": [
         {
@@ -3439,11 +3463,11 @@
         },
         {
           "kind": "ref",
-          "id": "115"
+          "id": "116"
         }
       ]
     },
-    "115": {
+    "116": {
       "kind": "object",
       "properties": {
         "amount": {
@@ -3476,21 +3500,21 @@
         }
       }
     },
-    "116": {
+    "117": {
       "kind": "object",
       "properties": {},
       "index": {
         "kind": "string"
       }
     },
-    "117": {
+    "118": {
       "kind": "object",
       "properties": {},
       "index": {
         "kind": "boolean"
       }
     },
-    "118": {
+    "119": {
       "kind": "object",
       "properties": {
         "minutesPerFive": {
@@ -3525,7 +3549,7 @@
         }
       }
     },
-    "119": {
+    "120": {
       "kind": "object",
       "properties": {
         "cleanMaxShare": {
@@ -3548,14 +3572,14 @@
         }
       }
     },
-    "120": {
+    "121": {
       "kind": "array",
       "item": {
         "kind": "ref",
-        "id": "121"
+        "id": "122"
       }
     },
-    "121": {
+    "122": {
       "kind": "object",
       "properties": {
         "id": {
@@ -3579,7 +3603,7 @@
         }
       }
     },
-    "122": {
+    "123": {
       "kind": "object",
       "properties": {
         "stuck": {
@@ -3608,14 +3632,14 @@
         }
       }
     },
-    "123": {
+    "124": {
       "kind": "array",
       "item": {
         "kind": "ref",
-        "id": "124"
+        "id": "125"
       }
     },
-    "124": {
+    "125": {
       "kind": "object",
       "properties": {
         "untilHours": {
@@ -3633,31 +3657,31 @@
         }
       }
     },
-    "125": {
+    "126": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "126"
+          "id": "127"
         }
       ],
       "minimum": 1
     },
-    "126": {
+    "127": {
       "kind": "object",
       "properties": {
         "sidebarStyle": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "127"
+            "id": "128"
           }
         },
         "sidebarTone": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "128"
+            "id": "129"
           }
         },
         "sidebarCollapsed": {
@@ -3676,28 +3700,28 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "129"
+            "id": "130"
           }
         },
         "customLight": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "130"
+            "id": "131"
           }
         },
         "customDark": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "130"
+            "id": "131"
           }
         },
         "mode": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "132"
+            "id": "133"
           }
         },
         "colourId": {
@@ -3728,14 +3752,14 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "133"
+            "id": "134"
           }
         },
         "stageOverrides": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "134"
+            "id": "135"
           }
         },
         "focusIsAccent": {
@@ -3748,7 +3772,7 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "136"
+            "id": "137"
           }
         },
         "highContrast": {
@@ -3773,14 +3797,14 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "138"
+            "id": "139"
           }
         },
         "panelTimerDisplay": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "139"
+            "id": "140"
           }
         },
         "panelOpacity": {
@@ -3817,19 +3841,19 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "140"
+            "id": "141"
           }
         },
         "lineCustom": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "141"
+            "id": "142"
           }
         }
       }
     },
-    "127": {
+    "128": {
       "kind": "union",
       "options": [
         {
@@ -3842,7 +3866,7 @@
         }
       ]
     },
-    "128": {
+    "129": {
       "kind": "union",
       "options": [
         {
@@ -3859,7 +3883,7 @@
         }
       ]
     },
-    "129": {
+    "130": {
       "kind": "union",
       "options": [
         {
@@ -3872,103 +3896,103 @@
         }
       ]
     },
-    "130": {
+    "131": {
       "kind": "object",
       "properties": {
         "bg": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "surface": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "surface2": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "border": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "text": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "muted": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "writingBg": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "writingText": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "onAccent": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "focus": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "recall": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "rest": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "overtime": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         }
       }
     },
-    "131": {
+    "132": {
       "kind": "union",
       "options": [
         {
@@ -3979,7 +4003,7 @@
         }
       ]
     },
-    "132": {
+    "133": {
       "kind": "union",
       "options": [
         {
@@ -3996,7 +4020,7 @@
         }
       ]
     },
-    "133": {
+    "134": {
       "kind": "union",
       "options": [
         {
@@ -4013,54 +4037,21 @@
         }
       ]
     },
-    "134": {
+    "135": {
       "kind": "object",
       "properties": {
         "light": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "135"
+            "id": "136"
           }
         },
         "dark": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "135"
-          }
-        }
-      }
-    },
-    "135": {
-      "kind": "object",
-      "properties": {
-        "focus": {
-          "optional": true,
-          "schema": {
-            "kind": "ref",
-            "id": "131"
-          }
-        },
-        "recall": {
-          "optional": true,
-          "schema": {
-            "kind": "ref",
-            "id": "131"
-          }
-        },
-        "rest": {
-          "optional": true,
-          "schema": {
-            "kind": "ref",
-            "id": "131"
-          }
-        },
-        "overtime": {
-          "optional": true,
-          "schema": {
-            "kind": "ref",
-            "id": "131"
+            "id": "136"
           }
         }
       }
@@ -4068,18 +4059,32 @@
     "136": {
       "kind": "object",
       "properties": {
-        "light": {
-          "optional": false,
+        "focus": {
+          "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "137"
+            "id": "132"
           }
         },
-        "dark": {
-          "optional": false,
+        "recall": {
+          "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "137"
+            "id": "132"
+          }
+        },
+        "rest": {
+          "optional": true,
+          "schema": {
+            "kind": "ref",
+            "id": "132"
+          }
+        },
+        "overtime": {
+          "optional": true,
+          "schema": {
+            "kind": "ref",
+            "id": "132"
           }
         }
       }
@@ -4087,72 +4092,91 @@
     "137": {
       "kind": "object",
       "properties": {
+        "light": {
+          "optional": false,
+          "schema": {
+            "kind": "ref",
+            "id": "138"
+          }
+        },
+        "dark": {
+          "optional": false,
+          "schema": {
+            "kind": "ref",
+            "id": "138"
+          }
+        }
+      }
+    },
+    "138": {
+      "kind": "object",
+      "properties": {
         "bg": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "surface": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "surface2": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "border": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "text": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "muted": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "writingBg": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "writingText": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "onAccent": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         }
       }
     },
-    "138": {
+    "139": {
       "kind": "union",
       "options": [
         {
@@ -4169,7 +4193,7 @@
         }
       ]
     },
-    "139": {
+    "140": {
       "kind": "union",
       "options": [
         {
@@ -4182,7 +4206,7 @@
         }
       ]
     },
-    "140": {
+    "141": {
       "kind": "union",
       "options": [
         {
@@ -4207,14 +4231,14 @@
         }
       ]
     },
-    "141": {
+    "142": {
       "kind": "object",
       "properties": {
         "focus": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "distracted": {
@@ -4237,7 +4261,7 @@
         }
       }
     },
-    "142": {
+    "143": {
       "kind": "tuple",
       "items": [
         {
@@ -4245,26 +4269,16 @@
         },
         {
           "kind": "ref",
-          "id": "126"
+          "id": "127"
         }
       ],
       "minimum": 2
-    },
-    "143": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "string"
-        }
-      ],
-      "minimum": 1
     },
     "144": {
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "126"
+          "kind": "string"
         }
       ],
       "minimum": 1
@@ -4273,7 +4287,8 @@
       "kind": "tuple",
       "items": [
         {
-          "kind": "number"
+          "kind": "ref",
+          "id": "127"
         }
       ],
       "minimum": 1
@@ -4310,12 +4325,9 @@
       "items": [
         {
           "kind": "number"
-        },
-        {
-          "kind": "json"
         }
       ],
-      "minimum": 2
+      "minimum": 1
     },
     "150": {
       "kind": "tuple",
@@ -4334,16 +4346,18 @@
       "items": [
         {
           "kind": "number"
+        },
+        {
+          "kind": "json"
         }
       ],
-      "minimum": 1
+      "minimum": 2
     },
     "152": {
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "25"
+          "kind": "number"
         }
       ],
       "minimum": 1
@@ -4352,7 +4366,8 @@
       "kind": "tuple",
       "items": [
         {
-          "kind": "number"
+          "kind": "ref",
+          "id": "25"
         }
       ],
       "minimum": 1
@@ -4370,8 +4385,17 @@
       "kind": "tuple",
       "items": [
         {
+          "kind": "number"
+        }
+      ],
+      "minimum": 1
+    },
+    "156": {
+      "kind": "tuple",
+      "items": [
+        {
           "kind": "ref",
-          "id": "156"
+          "id": "157"
         },
         {
           "kind": "number"
@@ -4379,7 +4403,7 @@
       ],
       "minimum": 2
     },
-    "156": {
+    "157": {
       "kind": "union",
       "options": [
         {
@@ -4396,7 +4420,7 @@
         }
       ]
     },
-    "157": {
+    "158": {
       "kind": "tuple",
       "items": [
         {
@@ -4406,7 +4430,7 @@
       ],
       "minimum": 1
     },
-    "158": {
+    "159": {
       "kind": "tuple",
       "items": [
         {
@@ -4420,7 +4444,7 @@
       ],
       "minimum": 2
     },
-    "159": {
+    "160": {
       "kind": "tuple",
       "items": [
         {
@@ -4429,18 +4453,6 @@
         }
       ],
       "minimum": 1
-    },
-    "160": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "string"
-        },
-        {
-          "kind": "string"
-        }
-      ],
-      "minimum": 2
     },
     "161": {
       "kind": "tuple",
@@ -4462,6 +4474,18 @@
         },
         {
           "kind": "string"
+        }
+      ],
+      "minimum": 2
+    },
+    "163": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "string"
+        },
+        {
+          "kind": "string"
         },
         {
           "kind": "number"
@@ -4469,7 +4493,7 @@
       ],
       "minimum": 3
     },
-    "163": {
+    "164": {
       "kind": "tuple",
       "items": [
         {
@@ -4480,15 +4504,6 @@
         }
       ],
       "minimum": 2
-    },
-    "164": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "number"
-        }
-      ],
-      "minimum": 1
     },
     "165": {
       "kind": "tuple",
@@ -4503,13 +4518,22 @@
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "167"
+          "kind": "number"
         }
       ],
       "minimum": 1
     },
     "167": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "ref",
+          "id": "168"
+        }
+      ],
+      "minimum": 1
+    },
+    "168": {
       "kind": "object",
       "properties": {
         "id": {
@@ -4523,7 +4547,7 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "168"
+            "id": "169"
           }
         },
         "pattern": {
@@ -4536,26 +4560,26 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "169"
+            "id": "170"
           }
         },
         "itemId": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "170"
+            "id": "171"
           }
         },
         "sessionId": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "170"
+            "id": "171"
           }
         }
       }
     },
-    "168": {
+    "169": {
       "kind": "union",
       "options": [
         {
@@ -4568,7 +4592,7 @@
         }
       ]
     },
-    "169": {
+    "170": {
       "kind": "union",
       "options": [
         {
@@ -4585,7 +4609,7 @@
         }
       ]
     },
-    "170": {
+    "171": {
       "kind": "union",
       "options": [
         {
@@ -4600,33 +4624,33 @@
         }
       ]
     },
-    "171": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "number"
-        }
-      ],
-      "minimum": 1
-    },
     "172": {
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "173"
+          "kind": "number"
         }
       ],
       "minimum": 1
     },
     "173": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "ref",
+          "id": "174"
+        }
+      ],
+      "minimum": 1
+    },
+    "174": {
       "kind": "array",
       "item": {
         "kind": "ref",
-        "id": "167"
+        "id": "168"
       }
     },
-    "174": {
+    "175": {
       "kind": "tuple",
       "items": [
         {
@@ -4634,16 +4658,16 @@
         },
         {
           "kind": "ref",
-          "id": "175"
+          "id": "176"
         },
         {
           "kind": "ref",
-          "id": "176"
+          "id": "177"
         }
       ],
       "minimum": 3
     },
-    "175": {
+    "176": {
       "kind": "union",
       "options": [
         {
@@ -4660,7 +4684,7 @@
         }
       ]
     },
-    "176": {
+    "177": {
       "kind": "object",
       "properties": {
         "itemId": {
@@ -4679,7 +4703,7 @@
         }
       }
     },
-    "177": {
+    "178": {
       "kind": "tuple",
       "items": [
         {
@@ -4688,7 +4712,7 @@
       ],
       "minimum": 1
     },
-    "178": {
+    "179": {
       "kind": "tuple",
       "items": [
         {
@@ -4703,7 +4727,7 @@
       ],
       "minimum": 3
     },
-    "179": {
+    "180": {
       "kind": "tuple",
       "items": [
         {
@@ -4722,7 +4746,7 @@
       ],
       "minimum": 4
     },
-    "180": {
+    "181": {
       "kind": "tuple",
       "items": [
         {
@@ -4737,7 +4761,7 @@
       ],
       "minimum": 3
     },
-    "181": {
+    "182": {
       "kind": "tuple",
       "items": [
         {
@@ -4745,12 +4769,12 @@
         },
         {
           "kind": "ref",
-          "id": "182"
+          "id": "183"
         }
       ],
       "minimum": 2
     },
-    "182": {
+    "183": {
       "kind": "union",
       "options": [
         {
@@ -4771,17 +4795,17 @@
         }
       ]
     },
-    "183": {
+    "184": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "184"
+          "id": "185"
         }
       ],
       "minimum": 1
     },
-    "184": {
+    "185": {
       "kind": "union",
       "options": [
         {
@@ -4794,12 +4818,12 @@
         }
       ]
     },
-    "185": {
+    "186": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "186"
+          "id": "187"
         },
         {
           "kind": "ref",
@@ -4808,7 +4832,7 @@
       ],
       "minimum": 2
     },
-    "186": {
+    "187": {
       "kind": "union",
       "options": [
         {
@@ -4821,7 +4845,7 @@
         }
       ]
     },
-    "187": {
+    "188": {
       "kind": "tuple",
       "items": [
         {
@@ -4831,17 +4855,17 @@
       ],
       "minimum": 1
     },
-    "188": {
+    "189": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "189"
+          "id": "190"
         }
       ],
       "minimum": 1
     },
-    "189": {
+    "190": {
       "kind": "union",
       "options": [
         {
@@ -4854,7 +4878,7 @@
         }
       ]
     },
-    "190": {
+    "191": {
       "kind": "tuple",
       "items": [
         {
@@ -4863,7 +4887,7 @@
       ],
       "minimum": 1
     },
-    "191": {
+    "192": {
       "kind": "tuple",
       "items": [
         {
@@ -4871,27 +4895,27 @@
         },
         {
           "kind": "ref",
-          "id": "113"
+          "id": "114"
         },
         {
           "kind": "ref",
-          "id": "192"
+          "id": "193"
         },
         {
           "kind": "ref",
-          "id": "96"
+          "id": "97"
         }
       ],
       "minimum": 3
     },
-    "192": {
+    "193": {
       "kind": "object",
       "properties": {},
       "index": {
         "kind": "string"
       }
     },
-    "193": {
+    "194": {
       "kind": "tuple",
       "items": [
         {
@@ -4900,28 +4924,28 @@
       ],
       "minimum": 1
     },
-    "194": {
+    "195": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "195"
+          "id": "196"
         },
         {
           "kind": "ref",
-          "id": "156"
+          "id": "157"
         }
       ],
       "minimum": 2
     },
-    "195": {
+    "196": {
       "kind": "array",
       "item": {
         "kind": "ref",
-        "id": "196"
+        "id": "197"
       }
     },
-    "196": {
+    "197": {
       "kind": "object",
       "properties": {
         "blockId": {
@@ -4934,36 +4958,36 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "113"
+            "id": "114"
           }
         },
         "notes": {
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "192"
+            "id": "193"
           }
         },
         "untouched": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "96"
+            "id": "97"
           }
         }
       }
     },
-    "197": {
+    "198": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "195"
+          "id": "196"
         }
       ],
       "minimum": 1
     },
-    "198": {
+    "199": {
       "kind": "tuple",
       "items": [
         {
@@ -4971,12 +4995,12 @@
         },
         {
           "kind": "ref",
-          "id": "199"
+          "id": "200"
         }
       ],
       "minimum": 2
     },
-    "199": {
+    "200": {
       "kind": "object",
       "properties": {
         "recallText": {
@@ -5002,7 +5026,7 @@
           "optional": false,
           "schema": {
             "kind": "ref",
-            "id": "200"
+            "id": "201"
           }
         },
         "recallRatingTouched": {
@@ -5020,7 +5044,7 @@
         }
       }
     },
-    "200": {
+    "201": {
       "kind": "union",
       "options": [
         {
@@ -5049,7 +5073,7 @@
         }
       ]
     },
-    "201": {
+    "202": {
       "kind": "tuple",
       "items": [
         {
@@ -5061,7 +5085,7 @@
       ],
       "minimum": 2
     },
-    "202": {
+    "203": {
       "kind": "tuple",
       "items": [
         {
@@ -5070,17 +5094,17 @@
       ],
       "minimum": 1
     },
-    "203": {
+    "204": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "204"
+          "id": "205"
         }
       ],
       "minimum": 1
     },
-    "204": {
+    "205": {
       "kind": "object",
       "properties": {
         "id": {
@@ -5100,12 +5124,12 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "205"
+            "id": "206"
           }
         }
       }
     },
-    "205": {
+    "206": {
       "kind": "union",
       "options": [
         {
@@ -5129,17 +5153,17 @@
         }
       ]
     },
-    "206": {
+    "207": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "207"
+          "id": "208"
         }
       ],
       "minimum": 1
     },
-    "207": {
+    "208": {
       "kind": "object",
       "properties": {
         "id": {
@@ -5165,19 +5189,19 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "208"
+            "id": "209"
           }
         },
         "scale": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "209"
+            "id": "210"
           }
         }
       }
     },
-    "208": {
+    "209": {
       "kind": "union",
       "options": [
         {
@@ -5217,7 +5241,7 @@
         }
       ]
     },
-    "209": {
+    "210": {
       "kind": "union",
       "options": [
         {
@@ -5229,11 +5253,11 @@
         },
         {
           "kind": "ref",
-          "id": "210"
+          "id": "211"
         }
       ]
     },
-    "210": {
+    "211": {
       "kind": "object",
       "properties": {
         "min": {
@@ -5266,12 +5290,12 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         }
       }
     },
-    "211": {
+    "212": {
       "kind": "tuple",
       "items": [
         {
@@ -5279,19 +5303,19 @@
         },
         {
           "kind": "ref",
-          "id": "212"
+          "id": "213"
         }
       ],
       "minimum": 2
     },
-    "212": {
+    "213": {
       "kind": "array",
       "item": {
         "kind": "ref",
-        "id": "213"
+        "id": "214"
       }
     },
-    "213": {
+    "214": {
       "kind": "object",
       "properties": {
         "id": {
@@ -5317,19 +5341,19 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "units": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "214"
+            "id": "215"
           }
         }
       }
     },
-    "214": {
+    "215": {
       "kind": "union",
       "options": [
         {
@@ -5341,7 +5365,7 @@
         }
       ]
     },
-    "215": {
+    "216": {
       "kind": "tuple",
       "items": [
         {
@@ -5353,12 +5377,12 @@
       ],
       "minimum": 2
     },
-    "216": {
+    "217": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "217"
+          "id": "218"
         },
         {
           "kind": "number"
@@ -5369,7 +5393,7 @@
       ],
       "minimum": 3
     },
-    "217": {
+    "218": {
       "kind": "union",
       "options": [
         {
@@ -5382,12 +5406,12 @@
         }
       ]
     },
-    "218": {
+    "219": {
       "kind": "tuple",
       "items": [
         {
           "kind": "ref",
-          "id": "217"
+          "id": "218"
         },
         {
           "kind": "ref",
@@ -5396,7 +5420,7 @@
       ],
       "minimum": 2
     },
-    "219": {
+    "220": {
       "kind": "tuple",
       "items": [
         {
@@ -5404,12 +5428,12 @@
         },
         {
           "kind": "ref",
-          "id": "220"
+          "id": "221"
         }
       ],
       "minimum": 2
     },
-    "220": {
+    "221": {
       "kind": "object",
       "properties": {
         "itemId": {
@@ -5423,14 +5447,14 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "focusEndedAt": {
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "131"
+            "id": "132"
           }
         },
         "recallText": {
@@ -5458,7 +5482,7 @@
           "optional": true,
           "schema": {
             "kind": "ref",
-            "id": "221"
+            "id": "222"
           }
         },
         "recallRatingTouched": {
@@ -5470,7 +5494,7 @@
         }
       }
     },
-    "221": {
+    "222": {
       "kind": "union",
       "options": [
         {
@@ -5502,35 +5526,26 @@
         }
       ]
     },
-    "222": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "number"
-        },
-        {
-          "kind": "ref",
-          "id": "113"
-        },
-        {
-          "kind": "ref",
-          "id": "192"
-        },
-        {
-          "kind": "ref",
-          "id": "96"
-        }
-      ],
-      "minimum": 3
-    },
     "223": {
       "kind": "tuple",
       "items": [
         {
           "kind": "number"
+        },
+        {
+          "kind": "ref",
+          "id": "114"
+        },
+        {
+          "kind": "ref",
+          "id": "193"
+        },
+        {
+          "kind": "ref",
+          "id": "97"
         }
       ],
-      "minimum": 1
+      "minimum": 3
     },
     "224": {
       "kind": "tuple",
@@ -5546,6 +5561,15 @@
       "items": [
         {
           "kind": "number"
+        }
+      ],
+      "minimum": 1
+    },
+    "226": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "number"
         },
         {
           "kind": "boolean"
@@ -5553,21 +5577,12 @@
       ],
       "minimum": 2
     },
-    "226": {
-      "kind": "tuple",
-      "items": [
-        {
-          "kind": "ref",
-          "id": "184"
-        }
-      ],
-      "minimum": 1
-    },
     "227": {
       "kind": "tuple",
       "items": [
         {
-          "kind": "number"
+          "kind": "ref",
+          "id": "185"
         }
       ],
       "minimum": 1
@@ -5585,8 +5600,7 @@
       "kind": "tuple",
       "items": [
         {
-          "kind": "ref",
-          "id": "45"
+          "kind": "number"
         }
       ],
       "minimum": 1
@@ -5595,7 +5609,8 @@
       "kind": "tuple",
       "items": [
         {
-          "kind": "boolean"
+          "kind": "ref",
+          "id": "45"
         }
       ],
       "minimum": 1
@@ -5610,6 +5625,15 @@
       "minimum": 1
     },
     "232": {
+      "kind": "tuple",
+      "items": [
+        {
+          "kind": "boolean"
+        }
+      ],
+      "minimum": 1
+    },
+    "233": {
       "kind": "union",
       "options": [
         {
@@ -5622,7 +5646,7 @@
         }
       ]
     },
-    "233": {
+    "234": {
       "kind": "union",
       "options": [
         {
@@ -5655,7 +5679,7 @@
         }
       ]
     },
-    "234": {
+    "235": {
       "kind": "union",
       "options": [
         {
@@ -5668,7 +5692,7 @@
         }
       ]
     },
-    "235": {
+    "236": {
       "kind": "union",
       "options": [
         {
@@ -5681,7 +5705,7 @@
         }
       ]
     },
-    "236": {
+    "237": {
       "kind": "union",
       "options": [
         {
@@ -5690,11 +5714,11 @@
         },
         {
           "kind": "ref",
-          "id": "112"
+          "id": "113"
         }
       ]
     },
-    "237": {
+    "238": {
       "kind": "union",
       "options": [
         {
@@ -5727,7 +5751,7 @@
         }
       ]
     },
-    "238": {
+    "239": {
       "kind": "union",
       "options": [
         {
@@ -5740,7 +5764,7 @@
         }
       ]
     },
-    "239": {
+    "240": {
       "kind": "union",
       "options": [
         {
@@ -5749,11 +5773,11 @@
         },
         {
           "kind": "ref",
-          "id": "113"
+          "id": "114"
         }
       ]
     },
-    "240": {
+    "241": {
       "kind": "union",
       "options": [
         {

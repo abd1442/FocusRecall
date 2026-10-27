@@ -22,8 +22,8 @@ export function StudyReminderSettings({Section,Row}:{
     }catch(e){setMessage(e instanceof Error?e.message.replace(/^Error invoking remote method '[^']+': (Error: )?/,''):String(e))}
     finally{setBusy(false)}
   }
-  const toggle=(label:string,checked:boolean,change:(v:boolean)=>void):React.JSX.Element=><input type="checkbox" aria-label={label} className="size-5 accent-focus" checked={checked} disabled={status?.supported===false} onChange={e=>change(e.target.checked)}/>
-  const time=(label:string,value:string,change:(v:string)=>void):React.JSX.Element=><input type="time" aria-label={label} className={`${inputBase} w-36`} value={value} onChange={e=>{if(e.target.value)change(e.target.value)}}/>
+  const toggle=(label:string,checked:boolean,change:(v:boolean)=>void):React.JSX.Element=><input type="checkbox" aria-label={uiText(label)} className="size-5 accent-focus" checked={checked} disabled={status?.supported===false} onChange={e=>change(e.target.checked)}/>
+  const time=(label:string,value:string,change:(v:string)=>void):React.JSX.Element=><input type="time" aria-label={uiText(label)} className={`${inputBase} w-36`} value={value} onChange={e=>{if(e.target.value)change(e.target.value)}}/>
   return <Section title="Study reminders">
     <Row label="Daily study reminder" keywords="notification notify schedule clock daily reminder" hint={uiText("Once a day, when you are active.")}>{toggle('Daily study reminder',settings.studyReminderDailyEnabled,v=>{void set('studyReminderDailyEnabled',v)})}</Row>
     <Row label="Daily reminder time" hint={uiText("Local time · independent of quiet hours.")}>{time('Daily reminder time',settings.studyReminderDailyTime,v=>{void set('studyReminderDailyTime',v)})}</Row>

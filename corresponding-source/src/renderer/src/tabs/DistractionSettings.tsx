@@ -1,3 +1,4 @@
+import { useSettingLabel } from '../components/settingLabel'
 import { trackingConsented, TRACKING_DISCLOSURE, TITLE_DISCLOSURE, TRACKING_RECONFIRM } from '@core/trackingConsent'
 import { t as uiText } from '../i18n'
 import { useEffect, useState } from 'react'
@@ -30,7 +31,7 @@ export function AutomaticTrackingCard():React.JSX.Element {
   return <div className="rounded-2xl border border-focus/40 bg-focus/5 p-5">
     <div className="flex flex-wrap items-center justify-between gap-4"><div><p className="text-sm font-semibold text-focus">{uiText("LESS MANUAL TRACKING")}</p><h3 className="mt-1 text-xl font-semibold">{uiText("See where your study time goes")}</h3></div><Switch label={uiText("Automatic foreground tracking")} checked={enabled} onChange={v=>set('foregroundTrackingEnabled',v)}/></div>
     <div className="my-4 flex flex-wrap gap-2">{['App time','Window activity','Detected distractions'].map(label=><span key={label} className="rounded-full border border-line bg-surface px-3 py-2 text-sm">{uiText(label)}</span>)}</div>
-    <p className="text-sm text-muted">{uiText(TRACKING_DISCLOSURE)}</p>
+    <p className="tracking-disclosure text-sm text-muted">{uiText(TRACKING_DISCLOSURE)}</p>
     {settings.foregroundTrackingEnabled&&!enabled&&<p className="mt-3 text-sm text-muted">{uiText(TRACKING_RECONFIRM)}</p>}
     <label className="mt-4 flex items-start gap-3 text-sm text-muted"><input type="checkbox" className="mt-1" aria-label={uiText("Record window titles")} disabled={!enabled} checked={settings.foregroundTrackingTitlesEnabled} onChange={e=>void set('foregroundTrackingTitlesEnabled',e.target.checked)}/><span>{uiText(TITLE_DISCLOSURE)}</span></label>
     <p className="mt-3 text-xs text-muted">{uiText("App classifications are estimates. Review detected distractions; tracking does not prove attention. You can delete recorded titles separately from study history. Copies in backups and exports remain separate.")}</p>
@@ -91,12 +92,12 @@ export function DistractionSettings({
       <Section title="Session quality">
         <Row label="Clean" hint={uiText("Less than this share of the session lost, and at most this many distractions.")}>
           <div className="flex items-center gap-3">
-            <SmallNumber value={q.cleanMaxShare} min={0} max={100} unit="%" onCommit={(v) => setQ({ cleanMaxShare: v })} />
-            <SmallNumber value={q.cleanMaxCount} min={0} max={50} unit="" onCommit={(v) => setQ({ cleanMaxCount: Math.round(v) })} />
+            <SmallNumber label="Clean lost-time threshold" value={q.cleanMaxShare} min={0} max={100} unit="%" onCommit={(v) => setQ({ cleanMaxShare: v })} />
+            <SmallNumber label="Clean distraction-count limit" value={q.cleanMaxCount} min={0} max={50} unit="" onCommit={(v) => setQ({ cleanMaxCount: Math.round(v) })} />
           </div>
         </Row>
         <Row label="Some distraction" hint={uiText("Less than this share lost. Anything above is Distracted.")}>
-          <SmallNumber value={q.someMaxShare} min={0} max={100} unit="%" onCommit={(v) => setQ({ someMaxShare: v })} />
+          <SmallNumber label="Some distraction lost-time threshold" value={q.someMaxShare} min={0} max={100} unit="%" onCommit={(v) => setQ({ someMaxShare: v })} />
         </Row>
       </Section>
 
@@ -132,11 +133,12 @@ const CAPTURES: { key: keyof CaptureSettings; label: string; hint: string }[] = 
 ]
 
 function Switch({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label?:string }): React.JSX.Element {
+  const name = useSettingLabel(label)
   return (
     <button
       type="button"
       role="switch"
-      aria-label={label}
+      aria-label={name}
       aria-checked={checked}
       onClick={() => onChange(!checked)}
       className={`relative h-8 w-14 shrink-0 rounded-full transition-colors ${checked ? 'bg-focus' : 'bg-surface-2 ring-1 ring-line'}`}
@@ -186,7 +188,7 @@ function ReasonsEditor({ Section }: { Section: (p: { title: string; children: Re
             setAdding('')
           }}
         >
-          <input dir="auto" className={`${inputBase} flex-1`} placeholder={uiText("New reason")} value={adding} onChange={(e) => setAdding(e.target.value)} />
+          <input dir="auto" className={`${inputBase} flex-1`} aria-label={uiText("New reason")} placeholder={uiText("New reason")} value={adding} onChange={(e) => setAdding(e.target.value)} />
           <Button variant="quiet" type="submit">{uiText("Add")}</Button>
         </form>
       </div>
@@ -212,15 +214,16 @@ function RenameField({ value, onSave }: { value: string; onSave: (v: string) => 
 
 function HotkeyField({ value, ok, onChange }: { value: string; ok: boolean; onChange: (v: string) => void }): React.JSX.Element {
   const [listening, setListening] = useState(false)
+  const name = useSettingLabel()
   return (
     <div className="flex items-center gap-3">
       {!ok && value && <span className="text-sm text-overtime">{uiText("Windows would not give FocusRecall this key. Try another.")}</span>}
       {ok && value && <span className="text-sm text-muted">{uiText("Ready")}</span>}
       <input
         readOnly
-        aria-label={uiText("Hotkey")}
+        aria-label={name ?? uiText("Hotkey")}
         className={`${inputBase} w-44 text-center ${!ok && value ? 'border-overtime' : ''} ${listening ? 'border-focus' : ''}`}
-        value={listening ? 'Press a key…' : value || 'Off'}
+        value={listening ? uiText('Press a key…') : value || uiText('Off')}
         onFocus={() => setListening(true)}
         onBlur={() => setListening(false)}
         onKeyDown={(e) => {
@@ -242,13 +245,14 @@ function HotkeyField({ value, ok, onChange }: { value: string; ok: boolean; onCh
   )
 }
 
-function SmallNumber({ value, min, max, unit, onCommit }: { value: number; min: number; max: number; unit: string; onCommit: (v: number) => void }): React.JSX.Element {
+function SmallNumber({ label, value, min, max, unit, onCommit }: { label?:string; value: number; min: number; max: number; unit: string; onCommit: (v: number) => void }): React.JSX.Element {
+  const name = useSettingLabel(label)
   return (
     <span className="flex items-center gap-2">
       {unit === 'min' ? (
-        <TimeInput value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-24" />
+        <TimeInput label={name} value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-24" />
       ) : (
-        <NumberStepper value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-16" />
+        <NumberStepper label={name} value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-16" />
       )}
       <span className="w-6 text-base text-muted">{unit}</span>
     </span>
@@ -267,6 +271,7 @@ function AppRules({ Section }: { Section: (p: { title: string; children: React.R
   const [matchType, setMatchType] = useState<AppRule['matchType']>('title')
   const [classification, setClassification] = useState<Classification>('distraction')
   const items = useLibrary((s) => s.items)
+  const trackingEnabled = useSettings(s => trackingConsented(s.settings))
   const subjects = items.filter((x) => !x.archived)
   useEffect(() => {
     void window.api.invoke('rules:list').then(setRules)
@@ -291,6 +296,7 @@ function AppRules({ Section }: { Section: (p: { title: string; children: React.R
 
   return (
     <Section title="Programs and websites">
+      <details open={trackingEnabled ? true : undefined}><summary className="cursor-pointer px-6 py-4 text-base text-muted">{uiText("Advanced")}</summary>
       <div className="flex flex-col gap-4 px-6 py-5">
         <p className="text-sm text-muted">{uiText("Matches window titles, not URLs. Subject rules override general rules; more specific rules win.")}</p>
         <div className="flex flex-col divide-y divide-line rounded-xl border border-line">
@@ -315,7 +321,7 @@ function AppRules({ Section }: { Section: (p: { title: string; children: React.R
                     >
                       {(Object.keys(CLASS_LABEL) as Classification[]).map((c) => (
                         <option key={c} value={c}>
-                          {CLASS_LABEL[c]}
+                          {uiText(CLASS_LABEL[c])}
                         </option>
                       ))}
                     </select>
@@ -362,6 +368,7 @@ function AppRules({ Section }: { Section: (p: { title: string; children: React.R
           </select>
           <input
             className={`${inputBase} min-w-48 flex-1`}
+            aria-label={matchType === 'title' ? uiText("Word in the title") : uiText("Program name")}
             placeholder={matchType === 'title' ? uiText("e.g. YouTube") : uiText("e.g. Discord")}
             value={pattern}
             onChange={(e) => setPattern(e.target.value)}
@@ -369,13 +376,14 @@ function AppRules({ Section }: { Section: (p: { title: string; children: React.R
           <select aria-label={uiText("Counts as")} className={`${inputBase} w-36`} value={classification} onChange={(e) => setClassification(e.target.value as Classification)}>
             {(Object.keys(CLASS_LABEL) as Classification[]).map((c) => (
               <option key={c} value={c}>
-                {CLASS_LABEL[c]}
+                {uiText(CLASS_LABEL[c])}
               </option>
             ))}
           </select>
           <Button variant="quiet" type="submit">{uiText("Add (always)")}</Button>
         </form>
       </div>
+      </details>
     </Section>
   )
 }

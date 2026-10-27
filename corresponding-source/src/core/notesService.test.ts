@@ -1,12 +1,14 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { join, resolve, sep } from 'node:path'
+import * as filePromises from 'node:fs/promises'
 import { openDatabase, type Db } from '../main/db/database'
 import { SettingsRepo } from '../main/repos/settings'
 import { NotesService } from '../main/notes'
 import { EMPTY_DESTINATION, type NoteInput } from './notes'
 
 vi.mock('electron',()=>({safeStorage:{isEncryptionAvailable:()=>true,encryptString:(s:string)=>Buffer.from('encrypted:'+s),decryptString:(b:Buffer)=>b.toString().slice(10)},clipboard:{write:vi.fn(async()=>{}),writeText:vi.fn(async()=>{})},ClipboardItem:class {constructor(public items:unknown){}}}))
+vi.mock('node:fs/promises',async(importOriginal)=>{const actual=await importOriginal<typeof import('node:fs/promises')>();return {...actual,writeFile:vi.fn(actual.writeFile)}})
 const base=resolve('out/qa-temp');mkdirSync(base,{recursive:true})
 let folder:string,db:Db,settings:SettingsRepo
 beforeEach(()=>{folder=mkdtempSync(join(base,'notes-test-'));db=openDatabase(':memory:');db.prepare("INSERT INTO categories(name,color,sort_order,created_at) VALUES('QA','#123456',0,'2026-10-13')").run();const category=db.prepare('SELECT id FROM categories WHERE name=?').get('QA') as {id:number};db.prepare("INSERT INTO items(id,category_id,name,color,default_unit,created_at) VALUES(100,?,'QA subject','#123456','pages','2026-10-13')").run(category.id);settings=new SettingsRepo(db)})
@@ -15,6 +17,54 @@ const note=(p:Partial<NoteInput>={}):NoteInput=>({id:'qa-note',itemId:100,blockI
 const page='01234567-89ab-cdef-0123-456789abcdef'
 
 describe('notes backend and migration',()=>{
+  it('preserves another editor’s Markdown changes made while preparing an export',async()=>{
+    const service=new NotesService(db,settings),target=join(folder,'Concurrent.md')
+    writeFileSync(target,'Original external content')
+    const original=(await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises')).writeFile
+    const write=vi.mocked(filePromises.writeFile).mockImplementation(async(...args:Parameters<typeof original>)=>{
+      await original(...args)
+      if(typeof args[0]==='string'&&args[0].includes('.focusrecall-'))writeFileSync(target,'Changed by the external editor')
+    })
+    try{
+      const saved=await service.save(note({destination:{...EMPTY_DESTINATION,kind:'obsidian',vaultPath:folder,file:'Concurrent.md'}}),true)
+      expect(saved.status).toBe('failed');expect(saved.error).toContain('file changed')
+      expect(saved.text).toBe('First notes')
+      expect(readFileSync(target,'utf8')).toBe('Changed by the external editor')
+    }finally{write.mockImplementation(original)}
+  })
+  it('deletes a standalone local note while preserving its exported Markdown copy',async()=>{
+    const service=new NotesService(db,settings)
+    const input=note({destination:{...EMPTY_DESTINATION,kind:'obsidian',vaultPath:folder,file:'Preserved.md'}})
+    await service.save(input,true)
+    const exported=readFileSync(join(folder,'Preserved.md'),'utf8')
+    service.delete(input.id)
+    expect(service.list(100)).toEqual([])
+    expect(readFileSync(join(folder,'Preserved.md'),'utf8')).toBe(exported)
+    expect(()=>service.delete(input.id)).not.toThrow()
+    expect(()=>service.delete('../outside')).toThrow('Invalid note ID')
+  })
+  it('rejects deleting an in-flight note without blocking unrelated local notes',async()=>{
+    let release!:(link:string)=>void
+    const service=new NotesService(db,settings,undefined,()=>new Promise<string>(yes=>{release=yes}))
+    const input=note({destination:{...EMPTY_DESTINATION,kind:'obsidian',vaultPath:folder,file:'Sending.md'}})
+    const sending=service.save(input,true)
+    await Promise.resolve()
+    await service.save(note({id:'unrelated-note'}),false)
+    expect(()=>service.delete(input.id)).toThrow('finish sending')
+    service.delete('unrelated-note')
+    release('obsidian://open');await sending
+    service.delete(input.id)
+    expect(service.list(100)).toEqual([])
+  })
+  it('keeps session-linked recall notes under the session lifecycle',async()=>{
+    db.prepare("INSERT INTO sittings(id,started_at) VALUES(100,'2026-10-27T10:00:00Z')").run()
+    db.prepare("INSERT INTO sessions(id,sitting_id,started_at) VALUES(100,100,'2026-10-27T10:00:00Z')").run()
+    db.prepare("INSERT INTO blocks(id,session_id,sitting_id,item_id,timer_mode,target_seconds,focus_started_at) VALUES(100,100,100,100,'flow',1500,'2026-10-27T10:00:00Z')").run()
+    const service=new NotesService(db,settings)
+    await service.save(note({blockId:100}),false)
+    expect(()=>service.delete('qa-note')).toThrow('belongs to a session')
+    expect(service.list(100,100)).toHaveLength(1)
+  })
   it('migrates through version 14 and writes/updates a real Markdown file without losing other content',async()=>{
     expect((db.prepare('SELECT MAX(version) as version FROM schema_migrations').get() as {version:number}).version).toBe(14)
     const service=new NotesService(db,settings),path=join(folder,'Math.md');writeFileSync(path,'# Math\n\n## Study\nOther notes stay.\n')

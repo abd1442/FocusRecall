@@ -99,7 +99,7 @@ export function LogPanel({ blocks }: { blocks: FinishedBlock[] }): React.JSX.Ele
   }, [subjectKey, loaded])
 
   useEffect(() => {
-    if (!perSubject || !blocks[0]) return
+    if (!perSubject || !blocks[0] || saving.current) return
     void window.api.invoke('session:saveLogDraft',blocks[0].sessionId,{perSubject,shared}).catch((e)=>setDraftError(String(e)))
   }, [perSubject,shared])
 
@@ -120,6 +120,15 @@ export function LogPanel({ blocks }: { blocks: FinishedBlock[] }): React.JSX.Ele
     await setSetting('unitMemory', memory)
     const saved = await sessionCommand(async () => { const entries=sessionLogEntries(schema, subjects, perSubject, shared);await window.api.invoke('session:submitLog',entries);return true })
     if (saved && settings.setupOverride) await setSetting('setupOverride', null)
+    }catch(error){setDraftError(String(error))}finally{saving.current=false;setBusy(false)}
+  }
+
+  async function saveForLater():Promise<void> {
+    if(!perSubject||saving.current)return
+    saving.current=true;setBusy(true);setDraftError('')
+    try {
+      await window.api.invoke('session:saveLogDraft',blocks[0].sessionId,{perSubject,shared})
+      await window.api.invoke('session:leaveWorkflow',blocks[0].sessionId)
     }catch(error){setDraftError(String(error))}finally{saving.current=false;setBusy(false)}
   }
 
@@ -315,7 +324,7 @@ perSubject &&
 
   return (
     <div className="h-full overflow-y-auto">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-10 pt-10">
+      <div inert={busy} aria-busy={busy} className="mx-auto flex max-w-7xl flex-col gap-6 px-10 pt-10">
         {draftError && <p role="alert" className="text-status-error">{uiText("Could not preserve the log draft: ")}{draftError}{uiText(". Keep this screen open and try again.")}</p>}
         <header className="mb-2 flex flex-col gap-4 pr-40">
           <h1 className="text-3xl font-medium tracking-tight" dir="auto">{uiText("How did it go?")}</h1>
@@ -428,6 +437,7 @@ perSubject &&
           <span className="mr-auto text-sm text-muted">{uiText("Enter: next question · Ctrl + Enter: continue to rest")}</span>
           <span className="text-base text-muted tabular-nums">
             {answeredCount}{uiText(" recorded answers")}</span>
+          <Button variant="ghost" disabled={busy||!perSubject} onClick={()=>void saveForLater()}>{uiText("Save for later")}</Button>
           <Button variant="primary" disabled={busy||!perSubject} onClick={()=>void save()}>{busy?uiText("Saving…"):uiText("Continue to rest")}</Button>
         </div>
       </div>

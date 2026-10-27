@@ -39,7 +39,7 @@ function handle<C extends Channel>(
   channel: C,
   fn: (...args: ArgsOf<C>) => ResultOf<C> | Promise<ResultOf<C>>
 ): void {
-  const changesStudy=['history:updateBlock','history:saveLog','history:deleteBlock','history:deleteSession','day:save','day:skip']
+  const changesStudy=['history:updateBlock','history:saveLog','history:deleteBlock','history:deleteSession','notes:delete','day:save','day:skip']
   ipcMain.handle(channel, async (event, ...args) => {
     try {
     assertCaller(event,channel,args)
@@ -97,6 +97,7 @@ export function registerIpc(deps: {
   hideReasons: () => void
   hotkeyStatus: () => HotkeyStatus
   trackingStatus: () => TrackingStatus
+  focusPanel: () => Promise<void>
   togglePanel: () => void
   closePanel: () => void
   preparationPanel: (open:boolean) => void
@@ -154,6 +155,7 @@ export function registerIpc(deps: {
   handle('notes:search',query=>notes.search(query))
   handle('notes:list',(itemId,blockId)=>notes.list(itemId,blockId))
   handle('notes:save',(note,sync)=>notes.save(note,sync))
+  handle('notes:delete',id=>notes.delete(id))
   handle('notes:connection',()=>notes.configured())
   handle('notes:setToken',(token)=>notes.setToken(token))
   handle('notes:testNotion',(page)=>notes.sections(page))
@@ -451,16 +453,23 @@ export function registerIpc(deps: {
 
   handle('history:list', () => blocks.history())
   handle('history:updateBlock', (id, patch) => {
+    session.assertHistoryMutationAllowed(distractions.sessionOfBlock(id))
     blocks.updateBlock(id, patch)
     distractionChanged(id)
   })
-  handle('history:saveLog', (id, values, notes, untouched) => logs.saveValues(id, values, notes, untouched))
+  handle('history:saveLog', (id, values, notes, untouched) => {
+    session.assertHistoryMutationAllowed(distractions.sessionOfBlock(id))
+    logs.saveValues(id, values, notes, untouched)
+    session.touch()
+  })
   handle('history:deleteBlock', (id) => {
     const sessionId = distractions.sessionOfBlock(id)
+    session.assertHistoryMutationAllowed(sessionId)
     blocks.deleteBlock(id)
     if (sessionId !== null) distractions.refreshSessionStats(sessionId)
+    session.touch()
   })
-  handle('history:deleteSession', (id) => blocks.deleteSession(id))
+  handle('history:deleteSession', (id) => {session.assertHistoryMutationAllowed(id);blocks.deleteSession(id);session.touch()})
   handle('history:setToReviewDone', (id, done) => blocks.setToReviewDone(id, done))
   handle('session:finishStudying',()=>session.finishStudying())
   handle('session:endSitting', () => session.endSitting())
@@ -473,6 +482,7 @@ export function registerIpc(deps: {
   handle('rest:startNextBlock', () => session.startNextFromRest())
 
   handle('window:showMain', () => deps.showMain())
+  handle('panel:focus', () => deps.focusPanel())
   handle('panel:toggle', () => deps.togglePanel())
   handle('panel:close', () => {cancelPreparation();deps.closePanel()})
   handle('panel:hover', (over) => deps.panelHover(over))

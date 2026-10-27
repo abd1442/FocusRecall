@@ -189,7 +189,7 @@ body {
 .sidebar-link[aria-current]{background:var(--tf-nav-active);color:var(--tf-nav-onActive);font-weight:600}
 .focusrecall-sidebar[data-style=journal] .sidebar-link[aria-current]:after{content:'';position:absolute;inset-inline-end:14px;top:0;width:9px;height:18px;background:var(--tf-nav-bookmark);clip-path:polygon(0 0,100% 0,100% 100%,50% 70%,0 100%)}
 .sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;gap:13px;padding-top:32px}.sidebar-panel{color:var(--tf-nav-muted);font-size:15px;min-height:48px}
-.sidebar-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 2px}.sidebar-version{min-width:0}.sidebar-version>span{color:var(--tf-nav-muted);font-size:10px}
+.sidebar-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 2px}.sidebar-version{min-width:0}.sidebar-version>span{color:var(--tf-nav-muted);font-size:12px}
 .sidebar-collapse{display:flex;align-items:center;gap:5px;min-height:38px;border:1px solid var(--tf-nav-border);border-radius:8px;padding:7px;color:var(--tf-nav-muted);font-size:12px;flex-shrink:0}
 .sidebar-collapse .sidebar-label{display:none}.sidebar-version>span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sidebar-demo{border-color:var(--tf-nav-border);font-size:13px;background:transparent}.sidebar-demo>span:first-child{color:var(--tf-nav-text);font-size:14px}.sidebar-demo>span:last-child{color:var(--tf-nav-muted);font-size:12px}
@@ -420,9 +420,9 @@ html[data-density='compact'] main .py-9, html[data-density='compact'] main .py-8
 @media (prefers-reduced-motion: reduce) { .example-fill { animation: none; } }
 @media (prefers-reduced-motion: reduce) { .question-frequency-card { transition: none; } .question-frequency-card:hover { transform: none; } }
 .app-confirm-dialog::backdrop { background: rgb(0 0 0 / .5); backdrop-filter: blur(3px); }
-.subject-colour-frame { border-color: color-mix(in srgb, var(--panel-colour, var(--tf-border)) 78%, var(--tf-border)); }
+.subject-colour-frame { border-color: var(--tf-border); }
 .subject-colour-frame[aria-selected="true"] { outline: 2px solid var(--tf-focus); outline-offset: 2px; }
-.subject-colour-card[aria-selected="true"] { outline: 2px solid var(--panel-colour); outline-offset: 2px; }
+.subject-colour-card[aria-selected="true"] { outline: 2px solid var(--tf-focus); outline-offset: 2px; }
 .subject-perforations { background: repeating-linear-gradient(0deg, var(--panel-colour) 0 6px, transparent 6px 15px); opacity: .8; }
 .home-layout > aside { min-width: 0; }
 @media (prefers-reduced-motion: reduce) {
@@ -437,6 +437,19 @@ html[data-density='compact'] main .py-9, html[data-density='compact'] main .py-8
 .home-quick-start { flex-shrink:0; }
 /* A separate footer reserves space; subject scrolling never covers the map. */
 .home-calendar { max-height:42%;overflow-y:auto; }
+.tracking-disclosure { max-inline-size:75ch; }
+/* Preserve space for the subject list when Home stacks at narrow widths. */
+@container home (max-width:69.99rem) { .home-calendar { max-height:min(30%,13rem); } }
+/* A compact rail at high zoom is a layout adaptation, not a saved preference. */
+@media(max-width:760px) {
+  .focusrecall-sidebar { width:88px!important;padding:20px 12px 16px; }
+  .focusrecall-sidebar .sidebar-brand { padding:0;justify-content:center;margin-bottom:24px; }
+  .focusrecall-sidebar .sidebar-brand img { width:38px;height:38px; }
+  .focusrecall-sidebar .sidebar-brand>span,.focusrecall-sidebar .sidebar-edition,.focusrecall-sidebar .sidebar-label,.focusrecall-sidebar .sidebar-version,.focusrecall-sidebar .sidebar-collapse,.focusrecall-sidebar .sidebar-sitting { display:none; }
+  .focusrecall-sidebar .sidebar-link,.focusrecall-sidebar .sidebar-panel { justify-content:center;gap:0;padding:12px 8px;min-height:48px; }
+  .focusrecall-sidebar .sidebar-link[aria-current]:after { inset-inline-start:0;inset-inline-end:auto;top:14px;width:3px;height:20px;clip-path:none;border-radius:3px; }
+  .focusrecall-sidebar .sidebar-demo>span:last-child { display:none; }
+}
 .focusrecall-support { border-color:color-mix(in srgb,#c45a76 35%,var(--tf-border));background:linear-gradient(120deg,color-mix(in srgb,#dd8c95 12%,var(--tf-surface)),var(--tf-surface)); }
 .home-launcher [data-session-launch-panel] { display:none; }
 @container home (min-width:70rem) {

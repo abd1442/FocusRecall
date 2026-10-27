@@ -34,10 +34,27 @@ describe('study patterns', () => {
     expect(speeds).toHaveLength(2)
   })
   it('pairs the next session on the same subject, without skipping an unanswered intervening session', () => {
-    const rows = [session({ id: 1, start: 1, outcomes: { recall: 4 } }), session({ id: 2, start: 2, itemId: 2, outcomes: { understanding: 1 } }), session({ id: 3, start: 3, outcomes: {} }), session({ id: 4, start: 4, outcomes: { understanding: 3 } })]
+    const rows = [session({ id: 1, start: 1, outcomes: { recall: 4 } }), session({ id: 2, start: 2, itemId: 2, itemIds: [2], outcomes: { understanding: 1 } }), session({ id: 3, start: 3, outcomes: {} }), session({ id: 4, start: 4, outcomes: { understanding: 3 } })]
     expect(recallNext(rows)).toEqual([])
     rows[2].outcomes.understanding = 2
     expect(recallNext(rows)).toEqual([{ recall: 4, understanding: 2, n: 1 }])
+  })
+  it('never attributes aggregate mixed-subject recall or understanding to one subject', () => {
+    const mixed = session({ id: 2, start: 2, itemIds: [1, 2], outcomes: { recall: 3, understanding: 4 } })
+    const prior = session({ id: 1, start: 1, outcomes: { recall: 5 } })
+    const next = session({ id: 3, start: 3, outcomes: { understanding: 4 } })
+    expect(recallNext([mixed, next])).toEqual([])
+    expect(recallNext([prior, mixed])).toEqual([])
+    expect(recallNext([prior, mixed, next])).toEqual([])
+  })
+  it('breaks the chain for secondary subjects in mixed visits, without suppressing later valid pairs', () => {
+    const rows = [
+      session({ id: 1, start: 1, itemId: 2, itemIds: [2], outcomes: { recall: 5 } }),
+      session({ id: 2, start: 2, itemIds: [1, 2], outcomes: { recall: 3 } }),
+      session({ id: 3, start: 3, itemId: 2, itemIds: [2], outcomes: { understanding: 4, recall: 2 } }),
+      session({ id: 4, start: 4, itemId: 2, itemIds: [2], outcomes: { understanding: 3 } })
+    ]
+    expect(recallNext(rows)).toEqual([{ recall: 2, understanding: 3, n: 1 }])
   })
   it('bounds habit windows, reports adoption, and requires five ratings each side', () => {
     const before = Array.from({ length: 5 }, (_, i) => session({ id: i, start:Date.UTC(2026,8,25+i),end:Date.UTC(2026,8,25+i)+120000,day:'2026-09-'+String(25+i),activity:'reading',outcomes:{focus:2} }))

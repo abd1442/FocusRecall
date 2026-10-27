@@ -44,10 +44,12 @@ export function validateIpcArgs(channel:string,args:unknown[]):void {
   if(!Object.hasOwn(policy.channels,channel))throw Error('Unknown IPC channel.')
   bounded(args)
   if(!matches((policy.channels as Record<string,Schema>)[channel],args))throw Error(`Invalid arguments for ${channel}.`)
+  if(channel==='notes:delete' && !/^[a-z0-9-]{1,80}$/i.test(args[0] as string))throw Error('Invalid note ID.')
   if(channel==='settings:set'){
     const key=args[0] as string
     if(!Object.hasOwn(policy.settings,key)||!matches((policy.settings as Record<string,Schema>)[key],args[1]))throw Error('Invalid setting value.')
     const value=args[1]
+    if(key==='dailyStudyGoalMinutes'&&(typeof value!=='number'||!Number.isInteger(value)||value<0||value>1440))throw Error('Invalid setting value.')
     if(['focusTargetMinutes','fixedMinutes'].includes(key)&&(typeof value!=='number'||value<1||value>1440))throw Error('Choose a timer length between 1 and 1440 minutes.')
     if(['sittingAutoEndHours','longAbsenceMinutes'].includes(key)&&(typeof value!=='number'||value<0||value>10080))throw Error('Choose a valid duration.')
     if(key==='soundVolume'&&(typeof value!=='number'||value<0||value>1))throw Error('Choose a volume between 0 and 1.')

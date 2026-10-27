@@ -1,10 +1,11 @@
+import { SettingLabelContext, useSettingLabel } from '../components/settingLabel'
 import { StudyExperience } from '../components/StudyExperience'
 import { t as uiText } from '../i18n'
 import { LanguageSettings } from '../components/LanguageSettings'
 import { AdviceSettings } from '../components/AdviceSettings'
 import { RestMusicControls } from '../components/RestMusic'
 import { confirmAction } from '../components/appDialogs'
-import { createContext, useContext, useEffect, useRef, useState } from 'react'
+import { createContext, useContext, useEffect, useId, useRef, useState } from 'react'
 import { normalizeStages, type StageStep } from '@core/learning'
 import { checkLink } from '@core/links'
 import { LinkStatus } from '../components/LinkStatus'
@@ -144,8 +145,11 @@ function GeneralPage(): React.JSX.Element {
   const { settings, set } = useSettings()
   return (
     <>
+      <nav aria-label={uiText('General settings sections')} className="flex flex-wrap gap-2">{['Study experience','Home','Automatic tracking','Focus','Sound'].map(label=><Button key={label} size="sm" variant="quiet" onClick={()=>{const target=document.getElementById(label==='Study experience'?slug(label):'general-'+slug(label));target?.scrollIntoView({block:'start'});target?.focus({preventScroll:true})}}>{uiText(label)} →</Button>)}</nav>
       <SettingGroup label="Language" keywords="language العربية Español Français 简体中文 Português Deutsch English"><LanguageSettings /></SettingGroup>
-      <SettingGroup label="Study experience" keywords="quick full minimal timer workflow"><StudyExperience/></SettingGroup>
+      <SettingGroup label="Study experience" keywords="quick full minimal timer workflow"><StudyExperience/>        {settings.studyExperience==='full'&&<Row label="Quick preparation before studying" hint={uiText("Optional checklist before the timer starts.")}>
+          <Toggle label={uiText('Quick preparation before studying')} checked={settings.preparationEnabled} onChange={v=>set('preparationEnabled',v)}/>
+        </Row>}</SettingGroup>
       <SettingGroup label="Study suggestions" keywords="advice tips reset topics history"><AdviceSettings/></SettingGroup>
       <Section title="Home"><Row label="Show Today Check" hint={uiText('Show the optional daily check-in on Home. Skipping hides it until local midnight.')}><Toggle label={uiText('Show Today Check')} checked={settings.showTodayCheck} onChange={v=>void set('showTodayCheck',v)}/></Row></Section>
       <Section title="Getting started"><SettingGroup label="Starter guide" keywords="welcome help first use basics tutorial"><div className="flex flex-wrap items-center justify-between gap-4"><p className="text-muted">{uiText("A quick tour of studying, review, tracking and insights.")}</p><Button onClick={()=>window.dispatchEvent(new Event(STARTER_GUIDE_EVENT))}>{uiText("Open starter guide")}</Button></div></SettingGroup></Section>
@@ -163,9 +167,7 @@ function GeneralPage(): React.JSX.Element {
             <ModeControl value={settings.defaultTimerMode} onChange={(m) => set('defaultTimerMode', m)} />
           </div>
         </Row>
-        <Row label="Quick preparation before studying" hint={uiText("Optional checklist before the timer starts.")}>
-          <Toggle checked={settings.preparationEnabled} onChange={v=>set('preparationEnabled',v)}/>
-        </Row>
+
         <Row label="Show the floating panel when a session starts" hint={uiText("An always-on-top timer with controls.")}>
           <Toggle checked={settings.panelAutoShow} onChange={(v) => set('panelAutoShow', v)} />
         </Row>
@@ -199,16 +201,17 @@ function GeneralPage(): React.JSX.Element {
         <Row label="A study day starts at" hint={uiText("Work before this time counts on the previous day.")}>
           <input
             type="time"
+            aria-label={uiText("A study day starts at")}
             className={`${inputBase} w-36`}
             value={settings.dayStart}
             onChange={(e) => e.target.value && set('dayStart', e.target.value)}
           />
         </Row>
         <Row label="Weeks start on">
-          <select className={`${inputBase} w-44`} value={settings.weekStartsOn} onChange={(e) => set('weekStartsOn', Number(e.target.value) as Weekday)}>
+          <select aria-label={uiText("Weeks start on")} className={`${inputBase} w-44`} value={settings.weekStartsOn} onChange={(e) => set('weekStartsOn', Number(e.target.value) as Weekday)}>
             {WEEKDAYS.map((d, i) => (
               <option key={d} value={i}>
-                {d}
+                {uiText(d)}
               </option>
             ))}
           </select>
@@ -237,6 +240,7 @@ function GeneralPage(): React.JSX.Element {
           <div className="flex items-center gap-4">
             <input
               type="range"
+              aria-label={uiText("Volume")}
               min={0}
               max={1}
               step={0.05}
@@ -270,22 +274,23 @@ function RestSection(): React.JSX.Element {
       </Row>
       <Row label="Shortest and longest rest">
         <div className="flex items-center gap-3">
-          <NumberField value={r.minMinutes} min={1} max={60} step={1} unit="min" onCommit={rule('minMinutes')} />
+          <NumberField label="Shortest rest" value={r.minMinutes} min={1} max={60} step={1} unit="min" onCommit={rule('minMinutes')} />
           <span className="text-muted">{uiText("to")}</span>
-          <NumberField value={r.maxMinutes} min={1} max={90} step={1} unit="min" onCommit={rule('maxMinutes')} />
+          <NumberField label="Longest rest" value={r.maxMinutes} min={1} max={90} step={1} unit="min" onCommit={rule('maxMinutes')} />
         </div>
       </Row>
       <Row label="Long rest" hint={uiText("Every n-th rest in a sitting, and how long it is.")}>
         <div className="flex items-center gap-3">
           <span className="text-muted">{uiText("every")}</span>
-          <NumberField value={r.longEvery} min={0} max={12} step={1} unit="" onCommit={rule('longEvery')} />
-          <NumberField value={r.longMinutes} min={5} max={90} step={1} unit="min" onCommit={rule('longMinutes')} />
+          <NumberField label="Rests before long rest" value={r.longEvery} min={0} max={12} step={1} unit="" onCommit={rule('longEvery')} />
+          <NumberField label="Long rest duration" value={r.longMinutes} min={5} max={90} step={1} unit="min" onCommit={rule('longMinutes')} />
         </div>
       </Row>
       <Row label="Rest playlist" hint={uiText("Spotify playlist link.")}>
         <div className="flex flex-col items-end gap-1.5">
           <input
             className={`${inputBase} w-96 ${valid ? '' : 'border-overtime'}`}
+            aria-label={uiText("Rest playlist")}
             placeholder={uiText("https://open.spotify.com/playlist/…")}
             value={playlist}
             onChange={(e) => {
@@ -328,7 +333,7 @@ function RestSection(): React.JSX.Element {
             setNewSuggestion('')
           }}
         >
-          <input dir="auto" className={`${inputBase} flex-1`} placeholder={uiText("Add a suggestion")} value={newSuggestion} onChange={(e) => setNewSuggestion(e.target.value)} />
+          <input dir="auto" className={`${inputBase} flex-1`} aria-label={uiText("Add a suggestion")} placeholder={uiText("Add a suggestion")} value={newSuggestion} onChange={(e) => setNewSuggestion(e.target.value)} />
           <Button variant="quiet" type="submit">{uiText("Add")}</Button>
         </form>
       </div>
@@ -538,6 +543,7 @@ function ScaleSlider({ value, onCommit }: { value: number; onCommit: (v: number)
 // --- Building blocks ---------------------------------------------------------
 
 function NumberField({
+  label,
   value,
   min,
   max,
@@ -545,6 +551,7 @@ function NumberField({
   unit,
   onCommit
 }: {
+  label?: string
   value: number
   min: number
   max: number
@@ -552,13 +559,14 @@ function NumberField({
   unit: string
   onCommit: (v: number) => void
 }): React.JSX.Element {
+  const name = useSettingLabel(label)
   // Whole minutes are lengths (the colon comes by itself); everything else is a plain number with steppers.
   return (
     <div className="flex items-center gap-3">
       {unit === 'min' && Number.isInteger(step) ? (
-        <TimeInput value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-24" />
+        <TimeInput label={name} value={value} min={min} max={max} onChange={(v) => v !== null && onCommit(v)} className="w-24" />
       ) : (
-        <NumberStepper value={value} min={min} max={max} step={step} onChange={(v) => v !== null && onCommit(v)} className="w-20" />
+        <NumberStepper label={name} value={value} min={min} max={max} step={step} onChange={(v) => v !== null && onCommit(v)} className="w-20" />
       )}
       <span className="w-8 text-base text-muted">{unit}</span>
     </div>
@@ -579,7 +587,7 @@ function Section({ title, children, advanced = false, plain = false, lead, ancho
   const titleMatch = searching && matches(query, title)
   const content = (
     <section
-      id={anchor}
+      id={anchor??("general-"+slug(title))} tabIndex={-1}
       className={`flex scroll-mt-4 flex-col gap-3 ${searching && !titleMatch ? '[&:not(:has([data-row]))]:hidden' : ''}`}
     >
       {!advanced && <h2 className="flex items-center gap-3 text-lg font-semibold"><SettingIcon title={title}/>{uiText(title)}</h2>}
@@ -607,7 +615,7 @@ function SettingGroup({ label, keywords, children, flush = false }: { label: str
   if (searching && !sectionMatch && !matches(query, label, keywords)) return null
   const id = slug(label)
   return (
-    <div id={id} data-row className={flush && !searching ? '' : 'p-6'}>
+    <div id={id} tabIndex={-1} data-row className={flush && !searching ? '' : 'p-6'}>
       {searching ? (
         <button type="button" className="w-full text-left text-base font-medium hover:text-focus" onClick={() => pick(id, page)}>{uiText(label)}</button>
       ) : children}
@@ -619,6 +627,7 @@ function Row({ label, hint, keywords, children }: { label: string; hint?: string
   const { query, page, pick } = useContext(SearchContext)
   const sectionMatch = useContext(SectionMatch)
   const status = useSaveStatus()
+  const labelId = useId(), hintId = useId()
   const searching = query.trim().length > 0
   const id = slug(label)
   if (searching && !sectionMatch && !matches(query, label, hint, keywords, KEYWORDS[label])) return null
@@ -626,6 +635,7 @@ function Row({ label, hint, keywords, children }: { label: string; hint?: string
     <div
       id={id}
       data-row
+      role="group" aria-labelledby={labelId} aria-describedby={hint ? hintId : undefined}
       onChangeCapture={status.arm}
       onClickCapture={status.arm}
       onKeyDownCapture={status.arm}
@@ -633,15 +643,15 @@ function Row({ label, hint, keywords, children }: { label: string; hint?: string
       onClick={searching ? () => pick(id, page) : undefined}
     >
       <div className="min-w-0">
-        <div className="text-base font-medium">{uiText(label)}</div>
-        {hint && <div className="mt-0.5 text-sm text-muted">{uiText(hint)}</div>}
+        <div id={labelId} className="text-base font-medium">{uiText(label)}</div>
+        {hint && <div id={hintId} className="mt-0.5 text-sm text-muted">{uiText(hint)}</div>}
       {status.shown && (
         <span className={`text-sm whitespace-nowrap ${status.error ? 'text-status-error' : 'text-stage-rest-text'}`} role="status">
           {status.error ? status.error : uiText("✓ Saved")}
         </span>
       )}
       </div>
-      <div className={`setting-controls min-w-0 ${searching ? 'pointer-events-none' : ''}`}>{children}</div>
+      <SettingLabelContext.Provider value={uiText(label)}><div className={`setting-controls min-w-0 ${searching ? 'pointer-events-none' : ''}`}>{children}</div></SettingLabelContext.Provider>
     </div>
   )
 }
@@ -681,11 +691,12 @@ function useSaveStatus(): { arm: () => void; shown: boolean; error: string | nul
 }
 
 function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label?:string }): React.JSX.Element {
+  const name = useSettingLabel(label)
   return (
     <button
       type="button"
       role="switch"
-      aria-label={label}
+      aria-label={name}
       aria-checked={checked}
       onClick={() => onChange(!checked)}
       className={`relative h-8 w-14 shrink-0 rounded-full transition-colors ${checked ? 'bg-focus' : 'bg-surface-2 ring-1 ring-line'}`}
@@ -721,7 +732,7 @@ function StagesEditor({ value, onChange }: { value: StageStep[]; onChange: (v: S
               <NumberStepper
                 value={st.untilHours}
                 onChange={(v) => v !== null && v > 0 && commit(draft.map((x, j) => (j === i ? { ...x, untilHours: v } : x)))}
-                label={`Hours where stage ${i + 1} ends`}
+                label={uiText("Hours where stage {value0} ends", {value0:i + 1})}
                 className="w-20"
               />
               <span className="w-4 text-sm text-muted">h</span>

@@ -12,8 +12,8 @@ vi.mock('electron',async()=>{
   const work={x:0,y:0,width:1920,height:1080}
   native.theme=Object.assign(new EventEmitter(),{shouldUseDarkColors:false})
   class Window extends EventEmitter {
-    position:number[];size:number[];visible=false;destroyed=false
-    constructor(options:any){super();this.position=[options.x,options.y];this.size=[options.width,options.height];native.windows.push(this)}
+    position:number[];size:number[];visible=false;destroyed=false;options:any
+    constructor(options:any){super();this.options=options;this.position=[options.x,options.y];this.size=[options.width,options.height];native.windows.push(this)}
     getSize=()=>this.size;getPosition=()=>this.position
     getBounds=()=>({x:this.position[0],y:this.position[1],width:this.size[0],height:this.size[1]})
     setSize=vi.fn((w:number,h:number)=>{this.size=[w,h]})
@@ -75,10 +75,23 @@ describe('Windows transition work',()=>{
     const panel=new PanelController(vi.fn()),settings={...DEFAULT_SETTINGS,panelOpen:true}
     panel.setPreparing(true);panel.sync(settings,DEFAULT_APPEARANCE);let win=native.windows[0]
     win.emit('ready-to-show');expect(win.show).toHaveBeenCalledTimes(1)
-    panel.setPreparing(false);panel.sync(settings,DEFAULT_APPEARANCE);expect(win.setFocusable).toHaveBeenLastCalledWith(false)
+    panel.setPreparing(false);panel.sync(settings,DEFAULT_APPEARANCE);expect(win.setFocusable).not.toHaveBeenCalled();expect(win.options.focusable).toBe(true)
     panel.close();panel.sync(settings,DEFAULT_APPEARANCE);expect(win.showInactive).toHaveBeenCalled()
     win.destroy();panel.sync(settings,DEFAULT_APPEARANCE);win=native.windows[1];win.emit('ready-to-show');expect(win.showInactive).toHaveBeenCalledTimes(1)
     panel.destroy();vi.runOnlyPendingTimers();expect(vi.getTimerCount()).toBe(0)
+  })
+  it('creates a timer directly with Get Ready off without disabling native interaction',()=>{
+    const panel=new PanelController(vi.fn())
+    panel.prepare({...DEFAULT_SETTINGS,preparationEnabled:false},DEFAULT_APPEARANCE)
+    const win=native.windows[0]
+    expect(win.options.focusable).toBe(true)
+    win.emit('ready-to-show')
+    expect(win.show).not.toHaveBeenCalled()
+    panel.sync({...DEFAULT_SETTINGS,panelOpen:true},DEFAULT_APPEARANCE)
+    expect(win.showInactive).toHaveBeenCalledTimes(1)
+    expect(win.show).not.toHaveBeenCalled()
+    expect(win.setFocusable).not.toHaveBeenCalled()
+    panel.destroy()
   })
   it('coalesces cosmetic tray work, applies the latest state, and cancels work/listeners on teardown',()=>{
     const tray=new TrayController(()=>DEFAULT_APPEARANCE,{onShow:vi.fn(),onTogglePanel:vi.fn(),onQuit:vi.fn()}),win=native.trays[0]

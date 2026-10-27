@@ -1,10 +1,28 @@
 import { create } from 'zustand'
 import type { Id } from '@core/types'
+import type { DayRange, GroupBy, RangePreset } from '@core/history'
+import type { Quality } from '@core/distractions'
 
 export type Tab = 'home' | 'learn' | 'history' | 'stats' | 'library' | 'settings'
 
 export type CategoryView = 'subjects' | 'notes' | 'review' | 'stats'
 export type SubjectView = 'overview' | 'notes' | 'review' | 'resources' | 'sessions'
+
+/** Transient browsing context; retained across tabs, never written to the study database. */
+export interface HistoryViewState {
+  view: 'sessions' | 'notes' | 'review'
+  showCharts: boolean
+  quality: Quality | null
+  preset: RangePreset
+  custom: DayRange | null
+  itemId: Id | null
+  categoryId: Id | null
+  activityId: string | null
+  query: string
+  groupBy: GroupBy
+  selectedDay: string | null
+}
+export const initialHistoryView = (): HistoryViewState => ({view:'sessions',showCharts:false,quality:null,preset:'last-30',custom:null,itemId:null,categoryId:null,activityId:null,query:'',groupBy:'day',selectedDay:null})
 
 export type LibraryRoute =
   | { kind: 'root' }
@@ -12,6 +30,8 @@ export type LibraryRoute =
   | { kind: 'subject'; id: Id; view: SubjectView }
 
 interface UiState {
+  historyView: HistoryViewState
+  setHistoryView: (patch: Partial<HistoryViewState>) => void
   settingsPage: 'general'|'log'|'appearance'|'about'
   tab: Tab
   library: LibraryRoute
@@ -32,6 +52,8 @@ interface UiState {
 }
 
 export const useUi = create<UiState>((set) => ({
+  historyView:initialHistoryView(),
+  setHistoryView:patch=>set(s=>({historyView:{...s.historyView,...patch}})),
   settingsPage:'general',
   tab: 'home',
   library: { kind: 'root' },
@@ -42,9 +64,9 @@ export const useUi = create<UiState>((set) => ({
   showBetween: () => set({ between: true }),
   exitToHome: () => set({ between: false, tab: 'home' }),
   historyDay: null,
-  openHistoryDay: (day) => set({ tab: 'history', between: false, historyDay: day }),
+  openHistoryDay: (day) => set(s=>({ tab: 'history', between: false, historyDay: day, historySessionId:null,historyView:{...s.historyView,view:'sessions',preset:'day',selectedDay:day,itemId:null,categoryId:null,activityId:null,quality:null,query:''} })),
   clearHistoryDay: () => set({ historyDay: null }),
   historySessionId:null,
-  openHistorySession:(id)=>set({tab:'history',between:false,historyDay:null,historySessionId:id}),
+  openHistorySession:(id)=>set(s=>({tab:'history',between:false,historyDay:null,historySessionId:id,historyView:{...s.historyView,view:'sessions',preset:'all',selectedDay:null,itemId:null,categoryId:null,activityId:null,quality:null,query:'',groupBy:'day'}})),
   clearHistorySession:()=>set({historySessionId:null})
 }))

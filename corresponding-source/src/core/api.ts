@@ -124,6 +124,7 @@ export interface IpcContract {
   'notes:search': {args:[query:string];result:StudyNote[]}
   'notes:list': { args: [itemId: Id, blockId?: Id]; result: StudyNote[] }
   'notes:save': { args: [note: NoteInput, sync: boolean]; result: StudyNote }
+  'notes:delete': { args: [id: string]; result: void }
   'notes:connection': { args: []; result: boolean }
   'notes:setToken': { args: [token: string]; result: void }
   'notes:testNotion': { args: [page: string]; result: { id: string; label: string; placement: 'inside'|'after' }[] }
@@ -261,6 +262,7 @@ export interface IpcContract {
   'rest:startNextBlock': { args: []; result: SessionState }
 
   'window:showMain': { args: []; result: void }
+  'panel:focus': { args: []; result: void }
   'panel:toggle': { args: []; result: void }
   'panel:close': { args: []; result: void }
   'panel:hover': { args: [over: boolean]; result: void }

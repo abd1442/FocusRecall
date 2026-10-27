@@ -147,9 +147,25 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
 
   leaveWorkflow(sessionId: number): SessionState {
     return this.transition(() => {
+    if(this.finishedSessionId===sessionId){
+      // Drafts are saved by the renderer before leaving; preserve the current
+      // workflow before clearing its active pointer in the same transaction.
+      this.persistWorkflow()
+      this.finishedSessionId=null;this.step=null
+    }
     this.unfinished = this.unfinished.map((w) => w.sessionId === sessionId ? {...w,deferred:true} : w)
     this.settings.writeRaw('unfinishedWorkflows',this.unfinished)
     })
+  }
+
+  /** History cannot mutate records still owned by the current study step.
+   * Deferred work may be completed in History without blocking other sessions. */
+  assertHistoryMutationAllowed(sessionId: Id | null): void {
+    this.checkTiming()
+    if(sessionId===null)return
+    if(this.running?.sessionId===sessionId || this.recovery?.sessionId===sessionId ||
+      this.finishedSessionId===sessionId || this.rest && this.repo.sessionIdForBlock(this.rest.blockId)===sessionId)
+      throw new Error('Finish or save the current study step for later before editing or deleting this session in History.')
   }
 
   resumeWorkflow(sessionId: number): SessionState {

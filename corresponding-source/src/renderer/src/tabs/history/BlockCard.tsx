@@ -1,5 +1,5 @@
 import { formatDuration , formatTime } from '../../i18n'
-import { t as uiText } from '../../i18n'
+import { t as uiText, displayScale } from '../../i18n'
 import { confirmAction } from '../../components/appDialogs'
 import { useState } from 'react'
 import type { HistoryBlock, Rating as RatingValue } from '@core/blocks'
@@ -24,8 +24,15 @@ const ORIGIN_LABEL: Record<HistoryBlock['origin'], string> = {
   estimated_split: 'split afterwards (times estimated)'
 }
 
-export function BlockCard({ block: b, reload }: { block: HistoryBlock; reload: () => Promise<void> }): React.JSX.Element {
+export function BlockCard({ block: b, reload, readOnly = false }: { block: HistoryBlock; reload: () => Promise<void>; readOnly?: boolean }): React.JSX.Element {
   const [editing, setEditing] = useState(false)
+  const [linkError, setLinkError] = useState('')
+  const openNotes = async (): Promise<void> => {
+    if (!b.notesLink) return
+    setLinkError('')
+    try { await window.api.invoke('shell:open', b.notesLink) }
+    catch (error) { setLinkError(uiText('Could not open notes: {value0}', {value0:error instanceof Error ? error.message : String(error)})) }
+  }
 
   const remove = async (): Promise<void> => {
     if (!await confirmAction(uiText('Delete this part of the session ({subject})? This cannot be undone.',{subject:b.itemName}),'Delete part','Delete session part?',true)) return
@@ -45,20 +52,20 @@ export function BlockCard({ block: b, reload }: { block: HistoryBlock; reload: (
             {b.logStatus === 'pending' && <span className="text-sm text-overtime">{uiText("not logged")}</span>}
           </div>
           <div className="mt-0.5 text-sm text-muted">
-            {b.timerMode}{uiText(" · target ")}{formatDuration(b.targetSeconds)} · {ORIGIN_LABEL[b.origin]}
+            {uiText(b.timerMode==='flow'?'Flow':b.timerMode==='fixed'?'Fixed':'Adaptive')}{uiText(" · target ")}{formatDuration(b.targetSeconds)} · {uiText(ORIGIN_LABEL[b.origin])}
             {b.endedBy === 'switch' ? uiText(" · then switched") : ''}
           </div>
         </div>
-        <Button variant="ghost" onClick={() => setEditing(true)} aria-label={uiText("Edit this part")}>
+        <Button disabled={readOnly} variant="ghost" onClick={() => setEditing(true)} aria-label={uiText("Edit this part")}>
           <PencilIcon /> {b.logStatus === 'pending' ? uiText("Complete") : uiText("Edit")}
         </Button>
-        <Button variant="ghost" onClick={remove}>{uiText("Delete")}</Button>
+        <Button disabled={readOnly} variant="ghost" onClick={remove}>{uiText("Delete")}</Button>
       </header>
 
       <div className="mt-3 flex flex-col gap-3 pl-4 text-base">
         {b.recallText && (
           <Detail label={uiText("Recall")}>
-            {b.recallRating && <p className="mb-1 text-sm text-muted">{b.recallRatingTouched ? uiText("Recalled:") : uiText("Suggested recall (not answered):")} {scaleLabel(SCALES.recall, b.recallRating)}</p>}
+            {b.recallRating && <p className="mb-1 text-sm text-muted">{b.recallRatingTouched ? uiText("Recalled:") : uiText("Suggested recall (not answered):")} {scaleLabel(displayScale(SCALES.recall), b.recallRating)}</p>}
             <p dir="auto" className="font-writing whitespace-pre-wrap text-writing-ink">
               {b.recallText}
             </p>
@@ -74,9 +81,10 @@ export function BlockCard({ block: b, reload }: { block: HistoryBlock; reload: (
         )}
         {b.notesLink && (
           <Detail label={uiText("Notes")}>
-            <a href={b.notesLink} target="_blank" rel="noreferrer" className="text-focus underline-offset-2 hover:underline">
+            <button type="button" onClick={() => void openNotes()} className="text-focus break-all text-start underline-offset-2 hover:underline">
               {b.notesLink}
-            </a>
+            </button>
+            {linkError && <p role="alert" className="text-status-error">{linkError}</p>}
           </Detail>
         )}
         <LogSummary values={b.values} notes={b.groupNotes} untouched={b.untouched} />
@@ -223,7 +231,7 @@ function BlockEditor({
           <textarea dir="auto" rows={5} className={`${inputClass} font-writing`} value={recallText} onChange={(e) => setRecallText(e.target.value)} />
         </Field>
         <div className="max-w-2xl">
-          <NamedSlider label={uiText("How much could you recall?")} scale={SCALES.recall} value={recallRating} suggested={!recallTouched} onConfirm={() => setRecallTouched(true)}
+          <NamedSlider label={uiText("How much could you recall?")} scale={displayScale(SCALES.recall)} value={recallRating} suggested={!recallTouched} onConfirm={() => setRecallTouched(true)}
             onChange={(v) => {
               setRecallRating(v)
               setRecallTouched(true)

@@ -1,6 +1,7 @@
 import { categoryMoveError, categoryPathLabel } from '@core/library'
 import type { Category, CategoryInput, Id, Item, ItemInput, ItemResource, ItemStats, PickerItem } from '@core/types'
 import type { Db } from '../db/database'
+import { ACTIVE_CATEGORIES_CTE } from './activeSubjects'
 
 interface CategoryRow {
   id: number
@@ -187,12 +188,12 @@ export class LibraryRepo {
   listPickerItems(): PickerItem[] {
     const rows = this.db
       .prepare(
-        `SELECT i.*, c.name AS category_name, MAX(b.focus_started_at) AS last_used_at
+        `${ACTIVE_CATEGORIES_CTE}
+         SELECT i.*, c.name AS category_name, MAX(b.focus_started_at) AS last_used_at
          FROM items i
          JOIN categories c ON c.id = i.category_id
-         LEFT JOIN categories p ON p.id = c.parent_id
          LEFT JOIN blocks b ON b.item_id = i.id
-         WHERE i.archived = 0 AND c.archived = 0 AND COALESCE(p.archived, 0) = 0
+         WHERE i.archived = 0 AND c.id IN (SELECT id FROM active_categories)
          GROUP BY i.id
          ORDER BY i.pinned DESC, last_used_at IS NULL, last_used_at DESC, i.name COLLATE NOCASE`
       )

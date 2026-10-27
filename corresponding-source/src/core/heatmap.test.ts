@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dayActivity, levelScale, streaks, yearGrid, yearTotals, yearsWithData } from './heatmap'
+import { dayActivity, levelScale, streaks, yearDailyStats, yearGrid, yearTotals, yearsWithData } from './heatmap'
 
 const at = (day: string, h: number): string => new Date(`${day}T${String(h).padStart(2, '0')}:00:00`).toISOString()
 
@@ -62,4 +62,16 @@ describe('year totals', () => {
     expect(yearTotals(m, 2026)).toEqual({ focusSeconds: 600, sessions: 2, activeDays: 1 })
     expect(yearsWithData(m, '2026-10-12')).toEqual([2026, 2025])
   })
+})
+
+describe('calendar daily summaries',()=>{
+ it('includes inactive elapsed days and excludes future records',()=>{
+  const days=new Map([['2026-01-01',{focusSeconds:3600,sessions:1,subjects:1}],['2026-01-03',{focusSeconds:7200,sessions:1,subjects:1}]])
+  expect(yearDailyStats(days,2026,'2026-01-02')).toEqual({averageSeconds:1800,studiedPercent:50})
+ })
+ it('handles leap years and future years without DST-dependent denominators',()=>{
+  const days=new Map([['2024-02-29',{focusSeconds:3660,sessions:1,subjects:1}]])
+  expect(yearDailyStats(days,2024,'2026-10-23').averageSeconds).toBe(10)
+  expect(yearDailyStats(days,2027,'2026-10-23')).toEqual({averageSeconds:0,studiedPercent:0})
+ })
 })

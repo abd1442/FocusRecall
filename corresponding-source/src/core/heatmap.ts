@@ -107,3 +107,13 @@ export function yearsWithData(days: Map<string, DayActivity>, today: string): nu
 
 /** For tests and labels: a Date to its "YYYY-MM-DD" key. */
 export const dateKey = key
+
+/** Calendar-day denominators exclude future days, independent of DST. */
+export function yearDailyStats(days: Map<string, DayActivity>, year: number, today: string): { averageSeconds: number; studiedPercent: number } {
+  const start = `${year}-01-01`, end = `${year}-12-31` < today ? `${year}-12-31` : today
+  if (end < start) return {averageSeconds:0, studiedPercent:0}
+  const count = Math.round((Date.parse(end+'T00:00:00Z')-Date.parse(start+'T00:00:00Z'))/86400000)+1
+  let seconds=0, active=0
+  for (const [day,value] of days) if(day>=start&&day<=end){seconds+=value.focusSeconds;if(value.focusSeconds>0)active++}
+  return {averageSeconds:seconds/count,studiedPercent:100*active/count}
+}

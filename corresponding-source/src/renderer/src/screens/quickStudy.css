@@ -15,6 +15,7 @@
 }
 
 .ql-frame {
+  min-width: 0;
   width: min(100%, clamp(36rem, 80cqi, 74rem));
   margin: auto;
   display: flex;
@@ -115,7 +116,7 @@
   align-self: center;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--ql-tint) 16%, var(--tf-surface));
+  background: color-mix(in srgb, var(--tf-focus) 16%, var(--tf-surface));
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -156,6 +157,7 @@
 .ql-options-body [role='radio'] { flex: 1 0 33.333%; min-width: max-content; padding-inline: 0.25rem; }
 
 .ql-hint { display: none; }
+.ql-adaptive-explanation { margin-top: 1rem; max-width: 60ch; color: var(--tf-muted); font-size: 0.9rem; line-height: 1.5; overflow-wrap: anywhere; }
 
 .ql-picker { min-width: 0; }
 

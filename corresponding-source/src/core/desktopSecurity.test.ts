@@ -10,12 +10,14 @@ it('constrains helper actions and panel settings independently of the preload',(
  expect(roleCanInvoke('panel','settings:set',['panelExpanded',true])).toBe(true)
  for(const role of ['panel','capture','reasons'] as const){expect(roleCanInvoke(role,'backup:restore',['token'])).toBe(false);expect(roleCanInvoke(role,'notes:save',[{},true])).toBe(false)}
  expect(roleCanInvoke('panel','settings:set',['foregroundTrackingEnabled',true])).toBe(false)
+ expect(roleCanInvoke('panel','panel:focus',[])).toBe(false)
+ expect(roleCanInvoke('main','panel:focus',[])).toBe(true)
  expect(roleCanInvoke('capture','popup:ready',['reasons'])).toBe(false)
  expect(roleCanInvoke('panel','shell:open',['C:\\document.pdf'])).toBe(false)
 })
 it('validates runtime channels, arity, enums, finite data and key-specific settings',()=>{
- expect(IPC_CHANNELS).toHaveLength(154)
- expect(IPC_CHANNELS).toEqual(expect.arrayContaining(['advice:choose','advice:less','advice:reset']))
+ expect(IPC_CHANNELS).toHaveLength(156)
+ expect(IPC_CHANNELS).toEqual(expect.arrayContaining(['advice:choose','advice:less','advice:reset','notes:delete']))
  expect(() => validateIpcArgs('music:command', ['toggle-every-player'])).toThrow()
  expect(roleCanInvoke('panel', 'music:command', ['play'])).toBe(false)
  expect(()=>validateIpcArgs('session:finishWrapUp',[[],'invalid'])).toThrow()

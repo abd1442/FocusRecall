@@ -1,11 +1,14 @@
 import { useState } from 'react'
-import { distractedSince } from '@core/session'
+import { distractedSince, sessionFocusSeconds } from '@core/session'
+import { clockDisplay } from '@core/modes'
+import { formatClock } from '@core/timer'
 import { t } from '../i18n'
 import { sessionCommand, useSession } from '../store/session'
 import { MODES, useNextBlockPlan } from '../store/plan'
 import { ItemPicker } from '../components/ItemPicker'
 import { LengthForMode, ModeControl } from '../components/TimerControls'
 import { Button } from '../components/ui'
+import { useNow } from '../hooks'
 import './quickStudy.css'
 
 /**
@@ -15,6 +18,8 @@ import './quickStudy.css'
  */
 export function QuickStudy():React.JSX.Element {
  const state=useSession(s=>s.state)
+ const now=useNow(state.running!==null,1000)
+ const clock=state.running?clockDisplay(state.running.timerMode,state.running.targetSeconds,sessionFocusSeconds(state.running,now)):null
  const [override,setOverride]=useState<number|null>(null)
  const plan=useNextBlockPlan(override),paused=state.running&&distractedSince(state.running)!==null
  const action=(destination:'break'|'finish'):void=>{if(state.running)void sessionCommand(()=>window.api.invoke('session:quickAction',destination,state.running!.id))}
@@ -24,6 +29,7 @@ export function QuickStudy():React.JSX.Element {
   <section className="ql-card ql-live" aria-labelledby="ql-live-subject" style={{'--ql-tint':state.running.itemColor} as React.CSSProperties}>
    <p className="ql-eyebrow" role="status"><span className="ql-dot" data-paused={paused||undefined} aria-hidden/>{t(paused?'Paused':'Studying')}</p>
    <h2 id="ql-live-subject" dir="auto" className="ql-subject">{state.running.itemName}</h2>
+   {clock&&<p role="timer" aria-label={t('Focus')} aria-live="off" className="font-timer my-4 text-3xl tabular-nums"><span>{clock.main}</span> <span className="text-base text-muted">{t('Target: ')}{formatClock(state.running.targetSeconds)}</span></p>}
    <div className="ql-actions"><Button variant="primary" onClick={()=>void sessionCommand(()=>window.api.invoke('session:toggleDistracted'))}>{t(paused?'Resume':'Distracted')}</Button>{paused?<Button onClick={()=>action('break')}>{t('Break')}</Button>:<Button onClick={()=>void window.api.invoke('ui:openSwitch')}>{t('Switch')}</Button>}<Button onClick={()=>action('finish')}>{t('Finish')}</Button></div>
    {showTimer}
   </section></div></div>
@@ -44,6 +50,7 @@ export function QuickStudy():React.JSX.Element {
      <h2 dir="auto" className="ql-subject" data-empty={!subject||undefined}>{subject?.name??t('Choose a subject')}</h2>
      <p className="ql-readout"><span className="ql-number">{minutes}</span><span className="ql-unit">{t('min')}</span><span className="ql-mode">{mode?t(mode.label):''}</span></p>
      {mode&&<p className="ql-hint">{t(mode.hint)}</p>}
+     {plan.mode==='adaptive'&&plan.suggestion?.basedOn===0&&<p className="ql-adaptive-explanation">{t('Adaptive needs five single-subject sessions of at least 10 minutes rated Focused or Deep. Quick Mode does not collect these ratings, so it uses your default target until qualifying records exist.')}</p>}
     </div>
     <details className="ql-options"><summary>{t('Timer options')}</summary><div className="ql-options-body"><ModeControl value={plan.mode} onChange={plan.setMode} itemId={subject?.id??null} targetSeconds={plan.targetSeconds}/><LengthForMode plan={plan} adaptiveOverride={override} setAdaptiveOverride={setOverride}/></div></details>
     </div>

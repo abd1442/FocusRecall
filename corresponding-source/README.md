@@ -4,7 +4,7 @@ A local-first Windows workspace for focused study, recall notes and thoughtful r
 
 **Pre-release · Windows x64 · GPL-3.0-only · No required account**
 
-Current candidate: **0.1.0-beta.28-rc.2**. Public release and distribution are on hold while artwork provenance and remaining Windows release checks are resolved. This repository is private. An old release asset or screenshot is not a current download recommendation. See [release status](docs/RELEASE_STATUS.md).
+Current source and installer: **0.1.5-beta.2 — Beta 2**, an unsigned Windows x64 prerelease. See [release status](docs/RELEASE_STATUS.md) for verification and limitations.
 
 ## What it does
 

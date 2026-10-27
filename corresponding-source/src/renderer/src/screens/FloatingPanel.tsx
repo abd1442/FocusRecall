@@ -20,9 +20,8 @@ const hint = (text: string, key: string): string => (key ? `${uiText(text)} (${k
 const noDrag = { WebkitAppRegion: 'no-drag' } as React.CSSProperties
 
 /**
- * The floating control panel. It runs in a window that never takes keyboard
- * focus, so clicking here leaves you typing where you were. Drag anywhere
- * outside the buttons to move it.
+ * The floating control panel appears without activating. Explicit clicks can
+ * focus its controls. Drag the timer area, outside its buttons, to move it.
  */
 export function FloatingPanel(): React.JSX.Element {
   useLanguage()
@@ -37,8 +36,6 @@ export function FloatingPanel(): React.JSX.Element {
   const lastItem = useLastItem(settings.lastItemId, state.stage)
   const appearance = useAppearance((s) => s.appearance)
   const circular = appearance.panelTimerDisplay === 'circular'
-  const updateAppearance = useAppearance((s) => s.update)
-  const [opacityHint, setOpacityHint] = useState<number | null>(null)
   // A stuck or resisted hotkey shows here for a moment, nothing more.
   const [marked, setMarked] = useState<string | null>(null)
   useEffect(
@@ -49,11 +46,7 @@ export function FloatingPanel(): React.JSX.Element {
       }),
     []
   )
-  useEffect(() => {
-    if (opacityHint === null) return
-    const t = setTimeout(() => setOpacityHint(null), 1200)
-    return () => clearTimeout(t)
-  }, [opacityHint])
+
 
   const call = (fn: () => Promise<unknown>) => async () => {
     if(inFlight.current)return
@@ -181,7 +174,7 @@ export function FloatingPanel(): React.JSX.Element {
   const live = state.running !== null || state.rest?.phase === 'running'
 
   const controls = (
-    <div className="fp-controls">
+    <div className="fp-controls" style={noDrag}>
       <button
         type="button"
         title={expanded ? uiText("Compact") : uiText("Expand")}
@@ -224,25 +217,18 @@ export function FloatingPanel(): React.JSX.Element {
       data-quick={quick||undefined}
       data-tone={tone}
       data-dim={dim || undefined}
-      style={drag}
+      style={noDrag}
       onMouseEnter={() => window.api.invoke('panel:hover', true)}
       onMouseLeave={() => window.api.invoke('panel:hover', false)}
-      onWheel={(e) => {
-        // The wheel over the panel sets how see-through it is when the mouse leaves.
-        const next = Math.round(Math.min(1, Math.max(0.3, appearance.panelOpacity + (e.deltaY < 0 ? 0.05 : -0.05))) * 100) / 100
-        void updateAppearance({ panelOpacity: next })
-        setOpacityHint(Math.round(next * 100))
-      }}
     >
-      {opacityHint !== null && <div className="fp-toast">{opacityHint}{uiText("% when away")}</div>}
       {circular ? (
-        <div className="fp-stage">
+        <div className="fp-stage" style={drag}>
           {controls}
           <CircularTimer value={value} caption={caption} progress={progress} tone={tone} dim={dim} size={expanded ? 'panel' : 'compact'} label={ringLabel} />
           {subjectLine}
         </div>
       ) : (
-        <div className="fp-stage">
+        <div className="fp-stage" style={drag}>
           <div className="fp-head">{subjectLine}{controls}</div>
           <div className="fp-readout" dir="ltr">
             <TimerValue value={value} fit={!timed} className={`fp-digits font-timer tabular-nums ${timed ? '' : 'fp-word'}`} role={live ? 'timer' : undefined} />
@@ -251,7 +237,7 @@ export function FloatingPanel(): React.JSX.Element {
           {line}
         </div>
       )}
-      {expanded && <div className="fp-actions">{buttons}</div>}
+      {expanded && <div className="fp-actions" style={noDrag}>{buttons}</div>}
     </div>
   )
 }

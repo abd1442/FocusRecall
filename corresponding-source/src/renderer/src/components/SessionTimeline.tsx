@@ -504,7 +504,7 @@ export function SessionTimeline({
             </span>
           ) : null
         )}
-        <span className={`rounded-full border px-2.5 py-0.5 text-sm ${quality === 'clean' ? 'border-rest/60 text-rest' : 'border-overtime/60 text-overtime'}`}>{QUALITY_LABEL[quality]}</span>
+        <span className={`rounded-full border px-2.5 py-0.5 text-sm ${quality === 'clean' ? 'border-rest/60 text-rest' : 'border-overtime/60 text-overtime'}`}>{uiText(QUALITY_LABEL[quality])}</span>
         {editable && <span className="text-sm text-muted">{uiText("Click a piece to change it; drag across focus to add one.")}</span>}
       </div>
 

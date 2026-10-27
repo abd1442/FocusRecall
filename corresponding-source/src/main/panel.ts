@@ -12,14 +12,14 @@ import { floatingPanelSize } from '@core/floatingTimer'
 const REASSERT_MS = 3_000
 
 /**
- * The floating control panel: always on top of every other app, never takes
- * keyboard focus, draggable, compact or expanded.
+ * The floating control panel: always on top, shown without taking focus,
+ * draggable, compact or expanded. Explicit clicks can activate its controls.
  *
  * Windows specifics:
  * - `type: 'toolbar'` makes it a tool window (WS_EX_TOOLWINDOW): no taskbar
  *   button, not in Alt+Tab, and not tied to one virtual desktop.
- * - `focusable: false` (WS_EX_NOACTIVATE): clicks reach the buttons without
- *   activating the panel, so the app you type in keeps keyboard focus.
+ * - Keep the window focusable for ordinary Windows mouse/keyboard handling.
+ *   showInactive() avoids stealing focus when the timer first appears.
  * - Level 'screen-saver' is the highest always-on-top band Electron offers.
  */
 export class PanelController {
@@ -53,7 +53,16 @@ export class PanelController {
     if(value)this.preparationWork=work??screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).workArea
     // The caller immediately syncs the new settings/appearance. Resize once
     // there, rather than moving the native window twice during one transition.
-    this.preparing=value;this.win?.setFocusable(value)
+    this.preparing=value
+  }
+
+  async focusControls(): Promise<void> {
+    const win=this.win
+    if (!win || win.isDestroyed()) return
+    if(!this.ready)await new Promise<void>(resolve=>win.once('ready-to-show',()=>resolve()))
+    if(win.isDestroyed())return
+    win.show();win.focus();win.webContents.focus()
+    await win.webContents.executeJavaScript(`new Promise(resolve=>{let attempts=0;const focus=()=>{const button=document.querySelector('.fp-actions button')||document.querySelector('.fp-controls button');if(button){button.focus();resolve(true)}else if(++attempts<60)requestAnimationFrame(focus);else resolve(false)};focus()})`)
   }
 
   /** Where the panel is on screen, when it is showing. */
@@ -133,7 +142,7 @@ export class PanelController {
       fullscreenable: false,
       skipTaskbar: true,
       alwaysOnTop: true,
-      focusable: this.preparing,
+      focusable: true,
       hasShadow: false,
       webPreferences: {
         devTools: rendererDevToolsAllowed(),

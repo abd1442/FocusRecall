@@ -68,7 +68,7 @@ export function FocusScreen({ block }: { block: RunningBlock }): React.JSX.Eleme
             <span className="text-overtime">{uiText("Distracted · away ")}<span className="font-timer tabular-nums">{formatClock((now - Date.parse(since)) / 1000)}</span>
             </span>
           ) : (
-            <span className="text-muted">{c.overtime ? uiText("Target reached") : MODE_NAMES[block.timerMode]}</span>
+            <span className="text-muted">{c.overtime ? uiText("Target reached") : uiText(MODE_NAMES[block.timerMode])}</span>
           )}
         </div>
       </div>

@@ -4,6 +4,7 @@ import { evenBoundaries, partIndexAt, partRanges } from '@core/split'
 import { focusMsAt, type TimerMode } from '@core/timer'
 import type { Id, IsoUtc } from '@core/types'
 import type { Db } from '../db/database'
+import { ACTIVE_CATEGORIES_CTE } from './activeSubjects'
 import { sessionPauses } from './intervals'
 
 interface RunningRow {
@@ -102,7 +103,7 @@ export class SessionRepo {
   itemIsActive(itemId: Id): boolean {
     return !!this.db
       .prepare(
-        'SELECT 1 FROM items i JOIN categories c ON c.id = i.category_id WHERE i.id = ? AND i.archived = 0 AND c.archived = 0'
+        `${ACTIVE_CATEGORIES_CTE} SELECT 1 FROM items i WHERE i.id = ? AND i.archived = 0 AND i.category_id IN (SELECT id FROM active_categories)`
       )
       .get(itemId)
   }

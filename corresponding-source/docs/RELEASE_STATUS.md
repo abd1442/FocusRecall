@@ -1,28 +1,9 @@
-# Current release status
+# Beta 2 release status
 
-**0.1.0-beta.28-rc.2 is a controlled Windows test candidate. Public release is not approved.** Repositories remain private. Repository maintenance uploads no installer or source archive.
+The owner authorized **FocusRecall — Beta 2**, version **0.1.5-beta.2**, on 27 October 2026. This is an unsigned Windows x64 prerelease. Linux/macOS binaries remain at Beta 1 and are not relabeled.
 
-RC1 exposed a genuine historical-schema compatibility failure. RC2 corrects constraint-token compatibility while retaining schema validation and preservation. RC1 is not a current download. Later source/documentation/QA-identity maintenance does not replace the verified RC2 installer.
+Automated verification: 90 test files / 1,199 tests passed; production build/typechecks and seven-language localization gates passed; isolated Electron workflows, accessibility trees, draft recovery and narrow layouts checked. All 126 installer payload files match the production package.
 
-| Exact RC2 artifact | SHA-256 |
-| --- | --- |
-| `FocusRecall-0.1.0-beta.28-rc.2-setup.exe` | `de0087915cd5105e555e0b2f278951686ebeeebf9ba951258a0ab387e6ac37fd` |
-| `FocusRecall-0.1.0-beta.28-rc.2-source-and-dependencies.zip` | `40b098ed64a2b35dc24750fefe074b8ffe6acaa63527d10e4d644380245d712f` |
+Not performed for this candidate: clean installation, actual Beta 1 upgrade, uninstall/reinstall, physical sleep/hibernate/DPI/monitor changes, native screen-reader certification, endurance or educational efficacy testing. Back up data and quit through the tray before updating. Use a test environment first.
 
-These identify local artifacts; they are not download links or source-completeness certification. HEAD may be newer than a binary; provide that binary's matching source separately when distributing it.
-
-## Existing safeguards
-
-Accepted work covers observed-time integrity, conservative lock interruption, statistical uncertainty/false-discovery safeguards, scientifically qualified advice, opt-in monitoring, historical title deletion, Electron hardening, performance, keyboard access, 26 themes and seven-language copy. Passing tests is not certification of science, security or accessibility.
-
-Initial public installer: **unsigned**. Original code: **GPL-3.0-only**, without a proprietary EULA. Retained database/profile/installer identifiers must not be renamed for branding.
-
-## Public-release gates
-
-- Resolve F/R reference and other uncertain artwork provenance. The friend-package distribution hold remains. Generation/tracing alone does not establish rights.
-- Complete matching Corresponding Source and required transitive dependency-source availability review. A private URL or npm-input cache alone is insufficient.
-- Complete real clean install, representative genuine historical-installer upgrades, uninstall/reinstall, interruption/cancellation and preservation checks in a disposable environment.
-- Complete physical Windows sleep/wake/hibernate/lock, supported configurations/DPI, antivirus/SmartScreen, endurance and assistive-technology checks. Fluent language review is separate from localization tests.
-- Review historical screenshots/archives and old release assets before public exposure. Private Git history is not automatically safe to make public.
-
-No Release, package publication, visibility change or candidate replacement is authorized by documentation synchronization. [Windows test plan](RC_WINDOWS_TEST_PLAN.md), [security](RELEASE_SECURITY.md), [artwork](ASSETS.md).
+The public project records the owner’s logo-authorship confirmation on 20 October. This is not independent ownership/trademark certification. Existing dependency notices, exact runtime source inputs and bounded source-access directions accompany the source archive. A complete recursive Chromium build was not performed.

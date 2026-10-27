@@ -1,0 +1,36 @@
+.daily-goal{min-width:0;border:1px solid var(--tf-border);border-radius:18px;background:var(--tf-surface);padding:20px}
+.daily-goal-growing{display:flex;flex-direction:column;flex:1}
+.daily-goal-body{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:center;gap:8px;margin-block:8px 18px;text-align:center}
+.goal-sakura{width:100%;max-width:350px;min-height:180px;flex:1;display:flex;align-items:center;justify-content:center;--pink:hsl(340 calc(30% + var(--progress)*.25%) calc(64% + var(--progress)*.22%))}
+.goal-sakura svg{display:block;width:100%;max-height:340px;overflow:visible}
+.goal-sakura .limb,.goal-sakura .twig{stroke-dasharray:100;transition:stroke-dashoffset .3s linear}
+.goal-sakura .limb{stroke-dashoffset:calc(100 - (0.55 + .45 * clamp(0,(var(--progress) - var(--start))/22,1))*100)}
+.goal-sakura .twig{opacity:clamp(0,(var(--progress) - var(--start))*100,1);stroke-dashoffset:calc(100 - clamp(0,(var(--progress) - var(--start))/22,1)*100)}
+.goal-sakura :is(.bud,.new-leaf,.flower){--growth:clamp(0,(var(--progress) - var(--start))/8,1);opacity:var(--growth);transform:scale(var(--growth));transform-box:fill-box;transform-origin:center;transition:opacity .3s ease,transform .3s ease}
+.goal-sakura .petals{fill:var(--pink);stroke:#a9688030;stroke-width:.3}
+.goal-sakura .flower:nth-child(3n) .petals{fill:color-mix(in srgb,var(--pink) 72%,#fff0f1)}
+.daily-goal-track{height:7px;flex:none;background:var(--tf-surface-2);border-radius:8px;overflow:hidden}.daily-goal-track>span{display:block;height:100%;background:var(--tf-focus);transition:width .5s ease}
+.home-full-layout{display:flex;flex-direction:column;flex:1;min-height:0}.home-bottom{min-width:0}.home-notices:empty{display:none}.home-notices{display:flex;flex-direction:column;gap:16px}
+@container home (min-width:70rem){
+ .home-full-layout{padding:24px 32px 12px;display:grid;grid-template-columns:minmax(0,1fr) 27rem;grid-template-rows:auto minmax(0,1fr) auto;gap:20px}
+ .home-scroll,.home-layout,.home-workspace{display:contents}
+ .home-notices{grid-column:1/-1;grid-row:1}
+ .home-subjects{grid-column:1;grid-row:2;overflow-y:auto;min-height:0;padding:3px}
+ .home-launcher{grid-column:2;grid-row:2/4;position:static;align-self:stretch;overflow-y:auto;min-height:0;gap:16px}
+ .home-launcher [data-session-launch-panel]{flex-shrink:0}
+ .home-calendar{grid-column:1;grid-row:3;max-height:none;padding:0;overflow:visible}
+}
+@media(prefers-reduced-motion:reduce){.goal-sakura *,.daily-goal-track>span{transition:none!important}}
+@media(forced-colors:active){.goal-sakura{display:none}.daily-goal-track{border:1px solid CanvasText}.daily-goal-track>span{background:Highlight}}
+
+/* Let the illustration absorb height changes before controls or text scroll. */
+.daily-goal-growing{min-height:250px}
+.daily-goal-body{min-height:0}
+.goal-sakura{min-height:100px;position:relative}
+.goal-sakura svg{position:absolute;inset:0;width:100%;height:100%;max-height:none}
+@container home (min-width:70rem){
+ .home-full-layout .home-launcher{position:static;align-self:stretch;min-height:0}
+ .home-full-layout .daily-goal-growing{min-height:220px;flex:1 0 220px;padding:16px}
+ .home-full-layout .daily-goal-body{gap:4px;margin-block:4px 10px}
+ .home-full-layout .goal-sakura{min-height:50px}
+}
