@@ -1,4 +1,2 @@
-* text=auto eol=lf
-*.wav binary
-*.png binary
-*.ico binary
+# Preserve the exact raw build inputs and source-manifest hashes.
+* -text
