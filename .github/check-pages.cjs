@@ -35,7 +35,7 @@ for (const image of manifest.images) {
   const bytes = fs.readFileSync('screenshots/current/' + image.file)
   assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), image.sha256, image.file)
 }
-const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-3.0-only'));assert.ok(readme.includes('Quick Mode')&&readme.includes('Full Mode'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('assets/support-kofi-banner.png'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('https://ko-fi.com/abd442'));assert.ok(manifest.images.every(image=>image.version===manifest.version));assert.ok(manifest.workflow.records.every(r=>r.focus_seconds>=120));
+const readme=fs.readFileSync('README.md','utf8');assert.ok(readme.includes('GPL-3.0-only'));assert.ok(readme.includes('Quick Mode')&&readme.includes('Full Mode'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('assets/support-a14-pomodoro.svg'));assert.ok(readme.slice(readme.lastIndexOf('---')).includes('https://ko-fi.com/abd442'));assert.ok(manifest.images.every(image=>image.version===manifest.version));assert.ok(manifest.workflow.records.every(r=>r.focus_seconds>=120));
 assert.ok(fs.readFileSync('LICENSE', 'utf8').includes('GNU GENERAL PUBLIC LICENSE'))
 console.log('PASS links, tracked-file boundaries, bounded secret/path patterns, GPL materials and screenshot hashes. Not history/rights clearance.')
 
@@ -60,6 +60,14 @@ if(fs.existsSync('RELEASE_SOURCE.json') && !fs.existsSync('RELEASE-MANIFEST.json
 }
 // Verify both the current release and retained immutable earlier releases.
 const current = JSON.parse(fs.readFileSync('corresponding-source/SOURCE_MANIFEST.json', 'utf8'))
+if(fs.existsSync('screenshots/a14-pomodoro/manifest.json')){
+ const branded=JSON.parse(fs.readFileSync('screenshots/a14-pomodoro/manifest.json','utf8'))
+ assert.equal(branded.productName,'A14 Pomodoro');assert.equal(branded.status,'unreleased-development');assert.ok(branded.fictionalOnly)
+ for(const row of branded.images){assert.ok(!/[\\/]/.test(row.file));assert.equal(crypto.createHash('sha256').update(fs.readFileSync('screenshots/a14-pomodoro/'+row.file)).digest('hex'),row.sha256,row.file)}
+ assert.ok(readme.includes('assets/a14-pomodoro-lockup.svg'))
+ assert.ok(!readme.includes('assets/focusrecall-lockup'))
+ console.log('PASS current A14 Pomodoro brand assets and fictional screenshot hashes.')
+}
 assert.ok(['unreleased-development','published-beta'].includes(current.status))
 assert.match(current.sourceCommit,/^[a-f0-9]{40}$/)
 for(const row of current.files){

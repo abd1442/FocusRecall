@@ -1,20 +1,30 @@
 # Application source and release materials
 
+## Current A14 Pomodoro development source
+
+[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) now contains the **unreleased A14 Pomodoro branding update**, based on package version 0.1.5-beta.2. It is not the source of the already published installer. The manifest records this development snapshot; old binaries remain mapped to their immutable release tags below. See [rebrand verification](docs/A14_POMODORO_REBRAND.md). The approved Countdown Corner mark replaces the old F/R logo in current development assets. No font files are redistributed.
+
+
+## Current A14 Pomodoro development source
+
+[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) now contains the **unreleased A14 Pomodoro branding update**, based on package version 0.1.5-beta.2. It is not the source of the already published installer. The manifest records this development snapshot; old binaries remain mapped to their immutable release tags below. See [rebrand verification](docs/A14_POMODORO_REBRAND.md). The approved Countdown Corner mark replaces the old F/R logo in current development assets. No font files are redistributed.
+
+
 ## Beta 2 Windows source
 
-[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) contains Windows **0.1.5-beta.2 — Beta 2**, exact public source snapshot `0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f`. The tag `v0.1.5-beta.2` identifies the release assembly; the installer maps to this application snapshot. [Build directions](corresponding-source/SOURCE_BUILD.md) · [Release manifest](RELEASE-MANIFEST.json) · [Beta 2 source materials](https://github.com/abd1442/FocusRecall/releases/download/v0.1.5-beta.2/FocusRecall-Beta-2-Source.zip).
+[the immutable Beta 2 source](https://github.com/abd1442/A14-Pomodoro/tree/v0.1.5-beta.2/corresponding-source) contains Windows **0.1.5-beta.2 — Beta 2**, exact public source snapshot `0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f`. The tag `v0.1.5-beta.2` identifies the release assembly; the installer maps to this application snapshot. [Build directions](corresponding-source/SOURCE_BUILD.md) · [Release manifest](RELEASE-MANIFEST.json) · [Beta 2 source materials](https://github.com/abd1442/A14-Pomodoro/releases/download/v0.1.5-beta.2/FocusRecall-Beta-2-Source.zip).
 
 The attached source archive includes the exact curated editable Windows inputs, unchanged locked dependency/preferred-source inputs and pinned runtime source-access directions. Linux/macOS remain frozen Beta 1 builds. Source delivery does not imply that unperformed installer/hardware/assistive-technology checks passed; see [release notes](RELEASE_NOTES.md).
 
 ## Published Beta 1 source
 
-FocusRecall original code/artwork is **GPL-3.0-only**. Third-party terms remain applicable. Use the source and notices attached to the [single Beta 1 release](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1). No private repository access is needed.
+FocusRecall original code/artwork is **GPL-3.0-only**. Third-party terms remain applicable. Use the source and notices attached to the [single Beta 1 release](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.1-beta.1). No private repository access is needed.
 
 The tag `v0.1.1-beta.1` identifies a release assembly, not one common application build revision. At that immutable tag, its automatic source ZIP/tar contains the application snapshots below. The larger `FocusRecall-Beta-1-Source.zip` additionally supplies dependency/preferred upstream source inputs, exact FFmpeg source, native/theme/artwork/build inputs and pinned runtime source access/replacement directions. `FocusRecall-Beta-1-Notices.zip` contains the corresponding project/component notices.
 
 | Platform | Build source revision | Source folder in this repository |
 | --- | --- | --- |
-| windows-x64 | `822068b128b47e3cff3627082ee0e336dfa17d71` | [Beta 1 Windows source](https://github.com/abd1442/FocusRecall/tree/v0.1.1-beta.1/corresponding-source) |
+| windows-x64 | `822068b128b47e3cff3627082ee0e336dfa17d71` | [Beta 1 Windows source](https://github.com/abd1442/A14-Pomodoro/tree/v0.1.1-beta.1/corresponding-source) |
 | linux-x64 | `f583c7de992dfbf8edfe3f20bc369c0f26567112` | [platform-source/linux-x64](platform-source/linux-x64/SOURCE_MANIFEST.json) |
 | macos-arm64 | `8bdc835e3e7f7f5a7fa1c62c829c9b2d2f2addca` | [platform-source/macos-arm64](platform-source/macos-arm64/SOURCE_MANIFEST.json) |
 | macos-x64 | `f93d7991d4ba52335cfdbc72d536fdd0eb76fcb6` | [platform-source/macos-x64](platform-source/macos-x64/SOURCE_MANIFEST.json) |

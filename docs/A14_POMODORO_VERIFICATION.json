@@ -1,0 +1,27 @@
+{
+  "productName": "A14 Pomodoro",
+  "status": "unreleased-development",
+  "date": "2026-10-30",
+  "sourceCommit": "94d09e5a72aa8d1c9859d02ca0c3c98098f361a5",
+  "publicSourceBuildMatchesProduction": true,
+  "matchedOutputs": 16,
+  "fullSuite": {
+    "files": 90,
+    "tests": 1200,
+    "passed": true
+  },
+  "finalCompatibilityTests": 17,
+  "localization": {
+    "languages": 7,
+    "normalizedKeys": 2965,
+    "passed": true
+  },
+  "fictionalRenderedChecksPassed": true,
+  "rendererErrors": 0,
+  "networkRequests": 0,
+  "installerPayloadFiles": 119,
+  "installerExecuted": false,
+  "embeddedIconsMatch": true,
+  "productionSecurityPassed": true,
+  "publishedReleaseReplaced": false
+}

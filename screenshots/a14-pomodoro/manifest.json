@@ -1,0 +1,48 @@
+{
+  "productName": "A14 Pomodoro",
+  "status": "unreleased-development",
+  "date": "2026-10-30",
+  "fictionalOnly": true,
+  "images": [
+    {
+      "file": "home-light.png",
+      "sha256": "e6720268fc0d8b30e12d36eae7adbf647ea1da71714f3730b763d94167859674"
+    },
+    {
+      "file": "home-dark.png",
+      "sha256": "bbf081df6664e2131b49c2f901584fdb0de2f6938067be25c7c7ecd41744582d"
+    },
+    {
+      "file": "home-collapsed.png",
+      "sha256": "38d98b49095b7a941d9328f003b95c3eef46fdce01179deb97a0bcc3d5e919ce"
+    },
+    {
+      "file": "about-en.png",
+      "sha256": "91c618b7a78fd5f1d61f2bebf23a852237059df68c82d763dae7bcd1b7f27c1f"
+    },
+    {
+      "file": "about-ar.png",
+      "sha256": "2d41bb209e8cd58d6e8f46b0252031ab97641d4ccea9218df5fe0df7c46c3484"
+    },
+    {
+      "file": "history.png",
+      "sha256": "0cfbb2f405ab5951cb183a378ef1274d36546054b0f8f93cb1d617ed1b0b287a"
+    },
+    {
+      "file": "stats.png",
+      "sha256": "65249ccf0df5fe3ba69b5192e0758f637d587609ad9e11d5a2e1a07d5d520cf8"
+    },
+    {
+      "file": "learn.png",
+      "sha256": "448f9dbf9f23ec9a17e1d9cb47ca305fda770827f49ed996e6dce6bf9fd9ffb5"
+    },
+    {
+      "file": "library.png",
+      "sha256": "c0ac73fb1e0d2cd81ed1ca8f0f5c64c5455b79e5fc9f745067820cf0603d5f7c"
+    },
+    {
+      "file": "focus.png",
+      "sha256": "54b571b92e22217f44040e21c98dc5046b1a8db15f7909334cac0f16b179a347"
+    }
+  ]
+}

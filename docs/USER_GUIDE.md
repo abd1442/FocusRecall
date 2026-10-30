@@ -1,8 +1,8 @@
-# FocusRecall user guide
+# A14 Pomodoro user guide
 
-This guide follows Windows **Beta 2 (0.1.5-beta.2)**. Save for later on Recall/Log preserves unfinished drafts, History retains its browsing scope, saved notes offer Show more, and standalone notes can be deleted locally while exported copies remain. Parked Thoughts and automatic Resume reason prompts have been removed; the bottom calendar stays visible while scrolling. The Linux/macOS Beta 1 downloads are unchanged: [guide for that version](https://github.com/abd1442/FocusRecall/blob/v0.1.1-beta.1/docs/USER_GUIDE.md).
+This guide follows Windows **Beta 2 (0.1.5-beta.2)**. Save for later on Recall/Log preserves unfinished drafts, History retains its browsing scope, saved notes offer Show more, and standalone notes can be deleted locally while exported copies remain. Parked Thoughts and automatic Resume reason prompts have been removed; the bottom calendar stays visible while scrolling. The Linux/macOS Beta 1 downloads are unchanged: [guide for that version](https://github.com/abd1442/A14-Pomodoro/blob/v0.1.1-beta.1/docs/USER_GUIDE.md).
 
-The [main page](../README.md) introduces every part of FocusRecall with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It builds on Beta 1 (0.1.1-beta.1) with the current-source changes noted above, using Windows screenshots. Linux and macOS share the study workflows but remain experimental; follow their release-specific installation notes. Screenshots show real application screens with made-up subjects and notes.
+The [main page](../README.md) introduces every part of A14 Pomodoro with screenshots. This guide is the detailed reference: each screen step by step, the smaller settings, and what to do when something goes wrong. It builds on Beta 1 (0.1.1-beta.1) with the current-source changes noted above, using Windows screenshots. Linux and macOS share the study workflows but remain experimental; follow their release-specific installation notes. Screenshots show real application screens with made-up subjects and notes.
 
 **Contents:** [Quick or Full Mode](#quick-mode-or-full-mode) · [First session](#your-first-study-session) · [Home tools](#home-tools) · [History](#find-your-sessions-and-notes) · [Stats](#read-stats) · [Learn](#learn) · [Appearance](#appearance-and-language) · [Privacy](#choose-what-you-record) · [Install and backups](#install-update-and-protect-your-records) · [Troubleshooting](#if-something-goes-wrong)
 
@@ -72,7 +72,7 @@ You do not need automatic window tracking to use the timer. Locking Windows or s
 **Review & connect** appears after Focus. Try explaining what you remember before checking your materials. You can use paper or another app; writing here is optional.
 
 1. Optionally choose **Start review** for a short review timer. It has its own pause/resume control.
-2. Select **Type notes** or **Draw notes** if you want to keep something in FocusRecall.
+2. Select **Type notes** or **Draw notes** if you want to keep something in A14 Pomodoro.
 3. Record the main idea and a point you are still unsure about.
 4. Use **Review later** for a specific reminder, such as comparing water loss on a dry day and a humid day.
 5. Select **Continue to session log**. **Skip review** is available when you do not want this step.
@@ -125,7 +125,7 @@ Open **History** to revisit work. Choose a date range, narrow it to a subject or
 
 Use **Saved notes** to find retained writing and **To review** for marked follow-ups. For example, after checking the effect of humidity, return to the relevant session and review what you wrote. **Library** organizes material by subject.
 
-To send a note to Obsidian, choose **Obsidian / save note**, select the destination and save explicitly. Keep your vault backed up separately. Choosing an external destination does not make a FocusRecall backup cover that destination.
+To send a note to Obsidian, choose **Obsidian / save note**, select the destination and save explicitly. Keep your vault backed up separately. Choosing an external destination does not make a A14 Pomodoro backup cover that destination.
 
 ## Read Stats
 
@@ -161,7 +161,7 @@ Learn's general research guidance is separate from Stats. Try ideas that suit yo
 
 ![Appearance with the light-theme gallery and an independently saved dark theme](../screenshots/current/appearance-theme.png)
 
-Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. The gallery below shows the themes for the appearance on screen; selecting one applies it immediately, and **Undo** appears briefly if you change your mind. FocusRecall keeps one light and one dark theme. In Light or Dark, a note under the gallery names the other saved theme. With Follow Windows, the **Light theme** and **Dark theme** tabs choose which of the two you are changing. There are 26 themes (11 light, 15 dark); text/interface and floating-panel sizes have separate controls.
+Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. The gallery below shows the themes for the appearance on screen; selecting one applies it immediately, and **Undo** appears briefly if you change your mind. A14 Pomodoro keeps one light and one dark theme. In Light or Dark, a note under the gallery names the other saved theme. With Follow Windows, the **Light theme** and **Dark theme** tabs choose which of the two you are changing. There are 26 themes (11 light, 15 dark); text/interface and floating-panel sizes have separate controls.
 
 ![Floating-panel appearance settings in a dark theme, with Digital and Circular timer choices](../screenshots/current/appearance.png)
 
@@ -179,13 +179,13 @@ Study data stays local: no telemetry, advertising, cloud sync or automatic updat
 
 **Delete window titles** removes stored titles in the current profile while preserving study history and saved classifications. Finish the current study workflow before using it. It also turns future title collection off. It does not delete copies in backups, exports or synced folders; restoring an older backup can bring titles/settings back.
 
-FocusRecall does not encrypt local databases or backups. Protect your Windows account and backup storage. External links and optional services have their own privacy policies. [Full privacy information](../PRIVACY.md)
+A14 Pomodoro does not encrypt local databases or backups. Protect your Windows account and backup storage. External links and optional services have their own privacy policies. [Full privacy information](../PRIVACY.md)
 
 ## Install, update and protect your records
 
-Choose your operating system on the [Beta 1 release page](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1), check its SHA-256 and follow its installation instructions. Windows is unsigned; Mac builds are not Developer ID signed or notarized. Keep operating-system protection enabled and stop on malware or damaged-app warnings. Linux/macOS still need real-world testing. [Availability](RELEASE_STATUS.md).
+Choose your operating system on the [Beta 1 release page](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.1-beta.1), check its SHA-256 and follow its installation instructions. Windows is unsigned; Mac builds are not Developer ID signed or notarized. Keep operating-system protection enabled and stop on malware or damaged-app warnings. Linux/macOS still need real-world testing. [Availability](RELEASE_STATUS.md).
 
-For a first installation, run the verified installer, follow its prompts and open FocusRecall. Choose Quick or Full Mode during setup; language and mode can be changed later in Settings. If you want to look around first, **Settings → General → Data → Open demo data** opens a separate fictional database.
+For a first installation, run the verified installer, follow its prompts and open A14 Pomodoro. Choose Quick or Full Mode during setup; language and mode can be changed later in Settings. If you want to look around first, **Settings → General → Data → Open demo data** opens a separate fictional database.
 
 ![Data settings for creating a verified backup, restoring one and opening the backup folder](../screenshots/current/backup.png)
 
@@ -194,7 +194,7 @@ Before an update:
 1. Finish the active study workflow.
 2. In Settings, use **Back Up Data** and confirm verification succeeds.
 3. Keep a separate copy somewhere safe. Back up any external Obsidian vault separately.
-4. Quit FocusRecall through its tray menu, then run the approved installer using the existing installation scope and destination.
+4. Quit A14 Pomodoro through its tray menu, then run the approved installer using the existing installation scope and destination.
 5. Reopen and check your subjects, a recent session, preferences and notes.
 
 Uninstall is configured to preserve the local profile. Do not delete profile folders, databases or WAL/SHM files to update or troubleshoot. Restore replaces the current database after validation and confirmation; use it deliberately, not as a routine startup step. Keep the pre-restore safety backup.

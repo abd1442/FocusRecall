@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/focusrecall-lockup-dark.svg">
-    <img src="assets/focusrecall-lockup.svg" alt="FocusRecall" width="320">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/a14-pomodoro-lockup-dark.svg">
+    <img src="assets/a14-pomodoro-lockup.svg" alt="A14 Pomodoro" width="320">
   </picture>
 </p>
 
@@ -32,12 +32,12 @@
 <br>
 
 <p align="center">
-  <img src="assets/readme/hero.png" alt="FocusRecall Home with the Biology subject selected, a 25-minute Flow target and a session goal, next to the floating circular timer showing 23:14 of 25:00">
+  <img src="screenshots/a14-pomodoro/home-light.png" alt="A14 Pomodoro Home with fictional Biology subject and timer controls" width="900">
 </p>
 
 <br>
 
-You choose a subject and start a timer. A small floating panel keeps time while you work in your book, browser or editor. When you finish, FocusRecall can ask you to write down what you remember before you look back at your material, then keeps the session, your notes and anything you marked to revisit.
+You choose a subject and start a timer. A small floating panel keeps time while you work in your book, browser or editor. When you finish, A14 Pomodoro can ask you to write down what you remember before you look back at your material, then keeps the session, your notes and anything you marked to revisit.
 
 Use as much or as little of it as you like. Notes, ratings, rest timers and automatic tracking are all optional, and you never need an account.
 
@@ -54,21 +54,27 @@ Use as much or as little of it as you like. Notes, ratings, rest timers and auto
 
 ## Beta 2 downloads
 
-[**Download FocusRecall — Beta 2 for Windows x64**](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.5-beta.2)
+**A14 Pomodoro is the new name.** The current source and screenshots use the approved Countdown Corner logo. The downloads below are the previously published **FocusRecall Beta 2 (Windows)** and **Beta 1 (Linux/macOS)**; they retain their original branding. No rebranded release is being published by this source update.
+
+
+
+**A14 Pomodoro is the new name.** The current source and screenshots use the approved Countdown Corner logo. The downloads below are the previously published **A14 Pomodoro Beta 2 (Windows)** and **Beta 1 (Linux/macOS)**; they retain their original branding. No rebranded release is being published by this source update.
+
+
+
+[**Download A14 Pomodoro — Beta 2 for Windows x64**](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.5-beta.2)
 
 Version **0.1.5-beta.2** improves session safety, accessibility, draft recovery, History, notes and Quick Mode. It is an unsigned Windows prerelease. [Changes and verification limits](RELEASE_NOTES.md) · [Matching source](SOURCE_NOTICE.md) · [Checksums](SHA256SUMS.txt).
 
-Experimental **Linux and macOS remain on [Beta 1](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1)**. They have not been rebuilt or relabeled as Beta 2. Screenshots elsewhere on this page illustrate earlier real builds with fictional records; some details predate Beta 2.
+Experimental **Linux and macOS remain on [Beta 1](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.1-beta.1)**. They have not been rebuilt or relabeled as Beta 2. Screenshots elsewhere on this page illustrate earlier real builds with fictional records; some details predate Beta 2.
 
 Back up your records and quit through the tray before updating. Clean-install/actual Beta 1 upgrade and physical Windows/assistive-technology checks remain uncompleted for this candidate. See the release notes before use.
 
-[Report a beta problem](https://github.com/abd1442/FocusRecall/issues/new?template=beta-test.yml). Issues are public; use fictional examples and never attach personal study records, private backups or sensitive logs.
+[Report a beta problem](https://github.com/abd1442/A14-Pomodoro/issues/new?template=beta-test.yml). Issues are public; use fictional examples and never attach personal study records, private backups or sensitive logs.
 
 ## Two ways to study
 
-<p align="center">
-  <img src="assets/readme/modes.png" alt="Quick Mode launcher with a 25-minute Biology plan and the subject list, beside Full Mode Home with timer options and a session goal">
-</p>
+
 
 |  | Quick Mode | Full Mode |
 | :-- | :-- | :-- |
@@ -95,9 +101,7 @@ While paused, **Break** saves the session and offers a break timer. When the bre
 
 Full Mode walks through one study cycle. Every step after Start can be skipped.
 
-<p align="center">
-  <img src="assets/readme/workflow.png" alt="The four stages of a Full Mode session: plan with a subject, timer and goal; focus with the floating timer; recall notes about water moving through a plant with a follow-up marked for review; and a five-minute rest countdown">
-</p>
+
 
 **1 · Plan.** Select a subject on Home and choose a timer:
 
@@ -120,7 +124,7 @@ A short, specific goal helps: *"Explain how water moves through a plant"* is eas
 - **Get ready.** If preparation is turned on, a short panel appears before the timer starts.
 - **Today Check.** The optional check-in at the top of Home can be answered or skipped. **Skip for today** hides it until local midnight, even after a restart. Settings can hide it permanently without erasing earlier check-ins.
 - **Ctrl+Enter** continues from review or the log when the next action is available. Check the visible button first.
-- **Very short sessions.** If you finish very quickly, FocusRecall asks whether to keep the session. Choose **Keep it** if it belongs in your history.
+- **Very short sessions.** If you finish very quickly, A14 Pomodoro asks whether to keep the session. Choose **Keep it** if it belongs in your history.
 - **Locking or sleeping Windows** interrupts timing. The gap is not counted as focus; follow the prompt when you return.
 
 </details>
@@ -129,9 +133,7 @@ A short, specific goal helps: *"Explain how water moves through a plant"* is eas
 
 ## The floating timer
 
-<p align="center">
-  <img src="assets/readme/timers.png" alt="Three floating timers: a digital timer at 02:05 of 25:00, a light circular timer at 23:14 of 25:00 and a dark circular timer at 22:54 of 25:00, each with Distracted, Switch and Finish">
-</p>
+
 
 | Control | What it does |
 | :-- | :-- |
@@ -149,7 +151,7 @@ A short, specific goal helps: *"Explain how water moves through a plant"* is eas
 
 These live on the Full Mode Home screen.
 
-Current source removes Parked Thoughts and the automatic reason question after Resume. The calendar spans the bottom of Home and stays visible while subjects scroll. These changes are not yet included in the Beta 1 downloads; [view the Beta 1 guide](https://github.com/abd1442/FocusRecall/blob/v0.1.1-beta.1/docs/USER_GUIDE.md) for that version.
+Current source removes Parked Thoughts and the automatic reason question after Resume. The calendar spans the bottom of Home and stays visible while subjects scroll. These changes are not yet included in the Beta 1 downloads; [view the Beta 1 guide](https://github.com/abd1442/A14-Pomodoro/blob/v0.1.1-beta.1/docs/USER_GUIDE.md) for that version.
 
 **Saved for later.** If you put off an unfinished review, log or rest, it appears here with a **Resume** button. Time while the app was closed is not counted as rest.
 
@@ -164,19 +166,19 @@ Subjects can be grouped into categories and sorted by **Manual**, **Alphabetical
 ## History and notes
 
 <p align="center">
-  <img src="assets/readme/history.png" alt="History filtered to the last 30 days, showing two Biology sessions with focus time and a recall-note excerpt" width="820">
+  <img src="screenshots/a14-pomodoro/history.png" alt="A14 Pomodoro History in a new fictional profile" width="900">
 </p>
 
 Filter by dates, subject, category or activity, and open any session with **View session**. Search covers recall and session notes. **Saved notes** collects everything you wrote; **To review** lists the follow-ups you marked. **Library** groups material by subject.
 
-To keep a note in Obsidian, choose **Obsidian / save note** and pick a destination. Your vault needs its own backup, since FocusRecall backups don't include it.
+To keep a note in Obsidian, choose **Obsidian / save note** and pick a destination. Your vault needs its own backup, since A14 Pomodoro backups don't include it.
 
 <br>
 
 ## Stats
 
 <p align="center">
-  <img src="assets/readme/stats.png" alt="Stats overview with recorded study time, recent activity, subjects studied and a study-patterns panel that reports no clear comparison yet" width="820">
+  <img src="screenshots/a14-pomodoro/stats.png" alt="A14 Pomodoro Stats in a new fictional profile" width="900">
 </p>
 
 Stats starts with what was recorded: time, sessions, subjects and recent activity. **Adjust filters** shows exactly which days and subjects are included, and **Saved views** keeps a filter setup for later.
@@ -196,7 +198,7 @@ To judge learning, test yourself on the material later. A timer and a self-ratin
 ## Learn
 
 <p align="center">
-  <img src="assets/readme/learn.png" alt="Learn Today showing the idea 'Familiar is not remembered', an illustration comparing studying with and without notes, and a practical suggestion" width="700">
+  <img src="screenshots/a14-pomodoro/learn.png" alt="A14 Pomodoro Learn" width="900">
 </p>
 
 **Today** shows one idea about studying, with a short explanation, a suggestion to try in your next session and a **Research and limitations** section. **Explore** lets you browse all 27 ideas and **Saved** keeps the ones you bookmark. **Another idea** offers something new, then cycles back through ideas you've already seen.
@@ -206,10 +208,10 @@ To judge learning, test yourself on the material later. A timer and a self-ratin
 ## Themes, text and language
 
 <p align="center">
-  <img src="assets/readme/themes.png" alt="Home shown half in the light Ivory and Ink theme and half in the dark Ink Dim theme">
+  <img src="screenshots/a14-pomodoro/home-dark.png" alt="A14 Pomodoro in a dark theme" width="900">
 </p>
 
-Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. FocusRecall remembers one light and one dark theme, so following Windows switches between your two choices. There are **26 themes**: 11 light and 15 dark. A theme applies immediately, with a brief **Undo**.
+Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Windows**. A14 Pomodoro remembers one light and one dark theme, so following Windows switches between your two choices. There are **26 themes**: 11 light and 15 dark. A theme applies immediately, with a brief **Undo**.
 
 - **Text & size** adjusts interface and writing text separately. **High contrast** works with any theme.
 - **Floating panel** sets the timer style, size and opacity.
@@ -218,18 +220,14 @@ Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Wind
 <details>
 <summary><b>See the theme gallery</b></summary>
 <br>
-<p align="center">
-  <img src="assets/readme/theme-gallery.png" alt="Theme settings with Follow Windows selected and the fifteen dark themes, Ink Dim in use" width="760">
-</p>
+
 </details>
 
 <br>
 
 ## Privacy
 
-<p align="center">
-  <img src="assets/readme/privacy.png" alt="Automatic tracking settings, switched off, with window-title recording as a separate unchecked option and a Delete window titles button" width="760">
-</p>
+
 
 - Study records stay on your computer. There is **no telemetry, advertising, cloud sync or automatic update check**, and no account.
 - **Automatic tracking is off** by default. If you turn it on, it samples app names during Focus and Rest only. It never captures keystrokes, screenshots or page content.
@@ -242,9 +240,7 @@ Open **Settings → Appearance** and choose **Light**, **Dark** or **Follow Wind
 
 ## Backups and updates
 
-<p align="center">
-  <img src="assets/readme/backup.png" alt="Backup and restore settings with Back Up Data, Restore Backup and Open backup folder, and an Open demo data option" width="760">
-</p>
+
 
 **Settings → General → Data → Back Up Data** saves your study records, notes and settings, and checks the backup before reporting success.
 
@@ -252,7 +248,7 @@ Before installing an update:
 
 1. Finish any session in progress.
 2. Use **Back Up Data** and keep a copy somewhere else. Back up an Obsidian vault separately.
-3. Quit FocusRecall from its tray icon, then run the new installer.
+3. Quit A14 Pomodoro from its tray icon, then run the new installer.
 4. Reopen it and check your subjects, a recent session and your notes.
 
 Uninstalling keeps your profile. **Restore Backup** replaces the current database after checking the backup and asking you to confirm, and keeps a safety copy of what it replaced. Never delete profile folders or database files to fix a problem; see [troubleshooting](docs/USER_GUIDE.md#if-something-goes-wrong).
@@ -283,7 +279,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 ## Source and license
 
-FocusRecall's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
+A14 Pomodoro's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
 Use the source package and release tag that match your download; different platforms were built from different source revisions. The Windows source on `main` matches Beta 2; frozen Beta 1 source remains available at its release tag, as explained in [SOURCE_NOTICE.md](SOURCE_NOTICE.md). Screenshots show real application screens with made-up subjects and notes.
 
@@ -294,8 +290,8 @@ Use the source package and release tag that match your download; different platf
 <p align="center">
   <a href="https://ko-fi.com/abd442">
     <picture>
-      <source media="(max-width: 600px)" srcset="assets/support-kofi-banner-mobile.png">
-      <img src="assets/support-kofi-banner.png" alt="Enjoying FocusRecall? If you find it useful and would like to show a little appreciation, you can buy me a coffee on Ko-fi. It’s completely optional." width="620">
+
+      <img src="assets/support-a14-pomodoro.svg" alt="Enjoying A14 Pomodoro? If you find it useful and would like to show a little appreciation, you can buy me a coffee on Ko-fi. It’s completely optional." width="620">
     </picture>
   </a>
 </p>
