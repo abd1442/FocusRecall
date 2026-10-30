@@ -1,38 +1,40 @@
 {
   "schemaVersion": 1,
-  "title": "FocusRecall \u2014 Beta 2",
-  "version": "0.1.5-beta.2",
-  "tag": "v0.1.5-beta.2",
-  "tagMeaning": "Windows Beta 2 release assembly; exact application source snapshot identified separately.",
+  "title": "A14 Pomodoro \u2014 Beta 1",
+  "version": "0.1.6-beta.1",
+  "tag": "v0.1.6-beta.1",
+  "tagMeaning": "A14 Pomodoro Beta 1 release assembly; source revision mapped separately.",
+  "license": "GPL-3.0-only",
   "artifacts": [
     {
       "platform": "windows-x64",
-      "file": "FocusRecall-Beta-2-Windows-x64-Setup.exe",
-      "version": "0.1.5-beta.2",
-      "sourceCommit": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+      "file": "A14-Pomodoro-Beta-1-Windows-x64-Setup.exe",
+      "version": "0.1.6-beta.1",
+      "sourceCommit": "fcb670235b76c68058feaba7a4292ba8a531abf5",
       "sourceFolder": "corresponding-source",
-      "bytes": 121547713,
-      "sha256": "7fa8fca851b75782b51afef40fc10b57e86b3ea813f4aea034d527041c88d79f"
+      "bytes": 121440350,
+      "sha256": "5da9043e6d22cc92405b6ae7a07d28ad00558f563942a3626f3e0ef7c1c4c18c"
     }
   ],
-  "license": "GPL-3.0-only",
   "verification": {
     "testFiles": 90,
-    "testsPassed": 1199,
-    "installerPayloadFilesMatched": 126,
-    "nativeAssistiveTechnologyCertified": false,
+    "testsPassed": 1200,
+    "sourceOutputsMatched": 16,
+    "installerPayloadFilesMatched": 119,
+    "productionSecurityPassed": true,
+    "installerExecuted": false,
     "physicalLifecycleCertified": false,
-    "installerExecutedDuringPayloadCheck": false
+    "nativeAssistiveTechnologyCertified": false
   },
-  "otherPlatforms": "Linux/macOS remain frozen Beta 1 downloads and source snapshots; this release does not update them.",
+  "otherPlatforms": "Windows x64 only. Linux/macOS remain older FocusRecall experimental downloads.",
   "sourceDelivery": {
-    "file": "FocusRecall-Beta-2-Source.zip",
-    "sha256": "3ca9c66c2bcf2306ba0f27dd406b7c9c787f572d803559b8f3d5b8172ae04f78",
-    "bytes": 159048565
+    "file": "A14-Pomodoro-Beta-1-Source.zip",
+    "bytes": 158973568,
+    "sha256": "8e35497eaf9a5762e7e5feac142231dffdff602b6454e5be1394044396a73786"
   },
   "notices": {
-    "file": "FocusRecall-Beta-2-Notices.zip",
-    "sha256": "1d4ec35290b2291e17dd908e54ae9f79df3c19b6b40e19481c8e1ae7ea191ca7",
-    "bytes": 2166113
+    "file": "A14-Pomodoro-Beta-1-Notices.zip",
+    "bytes": 2166123,
+    "sha256": "5827af3249e180594dde928400df2f428d06aa70f4bd2c9b5048a08f44bce866"
   }
 }

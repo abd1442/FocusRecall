@@ -1,0 +1,39 @@
+{
+  "sourceCommit": "fcb670235b76c68058feaba7a4292ba8a531abf5",
+  "version": "0.1.6-beta.1",
+  "sourceFiles": 633,
+  "matchedOutputs": 16,
+  "payloadFiles": 119,
+  "assets": [
+    {
+      "name": "A14-Pomodoro-Beta-1-Notices.zip",
+      "bytes": 2166123,
+      "sha256": "5827af3249e180594dde928400df2f428d06aa70f4bd2c9b5048a08f44bce866"
+    },
+    {
+      "name": "A14-Pomodoro-Beta-1-Source.zip",
+      "bytes": 158973568,
+      "sha256": "8e35497eaf9a5762e7e5feac142231dffdff602b6454e5be1394044396a73786"
+    },
+    {
+      "name": "A14-Pomodoro-Beta-1-Windows-x64-Setup.exe",
+      "bytes": 121440350,
+      "sha256": "5da9043e6d22cc92405b6ae7a07d28ad00558f563942a3626f3e0ef7c1c4c18c"
+    },
+    {
+      "name": "RELEASE-MANIFEST.json",
+      "bytes": 1375,
+      "sha256": "50adcbb41bb7fdb6a340173aef69db19710e7cca2a9a10c593e1a0d858c1f093"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 391,
+      "sha256": "f505b4c5483e341c0dd0f2e878bc9e2335a97e9371acf75acc0dda68e5c83d74"
+    }
+  ],
+  "preservedPresentationFiles": 31,
+  "fullTestsPassed": 1200,
+  "testFiles": 90,
+  "productionSecurityPassed": true,
+  "localizationsPassed": 7
+}

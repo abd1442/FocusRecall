@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>Development source, based on 0.1.5-beta.2</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
+  <sub><b>Windows · Linux · macOS</b> &nbsp;·&nbsp; <b>Beta 1 Windows · 0.1.6-beta.1</b> &nbsp;·&nbsp; <b>7 languages</b> &nbsp;·&nbsp; <b>GPL-3.0-only</b></sub>
 </p>
 
 <p align="center">
@@ -54,17 +54,17 @@ Use as much or as little of it as you like. Notes, ratings, rest timers and auto
 
 ## Downloads
 
-**A14 Pomodoro is the new name of FocusRecall.** The source on `main` and every screenshot on this page show the A14 Pomodoro branding update, which has **not been released yet**. The downloads below are the builds already published, and they still carry the **FocusRecall** name and logo. The rename does not touch those files.
+[**Download A14 Pomodoro — Beta 1 for Windows x64**](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.6-beta.1)
 
-[**Download FocusRecall Beta 2 for Windows x64**](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.5-beta.2)
+**0.1.6-beta.1 · Windows x64 · Unsigned prerelease.** The latest app includes the approved Countdown Corner logo, Quick/Full study modes, recall drafts, History safety, accessibility and analytics fixes. [Release notes and limitations](RELEASE_NOTES.md) · [Matching source](SOURCE_NOTICE.md) · [Checksums](SHA256SUMS.txt).
 
-Version **0.1.5-beta.2** improves session safety, accessibility, draft recovery, History, notes and Quick Mode. It is an unsigned Windows prerelease. [Changes and verification limits](RELEASE_NOTES.md) · [Matching source](SOURCE_NOTICE.md) · [Checksums](SHA256SUMS.txt).
+Back up your records and quit through the tray before updating. Actual clean-install/in-place upgrade, uninstall and physical Windows/assistive-technology checks remain uncompleted. Preserve the existing installation scope and data folder.
 
-Experimental **Linux and macOS remain on [FocusRecall Beta 1](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.1-beta.1)**. They have not been rebuilt or relabeled as Beta 2.
+Experimental **Linux/macOS remain on [FocusRecall Beta 1](https://github.com/abd1442/A14-Pomodoro/releases/tag/v0.1.1-beta.1)**. They have not been rebuilt or renamed as A14 Pomodoro Beta 1. Earlier FocusRecall tags and assets remain unchanged.
 
-Back up your records and quit through the tray before updating. Clean-install/actual Beta 1 upgrade and physical Windows/assistive-technology checks remain uncompleted for this candidate. See the release notes before use.
+The professional screenshots below show the current A14 Pomodoro interface from the documented earlier branding capture. [Capture manifest](screenshots/readme-captures/manifest.json) records its exact source/version and Linux font fallback; these images have not been silently relabeled as captures of 0.1.6-beta.1.
 
-[Report a beta problem](https://github.com/abd1442/A14-Pomodoro/issues/new?template=beta-test.yml). Issues are public; use fictional examples and never attach personal study records, private backups or sensitive logs.
+[Report a beta problem](https://github.com/abd1442/A14-Pomodoro/issues/new?template=beta-test.yml). Use fictional examples; never attach private records or backups.
 
 ## Two ways to study
 
@@ -292,7 +292,7 @@ The [user guide](docs/USER_GUIDE.md) has every screen in detail and more trouble
 
 A14 Pomodoro's original code is licensed **GPL-3.0-only**. [License](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt) · [Source package information](SOURCE_NOTICE.md) · [Application source and build guide](corresponding-source/SOURCE_BUILD.md)
 
-Use the source package and release tag that match your download; different platforms were built from different source revisions. The source on `main` is the unreleased A14 Pomodoro branding update based on 0.1.5-beta.2. It is not the source of any published installer. Beta 2 and Beta 1 source stay available at their release tags, as explained in [SOURCE_NOTICE.md](SOURCE_NOTICE.md).
+Use the source package and release tag that match your download; different platforms were built from different source revisions. The Windows source on `main` matches A14 Pomodoro Beta 1 (0.1.6-beta.1). Earlier platform and FocusRecall source snapshots remain available at their immutable tags, as explained in [SOURCE_NOTICE.md](SOURCE_NOTICE.md).
 
 Screenshots show the current development source running with a fictional profile: made-up subjects, sessions and notes. They are unedited captures, cropped and arranged for this page. [How they were made](screenshots/readme-captures/manifest.json).
 

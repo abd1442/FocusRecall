@@ -1,23 +1,22 @@
 {
   "platform": "windows-x64",
-  "originalBuildSource": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
-  "tag": "v0.1.5-beta.2",
+  "originalBuildSource": "fcb670235b76c68058feaba7a4292ba8a531abf5",
+  "tag": "v0.1.6-beta.1",
   "binary": {
     "platform": "windows-x64",
-    "file": "FocusRecall-Beta-2-Windows-x64-Setup.exe",
-    "version": "0.1.5-beta.2",
-    "sourceCommit": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+    "file": "A14-Pomodoro-Beta-1-Windows-x64-Setup.exe",
+    "version": "0.1.6-beta.1",
+    "sourceCommit": "fcb670235b76c68058feaba7a4292ba8a531abf5",
     "sourceFolder": "corresponding-source",
-    "bytes": 121547713,
-    "sha256": "7fa8fca851b75782b51afef40fc10b57e86b3ea813f4aea034d527041c88d79f"
+    "bytes": 121440350,
+    "sha256": "5da9043e6d22cc92405b6ae7a07d28ad00558f563942a3626f3e0ef7c1c4c18c"
   },
   "correspondingSource": {
-    "file": "FocusRecall-Beta-2-Source.zip",
-    "sha256": "3ca9c66c2bcf2306ba0f27dd406b7c9c787f572d803559b8f3d5b8172ae04f78",
-    "bytes": 159048565
+    "file": "A14-Pomodoro-Beta-1-Source.zip",
+    "bytes": 158973568,
+    "sha256": "8e35497eaf9a5762e7e5feac142231dffdff602b6454e5be1394044396a73786"
   },
   "sourceTree": "corresponding-source",
-  "sourceTreeRef": "v0.1.5-beta.2",
-  "noDeveloperHistory": true,
-  "scope": "Windows Beta 2; previous native platform releases remain Beta 1."
+  "sourceTreeRef": "v0.1.6-beta.1",
+  "noDeveloperHistory": true
 }

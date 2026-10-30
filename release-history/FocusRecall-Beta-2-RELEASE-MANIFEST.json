@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "title": "FocusRecall \u2014 Beta 2",
+  "version": "0.1.5-beta.2",
+  "tag": "v0.1.5-beta.2",
+  "tagMeaning": "Windows Beta 2 release assembly; exact application source snapshot identified separately.",
+  "artifacts": [
+    {
+      "platform": "windows-x64",
+      "file": "FocusRecall-Beta-2-Windows-x64-Setup.exe",
+      "version": "0.1.5-beta.2",
+      "sourceCommit": "0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f",
+      "sourceFolder": "corresponding-source",
+      "bytes": 121547713,
+      "sha256": "7fa8fca851b75782b51afef40fc10b57e86b3ea813f4aea034d527041c88d79f"
+    }
+  ],
+  "license": "GPL-3.0-only",
+  "verification": {
+    "testFiles": 90,
+    "testsPassed": 1199,
+    "installerPayloadFilesMatched": 126,
+    "nativeAssistiveTechnologyCertified": false,
+    "physicalLifecycleCertified": false,
+    "installerExecutedDuringPayloadCheck": false
+  },
+  "otherPlatforms": "Linux/macOS remain frozen Beta 1 downloads and source snapshots; this release does not update them.",
+  "sourceDelivery": {
+    "file": "FocusRecall-Beta-2-Source.zip",
+    "sha256": "3ca9c66c2bcf2306ba0f27dd406b7c9c787f572d803559b8f3d5b8172ae04f78",
+    "bytes": 159048565
+  },
+  "notices": {
+    "file": "FocusRecall-Beta-2-Notices.zip",
+    "sha256": "1d4ec35290b2291e17dd908e54ae9f79df3c19b6b40e19481c8e1ae7ea191ca7",
+    "bytes": 2166113
+  }
+}

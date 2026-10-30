@@ -1,12 +1,11 @@
 {
   "productName": "A14 Pomodoro",
-  "version": "0.1.5-beta.2",
-  "status": "unreleased-development",
+  "version": "0.1.6-beta.1",
+  "status": "published-beta",
   "platform": "windows-x64",
-  "sourceCommit": "94d09e5a72aa8d1c9859d02ca0c3c98098f361a5",
+  "sourceCommit": "fcb670235b76c68058feaba7a4292ba8a531abf5",
   "date": "2026-10-30",
-  "normalization": "Exact raw Git blob bytes; corresponding-source attributes preserve build inputs.",
-  "releaseNote": "Development branding update only. Published Beta 2 binary/source mapping remains at immutable v0.1.5-beta.2.",
+  "normalization": "Exact raw Git blob bytes; preserved source attributes.",
   "files": [
     {
       "file": ".gitattributes",
@@ -50,8 +49,8 @@
     },
     {
       "file": "README.md",
-      "bytes": 3936,
-      "sha256": "8161fe36db68d7d1474be592c66dd34ef4d930553ec4bf1c4775d3c72d7e3fc6"
+      "bytes": 3828,
+      "sha256": "c52b827036c422602f2eeed6e8ffc13b1ffba7924704be10045d5a93338e80ed"
     },
     {
       "file": "SECURITY.md",
@@ -95,8 +94,8 @@
     },
     {
       "file": "docs/CURRENT_SOURCE.md",
-      "bytes": 1216,
-      "sha256": "c9599d46496d81a3e8e2ba541f5dab29e1b8582d30c3dfaa53404299f2977ca0"
+      "bytes": 994,
+      "sha256": "120dda5d5c44525c165a468b97d0566aae237f574867fb083d509720ce6004b8"
     },
     {
       "file": "docs/HOME_CALENDAR_CHANGE_20261021.md",
@@ -120,8 +119,8 @@
     },
     {
       "file": "docs/RELEASE_STATUS.md",
-      "bytes": 3091,
-      "sha256": "8679a761ee78820c2d02626d6c3786999a882358d26e712939babca1889cdd7f"
+      "bytes": 407,
+      "sha256": "badacb2ca9503385b6eed9f9d41e579c013bc53fec1e12bc0a3b45f708e8e78f"
     },
     {
       "file": "docs/THEME_ACCENT_CONSISTENCY_20261019.md",
@@ -130,8 +129,8 @@
     },
     {
       "file": "docs/USER_GUIDE.md",
-      "bytes": 5162,
-      "sha256": "c4e894df892af3923f161ba81e0c0599b7025ec2191514b46e03a4944cb3674f"
+      "bytes": 5054,
+      "sha256": "0f884697cf1eb82d7909f7cfa5ab1141c87a73c46d7cb88c7ed5527906cd0fae"
     },
     {
       "file": "docs/WORKSPACE.md",
@@ -271,12 +270,12 @@
     {
       "file": "package-lock.json",
       "bytes": 252391,
-      "sha256": "63362567afe8ed8e6727ace966529213faf06074488abd79848f5d59a32e5392"
+      "sha256": "7249640456c4ddf45ae500bc8601c7eced4cf8c35d7dc60206d5971104929bb9"
     },
     {
       "file": "package.json",
       "bytes": 2177,
-      "sha256": "4653a1a87b3a9a6f574b5870140c27bae459ebd99dc0b4a079fc654c8bf732ee"
+      "sha256": "6012e33b2fbe046db2f46b8939274ba20fc13391f76d074177205b1b37c3d379"
     },
     {
       "file": "resources/a14-pomodoro-icon.png",
@@ -1345,8 +1344,8 @@
     },
     {
       "file": "src/core/desktopResponsiveness.test.ts",
-      "bytes": 8236,
-      "sha256": "4a0821fb868498ed4f85e57b7e60f55a442394d7ea1f666c113f8f0a5f42d02f"
+      "bytes": 8275,
+      "sha256": "0fbeeedd093603d3c245af8ceab2a480c1b337a8bdb29539ee7cc4a9c42a8b5a"
     },
     {
       "file": "src/core/desktopSecurity.test.ts",
