@@ -31,7 +31,7 @@ export function PreparationPanel({preparation}:{preparation:Preparation}):React.
           <details className="mt-2 text-sm"><summary className="flex min-h-11 w-fit cursor-pointer list-none items-center gap-1.5 rounded-lg text-focus"><span aria-hidden="true">ⓘ</span>{uiText("Why these?")}</summary><ul className="space-y-2 pb-2 text-muted">{suggestions.map(s=><li key={s.id}><strong className="font-medium">{s.label}: </strong>{s.explanation}</li>)}</ul></details>
         </section>}
       </div>
-      {firstSession&&panelAutoShow&&<p className="shrink-0 text-sm text-muted">{uiText("Starting opens your floating timer. Its window button brings FocusRecall back.")}</p>}
+      {firstSession&&panelAutoShow&&<p className="shrink-0 text-sm text-muted">{uiText("Starting opens your floating timer. Its window button brings A14 Pomodoro back.")}</p>}
       <div className="shrink-0"><AdviceCard surface="prepare"/></div>
       {error&&<p role="alert" className="max-h-20 shrink-0 overflow-y-auto text-sm text-status-error">{error}</p>}
     </div>

@@ -77,7 +77,7 @@ export function FloatingPanel(): React.JSX.Element {
 
   if(quick&&state.recovery){
     value=uiText('Paused');ringLabel=value;subject=state.recovery.itemName
-    buttons=<PanelButton onClick={openMain}>{uiText('Open FocusRecall')}</PanelButton>
+    buttons=<PanelButton onClick={openMain}>{uiText('Open A14 Pomodoro')}</PanelButton>
   }else if (state.running) {
     const b = state.running
     const c = floatingFocusClock(b, now, appearance.panelTimerDisplay)
@@ -155,18 +155,18 @@ export function FloatingPanel(): React.JSX.Element {
     progress = 0
     subject = f ? f.itemName : ''
     subjectColor = f?.itemColor ?? 'var(--fr-stage-recall)'
-    buttons = <PanelButton primary accent="var(--fr-stage-recall)" ink="var(--fr-stage-recall-on)" onClick={openMain}>{uiText("Open FocusRecall")}</PanelButton>
+    buttons = <PanelButton primary accent="var(--fr-stage-recall)" ink="var(--fr-stage-recall-on)" onClick={openMain}>{uiText("Open A14 Pomodoro")}</PanelButton>
   } else {
     value = uiText('Ready')
     ringLabel = value
-    subject = lastItem ? lastItem.name : uiText('Pick an item in FocusRecall')
+    subject = lastItem ? lastItem.name : uiText('Pick an item in A14 Pomodoro')
     subjectColor = lastItem?.color ?? 'var(--tf-muted)'
     buttons = (
       <>
         {lastItem && (
           <PanelButton primary accent="var(--tf-focus)" onClick={call(() => window.api.invoke('preparation:begin',null))}>{uiText("Start")}</PanelButton>
         )}
-        <PanelButton onClick={openMain}>{uiText("Open FocusRecall")}</PanelButton>
+        <PanelButton onClick={openMain}>{uiText("Open A14 Pomodoro")}</PanelButton>
       </>
     )
   }

@@ -1,2 +1,2 @@
-# Preserve the exact raw build inputs and source-manifest hashes.
+# Preserve exact build-input bytes in public snapshots.
 * -text

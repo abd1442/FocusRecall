@@ -217,7 +217,7 @@ function HotkeyField({ value, ok, onChange }: { value: string; ok: boolean; onCh
   const name = useSettingLabel()
   return (
     <div className="flex items-center gap-3">
-      {!ok && value && <span className="text-sm text-overtime">{uiText("Windows would not give FocusRecall this key. Try another.")}</span>}
+      {!ok && value && <span className="text-sm text-overtime">{uiText("Windows would not give A14 Pomodoro this key. Try another.")}</span>}
       {ok && value && <span className="text-sm text-muted">{uiText("Ready")}</span>}
       <input
         readOnly

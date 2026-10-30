@@ -18,7 +18,7 @@ export function BackupSettings():React.JSX.Element {
       <Button variant="primary" disabled={busy} onClick={()=>run(async()=>{const result=await window.api.invoke('backup:create');if(result){setSaved(true);setMessage(uiText('Backup created and verified: {name}',{name:result.name}))}})}>{uiText("Back Up Data")}</Button>
       <Button variant="quiet" disabled={busy} onClick={()=>run(async()=>{
         const backup=await window.api.invoke('backup:inspectRestore');if(!backup)return
-        if(!await confirmAction(uiText('Restore {name}?\n\nThis replaces the current study database, including newer records and settings, with this backup. Save your work first. A verified safety backup of your current database will be kept. FocusRecall restarts to restore safely. External Obsidian content is not changed.',{name:backup.name}),'Restore and restart','Restore previous data?',true))return
+        if(!await confirmAction(uiText('Restore {name}?\n\nThis replaces the current study database, including newer records and settings, with this backup. Save your work first. A verified safety backup of your current database will be kept. A14 Pomodoro restarts to restore safely. External Obsidian content is not changed.',{name:backup.name}),'Restore and restart','Restore previous data?',true))return
         setMessage(uiText('Preparing a safety backup and restarting…'));await window.api.invoke('backup:restore',backup.token)
       })}>{uiText("Restore Backup")}</Button>
       <Button variant="ghost" disabled={busy} onClick={()=>run(()=>window.api.invoke('backup:openFolder'))}>{uiText("Open backup folder")}</Button>

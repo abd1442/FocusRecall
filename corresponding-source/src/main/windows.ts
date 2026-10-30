@@ -60,8 +60,8 @@ export function createMainWindow(opts: {
     minHeight: 620,
     show: false,
     autoHideMenuBar: true,
-    title: 'FocusRecall',
-    icon: join(__dirname, '../../resources/focusrecall.ico'),
+    title: 'A14 Pomodoro',
+    icon: join(__dirname, '../../resources/a14-pomodoro.ico'),
     backgroundColor: opts.background,
     webPreferences: {
         devTools: rendererDevToolsAllowed(),

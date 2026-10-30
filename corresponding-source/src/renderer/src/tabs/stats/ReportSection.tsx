@@ -96,7 +96,7 @@ export function ReportSection({
     })+personalInsightsMarkdown(personal.cards.map(c=>displayInsight(c,schema,language)),language)
   }, [chosen, today,thisMonth,sessions,all, factors, options, itemName,personal,language,schema])
   const html = useMemo(() => markdownToHtml(md), [md])
-  const fileName = chosen ? `FocusRecall report ${chosen}` : 'FocusRecall report'
+  const fileName = chosen ? `A14 Pomodoro report ${chosen}` : 'A14 Pomodoro report'
 
   const exportAs = async (kind: 'md' | 'pdf' | 'png'): Promise<void> => {
     setSaved(null)
@@ -137,7 +137,7 @@ export function ReportSection({
       </div>}>
       {saved && <p role="status" className="text-base text-rest">{uiText("Saved to ")}{saved}</p>}{error && <p role="alert" className="text-status-error">{error}</p>}
       {chosen ? <div ref={reportRef} data-report="visual" className="flex flex-col gap-6 rounded-2xl bg-bg p-6">
-        <header><p className="text-base font-semibold text-focus">{uiText("FocusRecall / personal study report")}</p><h3 className="mt-2 text-3xl font-semibold">{monthLabel(chosen)}</h3><p className="mt-2 text-sm text-muted">{count(new Set(sessions.flatMap(s=>s.itemIds)).size, 'subject')} · {uiText("Recorded comparisons")} · {options.includeUntouched ? uiText("Untouched ratings included") : uiText("Untouched ratings excluded")}</p></header>
+        <header><p className="text-base font-semibold text-focus">{uiText("A14 Pomodoro / personal study report")}</p><h3 className="mt-2 text-3xl font-semibold">{monthLabel(chosen)}</h3><p className="mt-2 text-sm text-muted">{count(new Set(sessions.flatMap(s=>s.itemIds)).size, 'subject')} · {uiText("Recorded comparisons")} · {options.includeUntouched ? uiText("Untouched ratings included") : uiText("Untouched ratings excluded")}</p></header>
         <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4"><Kpi value={formatDuration(now.focusSeconds)} label={uiText("Focused time")} /><Kpi value={String(now.sessions)} label={uiText("Sessions")} /><Kpi value={String(now.activeDays)} label={uiText("Days studied")} /><Kpi value={Math.round(now.cleanShare * 100) + '%'} label={uiText("Clean sessions")} /></div>
         <Panel title={uiText("Personal study insights")}><InsightCards cards={personal.cards}/>{!personal.cards.length&&<p className="text-muted">{uiText("No reliable personal comparison in this month.")}</p>}<p className="mt-3 text-xs text-muted">{personal.examined}{uiText(" comparisons examined. Approximate uncertainty and search correction do not establish cause.")}</p></Panel>
         <details className="report-more"><summary>{uiText("Descriptive comparisons")}</summary><Panel>{findings.some(c=>isStudyMethodFactor(c.factor))&&<p className="text-sm text-muted">{uiText(METHOD_OBSERVATION_NOTE)}</p>}{findings.length ? findings.map((c) => <ComparisonRow key={c.factor.key + c.option} c={c} />) : <p className="text-muted">{uiText("No comparison has enough evidence yet. Keep logging sessions to build your report.")}</p>}</Panel></details>

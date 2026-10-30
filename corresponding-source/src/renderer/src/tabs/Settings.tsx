@@ -30,7 +30,7 @@ import { SettingsGuide, SettingIcon } from '../components/SettingsGuide'
 import { RestExample } from '../components/SettingsExamples'
 import { BackupSettings } from '../components/BackupSettings'
 import { StudyReminderSettings } from '../components/StudyReminderSettings'
-import { AboutFocusRecall } from '../components/AboutFocusRecall'
+import { AboutA14Pomodoro } from '../components/AboutA14Pomodoro'
 
 const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -50,7 +50,7 @@ const KEYWORDS: Record<string, string> = {
   'Default timer mode': 'flow fixed adaptive mode timer',
   'Show the floating panel when a session starts': 'panel window mini timer always on top',
   'Timer display': 'floating panel digital circular countdown ring clock',
-  'Minimise FocusRecall when a session starts': 'minimize hide window',
+  'Minimise A14 Pomodoro when a session starts': 'minimize hide window',
   'Study setup starts from': 'place posture setup remembered',
   'End a sitting automatically': 'auto end sitting hours',
   'A study day starts at': 'midnight day boundary 4 04:00 night',
@@ -118,7 +118,7 @@ export function SettingsTab(): React.JSX.Element {
         {!searching && <SettingsGuide page={page} onChange={setPage} onJump={pick}/>}
         {searching ? (
           <div className="flex flex-col gap-8">
-            {matches(query,'about FocusRecall creator why privacy local data donation donate support ko-fi feedback')&&<AboutFocusRecall/>}
+            {matches(query,'about A14 Pomodoro creator why privacy local data donation donate support ko-fi feedback')&&<AboutA14Pomodoro/>}
 
             {schema.fields.some(f=>!f.archived&&matches(query,f.label,f.key??'',f.options.map(o=>o.label).join(' '),'log question answers'))&&<section className="rounded-2xl border border-line bg-surface p-5"><h2 className="text-lg font-semibold">{uiText("Log questions")}</h2><div className="mt-3 flex flex-wrap gap-2">{schema.fields.filter(f=>!f.archived&&schema.groups.some(g=>g.id===f.groupId&&!g.archived)&&matches(query,f.label,f.key??'',f.options.map(o=>o.label).join(' '),'log question answers')).map(f=><Button key={f.id} onClick={()=>pick('log-question-'+f.id,'log')}>{f.label}</Button>)}</div></section>}
             <SearchContext.Provider value={{ query, page: 'general', pick }}>
@@ -131,7 +131,7 @@ export function SettingsTab(): React.JSX.Element {
           </div>
         ) : (
           <SearchContext.Provider value={{ query: '', page, pick }}>
-            <div key={page} id="settings-page-content" role="region" aria-labelledby={`settings-page-${page}`} className="tf-fade-in flex flex-col gap-8">{page === 'general' ? <GeneralPage /> : page === 'log' ? <LogQuestions /> : page === 'about' ? <AboutFocusRecall/> : <AppearancePage />}</div>
+            <div key={page} id="settings-page-content" role="region" aria-labelledby={`settings-page-${page}`} className="tf-fade-in flex flex-col gap-8">{page === 'general' ? <GeneralPage /> : page === 'log' ? <LogQuestions /> : page === 'about' ? <AboutA14Pomodoro/> : <AppearancePage />}</div>
           </SearchContext.Provider>
         )}
       </div>
@@ -171,7 +171,7 @@ function GeneralPage(): React.JSX.Element {
         <Row label="Show the floating panel when a session starts" hint={uiText("An always-on-top timer with controls.")}>
           <Toggle checked={settings.panelAutoShow} onChange={(v) => set('panelAutoShow', v)} />
         </Row>
-        <Row label="Minimise FocusRecall when a session starts" hint={uiText("It comes back by itself when the session ends.")}>
+        <Row label="Minimise A14 Pomodoro when a session starts" hint={uiText("It comes back by itself when the session ends.")}>
           <Toggle checked={settings.minimizeOnStart} onChange={(v) => set('minimizeOnStart', v)} />
         </Row>
         <Row label="Study setup starts from" hint={uiText("What the log fills in for place, device, sound and the rest.")}>
@@ -303,7 +303,7 @@ function RestSection(): React.JSX.Element {
           <LinkStatus value={playlist} kind="spotify" />
         </div>
       </Row>
-      <Row label="Play and pause the music by itself" hint={uiText("Requests Play in Spotify when rest starts. Pauses at the end only if FocusRecall started playback. Requires an available Spotify Windows media session.")}>
+      <Row label="Play and pause the music by itself" hint={uiText("Requests Play in Spotify when rest starts. Pauses at the end only if A14 Pomodoro started playback. Requires an available Spotify Windows media session.")}>
         <Toggle checked={settings.restMusicAutoPlay} onChange={(v) => set('restMusicAutoPlay', v)} />
       </Row>
       <div className="px-6 py-4"><RestMusicControls /></div>
@@ -348,8 +348,8 @@ function DataSection(): React.JSX.Element {
   }, [])
   const switchTo = async (on: boolean): Promise<void> => {
     const msg = on
-      ? uiText('Open demo data? FocusRecall restarts on a separate demo database with a few weeks of made-up study. Your own data is not touched.')
-      : uiText('Go back to your own data? FocusRecall restarts on your database.')
+      ? uiText('Open demo data? A14 Pomodoro restarts on a separate demo database with a few weeks of made-up study. Your own data is not touched.')
+      : uiText('Go back to your own data? A14 Pomodoro restarts on your database.')
     if (await confirmAction(msg,on?'Open demo':'Open my data','Switch data?')) void window.api.invoke('app:setDemo', on)
   }
   return (

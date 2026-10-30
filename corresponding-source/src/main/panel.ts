@@ -129,7 +129,7 @@ export class PanelController {
       position && onScreen(position) ? position : { x: work.x + work.width - size.width - 24, y: work.y + 24 }
     if(this.preparing&&!this.timerPosition)this.timerPosition={x:pos.x,y:pos.y}
     const win = new BrowserWindow({
-      icon: join(__dirname, '../../resources/focusrecall.ico'),
+      icon: join(__dirname, '../../resources/a14-pomodoro.ico'),
       ...size,
       ...pos,
       type: 'toolbar',

@@ -53,7 +53,7 @@ export function validLearnDraft(id:LessonId,values:unknown):values is number[] {
 export function normalizeLearn(raw:unknown,now=Date.now()):LearnState {
   const o=raw&&typeof raw==='object'?raw as Partial<LearnState>:{}
   // Preserve a newer format instead of silently overwriting it after downgrade.
-  if(typeof o.version==='number'&&o.version>5)throw Error('This Learn progress was saved by a newer version of FocusRecall.')
+  if(typeof o.version==='number'&&o.version>5)throw Error('This Learn progress was saved by a newer version of A14 Pomodoro.')
   const lessons:LearnState['lessons']={},stamp=(n:unknown)=>typeof n==='number'&&Number.isFinite(n)&&n>0&&n<=now?Math.floor(n):0
   for(const lesson of LEARN_LESSONS){const p=o.lessons?.[lesson.id];if(!p||typeof p!=='object')continue;lessons[lesson.id]={...emptyProgress(),viewedAt:stamp(p.viewedAt),activityAt:stamp(p.activityAt),completedAt:stamp(p.completedAt),checks:Number.isSafeInteger(p.checks)?Math.max(0,Math.min(10000,p.checks)):0,lastCheck:Number.isInteger(p.lastCheck)&&p.lastCheck!>=0&&p.lastCheck!<=2?p.lastCheck!:null,revisitAt:stamp(p.revisitAt),revisitCount:Number.isSafeInteger(p.revisitCount)?Math.max(0,Math.min(10000,p.revisitCount)):0,revisitEnabled:p.revisitEnabled===true,draft:validLearnDraft(lesson.id,p.draft)?[...p.draft]:[]}}
   const unique=(a:unknown,valid:(v:string)=>boolean)=>Array.isArray(a)?[...new Set(a.filter((v):v is string=>typeof v==='string'&&valid(v)))]:[]

@@ -1,5 +1,5 @@
 // The learning stage of a subject or a whole field (round 4 section 3), from
-// tracked focus plus the hours before FocusRecall. Shown on tiles, the subject
+// tracked focus plus the hours before A14 Pomodoro. Shown on tiles, the subject
 // and category pages and the Home setup card.
 import { categoryAndChildren } from '@core/library'
 import { stageFor, stageLine, hoursLabel, type Stage } from '@core/learning'

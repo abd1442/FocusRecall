@@ -14,7 +14,7 @@ export function protectRenderer(window:BrowserWindow,role:RendererRole):void {
   const page=base+(role==='main'?'':`#${role}`)
   const contents=window.webContents
   if(app.isPackaged&&!__FOCUSRECALL_QA__){contents.on('devtools-opened',()=>contents.closeDevTools())}
-  if(app.isPackaged&&__FOCUSRECALL_QA__){window.setTitle('FocusRecall QA');contents.on('page-title-updated',event=>{event.preventDefault();window.setTitle('FocusRecall QA')})}
+  if(app.isPackaged&&__FOCUSRECALL_QA__){window.setTitle('A14 Pomodoro QA');contents.on('page-title-updated',event=>{event.preventDefault();window.setTitle('A14 Pomodoro QA')})}
   callers.set(contents.id,{window,role,page})
   contents.once('destroyed',()=>callers.delete(contents.id))
   contents.on('will-navigate',(event,url)=>{if(!trustedPage(url,page))event.preventDefault()})

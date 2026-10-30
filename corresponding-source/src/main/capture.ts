@@ -67,7 +67,7 @@ export class CaptureBox {
   private ensure(width: number, height: number): BrowserWindow {
     if (this.win && !this.win.isDestroyed()) return this.win
     const win = new BrowserWindow({
-      icon: join(__dirname, '../../resources/focusrecall.ico'),
+      icon: join(__dirname, '../../resources/a14-pomodoro.ico'),
       width,
       height,
       type: 'toolbar',

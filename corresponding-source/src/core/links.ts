@@ -37,5 +37,5 @@ export function checkLink(text: string, kind: LinkKind): LinkCheck {
   if (/^(notion|obsidian|spotify|mailto):\S+/i.test(t)) return { empty: false, ok: true, message: 'App link', target: t }
   if (/^[a-z]:[\\/]/i.test(t) || /^\\\\[^\\]+\\/.test(t)) return { empty: false, ok: true, message: 'File or folder on this computer', target: t }
   if (/^www\./i.test(t)) return { empty: false, ok: true, message: 'Web link', target: `https://${t}` }
-  return { empty: false, ok: false, message: 'Not a link or a file path that FocusRecall understands', target: null }
+  return { empty: false, ok: false, message: 'Not a link or a file path that A14 Pomodoro understands', target: null }
 }

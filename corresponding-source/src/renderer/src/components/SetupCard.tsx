@@ -76,7 +76,7 @@ export function SetupCard({
           <LengthForMode plan={plan} adaptiveOverride={adaptiveOverride} setAdaptiveOverride={setAdaptiveOverride} />
         </div>
 
-        {firstSession&&settings.panelAutoShow&&<div className="rounded-xl bg-focus/10 p-3 text-sm"><p>{uiText("Start opens your floating timer. You can return to FocusRecall at any time.")}</p><label className="mt-2 flex items-center gap-2"><input type="checkbox" checked={!settings.minimizeOnStart} onChange={e=>void set('minimizeOnStart',!e.target.checked)}/>{uiText("Keep this window open")}</label></div>}
+        {firstSession&&settings.panelAutoShow&&<div className="rounded-xl bg-focus/10 p-3 text-sm"><p>{uiText("Start opens your floating timer. You can return to A14 Pomodoro at any time.")}</p><label className="mt-2 flex items-center gap-2"><input type="checkbox" checked={!settings.minimizeOnStart} onChange={e=>void set('minimizeOnStart',!e.target.checked)}/>{uiText("Keep this window open")}</label></div>}
         {!compact&&<GoalField value={goal} onChange={setGoal} />}
 
         <div className="border-t border-line pt-3">
@@ -109,8 +109,8 @@ export function SetupCard({
               <OptionRow label={uiText("Show the floating panel")}>
                 <Toggle checked={settings.panelAutoShow} onChange={(v) => set('panelAutoShow', v)} label={uiText("Show the floating panel")} />
               </OptionRow>
-              <OptionRow label={uiText("Minimise FocusRecall")}>
-                <Toggle checked={settings.minimizeOnStart} onChange={(v) => set('minimizeOnStart', v)} label={uiText("Minimise FocusRecall")} />
+              <OptionRow label={uiText("Minimise A14 Pomodoro")}>
+                <Toggle checked={settings.minimizeOnStart} onChange={(v) => set('minimizeOnStart', v)} label={uiText("Minimise A14 Pomodoro")} />
               </OptionRow>
             </div>
           )}

@@ -29,7 +29,7 @@ it('selects existing database filenames without touching bytes; new profiles use
  expect(databaseFile(disposable,true)).toBe(join(disposable,'learnalyt-demo.db'))
 })
 it('excludes current and historic own-app processes from analytics',()=>{
- for(const name of ['FocusRecall','FocusRecall.exe','Learnalyt','Learnalyt.exe',LEGACY_IDENTITY.profile])expect(isOwnAppProcess(name)).toBe(true)
+ for(const name of ['FocusRecall','FocusRecall.exe','A14Pomodoro','A14Pomodoro.exe','A14 Pomodoro','A14 Pomodoro.exe','Learnalyt','Learnalyt.exe',LEGACY_IDENTITY.profile])expect(isOwnAppProcess(name)).toBe(true)
  expect(isOwnAppProcess('study-reader')).toBe(false)
 })
 it('reuses an existing Learnalyt profile, including when both historical profile names exist',()=>{

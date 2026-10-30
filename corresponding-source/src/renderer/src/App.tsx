@@ -1,4 +1,5 @@
 import { useAppearance } from './store/appearance'
+import brandLockup from '../../../resources/a14-pomodoro-lockup.svg?raw'
 import { t as uiText, useLanguage } from './i18n'
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { distractedSince, sessionFocusSeconds } from '@core/session'
@@ -142,7 +143,7 @@ function Sidebar(): React.JSX.Element {
   const tab=useUi(s=>s.tab),setTab=useUi(s=>s.setTab),openLibrary=useUi(s=>s.openLibrary)
   const {appearance:a,update}=useAppearance(),collapsed=a.sidebarCollapsed
   return <aside aria-label={uiText("Sidebar")} data-style={a.sidebarStyle} data-collapsed={collapsed} className="focusrecall-sidebar">
-    <button type="button" onClick={()=>setTab('home')} aria-label={uiText("FocusRecall, go to Home")} title={uiText("FocusRecall, go to Home")} className="sidebar-brand"><Logo/><span>{uiText("FocusRecall")}</span></button>
+    <button type="button" onClick={()=>setTab('home')} aria-label={uiText("A14 Pomodoro, go to Home")} title={uiText("A14 Pomodoro, go to Home")} className="sidebar-brand"><Logo/><span className="brand-lockup" aria-hidden="true" dangerouslySetInnerHTML={{__html:brandLockup.replaceAll('#233957','currentColor').replaceAll('#FFFFFF','var(--tf-nav-bg, var(--tf-surface))')}}/></button>
     {a.sidebarStyle==='journal'&&<p className="sidebar-edition">{uiText("Your study companion")}</p>}
     <nav className="sidebar-nav" aria-label={uiText("Main")}>{NAV.map(n=><button key={n.id} type="button" title={uiText(n.label)} aria-label={uiText(n.label)} aria-current={tab===n.id?'page':undefined} onClick={()=>n.id==='library'?openLibrary({kind:'root'}):setTab(n.id)} className="sidebar-link"><svg viewBox="0 0 20 20" width="23" height="23" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.icon}</svg><span className="sidebar-label">{uiText(n.label)}</span></button>)}</nav>
     <div className="sidebar-bottom"><DemoBadge/><SittingStatus/><PanelToggle wide/><div className="sidebar-footer"><div className="sidebar-version"><AppVersion/></div><button type="button" title={collapsed?uiText("Expand sidebar"):uiText("Collapse sidebar")} aria-label={collapsed?uiText("Expand sidebar"):uiText("Collapse sidebar")} aria-expanded={!collapsed} onClick={()=>void update({sidebarCollapsed:!collapsed})} className="sidebar-collapse"><svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d={collapsed?'m7 4 6 6-6 6':'m13 4-6 6 6 6'}/></svg><span className="sidebar-label">{uiText("Collapse")}</span></button></div></div>
@@ -201,10 +202,10 @@ function SittingStatus(): React.JSX.Element | null {
   )
 }
 
-/** Owner-approved fused F/R and amber page from the FocusRecall logo system. */
+/** Approved Countdown Corner badge; the gold quarter-turn denotes a timed interval. */
 function Logo(): React.JSX.Element {
   return (
-    <img src={new URL('../../../resources/focusrecall-icon.png', import.meta.url).href} alt="" width={48} height={48} className="size-12 shrink-0" />
+    <img src={new URL('../../../resources/a14-pomodoro-icon.png', import.meta.url).href} alt="" width={48} height={48} className="size-12 shrink-0" />
   )
 }
 

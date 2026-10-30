@@ -1,8 +1,8 @@
-import type { FocusRecallApi } from '../core/api'
+import type { A14PomodoroApi } from '../core/api'
 
 declare global {
   interface Window {
-    api: FocusRecallApi
+    api: A14PomodoroApi
   }
 }
 

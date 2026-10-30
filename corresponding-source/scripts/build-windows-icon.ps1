@@ -1,5 +1,5 @@
 # Format export only: downsample the approved PNG, preserving its corner alpha.
-param([string]$Source='resources/focusrecall-icon.png',[string]$Output='resources/focusrecall.ico')
+param([string]$Source='resources/a14-pomodoro-icon.png',[string]$Output='resources/a14-pomodoro.ico')
 $ErrorActionPreference='Stop'
 Add-Type -AssemblyName System.Drawing
 $sourceFile=(Resolve-Path -LiteralPath $Source).Path

@@ -20,7 +20,7 @@ export function reminderReady(state:ReminderState,c:ReminderContext):boolean {
 export function chooseStudyReminder(settings:ReminderSettings,state:ReminderState,c:ReminderContext,_patterns:StudyTimePattern[]):StudyReminder|null {
   if(!reminderReady(state,c))return null
   const day=reminderDay(c.now),minute=c.now.getHours()*60+c.now.getMinutes(),scheduled=clockMinutes(settings.studyReminderDailyTime)
-  if(settings.studyReminderDailyEnabled&&state.dailyDay!==day&&Number.isFinite(scheduled)&&minute>=scheduled&&minute<scheduled+60)return {kind:'daily',day,title:'Time for a study session?',body:'This is your daily FocusRecall reminder. Choose a subject and take one small step.'}
+  if(settings.studyReminderDailyEnabled&&state.dailyDay!==day&&Number.isFinite(scheduled)&&minute>=scheduled&&minute<scheduled+60)return {kind:'daily',day,title:'Time for a study session?',body:'This is your daily A14 Pomodoro reminder. Choose a subject and take one small step.'}
   // Legacy preferences and wire types remain readable; inferred timing is retired.
   return null
 }

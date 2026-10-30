@@ -31,7 +31,7 @@ export function StudyReminderSettings({Section,Row}:{
     <Row label="Reminder controls" hint={uiText("At least four hours apart. Paused during study or inactivity.")}>
       <div className="flex flex-wrap gap-2"><Button variant="quiet" disabled={busy||status?.supported===false} onClick={()=>{void action('test')}}>{uiText("Test notification")}</Button><Button variant="quiet" disabled={busy} onClick={()=>{void action('hour')}}>{uiText("Pause 1 hour")}</Button><Button variant="quiet" disabled={busy} onClick={()=>{void action('today')}}>{uiText("Pause today")}</Button>{status&&status.pausedUntil>Date.now()&&<Button variant="quiet" disabled={busy} onClick={()=>{void action('resume')}}>{uiText("Resume reminders")}</Button>}</div>
     </Row>
-    <Row label="Reminders run in the tray" hint={uiText("Close hides to tray when reminders are on. Quit stops reminders. Open FocusRecall after restarting Windows.")}>
+    <Row label="Reminders run in the tray" hint={uiText("Close hides to tray when reminders are on. Quit stops reminders. Open A14 Pomodoro after restarting Windows.")}>
       <div className="max-w-md space-y-2 text-sm text-muted"><p>{uiText("Uses active/idle status only, not app names or window titles.")}</p>{status?.supported===false&&<p role="status">{uiText("Windows notifications are unavailable on this system.")}</p>}{status&&status.pausedUntil>Date.now()&&<p>{uiText("Paused until ")}{formatDateTime(new Date(status.pausedUntil))}.</p>}{(message||status?.lastError)&&<p role="status">{message||status?.lastError}</p>}</div>
     </Row>
   </Section>

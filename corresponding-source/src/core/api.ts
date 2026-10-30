@@ -268,7 +268,7 @@ export interface IpcContract {
   'panel:hover': { args: [over: boolean]; result: void }
   /** Open the Switch picker in the main window (panel button, Switch hotkey). */
   'ui:openSwitch': { args: []; result: void }
-  /** The Switch picker closed without a switch; FocusRecall goes back to where it was. */
+  /** The Switch picker closed without a switch; A14 Pomodoro goes back to where it was. */
   'ui:switchClosed': { args: []; result: void }
   'reasons:hide': { args: []; result: void }
   'app:demo': { args: []; result: boolean }
@@ -308,7 +308,7 @@ export type ArgsOf<C extends Channel> = IpcContract[C]['args']
 export type ResultOf<C extends Channel> = IpcContract[C]['result']
 export type EventName = keyof EventContract
 
-export interface FocusRecallApi {
+export interface A14PomodoroApi {
   invoke<C extends Channel>(channel: C, ...args: ArgsOf<C>): Promise<ResultOf<C>>
   /** Subscribe to a pushed event. Returns an unsubscribe function. */
   on<E extends EventName>(event: E, listener: (payload: EventContract[E]) => void): () => void

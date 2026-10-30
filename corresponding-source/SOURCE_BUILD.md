@@ -1,6 +1,6 @@
 # Building the unsigned Windows release candidate
 
-License: GPL-3.0-only for FocusRecall original code; preserve the supplied component notices. This source snapshot contains the preferred editable application/native/theme sources, assets, lockfile and build/install scripts. SOURCE_MANIFEST.json in the exported snapshot identifies its exact Git commit and file hashes. The private Git history and fictional/personal profiles are excluded.
+License: GPL-3.0-only for A14 Pomodoro original code; preserve the supplied component notices. This source snapshot contains the preferred editable application/native/theme sources, assets, lockfile and build/install scripts. SOURCE_MANIFEST.json in the exported snapshot identifies its exact Git commit and file hashes. The private Git history and fictional/personal profiles are excluded.
 
 ## Toolchain and build
 
@@ -26,7 +26,7 @@ node node_modules/electron-builder/cli.js --win --publish never --config.directo
 
 Do not set FOCUSRECALL_QA_BUILD for production. Do not configure signing keys. The Windows-native foreground module builds from native/ using build:foreground; its scripts explain compiler/header requirements. Installer hooks and license navigation sources are under build/. This package does not contain private certificates or a signing requirement. No installation-information restriction is imposed.
 
-For local inspector workflows use `npm run build:qa`, never the public installer. QA requires an explicit absolute fictional directory containing QA-FICTIONAL.txt with `FocusRecall fictional profile only`; a Chromium profile junction cannot escape that directory. Production refuses marked QA profiles. Do not distribute the QA executable. Rebuild production after QA before packaging another installer.
+For local inspector workflows use `npm run build:qa`, never the public installer. QA requires an explicit absolute fictional directory containing QA-FICTIONAL.txt with `A14 Pomodoro fictional profile only`; a Chromium profile junction cannot escape that directory. Production refuses marked QA profiles. Do not distribute the QA executable. Rebuild production after QA before packaging another installer.
 
 ## Generated application inputs
 

@@ -44,7 +44,7 @@ describe('stage crossings', () => {
     expect(c[0].stage).toBe('20 to 50 hours')
     expect(c[0].at).toBe(22 * H)
   })
-  it('counts hours before FocusRecall, so nothing is crossed twice', () => {
+  it('counts hours before A14 Pomodoro, so nothing is crossed twice', () => {
     const parts = [{ itemId: 1, start: 0, end: 2 * H, focusSeconds: 2 * 3600 }]
     expect(stageCrossings(parts, new Map([[1, 19]]))).toHaveLength(1)
     expect(stageCrossings(parts, new Map([[1, 25]]))).toHaveLength(0)

@@ -1,6 +1,6 @@
 # Security and privacy reports
 
-FocusRecall hardens renderer IPC permissions, navigation and report rendering, protects database transitions, and validates backup schema constraints. Automated and isolated packaged checks are described in [release status](docs/RELEASE_SECURITY.md). They do not replace a complete independent audit or native installation and assistive-technology testing.
+A14 Pomodoro hardens renderer IPC permissions, navigation and report rendering, protects database transitions, and validates backup schema constraints. Automated and isolated packaged checks are described in [release status](docs/RELEASE_SECURITY.md). They do not replace a complete independent audit or native installation and assistive-technology testing.
 
 This development repository is private. Report concerns to the owner through an established private channel. If a distribution repository becomes public, do not post exploit details or sensitive data in public issues. Use private vulnerability reporting only if it is enabled; otherwise request a private reporting channel first.
 

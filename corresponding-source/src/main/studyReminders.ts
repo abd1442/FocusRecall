@@ -27,7 +27,7 @@ export class StudyReminderService {
     if(this.inFlight||this.lastTestAt&&now-this.lastTestAt<10000)throw Error('Wait a few seconds before testing again.')
     if(!this.deps.context().active)throw Error('Unlock your PC and return before testing a notification.')
     this.lastTestAt=now;this.inFlight=true
-    try{this.lastError=await this.deps.send('FocusRecall test reminder','Study reminders appear here. Click to open FocusRecall.')?null:'Windows did not accept the notification. Check Windows notification settings.'}
+    try{this.lastError=await this.deps.send('A14 Pomodoro test reminder','Study reminders appear here. Click to open A14 Pomodoro.')?null:'Windows did not accept the notification. Check Windows notification settings.'}
     finally{this.inFlight=false}
     return this.status()
   }

@@ -1,5 +1,3 @@
-> Current release note — 27 October 2026: the public project records the owner’s F/R logo authorship confirmation on 20 October 2026. The earlier unknown-creator hold below is historical, not a current assertion of third-party ownership. No independent trademark or ownership certification is claimed. The owner authorized the Beta 2 prerelease; see the public release notes for unperformed platform checks.
-
 # RC2 asset-rights audit — 18 October 2026
 
 **Decision: keep the friend-testing package private and undistributed.** The approved F/R mark is demonstrably traced from a supplied raster whose creator, upstream references and distribution permission are unknown. The owner explicitly reported uncertainty and requested this hold. This is an unresolved provenance issue, not a finding of infringement. No asset was replaced, redesigned, uploaded or submitted to an image-search service.

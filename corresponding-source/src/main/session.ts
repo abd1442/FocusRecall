@@ -89,7 +89,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
   private notify<E extends keyof SessionEvents>(event:E,...args:SessionEvents[E]):void {
     const dispatch=():void=>{
       for(const listener of this.rawListeners(event)) {
-        try { (listener as (...values:SessionEvents[E])=>void).apply(this,args) } catch { console.error('FocusRecall observer failed:',event) }
+        try { (listener as (...values:SessionEvents[E])=>void).apply(this,args) } catch { console.error('A14 Pomodoro observer failed:',event) }
       }
     }
     if(this.transitionEvents)this.transitionEvents.push(dispatch)
@@ -240,7 +240,7 @@ export class SessionEngine extends EventEmitter<SessionEvents> {
   startLast(): SessionState {
     const s = this.settings.getAll()
     if (s.lastItemId === null || !this.repo.itemIsActive(s.lastItemId)) {
-      throw new Error('Pick a subject in FocusRecall first.')
+      throw new Error('Pick a subject in A14 Pomodoro first.')
     }
     const timerMode = s.lastTimerMode ?? s.defaultTimerMode
     return this.start({ itemId: s.lastItemId, timerMode, targetSeconds: this.targetFor(s.lastItemId, timerMode) })

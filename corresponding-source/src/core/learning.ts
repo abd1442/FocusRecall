@@ -1,5 +1,5 @@
 // Learning stage and prior knowledge (round 4 section 3). A subject's stage
-// comes from its hours: tracked focus plus the hours before FocusRecall. Nothing
+// comes from its hours: tracked focus plus the hours before A14 Pomodoro. Nothing
 // here is stored; every session's stage is calculated from the data.
 
 export type PriorKnowledge = 'new' | 'some' | 'before' | 'well'
@@ -98,7 +98,7 @@ export interface StageCrossing {
  * When each subject crossed a stage boundary. `parts` are focus spans (any
  * order); a crossing is placed at the moment within the span where the
  * running total passes the threshold (treating the span as evenly focused).
- * Hours before FocusRecall count from the start, so a subject that starts past
+ * Hours before A14 Pomodoro count from the start, so a subject that starts past
  * a threshold never "crosses" it.
  */
 export function stageCrossings(
@@ -128,7 +128,7 @@ export function stageCrossings(
 }
 
 /**
- * Hours on a subject before a moment: earlier focus plus hours before FocusRecall.
+ * Hours on a subject before a moment: earlier focus plus hours before A14 Pomodoro.
  * Used to give each session the stage its subject was in at the time.
  */
 export function hoursBeforeMoment(parts: { itemId: number; start: number; focusSeconds: number }[], itemId: number, moment: number, hoursBefore = 0): number {

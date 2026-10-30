@@ -107,7 +107,7 @@ export class NotesService {
     let existing='',existed=false;try{existing=await readFile(file,'utf8');existed=true}catch(e){if((e as NodeJS.ErrnoException).code!=='ENOENT')throw e}
     let imageFile: string | undefined
     if (note.image) {
-      imageFile = `FocusRecall-${note.id}.png`
+      imageFile = `A14Pomodoro-${note.id}.png`
       // Keep an existing attachment's name, including notes sent before the rename.
       const candidates=DATA_IDENTITY.drawingPrefixes.map(prefix=>`${prefix}-${note.id}.png`)
       const linked=candidates.find(name=>existing.includes(`](${name})`))

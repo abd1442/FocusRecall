@@ -18,7 +18,7 @@ export default function StudyStrategyExample({id,onClose}:{id:string;onClose:()=
       <p className="font-medium leading-relaxed">{copy.action}</p>
       <StrategyVisual id={id as StrategyVisualId}/>
       <p className="mt-4 leading-relaxed text-muted">{copy.detail}</p>
-      <p className="mt-3 text-sm text-muted">{t('General guidance, not a finding from your records. These studies do not test FocusRecall itself.')}</p>
+      <p className="mt-3 text-sm text-muted">{t('General guidance, not a finding from your records. These studies do not test A14 Pomodoro itself.')}</p>
       <div className="mt-5 flex justify-end"><Button onClick={onClose}>{t('Return to study')}</Button></div>
     </div>
   </Dialog></div>

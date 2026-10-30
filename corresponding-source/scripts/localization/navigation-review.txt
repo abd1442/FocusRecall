@@ -149,7 +149,7 @@ Longer does not mean better|الأطول لا يعني الأفضل|Más tiempo 
 Longest streak|أطول سلسلة أيام متتالية|Racha más larga|Plus longue série|最长连续学习天数|Maior sequência|Längste Serie
 Manage|إدارة|Administrar|Gérer|管理|Gerenciar|Verwalten
 Manage {value0} thoughts|إدارة الأفكار: {value0}|Administrar {value0} ideas|Gérer {value0} idées|管理 {value0} 条想法|Gerenciar {value0} ideias|{value0} Gedanken verwalten
-Minimise FocusRecall|تصغير FocusRecall|Minimizar FocusRecall|Réduire FocusRecall|最小化 FocusRecall|Minimizar o FocusRecall|FocusRecall minimieren
+Minimise A14 Pomodoro|تصغير A14 Pomodoro|Minimizar A14 Pomodoro|Réduire A14 Pomodoro|最小化 A14 Pomodoro|Minimizar o A14 Pomodoro|A14 Pomodoro minimieren
 Minute|دقيقة|Minuto|Minute|分钟|Minuto|Minute
 Minutes|دقائق|Minutos|Minutes|分钟|Minutos|Minuten
 Mixed|مختلط|Mixto|Mixte|混合|Misto|Gemischt
@@ -200,7 +200,7 @@ Obsidian note file|ملف ملاحظات Obsidian|Archivo de notas de Obsidian|F
 Obsidian section heading|عنوان القسم في Obsidian|Encabezado de sección en Obsidian|Titre de section Obsidian|Obsidian 章节标题|Título da seção do Obsidian|Obsidian-Abschnittsüberschrift
 One choice|اختيار واحد|Una opción|Un choix|单选|Uma opção|Eine Auswahl
 Once a day|مرة يوميًا|Una vez al día|Une fois par jour|每天一次|Uma vez por dia|Einmal täglich
-Only in FocusRecall|في FocusRecall فقط|Solo en FocusRecall|Dans FocusRecall uniquement|仅保存在 FocusRecall|Só no FocusRecall|Nur in FocusRecall
+Only in A14 Pomodoro|في A14 Pomodoro فقط|Solo en A14 Pomodoro|Dans A14 Pomodoro uniquement|仅保存在 A14 Pomodoro|Só no A14 Pomodoro|Nur in A14 Pomodoro
 Open experiments|فتح التجارب|Abrir experimentos|Ouvrir les expériences|打开实验|Abrir experimentos|Experimente öffnen
 Open note|فتح الملاحظة|Abrir nota|Ouvrir la note|打开笔记|Abrir nota|Notiz öffnen
 Open session|فتح الجلسة|Abrir sesión|Ouvrir la séance|打开学习记录|Abrir sessão|Sitzung öffnen
@@ -353,7 +353,7 @@ Where|أين|Dónde|Lieu|地点|Onde|Wo
 Within the same subject|ضمن المادة نفسها|Dentro de la misma materia|Au sein de la même matière|在同一科目内|Dentro da mesma matéria|Innerhalb desselben Fachs
 Within-subject comparisons|مقارنات ضمن المادة نفسها|Comparaciones dentro de cada materia|Comparaisons au sein d’une matière|科目内比较|Comparações dentro da mesma matéria|Vergleiche innerhalb eines Fachs
 Word in the title|كلمة في العنوان|Palabra en el título|Mot dans le titre|标题中的词|Palavra no título|Wort im Titel
-Write in FocusRecall|الكتابة في FocusRecall|Escribir en FocusRecall|Écrire dans FocusRecall|在 FocusRecall 中书写|Escrever no FocusRecall|In FocusRecall schreiben
+Write in A14 Pomodoro|الكتابة في A14 Pomodoro|Escribir en A14 Pomodoro|Écrire dans A14 Pomodoro|在 A14 Pomodoro 中书写|Escrever no A14 Pomodoro|In A14 Pomodoro schreiben
 Writing background|خلفية الكتابة|Fondo de escritura|Fond de la zone de saisie|书写区背景|Fundo da escrita|Schreibhintergrund
 Writing text|نص الكتابة|Texto de escritura|Texte saisi|书写区文字|Texto da escrita|Schreibtext
 Year after|العام التالي|Año siguiente|Année suivante|后一年|Ano seguinte|Nächstes Jahr

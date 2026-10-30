@@ -14,6 +14,7 @@
   Push $R0
   ${Do}
     StrCpy $R8 ""
+    !insertmacro FocusRecallFindRunning "A14Pomodoro.exe"
     !insertmacro FocusRecallFindRunning "FocusRecall.exe"
     !insertmacro FocusRecallFindRunning "Learnalyt.exe"
     !insertmacro FocusRecallFindRunning "trifocus.exe"
@@ -24,7 +25,7 @@
       SetErrorLevel 2
       Quit
     ${EndIf}
-    MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Close FocusRecall or its previous Learnalyt/Trifocus version, including its tray icon, then choose Retry. Your open study session will not be terminated by Setup." IDRETRY +2
+    MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Close A14 Pomodoro or a previous version, including its tray icon, then choose Retry. Your open study session will not be terminated by Setup." IDRETRY +2
     Quit
   ${Loop}
   Pop $R0

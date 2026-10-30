@@ -34,7 +34,7 @@ it('keeps the established storage namespace even after a fresh install or reinst
  expect(chosen).toBe(join(appData,DATA_IDENTITY.profile));mkdirSync(chosen)
  const file=databaseFile(chosen,false),db=openDatabase(file);new SettingsRepo(db).writeRaw('qaBrandSentinel','unchanged');db.close();const before=sha(file)
  expect(profileDirectory(appData,undefined)).toBe(chosen);expect(sha(file)).toBe(before)
- expect(readdirSync(appData)).toEqual(['Learnalyt']);expect(PRODUCT_NAME).toBe('FocusRecall')
+ expect(readdirSync(appData)).toEqual(['Learnalyt']);expect(PRODUCT_NAME).toBe('A14 Pomodoro')
 })
 it.each([false,true])('finds retained Trifocus data without moving or duplicating it (demo=%s)',demo=>{
  const appData=create(),old=join(appData,LEGACY_IDENTITY.profile);mkdirSync(old)
@@ -48,7 +48,7 @@ it('restores an older-named backup and its pending journal without a format migr
  settings.writeRaw('qaBrandSentinel',{text:'newer value'});prepareRestore(db,file,backup);db.close()
  db=installPendingRestore(file,openDatabase)!;expect(JSON.parse((db.prepare('SELECT value FROM settings WHERE key=?').get('qaBrandSentinel') as {value:string}).value)).toEqual({text:'Learnalyt saved value',vault:'fictional/vault',confirmed:false});expect(sha(backup)).toBe(backupHash);expect(readdirSync(backupFolder(file,'safety')).length).toBeGreaterThan(0);db.close()
 })
-it.each(['Learnalyt','Trifocus','FocusRecall'])('reuses %s drawing attachments and existing Obsidian note markers',async prefix=>{
+it.each(['Learnalyt','Trifocus','FocusRecall','A14Pomodoro'])('reuses %s drawing attachments and existing Obsidian note markers',async prefix=>{
  const dir=create(),db=openDatabase(':memory:');try{
  db.exec("INSERT INTO categories(id,name,color,sort_order,created_at) VALUES(100,'QA','#123456',0,'2026-10-16'); INSERT INTO items(id,category_id,name,color,default_unit,created_at) VALUES(100,100,'Fictional study','#123456','pages','2026-10-16')")
  const imageName=`${prefix}-brand-note.png`,file=join(dir,'Study.md');writeFileSync(join(dir,imageName),'old image');writeFileSync(file,`Other notes stay.\n<!-- learnalyt:brand-note -->\nOld words\n![](${imageName})\n<!-- /learnalyt:brand-note -->\n`)

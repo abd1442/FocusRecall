@@ -142,7 +142,7 @@ export interface ContextualWindowRun extends WindowRun {
 
 /**
  * Every program and site in front during a session, with what it counts as,
- * largest first. FocusRecall itself is left out.
+ * largest first. A14 Pomodoro itself is left out.
  */
 export function programRows(runs: ContextualWindowRun[], rules: AppRule[], context: RuleContext | number | null = null, minSeconds = 3): ProgramRow[] {
   const m = new Map<string, { row: ProgramRow; titles: Map<string, ProgramTitle>; contexts: Map<string, { seconds: number; context: RuleContext; process: string }> }>()
@@ -338,7 +338,7 @@ export function appSummary(runs: WindowRun[], rules: AppRule[], itemId: number |
 
 /**
  * How often the window in front changed: a different program, or another
- * window or tab of the same program. FocusRecall's own windows do not count.
+ * window or tab of the same program. A14 Pomodoro's own windows do not count.
  */
 export function countWindowSwitches(runs: WindowRun[]): number {
   const seen = runs.filter((r) => !isOwnAppProcess(r.process)).sort((a, b) => a.startedAt - b.startedAt)
@@ -364,7 +364,7 @@ export const SEED_APP_RULES: Omit<AppRule, 'id'>[] = [
   ...['YouTube', 'Netflix', 'Facebook', 'Instagram', 'TikTok', 'Twitter', 'Reddit', 'Twitch', 'WhatsApp', 'Messenger', 'Discord', 'Telegram', 'Prime Video', 'Disney+', 'Snapchat', 'Pinterest', '9GAG'].map(
     (pattern) => ({ matchType: 'title' as const, pattern, classification: 'distraction' as const })
   ),
-  ...['FocusRecall', 'LockApp', 'ShellExperienceHost', 'StartMenuExperienceHost', 'SearchHost', 'SearchApp'].map(
+  ...['A14 Pomodoro', 'LockApp', 'ShellExperienceHost', 'StartMenuExperienceHost', 'SearchHost', 'SearchApp'].map(
     (pattern) => ({ matchType: 'process' as const, pattern, classification: 'ignore' as const })
   )
 ]

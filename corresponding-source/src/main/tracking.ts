@@ -145,7 +145,7 @@ export class Tracker {
     if(ctx.stage==='focus'&&!this.idleTimer)this.idleTimer=setInterval(()=>this.checkIdle(),IDLE_CHECK_MS)
     const own = isOwnProcess(s.pid)
     if(own){this.flush(s.at);return} // App-owned windows need no activity record.
-    const sample = { at: s.at, process: own ? 'FocusRecall' : s.process, title: !this.titles||own ? NO_TITLE : s.title.trim() ? s.title.slice(0,1023) : NO_TITLE }
+    const sample = { at: s.at, process: own ? 'A14 Pomodoro' : s.process, title: !this.titles||own ? NO_TITLE : s.title.trim() ? s.title.slice(0,1023) : NO_TITLE }
     if(this.run&&s.at<this.run.endedAt)return
     if(this.run&&s.at-this.run.endedAt>4000){const cutoff=this.run.endedAt;this.flush(cutoff);this.closeIdle(cutoff);this.observingSince=s.at}
     if (this.run && (this.run.blockId !== ctx.blockId || this.run.stage !== ctx.stage)) this.flush(s.at)

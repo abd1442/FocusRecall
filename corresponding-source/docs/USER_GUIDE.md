@@ -1,12 +1,12 @@
-# Using FocusRecall
+# Using A14 Pomodoro
 
-This guide follows current **0.1.5-beta.2 source behavior**. The last verified controlled-test installer is still beta.28-rc.2 and does not include later changes; see [current source](CURRENT_SOURCE.md). This is not download authorization; read [release status](RELEASE_STATUS.md). Older captures use fictional records and an identified historical QA build.
+This guide follows current **A14 Pomodoro source behavior**, based on **0.1.5-beta.2**. The rebrand preserves existing study profiles and backups. Published Beta 1/Beta 2 downloads still carry their original names; they do not yet contain this branding update. See [current source](CURRENT_SOURCE.md).
 
 ## Install or update
 
-Use only an explicitly supplied controlled-test installer and its exact checksum. The candidate is unsigned: record unexpected Windows/antivirus warnings and stop rather than disabling protections. Do not treat an old GitHub asset as current.
+Use a published installer or explicitly supplied test candidate with its matching checksum. The candidate is unsigned: record unexpected Windows/antivirus warnings and stop rather than disabling protections. Do not treat an old GitHub asset as current.
 
-Before updating, create a verified backup in Settings and finish/close FocusRecall, including its tray process. Keep the existing scope/destination. Installing for all users does not combine their records. Never delete AppData, databases or WAL/SHM files to resolve an update. Stop on a data-opening error and preserve original files/backups.
+Before updating, create a verified backup in Settings and finish/close A14 Pomodoro, including its tray process. Keep the existing scope/destination. Installing for all users does not combine their records. Never delete AppData, databases or WAL/SHM files to resolve an update. Stop on a data-opening error and preserve original files/backups.
 
 ## A study cycle
 

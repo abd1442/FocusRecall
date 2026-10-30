@@ -1,5 +1,5 @@
 /** Original editorial applications of the research below, not quotations or
- * claims that FocusRecall itself has been shown to improve learning. Stable IDs
+ * claims that A14 Pomodoro itself has been shown to improve learning. Stable IDs
  * are shared across languages and reserved for later Learn content. */
 export type AdviceSurface = 'prepare' | 'recall' | 'rest' | 'return' | 'stats'
 export type AdviceIntent = 'any' | 'understand' | 'practice' | 'remember'

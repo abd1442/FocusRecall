@@ -1,15 +1,15 @@
-FocusRecall — GPL-3.0-only
+A14 Pomodoro — GPL-3.0-only
 Copyright (C) 2026 abd1442
 
-FocusRecall is free software: you can redistribute it and/or modify it under the terms of version 3 of the GNU General Public License as published by the Free Software Foundation (GPL-3.0-only).
+A14 Pomodoro is free software: you can redistribute it and/or modify it under the terms of version 3 of the GNU General Public License as published by the Free Software Foundation (GPL-3.0-only).
 
-FocusRecall is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+A14 Pomodoro is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 The complete license follows below and is also supplied as LICENSE.txt with the application. Third-party components retain their own licenses; see THIRD-PARTY-NOTICES.txt, LICENSE.electron.txt and LICENSES.chromium.html. No additional proprietary restrictions apply. Running the program does not require accepting a separate contract.
 
-Privacy summary (not a license restriction): foreground tracking is OFF by default and requires explicit opt-in. Window-title collection requires a separate choice. Records stay local and are not encrypted by FocusRecall. See PRIVACY.txt.
+Privacy summary (not a license restriction): foreground tracking is OFF by default and requires explicit opt-in. Window-title collection requires a separate choice. Records stay local and are not encrypted by A14 Pomodoro. See PRIVACY.txt.
 
-Source distribution: a public binary release must provide its matching Corresponding Source, including build scripts, under GPLv3 section 6. The repository is https://github.com/abd1442/FocusRecall . Verify that the exact release source is publicly accessible before distributing binaries; this notice is not a written offer of source.
+Source distribution: a public binary release must provide its matching Corresponding Source, including build scripts, under GPLv3 section 6. The repository is https://github.com/abd1442/A14 Pomodoro . Verify that the exact release source is publicly accessible before distributing binaries; this notice is not a written offer of source.
 
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007

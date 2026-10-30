@@ -8,7 +8,7 @@ const NAMES: HotkeyName[] = ['distracted', 'switch', 'stuck', 'resisted']
  * The global hotkeys. They are registered only while a session runs, so the
  * keys stay free for other programs the rest of the time. Outside a session
  * each key is test-registered once, so Settings can say whether Windows lets
- * FocusRecall have it. (A program with a keyboard hook, such as a screenshot
+ * A14 Pomodoro have it. (A program with a keyboard hook, such as a screenshot
  * tool, can still take a key without Windows saying so.)
  */
 export class Hotkeys {

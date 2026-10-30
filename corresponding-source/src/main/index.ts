@@ -36,7 +36,7 @@ import { StatsRepo } from './repos/stats'
 import { databaseFile, readConfig, seedDemo, writeConfig } from './demo'
 import { attachTextContextMenu, createMainWindow, type SavedBounds } from './windows'
 import { profileDirectory,isolatedDataDirectory,packagedDataDirectory } from './identity'
-import { runtimeAppId } from '@core/identity'
+import { runtimeAppId, PRODUCT_NAME } from '@core/identity'
 
 // This constant is compiled separately; no runtime environment variable unlocks production.
 if(app.isPackaged && !__FOCUSRECALL_QA__ && unsafeRuntimeSwitches(app.commandLine)){app.exit(1);process.exit(1)}
@@ -60,11 +60,12 @@ try{
   if(app.isPackaged)startupDataDirectory=packagedDataDirectory(__FOCUSRECALL_QA__,app.getPath('appData'))
 }catch{
   // No fallback, recovery dialog, profile creation or database access on refusal.
-  console.error('FocusRecall startup refused: invalid or overlapping data directory.')
+  console.error('A14 Pomodoro startup refused: invalid or overlapping data directory.')
   app.exit(1)
   process.exit(1)
 }
 app.setPath('userData',profileDirectory(app.getPath('appData'),startupDataDirectory))
+app.setName(PRODUCT_NAME)
 
 if (!app.requestSingleInstanceLock()) {
   app.quit()
@@ -72,7 +73,7 @@ if (!app.requestSingleInstanceLock()) {
   app.on('second-instance', () => showMain())
   app.whenReady().then(start).catch(async (error) => {
     const dataDir=startupDataDirectory || app.getPath('userData')
-    const result=await dialog.showMessageBox({type:'error',title:'FocusRecall data recovery',message:'FocusRecall could not safely open your study data.',detail:`${error instanceof Error?error.message:String(error)}\n\nNo data reset was performed. Keep your data folder and backups. If restoration was rolled back, restart to use your previous data.`,buttons:['Open backup folder','Quit'],defaultId:1,cancelId:1})
+    const result=await dialog.showMessageBox({type:'error',title:'A14 Pomodoro data recovery',message:'A14 Pomodoro could not safely open your study data.',detail:`${error instanceof Error?error.message:String(error)}\n\nNo data reset was performed. Keep your data folder and backups. If restoration was rolled back, restart to use your previous data.`,buttons:['Open backup folder','Quit'],defaultId:1,cancelId:1})
     if(result.response===0){const folder=join(dataDir,'backups');mkdirSync(folder,{recursive:true});await shell.openPath(folder)}
     quitting=true;app.quit()
   })
@@ -188,7 +189,7 @@ function start(): void {
   tracker.setEnabled(trackingConsented(settings.getAll()),settings.getAll().foregroundTrackingTitlesEnabled)
   watcher.on('status', (status) => broadcast('tracking:changed', status))
 
-  // The Switch picker opens in the main window; afterwards FocusRecall goes back to where it was.
+  // The Switch picker opens in the main window; afterwards A14 Pomodoro goes back to where it was.
   let restoreAfterSwitch: 'minimize' | 'hide' | null = null
   const openSwitch = (): void => {
     if (!engine?.get().running) return
@@ -366,7 +367,7 @@ function start(): void {
     panelHover: (over) => panel?.hover(over),
     demo: {
       active: config.demo,
-      // Switching restarts FocusRecall on the other database; the two never mix.
+      // Switching restarts A14 Pomodoro on the other database; the two never mix.
       set: (on) => {
         writeConfig(dataDir, { demo: on })
         quitting = true

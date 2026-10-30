@@ -1,6 +1,6 @@
 FOCUSRECALL THIRD-PARTY NOTICES
 
-This inventory covers the installed production dependency graph plus bundled React, React DOM and Zustand. Listed licenses apply to those components, not FocusRecall original code. Electron and Chromium notices are also supplied separately as LICENSE.electron.txt and LICENSES.chromium.html beside the executable.
+This inventory covers the installed production dependency graph plus bundled React, React DOM and Zustand. Listed licenses apply to those components, not A14 Pomodoro original code. Electron and Chromium notices are also supplied separately as LICENSE.electron.txt and LICENSES.chromium.html beside the executable.
 
 ========================================================================
 @electron-toolkit/preload 3.0.2 | MIT

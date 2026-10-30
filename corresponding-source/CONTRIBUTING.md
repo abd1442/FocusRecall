@@ -1,4 +1,4 @@
-# Contributing to FocusRecall
+# Contributing to A14 Pomodoro
 
 The project is in controlled Windows pre-release testing. Keep changes focused. Nothing here authorizes distribution while the [release gates](docs/RELEASE_STATUS.md) remain open.
 
@@ -11,7 +11,7 @@ Use a fictional profile for development. Never point development or QA at existi
 ```powershell
 $fixture = Join-Path (Get-Location) 'out/qa-temp/developer-fictional'
 New-Item -ItemType Directory -Path $fixture -Force | Out-Null
-Set-Content -LiteralPath (Join-Path $fixture 'QA-FICTIONAL.txt') -Value 'FocusRecall fictional profile only'
+Set-Content -LiteralPath (Join-Path $fixture 'QA-FICTIONAL.txt') -Value 'A14 Pomodoro fictional profile only'
 $env:FOCUSRECALL_DATA_DIR = $fixture
 npm run dev
 ```

@@ -43,7 +43,7 @@ function handle<C extends Channel>(
   ipcMain.handle(channel, async (event, ...args) => {
     try {
     assertCaller(event,channel,args)
-    if (restoring) throw new Error('FocusRecall is restarting to restore your data. Please wait.')
+    if (restoring) throw new Error('A14 Pomodoro is restarting to restore your data. Please wait.')
     const result=fn(...(args as ArgsOf<C>))
     if(changesStudy.includes(channel))return await Promise.resolve(result).then((value)=>{broadcast('study:changed',null);return value})
     return await result
@@ -120,7 +120,7 @@ export function registerIpc(deps: {
   const backupRoot=dirname(backupFolder(deps.databaseFile,'manual'))
   handle('backup:create',async()=>{
     const folder=backupFolder(deps.databaseFile,'manual');mkdirSync(folder,{recursive:true})
-    const r=await dialog.showSaveDialog({title:t('Back Up Data'),defaultPath:join(folder,`FocusRecall-${new Date().toISOString().replace(/[:.]/g,'-')}.db`),filters:[{name:t('FocusRecall database backup'),extensions:['db']}]})
+    const r=await dialog.showSaveDialog({title:t('Back Up Data'),defaultPath:join(folder,`A14 Pomodoro-${new Date().toISOString().replace(/[:.]/g,'-')}.db`),filters:[{name:t('A14 Pomodoro database backup'),extensions:['db']}]})
     if(r.canceled || !r.filePath)return null
     const info=snapshot(deps.db,r.filePath);lastBackup=r.filePath
     return {name:info.name}
@@ -128,7 +128,7 @@ export function registerIpc(deps: {
   handle('backup:reveal',()=>{if(lastBackup)shell.showItemInFolder(lastBackup)})
   handle('backup:openFolder',async()=>{mkdirSync(backupRoot,{recursive:true});const error=await shell.openPath(backupRoot);if(error)throw new Error('Could not open the backup folder.')})
   handle('backup:inspectRestore',async()=>{
-    const r=await dialog.showOpenDialog({title:t('Choose a FocusRecall backup'),defaultPath:backupRoot,properties:['openFile'],filters:[{name:t('FocusRecall database backup'),extensions:['db']}]})
+    const r=await dialog.showOpenDialog({title:t('Choose a A14 Pomodoro backup'),defaultPath:backupRoot,properties:['openFile'],filters:[{name:t('A14 Pomodoro database backup'),extensions:['db']}]})
     if(r.canceled)return null
     const file=r.filePaths[0],info=validateBackup(file)
     if(info.demo!==deps.demo.active)throw new Error('Demo and personal backups are separate. Switch to the matching data mode before restoring this backup.')
@@ -244,8 +244,8 @@ export function registerIpc(deps: {
   handle('appearance:presets',()=>presets())
   handle('appearance:savePreset',(name,a)=>{const title=name.trim().slice(0,80);if(!title)throw new Error('Give this preset a name.');settings.writeRaw('appearancePresets',[...presets().filter((p)=>p.name!==title),{name:title,appearance:normalizeAppearance(a)}])})
   handle('appearance:deletePreset',(name)=>settings.writeRaw('appearancePresets',presets().filter((p)=>p.name!==name)))
-  handle('appearance:export',async(a)=>{const result=await dialog.showSaveDialog({defaultPath:'FocusRecall appearance.json',filters:[{name:t('Appearance JSON'),extensions:['json']}]});if(result.canceled||!result.filePath)return null;writeFileSync(result.filePath,JSON.stringify({format:DATA_IDENTITY.appearanceFormat,version:1,appearance:normalizeAppearance(a)},null,2),'utf8');return result.filePath})
-  handle('appearance:import',async()=>{const result=await dialog.showOpenDialog({properties:['openFile'],filters:[{name:t('Appearance JSON'),extensions:['json']}]});if(result.canceled)return null;const file=result.filePaths[0];if(statSync(file).size>1000000)throw new Error('This preset file is too large.');const data=JSON.parse(readFileSync(file,'utf8'));if(data.format!==DATA_IDENTITY.appearanceFormat||data.version!==1||!data.appearance||typeof data.appearance!=='object')throw new Error('Choose a FocusRecall appearance preset JSON file.');return normalizeAppearance(data.appearance)})
+  handle('appearance:export',async(a)=>{const result=await dialog.showSaveDialog({defaultPath:'A14 Pomodoro appearance.json',filters:[{name:t('Appearance JSON'),extensions:['json']}]});if(result.canceled||!result.filePath)return null;writeFileSync(result.filePath,JSON.stringify({format:DATA_IDENTITY.appearanceFormat,version:1,appearance:normalizeAppearance(a)},null,2),'utf8');return result.filePath})
+  handle('appearance:import',async()=>{const result=await dialog.showOpenDialog({properties:['openFile'],filters:[{name:t('Appearance JSON'),extensions:['json']}]});if(result.canceled)return null;const file=result.filePaths[0];if(statSync(file).size>1000000)throw new Error('This preset file is too large.');const data=JSON.parse(readFileSync(file,'utf8'));if(data.format!==DATA_IDENTITY.appearanceFormat||data.version!==1||!data.appearance||typeof data.appearance!=='object')throw new Error('Choose a A14 Pomodoro appearance preset JSON file.');return normalizeAppearance(data.appearance)})
 
   handle('app:version',()=>app.getVersion())
   handle('session:get', () => session.get())

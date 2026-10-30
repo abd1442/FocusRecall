@@ -1,6 +1,6 @@
 # Legacy installer identity preserves upgrade/uninstall detection.
 appId: app.trifocus.desktop
-productName: FocusRecall
+productName: A14 Pomodoro
 copyright: Copyright (c) 2026 abd1442
 publish: null
 electronDist: node_modules/electron/dist
@@ -13,6 +13,7 @@ files:
   - out/renderer/**
   - resources/**
   - '!resources/learnalyt*'
+  - '!resources/focusrecall*'
   - '!resources/support-learnalyt.svg'
   - '!resources/legal/**'
   - package.json
@@ -33,8 +34,8 @@ asarUnpack:
   - resources/**
   - node_modules/better-sqlite3/**
 win:
-  icon: resources/focusrecall.ico
-  executableName: FocusRecall
+  icon: resources/a14-pomodoro.ico
+  executableName: A14Pomodoro
   target: nsis
 nsis:
   installerLanguages: [en_US, ar_SA, es_ES, fr_FR, zh_CN, pt_BR, de_DE]
@@ -46,10 +47,10 @@ nsis:
   selectPerMachineByDefault: false
   allowElevation: true
   allowToChangeInstallationDirectory: true
-  installerIcon: resources/focusrecall.ico
-  uninstallerIcon: resources/focusrecall.ico
-  installerHeaderIcon: resources/focusrecall.ico
-  artifactName: FocusRecall-${version}-setup.${ext}
+  installerIcon: resources/a14-pomodoro.ico
+  uninstallerIcon: resources/a14-pomodoro.ico
+  installerHeaderIcon: resources/a14-pomodoro.ico
+  artifactName: A14-Pomodoro-${version}-setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: true

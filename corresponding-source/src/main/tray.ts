@@ -1,4 +1,5 @@
 import { Menu, Tray, nativeImage, nativeTheme, type NativeImage } from 'electron'
+import { join } from 'node:path'
 import { paletteFor, type Appearance } from '@core/appearance'
 import { sessionFocusSeconds, type SessionState } from '@core/session'
 import { clockDisplay } from '@core/modes'
@@ -59,8 +60,8 @@ export class TrayController {
     private actions: { onShow: () => void; onTogglePanel: () => void; onQuit: () => void },
     private language: () => AppLanguage = () => 'en'
   ) {
-    this.tray = new Tray(stageIcon('#888888', true))
-    this.tray.setToolTip('FocusRecall')
+    this.tray = new Tray(nativeImage.createFromPath(join(__dirname,'../../resources/a14-pomodoro-icon.png')).resize({width:16,height:16}))
+    this.tray.setToolTip('A14 Pomodoro')
     this.tray.on('click', actions.onShow)
     this.setPanelOpen(false)
     nativeTheme.on('updated', this.themeChanged)
@@ -77,7 +78,7 @@ export class TrayController {
     if(key===this.menuKey)return
     this.tray.setContextMenu(
       Menu.buildFromTemplate([
-        { label: translate(this.language(), 'Show FocusRecall'), click: this.actions.onShow },
+        { label: translate(this.language(), 'Show A14 Pomodoro'), click: this.actions.onShow },
         { label: translate(this.language(), 'Floating panel'), type: 'checkbox', checked: this.panelOpen, click: this.actions.onTogglePanel },
         { type: 'separator' },
         { label: translate(this.language(), 'Quit'), click: this.actions.onQuit }
@@ -107,7 +108,7 @@ export class TrayController {
       this.pending=null
       if(this.disposed)return
       const force=this.forceIcon;this.forceIcon=false
-      try{this.updateMenu();this.render(force)}catch{console.error('FocusRecall tray refresh failed.')}
+      try{this.updateMenu();this.render(force)}catch{console.error('A14 Pomodoro tray refresh failed.')}
     })
   }
 
@@ -118,7 +119,7 @@ export class TrayController {
 
     let color = p.muted
     let ring = true
-    let tip = 'FocusRecall'
+    let tip = 'A14 Pomodoro'
     if (s.running) {
       const b = s.running
       const view = clockDisplay(b.timerMode, b.targetSeconds, sessionFocusSeconds(b, Date.now()))
@@ -138,9 +139,10 @@ ${view.main} ${view.aside}${paused ? ' · distracted' : ''}`
       tip = left !== null && s.rest?.phase === 'running' ? `Rest · ${formatClock(left)} left` : 'Rest'
     }
 
-    const key = `${color}|${ring}`
+    const idle = !s.running && s.stage !== 'recall' && s.stage !== 'rest'
+    const key = idle ? 'a14-brand' : `${color}|${ring}`
     if (forceIcon || key !== this.iconKey) {
-      this.tray.setImage(stageIcon(color, ring))
+      this.tray.setImage(idle ? nativeImage.createFromPath(join(__dirname,'../../resources/a14-pomodoro-icon.png')).resize({width:16,height:16}) : stageIcon(color, ring))
       this.iconKey = key
     }
     if(tip!==this.tooltip){this.tray.setToolTip(tip);this.tooltip=tip}

@@ -10,7 +10,7 @@ export function LanguageSettings(): React.JSX.Element {
   return <section className="rounded-xl border border-line bg-surface p-6" aria-labelledby={headingId} data-language-setting>
     <h2 id={headingId} className="text-lg font-semibold">{uiText('Language')}</h2>
     <label className="mt-3 flex max-w-lg flex-col gap-2">
-      <span className="text-sm text-muted">{uiText('Choose the language used throughout FocusRecall.')}</span>
+      <span className="text-sm text-muted">{uiText('Choose the language used throughout A14 Pomodoro.')}</span>
       <select className={inputClass} value={settings.language} onChange={event => {
         const choice = LANGUAGES.find(language => language.id === event.target.value)
         if (choice) void set('language', choice.id)

@@ -180,8 +180,8 @@ export function ItemForm({ initial, editing, onSave, onCancel }: Props): React.J
               </div>
             </Field>
             <div className="grid grid-cols-2 gap-5">
-              <Field label={uiText("Hours before FocusRecall")} hint={uiText("So the learning stage starts from the right place.")}>
-                <NumberStepper value={form.hoursBefore ?? 0} onChange={(v) => patch({ hoursBefore: v ?? 0 })} label={uiText("Hours before FocusRecall")} />
+              <Field label={uiText("Hours before A14 Pomodoro")} hint={uiText("So the learning stage starts from the right place.")}>
+                <NumberStepper value={form.hoursBefore ?? 0} onChange={(v) => patch({ hoursBefore: v ?? 0 })} label={uiText("Hours before A14 Pomodoro")} />
               </Field>
               <Field label={uiText("New field for me")} hint={newFieldTouched ? undefined : uiText("Suggested from the category.")}>
                 <div>

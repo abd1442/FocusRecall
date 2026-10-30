@@ -26,7 +26,7 @@ export function targetKind(target:string):'url'|'path' {
   if(/^[a-z]:[\\/]/i.test(target)){
     if(target.slice(2).includes(':'))throw Error('File streams are not supported.')
     if(target.split(/[\\/]/).some(segment=>/[ .]$/.test(segment)))throw Error('Ambiguous Windows paths are not supported.')
-    if(!/\.(?:pdf|txt|md|markdown|rtf|docx|xlsx|pptx|csv|epub|png|jpe?g|gif|webp|bmp|mp3|wav|ogg|m4a|mp4|webm|mov)$/i.test(target))throw Error('Only supported document and media resources can be opened from FocusRecall.')
+    if(!/\.(?:pdf|txt|md|markdown|rtf|docx|xlsx|pptx|csv|epub|png|jpe?g|gif|webp|bmp|mp3|wav|ogg|m4a|mp4|webm|mov)$/i.test(target))throw Error('Only supported document and media resources can be opened from A14 Pomodoro.')
     return 'path'
   }
   const url=new URL(target)

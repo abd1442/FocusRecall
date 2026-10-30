@@ -1,4 +1,4 @@
-> Current release note — 27 October 2026: the public project records the owner’s F/R logo authorship confirmation on 20 October 2026. The earlier unknown-creator hold below is historical, not a current assertion of third-party ownership. No independent trademark or ownership certification is claimed. The owner authorized the Beta 2 prerelease; see the public release notes for unperformed platform checks.
+> Current update — 30 October 2026: the owner approved the A14 Pomodoro Countdown Corner identity. See [current source](CURRENT_SOURCE.md), [approved assets](branding/a14-pomodoro/README.md) and [branding compatibility](BRANDING_COMPATIBILITY.md). The dated material below is historical. Beta 2 was publicly published on 27 October under its former name; it is not the rebranded candidate.
 
 # Asset provenance and licensing decision
 

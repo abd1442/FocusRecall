@@ -16,15 +16,15 @@ export function appliedVersions(db: Db): number[] {
 
 /** Validate a standalone app database without migrating or modifying it. */
 export function validateBackup(file: string): BackupInfo {
-  if (!existsSync(file) || !lstatSync(file).isFile() || statSync(file).size < 512) throw new Error('Choose a complete FocusRecall database backup.')
+  if (!existsSync(file) || !lstatSync(file).isFile() || statSync(file).size < 512) throw new Error('Choose a complete A14 Pomodoro database backup.')
   const db = new Database(file,{readonly:true,fileMustExist:true})
   try {
     if (db.pragma('integrity_check',{simple:true}) !== 'ok') throw new Error('The backup is damaged.')
     if ((db.pragma('foreign_key_check') as unknown[]).length) throw new Error('The backup contains broken record relationships.')
     const versions=appliedVersions(db)
-    if (!versions.length || versions.some((v,i)=>v !== migrations[i]?.version) || versions[versions.length-1]>maxVersion) throw new Error('This backup has an unsupported schema. Use the same or a newer compatible FocusRecall version.')
+    if (!versions.length || versions.some((v,i)=>v !== migrations[i]?.version) || versions[versions.length-1]>maxVersion) throw new Error('This backup has an unsupported schema. Use the same or a newer compatible A14 Pomodoro version.')
     const objects=db.prepare("SELECT type,name,sql FROM sqlite_master WHERE name NOT LIKE 'sqlite_%'").all() as {type:string;name:string;sql:string}[]
-    if(objects.some((o)=>!['table','index','view'].includes(o.type)||/\bVIRTUAL\b/i.test(o.sql??'')))throw new Error('This file is not a supported FocusRecall database.')
+    if(objects.some((o)=>!['table','index','view'].includes(o.type)||/\bVIRTUAL\b/i.test(o.sql??'')))throw new Error('This file is not a supported A14 Pomodoro database.')
     // Compare actual table names/columns to the shipped schema at this version.
     const expected=new Database(':memory:')
     try {
@@ -101,7 +101,7 @@ function readJournal(file:string):RestoreJournal|null {
 
 /** Prepare everything while the current connection is alive. Installation happens only after restart. */
 export function prepareRestore(db:Db,file:string,backup:string):void {
-  if(readJournal(file))throw new Error('A restore is already pending. Restart FocusRecall before trying again.')
+  if(readJournal(file))throw new Error('A restore is already pending. Restart A14 Pomodoro before trying again.')
   if(resolve(file)===resolve(backup))throw new Error('Choose a saved backup, not the active database.')
   validateBackup(backup)
   const safety=join(backupFolder(file,'safety'),`before-restore-${stamp()}-${randomUUID()}.db`)
@@ -154,7 +154,7 @@ export function installPendingRestore(file:string,open:(file:string)=>Db):Db|nul
     try{snapshot(source,rollback)}finally{source.close()}
     discardSidecars(file);renameSync(rollback,file);flush(file);validateBackup(file)
     writeJournal(file,{...j,phase:'failed',error:String(error)})
-    throw new Error('Restoration failed. Your previous database was recovered from its safety backup. Restart FocusRecall to continue. '+String(error))
+    throw new Error('Restoration failed. Your previous database was recovered from its safety backup. Restart A14 Pomodoro to continue. '+String(error))
   }
 }
 

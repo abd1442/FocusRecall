@@ -422,31 +422,31 @@
   "delayed-check": {
     "en": {
       "action": "To check learning later, try a relevant question or task after a gap, without the answer visible. Then check accuracy.",
-      "detail": "One task only samples part of your knowledge. FocusRecall’s current ratings and activity records do not automatically perform this assessment."
+      "detail": "One task only samples part of your knowledge. A14 Pomodoro’s current ratings and activity records do not automatically perform this assessment."
     },
     "ar": {
       "action": "للتحقّق من التعلّم لاحقًا، جرّب سؤالًا أو مهمة مناسبة بعد فترة دون رؤية الإجابة، ثم تحقّق من الدقة.",
-      "detail": "لا تختبر المهمة الواحدة إلا جزءًا من معرفتك. تقييمات FocusRecall وسجلات النشاط الحالية لا تُجري هذا التقييم تلقائيًا."
+      "detail": "لا تختبر المهمة الواحدة إلا جزءًا من معرفتك. تقييمات A14 Pomodoro وسجلات النشاط الحالية لا تُجري هذا التقييم تلقائيًا."
     },
     "es": {
       "action": "Para comprobar lo aprendido después, intenta una pregunta o tarea pertinente tras un intervalo, sin ver la respuesta. Luego comprueba la precisión.",
-      "detail": "Una tarea solo muestra parte de tus conocimientos. Las valoraciones y los registros actuales de FocusRecall no realizan automáticamente esta evaluación."
+      "detail": "Una tarea solo muestra parte de tus conocimientos. Las valoraciones y los registros actuales de A14 Pomodoro no realizan automáticamente esta evaluación."
     },
     "fr": {
       "action": "Pour vérifier plus tard, essayez après un délai une question ou une tâche pertinente sans voir la réponse. Vérifiez ensuite l’exactitude.",
-      "detail": "Une tâche n’échantillonne qu’une partie des connaissances. Les évaluations et traces actuelles de FocusRecall ne réalisent pas automatiquement cette vérification."
+      "detail": "Une tâche n’échantillonne qu’une partie des connaissances. Les évaluations et traces actuelles de A14 Pomodoro ne réalisent pas automatiquement cette vérification."
     },
     "zh-Hans": {
       "action": "想了解之后是否还会？隔一段时间，在看不到答案的情况下完成相关问题或任务，再核对准确性。",
-      "detail": "单个任务只能抽查部分知识。FocusRecall 现有的自评和活动记录不会自动完成这种测评。"
+      "detail": "单个任务只能抽查部分知识。A14 Pomodoro 现有的自评和活动记录不会自动完成这种测评。"
     },
     "pt-BR": {
       "action": "Para verificar depois, tente uma pergunta ou tarefa relevante após um intervalo, sem ver a resposta. Confira a precisão em seguida.",
-      "detail": "Uma tarefa mostra apenas parte do conhecimento. As avaliações e os registros atuais do FocusRecall não realizam essa verificação automaticamente."
+      "detail": "Uma tarefa mostra apenas parte do conhecimento. As avaliações e os registros atuais do A14 Pomodoro não realizam essa verificação automaticamente."
     },
     "de": {
       "action": "Prüfe späteres Können mit einer passenden Frage oder Aufgabe nach einer Pause, ohne sichtbare Lösung. Kontrolliere anschließend die Richtigkeit.",
-      "detail": "Eine Aufgabe erfasst nur einen Teil deines Wissens. Die bisherigen Bewertungen und Aktivitätsdaten von FocusRecall führen diese Prüfung nicht automatisch durch."
+      "detail": "Eine Aufgabe erfasst nur einen Teil deines Wissens. Die bisherigen Bewertungen und Aktivitätsdaten von A14 Pomodoro führen diese Prüfung nicht automatisch durch."
     }
   },
   "choose-target": {

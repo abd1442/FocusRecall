@@ -149,7 +149,7 @@ export function ThemeGallery(): React.JSX.Element {
   }
   return <div className="rounded-2xl border border-line bg-surface p-4">
     {a.mode === 'system'
-      ? <div className="mb-4 flex flex-col gap-2"><p className="text-sm text-muted">{uiText("FocusRecall follows Windows and keeps one theme for each mode. Select which one to change.")}</p><PaletteTabs side={side} onChange={setSide} /></div>
+      ? <div className="mb-4 flex flex-col gap-2"><p className="text-sm text-muted">{uiText("A14 Pomodoro follows Windows and keeps one theme for each mode. Select which one to change.")}</p><PaletteTabs side={side} onChange={setSide} /></div>
       : <div className="mb-3 flex flex-wrap items-center gap-2"><span className="text-base font-semibold">{title}</span>
         <span className="rounded-full bg-accent-subtle px-2.5 py-0.5 text-xs font-semibold text-accent-subtle-ink">● {uiText("In use now")}</span></div>}
     <div id="palette-gallery" role={a.mode === 'system' ? 'tabpanel' : undefined} aria-labelledby={a.mode === 'system' ? `palette-tab-${side}` : undefined}>

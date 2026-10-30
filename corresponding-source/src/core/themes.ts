@@ -1,4 +1,4 @@
-// The FocusRecall theme system (approved 2026-10-17): 26 themes, each a small
+// The A14 Pomodoro theme system (approved 2026-10-17): 26 themes, each a small
 // set of hand-picked seed colours (themeSeeds.ts, generated) from which every
 // semantic token is derived here. The derivation is a TypeScript port of
 // docs/design/theme-system-2026/tools/build.mjs, so custom stage colours and

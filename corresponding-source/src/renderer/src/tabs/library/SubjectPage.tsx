@@ -276,7 +276,7 @@ function LearningCard({ itemId, color }: { itemId: number; color: string }): Rea
     <Card title={uiText("Learning stage")}>
       <StageBar hours={stage.hours} stage={stage.stage} color={color} />
       <div className="flex flex-wrap gap-x-6 gap-y-1 text-base text-muted">
-        {item.hoursBefore > 0 && <span>{uiText("Includes ")}{item.hoursBefore}{uiText(" h before FocusRecall")}</span>}
+        {item.hoursBefore > 0 && <span>{uiText("Includes ")}{item.hoursBefore}{uiText(" h before A14 Pomodoro")}</span>}
         {priorLabel(item.priorKnowledge) && <span>{uiText("Before starting: ")}{priorLabel(item.priorKnowledge)}</span>}
         {item.newField && <span>{uiText("A new field for you")}</span>}
         {builds.length > 0 && <span dir="auto">{uiText("Builds on ")}{builds.join(', ')}</span>}

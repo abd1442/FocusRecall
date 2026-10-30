@@ -1,10 +1,10 @@
-# FocusRecall
+# A14 Pomodoro
 
 A local-first Windows workspace for focused study, recall notes and thoughtful review of your own study records.
 
 **Pre-release · Windows x64 · GPL-3.0-only · No required account**
 
-Current source and installer: **0.1.5-beta.2 — Beta 2**, an unsigned Windows x64 prerelease. See [release status](docs/RELEASE_STATUS.md) for verification and limitations.
+Current source: **A14 Pomodoro**, the approved 30 October 2026 rebrand based on **0.1.5-beta.2**. The existing published Beta 2 installer retains its original FocusRecall name; this branding update does not replace immutable release assets. See [branding and compatibility](docs/BRANDING_COMPATIBILITY.md) and [current source](docs/CURRENT_SOURCE.md).
 
 ## What it does
 

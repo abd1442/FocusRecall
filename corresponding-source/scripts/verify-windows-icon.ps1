@@ -1,9 +1,9 @@
 # Read-only checks of icon exports and icons actually embedded in the built EXEs.
-param([string]$AppExecutable='dist/win-unpacked/FocusRecall.exe',[string]$SetupExecutable='dist/FocusRecall-0.1.0-beta.1-setup.exe')
+param([string]$AppExecutable='dist/a14-pomodoro/win-unpacked/A14Pomodoro.exe',[string]$SetupExecutable='dist/a14-pomodoro/A14-Pomodoro-0.1.5-beta.2-setup.exe')
 $ErrorActionPreference='Stop'
 Add-Type -AssemblyName System.Drawing
-$iconFile=(Resolve-Path resources/focusrecall.ico).Path
-$source=[Drawing.Bitmap]::FromFile((Resolve-Path resources/focusrecall-icon.png).Path)
+$iconFile=(Resolve-Path resources/a14-pomodoro.ico).Path
+$source=[Drawing.Bitmap]::FromFile((Resolve-Path resources/a14-pomodoro-icon.png).Path)
 try {
  if($source.Width -ne $source.Height){throw 'Square icon master required.'}
  foreach($point in @(@(0,0),@(($source.Width-1),0),@(0,($source.Height-1)),@(($source.Width-1),($source.Height-1)))){
