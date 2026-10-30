@@ -28,7 +28,7 @@ vi.mock('electron',async()=>{
     constructor(..._args:unknown[]){super();native.trays.push(this)}
     setToolTip=vi.fn();setContextMenu=vi.fn();setImage=vi.fn();destroy=vi.fn()
   }
-  return {BrowserWindow:Window,Tray,nativeTheme:native.theme,nativeImage:{createEmpty:()=>({addRepresentation:vi.fn()})},Menu:{buildFromTemplate:(v:unknown)=>v},screen:{getPrimaryDisplay:()=>({workArea:work}),getAllDisplays:()=>[{workArea:work}],getDisplayNearestPoint:()=>({workArea:work}),getDisplayMatching:()=>({workArea:work}),getCursorScreenPoint:()=>({x:0,y:0})}}
+  return {BrowserWindow:Window,Tray,nativeTheme:native.theme,nativeImage:{createEmpty:()=>({addRepresentation:vi.fn()}),createFromPath:()=>({resize:()=>({})})},Menu:{buildFromTemplate:(v:unknown)=>v},screen:{getPrimaryDisplay:()=>({workArea:work}),getAllDisplays:()=>[{workArea:work}],getDisplayNearestPoint:()=>({workArea:work}),getDisplayMatching:()=>({workArea:work}),getCursorScreenPoint:()=>({x:0,y:0})}}
 })
 import { PanelController } from '../main/panel'
 import { TrayController } from '../main/tray'
