@@ -1,3 +1,5 @@
+> Current development name: **A14 Pomodoro**, with the owner-approved Countdown Corner identity. This branding update is unreleased. The historical release/status record below retains the names and checksums of the builds it describes. See [current rebrand verification](A14_POMODORO_REBRAND.md).
+
 # Beta availability
 
 [FocusRecall — Beta 1](https://github.com/abd1442/FocusRecall/releases/tag/v0.1.1-beta.1) is the single release page for Windows x64, Linux x64 DEB and both Mac architectures. The application version is 0.1.1-beta.1. Matching source, notices, checksums and the platform/source manifest accompany the downloads.

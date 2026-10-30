@@ -7,7 +7,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: FocusRecall version and Windows version
+      label: A14 Pomodoro version and Windows version
     validations:
       required: true
   - type: textarea
