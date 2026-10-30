@@ -1,0 +1,140 @@
+{
+  "productName": "A14 Pomodoro",
+  "status": "unreleased-development",
+  "date": "2026-10-30",
+  "applicationVersion": "0.1.5-beta.2",
+  "source": "corresponding-source at commit 94d09e5a72aa8d1c9859d02ca0c3c98098f361a5 (A14 Pomodoro branding update), built with electron-vite and run unpackaged with Electron 44.7.2",
+  "platform": "Linux x64 under Xvfb, device scale factor 2. The Windows interface fonts are not available there; fontconfig maps Segoe UI to Selawik, the open-source Segoe UI fallback published by Microsoft. Windows rendering may differ slightly.",
+  "data": "Isolated fictional profile in a disposable directory. History comes from the application's own demo-data generator (Settings, Open demo data), copied into an ordinary profile; three subject names were changed to generic ones. The Building Physics sessions, recall notes, follow-up, log answers, rest and backup were performed live through the interface during capture. No personal records were used.",
+  "method": "Playwright drove the real windows and took viewport or element captures. Pixels inside application windows are unedited. The README images in assets/readme are built from these files by assets/readme/build_images.py, which only crops, scales, rounds corners and places captures on a backdrop. The hero image places a floating-panel capture beside a Home capture taken a few minutes earlier.",
+  "notReleased": "These screens show current development source. The published FocusRecall Beta 1 and Beta 2 binaries keep their original branding.",
+  "fictionalOnly": true,
+  "images": [
+    {
+      "file": "backup-done.png",
+      "description": "Settings, Data section after Back Up Data created and verified a backup in the fictional profile",
+      "width": 2144,
+      "height": 1044,
+      "sha256": "73f7fa86e8b8fca0e7aa562011624005cbc301ba00eb5a8227eb1489b34bd51c"
+    },
+    {
+      "file": "history-review.png",
+      "description": "History, To review list",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "bd533407c3bd633408057c9100e93a51f4647fd1572a6991eaf79006afe7815d"
+    },
+    {
+      "file": "history.png",
+      "description": "History, last 30 days, grouped by day",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "62e3ad891c1738c851cd6e99ed90d879a93ca1bff164198e396ad67cba80d5db"
+    },
+    {
+      "file": "home-dark.png",
+      "description": "The same Home state in the dark theme (Ink Dim)",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "279cfb97ce877ab2df2bfce1f40f11b0d35e0440ad95613b0c31e6e5b60faead"
+    },
+    {
+      "file": "home.png",
+      "description": "Full Mode Home, light theme (Ivory & Ink), Building Physics selected with a 25-minute Flow target and a session goal; daily study goal of 3 hours with the day's recorded focus",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "b6e76664ce5ef51f6ccb4c3dd77a268de237d71cc8ddf521fbf63d14978aaff8"
+    },
+    {
+      "file": "learn.png",
+      "description": "Learn, Today",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "0b9f12760f390fb8031f8600dc94f7503af679509fbeca18e8f783b3ed28bba6"
+    },
+    {
+      "file": "log-narrow.png",
+      "description": "Session log after the same session (960 px wide window)",
+      "width": 1920,
+      "height": 3000,
+      "sha256": "02e1f8dc4f0122af0156468098bc15afcaa905ee96bf2bf67cc58395a383949e"
+    },
+    {
+      "file": "panel-circular-dark.png",
+      "description": "Floating panel, circular style, dark theme, same session",
+      "width": 468,
+      "height": 568,
+      "sha256": "0917dd6356df5c032287e75b632648c4b4385de466e3cc7e5928ee48fa70663a"
+    },
+    {
+      "file": "panel-circular.png",
+      "description": "Floating panel, circular style, same session after switching the panel style",
+      "width": 468,
+      "height": 568,
+      "sha256": "28d1a3a9b5ab113d84a783cf2b1de3e409427bdb2148a5021119e375c028edd6"
+    },
+    {
+      "file": "panel-digital.png",
+      "description": "Floating panel, digital style, about two minutes into a real Flow session",
+      "width": 562,
+      "height": 294,
+      "sha256": "6810dc15ca94ef072648aeb4d7f9ac68066b4edd0634baff3d34bc2c343f044a"
+    },
+    {
+      "file": "panel-rest.png",
+      "description": "Floating panel during a real five-minute rest",
+      "width": 468,
+      "height": 568,
+      "sha256": "a2e2fc746580dfe7f38323a2b3b955db4769dc422f9e4f26ec066c6fbd680f4d"
+    },
+    {
+      "file": "privacy.png",
+      "description": "Settings, Automatic tracking section (off)",
+      "width": 2144,
+      "height": 1204,
+      "sha256": "af9e87a656934b66a766dc2b9a611ad8c8184aeb7d8926f6dc5500816909ae5f"
+    },
+    {
+      "file": "quick.png",
+      "description": "Quick Mode launcher with Building Physics ready",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "3961ae9ba0ace8cd317aad8107c86020ad2432fc49f93e02108b8d230980790d"
+    },
+    {
+      "file": "recall-narrow.png",
+      "description": "Recall after a real session (960 px wide window): typed recall notes, rating and a follow-up marked for review",
+      "width": 1920,
+      "height": 3000,
+      "sha256": "309add4d428be92d8ffd81691319fc407909deb9d9db376eb6e4a76a4ec9fe60"
+    },
+    {
+      "file": "rest.png",
+      "description": "Main window rest countdown, about 17 seconds into a five-minute rest",
+      "width": 2880,
+      "height": 2000,
+      "sha256": "1aaf4013835a2e4098a6ffafee8fa573017650c95de15ae7e77a4cdc52beb439"
+    },
+    {
+      "file": "stats-tall.png",
+      "description": "Stats, Your insights with study patterns (1440 x 1900 window)",
+      "width": 2880,
+      "height": 3800,
+      "sha256": "31711f9feb0a76cb26f8a0911e7fbde474504505570d6c68bae05af828d84ac7"
+    },
+    {
+      "file": "theme-gallery-darkslot.png",
+      "description": "Settings, Appearance, Theme with Dark selected and the 15 dark themes",
+      "width": 2144,
+      "height": 1422,
+      "sha256": "ac1d2373e0e13d508a13537aa94576f146e2abf7098600fb223674dc50f49527"
+    },
+    {
+      "file": "theme-gallery.png",
+      "description": "Settings, Appearance, Theme with Follow Windows selected and the light theme slot open",
+      "width": 2144,
+      "height": 1248,
+      "sha256": "d2cdff3790377656f04c0be31268acdbefbb11ee2bb11bd6abf3423b7d89c236"
+    }
+  ]
+}

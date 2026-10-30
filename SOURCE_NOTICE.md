@@ -4,15 +4,9 @@
 
 [corresponding-source](corresponding-source/SOURCE_MANIFEST.json) now contains the **unreleased A14 Pomodoro branding update**, based on package version 0.1.5-beta.2. It is not the source of the already published installer. The manifest records this development snapshot; old binaries remain mapped to their immutable release tags below. See [rebrand verification](docs/A14_POMODORO_REBRAND.md). The approved Countdown Corner mark replaces the old F/R logo in current development assets. No font files are redistributed.
 
-
-## Current A14 Pomodoro development source
-
-[corresponding-source](corresponding-source/SOURCE_MANIFEST.json) now contains the **unreleased A14 Pomodoro branding update**, based on package version 0.1.5-beta.2. It is not the source of the already published installer. The manifest records this development snapshot; old binaries remain mapped to their immutable release tags below. See [rebrand verification](docs/A14_POMODORO_REBRAND.md). The approved Countdown Corner mark replaces the old F/R logo in current development assets. No font files are redistributed.
-
-
 ## Beta 2 Windows source
 
-[the immutable Beta 2 source](https://github.com/abd1442/A14-Pomodoro/tree/v0.1.5-beta.2/corresponding-source) contains Windows **0.1.5-beta.2 — Beta 2**, exact public source snapshot `0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f`. The tag `v0.1.5-beta.2` identifies the release assembly; the installer maps to this application snapshot. [Build directions](corresponding-source/SOURCE_BUILD.md) · [Release manifest](RELEASE-MANIFEST.json) · [Beta 2 source materials](https://github.com/abd1442/A14-Pomodoro/releases/download/v0.1.5-beta.2/FocusRecall-Beta-2-Source.zip).
+[the immutable Beta 2 source](https://github.com/abd1442/A14-Pomodoro/tree/v0.1.5-beta.2/corresponding-source) contains Windows **0.1.5-beta.2, FocusRecall Beta 2**, exact public source snapshot `0326da0016f53dfc0c5d8bae8eb89df1d5c38c2f`. The tag `v0.1.5-beta.2` identifies the release assembly; the installer maps to this application snapshot. [Build directions](corresponding-source/SOURCE_BUILD.md) · [Release manifest](RELEASE-MANIFEST.json) · [Beta 2 source materials](https://github.com/abd1442/A14-Pomodoro/releases/download/v0.1.5-beta.2/FocusRecall-Beta-2-Source.zip).
 
 The attached source archive includes the exact curated editable Windows inputs, unchanged locked dependency/preferred-source inputs and pinned runtime source-access directions. Linux/macOS remain frozen Beta 1 builds. Source delivery does not imply that unperformed installer/hardware/assistive-technology checks passed; see [release notes](RELEASE_NOTES.md).
 

@@ -1,0 +1,57 @@
+<!doctype html>
+<!-- Source for support-a14-kofi-banner.png and -mobile.png (used in both GitHub light and dark mode). Render at 720x340 CSS px (or 360x380 with ?size=mobile), device scale 2; ?theme=dark for the dark variant.
+     A14 icon: a14-pomodoro-icon.png (approved Countdown Corner asset, unaltered). kofi-cup.png is cut from Ko-fi's own button artwork. The button mug is a plain inline SVG drawn for this banner. -->
+<html lang="en"><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+html,body{margin:0;position:relative;width:720px;height:340px;overflow:hidden;background:transparent}
+:root{
+  --card:#FFFCFA; --edge:#F5D3CD; --glow1:rgba(255,94,91,.16); --glow2:rgba(255,176,120,.20);
+  --ink:#233957; --body:#5B5F66; --coral:#FF5E5B; --coral2:#FF7B6B; --dot:#FFB4A8; --dot2:#F3C46B;
+  --sub:#9A7A76; --shadow:rgba(255,94,91,.32);
+}
+body.dark{
+  --card:#2A1D21; --edge:#4D3238; --glow1:rgba(255,94,91,.20); --glow2:rgba(255,160,110,.10);
+  --ink:#FFF6F3; --body:#E6CBC6; --dot:#8E4A4C; --dot2:#9C7A3E; --sub:#C49B95; --shadow:rgba(0,0,0,.45);
+}
+.card{position:absolute;inset:0;border-radius:30px;border:2px solid var(--edge);background:var(--card);overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  font-family:"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif}
+.g1,.g2{position:absolute;border-radius:50%;filter:blur(8px)}
+.g1{width:380px;height:380px;left:-150px;top:-200px;background:radial-gradient(closest-side,var(--glow1),transparent)}
+.g2{width:420px;height:420px;right:-170px;bottom:-230px;background:radial-gradient(closest-side,var(--glow2),transparent)}
+.dot{position:absolute;border-radius:50%;background:var(--dot)}
+.top{position:relative;display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.top .icon{width:58px;height:58px;border-radius:15px;box-shadow:0 4px 12px rgba(35,57,87,.14)}
+.top .heart{color:var(--coral);font-size:20px;line-height:1;font-family:"Segoe UI Symbol"}
+.top .cup{height:46px}
+h1{position:relative;margin:0;font-family:"Segoe UI Variable Display","Segoe UI",sans-serif;font-weight:700;font-size:42px;letter-spacing:-.015em;color:var(--ink);line-height:1.1}
+p{position:relative;margin:10px 0 0;max-width:600px;font-size:21px;line-height:1.38;color:var(--body)}
+.btn{position:relative;margin-top:20px;display:inline-flex;align-items:center;gap:12px;padding:13px 32px 14px;border-radius:999px;
+  background:linear-gradient(180deg,var(--coral2),var(--coral));color:#fff;font-weight:700;font-size:23px;letter-spacing:.005em;
+  box-shadow:0 8px 20px var(--shadow), inset 0 1px 0 rgba(255,255,255,.25);font-family:"Segoe UI Variable Display","Segoe UI",sans-serif}
+.btn .mugsvg{width:24px;height:24px}
+body.mobile,html.mobile{width:360px;height:380px}
+body.mobile .card{border-radius:24px;padding:0 22px}
+body.mobile .top{margin-bottom:10px;gap:10px}
+body.mobile .top .icon{width:48px;height:48px;border-radius:12px}
+body.mobile .top .cup{height:38px}
+body.mobile .top .heart{font-size:16px}
+body.mobile h1{font-size:26px}
+body.mobile p{font-size:17.5px;margin-top:9px}
+body.mobile .btn{font-size:19px;padding:11px 24px 12px;margin-top:18px}
+body.mobile .btn .mugsvg{width:20px;height:20px}
+body.mobile .g1{width:260px;height:260px;left:-110px;top:-130px}
+body.mobile .g2{width:280px;height:280px;right:-120px;bottom:-150px}
+</style></head><body><div class="card">
+<div class="g1"></div><div class="g2"></div>
+<i class="dot" style="width:10px;height:10px;left:58px;top:54px"></i>
+<i class="dot" style="width:6px;height:6px;left:96px;top:92px;background:var(--dot2)"></i>
+<i class="dot" style="width:8px;height:8px;right:70px;top:48px;background:var(--dot2)"></i>
+<i class="dot" style="width:12px;height:12px;right:44px;top:86px"></i>
+<i class="dot" style="width:7px;height:7px;left:70px;bottom:62px;background:var(--dot2)"></i>
+<i class="dot" style="width:9px;height:9px;right:92px;bottom:52px"></i>
+<div class="top"><img class="icon" src="a14-pomodoro-icon.png" alt=""><span class="heart">&#x2665;&#xFE0E;</span><img class="cup" src="kofi-cup.png" alt=""></div>
+<h1>Enjoying A14 Pomodoro?</h1>
+<p>If you find it useful and would like to show a little appreciation, you can buy me a coffee. It’s completely optional.</p>
+<div class="btn">Buy me a coffee <svg class="mugsvg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2.5c-.8 1 .8 1.8 0 3M11.5 2.5c-.8 1 .8 1.8 0 3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><path d="M3.5 8h13v6.5a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5z" fill="#fff"/><path d="M16.5 10h1.3a2.6 2.6 0 0 1 0 5.2h-1.6" fill="none" stroke="#fff" stroke-width="1.8"/><rect x="2.5" y="20.3" width="16" height="1.6" rx=".8" fill="#fff"/></svg></div>
+</div><script>if(location.search.includes('dark'))document.body.classList.add('dark');if(location.search.includes('mobile')){document.body.classList.add('mobile');document.documentElement.classList.add('mobile');}</script></body></html>
