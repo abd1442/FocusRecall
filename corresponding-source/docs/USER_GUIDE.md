@@ -1,6 +1,6 @@
 # Using A14 Pomodoro
 
-This guide follows current **A14 Pomodoro source behavior**, based on **0.1.5-beta.2**. The rebrand preserves existing study profiles and backups. Published Beta 1/Beta 2 downloads still carry their original names; they do not yet contain this branding update. See [current source](CURRENT_SOURCE.md).
+This guide follows **A14 Pomodoro — Beta 1 (0.1.6-beta.1)** for Windows x64. Existing study records and backups remain compatible. Earlier FocusRecall releases retain their original branding.
 
 ## Install or update
 
